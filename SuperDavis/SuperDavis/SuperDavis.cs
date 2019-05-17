@@ -11,6 +11,7 @@ using SuperDavisDemo.Controller;
 using SuperDavisDemo.Interface;
 using SuperDavisDemo.Sprite;
 
+/*Author: Jason Xu, */
 namespace SuperDavisDemo
 {
     class SuperDavis : Game
