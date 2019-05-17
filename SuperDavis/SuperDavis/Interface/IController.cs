@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis
+namespace SuperDavisDemo.Interface
 {
-    class Class1
+    interface IController
     {
-        // GOGOGO
+        void Update();
     }
 }
