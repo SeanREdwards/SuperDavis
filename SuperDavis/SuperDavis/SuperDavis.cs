@@ -11,7 +11,7 @@ using SuperDavisDemo.Controller;
 using SuperDavisDemo.Interface;
 using SuperDavisDemo.Sprite;
 
-/*Author: Jason Xu, Ryan Knighton, just adding a change to test for git*/
+/*Author: Jason Xu, Ryan Knighton, Jeremy Alexander just adding a change to test for git*/
 namespace SuperDavisDemo
 {
     class SuperDavis : Game
