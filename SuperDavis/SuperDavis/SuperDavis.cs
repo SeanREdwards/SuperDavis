@@ -11,7 +11,7 @@ using SuperDavisDemo.Controller;
 using SuperDavisDemo.Interface;
 using SuperDavisDemo.Sprite;
 
-/*Author: Jason Xu, Ryan Knighton, Jeremy Alexander just adding a change to test for git*/
+/*Author: Jason Xu, Ryan Knighton, Jeremy Alexander and Sean Edwards just adding a change to test for git*/
 namespace SuperDavisDemo
 {
     class SuperDavis : Game
@@ -27,8 +27,14 @@ namespace SuperDavisDemo
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
 
+        //Sean Edwards Sprint_1 code addition for git.
+        bool seansSprintOneAddition;
+
         public SuperDavis()
         {
+            //Sean Edwards Sprint_1 code addition for git.
+            bool seansSprintOneAddition = true;
+
             var graphicsDeviceManager = new GraphicsDeviceManager(game:this);
             WindowsEdgeWidth = 1024;
             WindowsEdgeHeight = 768;
