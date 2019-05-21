@@ -7,12 +7,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SuperDavisDemo.Controller;
-using SuperDavisDemo.Interface;
-using SuperDavisDemo.Sprite;
+using SuperDavis.Controller;
+using SuperDavis.Interface;
+using SuperDavis.Sprite;
 
 /*Author: Jason Xu, Ryan Knighton, Jeremy Alexander and Sean Edwards */
-namespace SuperDavisDemo
+namespace SuperDavis
 {
     class SuperDavis : Game
     {
@@ -27,14 +27,8 @@ namespace SuperDavisDemo
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
 
-        //Sean Edwards Sprint_1 code addition for git.
-        bool seansSprintOneAddition;
-
         public SuperDavis()
         {
-            //Sean Edwards Sprint_1 code addition for git.
-            bool seansSprintOneAddition = true;
-
             var graphicsDeviceManager = new GraphicsDeviceManager(game:this);
             WindowsEdgeWidth = 1024;
             WindowsEdgeHeight = 768;
@@ -60,10 +54,6 @@ namespace SuperDavisDemo
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            DavisAnimated = Content.Load<Texture2D>("davis_animated");
-            DavisStatic = Content.Load<Texture2D>("davis_static");
-            DavisPos = new Vector2((GraphicsDevice.Viewport.Width - DavisStatic.Width) / 2 , (GraphicsDevice.Viewport.Height - DavisStatic.Height) / 2);
-            DavisSprite = new StaticSprite(DavisStatic, this);
         }
 
         protected override void UnloadContent() { }

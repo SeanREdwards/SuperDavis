@@ -1,13 +1,13 @@
-﻿using SuperDavisDemo.Interface;
-using SuperDavisDemo.Sprite;
+﻿using SuperDavis.Interface;
+using SuperDavis.Sprite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static SuperDavisDemo.SuperDavis;
+using static SuperDavis.SuperDavis;
 
-namespace SuperDavisDemo.Command
+namespace SuperDavis.Command
 {
     class AnimateCommand : ICommand
     {
