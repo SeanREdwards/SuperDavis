@@ -12,8 +12,21 @@ namespace SuperDavis.Factory
 {
     class DavisSpriteFactory
     {
-        private Texture2D davisAnimated;
-        private Texture2D davisStatic;
+        
+        private Texture2D davisStaticLeft;
+        private Texture2D davisStaticRight;
+        private Texture2D davisWalkLeft;
+        private Texture2D davisWalkRight;
+
+        private Texture2D woodyStaticLeft;
+        private Texture2D woodyStaticRight;
+        private Texture2D woodyWalkLeft;
+        private Texture2D woodyWalkRight;
+
+        private Texture2D batStaticLeft;
+        private Texture2D batStaticRight;
+        private Texture2D batWalkLeft;
+        private Texture2D batWalkRight;
 
         private static DavisSpriteFactory instance = new DavisSpriteFactory();
         public static DavisSpriteFactory Instance
@@ -28,18 +41,81 @@ namespace SuperDavis.Factory
 
         public void Load(ContentManager content)
         {
-            davisAnimated = content.Load<Texture2D>("davis_animated");
-            davisStatic = content.Load<Texture2D>("davis_static");
+            davisStaticLeft = content.Load<Texture2D>("Davis/DavisStaticLeft");
+            davisStaticRight = content.Load<Texture2D>("Davis/DavisStaticRight");
+            davisWalkLeft = content.Load<Texture2D>("Davis/DavisWalkLeft");
+            davisWalkRight = content.Load<Texture2D>("Davis/DavisWalkRight");
+            woodyStaticLeft = content.Load<Texture2D>("Davis/WoodyStaticLeft");
+            woodyStaticRight = content.Load<Texture2D>("Davis/WoodyStaticRight");
+            woodyWalkLeft = content.Load<Texture2D>("Davis/WoodyWalkLeft");
+            woodyWalkRight = content.Load<Texture2D>("Davis/WoodyWalkRight");
+            batStaticLeft = content.Load<Texture2D>("Davis/BatStaticLeft");
+            batStaticRight = content.Load<Texture2D>("Davis/BatStaticRight");
+            batWalkLeft = content.Load<Texture2D>("Davis/BatWalkLeft");
+            batWalkRight = content.Load<Texture2D>("Davis/BatWalkRight");
         }
 
-        public ISprite CreateDavisAnimatedSprite()
+        /*  Davis Sprite */
+        public ISprite CreateDavisStaticLeftSprite()
         {
-            return new DynamicSprite(davisAnimated,8);
+            return new StaticSprite(davisStaticLeft);
         }
 
-        public ISprite CreateDavisStaticSprite()
+        public ISprite CreateDavisStaticRightSprite()
         {
-            return new StaticSprite(davisStatic);
+            return new StaticSprite(davisStaticRight);
+        }
+
+        public ISprite CreateDavisWalkLeftSprite()
+        {
+            return new DynamicSprite(davisWalkLeft, 4);
+        }
+
+        public ISprite CreateDavisWalkRightSprite()
+        {
+            return new DynamicSprite(davisWalkRight, 4);
+        }
+
+        /*  Woody Sprite */
+        public ISprite CreateWoodyStaticLeftSprite()
+        {
+            return new StaticSprite(woodyStaticLeft);
+        }
+
+        public ISprite CreateWoodyStaticRightSprite()
+        {
+            return new StaticSprite(woodyStaticRight);
+        }
+
+        public ISprite CreateWoodyWalkLeftSprite()
+        {
+            return new DynamicSprite(woodyWalkLeft, 4);
+        }
+
+        public ISprite CreateWoodyWalkRightSprite()
+        {
+            return new DynamicSprite(woodyWalkRight, 4);
+        }
+
+        /*  Bat Sprite */
+        public ISprite CreateBatStaticLeftSprite()
+        {
+            return new StaticSprite(batStaticLeft);
+        }
+
+        public ISprite CreateBatStaticRightSprite()
+        {
+            return new StaticSprite(batStaticRight);
+        }
+
+        public ISprite CreateBatWalkLeftSprite()
+        {
+            return new DynamicSprite(batWalkLeft, 4);
+        }
+
+        public ISprite CreateBatWalkRightSprite()
+        {
+            return new DynamicSprite(batWalkRight, 4);
         }
 
     }

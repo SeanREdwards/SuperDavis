@@ -16,7 +16,6 @@ namespace SuperDavis
 {
     class SuperDavis : Game
     {
-
         public Vector2 DavisPos { get; set; }
         public ISprite DavisSprite { get; set; }
         public Texture2D DavisAnimated;

@@ -39,12 +39,18 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\davis_animated.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\davis_static.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Content\Davis\BatStaticLeft.xnb" />
+    <None Include="Content\Davis\BatStaticRight.xnb" />
+    <None Include="Content\Davis\BatWalkLeft.xnb" />
+    <None Include="Content\Davis\BatWalkRight.xnb" />
+    <None Include="Content\Davis\DavisStaticLeft.xnb" />
+    <None Include="Content\Davis\DavisStaticRight.xnb" />
+    <None Include="Content\Davis\DavisWalkLeft.xnb" />
+    <None Include="Content\Davis\DavisWalkRight.xnb" />
+    <None Include="Content\Davis\WoodyStaticLeft.xnb" />
+    <None Include="Content\Davis\WoodyStaticRight.xnb" />
+    <None Include="Content\Davis\WoodyWalkLeft.xnb" />
+    <None Include="Content\Davis\WoodyWalkRight.xnb" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
