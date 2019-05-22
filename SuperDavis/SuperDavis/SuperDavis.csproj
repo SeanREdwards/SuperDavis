@@ -39,12 +39,18 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\davis_animated.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\davis_static.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Content\Davis\BatStaticLeft.xnb" />
+    <None Include="Content\Davis\BatStaticRight.xnb" />
+    <None Include="Content\Davis\BatWalkLeft.xnb" />
+    <None Include="Content\Davis\BatWalkRight.xnb" />
+    <None Include="Content\Davis\DavisStaticLeft.xnb" />
+    <None Include="Content\Davis\DavisStaticRight.xnb" />
+    <None Include="Content\Davis\DavisWalkLeft.xnb" />
+    <None Include="Content\Davis\DavisWalkRight.xnb" />
+    <None Include="Content\Davis\WoodyStaticLeft.xnb" />
+    <None Include="Content\Davis\WoodyStaticRight.xnb" />
+    <None Include="Content\Davis\WoodyWalkLeft.xnb" />
+    <None Include="Content\Davis\WoodyWalkRight.xnb" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -60,14 +66,13 @@
     <Compile Include="Command\UpAndDownCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\IController.cs" />
     <Compile Include="Interface\ISprite.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Sprite\AnimateSprite.cs" />
-    <Compile Include="Sprite\RightSprite.cs" />
+    <Compile Include="Sprite\DynamicSprite.cs" />
     <Compile Include="Sprite\StaticSprite.cs" />
-    <Compile Include="Sprite\UpSprite.cs" />
     <Compile Include="SuperDavis.cs" />
   </ItemGroup>
   <ItemGroup />

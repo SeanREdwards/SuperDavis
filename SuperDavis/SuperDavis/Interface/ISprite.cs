@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavisDemo.Interface
+namespace SuperDavis.Interface
 {
     interface ISprite
     {
         void Update(GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 location);
         int Width { get; set; }
         int Height { get; set; }
     }

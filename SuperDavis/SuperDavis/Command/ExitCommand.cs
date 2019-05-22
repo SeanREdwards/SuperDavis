@@ -1,11 +1,11 @@
-﻿using SuperDavisDemo.Interface;
+﻿using SuperDavis.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavisDemo.Command
+namespace SuperDavis.Command
 {
     class ExitCommand : ICommand
     {

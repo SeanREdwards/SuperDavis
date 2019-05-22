@@ -1,13 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using SuperDavisDemo.Command;
-using SuperDavisDemo.Interface;
+using SuperDavis.Command;
+using SuperDavis.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavisDemo.Controller
+namespace SuperDavis.Controller
 {
     class KeyboardController : IController
     {

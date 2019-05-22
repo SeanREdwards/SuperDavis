@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using SuperDavisDemo.Command;
-using SuperDavisDemo.Interface;
+using SuperDavis.Command;
+using SuperDavis.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavisDemo.Controller
+namespace SuperDavis.Controller
 {
     class GamepadController : IController
     {
@@ -28,6 +28,7 @@ namespace SuperDavisDemo.Controller
         }
         public void Update()
         {
+            // TBD : Previous Click Button Set
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
             foreach (KeyValuePair<Buttons, ICommand> buttonCommandPair in buttonCommandDict)
             {
