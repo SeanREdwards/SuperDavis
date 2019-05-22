@@ -60,14 +60,13 @@
     <Compile Include="Command\UpAndDownCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\IController.cs" />
     <Compile Include="Interface\ISprite.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Sprite\AnimateSprite.cs" />
-    <Compile Include="Sprite\RightSprite.cs" />
+    <Compile Include="Sprite\DynamicSprite.cs" />
     <Compile Include="Sprite\StaticSprite.cs" />
-    <Compile Include="Sprite\UpSprite.cs" />
     <Compile Include="SuperDavis.cs" />
   </ItemGroup>
   <ItemGroup />

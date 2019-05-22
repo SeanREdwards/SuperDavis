@@ -1,30 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavisDemo.Interface;
+using SuperDavis.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavisDemo.Sprite
+namespace SuperDavis.Sprite
 {
-    /* Reference: http://rbwhitaker.wikidot.com/monogame-texture-atlases-3 */
-    class RightSprite : ISprite
+    class DynamicSprite : ISprite
     {
         public int Width { get; set; }
         public int Height { get; set; }
-
-        private SuperDavis superDavis;
-        private Texture2D texture;
+        private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
         private double currentTime;
         private const double frameTime = 0.08d;
 
-        public RightSprite(Texture2D texture, int totalFrames,SuperDavis superDavisClass)
+        public DynamicSprite(Texture2D texture, int totalFrames)
         {
-            this.superDavis = superDavisClass;
             this.texture = texture;
             this.totalFrames = totalFrames;
             currentFrame = 0;
@@ -44,19 +40,12 @@ namespace SuperDavisDemo.Sprite
             {
                 currentFrame = 0;
             }
-
-            superDavis.DavisPos += new Vector2(2, 0);
-            if (superDavis.DavisPos.X >= superDavis.WindowsEdgeWidth)
-            {
-                superDavis.DavisPos = new Vector2(-superDavis.DavisStatic.Width, superDavis.DavisPos.Y);
-            }
-
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle source = new Rectangle(Width * currentFrame, 0, Width, Height);
-            Rectangle destination = new Rectangle((int)superDavis.DavisPos.X, (int)superDavis.DavisPos.Y, Width, Height);
+            Rectangle destination = new Rectangle((int)location.X, (int)location.Y, Width, Height);
             spriteBatch.Draw(texture, destination, source, Color.White);
         }
     }
