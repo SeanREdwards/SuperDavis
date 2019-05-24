@@ -28,14 +28,7 @@ namespace SuperDavis.Factory
         private Texture2D batWalkLeft;
         private Texture2D batWalkRight;
 
-        private static DavisSpriteFactory instance = new DavisSpriteFactory();
-        public static DavisSpriteFactory Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
         private DavisSpriteFactory() { }
 
@@ -58,6 +51,7 @@ namespace SuperDavis.Factory
         /*  Davis Sprite */
         public ISprite CreateDavisStaticLeftSprite()
         {
+
             return new StaticSprite(davisStaticLeft);
         }
 

@@ -19,8 +19,8 @@ namespace SuperDavis.Sprite
         public StaticSprite(Texture2D texture)
         {
             this.texture = texture;
-            //Width = texture.Width;
-            //Height = texture.Height;
+            Width = texture.Width;
+            Height = texture.Height;
         }
 
         public void Update(GameTime gameTime) { }
