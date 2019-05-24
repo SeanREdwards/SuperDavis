@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Command
 {
-    class ExitCommand : ICommand
+    class DavisTurnLeftCommand : ICommand
     {
-        private readonly SuperDavis superDavis;
-        public ExitCommand(SuperDavis superDavisClass)
+        private readonly IDavis davis;
+        public DavisTurnLeftCommand(IDavis davis)
         {
-            this.superDavis = superDavisClass;
+            this.davis = davis;
         }
         public void Execute()
         {
-            superDavis.Exit();
+            davis.DavisTurnLeft();
         }
     }
 }

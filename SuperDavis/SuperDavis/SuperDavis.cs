@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interface;
+using SuperDavis.Object;
 using SuperDavis.Sprite;
 
 /*Author: Jason Xu, Ryan Knighton, Jeremy Alexander and Sean Edwards */
@@ -18,12 +19,13 @@ namespace SuperDavis
     class SuperDavis : Game
     {
 
-        public int WindowsEdgeWidth;
-        public int WindowsEdgeHeight;
+        public IDavis Davis { get; set; }
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
 
+        public int WindowsEdgeWidth;
+        public int WindowsEdgeHeight;
         public SuperDavis()
         {
             var graphicsDeviceManager = new GraphicsDeviceManager(game:this);
@@ -45,6 +47,7 @@ namespace SuperDavis
                 {new KeyboardController(this)},
                 {new GamepadController(this)}
             };
+            Davis = new Davis();
             base.Initialize();
         }
 
@@ -62,6 +65,7 @@ namespace SuperDavis
             {
                 controller.Update();
             }
+            Davis.Update(gameTime);
             base.Update(gameTime);
         }
    
@@ -69,7 +73,7 @@ namespace SuperDavis
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            DavisSprite.Draw(spriteBatch);
+            Davis.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

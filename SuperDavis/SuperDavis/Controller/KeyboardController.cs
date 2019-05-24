@@ -11,20 +11,19 @@ namespace SuperDavis.Controller
 {
     class KeyboardController : IController
     {
-        private Dictionary<Keys, ICommand> keyCommandDict;
+        private readonly Dictionary<Keys, ICommand> keyCommandDict;
         private Keys[] previousKeys;
 
         public KeyboardController(SuperDavis superDavisClass)
         {
             previousKeys = new Keys[0];
             SuperDavis superDavis = superDavisClass;
+            IDavis davis = superDavis.Davis;
             keyCommandDict = new Dictionary<Keys, ICommand>
             {
                 { Keys.Q, new ExitCommand(superDavis)},
-                { Keys.W, new StaticCommand(superDavis)},
-                { Keys.E, new AnimateCommand(superDavis)},
-                { Keys.R, new UpAndDownCommand(superDavis)},
-                { Keys.T, new LeftAndRightCommand(superDavis)}
+                { Keys.A, new DavisTurnLeftCommand(davis)},
+                { Keys.D, new DavisTurnRightCommand(davis)}
             };
         }
         public void Update()
