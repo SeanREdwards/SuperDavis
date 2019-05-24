@@ -19,7 +19,7 @@ namespace SuperDavis
     class SuperDavis : Game
     {
 
-        public IDavis Davis { get; set; }
+        public Davis Davis { get; set; }
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
@@ -42,19 +42,19 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
+            DavisSpriteFactory.Instance.Load(Content);
+            Davis = new Davis();
             controllerList = new List<IController>()
             {
                 {new KeyboardController(this)},
                 {new GamepadController(this)}
             };
-            Davis = new Davis();
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            DavisSpriteFactory.Instance.Load(Content);
         }
 
         protected override void UnloadContent() { }

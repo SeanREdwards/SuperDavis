@@ -21,7 +21,7 @@ namespace SuperDavis.Object
             // initial state
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-          
+            Location = new Vector2(100, 100);
         }
 
         public void Update(GameTime gameTime)

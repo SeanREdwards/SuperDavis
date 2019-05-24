@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using SuperDavis.Command;
 using SuperDavis.Interface;
+using SuperDavis.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace SuperDavis.Controller
         {
             previousKeys = new Keys[0];
             SuperDavis superDavis = superDavisClass;
-            IDavis davis = superDavis.Davis;
+            Davis davis = superDavis.Davis;
             keyCommandDict = new Dictionary<Keys, ICommand>
             {
                 { Keys.Q, new ExitCommand(superDavis)},

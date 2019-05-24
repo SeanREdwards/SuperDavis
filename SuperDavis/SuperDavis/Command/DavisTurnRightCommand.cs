@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interface;
+using SuperDavis.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace SuperDavis.Command
 {
     class DavisTurnRightCommand : ICommand
     {
-        private readonly IDavis davis;
-        public DavisTurnRightCommand(IDavis davis)
+        private readonly Davis davis;
+        public DavisTurnRightCommand(Davis davis)
         {
             this.davis = davis;
         }
