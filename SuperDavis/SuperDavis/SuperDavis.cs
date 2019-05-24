@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperDavis.Controller;
+using SuperDavis.Factory;
 using SuperDavis.Interface;
 using SuperDavis.Sprite;
 
@@ -16,10 +17,7 @@ namespace SuperDavis
 {
     class SuperDavis : Game
     {
-        public Vector2 DavisPos { get; set; }
-        public ISprite DavisSprite { get; set; }
-        public Texture2D DavisAnimated;
-        public Texture2D DavisStatic;
+
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
 
@@ -53,6 +51,7 @@ namespace SuperDavis
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            DavisSpriteFactory.Instance.Load(Content);
         }
 
         protected override void UnloadContent() { }
@@ -63,7 +62,6 @@ namespace SuperDavis
             {
                 controller.Update();
             }
-            DavisSprite.Update(gameTime);
             base.Update(gameTime);
         }
    
@@ -74,26 +72,6 @@ namespace SuperDavis
             DavisSprite.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
-        }
-
-        public void CreateStaticSprite()
-        {
-            this.DavisSprite = new StaticSprite(DavisStatic, this);
-        }
-
-        public void CreateAnimateSprite()
-        {
-            this.DavisSprite = new AnimateSprite(DavisAnimated, 8, this);
-        }
-
-        public void CreateUpSprite()
-        {
-            this.DavisSprite = new UpSprite(DavisStatic, this);
-        }
-
-        public void CreateRightSprite()
-        {
-            this.DavisSprite = new RightSprite(DavisAnimated, 8, this);
         }
 
     }
