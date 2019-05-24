@@ -37,11 +37,13 @@ namespace SuperDavis.Object
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
+            Location -= new Vector2(2, 0);
             this.DavisState.Left();
         }
 
         public void DavisTurnRight()
         {
+            Location += new Vector2(2, 0);
             this.DavisState.Right();
         }
 

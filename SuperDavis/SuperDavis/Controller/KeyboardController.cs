@@ -38,7 +38,7 @@ namespace SuperDavis.Controller
                     keyCommandDict[key].Execute();
                 }
             }
-            previousKeys = currentKeys;
+            //previousKeys = currentKeys;
         }
     }
 }
