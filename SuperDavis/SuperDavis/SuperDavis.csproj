@@ -83,6 +83,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\DavisToBatCommand.cs" />
+    <Compile Include="Command\DavisToWoodyCommand.cs" />
+    <Compile Include="Command\DavisToDavisCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />
     <Compile Include="Command\DavisTurnLeftCommand.cs" />
     <Compile Include="Command\ExitCommand.cs" />

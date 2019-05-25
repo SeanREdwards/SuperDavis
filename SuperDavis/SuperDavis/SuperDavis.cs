@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interface;
@@ -44,11 +45,8 @@ namespace SuperDavis
         {
             DavisSpriteFactory.Instance.Load(Content);
             Davis = new Davis();
-            controllerList = new List<IController>()
-            {
-                {new KeyboardController(this)},
-                {new GamepadController(this)}
-            };
+            InitializeKeybinding();
+            InitializeObjectPosition();
             base.Initialize();
         }
 
@@ -76,6 +74,30 @@ namespace SuperDavis
             Davis.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        /* Helper method for initialization */
+        private void InitializeKeybinding()
+        {
+            controllerList = new List<IController>()
+            {
+                {new KeyboardController
+                (
+                    (Keys.Q, new ExitCommand(this)),
+                    (Keys.A, new DavisTurnLeftCommand(Davis)),
+                    (Keys.D, new DavisTurnRightCommand(Davis)),
+                    (Keys.Y, new DavisToDavisCommand(Davis)),
+                    (Keys.U, new DavisToWoodyCommand(Davis)),
+                    (Keys.I, new DavisToBatCommand(Davis))
+                )},
+                {new GamepadController(this)}
+            };
+
+        }
+
+        private void InitializeObjectPosition()
+        {
+            Davis.Location = new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2);
         }
 
     }

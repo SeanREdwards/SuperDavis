@@ -21,7 +21,6 @@ namespace SuperDavis.Object
             // initial state
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            Location = new Vector2(100, 100);
         }
 
         public void Update(GameTime gameTime)
@@ -37,13 +36,11 @@ namespace SuperDavis.Object
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            Location -= new Vector2(2, 0);
             this.DavisState.Left();
         }
 
         public void DavisTurnRight()
         {
-            Location += new Vector2(2, 0);
             this.DavisState.Right();
         }
 
@@ -59,17 +56,20 @@ namespace SuperDavis.Object
 
         public void DavisToDavis()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Davis;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisToWoody()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Woody;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisToBat()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Bat;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisDead()
