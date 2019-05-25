@@ -75,6 +75,9 @@
     <None Include="Content\Davis\WoodyWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Item\coin.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,14 +94,17 @@
     <Compile Include="Command\ExitCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\IController.cs" />
+    <Compile Include="Interface\IItem.cs" />
     <Compile Include="Interface\IGameObject.cs" />
     <Compile Include="Interface\IDavis.cs" />
     <Compile Include="Interface\IDavisState.cs" />
     <Compile Include="Interface\IGameState.cs" />
     <Compile Include="Interface\ISprite.cs" />
+    <Compile Include="Object\Coin.cs" />
     <Compile Include="Object\Davis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Sprite\DynamicSprite.cs" />
@@ -107,6 +113,7 @@
     <Compile Include="State\DavisState\DavisWalkLeftState.cs" />
     <Compile Include="State\DavisState\DavisWalkRightState.cs" />
     <Compile Include="State\DavisState\DavisStaticRightState.cs" />
+    <Compile Include="State\StateMachine\CoinStateMachine.cs" />
     <Compile Include="SuperDavis.cs" />
   </ItemGroup>
   <ItemGroup />

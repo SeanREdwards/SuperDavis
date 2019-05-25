@@ -16,11 +16,12 @@ namespace SuperDavis.Object
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
 
-        public Davis()
+        public Davis(Vector2 location)
         {
             // initial state
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
+            Location = location;
         }
 
         public void Update(GameTime gameTime)

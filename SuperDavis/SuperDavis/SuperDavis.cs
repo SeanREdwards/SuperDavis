@@ -21,6 +21,7 @@ namespace SuperDavis
     {
 
         public Davis Davis { get; set; }
+        public Coin Coin { get; set; }
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
@@ -43,10 +44,9 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
-            DavisSpriteFactory.Instance.Load(Content);
-            Davis = new Davis();
+            InitializaFactory();
+            InitializeObject();
             InitializeKeybinding();
-            InitializeObjectPosition();
             base.Initialize();
         }
 
@@ -64,6 +64,7 @@ namespace SuperDavis
                 controller.Update();
             }
             Davis.Update(gameTime);
+            Coin.Update(gameTime);
             base.Update(gameTime);
         }
    
@@ -72,11 +73,18 @@ namespace SuperDavis
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             Davis.Draw(spriteBatch);
+            Coin.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
 
         /* Helper method for initialization */
+        private void InitializaFactory()
+        {
+            DavisSpriteFactory.Instance.Load(Content);
+            ItemSpriteFactory.Instance.Load(Content);
+        }
+
         private void InitializeKeybinding()
         {
             controllerList = new List<IController>()
@@ -95,9 +103,10 @@ namespace SuperDavis
 
         }
 
-        private void InitializeObjectPosition()
+        private void InitializeObject()
         {
-            Davis.Location = new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2);
+            Davis = new Davis(new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2));
+            Coin = new Coin(new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2 - 100));
         }
 
     }
