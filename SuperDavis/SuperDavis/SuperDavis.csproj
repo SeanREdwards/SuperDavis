@@ -39,6 +39,43 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\BatSprites\BatLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\BlockSprites.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Content.mgcb" />
+    <None Include="Content\DavisSprites\DavisLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Davis\BatStaticLeft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -75,7 +112,31 @@
     <None Include="Content\Davis\WoodyWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\EnemySprites\Goomba.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\EnemySprites\KoopaTroopa.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Item\coin.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -94,6 +155,7 @@
     <Compile Include="Command\ExitCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Coordinate.cs" />
     <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
@@ -108,6 +170,7 @@
     <Compile Include="Object\Davis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Sprite\DynamicSprite.cs" />
+    <Compile Include="Sprite\GenerateSprite.cs" />
     <Compile Include="Sprite\StaticSprite.cs" />
     <Compile Include="State\DavisState\DavisStaticLeftState.cs" />
     <Compile Include="State\DavisState\DavisWalkLeftState.cs" />
@@ -116,7 +179,28 @@
     <Compile Include="State\StateMachine\CoinStateMachine.cs" />
     <Compile Include="SuperDavis.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\BatRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\BatRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\Blocks&amp;Pipes.png" />
+    <Content Include="Content\RawSpriteSheets\BlockSprites.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_2.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_2.png" />
+    <Content Include="Content\RawSpriteSheets\Goomba.png" />
+    <Content Include="Content\RawSpriteSheets\KoopaTroopa.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_2.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
