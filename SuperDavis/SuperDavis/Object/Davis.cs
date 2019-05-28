@@ -16,12 +16,12 @@ namespace SuperDavis.Object
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
 
-        public Davis()
+        public Davis(Vector2 location)
         {
             // initial state
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            Location = new Vector2(100, 100);
+            Location = location;
         }
 
         public void Update(GameTime gameTime)
@@ -57,17 +57,20 @@ namespace SuperDavis.Object
 
         public void DavisToDavis()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Davis;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisToWoody()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Woody;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisToBat()
         {
-            throw new NotImplementedException();
+            DavisStatus = DavisStatus.Bat;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void DavisDead()

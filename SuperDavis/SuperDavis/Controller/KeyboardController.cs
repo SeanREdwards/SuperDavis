@@ -13,19 +13,17 @@ namespace SuperDavis.Controller
     class KeyboardController : IController
     {
         private readonly Dictionary<Keys, ICommand> keyCommandDict;
-        private Keys[] previousKeys;
+        //private Keys[] previousKeys;
 
-        public KeyboardController(SuperDavis superDavisClass)
+        public KeyboardController(params(Keys key, ICommand command)[] args)
         {
-            previousKeys = new Keys[0];
-            SuperDavis superDavis = superDavisClass;
-            Davis davis = superDavis.Davis;
-            keyCommandDict = new Dictionary<Keys, ICommand>
+            //previousKeys = new Keys[0];
+
+            keyCommandDict = new Dictionary<Keys, ICommand> { };
+            foreach((Keys key, ICommand command) pairs in args)
             {
-                { Keys.Q, new ExitCommand(superDavis)},
-                { Keys.A, new DavisTurnLeftCommand(davis)},
-                { Keys.D, new DavisTurnRightCommand(davis)}
-            };
+                keyCommandDict.Add(pairs.key, pairs.command);
+            }
         }
         public void Update()
         {
@@ -33,12 +31,12 @@ namespace SuperDavis.Controller
             Keys[] currentKeys = Keyboard.GetState().GetPressedKeys();          
             foreach(Keys key in currentKeys)
             {
-                if (keyCommandDict.ContainsKey(key) && !previousKeys.Contains(key))
+                if (keyCommandDict.ContainsKey(key) /*&& !previousKeys.Contains(key)*/)
                 {
                     keyCommandDict[key].Execute();
                 }
             }
-            previousKeys = currentKeys;
+            //previousKeys = currentKeys;
         }
     }
 }
