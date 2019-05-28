@@ -91,7 +91,7 @@ namespace SuperDavis.Factory
 
         public ISprite CreateBrickBlock()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 0, 0) };
+            coordinateList = new List<Coordinate>() { new Coordinate(272, 112, 16, 16) };
             return Create(brickBlocks);
         }
     }
