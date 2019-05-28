@@ -54,7 +54,13 @@
     <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Blocks&amp;Pipes2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BlockSprites\BlockSprites.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\BrickBlock.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Content.mgcb" />
@@ -156,6 +162,7 @@
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Coordinate.cs" />
+    <Compile Include="Factory\EnemySpriteFactory.cs" />
     <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
@@ -186,6 +193,7 @@
     <Content Include="Content\RawSpriteSheets\BatRight_1.png" />
     <Content Include="Content\RawSpriteSheets\Blocks&amp;Pipes.png" />
     <Content Include="Content\RawSpriteSheets\BlockSprites.png" />
+    <Content Include="Content\RawSpriteSheets\BrickBlock.png" />
     <Content Include="Content\RawSpriteSheets\DavisLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\DavisLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\DavisLeft_2.png" />

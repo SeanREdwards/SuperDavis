@@ -49,7 +49,7 @@ namespace SuperDavis.Sprite
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = (Rectangle)spriteList[currentFrame];
+            Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width, sourceRectangle.Height);
