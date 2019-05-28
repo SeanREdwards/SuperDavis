@@ -54,33 +54,6 @@ namespace SuperDavis
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            //*Pipes*/
-            //List<Coordinate> greenPipe = new List<Coordinate>() { new Coordinate(96, 0, 32, 32) };
-            //testSprite = new GenerateSprite(blocksAndPipesTwo, greenPipe);
-
-            //List<Coordinate> yellowPipe = new List<Coordinate>() { new Coordinate(128, 0, 32, 32) };
-            //testSprite = new GenerateSprite(blocksAndPipesTwo, yellowPipe);
-
-            //List<Coordinate> bluePipe = new List<Coordinate>() { new Coordinate(160, 0, 32, 32) };
-            //testSprite = new GenerateSprite(blocksAndPipesTwo, bluePipe);
-
-
-
-            /*Items*/
-            //List<Coordinate> yoshiCoinStatic = new List<Coordinate>() { new Coordinate(0, 32, 16, 32) };
-            //testSprite = new GenerateSprite(blocksAndPipesTwo, yoshiCoinStatic);
-
-            //List<Coordinate> yoshiCoinAnimated = new List<Coordinate>() { new Coordinate(0, 32, 16, 32), new Coordinate(16, 32, 16, 32), new Coordinate(32, 32, 16, 32), new Coordinate(48, 32, 16, 32), new Coordinate(64, 32, 16, 32), new Coordinate(80, 32, 16, 32)};
-            //testSprite = new GenerateSprite(blocksAndPipesTwo, yoshiCoinAnimated);
-
-            //List<Coordinate> fireFlowerStatic = new List<Coordinate>() { new Coordinate(202, 107, 16, 16)};
-            //testSprite = new GenerateSprite(blocksAndPipes, fireFlowerStatic);
-
-            //List<Coordinate> mushroomStatic = new List<Coordinate>() { new Coordinate(182, 107, 16, 16) };
-            //testSprite = new GenerateSprite(blocksAndPipes, mushroomStatic);
-
-
         }
 
         protected override void UnloadContent() { }
