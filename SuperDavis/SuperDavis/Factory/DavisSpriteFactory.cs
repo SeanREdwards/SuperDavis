@@ -88,14 +88,14 @@ namespace SuperDavis.Factory
         public ISprite CreateDavisWalkLeftSprite()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(504, 6, 38, 73), new Coordinate(424, 6, 38, 73),
-                new Coordinate(344, 6, 35, 73), new Coordinate(264, 6, 34, 73), new Coordinate(183, 7, 35, 72) };
+                new Coordinate(344, 6, 38, 73), new Coordinate(264, 6, 38, 73), new Coordinate(184, 6, 38, 72) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisWalkRightSprite()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(258, 6, 38, 73), new Coordinate(338, 6, 38, 73),
-                new Coordinate(421, 6, 35, 73), new Coordinate(502, 6, 34, 73), new Coordinate(582, 7, 35, 72) };
+                new Coordinate(418, 6, 38, 73), new Coordinate(498, 6, 38, 73), new Coordinate(578, 6, 38, 72) };
             return Create(davisRightZero);
         }
 
