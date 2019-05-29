@@ -45,10 +45,16 @@
     <None Include="Content\BatSprites\BatLeft_1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BatSprites\BatLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BatSprites\BatRight_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BatSprites\BatRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
@@ -121,7 +127,7 @@
     <None Include="Content\EnemySprites\Goomba.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\EnemySprites\KoopaTroopa.xnb">
+    <None Include="Content\EnemySprites\KoopaTroopaGreen.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Item\coin.xnb">
@@ -222,8 +228,10 @@
   <ItemGroup>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\BatLeft_2.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_0.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\BatRight_2.png" />
     <Content Include="Content\RawSpriteSheets\Blocks&amp;Pipes.png" />
     <Content Include="Content\RawSpriteSheets\BlockSprites.png" />
     <Content Include="Content\RawSpriteSheets\BrickBlock.png" />
@@ -235,6 +243,7 @@
     <Content Include="Content\RawSpriteSheets\DavisRight_2.png" />
     <Content Include="Content\RawSpriteSheets\Goomba.png" />
     <Content Include="Content\RawSpriteSheets\KoopaTroopa.png" />
+    <Content Include="Content\RawSpriteSheets\KoopaTroopaGreen.png" />
     <Content Include="Content\RawSpriteSheets\WoodyLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\WoodyLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyLeft_2.png" />

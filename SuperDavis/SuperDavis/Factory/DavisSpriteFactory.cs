@@ -32,10 +32,13 @@ namespace SuperDavis.Factory
         private Texture2D woodyLeftOne;
         private Texture2D woodyLeftTwo;
 
+        /*Bat sprite sheet variables.*/
         private Texture2D batRightZero;
         private Texture2D batRightOne;
         private Texture2D batLeftZero;
         private Texture2D batLeftOne;
+        private Texture2D batLeftTwo;
+        private Texture2D batRightTwo;
 
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
@@ -64,6 +67,8 @@ namespace SuperDavis.Factory
             batRightOne = content.Load<Texture2D>("BatSprites/BatRight_1");
             batLeftZero = content.Load<Texture2D>("BatSprites/BatLeft_0");
             batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
+            batRightTwo = content.Load<Texture2D>("BatSprites/BatRight_2");
+            batLeftTwo = content.Load<Texture2D>("BatSprites/BatLeft_2");
         }
 
         public ISprite Create(Texture2D texture)
@@ -287,7 +292,17 @@ namespace SuperDavis.Factory
         }
 
         /*Advanced Bat Sprites*/
-            //TODO Need other sprint sheet from Jason
+        public ISprite CreateBatSpecialAttackOneLeft()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(269, 2, 39, 80), new Coordinate(181, 2, 44, 80), new Coordinate(108, 2, 25, 80)};
+            return Create(batLeftTwo);
+        }
+
+        public ISprite CreateBatSpecialAttackOneRight()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(20, 2, 39, 80), new Coordinate(103, 2, 44, 80), new Coordinate(195, 2, 25, 80) };
+            return Create(batRightTwo);
+        }
 
     }
 }
