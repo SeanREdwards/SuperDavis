@@ -17,8 +17,6 @@ namespace SuperDavis.Factory
         private Texture2D brickBlocks;
         private List<Coordinate> coordinateList;
 
-        private Texture2D coin;
-
         public static ItemSpriteFactory Instance { get; } = new ItemSpriteFactory();
 
         private ItemSpriteFactory() { }
