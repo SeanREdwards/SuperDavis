@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisWalkLeftState : IDavisState
+    class DavisCrouchLeftState : IDavisState
     {
         // Needed?
         public int Width { get; set; }
@@ -19,19 +19,19 @@ namespace SuperDavis.State.DavisState
         private IDavis davis;
         private ISprite sprite;
 
-        public DavisWalkLeftState(IDavis davis)
+        public DavisCrouchLeftState(IDavis davis)
         {
             this.davis = davis;
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisCrouchLeft();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodyCrouchLeft();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateBatCrouchLeft();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -48,7 +48,10 @@ namespace SuperDavis.State.DavisState
         {
             davis.DavisState = new DavisStaticLeftState(davis);
         }
-        public void Left() { }
+        public void Left()
+        {
+            davis.DavisState = new DavisStaticLeftState(davis);
+        }
 
         public void Right()
         {
@@ -60,10 +63,7 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisJumpLeftState(davis);
         }
 
-        public void Down()
-        {
-            davis.DavisState = new DavisCrouchLeftState(davis);
-        }
+        public void Down() { }
 
         public void Update(GameTime gameTime)
         {

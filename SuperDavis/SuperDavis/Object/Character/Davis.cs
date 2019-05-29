@@ -47,12 +47,12 @@ namespace SuperDavis.Object.Character
 
         public void DavisJump()
         {
-            throw new NotImplementedException();
+            this.DavisState.Up();
         }
 
         public void DavisCrouch()
         {
-            throw new NotImplementedException();
+            this.DavisState.Down();
         }
 
         public void DavisToDavis()

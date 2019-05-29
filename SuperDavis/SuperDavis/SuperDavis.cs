@@ -13,6 +13,7 @@ using SuperDavis.Factory;
 using SuperDavis.Interface;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Character;
+using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
 using SuperDavis.Sprite;
 
@@ -32,7 +33,8 @@ namespace SuperDavis
         public Brick Brick { get; set; }
         public QuestionBlock QuestionBlock { get; set; }
         public Pipe Pipe { get; set; }
-        
+        public Goomba Goomba { get; set; }
+        public Koopa Koopa { get; set; }
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
@@ -88,7 +90,7 @@ namespace SuperDavis
             base.Draw(gameTime);
         }
 
-        /* Helper method for initialization */
+        /* Helper methods */
         private void InitializaFactory()
         {
             DavisSpriteFactory.Instance.Load(Content);
@@ -105,6 +107,8 @@ namespace SuperDavis
                     (Keys.Q, new ExitCommand(this)),
                     (Keys.A, new DavisTurnLeftCommand(Davis)),
                     (Keys.D, new DavisTurnRightCommand(Davis)),
+                    (Keys.W, new DavisJumpCommand(Davis)),
+                    (Keys.S, new DavisCrouchCommand(Davis)),
                     (Keys.Y, new DavisToDavisCommand(Davis)),
                     (Keys.U, new DavisToWoodyCommand(Davis)),
                     (Keys.I, new DavisToBatCommand(Davis)),
@@ -131,6 +135,8 @@ namespace SuperDavis
             Brick = new Brick(new Vector2(300, 200));
             QuestionBlock = new QuestionBlock(new Vector2(400, 200));
             Pipe = new Pipe(new Vector2(500, 200));
+            Goomba = new Goomba(new Vector2(100, 300));
+            Koopa = new Koopa(new Vector2(200, 300));
         }
 
         private void UpdateObject(GameTime gameTime)
@@ -146,6 +152,8 @@ namespace SuperDavis
             Brick.Update(gameTime);
             QuestionBlock.Update(gameTime);
             Pipe.Update(gameTime);
+            Goomba.Update(gameTime);
+            Koopa.Update(gameTime);
         }
 
         private void DrawObject(SpriteBatch spriteBatch)
@@ -161,6 +169,8 @@ namespace SuperDavis
             Brick.Draw(spriteBatch);
             QuestionBlock.Draw(spriteBatch);
             Pipe.Draw(spriteBatch);
+            Goomba.Draw(spriteBatch);
+            Koopa.Draw(spriteBatch);
         }
     }
 }

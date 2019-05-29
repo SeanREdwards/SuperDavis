@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisWalkLeftState : IDavisState
+    class DavisJumpLeftState : IDavisState
     {
         // Needed?
         public int Width { get; set; }
@@ -19,19 +19,19 @@ namespace SuperDavis.State.DavisState
         private IDavis davis;
         private ISprite sprite;
 
-        public DavisWalkLeftState(IDavis davis)
+        public DavisJumpLeftState(IDavis davis)
         {
             this.davis = davis;
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisDeathLeft();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodyDeathLeft();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateBatDeathLeft();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -48,17 +48,17 @@ namespace SuperDavis.State.DavisState
         {
             davis.DavisState = new DavisStaticLeftState(davis);
         }
-        public void Left() { }
+        public void Left()
+        {
+            davis.DavisState = new DavisStaticLeftState(davis);
+        }
 
         public void Right()
         {
             davis.DavisState = new DavisStaticRightState(davis);
         }
 
-        public void Up()
-        {
-            davis.DavisState = new DavisJumpLeftState(davis);
-        }
+        public void Up() { }
 
         public void Down()
         {

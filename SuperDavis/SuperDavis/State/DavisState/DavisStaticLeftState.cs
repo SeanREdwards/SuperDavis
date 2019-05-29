@@ -57,12 +57,12 @@ namespace SuperDavis.State.DavisState
 
         public void Up()
         {
-            //davis.DavisState = new DavisJumpLeftState(davis);
+            davis.DavisState = new DavisJumpLeftState(davis);
         }
 
         public void Down()
         {
-            //davis.DavisState = new DavisCrouchLeftState(davis);
+            davis.DavisState = new DavisCrouchLeftState(davis);
         }
 
         public void Update(GameTime gameTime)
