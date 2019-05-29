@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -242,9 +244,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code Reviews\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
