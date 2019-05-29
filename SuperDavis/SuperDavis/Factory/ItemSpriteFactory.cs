@@ -17,15 +17,12 @@ namespace SuperDavis.Factory
         private Texture2D brickBlocks;
         private List<Coordinate> coordinateList;
 
-        private Texture2D coin;
-
         public static ItemSpriteFactory Instance { get; } = new ItemSpriteFactory();
 
         private ItemSpriteFactory() { }
 
         public void Load(ContentManager content)
         {
-            coin = content.Load<Texture2D>("Item/coin");
             blocksAndPipes = content.Load<Texture2D>("BlockSprites/Blocks&Pipes");
             blocksAndPipesTwo = content.Load<Texture2D>("BlockSprites/Blocks&Pipes2");
             brickBlocks = content.Load<Texture2D>("BlockSprites/BrickBlock");
@@ -34,12 +31,6 @@ namespace SuperDavis.Factory
         public ISprite Create(Texture2D texture)
         {
             return new GenerateSprite(texture, coordinateList);
-        }
-
-        /*  Coin Sprite */
-        public ISprite CreateCoinSprite()
-        {
-            return new DynamicSprite(coin, 4);
         }
 
         /*Item Sprites*/
@@ -73,7 +64,7 @@ namespace SuperDavis.Factory
         public ISprite CreateQuestionMarkBlockAnimated()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(0, 64, 16, 16), new Coordinate(16, 64, 16, 16), new Coordinate(32, 64, 16, 16),
-                new Coordinate(48, 64, 16, 16), new Coordinate(0, 0, 0, 0) };
+                new Coordinate(48, 64, 16, 16)};
             return Create(blocksAndPipesTwo);
         }
 

@@ -13,11 +13,11 @@ namespace SuperDavis.Controller
     class KeyboardController : IController
     {
         private readonly Dictionary<Keys, ICommand> keyCommandDict;
-        //private Keys[] previousKeys;
+        private Keys[] previousKeys;
 
         public KeyboardController(params(Keys key, ICommand command)[] args)
         {
-            //previousKeys = new Keys[0];
+            previousKeys = new Keys[0];
 
             keyCommandDict = new Dictionary<Keys, ICommand> { };
             foreach((Keys key, ICommand command) pairs in args)
@@ -31,12 +31,12 @@ namespace SuperDavis.Controller
             Keys[] currentKeys = Keyboard.GetState().GetPressedKeys();          
             foreach(Keys key in currentKeys)
             {
-                if (keyCommandDict.ContainsKey(key) /*&& !previousKeys.Contains(key)*/)
+                if (keyCommandDict.ContainsKey(key) && !previousKeys.Contains(key))
                 {
                     keyCommandDict[key].Execute();
                 }
             }
-            //previousKeys = currentKeys;
+            previousKeys = currentKeys;
         }
     }
 }
