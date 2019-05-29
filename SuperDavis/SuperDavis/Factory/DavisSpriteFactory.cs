@@ -88,14 +88,14 @@ namespace SuperDavis.Factory
         public ISprite CreateDavisWalkLeftSprite()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(504, 6, 38, 73), new Coordinate(424, 6, 38, 73),
-                new Coordinate(344, 6, 38, 73), new Coordinate(264, 6, 38, 73), new Coordinate(184, 6, 38, 72) };
+                new Coordinate(344, 6, 38, 73), new Coordinate(264, 6, 38, 73), new Coordinate(184, 6, 38, 73) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisWalkRightSprite()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(258, 6, 38, 73), new Coordinate(338, 6, 38, 73),
-                new Coordinate(418, 6, 38, 73), new Coordinate(498, 6, 38, 73), new Coordinate(578, 6, 38, 72) };
+                new Coordinate(418, 6, 38, 73), new Coordinate(498, 6, 38, 73), new Coordinate(578, 6, 38, 73) };
             return Create(davisRightZero);
         }
 
@@ -147,13 +147,13 @@ namespace SuperDavis.Factory
 
         public ISprite CreateWoodyWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(502, 4, 39, 75), new Coordinate(422, 4, 39, 75), new Coordinate(345, 4, 34, 75), new Coordinate(267, 5, 32, 74), new Coordinate(184, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(502, 4, 39, 75), new Coordinate(422, 4, 39, 75), new Coordinate(342, 4, 39, 75), new Coordinate(262, 4, 39, 75), new Coordinate(182, 4, 39, 75) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(259, 4, 39, 75), new Coordinate(339, 4, 39, 75), new Coordinate(421, 4, 34, 75), new Coordinate(501, 5, 32, 74), new Coordinate(581, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(259, 4, 39, 75), new Coordinate(339, 4, 39, 75), new Coordinate(419, 4, 39, 75), new Coordinate(499, 4, 39, 75), new Coordinate(579, 4, 39, 75) };
             return Create(woodyRightZero);
         }
 
