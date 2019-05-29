@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Object
+namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {

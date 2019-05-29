@@ -1,5 +1,5 @@
 ﻿using SuperDavis.Interface;
-using SuperDavis.Object.Character;
+using SuperDavis.Object.Block;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Command
 {
-    class DavisToDavisCommand : ICommand
+    class BreakBrickCommand : ICommand
     {
-        private readonly Davis davis;
-        public DavisToDavisCommand(Davis davis)
+        private Brick brick;
+        public BreakBrickCommand(Brick brick)
         {
-            this.davis = davis;
+            this.brick = brick;
         }
         public void Execute()
         {
-            davis.DavisToDavis();
+            brick.BreakBrick();
         }
     }
 }

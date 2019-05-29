@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interface;
 using SuperDavis.State.DavisState;
-using SuperDavis.State.StateMachine;
+using SuperDavis.State.ItemStateMachine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Object
+namespace SuperDavis.Object.Item
 {
     class Coin : IItem
     {
