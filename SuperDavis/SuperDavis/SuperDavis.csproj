@@ -188,7 +188,7 @@
     <Compile Include="Object\Enemy\Koopa.cs" />
     <Compile Include="Object\Enemy\Goomba.cs" />
     <Compile Include="Object\Item\Star.cs" />
-    <Compile Include="Object\Item\YoshiEgg.cs" />
+    <Compile Include="Object\Item\HealthMushroom.cs" />
     <Compile Include="Object\Item\Mushroom.cs" />
     <Compile Include="Object\Item\Flower.cs" />
     <Compile Include="Object\Item\Coin.cs" />
@@ -213,7 +213,7 @@
     <Compile Include="State\ItemBlockState\ActivatedBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\HiddenBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarStateMachine.cs" />
-    <Compile Include="State\ItemBlockState\YoshiEggStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\HealthMushroomStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomStateMachine.cs" />
     <Compile Include="State\ItemBlockState\FlowerStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinStateMachine.cs" />

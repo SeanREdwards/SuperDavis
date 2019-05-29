@@ -11,17 +11,30 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interface;
-using SuperDavis.Object;
+using SuperDavis.Object.Block;
+using SuperDavis.Object.Character;
+using SuperDavis.Object.Enemy;
+using SuperDavis.Object.Item;
 using SuperDavis.Sprite;
 
-/*Author: Jason Xu, Ryan Knighton, Jeremy Alexander and Sean Edwards */
+/*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 namespace SuperDavis
 {
     class SuperDavis : Game
     {
-
-        public Davis Davis { get; set; }
-        public Coin Coin { get; set; }
+        private Davis davis;
+        private Coin coin;
+        private Flower flower;
+        private Mushroom mushroom;
+        private HealthMushroom healthMushroom;
+        private Star star;
+        private HiddenBlock hiddenBlock;
+        private ActivatedBlock activatedBlock;
+        private Brick brick;
+        private QuestionBlock questionBlock;
+        private Pipe pipe;
+        private Goomba goomba;
+        private Koopa koopa;
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
@@ -64,9 +77,7 @@ namespace SuperDavis
             {
                 controller.Update();
             }
-            Davis.Update(gameTime);
-            Coin.Update(gameTime);
-
+            UpdateObject(gameTime);
             base.Update(gameTime);
         }
 
@@ -74,14 +85,12 @@ namespace SuperDavis
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            Davis.Draw(spriteBatch);
-            Coin.Draw(spriteBatch);
-
+            DrawObject(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
 
-        /* Helper method for initialization */
+        /* Helper methods */
         private void InitializaFactory()
         {
             DavisSpriteFactory.Instance.Load(Content);
@@ -96,12 +105,18 @@ namespace SuperDavis
                 {new KeyboardController
                 (
                     (Keys.Q, new ExitCommand(this)),
-                    (Keys.A, new DavisTurnLeftCommand(Davis)),
-                    (Keys.D, new DavisTurnRightCommand(Davis)),
-                    (Keys.Y, new DavisToDavisCommand(Davis)),
-                    (Keys.U, new DavisToWoodyCommand(Davis)),
-                    (Keys.I, new DavisToBatCommand(Davis))
-                )},
+                    (Keys.A, new DavisTurnLeftCommand(davis)),
+                    (Keys.D, new DavisTurnRightCommand(davis)),
+                    (Keys.W, new DavisJumpCommand(davis)),
+                    (Keys.S, new DavisCrouchCommand(davis)),
+                    (Keys.Y, new DavisToDavisCommand(davis)),
+                    (Keys.U, new DavisToWoodyCommand(davis)),
+                    (Keys.I, new DavisToBatCommand(davis)),
+                    (Keys.C, new ShowHiddenBlockCommand(hiddenBlock)),
+                    (Keys.X, new BreakBrickCommand(brick)),
+                    (Keys.Z, new UseQuestionBlockCommand(questionBlock))
+                )
+            },
                 {new GamepadController(this)}
             };
 
@@ -109,9 +124,53 @@ namespace SuperDavis
 
         private void InitializeObject()
         {
-            Davis = new Davis(new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2));
-            Coin = new Coin(new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2 - 100));
+            davis = new Davis(new Vector2(WindowsEdgeWidth / 2, WindowsEdgeHeight / 2));
+            flower = new Flower(new Vector2(100, 100));
+            coin = new Coin(new Vector2(200,100));
+            mushroom = new Mushroom(new Vector2(300, 100));
+            healthMushroom = new HealthMushroom(new Vector2(400, 100));
+            star = new Star(new Vector2(500, 100));
+            hiddenBlock = new HiddenBlock(new Vector2(100, 200));
+            activatedBlock = new ActivatedBlock(new Vector2(200, 200));
+            brick = new Brick(new Vector2(300, 200));
+            questionBlock = new QuestionBlock(new Vector2(400, 200));
+            pipe = new Pipe(new Vector2(500, 200));
+            goomba = new Goomba(new Vector2(100, 300));
+            koopa = new Koopa(new Vector2(200, 300));
         }
 
+        private void UpdateObject(GameTime gameTime)
+        {
+            davis.Update(gameTime);
+            flower.Update(gameTime);
+            coin.Update(gameTime);
+            mushroom.Update(gameTime);
+            healthMushroom.Update(gameTime);
+            star.Update(gameTime);
+            hiddenBlock.Update(gameTime);
+            activatedBlock.Update(gameTime);
+            brick.Update(gameTime);
+            questionBlock.Update(gameTime);
+            pipe.Update(gameTime);
+            goomba.Update(gameTime);
+            koopa.Update(gameTime);
+        }
+
+        private void DrawObject(SpriteBatch spriteBatch)
+        {
+            davis.Draw(spriteBatch);
+            flower.Draw(spriteBatch);
+            coin.Draw(spriteBatch);
+            mushroom.Draw(spriteBatch);
+            healthMushroom.Draw(spriteBatch);
+            star.Draw(spriteBatch);
+            hiddenBlock.Draw(spriteBatch);
+            activatedBlock.Draw(spriteBatch);
+            brick.Draw(spriteBatch);
+            questionBlock.Draw(spriteBatch);
+            pipe.Draw(spriteBatch);
+            goomba.Draw(spriteBatch);
+            koopa.Draw(spriteBatch);
+        }
     }
 }

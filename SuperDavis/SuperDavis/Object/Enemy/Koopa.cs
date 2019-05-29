@@ -1,37 +1,36 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
 using SuperDavis.Interface;
 using SuperDavis.State.DavisState;
-using SuperDavis.State.StateMachine;
+using SuperDavis.State.EnemyState;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Object
+namespace SuperDavis.Object.Enemy
 {
-    class Coin : IItem
+    class Koopa : IEnemy
     {
         public Vector2 Location { get; set; }
-        private readonly CoinStateMachine coinStateMachine;
+        private readonly KoopaStateMachine koopaStateMachine;
 
-        public Coin(Vector2 location)
+        public Koopa(Vector2 location)
         {
             // initial state
             Location = location;
-            coinStateMachine = new CoinStateMachine();
+            koopaStateMachine = new KoopaStateMachine();
         }
 
         public void Update(GameTime gameTime)
         {
-            coinStateMachine.Update(gameTime);
+            koopaStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-           coinStateMachine.Draw(spriteBatch, Location);
+            koopaStateMachine.Draw(spriteBatch, Location);
         }
     }
 }

@@ -8,15 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.State.StateMachine
+namespace SuperDavis.State.ItemStateMachine
 {
-    class CoinStateMachine
+    class MushroomStateMachine
     {
         private readonly ISprite sprite;
 
-        public CoinStateMachine()
+        public MushroomStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateCoinSprite();
+            sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

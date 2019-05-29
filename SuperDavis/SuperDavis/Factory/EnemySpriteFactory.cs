@@ -30,42 +30,43 @@ namespace SuperDavis.Factory
         }
 
         /*Goomba Sprite Generation.*/
-        public ISprite CreateGoomba()
+        public ISprite CreateGoomba(Texture2D texture)
         {
-            return new GenerateSprite(goombaSheet, coordinateList);
+            return new GenerateSprite(texture, coordinateList);
         }
 
         public ISprite CreateStaticGoomba()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(2, 2, 16, 18) };
-            return CreateGoomba();
+            coordinateList = new List<Coordinate>() { new Coordinate(2, 0, 16, 18) };
+            return CreateGoomba(goombaSheet);
         }
 
         public ISprite CreateGoombaMovingRight()
         {
 
-            coordinateList = new List<Coordinate>() { new Coordinate(1, 41, 17, 20), new Coordinate(41, 41, 18, 19), new Coordinate(80, 42, 20, 18),
-                new Coordinate(121, 41, 18, 19), new Coordinate(161, 41, 18, 20), new Coordinate(202, 41, 16, 19) };
-            return CreateGoomba();
+            coordinateList = new List<Coordinate>() { new Coordinate(1, 40, 17, 20), new Coordinate(41, 40, 18, 20), new Coordinate(80, 40, 20, 20),
+                new Coordinate(121, 40, 18, 20), new Coordinate(161, 40, 18, 20), new Coordinate(202, 40, 16, 20) };
+            return CreateGoomba(goombaSheet);
         }
 
         public ISprite CreateGoombaJump()
         {
             coordinateList =  new List<Coordinate>() { new Coordinate(1, 41, 17, 20), new Coordinate(41, 41, 18, 19), new Coordinate(80, 42, 20, 18),
                 new Coordinate(121, 41, 18, 19), new Coordinate(161, 41, 18, 20), new Coordinate(202, 41, 16, 19) };
-            return CreateGoomba();
+            return CreateGoomba(goombaSheet);
         }
 
         public ISprite CreateGoombaFlateStatic()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 91, 20, 9) };
-            return CreateGoomba();
+            coordinateList = new List<Coordinate>() { new Coordinate(0, 66, 20, 20) };
+            return CreateGoomba(goombaSheet);
         }
 
         public ISprite CreateGoombaFlatMovingRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(38, 86, 24, 9), new Coordinate(77, 86, 25, 9), new Coordinate(118, 86, 24, 9), new Coordinate(157, 87, 26, 8), new Coordinate(196, 87, 28, 7) };
-            return CreateGoomba();
+            coordinateList = new List<Coordinate>() { new Coordinate(38, 75, 24, 20), new Coordinate(77, 75, 25, 20), new Coordinate(118, 75, 24, 20),
+                new Coordinate(157, 75, 26, 20), new Coordinate(196, 75, 28, 20) };
+            return CreateGoomba(goombaSheet);
         }
     }
 }

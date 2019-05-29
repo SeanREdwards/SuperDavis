@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisWalkLeftState : IDavisState
+    class DavisCrouchRightState : IDavisState
     {
         // Needed?
         public int Width { get; set; }
@@ -19,19 +19,19 @@ namespace SuperDavis.State.DavisState
         private IDavis davis;
         private ISprite sprite;
 
-        public DavisWalkLeftState(IDavis davis)
+        public DavisCrouchRightState(IDavis davis)
         {
             this.davis = davis;
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisCrouchRight();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodyCrouchRight();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatWalkLeftSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateBatCrouchRight();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -46,9 +46,12 @@ namespace SuperDavis.State.DavisState
 
         public void Static()
         {
+            davis.DavisState = new DavisStaticRightState(davis);
+        }
+        public void Left()
+        {
             davis.DavisState = new DavisStaticLeftState(davis);
         }
-        public void Left() { }
 
         public void Right()
         {
@@ -57,13 +60,10 @@ namespace SuperDavis.State.DavisState
 
         public void Up()
         {
-            davis.DavisState = new DavisJumpLeftState(davis);
+            davis.DavisState = new DavisJumpRightState(davis);
         }
 
-        public void Down()
-        {
-            davis.DavisState = new DavisCrouchLeftState(davis);
-        }
+        public void Down() { }
 
         public void Update(GameTime gameTime)
         {

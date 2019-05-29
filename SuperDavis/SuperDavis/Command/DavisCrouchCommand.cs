@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Command
 {
-    class DavisToDavisCommand : ICommand
+    class DavisCrouchCommand : ICommand
     {
         private readonly Davis davis;
-        public DavisToDavisCommand(Davis davis)
+        public DavisCrouchCommand(Davis davis)
         {
             this.davis = davis;
         }
         public void Execute()
         {
-            davis.DavisToDavis();
+            davis.DavisCrouch();
         }
     }
 }

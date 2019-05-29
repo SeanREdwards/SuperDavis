@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Object
+namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
@@ -47,12 +47,12 @@ namespace SuperDavis.Object
 
         public void DavisJump()
         {
-            throw new NotImplementedException();
+            this.DavisState.Up();
         }
 
         public void DavisCrouch()
         {
-            throw new NotImplementedException();
+            this.DavisState.Down();
         }
 
         public void DavisToDavis()

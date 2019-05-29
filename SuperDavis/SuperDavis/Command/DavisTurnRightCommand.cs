@@ -1,5 +1,5 @@
 ﻿using SuperDavis.Interface;
-using SuperDavis.Object;
+using SuperDavis.Object.Character;
 using System;
 using System.Collections.Generic;
 using System.Linq;
