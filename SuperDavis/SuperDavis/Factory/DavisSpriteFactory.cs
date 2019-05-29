@@ -1,4 +1,9 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿/*
+ * DavisSpriteFactory.cs
+ * @Author Sean Edwards & Jason Xu
+ * Factory class to create character sprites.
+ */
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interface;
 using SuperDavis.Sprite;

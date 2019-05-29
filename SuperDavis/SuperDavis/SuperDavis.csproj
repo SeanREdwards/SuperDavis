@@ -41,6 +41,7 @@
     <None Include="App.config" />
     <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
     <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
+    <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
