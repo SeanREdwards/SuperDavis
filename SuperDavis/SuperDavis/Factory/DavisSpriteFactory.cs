@@ -87,15 +87,15 @@ namespace SuperDavis.Factory
 
         public ISprite CreateDavisWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(504, 6, 38, 73), new Coordinate(424, 6, 38, 73),
-                new Coordinate(344, 6, 35, 73), new Coordinate(264, 6, 34, 73), new Coordinate(183, 7, 35, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(504, 0, 38, 80), new Coordinate(424, 0, 38, 80),
+                new Coordinate(344, 0, 35, 80), new Coordinate(264, 0, 34, 80), new Coordinate(183, 0, 35, 80) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(258, 6, 38, 73), new Coordinate(338, 6, 38, 73),
-                new Coordinate(421, 6, 35, 73), new Coordinate(502, 6, 34, 73), new Coordinate(582, 7, 35, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(258, 0, 38, 80), new Coordinate(338, 0, 38, 80),
+                new Coordinate(421, 0, 35, 80), new Coordinate(502, 0, 34, 80), new Coordinate(582, 0, 35, 80) };
             return Create(davisRightZero);
         }
 
@@ -108,6 +108,18 @@ namespace SuperDavis.Factory
         public ISprite CreateDavisCrouchRight()
         {
            coordinateList = new List<Coordinate>() { new Coordinate(24, 480, 36, 80) };
+            return Create(davisRightZero);
+        }
+
+        public ISprite CreateDavisJumpLeft()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(575, 480, 45, 80) };
+            return Create(davisLeftZero);
+        }
+
+        public ISprite CreateDavisJumpRight()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(180, 480, 45, 80) };
             return Create(davisRightZero);
         }
 
@@ -147,13 +159,13 @@ namespace SuperDavis.Factory
 
         public ISprite CreateWoodyWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(502, 4, 39, 75), new Coordinate(422, 4, 39, 75), new Coordinate(345, 4, 34, 75), new Coordinate(267, 5, 32, 74), new Coordinate(184, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(502, 0, 39, 80), new Coordinate(422, 0, 39, 80), new Coordinate(345, 0, 34, 80), new Coordinate(267, 0, 32, 80), new Coordinate(184, 0, 35, 80) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(259, 4, 39, 75), new Coordinate(339, 4, 39, 75), new Coordinate(421, 4, 34, 75), new Coordinate(501, 5, 32, 74), new Coordinate(581, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(259, 0, 39, 75), new Coordinate(339, 0, 39, 80), new Coordinate(421, 0, 34, 80), new Coordinate(501, 0, 32, 80), new Coordinate(581, 0, 35, 80) };
             return Create(woodyRightZero);
         }
 
@@ -166,6 +178,18 @@ namespace SuperDavis.Factory
         public ISprite CreateWoodyCrouchRight()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(23, 480, 33, 80) };
+            return Create(woodyRightZero);
+        }
+
+        public ISprite CreateWoodyJumpLeft()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(578, 480, 46, 80) };
+            return Create(woodyLeftZero);
+        }
+
+        public ISprite CreateWoodyJumpRight()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(176, 480, 46, 80) };
             return Create(woodyRightZero);
         }
 
@@ -184,7 +208,7 @@ namespace SuperDavis.Factory
         /*Advanced Woody Sprites*/
         public ISprite CreateWoodySpecialAttackOneLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(739,80, 52, 80), new Coordinate(662, 80, 47, 80), new Coordinate(580, 80, 53, 80),
+            coordinateList = new List<Coordinate>() { new Coordinate(739, 80, 52, 80), new Coordinate(662, 80, 47, 80), new Coordinate(580, 80, 53, 80),
                 new Coordinate(495, 80, 58, 80), new Coordinate(414, 80, 59, 80), new Coordinate(337, 80, 49, 80), new Coordinate(257, 80, 49, 80),
                 new Coordinate(177, 80, 49, 80), new Coordinate(97, 80, 49, 80)};
             return Create(woodyLeftTwo);
@@ -195,7 +219,7 @@ namespace SuperDavis.Factory
             coordinateList = new List<Coordinate>() { new Coordinate(9, 80, 52, 80), new Coordinate(91, 80, 47, 80), new Coordinate(167, 80, 53, 80),
                 new Coordinate(247, 80, 58, 80), new Coordinate(327, 80, 59, 80), new Coordinate(414, 80, 49, 80), new Coordinate(494, 80, 49, 80),
                 new Coordinate(574, 80, 49, 80), new Coordinate(654, 80, 49, 80)};
-            return Create(woodyLeftTwo);
+            return Create(woodyRightTwo);
         }
 
         /*Basic Bat Sprites*/
@@ -235,6 +259,18 @@ namespace SuperDavis.Factory
         public ISprite CreateBatCrouchRight()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(20, 480, 44, 80) };
+            return Create(batRightZero);
+        }
+
+        public ISprite CreateBatJumpLeft()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(581, 480, 39, 80) };
+            return Create(batLeftZero);
+        }
+
+        public ISprite CreateBatJumpRight()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(180, 480, 39, 80) };
             return Create(batRightZero);
         }
 

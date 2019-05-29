@@ -16,7 +16,7 @@ namespace SuperDavis.State.ItemStateMachine
 
         public HealthMushroomStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateMushroom();
+            sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

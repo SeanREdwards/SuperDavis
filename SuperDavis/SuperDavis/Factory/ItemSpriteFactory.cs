@@ -34,6 +34,31 @@ namespace SuperDavis.Factory
         }
 
         /*Item Sprites*/
+
+        public ISprite CreateYellowCoinStatic()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 16, 16) };
+            return Create(blocksAndPipesTwo);
+        }
+
+        public ISprite CreateYellowCoinAnimated()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 16, 16), new Coordinate(16, 0, 16, 16), new Coordinate(32, 0, 16, 16), new Coordinate(48, 0, 16, 16) };
+            return Create(blocksAndPipesTwo);
+        }
+
+        public ISprite CreateStar()
+        {
+            coordinateList = new List<Coordinate>() {new Coordinate(224, 106, 15, 16)};
+            return Create(blocksAndPipes);
+        }
+
+        public ISprite CreateYoshiEgg()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(286, 105, 14, 16) };
+            return Create(blocksAndPipes);
+        }
+
         public ISprite CreateYoshiCoinStatic()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(0, 32, 16, 32) };
@@ -54,7 +79,13 @@ namespace SuperDavis.Factory
             return Create(blocksAndPipes);
         }
 
-        public ISprite CreateMushroom()
+        public ISprite CreateRedMushroom()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(182, 107, 16, 16) };
+            return Create(blocksAndPipes);
+        }
+
+        public ISprite CreateGreenMushroom()
         {
             coordinateList = new List<Coordinate>() { new Coordinate(182, 107, 16, 16) };
             return Create(blocksAndPipes);
@@ -86,15 +117,37 @@ namespace SuperDavis.Factory
             return Create(brickBlocks);
         }
 
-        //TODO
+        public ISprite SpinBlockStatic()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(0, 80, 16, 16) };
+            return Create(brickBlocks);
+        }
+
+        public ISprite SpinBlockAnimated()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(0, 80, 16, 16), new Coordinate(16, 80, 16, 16), new Coordinate(32, 80, 16, 16),
+                new Coordinate(48, 80, 16, 16) };
+            return Create(brickBlocks);
+        }
+
         //*Pipes*/
-        //List<Coordinate> greenPipe = new List<Coordinate>() { new Coordinate(96, 0, 32, 32) };
-        //testSprite = new GenerateSprite(blocksAndPipesTwo, greenPipe);
 
-        //List<Coordinate> yellowPipe = new List<Coordinate>() { new Coordinate(128, 0, 32, 32) };
-        //testSprite = new GenerateSprite(blocksAndPipesTwo, yellowPipe);
+        public ISprite CreateGreenPipe()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(96, 0, 32, 32) };
+            return Create(blocksAndPipesTwo);
+        }
 
-        //List<Coordinate> bluePipe = new List<Coordinate>() { new Coordinate(160, 0, 32, 32) };
-        //testSprite = new GenerateSprite(blocksAndPipesTwo, bluePipe);
+        public ISprite CreateYellowPipe()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(128, 0, 32, 32) };
+            return Create(blocksAndPipesTwo);
+        }
+
+        public ISprite CreateBluePipe()
+        {
+            coordinateList = new List<Coordinate>() { new Coordinate(160, 0, 32, 32) };
+            return Create(blocksAndPipesTwo);
+        }
     }
 }
