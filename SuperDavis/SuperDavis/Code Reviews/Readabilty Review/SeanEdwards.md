@@ -4,7 +4,11 @@
 4. DavisWalkRightState.cs
 5. Jason Xu
 6. 10 minutes
-7. The entirity of the DavisWalkRightState code was very readable but there are a few confusing points
+7. 
+Initially in my code review I was mainly trying to look for duplicated code, excessive use of literals,
+and inappropriate intimacy between classes.
+
+The entirity of the DavisWalkRightState code was very readable but there are a few confusing points
 that should probably be addressed during the refactor. First the name of the class is somewhat confusing.
 DavisWalkRightState.cs makes sense if there is only one characer: "Davis". This could create issues
 in the future if numerous characters are added and calling a generic character a Davis object when this
@@ -45,5 +49,5 @@ the code itself is laid out well so that in just a glance. I can tell that once 
 the class instantiates a character sprite for each of the characters currently available and each method in this class 
 assigns a state to said character.
 
-I like the comments mentioning "Needed?" because I can tell Jason is thinking ahead to future tasks, i.e. needing to know a sprite's
-width/height for collisions iin later sprints etc.
+I like the comments mentioning "Needed?" & "TBD" because I can tell Jason is thinking ahead to future tasks, i.e. needing to know a sprite's
+width/height for collisions in later sprints etc.
