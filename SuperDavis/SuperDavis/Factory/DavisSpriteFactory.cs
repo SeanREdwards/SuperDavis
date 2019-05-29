@@ -75,126 +75,126 @@ namespace SuperDavis.Factory
         public ISprite CreateDavisStaticLeftSprite()
         {
 
-            coordinateList = new List<Coordinate>() { new Coordinate(744, 7, 37, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(744, 0, 37, 80) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisStaticRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(19, 7, 37, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(19, 0, 37, 80) };
             return Create(davisRightZero);
         }
 
         public ISprite CreateDavisWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(504, 6, 38, 73), new Coordinate(424, 6, 38, 73),
-                new Coordinate(344, 6, 35, 73), new Coordinate(264, 6, 34, 73), new Coordinate(183, 7, 35, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(504, 0, 38, 80), new Coordinate(424, 0, 38, 80),
+                new Coordinate(344, 0, 35, 80), new Coordinate(264, 0, 34, 80), new Coordinate(183, 0, 35, 80) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(258, 6, 38, 73), new Coordinate(338, 6, 38, 73),
-                new Coordinate(421, 6, 35, 73), new Coordinate(502, 6, 34, 73), new Coordinate(582, 7, 35, 72) };
+            coordinateList = new List<Coordinate>() { new Coordinate(258, 0, 38, 80), new Coordinate(338, 0, 38, 80),
+                new Coordinate(421, 0, 35, 80), new Coordinate(502, 0, 34, 80), new Coordinate(582, 0, 35, 80) };
             return Create(davisRightZero);
         }
 
         public ISprite CreateDavisCrouchLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(740, 509, 36, 50) };
+            coordinateList = new List<Coordinate>() { new Coordinate(740, 480, 36, 80) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisCrouchRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(24, 509, 36, 50) };
+           coordinateList = new List<Coordinate>() { new Coordinate(24, 480, 36, 80) };
             return Create(davisRightZero);
         }
 
         public ISprite CreateDavisDeathLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(401, 366, 79, 32) };
+            coordinateList = new List<Coordinate>() { new Coordinate(401, 320, 79, 80) };
             return Create(davisLeftZero);
         }
 
         public ISprite CreateDavisDeathRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(320, 366, 79, 32) };
+            coordinateList = new List<Coordinate>() { new Coordinate(320, 320, 79, 80) };
             return Create(davisRightZero);
         }
 
         /*Advanced Davis Sprites*/
         public ISprite CreateDavisSpecialAttackOneRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(18, 7, 38, 72), new Coordinate(97, 8, 41, 71), new Coordinate(181, 9, 48, 70),
-                new Coordinate(261, 8, 56, 71), new Coordinate(332, 9, 66, 70), new Coordinate(421, 8, 42, 71), new Coordinate(501, 8, 42, 71),
-                new Coordinate(581, 10, 55, 69), new Coordinate(655, 9, 63, 70), new Coordinate(725, 10, 55, 69) };
+            coordinateList = new List<Coordinate>() { new Coordinate(18, 0, 38, 80), new Coordinate(97, 0, 41, 80), new Coordinate(181, 0, 48, 80),
+                new Coordinate(261, 0, 56, 80), new Coordinate(332, 0, 66, 80), new Coordinate(421, 0, 42, 80), new Coordinate(501, 0, 42, 80),
+                new Coordinate(581, 0, 55, 80), new Coordinate(655, 0, 63, 80), new Coordinate(725, 0, 55, 80) };
             return Create(davisRightTwo);
         }
 
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(742, 5, 39, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(742, 0, 39, 80) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyStaticRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(19, 5, 39, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(19, 0, 39, 80) };
             return Create(woodyRightZero);
         }
 
         public ISprite CreateWoodyWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(502, 4, 39, 75), new Coordinate(422, 4, 39, 75), new Coordinate(345, 4, 34, 75), new Coordinate(267, 5, 32, 74), new Coordinate(184, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(502, 0, 39, 80), new Coordinate(422, 0, 39, 80), new Coordinate(345, 0, 34, 80), new Coordinate(267, 0, 32, 80), new Coordinate(184, 0, 35, 80) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(259, 4, 39, 75), new Coordinate(339, 4, 39, 75), new Coordinate(421, 4, 34, 75), new Coordinate(501, 5, 32, 74), new Coordinate(581, 5, 35, 74) };
+            coordinateList = new List<Coordinate>() { new Coordinate(259, 0, 39, 80), new Coordinate(339, 0, 39, 80), new Coordinate(421, 0, 34, 80), new Coordinate(501, 0, 32, 80), new Coordinate(581, 0, 35, 80) };
             return Create(woodyRightZero);
         }
 
         public ISprite CreateWoodyCrouchLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(744, 505, 33, 54) };
+            coordinateList = new List<Coordinate>() { new Coordinate(744, 480, 33, 80) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyCrouchRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(23, 505, 33, 54) };
+            coordinateList = new List<Coordinate>() { new Coordinate(23, 480, 33, 80) };
             return Create(woodyRightZero);
         }
 
         public ISprite CreateWoodyDeathLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(401, 363, 78, 34) };
+            coordinateList = new List<Coordinate>() { new Coordinate(401, 320, 78, 80) };
             return Create(woodyLeftZero);
         }
 
         public ISprite CreateWoodyDeathRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(321, 363, 78, 34) };
+            coordinateList = new List<Coordinate>() { new Coordinate(321, 320, 78, 80) };
             return Create(woodyRightZero);
         }
 
         /*Advanced Woody Sprites*/
         public ISprite CreateWoodySpecialAttackOneLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(739, 89, 52, 70), new Coordinate(662, 88, 47, 71), new Coordinate(580, 100, 53, 59),
-                new Coordinate(495, 103, 58, 56), new Coordinate(414, 104, 59, 55), new Coordinate(337, 81, 49, 68), new Coordinate(257, 81, 49, 68),
-                new Coordinate(177, 81, 49, 68), new Coordinate(97, 81, 49, 68)};
+            coordinateList = new List<Coordinate>() { new Coordinate(739,80, 52, 80), new Coordinate(662, 80, 47, 80), new Coordinate(580, 80, 53, 80),
+                new Coordinate(495, 80, 58, 80), new Coordinate(414, 80, 59, 80), new Coordinate(337, 80, 49, 80), new Coordinate(257, 80, 49, 80),
+                new Coordinate(177, 80, 49, 80), new Coordinate(97, 80, 49, 80)};
             return Create(woodyLeftTwo);
         }
 
         public ISprite CreateWoodySpecialAttackOneRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(9, 89, 52, 70), new Coordinate(91, 88, 47, 71), new Coordinate(167, 100, 53, 59),
-                new Coordinate(247, 103, 58, 56), new Coordinate(327, 104, 59, 55), new Coordinate(414, 81, 49, 68), new Coordinate(494, 81, 49, 68),
-                new Coordinate(574, 81, 49, 68), new Coordinate(654, 81, 49, 68)};
+            coordinateList = new List<Coordinate>() { new Coordinate(9, 80, 52, 80), new Coordinate(91, 80, 47, 80), new Coordinate(167, 80, 53, 80),
+                new Coordinate(247, 80, 58, 80), new Coordinate(327, 80, 59, 80), new Coordinate(414, 80, 49, 80), new Coordinate(494, 80, 49, 80),
+                new Coordinate(574, 80, 49, 80), new Coordinate(654, 80, 49, 80)};
             return Create(woodyLeftTwo);
         }
 
@@ -202,51 +202,51 @@ namespace SuperDavis.Factory
         public ISprite CreateBatStaticLeftSprite()
         {
 
-            coordinateList = new List<Coordinate>() { new Coordinate(736, 498, 44, 61) };
+            coordinateList = new List<Coordinate>() { new Coordinate(744, 0, 44, 80) };
             return Create(batLeftZero);
         }
 
         public ISprite CreateBatStaticRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(20, 498, 44, 61) };
+            coordinateList = new List<Coordinate>() { new Coordinate(20, 0, 44, 80 )};
             return Create(batRightZero);
         }
 
         public ISprite CreateBatWalkLeftSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(503, 6, 38, 73), new Coordinate(424, 6, 37, 73),
-                new Coordinate(344, 6, 37, 73), new Coordinate(264, 6, 37, 73), new Coordinate(183, 6, 38, 73)  };
+            coordinateList = new List<Coordinate>() { new Coordinate(503, 0, 38, 80), new Coordinate(424, 0, 37, 80),
+                new Coordinate(344, 0, 37, 80), new Coordinate(264, 0, 37, 80), new Coordinate(183, 0, 38, 80)  };
             return Create(batLeftZero);
         }
 
         public ISprite CreateBatWalkRightSprite()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(259, 6, 38, 73), new Coordinate(339, 6, 37, 73),
-                new Coordinate(419, 6, 37, 73), new Coordinate(499, 6, 37, 73) };
+            coordinateList = new List<Coordinate>() { new Coordinate(259, 0, 38, 80), new Coordinate(339, 0, 37, 80),
+                new Coordinate(419, 0, 37, 80), new Coordinate(499, 0, 37, 80) };
             return Create(batRightZero);
         }
 
         public ISprite CreateBatCrouchLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(736, 498, 44, 61) };
+            coordinateList = new List<Coordinate>() { new Coordinate(736, 480, 44, 80) };
             return Create(batLeftZero);
         }
 
         public ISprite CreateBatCrouchRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(20, 498, 44, 61) };
+            coordinateList = new List<Coordinate>() { new Coordinate(20, 480, 44, 80) };
             return Create(batRightZero);
         }
 
         public ISprite CreateBatDeathLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(403, 366, 77, 31) };
+            coordinateList = new List<Coordinate>() { new Coordinate(403, 320, 77, 80) };
             return Create(batLeftZero);
         }
 
         public ISprite CreateBatDeathRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(320, 366, 77, 31) };
+            coordinateList = new List<Coordinate>() { new Coordinate(320, 320, 77, 80) };
             return Create(batRightZero);
         }
 
