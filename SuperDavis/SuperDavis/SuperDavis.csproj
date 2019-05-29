@@ -45,10 +45,16 @@
     <None Include="Content\BatSprites\BatLeft_1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BatSprites\BatLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BatSprites\BatRight_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BatSprites\BatRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
@@ -121,7 +127,7 @@
     <None Include="Content\EnemySprites\Goomba.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\EnemySprites\KoopaTroopa.xnb">
+    <None Include="Content\EnemySprites\KoopaTroopaGreen.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Item\coin.xnb">
