@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class HealthMushroomStateMachine
+    class YoshiEggStateMachine
     {
         private readonly ISprite sprite;
 
-        public HealthMushroomStateMachine()
+        public YoshiEggStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            sprite = ItemSpriteFactory.Instance.CreateYoshiEgg();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

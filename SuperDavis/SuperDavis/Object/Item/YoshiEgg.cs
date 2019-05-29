@@ -12,26 +12,26 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Item
 {
-    class HealthMushroom : IItem
+    class YoshiEgg : IItem
     {
         public Vector2 Location { get; set; }
-        private readonly HealthMushroomStateMachine healthMushroomStateMachine;
+        private readonly YoshiEggStateMachine yoshiEggStateMachine;
 
-        public HealthMushroom(Vector2 location)
+        public YoshiEgg(Vector2 location)
         {
             // initial state
             Location = location;
-            healthMushroomStateMachine = new HealthMushroomStateMachine();
+            yoshiEggStateMachine = new YoshiEggStateMachine();
         }
 
         public void Update(GameTime gameTime)
         {
-            healthMushroomStateMachine.Update(gameTime);
+            yoshiEggStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            healthMushroomStateMachine.Draw(spriteBatch, Location);
+            yoshiEggStateMachine.Draw(spriteBatch, Location);
         }
     }
 }

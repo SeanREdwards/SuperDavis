@@ -26,7 +26,7 @@ namespace SuperDavis
         private Coin coin;
         private Flower flower;
         private Mushroom mushroom;
-        private HealthMushroom healthMushroom;
+        private YoshiEgg yoshiEgg;
         private Star star;
         private HiddenBlock hiddenBlock;
         private ActivatedBlock activatedBlock;
@@ -128,7 +128,7 @@ namespace SuperDavis
             flower = new Flower(new Vector2(100, 100));
             coin = new Coin(new Vector2(200,100));
             mushroom = new Mushroom(new Vector2(300, 100));
-            healthMushroom = new HealthMushroom(new Vector2(400, 100));
+            yoshiEgg = new YoshiEgg(new Vector2(400, 100));
             star = new Star(new Vector2(500, 100));
             hiddenBlock = new HiddenBlock(new Vector2(100, 200));
             activatedBlock = new ActivatedBlock(new Vector2(200, 200));
@@ -145,7 +145,7 @@ namespace SuperDavis
             flower.Update(gameTime);
             coin.Update(gameTime);
             mushroom.Update(gameTime);
-            healthMushroom.Update(gameTime);
+            yoshiEgg.Update(gameTime);
             star.Update(gameTime);
             hiddenBlock.Update(gameTime);
             activatedBlock.Update(gameTime);
@@ -162,7 +162,7 @@ namespace SuperDavis
             flower.Draw(spriteBatch);
             coin.Draw(spriteBatch);
             mushroom.Draw(spriteBatch);
-            healthMushroom.Draw(spriteBatch);
+            yoshiEgg.Draw(spriteBatch);
             star.Draw(spriteBatch);
             hiddenBlock.Draw(spriteBatch);
             activatedBlock.Draw(spriteBatch);
