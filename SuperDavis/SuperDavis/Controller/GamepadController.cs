@@ -10,20 +10,18 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Controller
 {
+    /* The Gamepad Controller is not needed, but still save for the future */
     class GamepadController : IController
     {
-        private Dictionary<Buttons, ICommand> buttonCommandDict;
+        private readonly Dictionary<Buttons, ICommand> buttonCommandDict;
 
         public GamepadController(SuperDavis superDavisClass)
         {
             SuperDavis superDavis = superDavisClass;
             buttonCommandDict = new Dictionary<Buttons, ICommand>
             {
-                { Buttons.Start, new ExitCommand(superDavis)},
-                { Buttons.A, new StaticCommand(superDavis)},
-                { Buttons.B, new AnimateCommand(superDavis)},
-                { Buttons.X, new UpAndDownCommand(superDavis)},
-                { Buttons.Y, new LeftAndRightCommand(superDavis)}
+                { Buttons.Start, new ExitCommand(superDavis)}
+                // TBD
             };
         }
         public void Update()

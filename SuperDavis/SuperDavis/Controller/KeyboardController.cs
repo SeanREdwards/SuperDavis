@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using SuperDavis.Command;
 using SuperDavis.Interface;
+using SuperDavis.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,18 @@ namespace SuperDavis.Controller
 {
     class KeyboardController : IController
     {
-        private Dictionary<Keys, ICommand> keyCommandDict;
+        private readonly Dictionary<Keys, ICommand> keyCommandDict;
         private Keys[] previousKeys;
 
-        public KeyboardController(SuperDavis superDavisClass)
+        public KeyboardController(params(Keys key, ICommand command)[] args)
         {
             previousKeys = new Keys[0];
-            SuperDavis superDavis = superDavisClass;
-            keyCommandDict = new Dictionary<Keys, ICommand>
+
+            keyCommandDict = new Dictionary<Keys, ICommand> { };
+            foreach((Keys key, ICommand command) pairs in args)
             {
-                { Keys.Q, new ExitCommand(superDavis)},
-                { Keys.W, new StaticCommand(superDavis)},
-                { Keys.E, new AnimateCommand(superDavis)},
-                { Keys.R, new UpAndDownCommand(superDavis)},
-                { Keys.T, new LeftAndRightCommand(superDavis)}
-            };
+                keyCommandDict.Add(pairs.key, pairs.command);
+            }
         }
         public void Update()
         {

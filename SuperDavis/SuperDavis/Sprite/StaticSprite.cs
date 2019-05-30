@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Sprite
 {
-
+    /* Save it for the future, it's the old version of our sprite machine */
     class StaticSprite : ISprite
     {
         public int Width { get; set; }

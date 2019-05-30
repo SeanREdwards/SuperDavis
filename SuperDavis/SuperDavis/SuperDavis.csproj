@@ -39,18 +39,123 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\Davis\BatStaticLeft.xnb" />
-    <None Include="Content\Davis\BatStaticRight.xnb" />
-    <None Include="Content\Davis\BatWalkLeft.xnb" />
-    <None Include="Content\Davis\BatWalkRight.xnb" />
-    <None Include="Content\Davis\DavisStaticLeft.xnb" />
-    <None Include="Content\Davis\DavisStaticRight.xnb" />
-    <None Include="Content\Davis\DavisWalkLeft.xnb" />
-    <None Include="Content\Davis\DavisWalkRight.xnb" />
-    <None Include="Content\Davis\WoodyStaticLeft.xnb" />
-    <None Include="Content\Davis\WoodyStaticRight.xnb" />
-    <None Include="Content\Davis\WoodyWalkLeft.xnb" />
-    <None Include="Content\Davis\WoodyWalkRight.xnb" />
+    <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
+    <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
+    <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
+    <None Include="Content\BatSprites\BatLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BatSprites\BatRight_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\Blocks&amp;Pipes2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\BlockSprites.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BlockSprites\BrickBlock.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Content.mgcb" />
+    <None Include="Content\DavisSprites\DavisLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisRight_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\BatStaticLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\BatStaticRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\BatWalkLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\BatWalkRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\DavisStaticLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\DavisStaticRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\DavisWalkLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\DavisWalkRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\WoodyStaticLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\WoodyStaticRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\WoodyWalkLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Davis\WoodyWalkRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\EnemySprites\Goomba.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\EnemySprites\KoopaTroopaGreen.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Item\coin.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyLeft_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_0.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyRight_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -59,21 +164,95 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\AnimateCommand.cs" />
+    <Compile Include="Command\DavisCrouchCommand.cs" />
+    <Compile Include="Command\DavisToBatCommand.cs" />
+    <Compile Include="Command\DavisToWoodyCommand.cs" />
+    <Compile Include="Command\DavisToDavisCommand.cs" />
+    <Compile Include="Command\BreakBrickCommand.cs" />
+    <Compile Include="Command\DavisJumpCommand.cs" />
+    <Compile Include="Command\ResetCommand.cs" />
+    <Compile Include="Command\UseQuestionBlockCommand.cs" />
+    <Compile Include="Command\ShowHiddenBlockCommand.cs" />
+    <Compile Include="Command\DavisTurnRightCommand.cs" />
+    <Compile Include="Command\DavisTurnLeftCommand.cs" />
     <Compile Include="Command\ExitCommand.cs" />
-    <Compile Include="Command\LeftAndRightCommand.cs" />
-    <Compile Include="Command\StaticCommand.cs" />
-    <Compile Include="Command\UpAndDownCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Factory\EnemySpriteFactory.cs" />
+    <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
     <Compile Include="Interface\ICommand.cs" />
     <Compile Include="Interface\IController.cs" />
+    <Compile Include="Interface\IBlock.cs" />
+    <Compile Include="Interface\IEnemy.cs" />
+    <Compile Include="Interface\IItem.cs" />
+    <Compile Include="Interface\IGameObject.cs" />
+    <Compile Include="Interface\IDavis.cs" />
+    <Compile Include="Interface\IDavisState.cs" />
+    <Compile Include="Interface\IGameState.cs" />
     <Compile Include="Interface\ISprite.cs" />
+    <Compile Include="Object\Block\Pipe.cs" />
+    <Compile Include="Object\Block\QuestionBlock.cs" />
+    <Compile Include="Object\Block\Brick.cs" />
+    <Compile Include="Object\Block\ActivatedBlock.cs" />
+    <Compile Include="Object\Block\HiddenBlock.cs" />
+    <Compile Include="Object\Enemy\Koopa.cs" />
+    <Compile Include="Object\Enemy\Goomba.cs" />
+    <Compile Include="Object\Item\Star.cs" />
+    <Compile Include="Object\Item\Mushroom.cs" />
+    <Compile Include="Object\Item\Flower.cs" />
+    <Compile Include="Object\Item\Coin.cs" />
+    <Compile Include="Object\Character\Davis.cs" />
+    <Compile Include="Object\Item\YoshiEgg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Sprite\DynamicSprite.cs" />
+    <Compile Include="Sprite\GenerateSprite.cs" />
     <Compile Include="Sprite\StaticSprite.cs" />
+    <Compile Include="State\DavisState\DavisCrouchLeftState.cs" />
+    <Compile Include="State\DavisState\DavisCrouchRightState.cs" />
+    <Compile Include="State\DavisState\DavisJumpLeftState.cs" />
+    <Compile Include="State\DavisState\DavisStaticLeftState.cs" />
+    <Compile Include="State\DavisState\DavisWalkLeftState.cs" />
+    <Compile Include="State\DavisState\DavisJumpRightState.cs" />
+    <Compile Include="State\DavisState\DavisWalkRightState.cs" />
+    <Compile Include="State\DavisState\DavisStaticRightState.cs" />
+    <Compile Include="State\EnemyState\KoopaStateMachine.cs" />
+    <Compile Include="State\EnemyState\GoombaStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\PipeStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\QuestionBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\BrickStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\ActivatedBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\HiddenBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\StarStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\MushroomStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\FlowerStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\CoinStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\YoshiEggStateMachine.cs" />
     <Compile Include="SuperDavis.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\BatRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\BatRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\Blocks&amp;Pipes.png" />
+    <Content Include="Content\RawSpriteSheets\BlockSprites.png" />
+    <Content Include="Content\RawSpriteSheets\BrickBlock.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\DavisLeft_2.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\DavisRight_2.png" />
+    <Content Include="Content\RawSpriteSheets\Goomba.png" />
+    <Content Include="Content\RawSpriteSheets\KoopaTroopa.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_0.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_1.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyLeft_2.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_0.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
+    <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
