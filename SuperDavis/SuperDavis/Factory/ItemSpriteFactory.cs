@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interface;
 using SuperDavis.Sprite;
@@ -15,7 +16,7 @@ namespace SuperDavis.Factory
         private Texture2D blocksAndPipes;
         private Texture2D blocksAndPipesTwo;
         private Texture2D brickBlocks;
-        private List<Coordinate> coordinateList;
+        private List<Rectangle> coordinateList;
 
         public static ItemSpriteFactory Instance { get; } = new ItemSpriteFactory();
 
@@ -37,96 +38,90 @@ namespace SuperDavis.Factory
 
         public ISprite CreateYellowCoinStatic()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16) };
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateYellowCoinAnimated()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 16, 16), new Coordinate(16, 0, 16, 16), new Coordinate(32, 0, 16, 16), new Coordinate(48, 0, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16), new Rectangle(16, 0, 16, 16), new Rectangle(32, 0, 16, 16), new Rectangle(48, 0, 16, 16) };
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateStar()
         {
-            coordinateList = new List<Coordinate>() {new Coordinate(224, 106, 15, 16)};
+            coordinateList = new List<Rectangle>() {new Rectangle(224, 106, 15, 16)};
             return Create(blocksAndPipes);
         }
 
         public ISprite CreateYoshiEgg()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(286, 105, 14, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(286, 105, 14, 16) };
             return Create(blocksAndPipes);
         }
 
         public ISprite CreateYoshiCoinStatic()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 32, 16, 32) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 32, 16, 32) };
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateYoshiCoinAnimated()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 32, 16, 32), new Coordinate(16, 32, 16, 32),
-                new Coordinate(32, 32, 16, 32), new Coordinate(48, 32, 16, 32), new Coordinate(64, 32, 16, 32),
-                new Coordinate(80, 32, 16, 32)};
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 32, 16, 32), new Rectangle(16, 32, 16, 32),
+                new Rectangle(32, 32, 16, 32), new Rectangle(48, 32, 16, 32), new Rectangle(64, 32, 16, 32),
+                new Rectangle(80, 32, 16, 32)};
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateFireFlower()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(202, 107, 16, 16)};
+            coordinateList = new List<Rectangle>() { new Rectangle(202, 107, 16, 16)};
             return Create(blocksAndPipes);
         }
 
         public ISprite CreateRedMushroom()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(182, 107, 16, 16) };
-            return Create(blocksAndPipes);
-        }
-
-        public ISprite CreateGreenMushroom()
-        {
-            coordinateList = new List<Coordinate>() { new Coordinate(182, 107, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(182, 107, 16, 16) };
             return Create(blocksAndPipes);
         }
 
         /*Block Sprites*/
         public ISprite CreateQuestionMarkBlockAnimated()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 64, 16, 16), new Coordinate(16, 64, 16, 16), new Coordinate(32, 64, 16, 16),
-                new Coordinate(48, 64, 16, 16)};
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 64, 16, 16), new Rectangle(16, 64, 16, 16), new Rectangle(32, 64, 16, 16),
+                new Rectangle(48, 64, 16, 16)};
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateActivatedBlock()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(49, 107, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(49, 107, 16, 16) };
             return Create(blocksAndPipes);
         }
 
         public ISprite CreateEmptyBlock()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 0, 0, 0) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 0, 0) };
             return Create(blocksAndPipes);
         }
 
         public ISprite CreateBrickBlock()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(272, 112, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(272, 112, 16, 16) };
             return Create(brickBlocks);
         }
 
         public ISprite SpinBlockStatic()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 80, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 80, 16, 16) };
             return Create(brickBlocks);
         }
 
         public ISprite SpinBlockAnimated()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 80, 16, 16), new Coordinate(16, 80, 16, 16), new Coordinate(32, 80, 16, 16),
-                new Coordinate(48, 80, 16, 16) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 80, 16, 16), new Rectangle(16, 80, 16, 16), new Rectangle(32, 80, 16, 16),
+                new Rectangle(48, 80, 16, 16) };
             return Create(brickBlocks);
         }
 
@@ -134,19 +129,19 @@ namespace SuperDavis.Factory
 
         public ISprite CreateGreenPipe()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(96, 0, 32, 32) };
+            coordinateList = new List<Rectangle>() { new Rectangle(96, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateYellowPipe()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(128, 0, 32, 32) };
+            coordinateList = new List<Rectangle>() { new Rectangle(128, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
         }
 
         public ISprite CreateBluePipe()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(160, 0, 32, 32) };
+            coordinateList = new List<Rectangle>() { new Rectangle(160, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
         }
     }

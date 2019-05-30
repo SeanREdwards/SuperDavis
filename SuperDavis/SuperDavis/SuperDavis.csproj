@@ -178,7 +178,6 @@
     <Compile Include="Command\ExitCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
-    <Compile Include="Coordinate.cs" />
     <Compile Include="Factory\EnemySpriteFactory.cs" />
     <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
@@ -206,9 +205,7 @@
     <Compile Include="Object\Character\Davis.cs" />
     <Compile Include="Object\Item\YoshiEgg.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Sprite\DynamicSprite.cs" />
     <Compile Include="Sprite\GenerateSprite.cs" />
-    <Compile Include="Sprite\StaticSprite.cs" />
     <Compile Include="State\DavisState\DavisCrouchLeftState.cs" />
     <Compile Include="State\DavisState\DavisCrouchRightState.cs" />
     <Compile Include="State\DavisState\DavisJumpLeftState.cs" />

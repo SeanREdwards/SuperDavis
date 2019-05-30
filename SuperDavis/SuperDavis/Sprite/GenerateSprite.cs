@@ -21,12 +21,10 @@ namespace SuperDavis.Sprite
         private double currentTime;
         private const double frameTime = 0.08d;
 
-        public GenerateSprite(Texture2D texture, List<Coordinate> frameCoords)
+        public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)
         {
             this.texture = texture;
-            spriteList = new List<Rectangle>();
-            for (int i = 0; i < frameCoords.Count; i++)
-                spriteList.Add(new Rectangle(frameCoords[i].X, frameCoords[i].Y, frameCoords[i].Width, frameCoords[i].Height));
+            spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
             Width = texture.Width / totalFrames;
