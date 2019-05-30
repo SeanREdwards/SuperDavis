@@ -65,6 +65,11 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisCrouchRightState(davis);
         }
 
+        public void Death()
+        {
+            davis.DavisState = new DavisDeathRightState(davis);
+        }
+
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);

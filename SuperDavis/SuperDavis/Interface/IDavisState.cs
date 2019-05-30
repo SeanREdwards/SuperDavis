@@ -16,5 +16,6 @@ namespace SuperDavis.Interface
         void Right();
         void Up();
         void Down();
+        void Death();
     }
 }

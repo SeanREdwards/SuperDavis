@@ -63,7 +63,15 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisStaticRightState(davis);
         }
 
-        public void Down() { }
+        public void Down()
+        {
+            //Do Nothing.
+        }
+
+        public void Death()
+        {
+            davis.DavisState = new DavisDeathRightState(davis);
+        }
 
         public void Update(GameTime gameTime)
         {

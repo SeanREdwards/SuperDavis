@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisWalkRightState : IDavisState
+    class DavisDeathRightState : IDavisState
     {
         // Needed?
         public int Width { get; set; }
@@ -19,19 +19,19 @@ namespace SuperDavis.State.DavisState
         private IDavis davis;
         private ISprite sprite;
 
-        public DavisWalkRightState(IDavis davis)
+        public DavisDeathRightState(IDavis davis)
         {
             this.davis = davis;
-            switch(davis.DavisStatus)
+            switch (davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisWalkRightSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisDeathRight();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyWalkRightSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodyDeathRight();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatWalkRightSprite();
+                    sprite = DavisSpriteFactory.Instance.CreateBatDeathRight();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -46,28 +46,31 @@ namespace SuperDavis.State.DavisState
 
         public void Static()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            davis.DavisState = new DavisStaticLeftState(davis);
         }
         public void Left()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            //Do Nothing.
         }
 
-        public void Right() { }
+        public void Right()
+        {
+            //Do Nothing.
+        }
 
         public void Up()
         {
-            davis.DavisState = new DavisJumpRightState(davis);
+            //Do Nothing.
         }
 
         public void Down()
         {
-            davis.DavisState = new DavisCrouchRightState(davis);
+            //Do Nothing
         }
 
         public void Death()
         {
-            davis.DavisState = new DavisDeathRightState(davis);
+            //Do Nothing
         }
 
         public void Update(GameTime gameTime)

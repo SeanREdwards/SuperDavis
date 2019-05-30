@@ -164,7 +164,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
+    <Compile Include="Command\DavisDeathCommand.cs" />
     <Compile Include="Command\DavisToBatCommand.cs" />
     <Compile Include="Command\DavisToWoodyCommand.cs" />
     <Compile Include="Command\DavisToDavisCommand.cs" />
@@ -208,6 +210,8 @@
     <Compile Include="Sprite\GenerateSprite.cs" />
     <Compile Include="State\DavisState\DavisCrouchLeftState.cs" />
     <Compile Include="State\DavisState\DavisCrouchRightState.cs" />
+    <Compile Include="State\DavisState\DavisDeathLeftState.cs" />
+    <Compile Include="State\DavisState\DavisDeathRight.cs" />
     <Compile Include="State\DavisState\DavisJumpLeftState.cs" />
     <Compile Include="State\DavisState\DavisStaticLeftState.cs" />
     <Compile Include="State\DavisState\DavisWalkLeftState.cs" />

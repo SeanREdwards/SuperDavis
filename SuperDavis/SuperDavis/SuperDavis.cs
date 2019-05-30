@@ -131,7 +131,8 @@ namespace SuperDavis
                     (Keys.Left, new DavisTurnLeftCommand(davis)),
                     (Keys.Right, new DavisTurnRightCommand(davis)),
                     (Keys.Up, new DavisJumpCommand(davis)),
-                    (Keys.Down, new DavisCrouchCommand(davis))
+                    (Keys.Down, new DavisCrouchCommand(davis)),
+                    (Keys.O, new DavisDeathCommand(davis))
                 )}
             };
         }

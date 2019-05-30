@@ -19,6 +19,6 @@ namespace SuperDavis.Interface
         void DavisToWoody();
         void DavisToBat();
         //void DavisToInvincible();
-        void DavisDead();
+        void DavisDeath();
     }
 }
