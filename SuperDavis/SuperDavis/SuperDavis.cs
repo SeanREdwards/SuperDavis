@@ -127,7 +127,11 @@ namespace SuperDavis
                     (Keys.I, new DavisToBatCommand(davis)),
                     (Keys.C, new ShowHiddenBlockCommand(hiddenBlock)),
                     (Keys.X, new BreakBrickCommand(brick)),
-                    (Keys.Z, new UseQuestionBlockCommand(questionBlock))
+                    (Keys.Z, new UseQuestionBlockCommand(questionBlock)),
+                    (Keys.Left, new DavisTurnLeftCommand(davis)),
+                    (Keys.Right, new DavisTurnRightCommand(davis)),
+                    (Keys.Up, new DavisJumpCommand(davis)),
+                    (Keys.Down, new DavisCrouchCommand(davis))
                 )}
             };
         }
