@@ -1,4 +1,5 @@
-﻿1. Sean Edwards
+﻿# Readability code review - Sean Edwards
+1. Sean Edwards
 2. 5/29/2019
 3. Sprint 2
 4. DavisWalkRightState.cs
