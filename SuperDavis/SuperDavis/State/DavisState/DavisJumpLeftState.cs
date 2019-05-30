@@ -25,13 +25,13 @@ namespace SuperDavis.State.DavisState
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisDeathLeft();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisJumpLeft();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyDeathLeft();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodyJumpLeft();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatDeathLeft();
+                    sprite = DavisSpriteFactory.Instance.CreateBatJumpLeft();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -62,7 +62,7 @@ namespace SuperDavis.State.DavisState
 
         public void Down()
         {
-            davis.DavisState = new DavisCrouchLeftState(davis);
+            davis.DavisState = new DavisStaticLeftState(davis);
         }
 
         public void Update(GameTime gameTime)

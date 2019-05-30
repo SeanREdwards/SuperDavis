@@ -168,6 +168,7 @@
     <Compile Include="Command\DavisToDavisCommand.cs" />
     <Compile Include="Command\BreakBrickCommand.cs" />
     <Compile Include="Command\DavisJumpCommand.cs" />
+    <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\UseQuestionBlockCommand.cs" />
     <Compile Include="Command\ShowHiddenBlockCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />

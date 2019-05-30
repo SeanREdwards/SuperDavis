@@ -58,9 +58,8 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisStaticRightState(davis);
         }
 
-        public void Up()
-        {
-            davis.DavisState = new DavisJumpLeftState(davis);
+        public void Up() {
+            davis.DavisState = new DavisStaticLeftState(davis);
         }
 
         public void Down() {

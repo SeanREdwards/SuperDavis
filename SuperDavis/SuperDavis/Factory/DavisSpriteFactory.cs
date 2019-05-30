@@ -15,10 +15,10 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.Factory
 {
+    /* Character Sprites credited for http://www.lf2.net/ */
     class DavisSpriteFactory
 
     {
-
         private List<Coordinate> coordinateList;
 
         /*Davis sprite sheet variables.*/

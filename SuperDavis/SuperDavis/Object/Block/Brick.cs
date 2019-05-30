@@ -15,28 +15,28 @@ namespace SuperDavis.Object.Block
     class Brick : IBlock
     {
         public Vector2 Location { get; set; }
-        private BrickStateMachine brickStateMachine;
+        public BrickStateMachine BrickStateMachine;
 
         public Brick(Vector2 location)
         {
             // initial state
             Location = location;
-            brickStateMachine = new BrickStateMachine(false);
+            BrickStateMachine = new BrickStateMachine(false);
         }
 
         public void Update(GameTime gameTime)
         {
-            brickStateMachine.Update(gameTime);
+            BrickStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            brickStateMachine.Draw(spriteBatch, Location);
+            BrickStateMachine.Draw(spriteBatch, Location);
         }
 
         public void BreakBrick()
         {
-            brickStateMachine = new BrickStateMachine(true);
+            BrickStateMachine = new BrickStateMachine(true);
         }
     }
 }

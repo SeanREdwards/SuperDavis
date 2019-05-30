@@ -15,28 +15,28 @@ namespace SuperDavis.Object.Block
     class HiddenBlock : IBlock
     {
         public Vector2 Location { get; set; }
-        private HiddenBlockStateMachine hiddenBlockStateMachine;
+        public HiddenBlockStateMachine HiddenBlockStateMachine;
 
         public HiddenBlock(Vector2 location)
         {
             // initial state
             Location = location;
-            hiddenBlockStateMachine = new HiddenBlockStateMachine(true);
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
         }
 
         public void Update(GameTime gameTime)
         {
-            hiddenBlockStateMachine.Update(gameTime);
+            HiddenBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            hiddenBlockStateMachine.Draw(spriteBatch, Location);
+            HiddenBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void UnhiddenBlock()
         {
-            hiddenBlockStateMachine = new HiddenBlockStateMachine(false);
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(false);
         }
 
     }

@@ -15,28 +15,28 @@ namespace SuperDavis.Object.Block
     class QuestionBlock : IBlock
     {
         public Vector2 Location { get; set; }
-        private QuestionBlockStateMachine questionBlockStateMachine;
+        public QuestionBlockStateMachine QuestionBlockStateMachine;
 
         public QuestionBlock(Vector2 location)
         {
             // initial state
             Location = location;
-            questionBlockStateMachine = new QuestionBlockStateMachine(false);
+            QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
         }
 
         public void Update(GameTime gameTime)
         {
-            questionBlockStateMachine.Update(gameTime);
+            QuestionBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            questionBlockStateMachine.Draw(spriteBatch, Location);
+            QuestionBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void UseQuestionBlock()
         {
-            questionBlockStateMachine = new QuestionBlockStateMachine(true);
+            QuestionBlockStateMachine = new QuestionBlockStateMachine(true);
         }
     }
 }

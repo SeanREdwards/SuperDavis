@@ -16,6 +16,8 @@ using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
 using SuperDavis.Sprite;
+using SuperDavis.State.DavisState;
+using SuperDavis.State.ItemStateMachine;
 
 /*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 namespace SuperDavis
@@ -90,6 +92,16 @@ namespace SuperDavis
             base.Draw(gameTime);
         }
 
+        /* Reset Game*/
+        public void ResetGame()
+        {
+            davis.DavisStatus = DavisStatus.Davis;
+            davis.DavisState = new DavisStaticRightState(davis);
+            hiddenBlock.HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
+            brick.BrickStateMachine = new BrickStateMachine(false);
+            questionBlock.QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+        }
+
         /* Helper methods */
         private void InitializaFactory()
         {
@@ -105,6 +117,7 @@ namespace SuperDavis
                 {new KeyboardController
                 (
                     (Keys.Q, new ExitCommand(this)),
+                    (Keys.R, new ResetCommand(this)),
                     (Keys.A, new DavisTurnLeftCommand(davis)),
                     (Keys.D, new DavisTurnRightCommand(davis)),
                     (Keys.W, new DavisJumpCommand(davis)),

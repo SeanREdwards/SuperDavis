@@ -16,7 +16,7 @@ namespace SuperDavis.State.ItemStateMachine
 
         public StarStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            sprite = ItemSpriteFactory.Instance.CreateStar();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

@@ -16,7 +16,7 @@ namespace SuperDavis.State.EnemyState
 
         public KoopaStateMachine()
         {
-            sprite = EnemySpriteFactory.Instance.CreateGoombaFlatMovingRight();
+            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

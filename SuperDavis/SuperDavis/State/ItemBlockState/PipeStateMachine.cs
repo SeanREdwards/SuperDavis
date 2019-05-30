@@ -16,7 +16,7 @@ namespace SuperDavis.State.ItemStateMachine
 
         public PipeStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateYoshiCoinStatic();
+            sprite = ItemSpriteFactory.Instance.CreateGreenPipe();
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
