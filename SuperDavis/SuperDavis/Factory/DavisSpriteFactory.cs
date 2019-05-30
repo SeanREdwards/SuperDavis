@@ -147,6 +147,14 @@ namespace SuperDavis.Factory
         }
 
         /*Advanced Davis Sprites*/
+        public ISprite CreateDavisSpecialAttackOneLeft()
+        {
+            coordinateList = new List<Rectangle>() { new Rectangle(720, 0, 80, 80), new Rectangle(640, 0, 80, 80), new Rectangle(560, 0, 80, 80),
+                new Rectangle(480, 0, 80, 80), new Rectangle(400, 0, 80, 80), new Rectangle(320, 0, 80, 80), new Rectangle(240, 0, 80, 80),
+                new Rectangle(160, 0, 80, 80), new Rectangle(80, 0, 80, 80), new Rectangle(0, 0, 80, 80) };
+            return Create(davisLeftTwo);
+        }
+
         public ISprite CreateDavisSpecialAttackOneRight()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(18, 0, 38, 80), new Rectangle(97, 0, 41, 80), new Rectangle(181, 0, 48, 80),
@@ -154,6 +162,7 @@ namespace SuperDavis.Factory
                 new Rectangle(581, 0, 55, 80), new Rectangle(655, 0, 63, 80), new Rectangle(725, 0, 55, 80) };
             return Create(davisRightTwo);
         }
+
 
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisCrouchRightState : IDavisState
+    class DavisSpecialAttackRightState : IDavisState
     {
         // Needed?
         public int Width { get; set; }
@@ -19,19 +19,19 @@ namespace SuperDavis.State.DavisState
         private IDavis davis;
         private ISprite sprite;
 
-        public DavisCrouchRightState(IDavis davis)
+        public DavisSpecialAttackRightState(IDavis davis)
         {
             this.davis = davis;
-            switch(davis.DavisStatus)
+            switch (davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisCrouchRight();
+                    sprite = DavisSpriteFactory.Instance.CreateDavisSpecialAttackOneRight();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyCrouchRight();
+                    sprite = DavisSpriteFactory.Instance.CreateWoodySpecialAttackOneRight();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatCrouchRight();
+                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
                     break;
                 case DavisStatus.Invincible:
                     // TBD;
@@ -58,14 +58,11 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisStaticRightState(davis);
         }
 
-        public void Up()
-        {
-            davis.DavisState = new DavisStaticRightState(davis);
-        }
+        public void Up() { }
 
         public void Down()
         {
-            //Do Nothing.
+            davis.DavisState = new DavisStaticRightState(davis);
         }
 
         public void Death()
@@ -75,7 +72,7 @@ namespace SuperDavis.State.DavisState
 
         public void SpecialAttack()
         {
-            davis.DavisState = new DavisSpecialAttackRightState(davis);
+            //Do Nothing.
         }
 
         public void Update(GameTime gameTime)

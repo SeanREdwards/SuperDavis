@@ -73,6 +73,11 @@ namespace SuperDavis.State.DavisState
             //Do Nothing
         }
 
+        public void SpecialAttack()
+        {
+            //Do Nothing.
+        }
+
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);

@@ -77,5 +77,10 @@ namespace SuperDavis.Object.Character
         {
             this.DavisState.Death();
         }
+
+        public void DavisSpecialAttack()
+        {
+            this.DavisState.SpecialAttack();
+        }
     }
 }

@@ -17,5 +17,6 @@ namespace SuperDavis.Interface
         void Up();
         void Down();
         void Death();
+        void SpecialAttack();
     }
 }

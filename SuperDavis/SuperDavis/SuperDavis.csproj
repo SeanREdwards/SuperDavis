@@ -173,6 +173,7 @@
     <Compile Include="Command\BreakBrickCommand.cs" />
     <Compile Include="Command\DavisJumpCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
+    <Compile Include="Command\DavisSpecialAttackCommand.cs" />
     <Compile Include="Command\UseQuestionBlockCommand.cs" />
     <Compile Include="Command\ShowHiddenBlockCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />
@@ -213,6 +214,8 @@
     <Compile Include="State\DavisState\DavisDeathLeftState.cs" />
     <Compile Include="State\DavisState\DavisDeathRight.cs" />
     <Compile Include="State\DavisState\DavisJumpLeftState.cs" />
+    <Compile Include="State\DavisState\DavisSpecialAttackLeftState.cs" />
+    <Compile Include="State\DavisState\DavisSpecialAttackRightState.cs" />
     <Compile Include="State\DavisState\DavisStaticLeftState.cs" />
     <Compile Include="State\DavisState\DavisWalkLeftState.cs" />
     <Compile Include="State\DavisState\DavisJumpRightState.cs" />

@@ -20,5 +20,6 @@ namespace SuperDavis.Interface
         void DavisToBat();
         //void DavisToInvincible();
         void DavisDeath();
+        void DavisSpecialAttack();
     }
 }
