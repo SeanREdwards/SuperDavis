@@ -128,11 +128,8 @@ namespace SuperDavis
                     (Keys.C, new ShowHiddenBlockCommand(hiddenBlock)),
                     (Keys.X, new BreakBrickCommand(brick)),
                     (Keys.Z, new UseQuestionBlockCommand(questionBlock))
-                )
-            },
-                {new GamepadController(this)}
+                )}
             };
-
         }
 
         private void InitializeObject()
