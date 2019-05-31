@@ -19,7 +19,13 @@
                     (Keys.I, new DavisToBatCommand(davis)),
                     (Keys.C, new ShowHiddenBlockCommand(hiddenBlock)),
                     (Keys.X, new BreakBrickCommand(brick)),
-                    (Keys.Z, new UseQuestionBlockCommand(questionBlock))
+                    (Keys.Z, new UseQuestionBlockCommand(questionBlock)),
+					(Keys.Left, new DavisTurnLeftCommand(davis)),
+                    (Keys.Right, new DavisTurnRightCommand(davis)),
+                    (Keys.Up, new DavisJumpCommand(davis)),
+                    (Keys.Down, new DavisCrouchCommand(davis)),
+                    (Keys.O, new DavisDeathCommand(davis)),
+                    (Keys.P, new DavisSpecialAttackCommand(davis))
                 )}
             };
 	```
@@ -35,3 +41,9 @@
 	* C : Show hidden block
 	* X : Break brick 
 	* Z : Make question block used
+	* Left : Make Character Turn left (Walk left if it is facing left)
+	* Right : Make Character Turn right (Walk right if it is facing right)
+	* Up : Make Character Jump (To static if it is crouching)
+	* Down : Make Character Crouch (To static if it is jumping)
+	* O : Make Character Dead.
+	* P : Make Character perform special attack.

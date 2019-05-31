@@ -155,7 +155,6 @@
     <None Include="Content\WoodySprites\WoodyRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Organizational Notes\3902Sprint2CumulativeFlowReflection.pdf" />
     <None Include="README.md" />
     <None Include="packages.config" />
   </ItemGroup>
