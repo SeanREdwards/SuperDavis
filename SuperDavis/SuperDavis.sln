@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDavis", "SuperDavis\Su
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organizational Notes", "Organizational Notes", "{584627DD-30C7-4336-8AF5-5B992115C21F}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\3902Sprint2CumulativeFlowReflection.pdf = ..\..\..\..\3902Sprint2CumulativeFlowReflection.pdf
+		..\..\..\..\Downloads\3902Sprint2CumulativeFlowReflection.pdf = ..\..\..\..\Downloads\3902Sprint2CumulativeFlowReflection.pdf
 		SuperDavis\README.md = SuperDavis\README.md
 	EndProjectSection
 EndProject
