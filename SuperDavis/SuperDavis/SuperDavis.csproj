@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,6 +41,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
     <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
     <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
@@ -155,7 +157,6 @@
     <None Include="Content\WoodySprites\WoodyRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="README.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -164,13 +165,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
+    <Compile Include="Command\DavisDeathCommand.cs" />
     <Compile Include="Command\DavisToBatCommand.cs" />
     <Compile Include="Command\DavisToWoodyCommand.cs" />
     <Compile Include="Command\DavisToDavisCommand.cs" />
     <Compile Include="Command\BreakBrickCommand.cs" />
     <Compile Include="Command\DavisJumpCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
+    <Compile Include="Command\DavisSpecialAttackCommand.cs" />
     <Compile Include="Command\UseQuestionBlockCommand.cs" />
     <Compile Include="Command\ShowHiddenBlockCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />
@@ -178,7 +182,6 @@
     <Compile Include="Command\ExitCommand.cs" />
     <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
-    <Compile Include="Coordinate.cs" />
     <Compile Include="Factory\EnemySpriteFactory.cs" />
     <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
@@ -206,12 +209,14 @@
     <Compile Include="Object\Character\Davis.cs" />
     <Compile Include="Object\Item\YoshiEgg.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Sprite\DynamicSprite.cs" />
     <Compile Include="Sprite\GenerateSprite.cs" />
-    <Compile Include="Sprite\StaticSprite.cs" />
     <Compile Include="State\DavisState\DavisCrouchLeftState.cs" />
     <Compile Include="State\DavisState\DavisCrouchRightState.cs" />
+    <Compile Include="State\DavisState\DavisDeathLeftState.cs" />
+    <Compile Include="State\DavisState\DavisDeathRight.cs" />
     <Compile Include="State\DavisState\DavisJumpLeftState.cs" />
+    <Compile Include="State\DavisState\DavisSpecialAttackLeftState.cs" />
+    <Compile Include="State\DavisState\DavisSpecialAttackRightState.cs" />
     <Compile Include="State\DavisState\DavisStaticLeftState.cs" />
     <Compile Include="State\DavisState\DavisWalkLeftState.cs" />
     <Compile Include="State\DavisState\DavisJumpRightState.cs" />

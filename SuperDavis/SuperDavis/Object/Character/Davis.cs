@@ -73,9 +73,14 @@ namespace SuperDavis.Object.Character
             DavisState = new DavisStaticRightState(this);
         }
 
-        public void DavisDead()
+        public void DavisDeath()
         {
-            throw new NotImplementedException();
+            this.DavisState.Death();
+        }
+
+        public void DavisSpecialAttack()
+        {
+            this.DavisState.SpecialAttack();
         }
     }
 }

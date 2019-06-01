@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SuperDavis.Controller
 {
     /* The Gamepad Controller is not needed, but still save for the future */
-    class GamepadController : IController
+    /*class GamepadController : IController
     {
         private readonly Dictionary<Buttons, ICommand> buttonCommandDict;
 
@@ -36,5 +36,5 @@ namespace SuperDavis.Controller
                 }
             }
         }
-    }
+    }*/
 }

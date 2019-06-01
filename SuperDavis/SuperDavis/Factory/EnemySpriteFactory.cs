@@ -3,6 +3,7 @@
  * @Author Sean Edwards
  * Class to create a sprite factory allowing for the streamlining of enemy sprites.
  */
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interface;
@@ -19,7 +20,7 @@ namespace SuperDavis.Factory
     {
         private Texture2D goombaSheet;
         private Texture2D koopaGreenSheet;
-        private List<Coordinate> coordinateList;
+        private List<Rectangle> coordinateList;
 
         public static EnemySpriteFactory Instance { get; } = new EnemySpriteFactory();
 
@@ -37,49 +38,49 @@ namespace SuperDavis.Factory
             return new GenerateSprite(texture, coordinateList);
         }
 
-        public ISprite CreateStaticGoomba()
+        /*public ISprite CreateStaticGoomba()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(2, 0, 16, 18) };
+            coordinateList = new List<Rectangle>() { new Rectangle(2, 0, 16, 18) };
             return Create(goombaSheet);
-        }
+        }*/
 
         public ISprite CreateGoombaMovingRight()
         {
 
-            coordinateList = new List<Coordinate>() { new Coordinate(1, 40, 17, 20), new Coordinate(41, 40, 18, 20), new Coordinate(80, 40, 20, 20),
-                new Coordinate(121, 40, 18, 20), new Coordinate(161, 40, 18, 20), new Coordinate(202, 40, 16, 20) };
+            coordinateList = new List<Rectangle>() { new Rectangle(1, 40, 17, 20), new Rectangle(41, 40, 18, 20), new Rectangle(80, 40, 20, 20),
+                new Rectangle(121, 40, 18, 20), new Rectangle(161, 40, 18, 20), new Rectangle(202, 40, 16, 20) };
             return Create(goombaSheet);
         }
 
-        public ISprite CreateGoombaJump()
+        /*public ISprite CreateGoombaJump()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(1, 41, 17, 20), new Coordinate(41, 41, 18, 19), new Coordinate(80, 42, 20, 18),
-                new Coordinate(121, 41, 18, 19), new Coordinate(161, 41, 18, 20), new Coordinate(202, 41, 16, 19) };
+            coordinateList = new List<Rectangle>() { new Rectangle(1, 41, 17, 20), new Rectangle(41, 41, 18, 19), new Rectangle(80, 42, 20, 18),
+                new Rectangle(121, 41, 18, 19), new Rectangle(161, 41, 18, 20), new Rectangle(202, 41, 16, 19) };
             return Create(goombaSheet);
-        }
+        }*/
 
-        public ISprite CreateGoombaFlateStatic()
+        /*public ISprite CreateGoombaFlateStatic()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(0, 66, 20, 20) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 66, 20, 20) };
             return Create(goombaSheet);
-        }
+        }*/
 
-        public ISprite CreateGoombaFlatMovingRight()
+        /*public ISprite CreateGoombaFlatMovingRight()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(38, 75, 24, 20), new Coordinate(77, 75, 25, 20), new Coordinate(118, 75, 24, 20),
-                new Coordinate(157, 75, 26, 20), new Coordinate(196, 75, 28, 20) };
+            coordinateList = new List<Rectangle>() { new Rectangle(38, 75, 24, 20), new Rectangle(77, 75, 25, 20), new Rectangle(118, 75, 24, 20),
+                new Rectangle(157, 75, 26, 20), new Rectangle(196, 75, 28, 20) };
             return Create(goombaSheet);
-        }
+        }*/
 
-        public ISprite CreateKoopaGreenStaticLeft()
+        /*public ISprite CreateKoopaGreenStaticLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(167, 0, 22, 30) };
+            coordinateList = new List<Rectangle>() { new Rectangle(167, 0, 22, 30) };
             return Create(koopaGreenSheet);
-        }
+        }*/
 
         public ISprite CreateKoopaGreenShellAnimatedLeft()
         {
-            coordinateList = new List<Coordinate>() { new Coordinate(10, 37, 16, 15), new Coordinate(10, 67, 16, 15), new Coordinate(10, 97, 16, 15), new Coordinate(10, 127, 16, 15) };
+            coordinateList = new List<Rectangle>() { new Rectangle(10, 37, 16, 15), new Rectangle(10, 67, 16, 15), new Rectangle(10, 97, 16, 15), new Rectangle(10, 127, 16, 15) };
             return Create(koopaGreenSheet);
         }
 
