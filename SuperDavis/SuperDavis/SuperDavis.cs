@@ -172,21 +172,21 @@ namespace SuperDavis
             koopa.Update(gameTime);
         }
 
-        private void DrawObject(SpriteBatch spriteBatch)
+        private void DrawObject(SpriteBatch spriteBatch1)
         {
-            davis.Draw(spriteBatch);
-            flower.Draw(spriteBatch);
-            coin.Draw(spriteBatch);
-            mushroom.Draw(spriteBatch);
-            yoshiEgg.Draw(spriteBatch);
-            star.Draw(spriteBatch);
-            hiddenBlock.Draw(spriteBatch);
-            activatedBlock.Draw(spriteBatch);
-            brick.Draw(spriteBatch);
-            questionBlock.Draw(spriteBatch);
-            pipe.Draw(spriteBatch);
-            goomba.Draw(spriteBatch);
-            koopa.Draw(spriteBatch);
+            davis.Draw(spriteBatch1);
+            flower.Draw(spriteBatch1);
+            coin.Draw(spriteBatch1);
+            mushroom.Draw(spriteBatch1);
+            yoshiEgg.Draw(spriteBatch1);
+            star.Draw(spriteBatch1);
+            hiddenBlock.Draw(spriteBatch1);
+            activatedBlock.Draw(spriteBatch1);
+            brick.Draw(spriteBatch1);
+            questionBlock.Draw(spriteBatch1);
+            pipe.Draw(spriteBatch1);
+            goomba.Draw(spriteBatch1);
+            koopa.Draw(spriteBatch1);
         }
     }
 }

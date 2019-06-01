@@ -36,17 +36,17 @@ namespace SuperDavis.Factory
 
         /*Item Sprites*/
 
-        public ISprite CreateYellowCoinStatic()
+        /*public ISprite CreateYellowCoinStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16) };
             return Create(blocksAndPipesTwo);
-        }
+        }*/
 
-        public ISprite CreateYellowCoinAnimated()
+        /*public ISprite CreateYellowCoinAnimated()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16), new Rectangle(16, 0, 16, 16), new Rectangle(32, 0, 16, 16), new Rectangle(48, 0, 16, 16) };
             return Create(blocksAndPipesTwo);
-        }
+        }*/
 
         public ISprite CreateStar()
         {
@@ -60,11 +60,11 @@ namespace SuperDavis.Factory
             return Create(blocksAndPipes);
         }
 
-        public ISprite CreateYoshiCoinStatic()
+        /*public ISprite CreateYoshiCoinStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 32, 16, 32) };
             return Create(blocksAndPipesTwo);
-        }
+        }*/
 
         public ISprite CreateYoshiCoinAnimated()
         {
@@ -112,20 +112,20 @@ namespace SuperDavis.Factory
             return Create(brickBlocks);
         }
 
-        public ISprite SpinBlockStatic()
+        /*public ISprite SpinBlockStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 80, 16, 16) };
             return Create(brickBlocks);
-        }
+        }*/
 
-        public ISprite SpinBlockAnimated()
+        /*public ISprite SpinBlockAnimated()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 80, 16, 16), new Rectangle(16, 80, 16, 16), new Rectangle(32, 80, 16, 16),
                 new Rectangle(48, 80, 16, 16) };
             return Create(brickBlocks);
-        }
+        }*/
 
-        //*Pipes*/
+        /*Pipes*/
 
         public ISprite CreateGreenPipe()
         {
@@ -133,16 +133,16 @@ namespace SuperDavis.Factory
             return Create(blocksAndPipesTwo);
         }
 
-        public ISprite CreateYellowPipe()
+        /*public ISprite CreateYellowPipe()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(128, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
-        }
+        }*/
 
-        public ISprite CreateBluePipe()
+        /*public ISprite CreateBluePipe()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(160, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
-        }
+        }*/
     }
 }

@@ -24,25 +24,25 @@ namespace SuperDavis.Factory
 
         /*Davis sprite sheet variables.*/
         private Texture2D davisRightZero;
-        private Texture2D davisRightOne;
+        //private Texture2D davisRightOne;
         private Texture2D davisRightTwo;
         private Texture2D davisLeftZero;
-        private Texture2D davisLeftOne;
+        //private Texture2D davisLeftOne;
         private Texture2D davisLeftTwo;
 
         /*Woody sprite sheet variables.*/
         private Texture2D woodyRightZero;
-        private Texture2D woodyRightOne;
+        //private Texture2D woodyRightOne;
         private Texture2D woodyRightTwo;
         private Texture2D woodyLeftZero;
-        private Texture2D woodyLeftOne;
+        //private Texture2D woodyLeftOne;
         private Texture2D woodyLeftTwo;
 
         /*Bat sprite sheet variables.*/
         private Texture2D batRightZero;
-        private Texture2D batRightOne;
+        //private Texture2D batRightOne;
         private Texture2D batLeftZero;
-        private Texture2D batLeftOne;
+        //private Texture2D batLeftOne;
         private Texture2D batLeftTwo;
         private Texture2D batRightTwo;
 
@@ -54,25 +54,25 @@ namespace SuperDavis.Factory
         {
             /*Davis sprite sheet assignments*/
             davisRightZero = content.Load<Texture2D>("DavisSprites/DavisRight_0");
-            davisRightOne = content.Load<Texture2D>("DavisSprites/DavisRight_1");
+            //davisRightOne = content.Load<Texture2D>("DavisSprites/DavisRight_1");
             davisRightTwo = content.Load<Texture2D>("DavisSprites/DavisRight_2");
             davisLeftZero = content.Load<Texture2D>("DavisSprites/DavisLeft_0");
-            davisLeftOne = content.Load<Texture2D>("DavisSprites/DavisLeft_1");
+            //davisLeftOne = content.Load<Texture2D>("DavisSprites/DavisLeft_1");
             davisLeftTwo = content.Load<Texture2D>("DavisSprites/DavisLeft_2");
 
             /*Woody sprite sheet assignements*/
             woodyRightZero = content.Load<Texture2D>("WoodySprites/WoodyRight_0");
-            woodyRightOne = content.Load<Texture2D>("WoodySprites/WoodyRight_1");
+            //woodyRightOne = content.Load<Texture2D>("WoodySprites/WoodyRight_1");
             woodyRightTwo = content.Load<Texture2D>("WoodySprites/WoodyRight_2");
             woodyLeftZero = content.Load<Texture2D>("WoodySprites/WoodyLeft_0");
-            woodyLeftOne = content.Load<Texture2D>("WoodySprites/WoodyLeft_1");
+            //woodyLeftOne = content.Load<Texture2D>("WoodySprites/WoodyLeft_1");
             woodyLeftTwo = content.Load<Texture2D>("WoodySprites/WoodyLeft_2");
 
             /*Bat sprite sheet assignements*/
             batRightZero = content.Load<Texture2D>("BatSprites/BatRight_0");
-            batRightOne = content.Load<Texture2D>("BatSprites/BatRight_1");
+            //batRightOne = content.Load<Texture2D>("BatSprites/BatRight_1");
             batLeftZero = content.Load<Texture2D>("BatSprites/BatLeft_0");
-            batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
+            //batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
             batRightTwo = content.Load<Texture2D>("BatSprites/BatRight_2");
             batLeftTwo = content.Load<Texture2D>("BatSprites/BatLeft_2");
         }
