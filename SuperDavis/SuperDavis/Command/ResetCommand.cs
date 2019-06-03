@@ -9,8 +9,8 @@ namespace SuperDavis.Command
 {
     class ResetCommand : ICommand
     {
-        private readonly SuperDavis superDavis;
-        public ResetCommand(SuperDavis superDavisClass)
+        private readonly Game1 superDavis;
+        public ResetCommand(Game1 superDavisClass)
         {
             this.superDavis = superDavisClass;
         }

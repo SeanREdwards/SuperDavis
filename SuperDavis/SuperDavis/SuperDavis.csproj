@@ -234,7 +234,7 @@
     <Compile Include="State\ItemBlockState\FlowerStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinStateMachine.cs" />
     <Compile Include="State\ItemBlockState\YoshiEggStateMachine.cs" />
-    <Compile Include="SuperDavis.cs" />
+    <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />

@@ -22,7 +22,7 @@ using SuperDavis.State.ItemStateMachine;
 /*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 namespace SuperDavis
 {
-    class SuperDavis : Game
+    class Game1 : Game
     {
         private Davis davis;
         private Coin coin;
@@ -44,7 +44,7 @@ namespace SuperDavis
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
 
-        public SuperDavis()
+        public Game1()
         {
             var graphicsDeviceManager = new GraphicsDeviceManager(game: this);
             WindowsEdgeWidth = 1024;

@@ -9,8 +9,8 @@ namespace SuperDavis.Command
 {
     class ExitCommand : ICommand
     {
-        private readonly SuperDavis superDavis;
-        public ExitCommand(SuperDavis superDavisClass)
+        private readonly Game1 superDavis;
+        public ExitCommand(Game1 superDavisClass)
         {
             this.superDavis = superDavisClass;
         }
