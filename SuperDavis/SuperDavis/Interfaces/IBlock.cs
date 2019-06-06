@@ -5,5 +5,6 @@ namespace SuperDavis.Interfaces
 
     interface IBlock : IGameObject
     {
+        void Reset();
     }
 }

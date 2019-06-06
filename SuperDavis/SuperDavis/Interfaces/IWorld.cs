@@ -20,11 +20,5 @@ namespace SuperDavis.Interfaces
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
         void ResetGame();
-        
-        /* For command control and reset*/
-        Davis davis { get; set; }
-        HiddenBlock hiddenBlock { get; set; }
-        QuestionBlock questionBlock { get; set; }
-        Brick brick { get; set; }
     }
 }

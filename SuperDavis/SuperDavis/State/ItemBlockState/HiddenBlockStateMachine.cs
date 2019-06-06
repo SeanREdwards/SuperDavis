@@ -11,7 +11,7 @@ namespace SuperDavis.State.ItemStateMachine
         public int Height { get; set; }
         public readonly ISprite Sprite;
 
-        public HiddenBlockStateMachine(bool IsHidden)
+        public HiddenBlockStateMachine(bool isHidden)
         {
             if (IsHidden)
             {

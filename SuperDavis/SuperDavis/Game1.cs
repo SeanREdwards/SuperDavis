@@ -10,13 +10,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.Object.Block;
-using SuperDavis.Object.Character;
-using SuperDavis.Object.Enemy;
-using SuperDavis.Object.Item;
-using SuperDavis.State.DavisState;
-using SuperDavis.State.ItemStateMachine;
-using SuperDavis.World;
+using SuperDavis.Worlds;
 
 /*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
@@ -32,7 +26,7 @@ namespace SuperDavis
 
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
-        public IWorld World;
+        public IWorld World { get; set; }
 
         public Game1()
         {
@@ -52,7 +46,7 @@ namespace SuperDavis
         {
             InitializaFactory();
             // TBD
-            World = new World.World(this,1,1);
+            World = WorldCreator.CreateWorld("test-level.xml", 1, 1, this);
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();
@@ -105,30 +99,35 @@ namespace SuperDavis
 
         private void InitializeKeybinding()
         {
-            controllerList = new List<IController>()
+            foreach (IDavis davis in World.Davises)
             {
-                {new KeyboardController
-                (
-                    (Keys.Q, new ExitCommand(this)),
-                    (Keys.R, new ResetCommand(World)),
-                    (Keys.A, new DavisTurnLeftCommand(World.davis)),
-                    (Keys.D, new DavisTurnRightCommand(World.davis)),
-                    (Keys.W, new DavisJumpCommand(World.davis)),
-                    (Keys.S, new DavisCrouchCommand(World.davis)),
-                    (Keys.Y, new DavisToDavisCommand(World.davis)),
-                    (Keys.U, new DavisToWoodyCommand(World.davis)),
-                    (Keys.I, new DavisToBatCommand(World.davis)),
-                    (Keys.C, new ShowHiddenBlockCommand(World.hiddenBlock)),
-                    (Keys.X, new BreakBrickCommand(World.brick)),
-                    (Keys.Z, new UseQuestionBlockCommand(World.questionBlock)),
-                    (Keys.Left, new DavisTurnLeftCommand(World.davis)),
-                    (Keys.Right, new DavisTurnRightCommand(World.davis)),
-                    (Keys.Up, new DavisJumpCommand(World.davis)),
-                    (Keys.Down, new DavisCrouchCommand(World.davis)),
-                    (Keys.O, new DavisDeathCommand(World.davis)),
-                    (Keys.P, new DavisSpecialAttackCommand(World.davis))
-                )}
+                controllerList = new List<IController>()
+                {
+                    new KeyboardController
+                    (
+                      (Keys.Q, new ExitCommand(this)),
+                      (Keys.R, new ResetCommand(World)),
+                      (Keys.A, new DavisTurnLeftCommand(davis)),
+                      (Keys.D, new DavisTurnRightCommand(davis)),
+                      (Keys.W, new DavisJumpCommand(davis)),
+                      (Keys.S, new DavisCrouchCommand(davis)),
+                      (Keys.Y, new DavisToDavisCommand(davis)),
+                      (Keys.U, new DavisToWoodyCommand(davis)),
+                      (Keys.I, new DavisToBatCommand(davis)),
+                      (Keys.Left, new DavisTurnLeftCommand(davis)),
+                      (Keys.Right, new DavisTurnRightCommand(davis)),
+                      (Keys.Up, new DavisJumpCommand(davis)),
+                      (Keys.Down, new DavisCrouchCommand(davis)),
+                      (Keys.O, new DavisDeathCommand(davis)),
+                      (Keys.P, new DavisSpecialAttackCommand(davis))
+
+                    //(Keys.C, new ShowHiddenBlockCommand(World.hiddenBlock)),
+                    //(Keys.X, new BreakBrickCommand(World.brick)),
+                    //(Keys.Z, new UseQuestionBlockCommand(World.questionBlock))
+                    )
+                };
             };
+
         }
 
     }

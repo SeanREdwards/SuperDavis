@@ -5,8 +5,8 @@ namespace SuperDavis.Command
 {
     class DavisToDavisCommand : ICommand
     {
-        private readonly Davis davis;
-        public DavisToDavisCommand(Davis davis)
+        private readonly IDavis davis;
+        public DavisToDavisCommand(IDavis davis)
         {
             this.davis = davis;
         }

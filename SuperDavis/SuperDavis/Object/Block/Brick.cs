@@ -36,6 +36,11 @@ namespace SuperDavis.Object.Block
             BrickStateMachine = new BrickStateMachine(true);
         }
 
+        public void Reset()
+        {
+            BrickStateMachine = new BrickStateMachine(false);
+        }
+
 
     }
 }

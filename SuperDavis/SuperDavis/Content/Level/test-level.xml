@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object>
+  // Character
+	<Character Type="Davis" X="512" Y="384" />
+  // Item
+  <Item Type="Flower" X="100" Y="100" />
+  <Item Type="Coin" X="200" Y="100" />
+  <Item Type="Mushroom" X="300" Y="100" />
+  <Item Type="YoshiEgg" X="400" Y="100" />
+  <Item Type="Star" X="500" Y="100" />
+  // Block
+  <Block Type="HiddenBLock" X="100" Y="200" />
+  <Block Type="ActivatedBLock" X="200" Y="200" />
+  <Block Type="Brick" X="300" Y="200" />
+  <Block Type="QuestionBLock" X="400" Y="200" />
+  <Block Type="Pipe" X="500" Y="200" />
+  // Enemy
+  <Enemy Type="Goomba" X="100" Y="300" />
+  <Enemy Type="Koopa" X="200" Y="300" />
+</Object>

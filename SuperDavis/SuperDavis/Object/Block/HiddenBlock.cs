@@ -35,5 +35,10 @@ namespace SuperDavis.Object.Block
             HiddenBlockStateMachine = new HiddenBlockStateMachine(false);
         }
 
+        public void Reset()
+        {
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
+        }
+
     }
 }

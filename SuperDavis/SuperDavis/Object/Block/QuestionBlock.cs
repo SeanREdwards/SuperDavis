@@ -35,5 +35,11 @@ namespace SuperDavis.Object.Block
         {
             QuestionBlockStateMachine = new QuestionBlockStateMachine(true);
         }
+
+        public void Reset()
+        {
+            QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+        }
+
     }
 }
