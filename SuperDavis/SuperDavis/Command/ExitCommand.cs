@@ -4,14 +4,14 @@ namespace SuperDavis.Command
 {
     class ExitCommand : ICommand
     {
-        private readonly Game1 superDavis;
-        public ExitCommand(Game1 superDavisClass)
+        private readonly Game1 game;
+        public ExitCommand(Game1 gameClass)
         {
-            this.superDavis = superDavisClass;
+            this.game = gameClass;
         }
         public void Execute()
         {
-            superDavis.Exit();
+            game.Exit();
         }
     }
 }
