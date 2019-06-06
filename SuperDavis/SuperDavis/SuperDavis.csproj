@@ -165,6 +165,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="World\WorldCreator.cs" />
     <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
     <Compile Include="Command\DavisDeathCommand.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Interfaces\IDavis.cs" />
     <Compile Include="Interfaces\IDavisState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
+    <Compile Include="Interfaces\IWorldCreator.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Object\Block\Pipe.cs" />
     <Compile Include="Object\Block\QuestionBlock.cs" />
