@@ -139,6 +139,7 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Level\test-level.csv" />
     <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -160,14 +161,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\lib\net45\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collision\MarioCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="World\WorldCreator.cs" />
+    <Compile Include="World\World.cs" />
     <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
     <Compile Include="Command\DavisDeathCommand.cs" />
@@ -197,7 +206,7 @@
     <Compile Include="Interfaces\IDavis.cs" />
     <Compile Include="Interfaces\IDavisState.cs" />
     <Compile Include="Interfaces\IGameState.cs" />
-    <Compile Include="Interfaces\IWorldCreator.cs" />
+    <Compile Include="Interfaces\IWorld.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Object\Block\Pipe.cs" />
     <Compile Include="Object\Block\QuestionBlock.cs" />

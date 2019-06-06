@@ -32,7 +32,7 @@ namespace SuperDavis
 
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
-        public IWorldCreator World;
+        public IWorld World;
 
         public Game1()
         {
@@ -51,7 +51,8 @@ namespace SuperDavis
         protected override void Initialize()
         {
             InitializaFactory();
-            World = new WorldCreator(this);
+            // TBD
+            World = new World.World(this,1,1);
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();

@@ -6,8 +6,10 @@ using System.Collections.Generic;
 
 namespace SuperDavis.Interfaces
 {
-    interface IWorldCreator
+    interface IWorld
     {
+        int Width { get; set; }
+        int Height { get; set; }
         IList<IDavis> Davises { get; set; }
         IList<IEnemy> Enemies { get; set; }
         IList<IItem> Items { get; set; }
