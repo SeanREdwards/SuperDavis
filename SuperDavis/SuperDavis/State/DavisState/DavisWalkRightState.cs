@@ -29,7 +29,7 @@ namespace SuperDavis.State.DavisState
                     sprite = DavisSpriteFactory.Instance.CreateBatWalkRightSprite();
                     break;
                 case DavisStatus.Invincible:
-                    // TBD;
+                    sprite = DavisSpriteFactory.Instance.Invincible();
                     break;
                 default:
                     break;

@@ -84,5 +84,9 @@ namespace SuperDavis.Object.Character
         {
             this.DavisState.SpecialAttack();
         }
+        public void DavisToInvincible()
+        {
+            this.DavisState.SpecialAttack();
+        }
     }
 }

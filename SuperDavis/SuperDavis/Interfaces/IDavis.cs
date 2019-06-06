@@ -12,7 +12,7 @@
         void DavisToDavis();
         void DavisToWoody();
         void DavisToBat();
-        //void DavisToInvincible();
+        void DavisToInvincible();
         void DavisDeath();
         void DavisSpecialAttack();
     }

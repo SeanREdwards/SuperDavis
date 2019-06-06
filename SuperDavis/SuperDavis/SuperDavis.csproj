@@ -175,6 +175,7 @@
   <ItemGroup>
     <Compile Include="Collision\MarioCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="World\WorldCreator.cs" />
     <Compile Include="World\World.cs" />
     <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
