@@ -11,9 +11,9 @@ namespace SuperDavis.State.ItemStateMachine
         public int Height { get; set; }
         public ISprite Sprite;
 
-        public BrickStateMachine(bool IsBroken)
+        public BrickStateMachine(bool isBroken)
         {
-            if (!IsBroken)
+            if (!isBroken)
             {
                 Sprite = ItemSpriteFactory.Instance.CreateBrickBlock();
             }
@@ -22,7 +22,7 @@ namespace SuperDavis.State.ItemStateMachine
                 Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();              
             }
             Width = Sprite.Width;
-            Height = Sprite.Height;            
+            Height = Sprite.Height;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {

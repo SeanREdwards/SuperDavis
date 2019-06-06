@@ -9,6 +9,8 @@ namespace SuperDavis.Sprite
     {
         public int Width { get; set; }
         public int Height { get; set; }
+        private int spriteWidth;
+        private int spriteHeight;
         private readonly Texture2D texture;
         private int currentFrame;
         private int totalFrames;
@@ -23,8 +25,10 @@ namespace SuperDavis.Sprite
             spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
-            Width = texture.Width / totalFrames;
-            Height = texture.Height;
+            spriteWidth = texture.Width / totalFrames;
+            spriteHeight = texture.Height;
+            Width = spriteList[currentFrame].Width;
+            Height = spriteList[currentFrame].Height;
         }
 
         public void Update(GameTime gameTime)
@@ -44,8 +48,8 @@ namespace SuperDavis.Sprite
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = spriteList[currentFrame];
-            Width = spriteList[currentFrame].Width;
-            Height = spriteList[currentFrame].Height;
+            spriteWidth = spriteList[currentFrame].Width;
+            spriteHeight = spriteList[currentFrame].Height;
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width, sourceRectangle.Height);
             spriteBatch.Draw(this.texture, destinationRectangle, sourceRectangle, Color.White);
         }
