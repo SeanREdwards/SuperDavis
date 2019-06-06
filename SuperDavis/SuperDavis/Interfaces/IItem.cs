@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Interface
+namespace SuperDavis.Interfaces
 {
-    interface ICommand
+
+    interface IItem : IGameObject
     {
-        void Execute();
     }
 }

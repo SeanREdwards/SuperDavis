@@ -1,12 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using SuperDavis.Command;
-using SuperDavis.Interface;
-using SuperDavis.Object;
-using System;
+using SuperDavis.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Controller
 {

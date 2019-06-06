@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
-using SuperDavis.Interface;
+using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
-using SuperDavis.Sprite;
 using SuperDavis.State.DavisState;
 using SuperDavis.State.ItemStateMachine;
 
 /*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
+[assembly: CLSCompliant(true)] // CA1014
+[assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
+[assembly: ComVisible(false)] // CA1017
 namespace SuperDavis
 {
     class Game1 : Game

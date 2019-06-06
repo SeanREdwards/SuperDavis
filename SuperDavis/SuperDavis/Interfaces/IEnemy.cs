@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperDavis.Interface
+namespace SuperDavis.Interfaces
 {
-
-    interface IItem : IGameObject
+     interface IEnemy : IGameObject
     {
     }
 }
