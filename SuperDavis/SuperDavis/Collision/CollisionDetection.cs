@@ -77,6 +77,8 @@ namespace SuperDavis.Collision
                   
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(Davis.HitBox, Block.HitBox), Davis.HitBox, Block.HitBox);
                         System.Console.WriteLine(Rectangle.Intersect(Davis.HitBox, Block.HitBox));
+                    System.Console.WriteLine(Davis.HitBox);
+                    System.Console.WriteLine(Block.HitBox);
                         MarioCollisionHandler.HandleCollision(Davis, Block, side);
                     
                 }
@@ -85,8 +87,8 @@ namespace SuperDavis.Collision
 
         private CollisionSide GetCollisionSide(Rectangle intersection, Rectangle HitBox1, Rectangle HitBox2)
         {
-            CollisionSide side = CollisionSide;
-            if (intersection != null)
+            CollisionSide side;
+            if (!((intersection.Width == 0) && (intersection.Height == 0)))
             {
                 if (intersection.Width >= intersection.Height)
                 {

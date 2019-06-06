@@ -31,7 +31,7 @@ namespace SuperDavis.Collision
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
                     break;
                 case CollisionSide.None:
-                    davis.DavisState.Static();
+                   // davis.DavisState.Static();
                     break;
             }
         }
