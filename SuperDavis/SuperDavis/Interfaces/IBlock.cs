@@ -1,4 +1,6 @@
-﻿namespace SuperDavis.Interfaces
+﻿using Microsoft.Xna.Framework;
+
+namespace SuperDavis.Interfaces
 {
 
     interface IBlock : IGameObject

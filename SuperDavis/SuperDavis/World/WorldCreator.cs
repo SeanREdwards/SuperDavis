@@ -53,18 +53,25 @@ namespace SuperDavis.World
         public void DumboInitialization()
         {
             davis = new Davis(new Vector2(game1.WindowsEdgeHeight / 2, game1.WindowsEdgeWidth / 2));
+            Davises = new List<IDavis> { davis };
+
             flower = new Flower(new Vector2(100, 100));
             coin = new Coin(new Vector2(200, 100));
             mushroom = new Mushroom(new Vector2(300, 100));
             yoshiEgg = new YoshiEgg(new Vector2(400, 100));
             star = new Star(new Vector2(500, 100));
+            Items = new List<IItem> { flower, coin, mushroom, yoshiEgg, star };
+
             hiddenBlock = new HiddenBlock(new Vector2(100, 200));
             activatedBlock = new ActivatedBlock(new Vector2(200, 200));
             brick = new Brick(new Vector2(300, 200));
             questionBlock = new QuestionBlock(new Vector2(400, 200));
             pipe = new Pipe(new Vector2(500, 200));
+            Blocks = new List<IBlock> { hiddenBlock, activatedBlock, brick, questionBlock, pipe };
+
             goomba = new Goomba(new Vector2(100, 300));
             koopa = new Koopa(new Vector2(200, 300));
+            Enemies = new List<IEnemy> { goomba, koopa };
         }
 
         public void Update(GameTime gameTime)
@@ -72,42 +79,49 @@ namespace SuperDavis.World
             // We should use IList to set those stuff in the list
             // Instead of listing them out one by one
             // which is dumbo
-            davis.Update(gameTime);
-            flower.Update(gameTime);
-            coin.Update(gameTime);
-            mushroom.Update(gameTime);
-            yoshiEgg.Update(gameTime);
-            star.Update(gameTime);
-            hiddenBlock.Update(gameTime);
-            activatedBlock.Update(gameTime);
-            brick.Update(gameTime);
-            questionBlock.Update(gameTime);
-            pipe.Update(gameTime);
-            goomba.Update(gameTime);
-            koopa.Update(gameTime);
+            foreach (IDavis character in Davises)
+            {
+                character.Update(gameTime);
+            }
+            foreach (IItem item in Items)
+            {
+                item.Update(gameTime);
+            }
+            foreach (IBlock block in Blocks)
+            {
+                block.Update(gameTime);
+            }
+            foreach (IEnemy enemy in Enemies)
+            {
+                enemy.Update(gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            davis.Draw(spriteBatch);
-            flower.Draw(spriteBatch);
-            coin.Draw(spriteBatch);
-            mushroom.Draw(spriteBatch);
-            yoshiEgg.Draw(spriteBatch);
-            star.Draw(spriteBatch);
-            hiddenBlock.Draw(spriteBatch);
-            activatedBlock.Draw(spriteBatch);
-            brick.Draw(spriteBatch);
-            questionBlock.Draw(spriteBatch);
-            pipe.Draw(spriteBatch);
-            goomba.Draw(spriteBatch);
-            koopa.Draw(spriteBatch);
+            foreach (IDavis character in Davises)
+            {
+                character.Draw(spriteBatch);
+            }
+            foreach (IItem item in Items)
+            {
+                item.Draw(spriteBatch);
+            }
+            foreach (IBlock block in Blocks)
+            {
+                block.Draw(spriteBatch);
+            }
+            foreach (IEnemy enemy in Enemies)
+            {
+                enemy.Draw(spriteBatch);
+            }
         }
 
-        /* Reset Game*/
         public void ResetGame()
         {
+            davis.DavisStatus = DavisStatus.Davis;
             davis.DavisState = new DavisStaticRightState(davis);
+            davis.Location = new Vector2(game1.WindowsEdgeHeight / 2, game1.WindowsEdgeWidth / 2);
             hiddenBlock.HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
             brick.BrickStateMachine = new BrickStateMachine(false);
             questionBlock.QuestionBlockStateMachine = new QuestionBlockStateMachine(false);

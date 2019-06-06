@@ -8,6 +8,8 @@ namespace SuperDavis.Object.Item
     class Mushroom : IItem
     {
         public Vector2 Location { get; set; }
+        public Rectangle HitBox { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         private readonly MushroomStateMachine mushroomStateMachine;
 
         public Mushroom(Vector2 location)

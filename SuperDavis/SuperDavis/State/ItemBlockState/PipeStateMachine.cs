@@ -7,19 +7,23 @@ namespace SuperDavis.State.ItemStateMachine
 {
     class PipeStateMachine
     {
-        private readonly ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public readonly ISprite Sprite;
 
         public PipeStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateGreenPipe();
+            Sprite = ItemSpriteFactory.Instance.CreateGreenPipe();
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
     }
 }

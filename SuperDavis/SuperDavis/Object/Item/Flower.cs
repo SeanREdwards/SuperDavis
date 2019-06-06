@@ -8,6 +8,8 @@ namespace SuperDavis.Object.Item
     class Flower : IItem
     {
         public Vector2 Location { get; set; }
+        public Rectangle HitBox { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         private readonly FlowerStateMachine flowerStateMachine;
 
         public Flower(Vector2 location)

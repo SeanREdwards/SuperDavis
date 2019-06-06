@@ -8,6 +8,9 @@ namespace SuperDavis.Object.Block
     class ActivatedBlock : IBlock
     {
         public Vector2 Location { get; set; }
+        public Rectangle HitBox { get ; set ; }
+        private ISprite block;
+
         private ActivatedBlockStateMachine activatedBlockStateMachine;
 
         public ActivatedBlock(Vector2 location)
@@ -15,6 +18,8 @@ namespace SuperDavis.Object.Block
             // initial state
             Location = location;
             activatedBlockStateMachine = new ActivatedBlockStateMachine();
+            block = activatedBlockStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
 
         public void Update(GameTime gameTime)

@@ -34,7 +34,6 @@ namespace SuperDavis.State.DavisState
                 default:
                     break;
             }
-            // Needed?
             Width = sprite.Width;
             Height = sprite.Height;
         }

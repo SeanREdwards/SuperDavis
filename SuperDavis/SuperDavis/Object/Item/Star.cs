@@ -9,12 +9,14 @@ namespace SuperDavis.Object.Item
     {
         public Vector2 Location { get; set; }
         private readonly StarStateMachine starStateMachine;
+        public Rectangle HitBox { get; set; }
 
         public Star(Vector2 location)
         {
             // initial state
             Location = location;
             starStateMachine = new StarStateMachine();
+            //HitBox = new Rectangle((int)Location.X, (int)Location.Y, brick.Width, brick.Height);
         }
 
         public void Update(GameTime gameTime)

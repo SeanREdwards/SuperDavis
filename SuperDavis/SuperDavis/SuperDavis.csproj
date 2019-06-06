@@ -165,6 +165,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collision\MarioCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="World\WorldCreator.cs" />
     <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
@@ -261,6 +263,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

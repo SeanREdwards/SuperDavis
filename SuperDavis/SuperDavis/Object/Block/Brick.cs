@@ -9,12 +9,16 @@ namespace SuperDavis.Object.Block
     {
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
+        private ISprite block;
+        public Rectangle HitBox { get; set; }
 
         public Brick(Vector2 location)
         {
             // initial state
             Location = location;
             BrickStateMachine = new BrickStateMachine(false);
+            block = BrickStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -31,5 +35,7 @@ namespace SuperDavis.Object.Block
         {
             BrickStateMachine = new BrickStateMachine(true);
         }
+
+
     }
 }

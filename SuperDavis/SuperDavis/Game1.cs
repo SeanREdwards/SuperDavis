@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperDavis.Collision;
 using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
@@ -27,10 +28,11 @@ namespace SuperDavis
     {
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
+        private CollisionDetection collisionDetection;
 
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
-        public WorldCreator World;
+        public IWorldCreator World;
 
         public Game1()
         {
@@ -50,6 +52,7 @@ namespace SuperDavis
         {
             InitializaFactory();
             World = new WorldCreator(this);
+            collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();
         }
@@ -68,6 +71,7 @@ namespace SuperDavis
                 controller.Update();
             }
             World.Update(gameTime);
+            collisionDetection.CheckCollisions();
             base.Update(gameTime);
         }
 

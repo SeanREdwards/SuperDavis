@@ -7,26 +7,30 @@ namespace SuperDavis.State.ItemStateMachine
 {
     class BrickStateMachine
     {
-        private ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public ISprite Sprite;
 
         public BrickStateMachine(bool IsBroken)
         {
             if (!IsBroken)
             {
-                sprite = ItemSpriteFactory.Instance.CreateBrickBlock();
+                Sprite = ItemSpriteFactory.Instance.CreateBrickBlock();
             }
             else
             {
-                sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
+                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();              
             }
+            Width = Sprite.Width;
+            Height = Sprite.Height;            
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
     }
 }

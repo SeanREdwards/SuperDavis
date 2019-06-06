@@ -17,6 +17,7 @@ namespace SuperDavis.Interfaces
         //IList<IProjectile> Projectiles { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
+        void ResetGame();
         
         /* For command control and reset*/
         Davis davis { get; set; }

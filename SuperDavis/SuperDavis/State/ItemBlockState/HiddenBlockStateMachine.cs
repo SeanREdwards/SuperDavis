@@ -7,26 +7,30 @@ namespace SuperDavis.State.ItemStateMachine
 {
     class HiddenBlockStateMachine
     {
-        private readonly ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public readonly ISprite Sprite;
 
         public HiddenBlockStateMachine(bool IsHidden)
         {
             if (IsHidden)
             {
-                sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
+                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
             }
             else
             {
-                sprite = ItemSpriteFactory.Instance.CreateActivatedBlock();
+                Sprite = ItemSpriteFactory.Instance.CreateActivatedBlock();
             }
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
     }
 }

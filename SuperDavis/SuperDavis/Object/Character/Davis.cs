@@ -10,6 +10,7 @@ namespace SuperDavis.Object.Character
         public IDavisState DavisState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
+        public Rectangle HitBox { get; set; }
 
         public Davis(Vector2 location)
         {
@@ -17,7 +18,8 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Location = location;
-        }
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, DavisState.Width, DavisState.Height);
+    }
 
         public void Update(GameTime gameTime)
         {
@@ -32,21 +34,25 @@ namespace SuperDavis.Object.Character
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
+            this.Location += new Vector2(-2, 0);
             this.DavisState.Left();
         }
 
         public void DavisTurnRight()
         {
+            this.Location += new Vector2(2, 0);
             this.DavisState.Right();
         }
 
         public void DavisJump()
         {
+            this.Location += new Vector2(0, -2);
             this.DavisState.Up();
         }
 
         public void DavisCrouch()
         {
+            this.Location += new Vector2(0, 2);
             this.DavisState.Down();
         }
 

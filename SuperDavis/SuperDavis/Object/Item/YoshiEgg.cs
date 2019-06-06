@@ -8,6 +8,8 @@ namespace SuperDavis.Object.Item
     class YoshiEgg : IItem
     {
         public Vector2 Location { get; set; }
+        public Rectangle HitBox { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         private readonly YoshiEggStateMachine yoshiEggStateMachine;
 
         public YoshiEgg(Vector2 location)

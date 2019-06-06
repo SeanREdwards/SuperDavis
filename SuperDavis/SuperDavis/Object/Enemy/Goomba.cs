@@ -8,6 +8,8 @@ namespace SuperDavis.Object.Enemy
     class Goomba : IEnemy
     {
         public Vector2 Location { get; set; }
+        public Rectangle HitBox { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         private readonly GoombaStateMachine goombaStateMachine;
 
         public Goomba(Vector2 location)

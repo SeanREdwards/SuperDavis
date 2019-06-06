@@ -5,8 +5,8 @@ namespace SuperDavis.Command
 {
     class ResetCommand : ICommand
     {
-        private readonly WorldCreator world;
-        public ResetCommand(WorldCreator worldClass)
+        private readonly IWorldCreator world;
+        public ResetCommand(IWorldCreator worldClass)
         {
             this.world = worldClass;
         }
