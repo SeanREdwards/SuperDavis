@@ -45,6 +45,7 @@
     <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
     <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
     <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
+    <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb" />
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
