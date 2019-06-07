@@ -174,7 +174,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collision\MarioCollisionHandler.cs" />
+    <Compile Include="Collision\MarioItemCollisionHandler.cs" />
+    <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />

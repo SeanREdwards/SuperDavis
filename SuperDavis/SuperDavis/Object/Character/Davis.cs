@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
+        public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
@@ -86,6 +87,7 @@ namespace SuperDavis.Object.Character
         }
         public void DavisToInvincible()
         {
+            // TBD
             this.DavisState.SpecialAttack();
         }
     }

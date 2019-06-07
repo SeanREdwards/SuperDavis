@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Block
 {
     class ActivatedBlock : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
         private ISprite block;
@@ -16,6 +17,7 @@ namespace SuperDavis.Object.Block
         public ActivatedBlock(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             activatedBlockStateMachine = new ActivatedBlockStateMachine();
             block = activatedBlockStateMachine.Sprite;
@@ -29,7 +31,10 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            activatedBlockStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                activatedBlockStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
         public void Reset() { }

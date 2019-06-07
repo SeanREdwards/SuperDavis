@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Block
 {
     class QuestionBlock : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public QuestionBlockStateMachine QuestionBlockStateMachine;
         private ISprite block;
@@ -15,6 +16,7 @@ namespace SuperDavis.Object.Block
         public QuestionBlock(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
             block = QuestionBlockStateMachine.Sprite;
@@ -28,7 +30,10 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            QuestionBlockStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                QuestionBlockStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
         public void UseQuestionBlock()

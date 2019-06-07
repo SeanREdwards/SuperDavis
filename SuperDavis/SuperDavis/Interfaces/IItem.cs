@@ -3,5 +3,6 @@
 
     interface IItem : IGameObject
     {
+        void Clear();
     }
 }

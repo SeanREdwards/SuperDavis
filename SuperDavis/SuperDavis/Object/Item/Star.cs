@@ -7,16 +7,20 @@ namespace SuperDavis.Object.Item
 {
     class Star : IItem
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        private readonly StarStateMachine starStateMachine;
+        private StarStateMachine starStateMachine;
+        private ISprite item;
         public Rectangle HitBox { get; set; }
 
         public Star(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             starStateMachine = new StarStateMachine();
-            //HitBox = new Rectangle((int)Location.X, (int)Location.Y, brick.Width, brick.Height);
+            item = starStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, item.Width, item.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -26,7 +30,15 @@ namespace SuperDavis.Object.Item
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            starStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                starStateMachine.Draw(spriteBatch, Location);
+            }
+        }
+
+        public void Clear()
+        {
+            Remove = true;
         }
     }
 }

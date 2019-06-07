@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Block
 {
     class Pipe : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         private PipeStateMachine pipeStateMachine;
         private ISprite block;
@@ -14,6 +15,7 @@ namespace SuperDavis.Object.Block
         public Pipe(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             pipeStateMachine = new PipeStateMachine();
             block = pipeStateMachine.Sprite;
@@ -27,7 +29,10 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            pipeStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                pipeStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
         public void Reset() { }

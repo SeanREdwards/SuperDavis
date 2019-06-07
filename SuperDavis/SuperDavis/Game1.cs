@@ -46,7 +46,8 @@ namespace SuperDavis
         {
             InitializaFactory();
             // TBD
-            World = WorldCreator.CreateWorld("test-level.xml", 1, 1, this);
+            World = WorldCreator.CreateWorld("test-level.xml", WindowsEdgeWidth, WindowsEdgeHeight, this);
+            // Doesn't seems to be a good practice ^^^
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();

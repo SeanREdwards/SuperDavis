@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Item;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioCollisionHandler
+    class MarioItemCollisionHandler
     {
         // Constructor or not?
         
-        public static void HandleCollision(IDavis davis, IBlock block,CollisionSide side)
+        public static void HandleCollision(IDavis davis, IItem item,CollisionSide side)
         {
             // Location setup
-            switch(side)
+            /*switch(side)
             {
                 case CollisionSide.Top:
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
@@ -33,6 +34,30 @@ namespace SuperDavis.Collision
                 case CollisionSide.None:
                    // davis.DavisState.Static();
                     break;
+            }*/
+            if (side != CollisionSide.None)
+            {
+                if (item is Flower)
+                {
+                    davis.DavisStatus = DavisStatus.Bat;
+                }
+                else if (item is Mushroom)
+                {
+                    davis.DavisStatus = DavisStatus.Woody;
+                }
+                else if (item is Star)
+                {
+                    davis.DavisStatus = DavisStatus.Invincible;
+                }
+                else if (item is YoshiEgg)
+                {
+
+                }
+                else if (item is Coin)
+                {
+
+                }
+                item.Clear();
             }
         }
     }
