@@ -9,21 +9,21 @@ namespace SuperDavis.State.ItemStateMachine
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        private readonly ISprite sprite;
+        public ISprite Sprite;
 
         public StarStateMachine()
         {
-            sprite = ItemSpriteFactory.Instance.CreateStar();
-            Width = sprite.Width;
-            Height = sprite.Height;
+            Sprite = ItemSpriteFactory.Instance.CreateStar();
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
     }
 }

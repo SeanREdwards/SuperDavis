@@ -23,7 +23,9 @@ namespace SuperDavis.Collision
         /* CheckCollisions */
         public void CheckCollisions()
         {
-            CheckMarioBlockCollision(World.Davises,World.Blocks);
+            CheckMarioBlockCollision(World.Davises, World.Blocks);
+            CheckMarioItemCollision(World.Davises, World.Items);
+            CheckMarioEnemyCollision(World.Davises, World.Enemies);
         }
 
         //Since we haven't have a created the level file, it can not use surrounding checking
@@ -50,7 +52,7 @@ namespace SuperDavis.Collision
         */
         
 
-        private void CheckMarioBlockCollision(IList<IDavis> Davises, IList<IBlock> Blocks)
+        private void CheckMarioBlockCollision(IList<IDavis> davises, IList<IBlock> blocks)
         {
             /*bool marioIsInHorizontalScope = blockIndexX >= 0 && blockIndexX < World.Width;
             bool marioIsInVerticalScope = blockIndexY >= 0 && blockIndexY < World.Height;
@@ -70,17 +72,88 @@ namespace SuperDavis.Collision
                     }
                 }
             }*/
-            foreach (IDavis Davis in Davises)
+
+            /* Bad! Needs to change */
+            foreach (IDavis davis in davises)
             {
-                foreach(IBlock Block in Blocks)
+                foreach(IBlock block in blocks)
                 {
-                  
-                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(Davis.HitBox, Block.HitBox), Davis.HitBox, Block.HitBox);
-                    //    System.Console.WriteLine(Rectangle.Intersect(Davis.HitBox, Block.HitBox));
-                    //System.Console.WriteLine(Davis.HitBox);
-                    //System.Console.WriteLine(Block.HitBox);
-                        MarioCollisionHandler.HandleCollision(Davis, Block, side);
+                    if (!block.Remove)
+                    {
+                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, block.HitBox), davis.HitBox, block.HitBox);
+                        MarioBlockCollisionHandler.HandleCollision(davis, block, side);
+                    }
                     
+                }
+            }
+        }
+
+        private void CheckMarioItemCollision(IList<IDavis> davises, IList<IItem> items)
+        {
+            /*bool marioIsInHorizontalScope = blockIndexX >= 0 && blockIndexX < World.Width;
+            bool marioIsInVerticalScope = blockIndexY >= 0 && blockIndexY < World.Height;
+            if (marioIsInHorizontalScope && marioIsInVerticalScope)
+            {
+                IBlock block = World.Blocks[blockIndexX][blockIndexY];
+                Rectangle marioHitbox = World.Mario.Rectangle;
+                if (block != null)
+                {
+                    Rectangle blockHitbox = block.Rectangle;
+                    Rectangle intersection = Rectangle.Intersect(marioHitbox, blockHitbox);
+
+                    if (!intersection.IsEmpty)
+                    {
+                        CollisionSide side = GetCollisionSide(intersection, marioHitbox, blockHitbox);
+                        MarioBlockCollisionHandler.HandleCollision(World.Mario, block, side, superMarioBro);
+                    }
+                }
+            }*/
+
+            /* Bad! Needs to change */
+            foreach (IDavis davis in davises)
+            {
+                foreach (IItem item in items)
+                {
+                    if (!item.Remove)
+                    {
+                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, item.HitBox), davis.HitBox, item.HitBox);
+                        MarioItemCollisionHandler.HandleCollision(davis, item, side);
+                    }
+
+                }
+            }
+        }
+
+        private void CheckMarioEnemyCollision(IList<IDavis> davises, IList<IEnemy> enemies)
+        {
+            /*bool marioIsInHorizontalScope = blockIndexX >= 0 && blockIndexX < World.Width;
+            bool marioIsInVerticalScope = blockIndexY >= 0 && blockIndexY < World.Height;
+            if (marioIsInHorizontalScope && marioIsInVerticalScope)
+            {
+                IBlock block = World.Blocks[blockIndexX][blockIndexY];
+                Rectangle marioHitbox = World.Mario.Rectangle;
+                if (block != null)
+                {
+                    Rectangle blockHitbox = block.Rectangle;
+                    Rectangle intersection = Rectangle.Intersect(marioHitbox, blockHitbox);
+
+                    if (!intersection.IsEmpty)
+                    {
+                        CollisionSide side = GetCollisionSide(intersection, marioHitbox, blockHitbox);
+                        MarioBlockCollisionHandler.HandleCollision(World.Mario, block, side, superMarioBro);
+                    }
+                }
+            }*/
+
+            /* Bad! Needs to change */
+            foreach (IDavis davis in davises)
+            {
+                foreach (IEnemy enemy in enemies)
+                {
+
+                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, enemy.HitBox), davis.HitBox, enemy.HitBox);
+             //       MarioEnemyCollisionHandler.HandleCollision(davis, enemy, side);
+
                 }
             }
         }

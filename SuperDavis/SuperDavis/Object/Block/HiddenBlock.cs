@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Block
 {
     class HiddenBlock : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public HiddenBlockStateMachine HiddenBlockStateMachine;
         private ISprite block;
@@ -14,6 +15,7 @@ namespace SuperDavis.Object.Block
         public HiddenBlock(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
             block = HiddenBlockStateMachine.Sprite;
@@ -27,7 +29,10 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            HiddenBlockStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                HiddenBlockStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
         public void UnhiddenBlock()

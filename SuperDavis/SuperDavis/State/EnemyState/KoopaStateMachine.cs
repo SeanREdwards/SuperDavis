@@ -5,21 +5,26 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.EnemyState
 {
-    class KoopaStateMachine
+    class KoopaStateMachine : IGameState
     {
-        private readonly ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public ISprite Sprite;
 
         public KoopaStateMachine()
         {
-            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
-        }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            sprite.Draw(spriteBatch, location);
+            Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            Sprite.Draw(spriteBatch, location);
+        }
+
     }
 }

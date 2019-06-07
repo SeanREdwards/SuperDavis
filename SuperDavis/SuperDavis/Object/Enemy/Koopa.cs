@@ -7,16 +7,22 @@ namespace SuperDavis.Object.Enemy
 {
     class Koopa : IEnemy
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        public Rectangle HitBox { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public Rectangle HitBox { get; set; }
+        private ISprite enemy;
 
         private readonly KoopaStateMachine koopaStateMachine;
 
         public Koopa(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             koopaStateMachine = new KoopaStateMachine();
+            enemy = koopaStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
+
         }
 
         public void Update(GameTime gameTime)

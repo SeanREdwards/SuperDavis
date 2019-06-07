@@ -13,7 +13,7 @@ namespace SuperDavis.State.ItemStateMachine
 
         public HiddenBlockStateMachine(bool isHidden)
         {
-            if (IsHidden)
+            if (isHidden)
             {
                 Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
             }

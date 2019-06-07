@@ -5,21 +5,26 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.EnemyState
 {
-    class GoombaStateMachine
+    class GoombaStateMachine: IGameState
     {
-        private readonly ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set;}
+        public ISprite Sprite;
 
         public GoombaStateMachine()
         {
-            sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
-        }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            sprite.Draw(spriteBatch, location);
+            Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            Sprite.Draw(spriteBatch, location);
+        }
+
     }
 }
