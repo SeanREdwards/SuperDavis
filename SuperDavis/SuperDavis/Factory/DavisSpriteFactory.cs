@@ -81,6 +81,7 @@ namespace SuperDavis.Factory
         /*Basic Davis Sprites*/
         public ISprite Invincible()
         {
+            //TODO - Just using batStaticRight for testing purposes
             coordinateList = new List<Rectangle>() { new Rectangle(744, 0, 37, 80) };
             return Create(batStaticRight);
         }
