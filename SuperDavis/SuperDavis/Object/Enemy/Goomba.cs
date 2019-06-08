@@ -9,7 +9,7 @@ namespace SuperDavis.Object.Enemy
     {
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        public Rectangle HitBox { get; set ; }
+        public Rectangle HitBox { get; set; }
         private ISprite enemy;
         private readonly GoombaStateMachine goombaStateMachine;
 
@@ -34,6 +34,11 @@ namespace SuperDavis.Object.Enemy
             {
                 goombaStateMachine.Draw(spriteBatch, Location);
             }
+        }
+
+        public void TakeDamage()
+        {
+
         }
     }
 }

@@ -2,5 +2,6 @@
 {
      interface IEnemy : IGameObject
     {
+        void TakeDamage();
     }
 }

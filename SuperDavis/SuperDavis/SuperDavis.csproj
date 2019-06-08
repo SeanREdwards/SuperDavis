@@ -179,6 +179,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collision\MarioEnemyCollisionHandler.cs" />
     <Compile Include="Collision\MarioItemCollisionHandler.cs" />
     <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
