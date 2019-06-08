@@ -80,16 +80,6 @@ namespace SuperDavis
             base.Draw(gameTime);
         }
 
-        /*
-        public void ResetGame()
-        {
-            davis.DavisState = new DavisStaticRightState(davis);
-            hiddenBlock.HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
-            brick.BrickStateMachine = new BrickStateMachine(false);
-            questionBlock.QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
-        }
-        */
-
         /* Helper methods */
         private void InitializaFactory()
         {
@@ -121,10 +111,6 @@ namespace SuperDavis
                       (Keys.Down, new DavisCrouchCommand(davis)),
                       (Keys.O, new DavisDeathCommand(davis)),
                       (Keys.P, new DavisSpecialAttackCommand(davis))
-
-                    //(Keys.C, new ShowHiddenBlockCommand(World.hiddenBlock)),
-                    //(Keys.X, new BreakBrickCommand(World.brick)),
-                    //(Keys.Z, new UseQuestionBlockCommand(World.questionBlock))
                     )
                 };
             };

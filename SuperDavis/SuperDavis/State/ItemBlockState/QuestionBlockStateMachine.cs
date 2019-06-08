@@ -11,9 +11,9 @@ namespace SuperDavis.State.ItemStateMachine
         public int Height { get; set; }
         public readonly ISprite Sprite;
 
-        public QuestionBlockStateMachine(bool IsUsed)
+        public QuestionBlockStateMachine(bool isUsed)
         {
-            if (!IsUsed)
+            if (!isUsed)
             {
                 Sprite = ItemSpriteFactory.Instance.CreateQuestionMarkBlockAnimated();
             }

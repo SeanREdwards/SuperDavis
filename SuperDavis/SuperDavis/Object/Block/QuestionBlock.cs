@@ -38,12 +38,12 @@ namespace SuperDavis.Object.Block
 
         public void UseQuestionBlock()
         {
-            QuestionBlockStateMachine = new QuestionBlockStateMachine(true);
+            //QuestionBlockStateMachine = new QuestionBlockStateMachine(true);
         }
 
         public void Reset()
         {
-            QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+            //QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
         }
 
     }
