@@ -15,7 +15,7 @@ namespace SuperDavis.Object.Scenery
         {
             // initial state
             Location = location;
-            sprite = ItemSpriteFactory.Instance.CreateActivatedBlock();
+            sprite = ItemSpriteFactory.Instance.CreateBluePipe();
         }
 
         public void Update(GameTime gameTime)

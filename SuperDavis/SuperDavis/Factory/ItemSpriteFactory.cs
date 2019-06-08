@@ -135,10 +135,10 @@ namespace SuperDavis.Factory
             return Create(blocksAndPipesTwo);
         }*/
 
-        /*public ISprite CreateBluePipe()
+        public ISprite CreateBluePipe()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(160, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
-        }*/
+        }
     }
 }
