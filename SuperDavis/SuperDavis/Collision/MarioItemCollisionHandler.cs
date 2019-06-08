@@ -40,14 +40,17 @@ namespace SuperDavis.Collision
                 if (item is Flower)
                 {
                     davis.DavisStatus = DavisStatus.Bat;
+                    davis.DavisState.Static();
                 }
                 else if (item is Mushroom)
                 {
                     davis.DavisStatus = DavisStatus.Woody;
+                    davis.DavisState.Static();
                 }
                 else if (item is Star)
                 {
                     davis.DavisStatus = DavisStatus.Invincible;
+                    davis.DavisState.Static();
                 }
                 else if (item is YoshiEgg)
                 {
