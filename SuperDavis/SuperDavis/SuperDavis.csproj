@@ -40,11 +40,17 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
-    <None Include="Code Reviews\Code Quality Review\JasonXu.md" />
-    <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
-    <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
-    <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
+    <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -139,6 +145,7 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Level\test-level.csv" />
     <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -160,12 +167,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.12.1.2\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\lib\net45\MonoGame.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
+    <Compile Include="Collision\MarioEnemyCollisionHandler.cs" />
+    <Compile Include="Collision\MarioItemCollisionHandler.cs" />
+    <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Command\ToggleMouseControl.cs" />
+    <Compile Include="Controller\MouseController.cs" />
+    <Compile Include="Factory\BackgroundFactory.cs" />
+    <Compile Include="Interfaces\IBackground.cs" />
+    <Compile Include="Object\Scenery\Background.cs" />
+    <Compile Include="Object\Character\InvincibleDavis.cs" />
+    <Compile Include="Worlds\WorldCreator.cs" />
+    <Compile Include="Worlds\World.cs" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
     <Compile Include="Command\DavisDeathCommand.cs" />
     <Compile Include="Command\DavisToBatCommand.cs" />
@@ -185,16 +211,17 @@
     <Compile Include="Factory\EnemySpriteFactory.cs" />
     <Compile Include="Factory\ItemSpriteFactory.cs" />
     <Compile Include="Factory\DavisSpriteFactory.cs" />
-    <Compile Include="Interface\ICommand.cs" />
-    <Compile Include="Interface\IController.cs" />
-    <Compile Include="Interface\IBlock.cs" />
-    <Compile Include="Interface\IEnemy.cs" />
-    <Compile Include="Interface\IItem.cs" />
-    <Compile Include="Interface\IGameObject.cs" />
-    <Compile Include="Interface\IDavis.cs" />
-    <Compile Include="Interface\IDavisState.cs" />
-    <Compile Include="Interface\IGameState.cs" />
-    <Compile Include="Interface\ISprite.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\IBlock.cs" />
+    <Compile Include="Interfaces\IEnemy.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="Interfaces\IDavis.cs" />
+    <Compile Include="Interfaces\IDavisState.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
+    <Compile Include="Interfaces\IWorld.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Object\Block\Pipe.cs" />
     <Compile Include="Object\Block\QuestionBlock.cs" />
     <Compile Include="Object\Block\Brick.cs" />
@@ -234,9 +261,13 @@
     <Compile Include="State\ItemBlockState\FlowerStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinStateMachine.cs" />
     <Compile Include="State\ItemBlockState\YoshiEggStateMachine.cs" />
-    <Compile Include="SuperDavis.cs" />
+    <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
+    <Content Include="Content\Level\test-level.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_0.png" />

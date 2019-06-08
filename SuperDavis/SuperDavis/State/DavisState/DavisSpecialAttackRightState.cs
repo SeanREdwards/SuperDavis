@@ -1,12 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
-using SuperDavis.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.DavisState
 {
@@ -34,7 +29,7 @@ namespace SuperDavis.State.DavisState
                     sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
                     break;
                 case DavisStatus.Invincible:
-                    // TBD;
+                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
                     break;
                 default:
                     break;

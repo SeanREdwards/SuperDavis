@@ -1,20 +1,17 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Interface;
+using SuperDavis.Interfaces;
 using SuperDavis.State.DavisState;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
+        public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
+        public Rectangle HitBox { get; set; }
 
         public Davis(Vector2 location)
         {
@@ -22,11 +19,12 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Location = location;
-        }
+    }
 
         public void Update(GameTime gameTime)
         {
             DavisState.Update(gameTime);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, DavisState.Width, DavisState.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -37,22 +35,37 @@ namespace SuperDavis.Object.Character
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            this.DavisState.Left();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
+                Location += new Vector2(-2, 0);
+            }
+            DavisState.Left();
         }
 
         public void DavisTurnRight()
         {
-            this.DavisState.Right();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(2, 0);
+            }
+            DavisState.Right();
         }
 
         public void DavisJump()
         {
-            this.DavisState.Up();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(0, -2);
+            }
+            DavisState.Up();
         }
 
         public void DavisCrouch()
         {
-            this.DavisState.Down();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(0, 2);
+            }
+            DavisState.Down();
         }
 
         public void DavisToDavis()
@@ -80,6 +93,11 @@ namespace SuperDavis.Object.Character
 
         public void DavisSpecialAttack()
         {
+            this.DavisState.SpecialAttack();
+        }
+        public void DavisToInvincible()
+        {
+            // TBD
             this.DavisState.SpecialAttack();
         }
     }

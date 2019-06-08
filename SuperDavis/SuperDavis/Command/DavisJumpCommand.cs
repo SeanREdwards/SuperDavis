@@ -1,17 +1,12 @@
-﻿using SuperDavis.Interface;
+﻿using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Command
 {
     class DavisJumpCommand : ICommand
     {
-        private readonly Davis davis;
-        public DavisJumpCommand(Davis davis)
+        private readonly IDavis davis;
+        public DavisJumpCommand(IDavis davis)
         {
             this.davis = davis;
         }

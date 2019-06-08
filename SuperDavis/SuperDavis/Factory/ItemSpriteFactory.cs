@@ -1,13 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Interface;
+using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Factory
 {
@@ -102,7 +98,7 @@ namespace SuperDavis.Factory
 
         public ISprite CreateEmptyBlock()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 0, 0) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16) };
             return Create(blocksAndPipes);
         }
 
@@ -139,10 +135,10 @@ namespace SuperDavis.Factory
             return Create(blocksAndPipesTwo);
         }*/
 
-        /*public ISprite CreateBluePipe()
+        public ISprite CreateBluePipe()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(160, 0, 32, 32) };
             return Create(blocksAndPipesTwo);
-        }*/
+        }
     }
 }

@@ -1,22 +1,17 @@
-﻿using SuperDavis.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SuperDavis.Interfaces;
 
 namespace SuperDavis.Command
 {
     class ExitCommand : ICommand
     {
-        private readonly SuperDavis superDavis;
-        public ExitCommand(SuperDavis superDavisClass)
+        private readonly Game1 game;
+        public ExitCommand(Game1 gameClass)
         {
-            this.superDavis = superDavisClass;
+            this.game = gameClass;
         }
         public void Execute()
         {
-            superDavis.Exit();
+            game.Exit();
         }
     }
 }

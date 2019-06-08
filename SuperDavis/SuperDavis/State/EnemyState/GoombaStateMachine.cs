@@ -1,30 +1,38 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
-using SuperDavis.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperDavis.Interfaces;
+using SuperDavis.Object.Enemy;
 
 namespace SuperDavis.State.EnemyState
 {
-    class GoombaStateMachine
+    class GoombaStateMachine: IGameState
     {
-        private readonly ISprite sprite;
+        public int Width { get; set; }
+        public int Height { get; set;}
+        public ISprite Sprite;
 
-        public GoombaStateMachine()
+        public GoombaStateMachine(Goomba goomba)
         {
-            sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
-        }
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            sprite.Draw(spriteBatch, location);
+            if (!goomba.Dead)
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
+            }
+            else
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlateStatic();
+            }
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            Sprite.Draw(spriteBatch, location);
+        }
+
     }
 }

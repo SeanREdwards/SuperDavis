@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using SuperDavis.Command;
-using SuperDavis.Interface;
+using SuperDavis.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 namespace SuperDavis.Controller
 {
     /* The Gamepad Controller is not needed, but still save for the future */
-    /*class GamepadController : IController
+    class GamepadController : IController
     {
         private readonly Dictionary<Buttons, ICommand> buttonCommandDict;
 
-        public GamepadController(SuperDavis superDavisClass)
+        public GamepadController(params (Buttons button, ICommand command)[] args)
         {
-            SuperDavis superDavis = superDavisClass;
-            buttonCommandDict = new Dictionary<Buttons, ICommand>
+
+            buttonCommandDict = new Dictionary<Buttons, ICommand> { };
+            foreach ((Buttons button, ICommand command) pairs in args)
             {
-                { Buttons.Start, new ExitCommand(superDavis)}
-                // TBD
-            };
+                buttonCommandDict.Add(pairs.button, pairs.command);
+            }
         }
         public void Update()
         {
@@ -36,5 +36,5 @@ namespace SuperDavis.Controller
                 }
             }
         }
-    }*/
+    }
 }

@@ -1,22 +1,17 @@
-﻿using SuperDavis.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SuperDavis.Interfaces;
 
 namespace SuperDavis.Command
 {
     class ResetCommand : ICommand
     {
-        private readonly SuperDavis superDavis;
-        public ResetCommand(SuperDavis superDavisClass)
+        private readonly IWorld world;
+        public ResetCommand(IWorld worldClass)
         {
-            this.superDavis = superDavisClass;
+            this.world = worldClass;
         }
         public void Execute()
         {
-            superDavis.ResetGame();
+            world.ResetGame();
         }
     }
 }

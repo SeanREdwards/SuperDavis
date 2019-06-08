@@ -1,19 +1,15 @@
-﻿/*
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Interfaces;
+using SuperDavis.Sprite;
+using System.Collections.Generic;
+
+/*
  * EnemySpriteFactory.cs
  * @Author Sean Edwards
  * Class to create a sprite factory allowing for the streamlining of enemy sprites.
  */
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Interface;
-using SuperDavis.Sprite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SuperDavis.Factory
 {
     class EnemySpriteFactory
@@ -59,11 +55,11 @@ namespace SuperDavis.Factory
             return Create(goombaSheet);
         }*/
 
-        /*public ISprite CreateGoombaFlateStatic()
+        public ISprite CreateGoombaFlateStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 66, 20, 20) };
             return Create(goombaSheet);
-        }*/
+        }
 
         /*public ISprite CreateGoombaFlatMovingRight()
         {
@@ -72,11 +68,11 @@ namespace SuperDavis.Factory
             return Create(goombaSheet);
         }*/
 
-        /*public ISprite CreateKoopaGreenStaticLeft()
+        public ISprite CreateKoopaGreenStaticLeft()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(167, 0, 22, 30) };
             return Create(koopaGreenSheet);
-        }*/
+        }
 
         public ISprite CreateKoopaGreenShellAnimatedLeft()
         {

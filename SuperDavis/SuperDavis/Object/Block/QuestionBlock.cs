@@ -1,27 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interface;
-using SuperDavis.State.DavisState;
+using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Block
 {
     class QuestionBlock : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public QuestionBlockStateMachine QuestionBlockStateMachine;
+        private ISprite block;
+        public Rectangle HitBox { get; set; }
 
         public QuestionBlock(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+            block = QuestionBlockStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -31,12 +30,22 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            QuestionBlockStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                QuestionBlockStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
-        public void UseQuestionBlock()
+        public void SpecialState()
         {
             QuestionBlockStateMachine = new QuestionBlockStateMachine(true);
         }
+
+        public void Reset()
+        {
+            QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+            Remove = false;
+        }
+
     }
 }

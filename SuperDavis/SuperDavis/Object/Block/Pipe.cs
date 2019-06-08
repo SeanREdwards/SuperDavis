@@ -1,27 +1,25 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interface;
-using SuperDavis.State.DavisState;
+using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Block
 {
     class Pipe : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         private PipeStateMachine pipeStateMachine;
-
+        private ISprite block;
+        public Rectangle HitBox { get; set; }
         public Pipe(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             pipeStateMachine = new PipeStateMachine();
+            block = pipeStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -31,7 +29,12 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            pipeStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                pipeStateMachine.Draw(spriteBatch, Location);
+            }
         }
+        public void SpecialState() { }
+        public void Reset() { }
     }
 }

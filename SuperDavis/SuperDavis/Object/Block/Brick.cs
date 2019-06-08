@@ -1,27 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interface;
-using SuperDavis.State.DavisState;
+using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Block
 {
     class Brick : IBlock
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
+        private ISprite block;
+        public Rectangle HitBox { get; set; }
 
         public Brick(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             BrickStateMachine = new BrickStateMachine(false);
+            block = BrickStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -31,12 +30,23 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            BrickStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                BrickStateMachine.Draw(spriteBatch, Location);
+            }
         }
 
-        public void BreakBrick()
+        public void SpecialState()
         {
             BrickStateMachine = new BrickStateMachine(true);
         }
+
+        public void Reset()
+        {
+            BrickStateMachine = new BrickStateMachine(false);
+            Remove = false;
+        }
+
+
     }
 }

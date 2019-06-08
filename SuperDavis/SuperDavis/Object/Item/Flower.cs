@@ -1,27 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interface;
-using SuperDavis.State.DavisState;
+using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Item
 {
     class Flower : IItem
     {
+        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        private readonly FlowerStateMachine flowerStateMachine;
+        public Rectangle HitBox { get; set; }
+        private ISprite item;
+        private FlowerStateMachine flowerStateMachine;
 
         public Flower(Vector2 location)
         {
             // initial state
+            Remove = false;
             Location = location;
             flowerStateMachine = new FlowerStateMachine();
+            item = flowerStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, item.Width, item.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -31,7 +30,15 @@ namespace SuperDavis.Object.Item
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            flowerStateMachine.Draw(spriteBatch, Location);
+            if (!Remove)
+            {
+                flowerStateMachine.Draw(spriteBatch, Location);
+            }
+        }
+
+        public void Clear()
+        {
+            Remove = true;
         }
     }
 }

@@ -1,26 +1,30 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Interface;
-using SuperDavis.State.DavisState;
+using SuperDavis.Interfaces;
 using SuperDavis.State.EnemyState;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.Enemy
 {
     class Koopa : IEnemy
     {
+        public bool Remove { get; set; }
+        public bool Dead { get; set; }
         public Vector2 Location { get; set; }
-        private readonly KoopaStateMachine koopaStateMachine;
+        public Rectangle HitBox { get; set; }
+        private ISprite enemy;
+
+        private KoopaStateMachine koopaStateMachine;
 
         public Koopa(Vector2 location)
         {
             // initial state
+            Remove = false;
+            Dead = false;
             Location = location;
-            koopaStateMachine = new KoopaStateMachine();
+            koopaStateMachine = new KoopaStateMachine(this);
+            enemy = koopaStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
+
         }
 
         public void Update(GameTime gameTime)
@@ -31,6 +35,12 @@ namespace SuperDavis.Object.Enemy
         public void Draw(SpriteBatch spriteBatch)
         {
             koopaStateMachine.Draw(spriteBatch, Location);
+        }
+
+        public void TakeDamage()
+        {
+            Dead = true;
+            koopaStateMachine = new KoopaStateMachine(this);
         }
     }
 }
