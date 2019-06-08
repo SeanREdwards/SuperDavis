@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Enemy;
 
 namespace SuperDavis.State.EnemyState
 {
@@ -11,9 +12,16 @@ namespace SuperDavis.State.EnemyState
         public int Height { get; set;}
         public ISprite Sprite;
 
-        public GoombaStateMachine()
+        public GoombaStateMachine(Goomba goomba)
         {
-            Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
+            if (!goomba.Dead)
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
+            }
+            else
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlateStatic();
+            }
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

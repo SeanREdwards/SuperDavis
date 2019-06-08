@@ -55,11 +55,11 @@ namespace SuperDavis.Factory
             return Create(goombaSheet);
         }*/
 
-        /*public ISprite CreateGoombaFlateStatic()
+        public ISprite CreateGoombaFlateStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 66, 20, 20) };
             return Create(goombaSheet);
-        }*/
+        }
 
         /*public ISprite CreateGoombaFlatMovingRight()
         {
@@ -68,11 +68,11 @@ namespace SuperDavis.Factory
             return Create(goombaSheet);
         }*/
 
-        /*public ISprite CreateKoopaGreenStaticLeft()
+        public ISprite CreateKoopaGreenStaticLeft()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(167, 0, 22, 30) };
             return Create(koopaGreenSheet);
-        }*/
+        }
 
         public ISprite CreateKoopaGreenShellAnimatedLeft()
         {

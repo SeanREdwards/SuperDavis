@@ -98,7 +98,7 @@ namespace SuperDavis.Factory
 
         public ISprite CreateEmptyBlock()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 0, 0) };
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16) };
             return Create(blocksAndPipes);
         }
 

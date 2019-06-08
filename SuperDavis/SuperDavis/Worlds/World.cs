@@ -1,18 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.Object.Block;
-using SuperDavis.Object.Background;
-using SuperDavis.Object.Character;
-using SuperDavis.Object.Enemy;
-using SuperDavis.Object.Item;
 using SuperDavis.State.DavisState;
-using SuperDavis.State.ItemStateMachine;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SuperDavis.Object.Scenery;
 
 namespace SuperDavis.Worlds
 {
@@ -20,11 +11,11 @@ namespace SuperDavis.Worlds
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public Background Bkgnd;
         public IList<IDavis> Davises { get; set; }
         public IList<IItem> Items { get; set; }
         public IList<IBlock> Blocks { get; set; }
         public IList<IEnemy> Enemies { get; set; }
+        public IList<IBackground> Backgrounds { get; set; }
 
         private Game1 game;
 
@@ -35,15 +26,19 @@ namespace SuperDavis.Worlds
             Height = height;
 
             // Initialize for lists
-            Bkgnd = new Background();
             Davises = new List<IDavis>();
             Items = new List<IItem>();
             Blocks = new List<IBlock>();
             Enemies = new List<IEnemy>();
+            Backgrounds = new List<IBackground>();
         }
         
         public void Update(GameTime gameTime)
         {
+            foreach (IBackground background in Backgrounds)
+            {
+                background.Update(gameTime);
+            }
             foreach (IDavis character in Davises)
             {
                 character.Update(gameTime);
@@ -64,22 +59,25 @@ namespace SuperDavis.Worlds
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //Bkgnd.Draw(spriteBatch, new Vector2(1024,768));
-            foreach (IDavis character in Davises)
+            foreach (IBackground background in Backgrounds)
             {
-                character.Draw(spriteBatch);
-            }
-            foreach (IItem item in Items)
-            {
-                item.Draw(spriteBatch);
+                background.Draw(spriteBatch);
             }
             foreach (IBlock block in Blocks)
             {
                 block.Draw(spriteBatch);
             }
+            foreach (IItem item in Items)
+            {
+                item.Draw(spriteBatch);
+            }
             foreach (IEnemy enemy in Enemies)
             {
                 enemy.Draw(spriteBatch);
+            }
+            foreach (IDavis character in Davises)
+            {
+                character.Draw(spriteBatch);
             }
         }
 
@@ -94,14 +92,11 @@ namespace SuperDavis.Worlds
             }
             foreach (IBlock block in Blocks)
             {
-                if(block is HiddenBlock)
-                {
-                    //block.Reset();
-                } 
+                block.Reset();
             }
             foreach (IEnemy enemy in Enemies)
             {
-                //TBD
+                //enemy.Reset();
             }
 
         }

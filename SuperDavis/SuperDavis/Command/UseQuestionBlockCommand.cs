@@ -12,7 +12,7 @@ namespace SuperDavis.Command
         }
         public void Execute()
         {
-            questionBlock.UseQuestionBlock();
+            questionBlock.SpecialState();
         }
     }
 }

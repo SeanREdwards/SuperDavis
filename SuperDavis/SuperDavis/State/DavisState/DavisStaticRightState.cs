@@ -37,7 +37,6 @@ namespace SuperDavis.State.DavisState
             // Needed?
             Width = sprite.Width;
             Height = sprite.Height;
-            System.Console.WriteLine(Width+ " + "+Height);
         }
 
         public void Static() { }

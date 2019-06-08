@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Enemy;
 
 namespace SuperDavis.State.EnemyState
 {
@@ -11,9 +12,16 @@ namespace SuperDavis.State.EnemyState
         public int Height { get; set; }
         public ISprite Sprite;
 
-        public KoopaStateMachine()
+        public KoopaStateMachine(Koopa koopa)
         {
-            Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
+            if (!koopa.Dead)
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenStaticLeft();
+            }
+            else
+            {
+                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
+            }
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

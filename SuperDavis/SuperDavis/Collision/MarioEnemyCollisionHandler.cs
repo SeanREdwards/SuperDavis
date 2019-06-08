@@ -37,7 +37,17 @@ namespace SuperDavis.Collision
             }*/
             if (side != CollisionSide.None)
             {
-                enemy.TakeDamage();
+                if (side != CollisionSide.Bottom)
+                {
+                    if (!enemy.Dead)
+                    {
+                        enemy.TakeDamage();
+                    }
+                }
+                else
+                {
+                    davis.DavisState.Death();
+                }
             }
         }
     }

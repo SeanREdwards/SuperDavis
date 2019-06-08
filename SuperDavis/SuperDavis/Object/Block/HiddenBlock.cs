@@ -35,7 +35,7 @@ namespace SuperDavis.Object.Block
             }
         }
 
-        public void UnhiddenBlock()
+        public void SpecialState()
         {
             HiddenBlockStateMachine = new HiddenBlockStateMachine(false);
         }

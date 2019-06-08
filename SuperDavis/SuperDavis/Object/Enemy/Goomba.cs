@@ -8,17 +8,19 @@ namespace SuperDavis.Object.Enemy
     class Goomba : IEnemy
     {
         public bool Remove { get; set; }
+        public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private ISprite enemy;
-        private readonly GoombaStateMachine goombaStateMachine;
+        private GoombaStateMachine goombaStateMachine;
 
         public Goomba(Vector2 location)
         {
             // initial state
             Remove = false;
+            Dead = false;
             Location = location;
-            goombaStateMachine = new GoombaStateMachine();
+            goombaStateMachine = new GoombaStateMachine(this);
             enemy = goombaStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
         }
@@ -38,7 +40,8 @@ namespace SuperDavis.Object.Enemy
 
         public void TakeDamage()
         {
-
+            Dead = true;
+            goombaStateMachine = new GoombaStateMachine(this);
         }
     }
 }

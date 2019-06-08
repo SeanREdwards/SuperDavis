@@ -12,7 +12,7 @@ namespace SuperDavis.Command
         }
         public void Execute()
         {
-            hiddenBlock.UnhiddenBlock();
+            hiddenBlock.SpecialState();
         }
     }
 }

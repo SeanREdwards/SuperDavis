@@ -19,4 +19,6 @@
   // Enemy
   <Enemy Type="Goomba" X="100" Y="300" />
   <Enemy Type="Koopa" X="200" Y="300" />
+  // Background
+  <Scenery Type="Background" X="100" Y="700" />
 </Object>

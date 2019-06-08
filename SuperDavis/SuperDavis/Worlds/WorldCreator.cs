@@ -4,6 +4,7 @@ using SuperDavis.Object.Block;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
+using SuperDavis.Object.Scenery;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,12 +19,12 @@ namespace SuperDavis.Worlds
     {
         private const int unitPixels = 16;
 
-        public class ObjectInfo
+        /*public class ObjectInfo
         {
             public string Name { get; set; }
             public int XCoords { get; set; }
             public int YCoords { get; set; }
-        }
+        }*/
 
         public static IWorld CreateWorld(string levelFile, int width, int height, Game1 game)
         {
@@ -84,6 +85,9 @@ namespace SuperDavis.Worlds
                 case "Enemy":
                     CreateEnemy(world, type, x, y);
                     break;
+                case "Scenery":
+                    CreateBackground(world, type, x, y);
+                    break;
                 default:
                     break;
             }
@@ -93,7 +97,7 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-                case "Davis":
+                case nameof(Davis):
                     world.Davises.Add(new Davis(new Vector2(x, y)));
                     break;
                 default:
@@ -106,19 +110,19 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-                case "Flower":
+                case nameof(Flower):
                     world.Items.Add(new Flower(new Vector2(x, y)));
                     break;
-                case "Coin":
+                case nameof(Coin):
                     world.Items.Add(new Coin(new Vector2(x, y)));
                     break;
-                case "Mushroom":
+                case nameof(Mushroom):
                     world.Items.Add(new Mushroom(new Vector2(x, y)));
                     break;
-                case "YoshiEgg":
+                case nameof(YoshiEgg):
                     world.Items.Add(new YoshiEgg(new Vector2(x, y)));
                     break;
-                case "Star":
+                case nameof(Star):
                     world.Items.Add(new Star(new Vector2(x, y)));
                     break;
                 default:
@@ -130,19 +134,19 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-                case "HiddenBlock":
+                case nameof(HiddenBlock):
                     world.Blocks.Add(new HiddenBlock(new Vector2(x, y)));
                     break;
-                case "ActivatedBlock":
+                case nameof(ActivatedBlock):
                     world.Blocks.Add(new ActivatedBlock(new Vector2(x, y)));
                     break;
-                case "Brick":
+                case nameof(Brick):
                     world.Blocks.Add(new Brick(new Vector2(x, y)));
                     break;
-                case "QuestionBlock":
+                case nameof(QuestionBlock):
                     world.Blocks.Add(new QuestionBlock(new Vector2(x, y)));
                     break;
-                case "Pipe":
+                case nameof(Pipe):
                     world.Blocks.Add(new Pipe(new Vector2(x, y)));
                     break;
                 default:
@@ -154,10 +158,10 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-                case "Goomba":
+                case nameof(Goomba):
                     world.Enemies.Add(new Goomba(new Vector2(x, y)));
                     break;
-                case "Koopa":
+                case nameof(Koopa):
                     world.Enemies.Add(new Koopa(new Vector2(x, y)));
                     break;
                 default:
@@ -171,9 +175,8 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-              case "Background":
-                    //TBD
-                  //world.Background.Add(new Background(new Vector2(x, y)));
+              case nameof(Background):
+                    world.Backgrounds.Add(new Background(new Vector2(x, y)));
                 break;
               default:
                 break;
