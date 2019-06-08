@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Block;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,18 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Bottom:
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
+                    if(block is HiddenBlock)
+                    {
+                        block.SpecialState();
+                    }
+                    else if (block is QuestionBlock)
+                    {
+                        block.SpecialState();
+                    }else if (block is Brick)
+                    {
+                        block.SpecialState();
+                        block.Remove = true;
+                    }
                     break;
                 case CollisionSide.None:
                    // davis.DavisState.Static();

@@ -12,7 +12,7 @@ namespace SuperDavis.Command
         }
         public void Execute()
         {
-            brick.BreakBrick();
+            brick.SpecialState();
         }
     }
 }

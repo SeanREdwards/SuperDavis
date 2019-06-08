@@ -36,7 +36,7 @@ namespace SuperDavis.Object.Block
             }
         }
 
-        public void BreakBrick()
+        public void SpecialState()
         {
             BrickStateMachine = new BrickStateMachine(true);
         }

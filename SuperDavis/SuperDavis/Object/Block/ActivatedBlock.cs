@@ -36,7 +36,7 @@ namespace SuperDavis.Object.Block
                 activatedBlockStateMachine.Draw(spriteBatch, Location);
             }
         }
-
+        public void SpecialState() { }
         public void Reset() { }
     }
 }

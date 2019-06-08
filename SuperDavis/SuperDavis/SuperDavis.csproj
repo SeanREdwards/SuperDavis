@@ -184,7 +184,8 @@
     <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Factory\BackgroundFactory.cs" />
-    <Compile Include="Object\Background\Background.cs" />
+    <Compile Include="Interfaces\IBackground.cs" />
+    <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />

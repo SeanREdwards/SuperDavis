@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Character;
+using SuperDavis.Object.Scenery;
 using System.Collections.Generic;
 
 namespace SuperDavis.Interfaces
@@ -14,8 +15,7 @@ namespace SuperDavis.Interfaces
         IList<IEnemy> Enemies { get; set; }
         IList<IItem> Items { get; set; }
         IList<IBlock> Blocks { get; set; }
-        // May need it in the future
-        //IList<IBackground> Backgrounds { get; set; }
+        IList<IBackground> Backgrounds { get; set; }
         //IList<IProjectile> Projectiles { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
