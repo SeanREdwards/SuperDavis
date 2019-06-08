@@ -96,8 +96,8 @@ namespace SuperDavis.Worlds
             {
                 if(block is HiddenBlock)
                 {
-                    block.Reset();
-                }
+                    //block.Reset();
+                } 
             }
             foreach (IEnemy enemy in Enemies)
             {
