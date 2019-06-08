@@ -44,6 +44,7 @@ namespace SuperDavis.Object.Block
         public void Reset()
         {
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
+            Remove = false;
         }
 
     }

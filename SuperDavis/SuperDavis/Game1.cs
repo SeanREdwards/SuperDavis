@@ -115,7 +115,22 @@ namespace SuperDavis
                       (Keys.O, new DavisDeathCommand(davis)),
                       (Keys.P, new DavisSpecialAttackCommand(davis)),
                       (Keys.M, new ToggleMouseControl(this))
-                    )
+                    ),
+                    new GamepadController
+                    (
+                      (Buttons.Start, new ExitCommand(this)),
+                      (Buttons.Back, new ResetCommand(World)),
+                      (Buttons.LeftThumbstickLeft, new DavisTurnLeftCommand(davis)),
+                      (Buttons.LeftThumbstickRight, new DavisTurnRightCommand(davis)),
+                      (Buttons.LeftThumbstickUp, new DavisJumpCommand(davis)),
+                      (Buttons.LeftThumbstickDown, new DavisCrouchCommand(davis)),
+                      (Buttons.X, new DavisToDavisCommand(davis)),
+                      (Buttons.Y, new DavisToWoodyCommand(davis)),
+                      (Buttons.LeftTrigger, new DavisToBatCommand(davis)),
+                      (Buttons.RightTrigger, new DavisDeathCommand(davis)),
+                      (Buttons.A, new DavisSpecialAttackCommand(davis)),
+                      (Buttons.B, new ToggleMouseControl(this))
+                    ),
                 };
 
             };
@@ -126,15 +141,15 @@ namespace SuperDavis
         {
             if (ToggleMouseControl)
             {
-                if (controllerList.Count==1) { 
+                if (controllerList.Count==2) { 
                     controllerList.Add(new MouseController(this));
                 }
             }
             else
             {
-                if (controllerList.Count > 1)
+                if (controllerList.Count > 2)
                 {
-                    controllerList.RemoveAt(1);
+                    controllerList.RemoveAt(2);
                 }
 
             }

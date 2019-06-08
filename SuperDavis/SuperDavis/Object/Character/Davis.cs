@@ -35,26 +35,37 @@ namespace SuperDavis.Object.Character
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            this.Location += new Vector2(-2, 0);
-            this.DavisState.Left();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
+                Location += new Vector2(-2, 0);
+            }
+            DavisState.Left();
         }
 
         public void DavisTurnRight()
         {
-            this.Location += new Vector2(2, 0);
-            this.DavisState.Right();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(2, 0);
+            }
+            DavisState.Right();
         }
 
         public void DavisJump()
         {
-            this.Location += new Vector2(0, -2);
-            this.DavisState.Up();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(0, -2);
+            }
+            DavisState.Up();
         }
 
         public void DavisCrouch()
         {
-            this.Location += new Vector2(0, 2);
-            this.DavisState.Down();
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
+                Location += new Vector2(0, 2);
+            }
+            DavisState.Down();
         }
 
         public void DavisToDavis()
