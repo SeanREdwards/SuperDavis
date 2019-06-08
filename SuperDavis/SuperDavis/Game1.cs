@@ -27,6 +27,7 @@ namespace SuperDavis
         public int WindowsEdgeWidth;
         public int WindowsEdgeHeight;
         public IWorld World { get; set; }
+        public bool ToggleMouseControl { get; set; }
 
         public Game1()
         {
@@ -44,6 +45,7 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
+            ToggleMouseControl = false;
             InitializaFactory();
             // TBD
             World = WorldCreator.CreateWorld("test-level.xml", WindowsEdgeWidth, WindowsEdgeHeight, this);
@@ -62,6 +64,7 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
+            UpdateController();
             foreach (IController controller in controllerList)
             {
                 controller.Update();
@@ -110,11 +113,31 @@ namespace SuperDavis
                       (Keys.Up, new DavisJumpCommand(davis)),
                       (Keys.Down, new DavisCrouchCommand(davis)),
                       (Keys.O, new DavisDeathCommand(davis)),
-                      (Keys.P, new DavisSpecialAttackCommand(davis))
+                      (Keys.P, new DavisSpecialAttackCommand(davis)),
+                      (Keys.M, new ToggleMouseControl(this))
                     )
                 };
+
             };
 
+        }
+
+        private void UpdateController()
+        {
+            if (ToggleMouseControl)
+            {
+                if (controllerList.Count==1) { 
+                    controllerList.Add(new MouseController(this));
+                }
+            }
+            else
+            {
+                if (controllerList.Count > 1)
+                {
+                    controllerList.RemoveAt(1);
+                }
+
+            }
         }
 
     }

@@ -184,6 +184,8 @@
     <Compile Include="Collision\MarioItemCollisionHandler.cs" />
     <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Command\ToggleMouseControl.cs" />
+    <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
