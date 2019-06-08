@@ -30,6 +30,7 @@ namespace SuperDavis.Worlds
             return ParseAndLoad(levelFile, width, height, game);
         }
 
+        //TODO if we want to use for csv
         /*  Idea from: https://joshclose.github.io/CsvHelper/examples 
          private IWorld ParseAndLoad(string levelFile, int Width, int Height, Game1 game)
          {
@@ -170,9 +171,11 @@ namespace SuperDavis.Worlds
         {
             switch (type)
             {
-                /* TBD */
-                default:
-                    break;
+              case "Background":
+                  //world.Background.Add(new Background(new Vector2(x, y)));
+                break;
+              default:
+                break;
             }
         }
     }

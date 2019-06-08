@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Object>
+  //Background
+  <Background Type="Hills" X="0" Y="0" />
   // Character
 	<Character Type="Davis" X="512" Y="384" />
   // Item

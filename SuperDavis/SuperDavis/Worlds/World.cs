@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
+using SuperDavis.Object.Background;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
@@ -19,6 +20,7 @@ namespace SuperDavis.Worlds
     {
         public int Width { get; set; }
         public int Height { get; set; }
+        public Background Bkgnd;
         public IList<IDavis> Davises { get; set; }
         public IList<IItem> Items { get; set; }
         public IList<IBlock> Blocks { get; set; }
@@ -31,7 +33,9 @@ namespace SuperDavis.Worlds
             this.game = game;
             Width = width;
             Height = height;
+
             // Initialize for lists
+            Bkgnd = new Background();
             Davises = new List<IDavis>();
             Items = new List<IItem>();
             Blocks = new List<IBlock>();
@@ -40,7 +44,6 @@ namespace SuperDavis.Worlds
         
         public void Update(GameTime gameTime)
         {
-
             foreach (IDavis character in Davises)
             {
                 character.Update(gameTime);
@@ -61,6 +64,7 @@ namespace SuperDavis.Worlds
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            //Bkgnd.Draw(spriteBatch, new Vector2(1024,768));
             foreach (IDavis character in Davises)
             {
                 character.Draw(spriteBatch);

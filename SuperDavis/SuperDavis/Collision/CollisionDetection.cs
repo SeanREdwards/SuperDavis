@@ -13,7 +13,7 @@ namespace SuperDavis.Collision
     {
 
         public enum CollisionSide { Top, Bottom, Left, Right, None};
-        public IWorld World { get; set; }
+        public IWorld World { get; }
 
         public CollisionDetection(IWorld world)
         {

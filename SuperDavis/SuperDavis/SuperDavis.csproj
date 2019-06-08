@@ -45,7 +45,9 @@
     <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
     <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
     <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
-    <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb" />
+    <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -178,6 +180,8 @@
     <Compile Include="Collision\MarioItemCollisionHandler.cs" />
     <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Factory\BackgroundFactory.cs" />
+    <Compile Include="Object\Background\Background.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />

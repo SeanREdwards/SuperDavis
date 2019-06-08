@@ -7,17 +7,19 @@ namespace SuperDavis.Sprite
 {
     class GenerateSprite : ISprite
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public int Width { get;}
+        public int Height { get;}
         private int spriteWidth;
         private int spriteHeight;
         private readonly Texture2D texture;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private List<Rectangle> spriteList;
 
         private double currentTime;
-        private const double frameTime = 0.08d;
+
+        //TODO the fixed frametime should not be fixed for all frames i.e. not all are created equal.
+        private const double frameTime = 0.08d; 
 
         public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)
         {
@@ -25,8 +27,8 @@ namespace SuperDavis.Sprite
             spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
-            spriteWidth = texture.Width / totalFrames;
-            spriteHeight = texture.Height;
+            //spriteWidth = texture.Width / totalFrames;
+            //spriteHeight = texture.Height;
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
         }
@@ -37,7 +39,7 @@ namespace SuperDavis.Sprite
             if (currentTime > frameTime)
             {
                 currentFrame++;
-                currentTime = 0d;
+                currentTime = 0d; 
             }
             if (currentFrame == totalFrames)
             {
