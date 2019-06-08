@@ -151,7 +151,7 @@ namespace SuperDavis.Collision
                 {
 
                     CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, enemy.HitBox), davis.HitBox, enemy.HitBox);
-             //       MarioEnemyCollisionHandler.HandleCollision(davis, enemy, side);
+                    MarioEnemyCollisionHandler.HandleCollision(davis, enemy, side);
 
                 }
             }
