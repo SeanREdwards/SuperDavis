@@ -42,7 +42,6 @@ namespace SuperDavis.Factory
         private Texture2D batSpecialAttackOneLeft;
         private Texture2D batSpecialAttackOneRight;
 
-
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
         private DavisSpriteFactory() { }
@@ -72,7 +71,6 @@ namespace SuperDavis.Factory
             //batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
             batSpecialAttackOneRight = content.Load<Texture2D>("BatSprites/BatRight_2");
             batSpecialAttackOneLeft = content.Load<Texture2D>("BatSprites/BatLeft_2");
-
         }
 
         public ISprite Create(Texture2D texture)
