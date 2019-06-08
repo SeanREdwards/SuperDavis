@@ -40,11 +40,13 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Code Reviews\Code Quality Review\RyanKnighton.md" />
-    <None Include="Code Reviews\Code Quality Review\JasonXu.md" />
-    <None Include="Code Reviews\Readabilty Review\RyanKnighton.md" />
-    <None Include="Code Reviews\Readabilty Review\JasonXu.md" />
-    <None Include="Code Reviews\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint2\Code Quality Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint2\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -186,7 +188,6 @@
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />
-    <None Include="Code Reviews\Code Quality Review\SeanEdwards.md" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
     <Compile Include="Command\DavisDeathCommand.cs" />
     <Compile Include="Command\DavisToBatCommand.cs" />
@@ -259,6 +260,7 @@
     <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
     <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
