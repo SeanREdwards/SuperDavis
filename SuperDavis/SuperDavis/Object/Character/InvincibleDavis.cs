@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Character
     class InvincibleDavis : IDavis
     {
         IDavis decoratedDavis;
-        int timer = 500;
+        int timer = 5;
 
         public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
