@@ -47,7 +47,8 @@ namespace SuperDavis.Object.Character
 
         void RemoveStar()
         {
-            //Game1.Instance.davis = decoratedDavis;
+            //TODO
+            //Game1.World.Davises[0] = decoratedDavis;
         }
 
         public void Draw(SpriteBatch spriteBatch)
