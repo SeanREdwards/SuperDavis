@@ -2,30 +2,32 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
 
 namespace SuperDavis.Object.Scenery
 {
     class Background : IBackground
     {
         public Vector2 Location { get; set; }
-        private readonly ISprite sprite;
+        private readonly ISprite backgroundImage; 
 
         public Background(Vector2 location)
         {
             // initial state
             Location = location;
-            sprite = ItemSpriteFactory.Instance.CreateBluePipe();
+
+            //TODO works with DavisSpriteFactory but not background sprite factory.
+            backgroundImage = DavisSpriteFactory.Instance.MarioHillsGreen();
+            //backgroundImage = BackgroundSpriteFactory.Instance.MarioHillsGreen();
         }
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            backgroundImage.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, Location);
+            backgroundImage.Draw(spriteBatch, Location);
         }
         public void Reset()
         { }

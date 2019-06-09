@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace SuperDavis.Sprite
 {
-    class GenerateSprite : ISprite
+    class GenerateBackground : ISprite
     {
+        private int WindowsEdgeWidth = 1024;
+        private int WindowsEdgeHeight = 768;
         public int Width { get; set; }
         public int Height { get; set; }
-        //private int spriteWidth;
-        //private int spriteHeight;
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
@@ -19,16 +19,14 @@ namespace SuperDavis.Sprite
         private double currentTime;
 
         //TODO the fixed frametime should not be fixed for all frames i.e. not all are created equal.
-        private const double frameTime = 0.08d; 
+        private const double frameTime = 0.08d;
 
-        public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)
+        public GenerateBackground(Texture2D texture, List<Rectangle> frameCoords)
         {
             this.texture = texture;
             spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
-            //spriteWidth = texture.Width / totalFrames;
-            //spriteHeight = texture.Height;
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
         }
@@ -39,7 +37,7 @@ namespace SuperDavis.Sprite
             if (currentTime > frameTime)
             {
                 currentFrame++;
-                currentTime = 0d; 
+                currentTime = 0d;
             }
             if (currentFrame == totalFrames)
             {
@@ -52,7 +50,7 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width, sourceRectangle.Height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, WindowsEdgeWidth, WindowsEdgeHeight);
             spriteBatch.Draw(this.texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }

@@ -42,6 +42,8 @@ namespace SuperDavis.Factory
         private Texture2D batSpecialAttackOneLeft;
         private Texture2D batSpecialAttackOneRight;
 
+        private Texture2D marioBackgroundOne;
+
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
         private DavisSpriteFactory() { }
@@ -50,27 +52,24 @@ namespace SuperDavis.Factory
         {
             /*Davis sprite sheet assignments*/
             davisStaticRight = content.Load<Texture2D>("DavisSprites/DavisRight_0");
-            //davisRightOne = content.Load<Texture2D>("DavisSprites/DavisRight_1");
             davisSpecialAttackOneRight = content.Load<Texture2D>("DavisSprites/DavisRight_2");
             davisStaticLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_0");
-            //davisLeftOne = content.Load<Texture2D>("DavisSprites/DavisLeft_1");
             davisSpecialAttackOneLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_2");
 
             /*Woody sprite sheet assignements*/
             woodyStaticRight = content.Load<Texture2D>("WoodySprites/WoodyRight_0");
-            //woodyRightOne = content.Load<Texture2D>("WoodySprites/WoodyRight_1");
             woodySpecialAttackOneRight = content.Load<Texture2D>("WoodySprites/WoodyRight_2");
             woodyStaticLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_0");
-            //woodyLeftOne = content.Load<Texture2D>("WoodySprites/WoodyLeft_1");
             woodySpecialAttackOneLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_2");
 
             /*Bat sprite sheet assignements*/
             batStaticRight = content.Load<Texture2D>("BatSprites/BatRight_0");
-            //batRightOne = content.Load<Texture2D>("BatSprites/BatRight_1");
             batStaticLeft = content.Load<Texture2D>("BatSprites/BatLeft_0");
-            //batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
             batSpecialAttackOneRight = content.Load<Texture2D>("BatSprites/BatRight_2");
             batSpecialAttackOneLeft = content.Load<Texture2D>("BatSprites/BatLeft_2");
+
+            //TODO Test Background sprite sheet
+            marioBackgroundOne = content.Load<Texture2D>("BackgroundSprites/BackgroundsMario1");
         }
 
         public ISprite Create(Texture2D texture)
@@ -320,6 +319,12 @@ namespace SuperDavis.Factory
         {
             coordinateList = new List<Rectangle>() { new Rectangle(20, 2, 39, 80), new Rectangle(103, 2, 44, 80), new Rectangle(195, 2, 25, 80) };
             return Create(batSpecialAttackOneRight);
+        }
+
+        public ISprite MarioHillsGreen()
+        {
+            coordinateList = new List<Rectangle>() { new Rectangle(1072, 0, 512, 447) };
+            return new GenerateBackground(marioBackgroundOne, coordinateList);
         }
 
     }
