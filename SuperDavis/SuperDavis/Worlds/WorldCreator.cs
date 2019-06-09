@@ -17,7 +17,7 @@ namespace SuperDavis.Worlds
 {
     static class WorldCreator
     {
-        private const int unitPixels = 16;
+        //private const int unitPixels = 16;
 
         /*public class ObjectInfo
         {

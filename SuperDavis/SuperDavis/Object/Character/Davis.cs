@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.DavisState;
+using SuperDavis.Factory;
+using System.Collections.Generic;
+
 
 namespace SuperDavis.Object.Character
 {
@@ -12,6 +15,9 @@ namespace SuperDavis.Object.Character
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
+        private ISprite sprite;
+
+        Dictionary<DavisStatus, Dictionary<string, ISprite>> characterDictionary;
 
         public Davis(Vector2 location)
         {
@@ -19,7 +25,78 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Location = location;
-    }
+        }
+
+        private void CreateDictionaries()
+        {
+            characterDictionary = new Dictionary<DavisStatus, Dictionary<string, ISprite>>();
+            characterDictionary.Add(DavisStatus.Davis, CreateDavisDictionary());
+            characterDictionary.Add(DavisStatus.Davis, CreateWoodyDictionary());
+            characterDictionary.Add(DavisStatus.Davis, CreateBatDictionary());
+            characterDictionary.Add(DavisStatus.Davis, CreateInvincibleDictionary());
+        }
+
+        private Dictionary<string, ISprite> CreateDavisDictionary()
+        {
+            Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
+            dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateDavisCrouchLeft());
+            dictionary.Add("DavisCrouchRightState", DavisSpriteFactory.Instance.CreateDavisCrouchRight());
+            dictionary.Add("DavisDeathLeftState", DavisSpriteFactory.Instance.CreateDavisDeathLeft());
+            dictionary.Add("DavisDeathRightState", DavisSpriteFactory.Instance.CreateDavisDeathRight());
+            dictionary.Add("DavisJumpLeftState", DavisSpriteFactory.Instance.CreateDavisJumpLeft());
+            dictionary.Add("DavisJumpRightState", DavisSpriteFactory.Instance.CreateDavisJumpRight());
+            dictionary.Add("DavisSpecialAttackLeftState", DavisSpriteFactory.Instance.CreateDavisSpecialAttackOneLeft());
+            dictionary.Add("DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateDavisSpecialAttackOneRight());
+            dictionary.Add("DavisStaticLeftState", DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite());
+            dictionary.Add("DavisStaticRightState", DavisSpriteFactory.Instance.CreateDavisStaticRightSprite());
+            dictionary.Add("DavisWalkLeftState", DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite());
+            dictionary.Add("DavisWalkRightState", DavisSpriteFactory.Instance.CreateDavisWalkRightSprite());
+            return dictionary;
+        }
+
+        private Dictionary<string, ISprite> CreateWoodyDictionary()
+        {
+            Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
+            dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateWoodyCrouchLeft());
+            dictionary.Add("DavisCrouchRightState", DavisSpriteFactory.Instance.CreateWoodyCrouchRight());
+            dictionary.Add("DavisDeathLeftState", DavisSpriteFactory.Instance.CreateWoodyDeathLeft());
+            dictionary.Add("DavisDeathRightState", DavisSpriteFactory.Instance.CreateWoodyDeathRight());
+            dictionary.Add("DavisJumpLeftState", DavisSpriteFactory.Instance.CreateWoodyJumpLeft());
+            dictionary.Add("DavisJumpRightState", DavisSpriteFactory.Instance.CreateWoodyJumpRight());
+            dictionary.Add("DavisSpecialAttackLeftState", DavisSpriteFactory.Instance.CreateWoodySpecialAttackOneLeft());
+            dictionary.Add("DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateWoodySpecialAttackOneRight());
+            dictionary.Add("DavisStaticLeftState", DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite());
+            dictionary.Add("DavisStaticRightState", DavisSpriteFactory.Instance.CreateWoodyStaticRightSprite());
+            dictionary.Add("DavisWalkLeftState", DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite());
+            dictionary.Add("DavisWalkRightState", DavisSpriteFactory.Instance.CreateWoodyWalkRightSprite());
+            return dictionary;
+        }
+
+        private Dictionary<string, ISprite> CreateBatDictionary()
+        {
+            Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
+            dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateBatCrouchLeft());
+            dictionary.Add("DavisCrouchRightState", DavisSpriteFactory.Instance.CreateBatCrouchRight());
+            dictionary.Add("DavisDeathLeftState", DavisSpriteFactory.Instance.CreateBatDeathLeft());
+            dictionary.Add("DavisDeathRightState", DavisSpriteFactory.Instance.CreateBatDeathRight());
+            dictionary.Add("DavisJumpLeftState", DavisSpriteFactory.Instance.CreateBatJumpLeft());
+            dictionary.Add("DavisJumpRightState", DavisSpriteFactory.Instance.CreateBatJumpRight());
+            dictionary.Add("DavisSpecialAttackLeftState", DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft());
+            dictionary.Add("DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight());
+            dictionary.Add("DavisStaticLeftState", DavisSpriteFactory.Instance.CreateBatStaticLeftSprite());
+            dictionary.Add("DavisStaticRightState", DavisSpriteFactory.Instance.CreateBatStaticRightSprite());
+            dictionary.Add("DavisWalkLeftState", DavisSpriteFactory.Instance.CreateBatWalkLeftSprite());
+            dictionary.Add("DavisWalkRightState", DavisSpriteFactory.Instance.CreateBatWalkRightSprite());
+            return dictionary;
+        }
+
+        //TODO
+        private Dictionary<string, ISprite> CreateInvincibleDictionary()
+        {
+            Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
+            //davisDictionary.Add(DavisCrouchLeftState, DavisSpriteFactory.Instance.CreateDavisCrouchLeft())
+            return dictionary;
+        }
 
         public void Update(GameTime gameTime)
         {
@@ -88,17 +165,17 @@ namespace SuperDavis.Object.Character
 
         public void DavisDeath()
         {
-            this.DavisState.Death();
+            DavisState.Death();
         }
 
         public void DavisSpecialAttack()
         {
-            this.DavisState.SpecialAttack();
+            DavisState.SpecialAttack();
         }
         public void DavisToInvincible()
         {
             // TBD
-            this.DavisState.SpecialAttack();
+            DavisState.SpecialAttack();
         }
     }
 }
