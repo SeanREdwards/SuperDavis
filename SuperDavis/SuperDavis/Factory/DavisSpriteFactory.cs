@@ -258,7 +258,8 @@ namespace SuperDavis.Factory
                 new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 35, 80)  };
             return Create(batStaticLeft);
         }
-
+    
+        //TODO fix right walk here and in the JSON
         public ISprite CreateBatWalkRightSprite()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(259, 0, 38, 80), new Rectangle(339, 0, 37, 80),

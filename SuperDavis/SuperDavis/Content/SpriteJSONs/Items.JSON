@@ -1,0 +1,263 @@
+﻿{
+  "Star": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 224,
+        "Y": 106,
+        "Width": 15,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "YoshiEgg": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 286,
+        "Y": 105,
+        "Width": 14,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "YoshiCoinAnimated": {
+    "TextureName": "blocksAndPipesTwo",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      {
+        "X": 16,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      {
+        "X": 32,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      {
+        "X": 48,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      {
+        "X": 64,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      },
+      {
+        "X": 80,
+        "Y": 32,
+        "Width": 16,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "FireFlower": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 202,
+        "Y": 107,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "RedMushroom": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 182,
+        "Y": 107,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "QuestionMarkBlockAnimated": {
+    "TextureName": "blocksAndPipesTwo",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 64,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 16,
+        "Y": 64,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 32,
+        "Y": 64,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 48,
+        "Y": 64,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "ActivatedBlock": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 49,
+        "Y": 107,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "EmptyBlock": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 0,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "BrickBlock": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 272,
+        "Y": 112,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "SpinBlockStatic": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 80,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "SpinBlockAnimated": {
+    "TextureName": "blocksAndPipes",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 80,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 16,
+        "Y": 80,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 32,
+        "Y": 80,
+        "Width": 16,
+        "Height": 16
+      },
+      {
+        "X": 48,
+        "Y": 80,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "GreenPipe": {
+    "TextureName": "blocksAndPipesTwo",
+    "SourceFrames": [
+      {
+        "X": 96,
+        "Y": 0,
+        "Width": 32,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+    "YellowPipe": {
+    "TextureName": "blocksAndPipesTwo",
+    "SourceFrames": [
+      {
+        "X": 128,
+        "Y": 0,
+        "Width": 32,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+    "BluePipe": {
+    "TextureName": "blocksAndPipesTwo",
+    "SourceFrames": [
+      {
+        "X": 160,
+        "Y": 0,
+        "Width": 32,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  }
+}
