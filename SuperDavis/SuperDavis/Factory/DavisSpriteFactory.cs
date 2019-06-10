@@ -20,25 +20,19 @@ namespace SuperDavis.Factory
 
         /*Davis sprite sheet variables.*/
         private Texture2D davisStaticRight;
-        //private Texture2D davisRightOne;
         private Texture2D davisSpecialAttackOneRight;
         private Texture2D davisStaticLeft;
-        //private Texture2D davisLeftOne;
         private Texture2D davisSpecialAttackOneLeft;
 
         /*Woody sprite sheet variables.*/
         private Texture2D woodyStaticRight;
-        //private Texture2D woodyRightOne;
         private Texture2D woodySpecialAttackOneRight;
         private Texture2D woodyStaticLeft;
-        //private Texture2D woodyLeftOne;
         private Texture2D woodySpecialAttackOneLeft;
 
         /*Bat sprite sheet variables.*/
         private Texture2D batStaticRight;
-        //private Texture2D batRightOne;
         private Texture2D batStaticLeft;
-        //private Texture2D batLeftOne;
         private Texture2D batSpecialAttackOneLeft;
         private Texture2D batSpecialAttackOneRight;
 
@@ -261,7 +255,7 @@ namespace SuperDavis.Factory
         public ISprite CreateBatWalkLeftSprite()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(503, 0, 38, 80), new Rectangle(424, 0, 37, 80),
-                new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 38, 80)  };
+                new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 35, 80)  };
             return Create(batStaticLeft);
         }
 
@@ -321,6 +315,7 @@ namespace SuperDavis.Factory
             return Create(batSpecialAttackOneRight);
         }
 
+        /*Background sprite generation as the BackgroundSpriteFactory was giving a weird null error.*/
         public ISprite MarioHillsGreen()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(1072, 0, 512, 447) };

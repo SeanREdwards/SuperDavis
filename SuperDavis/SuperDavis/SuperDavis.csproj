@@ -146,6 +146,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Level\test-level.csv" />
+    <None Include="Content\SpriteJSONs\PlayerCharacter.json" />
     <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
