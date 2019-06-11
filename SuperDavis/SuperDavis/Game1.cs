@@ -89,6 +89,7 @@ namespace SuperDavis
             DavisSpriteFactory.Instance.Load(Content);
             ItemSpriteFactory.Instance.Load(Content);
             EnemySpriteFactory.Instance.Load(Content);
+            BackgroundSpriteFactory.Instance.Load(Content);
         }
 
         private void InitializeKeybinding()

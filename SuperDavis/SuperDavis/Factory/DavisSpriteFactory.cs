@@ -1,15 +1,16 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*
+ * DavisSpriteFactory.cs
+ * @Author Sean Edwards & Jason Xu
+ * Factory class to create character sprites.
+ */
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
 
-/*
- * DavisSpriteFactory.cs
- * @Author Sean Edwards & Jason Xu
- * Factory class to create character sprites.
- */
 namespace SuperDavis.Factory
 {
     /* Character Sprites credited for http://www.lf2.net/ */
@@ -263,7 +264,7 @@ namespace SuperDavis.Factory
         public ISprite CreateBatWalkRightSprite()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(259, 0, 38, 80), new Rectangle(339, 0, 37, 80),
-                new Rectangle(419, 0, 37, 80), new Rectangle(499, 0, 37, 80) };
+                new Rectangle(419, 0, 37, 80), new Rectangle(499, 0, 37, 80), new Rectangle(579, 0, 38, 80) };
             return Create(batStaticRight);
         }
 

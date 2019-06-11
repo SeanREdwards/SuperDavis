@@ -15,6 +15,8 @@ namespace SuperDavis.Object.Character
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
+
+        //TODO get sprite from dictionary.
         private ISprite sprite;
 
         Dictionary<DavisStatus, Dictionary<string, ISprite>> characterDictionary;
@@ -31,8 +33,8 @@ namespace SuperDavis.Object.Character
         {
             characterDictionary = new Dictionary<DavisStatus, Dictionary<string, ISprite>>();
             characterDictionary.Add(DavisStatus.Davis, CreateDavisDictionary());
-            characterDictionary.Add(DavisStatus.Davis, CreateWoodyDictionary());
-            characterDictionary.Add(DavisStatus.Davis, CreateBatDictionary());
+            characterDictionary.Add(DavisStatus.Woody, CreateWoodyDictionary());
+            characterDictionary.Add(DavisStatus.Bat, CreateBatDictionary());
             characterDictionary.Add(DavisStatus.Davis, CreateInvincibleDictionary());
         }
 

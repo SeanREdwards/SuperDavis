@@ -727,6 +727,12 @@
         "Y": 0,
         "Width": 37,
         "Height": 80
+      },
+      {
+        "X": 579,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
       }
     ],
     "FrameDelay": "0.08d",
