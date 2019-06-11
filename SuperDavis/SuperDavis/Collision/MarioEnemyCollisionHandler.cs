@@ -14,7 +14,7 @@ namespace SuperDavis.Collision
     {
         // Constructor or not?
         
-        public static void HandleCollision(IDavis davis, IEnemy enemy,CollisionSide side)
+        public static void HandleCollision(IDavis davis, IEnemy enemy, CollisionSide side)
         {
             // Location setup
             /*switch(side)
@@ -35,8 +35,11 @@ namespace SuperDavis.Collision
                    // davis.DavisState.Static();
                     break;
             }*/
+
+            //there was a collision
             if (side != CollisionSide.None)
             {
+                //if collision is not on bottom
                 if (side != CollisionSide.Bottom)
                 {
                     if (!enemy.Dead)
@@ -46,7 +49,10 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    davis.DavisState.Death();
+                    if (!enemy.Dead)
+                    {
+                        davis.DavisState.Death();
+                    }
                 }
             }
         }

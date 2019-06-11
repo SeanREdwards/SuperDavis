@@ -4,5 +4,6 @@
     {
         bool Dead { get; set; }
         void TakeDamage();
+        void Reset();
     }
 }
