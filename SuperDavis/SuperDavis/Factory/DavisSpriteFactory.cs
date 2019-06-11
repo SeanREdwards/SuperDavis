@@ -307,13 +307,13 @@ namespace SuperDavis.Factory
         /*Advanced Bat Sprites*/
         public ISprite CreateBatSpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(269, 2, 39, 80), new Rectangle(181, 2, 44, 80), new Rectangle(108, 2, 25, 80) };
+            coordinateList = new List<Rectangle>() { new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28) };
             return Create(batSpecialAttackOneLeft);
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 2, 39, 80), new Rectangle(103, 2, 44, 80), new Rectangle(195, 2, 25, 80) };
+            coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28) };
             return Create(batSpecialAttackOneRight);
         }
 
