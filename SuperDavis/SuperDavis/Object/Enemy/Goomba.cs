@@ -43,5 +43,9 @@ namespace SuperDavis.Object.Enemy
             Dead = true;
             goombaStateMachine = new GoombaStateMachine(this);
         }
+        public void Reset() {
+            Dead = false;
+            goombaStateMachine = new GoombaStateMachine(this);
+        }
     }
 }

@@ -41,5 +41,9 @@ namespace SuperDavis.Object.Item
         {
             Remove = true;
         }
+        public void Reset()
+        {
+            Remove = false;
+        }
     }
 }

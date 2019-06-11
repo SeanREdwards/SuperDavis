@@ -96,8 +96,13 @@ namespace SuperDavis.Worlds
             }
             foreach (IEnemy enemy in Enemies)
             {
-                //enemy.Reset();
+                enemy.Reset();
             }
+            foreach (IItem item in Items)
+            {
+                item.Reset();
+            }
+
 
         }
     }
