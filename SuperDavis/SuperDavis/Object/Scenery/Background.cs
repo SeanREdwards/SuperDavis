@@ -23,7 +23,6 @@ namespace SuperDavis.Object.Scenery
         public void Update(GameTime gameTime)
         {
             backgroundImage.Update(gameTime);
-            test.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
