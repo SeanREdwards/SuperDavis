@@ -26,7 +26,6 @@ namespace SuperDavis.Object.Character
             // initial state
             DavisStatus = DavisStatus.Bat;
             this.decoratedDavis = decoratedDavis;
-
         }
 
         void TakeDamage()

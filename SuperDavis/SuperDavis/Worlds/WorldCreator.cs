@@ -15,40 +15,39 @@ using System.Xml;
 
 namespace SuperDavis.Worlds
 {
-    static class WorldCreator
+    class WorldCreator
     {
-        //private const int unitPixels = 16;
+        static Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
+        static Dictionary<String, Action<IWorld, string, float, float>> itemDictionary;
+        static Dictionary<String, Action<IWorld, string, float, float>> characterDictionary;
+        static Dictionary<String, Action<IWorld, string, float, float>> enemyDictionary;
 
-        /*public class ObjectInfo
+        public WorldCreator(){
+        }
+
+        private static Dictionary <String, Action<IWorld, string, float, float>> CreateObjectDictionary(){
+            Dictionary<String, Action<IWorld, string, float, float>> objDictionary = new Dictionary<String, Action<IWorld, string, float, float>>();
+            objDictionary.Add("Character", CreateCharacter);
+            objDictionary.Add("Item", CreateItem);
+            objDictionary.Add("Block", CreateBlock);
+            objDictionary.Add("Enemy", CreateEnemy);
+            objDictionary.Add("Scenery", CreateBackground);
+            return objDictionary;
+        }
+
+        private static Dictionary<String, Action <IWorld>> CreateItemDictionary()
         {
-            public string Name { get; set; }
-            public int XCoords { get; set; }
-            public int YCoords { get; set; }
-        }*/
+            Dictionary<String, Action <IWorld>> itemDictionary = new Dictionary<String, Action <IWorld>>();
+            //itemDictionary.Add("Flower", );
+            //world.Items.Add(new Flower(new Vector2(x, y)));
+            return itemDictionary;
+        }
+
 
         public static IWorld CreateWorld(string levelFile, int width, int height, Game1 game)
         {
             return ParseAndLoad(levelFile, width, height, game);
         }
-
-        //TODO if we want to use for csv
-        /*  Idea from: https://joshclose.github.io/CsvHelper/examples 
-         private IWorld ParseAndLoad(string levelFile, int Width, int Height, Game1 game)
-         {
-             using (var reader = new StreamReader("Content\\Level\\test_level.csv"))
-             using (var csv = new CsvReader(reader))
-             {
-                 csv.Configuration.IgnoreBlankLines = false;
-                 var ObjRecords = new List<ObjectInfo>();
-                 while(csv.Read())
-                 {
-                     //csv.GetRecord < "Davis" >
-                 }
-             }
-             return null;
-         }
-
-         */
 
         private static IWorld ParseAndLoad(string levelFile, int width, int height, Game1 game)
         {
@@ -71,26 +70,10 @@ namespace SuperDavis.Worlds
 
         private static void CreateObjects(IWorld world, string objects, string type, float x, float y)
         {
-            switch (objects)
-            {
-                case "Character":
-                    CreateCharacter(world, type, x, y);
-                    break;
-                case "Item":
-                    CreateItem(world, type, x, y);
-                    break;
-                case "Block":
-                    CreateBlock(world, type, x, y);
-                    break;
-                case "Enemy":
-                    CreateEnemy(world, type, x, y);
-                    break;
-                case "Scenery":
-                    CreateBackground(world, type, x, y);
-                    break;
-                default:
-                    break;
-            }
+            objectDictionary = CreateObjectDictionary();
+            Action<IWorld, string, float, float> buildObject;
+            objectDictionary.TryGetValue(objects, out buildObject);
+            buildObject(world, type, x, y);
         }
 
         private static void CreateCharacter(IWorld world, string type, float x, float y)
@@ -123,7 +106,7 @@ namespace SuperDavis.Worlds
                     world.Items.Add(new YoshiEgg(new Vector2(x, y)));
                     break;
                 case nameof(Star):
-                    world.Items.Add(new Star(new Vector2(x, y)));
+                    world.Items.Add(new Star(new Vector2(x, y)));                
                     break;
                 default:
                     break;

@@ -11,7 +11,6 @@ namespace SuperDavis.Object.Scenery
     {
         public Vector2 Location { get; set; }
         private ISprite backgroundImage;
-        private ISprite test;
 
         public Background(Vector2 location)
         {
