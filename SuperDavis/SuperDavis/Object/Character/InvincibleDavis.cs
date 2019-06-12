@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Character
     class InvincibleDavis : IDavis
     {
         IDavis decoratedDavis;
-        int timer = 5;
+        int timer = 100;
 
         public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
@@ -28,10 +28,10 @@ namespace SuperDavis.Object.Character
             this.decoratedDavis = decoratedDavis;
         }
 
-        void TakeDamage()
+        /*void TakeDamage()
         {
             // StarMario does not take damage
-        }
+        }*/
 
         public void Update(GameTime gameTime)
         {
@@ -40,7 +40,6 @@ namespace SuperDavis.Object.Character
             {
                 RemoveStar();
             }
-
             decoratedDavis.Update(gameTime);
         }
 
@@ -105,5 +104,8 @@ namespace SuperDavis.Object.Character
         {
             //do nothing, already invincible.
         }
+
+        public void Reset()
+        { }
     }
 }

@@ -21,6 +21,7 @@ namespace SuperDavis.Object.Character
 
         Dictionary<DavisStatus, Dictionary<string, ISprite>> characterDictionary;
 
+
         public Davis(Vector2 location)
         {
             // initial state
@@ -176,8 +177,16 @@ namespace SuperDavis.Object.Character
         }
         public void DavisToInvincible()
         {
-            // TBD
-            DavisState.SpecialAttack();
+            
+        }
+
+        public void Reset()
+        {
+            DavisStatus = DavisStatus.Davis;
+            DavisState = new DavisStaticRightState(this);
+            /*Ask why*/
+            //Location = new Vector2(Variables.Variable.WindowsEdgeHeight/2 , Variables.Variable.WindowsEdgeHeight/2);
+            Location = new Vector2(512, 384);
         }
     }
 }

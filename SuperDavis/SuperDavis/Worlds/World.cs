@@ -86,9 +86,7 @@ namespace SuperDavis.Worlds
             // Character reset
             foreach (IDavis character in Davises)
             {
-                character.DavisStatus = DavisStatus.Davis;
-                character.DavisState = new DavisStaticRightState(character);
-                character.Location = new Vector2(game.WindowsEdgeHeight / 2, game.WindowsEdgeWidth / 2);
+                character.Reset();
             }
             foreach (IBlock block in Blocks)
             {

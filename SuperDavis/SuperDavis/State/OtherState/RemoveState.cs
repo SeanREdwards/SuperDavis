@@ -20,6 +20,7 @@ namespace SuperDavis.State.OtherState
 
         public RemoveState(IGameObject gameObject, ISprite sprite, int timer)
         {
+            // GameObject to help change other properties for g.o. for the future use
             this.gameObject = gameObject;
             this.sprite = sprite;
             this.timer = timer;
@@ -32,7 +33,6 @@ namespace SuperDavis.State.OtherState
             timer--;
             sprite.Update(gameTime);
             //gameObject.Location += new Vector2(0, 2);
-
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

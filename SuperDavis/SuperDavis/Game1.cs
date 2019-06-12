@@ -24,22 +24,20 @@ namespace SuperDavis
         private List<IController> controllerList;
         private CollisionDetection collisionDetection;
 
-        public int WindowsEdgeWidth;
-        public int WindowsEdgeHeight;
         public IWorld World { get; set; }
         public bool ToggleMouseControl { get; set; }
 
         public Game1()
         {
-            var graphicsDeviceManager = new GraphicsDeviceManager(game: this);
-            WindowsEdgeWidth = 1024;
-            WindowsEdgeHeight = 768;
-            graphicsDeviceManager.PreferredBackBufferWidth = WindowsEdgeWidth;
-            graphicsDeviceManager.PreferredBackBufferHeight = WindowsEdgeHeight;
-            graphicsDeviceManager.DeviceCreated += (o, e) =>
+            using (var graphicsDeviceManager = new GraphicsDeviceManager(game: this))
             {
-                spriteBatch = new SpriteBatch((o as GraphicsDeviceManager).GraphicsDevice);
-            };
+                graphicsDeviceManager.PreferredBackBufferWidth = Variables.Variable.WindowsEdgeWidth;
+                graphicsDeviceManager.PreferredBackBufferHeight = Variables.Variable.WindowsEdgeHeight;
+                graphicsDeviceManager.DeviceCreated += (o, e) =>
+                {
+                    spriteBatch = new SpriteBatch((o as GraphicsDeviceManager).GraphicsDevice);
+                };
+            }
             Content.RootDirectory = "Content";
         }
 
@@ -48,7 +46,7 @@ namespace SuperDavis
             ToggleMouseControl = false;
             InitializaFactory();
             // TBD
-            World = WorldCreator.CreateWorld("test-level.xml", WindowsEdgeWidth, WindowsEdgeHeight, this);
+            World = WorldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, this);
             // Doesn't seems to be a good practice ^^^
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
@@ -133,16 +131,15 @@ namespace SuperDavis
                       (Buttons.B, new ToggleMouseControl(this))
                     ),
                 };
-
             };
-
         }
 
+        /* Needs to be improved */
         private void UpdateController()
         {
             if (ToggleMouseControl)
             {
-                if (controllerList.Count==2) { 
+                if (controllerList.Count == 2) { 
                     controllerList.Add(new MouseController(this));
                 }
             }
