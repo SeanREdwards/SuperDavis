@@ -3,6 +3,7 @@
     public enum DavisStatus { Davis, Woody, Bat, Invincible };
     interface IDavis : IGameObject
     {
+        int InvincibleTimer { get; set; }
         IDavisState DavisState { get; set; }
         DavisStatus DavisStatus { get; set; }
         DavisStatus PrevDavisStatus { get; set; }

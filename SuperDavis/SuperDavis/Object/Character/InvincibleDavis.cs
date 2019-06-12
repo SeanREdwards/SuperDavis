@@ -21,6 +21,7 @@ namespace SuperDavis.Object.Character
         public DavisStatus DavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
         public DavisStatus PrevDavisStatus { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int InvincibleTimer { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public InvincibleDavis(IDavis decoratedDavis)
         {

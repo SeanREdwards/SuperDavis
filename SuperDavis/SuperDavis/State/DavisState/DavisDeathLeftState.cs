@@ -7,7 +7,6 @@ namespace SuperDavis.State.DavisState
 {
     class DavisDeathLeftState : IDavisState
     {
-        // Needed?
         public int Width { get; set; }
         public int Height { get; set; }
 
