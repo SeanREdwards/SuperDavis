@@ -46,8 +46,9 @@ namespace SuperDavis
             ToggleMouseControl = false;
             InitializaFactory();
             // TBD
-            World = WorldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, this);
-            // Doesn't seems to be a good practice ^^^
+            WorldCreator worldCreator = new WorldCreator();
+            World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, this);
+
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();
