@@ -10,5 +10,7 @@ namespace SuperDavis.Variables
     {
         public static int  WindowsEdgeWidth = 1024;
         public static int WindowsEdgeHeight = 768;
+
+        public static int UnitPixelSize = 16;
     }
 }

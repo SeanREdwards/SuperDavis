@@ -17,12 +17,15 @@ namespace SuperDavis.Worlds
 {
     class WorldCreator
     {
+        public IGameObject[][] LocationMap;
+
         static Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         static Dictionary<String, Action<IWorld, string, float, float>> itemDictionary;
         static Dictionary<String, Action<IWorld, string, float, float>> characterDictionary;
         static Dictionary<String, Action<IWorld, string, float, float>> enemyDictionary;
 
         public WorldCreator(){
+            //LocationMap = new IGameObject[0][0];
         }
 
         private static Dictionary <String, Action<IWorld, string, float, float>> CreateObjectDictionary(){
@@ -53,6 +56,24 @@ namespace SuperDavis.Worlds
         {
             IWorld world = new World(width,height,game);
             XmlReader reader = XmlReader.Create("Content/level/" + levelFile);
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    string objects = reader.Name;
+                    string type = reader.GetAttribute("Type");
+                    float x = float.Parse(reader.GetAttribute("X"));
+                    float y = float.Parse(reader.GetAttribute("Y"));
+                    if(objects.Contains("Level"))
+                    {
+                        
+                    }
+                    else
+                    {
+                        CreateObjects(world, objects, type, x, y);
+                    }
+                }
+            }
             reader.ReadToFollowing("Object");
             while (reader.Read())
             {

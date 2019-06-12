@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Object>
+  // Level Size
+  <Level Type="TestLevel" X="1024" Y="768" />
   // Background
   <Scenery Type="Background" X="0" Y="0" />
   // Character
