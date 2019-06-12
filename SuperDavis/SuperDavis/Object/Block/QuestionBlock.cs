@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Block
     class QuestionBlock : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public QuestionBlockStateMachine QuestionBlockStateMachine;
         private ISprite block;
@@ -17,6 +18,7 @@ namespace SuperDavis.Object.Block
         {
             // initial state
             Remove = false;
+            IsHidden = false;
             Location = location;
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
             block = QuestionBlockStateMachine.Sprite;

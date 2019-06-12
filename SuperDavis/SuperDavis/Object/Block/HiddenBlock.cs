@@ -8,16 +8,18 @@ namespace SuperDavis.Object.Block
     class HiddenBlock : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public HiddenBlockStateMachine HiddenBlockStateMachine;
-        private ISprite block;
+        private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public HiddenBlock(Vector2 location)
         {
             // initial state
             Remove = false;
+            IsHidden = true;
             Location = location;
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
             block = HiddenBlockStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
         }
@@ -37,12 +39,14 @@ namespace SuperDavis.Object.Block
 
         public void SpecialState()
         {
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(false);
+            IsHidden = false;
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
         }
 
         public void Reset()
         {
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(true);
+            IsHidden = true;
+            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
             Remove = false;
         }
 

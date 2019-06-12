@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Block
     class Pipe : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         private PipeStateMachine pipeStateMachine;
         private ISprite block;
@@ -16,6 +17,7 @@ namespace SuperDavis.Object.Block
         {
             // initial state
             Remove = false;
+            IsHidden = false;
             Location = location;
             pipeStateMachine = new PipeStateMachine();
             block = pipeStateMachine.Sprite;

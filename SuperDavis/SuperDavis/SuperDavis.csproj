@@ -145,7 +145,6 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Level\test-level.csv" />
     <None Include="Content\SpriteJSONs\Enemies.json" />
     <None Include="Content\SpriteJSONs\Items.json" />
     <None Include="Content\SpriteJSONs\PlayerCharacter.json" />

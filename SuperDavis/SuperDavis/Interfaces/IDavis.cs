@@ -1,6 +1,6 @@
 ﻿namespace SuperDavis.Interfaces
 {
-    public enum DavisStatus { Davis, Woody, Bat, Invincible};
+    public enum DavisStatus { Davis, Woody, Bat, Invincible };
     interface IDavis : IGameObject
     {
         IDavisState DavisState { get; set; }

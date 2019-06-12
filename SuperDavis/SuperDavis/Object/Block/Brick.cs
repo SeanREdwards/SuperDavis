@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Block
     class Brick : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
         private ISprite block;
@@ -17,6 +18,7 @@ namespace SuperDavis.Object.Block
         {
             // initial state
             Remove = false;
+            IsHidden = false;
             Location = location;
             BrickStateMachine = new BrickStateMachine(false);
             block = BrickStateMachine.Sprite;

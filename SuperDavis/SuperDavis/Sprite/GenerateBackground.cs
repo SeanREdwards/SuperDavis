@@ -7,8 +7,10 @@ namespace SuperDavis.Sprite
 {
     class GenerateBackground : ISprite
     {
+        /* Magic number!*/
         private int WindowsEdgeWidth = 1024;
         private int WindowsEdgeHeight = 768;
+        /* We don't need this here*/
         public int Width { get; set; }
         public int Height { get; set; }
         private readonly Texture2D texture;
