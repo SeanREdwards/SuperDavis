@@ -5,6 +5,7 @@
     {
         IDavisState DavisState { get; set; }
         DavisStatus DavisStatus { get; set; }
+        DavisStatus PrevDavisStatus { get; set; }
         void DavisTurnLeft();
         void DavisTurnRight();
         void DavisJump();

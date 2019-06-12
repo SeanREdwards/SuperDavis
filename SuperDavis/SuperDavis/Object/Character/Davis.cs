@@ -14,6 +14,7 @@ namespace SuperDavis.Object.Character
         public IDavisState DavisState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
+        public DavisStatus prevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
 
         //TODO get sprite from dictionary.
@@ -177,7 +178,9 @@ namespace SuperDavis.Object.Character
         }
         public void DavisToInvincible()
         {
-            
+            prevDavisStatus = DavisStatus;
+            DavisStatus = DavisStatus.Invincible;
+            DavisState = new DavisStaticRightState(this);
         }
 
         public void Reset()
