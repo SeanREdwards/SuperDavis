@@ -11,8 +11,8 @@ namespace SuperDavis.State.DavisState
         public int Width { get; set; }
         public int Height { get; set; }
 
-        private IDavis davis;
-        private ISprite sprite;
+        private readonly IDavis davis;
+        public ISprite Sprite { get; set; }
 
         public DavisCrouchLeftState(IDavis davis)
         {
@@ -20,22 +20,22 @@ namespace SuperDavis.State.DavisState
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisCrouchLeft();
+                    Sprite = DavisSpriteFactory.Instance.CreateDavisCrouchLeft();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyCrouchLeft();
+                    Sprite = DavisSpriteFactory.Instance.CreateWoodyCrouchLeft();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatCrouchLeft();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatCrouchLeft();
                     break;
                 case DavisStatus.Invincible:
-                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
                     break;
                 default:
                     break;
             }
-            Width = sprite.Width;
-            Height = sprite.Height;
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
 
         public void Static()
@@ -52,13 +52,14 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisStaticRightState(davis);
         }
 
-        public void Up() {
+        public void Up()
+        {
             davis.DavisState = new DavisStaticLeftState(davis);
         }
 
-        public void Down() {
-            //TODO
-            //davis.DavisState = new DavisDeadLeft(davis);
+        public void Down()
+        {
+            // Do nothing
         }
 
         public void Death()
@@ -73,12 +74,12 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

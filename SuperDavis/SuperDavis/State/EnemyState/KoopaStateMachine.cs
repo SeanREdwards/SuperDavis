@@ -10,7 +10,7 @@ namespace SuperDavis.State.EnemyState
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public ISprite Sprite;
+        public ISprite Sprite { get; set; }
 
         public KoopaStateMachine(Koopa koopa)
         {

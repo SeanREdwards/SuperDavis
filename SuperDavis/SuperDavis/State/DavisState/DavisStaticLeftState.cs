@@ -7,12 +7,11 @@ namespace SuperDavis.State.DavisState
 {
     class DavisStaticLeftState : IDavisState
     {
-        // Needed?
         public int Width { get; set; }
         public int Height { get; set; }
 
-        private IDavis davis;
-        private ISprite sprite;
+        private readonly IDavis davis;
+        public ISprite Sprite { get; set; }
 
         public DavisStaticLeftState(IDavis davis)
         {
@@ -20,26 +19,28 @@ namespace SuperDavis.State.DavisState
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatStaticLeftSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatStaticLeftSprite();
                     break;
                 case DavisStatus.Invincible:
-                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
                     break;
                 default:
                     break;
             }
-            // Needed?
-            Width = sprite.Width;
-            Height = sprite.Height;
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
 
-        public void Static() { }
+        public void Static()
+        {
+            // Do nothing
+        }
         public void Left()
         {
             davis.DavisState = new DavisWalkLeftState(davis);
@@ -72,12 +73,12 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

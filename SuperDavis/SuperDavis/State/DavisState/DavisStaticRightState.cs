@@ -7,12 +7,11 @@ namespace SuperDavis.State.DavisState
 {
     class DavisStaticRightState : IDavisState
     {
-        // Needed?
         public int Width { get; set; }
         public int Height { get; set; }
 
-        private IDavis davis;
-        private ISprite sprite;
+        private readonly IDavis davis;
+        public ISprite Sprite { get; set; }
 
         public DavisStaticRightState(IDavis davis)
         {
@@ -20,23 +19,22 @@ namespace SuperDavis.State.DavisState
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisStaticRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateDavisStaticRightSprite();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyStaticRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateWoodyStaticRightSprite();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatStaticRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatStaticRightSprite();
                     break;
                 case DavisStatus.Invincible:
-                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
                     break;
                 default:
                     break;
             }
-            // Needed?
-            Width = sprite.Width;
-            Height = sprite.Height;
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
 
         public void Static() { }
@@ -72,12 +70,12 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

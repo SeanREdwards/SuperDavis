@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.EnemyState;
+using SuperDavis.State.OtherState;
 
 namespace SuperDavis.Object.Enemy
 {
@@ -11,9 +12,9 @@ namespace SuperDavis.Object.Enemy
         public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite enemy;
+        private readonly ISprite enemy;
 
-        private KoopaStateMachine koopaStateMachine;
+        private IGameState koopaStateMachine;
 
         public Koopa(Vector2 location)
         {
@@ -41,6 +42,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             koopaStateMachine = new KoopaStateMachine(this);
+            koopaStateMachine = new RemoveState(this,koopaStateMachine.Sprite, 100);
         }
         public void Reset() {
             Dead = false;
