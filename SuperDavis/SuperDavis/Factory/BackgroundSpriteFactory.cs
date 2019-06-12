@@ -16,11 +16,8 @@ namespace SuperDavis.Factory
     {
         private Texture2D marioBackgroundOne;
         private List<Rectangle> coordinateList;
-
         public static BackgroundSpriteFactory Instance { get; } = new BackgroundSpriteFactory();
-
         private BackgroundSpriteFactory() { }
-
         public void Load(ContentManager content)
         {
             marioBackgroundOne = content.Load<Texture2D>("BackgroundSprites/BackgroundsMario1");

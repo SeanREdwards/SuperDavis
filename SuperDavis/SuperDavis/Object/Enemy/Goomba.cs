@@ -43,7 +43,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             goombaState = new GoombaStateMachine(this);
-            goombaState = new RemoveState(this,goombaState.Sprite, 100);
+            goombaState = new RemoveState(this, goombaState.Sprite, 100);
         }
         public void Reset() {
             Dead = false;

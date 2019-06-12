@@ -13,7 +13,6 @@ namespace SuperDavis.Controller
         public KeyboardController(params(Keys key, ICommand command)[] args)
         {
             previousKeys = new Keys[0];
-
             keyCommandDict = new Dictionary<Keys, ICommand> { };
             foreach((Keys key, ICommand command) pairs in args)
             {

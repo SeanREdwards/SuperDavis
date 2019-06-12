@@ -14,7 +14,7 @@ namespace SuperDavis.Collision
     {
         // Constructor or not?
         
-        public static void HandleCollision(IDavis davis, IItem item,CollisionSide side)
+        public static void HandleCollision(IDavis davis, IItem item, CollisionSide side)
         {
             // Location setup
             /*switch(side)

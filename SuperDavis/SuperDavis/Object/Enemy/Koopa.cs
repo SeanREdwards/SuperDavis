@@ -42,7 +42,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             koopaStateMachine = new KoopaStateMachine(this);
-            koopaStateMachine = new RemoveState(this,koopaStateMachine.Sprite, 100);
+            koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 100);
         }
         public void Reset() {
             Dead = false;

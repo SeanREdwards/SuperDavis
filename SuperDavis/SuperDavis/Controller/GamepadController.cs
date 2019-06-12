@@ -17,13 +17,13 @@ namespace SuperDavis.Controller
 
         public GamepadController(params (Buttons button, ICommand command)[] args)
         {
-
             buttonCommandDict = new Dictionary<Buttons, ICommand> { };
             foreach ((Buttons button, ICommand command) pairs in args)
             {
                 buttonCommandDict.Add(pairs.button, pairs.command);
             }
         }
+
         public void Update()
         {
             // TBD : Previous Click Button Set
