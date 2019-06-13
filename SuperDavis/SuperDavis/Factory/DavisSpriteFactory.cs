@@ -35,8 +35,6 @@ namespace SuperDavis.Factory
         private Texture2D batSpecialAttackOneLeft;
         private Texture2D batSpecialAttackOneRight;
 
-        private Texture2D marioBackgroundOne;
-
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
         private DavisSpriteFactory() { }
@@ -61,21 +59,11 @@ namespace SuperDavis.Factory
             batSpecialAttackOneRight = content.Load<Texture2D>("BatSprites/BatRight_2");
             batSpecialAttackOneLeft = content.Load<Texture2D>("BatSprites/BatLeft_2");
 
-            //TODO Test Background sprite sheet
-            marioBackgroundOne = content.Load<Texture2D>("BackgroundSprites/BackgroundsMario1");
         }
 
         public ISprite Create(Texture2D texture)
         {
             return new GenerateSprite(texture, coordinateList);
-        }
-
-        /*Basic Davis Sprites*/
-        public ISprite Invincible()
-        {
-            //TODO - Just using batStaticRight for testing purposes
-            coordinateList = new List<Rectangle>() { new Rectangle(744, 0, 37, 80) };
-            return Create(batStaticRight);
         }
 
         public ISprite CreateDavisStaticLeftSprite()
