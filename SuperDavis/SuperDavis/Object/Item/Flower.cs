@@ -10,8 +10,8 @@ namespace SuperDavis.Object.Item
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite item;
-        private FlowerStateMachine flowerStateMachine;
+        private readonly ISprite item;
+        private readonly FlowerStateMachine flowerStateMachine;
 
         public Flower(Vector2 location)
         {
@@ -40,6 +40,7 @@ namespace SuperDavis.Object.Item
         {
             Remove = true;
         }
+
         public void Reset()
         {
             Remove = false;

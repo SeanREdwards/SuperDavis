@@ -11,9 +11,8 @@ namespace SuperDavis.Object.Block
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
-        private ISprite block;
-
-        private ActivatedBlockStateMachine activatedBlockStateMachine;
+        private readonly ISprite block;
+        private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 
         public ActivatedBlock(Vector2 location)
         {

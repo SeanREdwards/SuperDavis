@@ -158,7 +158,6 @@ namespace SuperDavis.Factory
             return Create(davisSpecialAttackOneRight);
         }
 
-
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()
         {
@@ -321,6 +320,5 @@ namespace SuperDavis.Factory
             coordinateList = new List<Rectangle>() { new Rectangle(1072, 0, 512, 447) };
             return new GenerateBackground(marioBackgroundOne, coordinateList);
         }
-
     }
 }

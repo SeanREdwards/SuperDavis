@@ -1,6 +1,4 @@
-﻿/*BackgroundSpriteFactory.cs
- */
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
@@ -28,7 +26,7 @@ namespace SuperDavis.Object.Scenery
         {
             background.Draw(spriteBatch, Location);
         }
-        public void Reset()
-        { }
+
+        public void Reset(){}
     }
 }

@@ -9,13 +9,10 @@ namespace SuperDavis.Sprite
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        //private int spriteWidth;
-        //private int spriteHeight;
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
-        private List<Rectangle> spriteList;
-
+        private readonly List<Rectangle> spriteList;
         private double currentTime;
 
         //TODO the fixed frametime should not be fixed for all frames i.e. not all are created equal.
@@ -27,8 +24,6 @@ namespace SuperDavis.Sprite
             spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
-            //spriteWidth = texture.Width / totalFrames;
-            //spriteHeight = texture.Height;
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
         }

@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
-using SuperDavis.Object.Item;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SuperDavis.Interfaces;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision

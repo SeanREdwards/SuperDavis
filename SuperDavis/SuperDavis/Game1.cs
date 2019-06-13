@@ -16,6 +16,7 @@ using SuperDavis.Worlds;
 [assembly: CLSCompliant(true)] // CA1014
 [assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
 [assembly: ComVisible(false)] // CA1017
+
 namespace SuperDavis
 {
     class Game1 : Game
@@ -48,7 +49,6 @@ namespace SuperDavis
             // TBD
             WorldCreator worldCreator = new WorldCreator();
             World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
-
             collisionDetection = new CollisionDetection(World);
             InitializeKeybinding();
             base.Initialize();
@@ -150,9 +150,7 @@ namespace SuperDavis
                 {
                     controllerList.RemoveAt(2);
                 }
-
             }
         }
-
     }
 }

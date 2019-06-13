@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperDavis.Interfaces
 {
-
     interface IBackground
     { 
         Vector2 Location { get; set; }

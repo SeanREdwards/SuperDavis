@@ -25,14 +25,15 @@ namespace SuperDavis.State.EnemyState
             Width = Sprite.Width;
             Height = Sprite.Height;
         }
+
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
         }
+
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Sprite.Draw(spriteBatch, location);
         }
-
     }
 }

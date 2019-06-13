@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Block
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public QuestionBlockStateMachine QuestionBlockStateMachine;
-        private ISprite block;
+        private readonly ISprite block;
         public Rectangle HitBox { get; set; }
 
         public QuestionBlock(Vector2 location)
@@ -48,6 +48,5 @@ namespace SuperDavis.Object.Block
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
             Remove = false;
         }
-
     }
 }

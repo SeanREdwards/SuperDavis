@@ -49,6 +49,5 @@ namespace SuperDavis.Object.Block
             HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
             Remove = false;
         }
-
     }
 }

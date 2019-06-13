@@ -7,10 +7,6 @@ using SuperDavis.Object.Item;
 using SuperDavis.Object.Scenery;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace SuperDavis.Worlds
@@ -27,7 +23,8 @@ namespace SuperDavis.Worlds
         Dictionary<String, Action<float, float>> backgroundDictionary;
         IWorld world;
 
-        private void CreateObjectDictionary(){
+        private void CreateObjectDictionary()
+        {
             objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>();
             //objectDictionary.Add("Level", Create);
             objectDictionary.Add("Character", CreateCharacter);
@@ -37,7 +34,7 @@ namespace SuperDavis.Worlds
             objectDictionary.Add("Scenery", CreateBackground);
         }
 
-      private void CreateItemDictionary()
+        private void CreateItemDictionary()
         {
             itemDictionary = new Dictionary<String, Action<float, float>>();
             itemDictionary.Add("Flower", (x,y) => world.Items.Add(new Flower(new Vector2(x, y))));

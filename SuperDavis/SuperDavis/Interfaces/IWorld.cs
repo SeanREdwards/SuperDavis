@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Object.Block;
-using SuperDavis.Object.Character;
-using SuperDavis.Object.Scenery;
 using System.Collections.Generic;
 
 namespace SuperDavis.Interfaces

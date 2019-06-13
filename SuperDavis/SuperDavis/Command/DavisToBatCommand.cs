@@ -1,5 +1,4 @@
 ﻿using SuperDavis.Interfaces;
-using SuperDavis.Object.Character;
 
 namespace SuperDavis.Command
 {

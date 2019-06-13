@@ -8,7 +8,7 @@ namespace SuperDavis.Controller
     class KeyboardController : IController
     {
         private readonly Dictionary<Keys, ICommand> keyCommandDict;
-        private Keys[] previousKeys;
+        private readonly Keys[] previousKeys;
 
         public KeyboardController(params(Keys key, ICommand command)[] args)
         {

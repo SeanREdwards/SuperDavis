@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Block
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         private PipeStateMachine pipeStateMachine;
-        private ISprite block;
+        private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public Pipe(Vector2 location)
         {

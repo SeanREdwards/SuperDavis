@@ -1,11 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
+﻿using SuperDavis.Interfaces;
 using SuperDavis.Object.Item;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -36,11 +30,11 @@ namespace SuperDavis.Collision
                 }
                 else if (item is YoshiEgg)
                 {
-
+                    //TODO
                 }
                 else if (item is Coin)
                 {
-
+                    //TODO
                 }
                 item.Clear();
             }

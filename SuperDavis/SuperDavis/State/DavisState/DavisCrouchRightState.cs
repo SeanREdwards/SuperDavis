@@ -9,7 +9,6 @@ namespace SuperDavis.State.DavisState
     {
         public int Width { get; set; }
         public int Height { get; set; }
-
         private readonly IDavis davis;
         public ISprite Sprite { get; set;}
 
@@ -41,6 +40,7 @@ namespace SuperDavis.State.DavisState
         {
             davis.DavisState = new DavisStaticRightState(davis);
         }
+
         public void Left()
         {
             davis.DavisState = new DavisStaticLeftState(davis);

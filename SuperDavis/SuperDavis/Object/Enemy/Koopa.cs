@@ -13,7 +13,6 @@ namespace SuperDavis.Object.Enemy
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
-
         private IGameState koopaStateMachine;
 
         public Koopa(Vector2 location)
@@ -25,7 +24,6 @@ namespace SuperDavis.Object.Enemy
             koopaStateMachine = new KoopaStateMachine(this);
             enemy = koopaStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
-
         }
 
         public void Update(GameTime gameTime)

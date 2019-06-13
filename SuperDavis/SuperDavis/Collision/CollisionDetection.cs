@@ -1,11 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using SuperDavis.Object.Block;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Collision
 {
@@ -27,7 +22,6 @@ namespace SuperDavis.Collision
             CheckMarioEnemyCollision(World.Davises, World.Enemies);
         }
                    
-
         private static void CheckMarioBlockCollision(IList<IDavis> davises, IList<IBlock> blocks)
         {
             foreach (IDavis davis in davises)

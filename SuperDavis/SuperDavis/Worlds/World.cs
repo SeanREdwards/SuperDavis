@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.DavisState;
 using System.Collections.Generic;
-using SuperDavis.Object.Scenery;
 
 namespace SuperDavis.Worlds
 {
@@ -16,8 +14,6 @@ namespace SuperDavis.Worlds
         public IList<IBlock> Blocks { get; set; }
         public IList<IEnemy> Enemies { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
-
-        //private Game1 game;
 
         public World(int width, int height)
         {

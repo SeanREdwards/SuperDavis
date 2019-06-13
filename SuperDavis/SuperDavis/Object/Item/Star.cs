@@ -9,8 +9,8 @@ namespace SuperDavis.Object.Item
     {
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        private StarStateMachine starStateMachine;
-        private ISprite item;
+        private readonly StarStateMachine starStateMachine;
+        private readonly ISprite item;
         public Rectangle HitBox { get; set; }
 
         public Star(Vector2 location)
@@ -40,6 +40,7 @@ namespace SuperDavis.Object.Item
         {
             Remove = true;
         }
+
         public void Reset()
         {
             Remove = false;

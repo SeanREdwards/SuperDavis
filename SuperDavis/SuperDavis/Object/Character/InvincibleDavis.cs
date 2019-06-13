@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperDavis.Interfaces;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.State.DavisState;
-
-namespace SuperDavis.Object.Character
+﻿namespace SuperDavis.Object.Character
 {
     // We haven't use this class, comment out for future use
     /*class InvincibleDavis : IDavis

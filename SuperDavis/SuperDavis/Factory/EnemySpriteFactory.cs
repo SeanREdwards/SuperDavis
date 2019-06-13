@@ -79,6 +79,5 @@ namespace SuperDavis.Factory
             coordinateList = new List<Rectangle>() { new Rectangle(10, 37, 16, 15), new Rectangle(10, 67, 16, 15), new Rectangle(10, 97, 16, 15), new Rectangle(10, 127, 16, 15) };
             return Create(koopaGreenSheet);
         }
-
     }
 }
