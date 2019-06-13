@@ -20,7 +20,7 @@ namespace SuperDavis.Object.Character
         public Davis(Vector2 location)
         {
             // initial state
-            InvincibleTimer = 100;
+            InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Location = location;

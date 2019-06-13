@@ -192,7 +192,6 @@
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
-    <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Sprite\GenerateBackground.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
     <Compile Include="Variables\Variable.cs" />

@@ -76,7 +76,7 @@ namespace SuperDavis.State.DavisState
                 {
                     davis.DavisStatus = davis.PrevDavisStatus;
                     davis.DavisState.Static();
-                    davis.InvincibleTimer = 100;
+                    davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
                 }
             }
             Sprite.Update(gameTime);

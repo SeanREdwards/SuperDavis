@@ -20,7 +20,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (!enemy.Dead)
+                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible)
                     {
                         davis.DavisState.Death();
                     }
