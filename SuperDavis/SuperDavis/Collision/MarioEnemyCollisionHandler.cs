@@ -11,7 +11,7 @@ namespace SuperDavis.Collision
             if (side != CollisionSide.None)
             {
                 //if collision is not on bottom
-                if (side != CollisionSide.Bottom)
+                if (side == CollisionSide.Top)
                 {
                     if (!enemy.Dead)
                     {
