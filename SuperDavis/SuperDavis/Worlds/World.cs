@@ -17,10 +17,8 @@ namespace SuperDavis.Worlds
 
         public World(int width, int height)
         {
-            //this.game = game;
             Width = width;
             Height = height;
-
             // Initialize for lists
             Davises = new List<IDavis>();
             Items = new List<IItem>();
@@ -79,7 +77,6 @@ namespace SuperDavis.Worlds
 
         public void ResetGame()
         {
-            // Character reset
             foreach (IDavis character in Davises)
             {
                 character.Reset();

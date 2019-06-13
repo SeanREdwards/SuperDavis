@@ -25,15 +25,14 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            yoshiEggStateMachine.Update(gameTime);
+            if (!Remove)
+                yoshiEggStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 yoshiEggStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()

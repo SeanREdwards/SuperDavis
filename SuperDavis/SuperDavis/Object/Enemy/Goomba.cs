@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Enemy
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
-        private IGameState goombaState;
+        private IGameObjectState goombaState;
 
         public Goomba(Vector2 location)
         {
@@ -28,15 +28,14 @@ namespace SuperDavis.Object.Enemy
 
         public void Update(GameTime gameTime)
         {
-            goombaState.Update(gameTime);
+            if (!Remove)
+                goombaState.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 goombaState.Draw(spriteBatch, Location);
-            }
         }
 
         public void TakeDamage()

@@ -313,12 +313,5 @@ namespace SuperDavis.Factory
             coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28) };
             return Create(batSpecialAttackOneRight);
         }
-
-        /*Background sprite generation as the BackgroundSpriteFactory was giving a weird null error.*/
-        public ISprite MarioHillsGreen()
-        {
-            coordinateList = new List<Rectangle>() { new Rectangle(1072, 0, 512, 447) };
-            return new GenerateBackground(marioBackgroundOne, coordinateList);
-        }
     }
 }

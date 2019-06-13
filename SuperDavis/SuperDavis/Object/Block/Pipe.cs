@@ -26,15 +26,14 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            pipeStateMachine.Update(gameTime);
+            if (!Remove)
+                pipeStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 pipeStateMachine.Draw(spriteBatch, Location);
-            }
         }
         public void SpecialState() { }
         public void Reset() { }

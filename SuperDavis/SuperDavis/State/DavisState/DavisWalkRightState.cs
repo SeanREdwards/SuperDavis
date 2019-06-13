@@ -70,7 +70,6 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            // dumbdumb! a lot of coupling
             if(davis.DavisStatus == DavisStatus.Invincible)
             {
                 davis.InvincibleTimer--;

@@ -13,10 +13,8 @@ namespace SuperDavis.Sprite
         private int currentFrame;
         private readonly int totalFrames;
         private readonly List<Rectangle> spriteList;
-
         private double currentTime;
 
-        //TODO the fixed frametime should not be fixed for all frames i.e. not all are created equal.
         private const double frameTime = 0.08d;
 
         public GenerateBackground(Texture2D texture, List<Rectangle> frameCoords)

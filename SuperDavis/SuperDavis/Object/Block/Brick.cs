@@ -27,15 +27,14 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            BrickStateMachine.Update(gameTime);
+            if (!Remove)
+                BrickStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 BrickStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void SpecialState()

@@ -27,6 +27,9 @@ namespace SuperDavis.Object.Scenery
             background.Draw(spriteBatch, Location);
         }
 
-        public void Reset(){}
+        public void Reset()
+        {
+            // Do nothing for current sprint
+        }
     }
 }

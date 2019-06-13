@@ -25,15 +25,14 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            mushroomStateMachine.Update(gameTime);
+            if (!Remove)
+                mushroomStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 mushroomStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()

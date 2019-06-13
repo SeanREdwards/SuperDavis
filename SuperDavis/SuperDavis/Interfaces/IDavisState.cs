@@ -1,6 +1,6 @@
 ﻿namespace SuperDavis.Interfaces
 {
-    interface IDavisState : IGameState
+    interface IDavisState : IGameObjectState
     {
         new int Width { get; set; }
         new int Height { get; set; }

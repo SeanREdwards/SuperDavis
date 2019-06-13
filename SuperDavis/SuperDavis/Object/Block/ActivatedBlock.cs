@@ -27,17 +27,22 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            activatedBlockStateMachine.Update(gameTime);
+            if (!Remove)
+                activatedBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 activatedBlockStateMachine.Draw(spriteBatch, Location);
-            }
         }
-        public void SpecialState() { }
-        public void Reset() { }
+        public void SpecialState()
+        {
+            // No nothing for current sprint
+        }
+        public void Reset()
+        {
+            // No nothing for current sprint
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Enemy
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
-        private IGameState koopaStateMachine;
+        private IGameObjectState koopaStateMachine;
 
         public Koopa(Vector2 location)
         {

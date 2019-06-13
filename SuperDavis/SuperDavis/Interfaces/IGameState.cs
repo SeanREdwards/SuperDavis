@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperDavis.Interfaces
 {
-    interface IGameState
+    interface IGameObjectState
     {
         int Width { get; set; }
         int Height { get; set; }

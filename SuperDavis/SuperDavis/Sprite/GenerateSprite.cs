@@ -15,7 +15,6 @@ namespace SuperDavis.Sprite
         private readonly List<Rectangle> spriteList;
         private double currentTime;
 
-        //TODO the fixed frametime should not be fixed for all frames i.e. not all are created equal.
         private const double frameTime = 0.08d; 
 
         public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)

@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class MushroomStateMachine : IGameState
+    class MushroomStateMachine : IGameObjectState
     {
         public int Width { get; set; }
         public int Height { get; set; }

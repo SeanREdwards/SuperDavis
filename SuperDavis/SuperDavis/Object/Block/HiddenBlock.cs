@@ -26,15 +26,14 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            HiddenBlockStateMachine.Update(gameTime);
+            if (!Remove)
+                HiddenBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 HiddenBlockStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void SpecialState()

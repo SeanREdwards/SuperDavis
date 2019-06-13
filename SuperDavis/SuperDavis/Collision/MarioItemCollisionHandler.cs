@@ -28,14 +28,6 @@ namespace SuperDavis.Collision
                     davis.DavisStatus = DavisStatus.Invincible;
                     davis.DavisState.Static();
                 }
-                else if (item is YoshiEgg)
-                {
-                    //TODO
-                }
-                else if (item is Coin)
-                {
-                    //TODO
-                }
                 item.Clear();
             }
         }
