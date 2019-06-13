@@ -11,7 +11,6 @@ namespace SuperDavis.Collision
 {
     class CollisionDetection
     {
-
         public enum CollisionSide { Top, Bottom, Left, Right, None};
         public IWorld World { get; }
 
@@ -29,7 +28,7 @@ namespace SuperDavis.Collision
         }
                    
 
-        private void CheckMarioBlockCollision(IList<IDavis> davises, IList<IBlock> blocks)
+        private static void CheckMarioBlockCollision(IList<IDavis> davises, IList<IBlock> blocks)
         {
             foreach (IDavis davis in davises)
             {
@@ -45,7 +44,7 @@ namespace SuperDavis.Collision
             }
         }
 
-        private void CheckMarioItemCollision(IList<IDavis> davises, IList<IItem> items)
+        private static void CheckMarioItemCollision(IList<IDavis> davises, IList<IItem> items)
         {
             foreach (IDavis davis in davises)
             {
@@ -61,7 +60,7 @@ namespace SuperDavis.Collision
             }
         }
 
-        private void CheckMarioEnemyCollision(IList<IDavis> davises, IList<IEnemy> enemies)
+        private static void CheckMarioEnemyCollision(IList<IDavis> davises, IList<IEnemy> enemies)
         {
             foreach (IDavis davis in davises)
             {
@@ -75,7 +74,7 @@ namespace SuperDavis.Collision
             }
         }
 
-        private CollisionSide GetCollisionSide(Rectangle intersection, Rectangle HitBox1, Rectangle HitBox2)
+        private static CollisionSide GetCollisionSide(Rectangle intersection, Rectangle HitBox1, Rectangle HitBox2)
         {
             CollisionSide side;
             if (!((intersection.Width == 0) && (intersection.Height == 0)))

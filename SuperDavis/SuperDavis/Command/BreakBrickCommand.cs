@@ -3,9 +3,9 @@ using SuperDavis.Object.Block;
 
 namespace SuperDavis.Command
 {
-    class BreakBrickCommand : ICommand
+    /*class BreakBrickCommand : ICommand
     {
-        private Brick brick;
+        private readonly Brick brick;
         public BreakBrickCommand(Brick brick)
         {
             this.brick = brick;
@@ -14,5 +14,5 @@ namespace SuperDavis.Command
         {
             brick.SpecialState();
         }
-    }
+    }*/
 }

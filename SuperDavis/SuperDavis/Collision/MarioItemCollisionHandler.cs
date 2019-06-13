@@ -12,7 +12,7 @@ namespace SuperDavis.Collision
 {
     class MarioItemCollisionHandler
     {
-        // Constructor or not?
+        private MarioItemCollisionHandler() { }
         
         public static void HandleCollision(IDavis davis, IItem item, CollisionSide side)
         {

@@ -191,6 +191,7 @@
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
+    <Compile Include="Interfaces\Interface1.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Sprite\GenerateBackground.cs" />

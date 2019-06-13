@@ -3,7 +3,7 @@ using SuperDavis.Object.Block;
 
 namespace SuperDavis.Command
 {
-    class ShowHiddenBlockCommand : ICommand
+    /*class ShowHiddenBlockCommand : ICommand
     {
         private HiddenBlock hiddenBlock;
         public ShowHiddenBlockCommand(HiddenBlock hiddenBlock)
@@ -14,5 +14,5 @@ namespace SuperDavis.Command
         {
             hiddenBlock.SpecialState();
         }
-    }
+    }*/
 }

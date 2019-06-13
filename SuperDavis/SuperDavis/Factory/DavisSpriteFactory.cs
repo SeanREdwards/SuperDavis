@@ -1,21 +1,19 @@
-﻿/*
- * DavisSpriteFactory.cs
- * @Author Sean Edwards & Jason Xu
- * Factory class to create character sprites.
- */
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
 
+/*
+ * DavisSpriteFactory.cs
+ * @Author Sean Edwards & Jason Xu
+ * Factory class to create character sprites.
+ */
 namespace SuperDavis.Factory
 {
     /* Character Sprites credited for http://www.lf2.net/ */
-    class DavisSpriteFactory
-
+    class DavisSpriteFactory : IFactory
     {
         private List<Rectangle> coordinateList;
 

@@ -5,11 +5,11 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class BrickStateMachine
+    class BrickStateMachine : IGameState
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public ISprite Sprite;
+        public ISprite Sprite { get; set; }
 
         public BrickStateMachine(bool isBroken)
         {

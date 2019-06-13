@@ -7,16 +7,12 @@ namespace SuperDavis.Sprite
 {
     class GenerateBackground : ISprite
     {
-        /* Magic number!*/
-        private int WindowsEdgeWidth = 1024;
-        private int WindowsEdgeHeight = 768;
-        /* We don't need this here*/
         public int Width { get; set; }
         public int Height { get; set; }
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
-        private List<Rectangle> spriteList;
+        private readonly List<Rectangle> spriteList;
 
         private double currentTime;
 
@@ -52,7 +48,7 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, WindowsEdgeWidth, WindowsEdgeHeight);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             spriteBatch.Draw(this.texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }

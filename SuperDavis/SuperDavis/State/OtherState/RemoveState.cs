@@ -32,7 +32,7 @@ namespace SuperDavis.State.OtherState
         {
             timer--;
             sprite.Update(gameTime);
-            //gameObject.Location += new Vector2(0, 2);
+            gameObject.Location += new Vector2(0, 0);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

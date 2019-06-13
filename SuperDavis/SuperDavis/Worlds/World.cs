@@ -17,11 +17,11 @@ namespace SuperDavis.Worlds
         public IList<IEnemy> Enemies { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
 
-        private Game1 game;
+        //private Game1 game;
 
-        public World(int width, int height, Game1 game)
+        public World(int width, int height)
         {
-            this.game = game;
+            //this.game = game;
             Width = width;
             Height = height;
 
@@ -100,8 +100,6 @@ namespace SuperDavis.Worlds
             {
                 item.Reset();
             }
-
-
         }
     }
 }

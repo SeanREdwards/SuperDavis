@@ -10,23 +10,23 @@ namespace SuperDavis.Object.Scenery
     class Background : IBackground
     {
         public Vector2 Location { get; set; }
-        private ISprite backgroundImage;
+        private readonly ISprite background;
 
         public Background(Vector2 location)
         {
             // initial state
             Location = location;
-            backgroundImage = DavisSpriteFactory.Instance.MarioHillsGreen();
+            background = DavisSpriteFactory.Instance.MarioHillsGreen();
         }
 
         public void Update(GameTime gameTime)
         {
-            backgroundImage.Update(gameTime);
+            background.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            backgroundImage.Draw(spriteBatch, Location);
+            background.Draw(spriteBatch, Location);
         }
         public void Reset()
         { }

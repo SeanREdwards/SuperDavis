@@ -12,8 +12,7 @@ namespace SuperDavis.Collision
 {
     class MarioBlockCollisionHandler
     {
-        // Constructor or not?
-        
+        private MarioBlockCollisionHandler() { }
         public static void HandleCollision(IDavis davis, IBlock block, CollisionSide side)
         {
             switch (side)

@@ -10,7 +10,8 @@ using SuperDavis.State.DavisState;
 
 namespace SuperDavis.Object.Character
 {
-    class InvincibleDavis : IDavis
+    // We haven't use this class, comment out for future use
+    /*class InvincibleDavis : IDavis
     {
         IDavis decoratedDavis;
         int timer = 100;
@@ -30,10 +31,10 @@ namespace SuperDavis.Object.Character
             this.decoratedDavis = decoratedDavis;
         }
 
-        /*void TakeDamage()
+        void TakeDamage()
         {
             // StarMario does not take damage
-        }*/
+        }
 
         public void Update(GameTime gameTime)
         {
@@ -110,4 +111,5 @@ namespace SuperDavis.Object.Character
         public void Reset()
         { }
     }
+*/
 }

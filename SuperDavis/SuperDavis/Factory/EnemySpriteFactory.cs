@@ -12,7 +12,7 @@ using System.Collections.Generic;
  */
 namespace SuperDavis.Factory
 {
-    class EnemySpriteFactory
+    class EnemySpriteFactory : IFactory
     {
         private Texture2D goombaSheet;
         private Texture2D koopaGreenSheet;

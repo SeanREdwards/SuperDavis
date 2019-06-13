@@ -3,7 +3,7 @@ using SuperDavis.Object.Block;
 
 namespace SuperDavis.Command
 {
-    class UseQuestionBlockCommand : ICommand
+    /*class UseQuestionBlockCommand : ICommand
     {
         private QuestionBlock questionBlock;
         public UseQuestionBlockCommand(QuestionBlock questionBlock)
@@ -14,5 +14,5 @@ namespace SuperDavis.Command
         {
             questionBlock.SpecialState();
         }
-    }
+    }*/
 }

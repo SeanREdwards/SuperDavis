@@ -18,11 +18,7 @@ namespace SuperDavis.Object.Character
         public Rectangle HitBox { get; set; }
         public int InvincibleTimer { get; set; }
 
-        //TODO get sprite from dictionary.
-        private ISprite sprite;
-
         Dictionary<DavisStatus, Dictionary<string, ISprite>> characterDictionary;
-
 
         public Davis(Vector2 location)
         {
@@ -42,7 +38,7 @@ namespace SuperDavis.Object.Character
             characterDictionary.Add(DavisStatus.Davis, CreateInvincibleDictionary());
         }
 
-        private Dictionary<string, ISprite> CreateDavisDictionary()
+        private static Dictionary<string, ISprite> CreateDavisDictionary()
         {
             Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
             dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateDavisCrouchLeft());
@@ -60,7 +56,7 @@ namespace SuperDavis.Object.Character
             return dictionary;
         }
 
-        private Dictionary<string, ISprite> CreateWoodyDictionary()
+        private static Dictionary<string, ISprite> CreateWoodyDictionary()
         {
             Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
             dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateWoodyCrouchLeft());
@@ -78,7 +74,7 @@ namespace SuperDavis.Object.Character
             return dictionary;
         }
 
-        private Dictionary<string, ISprite> CreateBatDictionary()
+        private static Dictionary<string, ISprite> CreateBatDictionary()
         {
             Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
             dictionary.Add("DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateBatCrouchLeft());
@@ -97,7 +93,7 @@ namespace SuperDavis.Object.Character
         }
 
         //TODO
-        private Dictionary<string, ISprite> CreateInvincibleDictionary()
+        private static Dictionary<string, ISprite> CreateInvincibleDictionary()
         {
             Dictionary<string, ISprite> dictionary = new Dictionary<string, ISprite>();
             //davisDictionary.Add(DavisCrouchLeftState, DavisSpriteFactory.Instance.CreateDavisCrouchLeft())

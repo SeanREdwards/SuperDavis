@@ -1,18 +1,18 @@
-﻿/*
- * BackgroundSpriteFactory.cs
- * @Author Sean Edwards
- * Factory class to create background sprites.
- */
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
 
+/*
+ * BackgroundSpriteFactory.cs
+ * @Author Sean Edwards
+ * Factory class to create background sprites.
+ */
 namespace SuperDavis.Factory
 {
-    class BackgroundSpriteFactory
+    class BackgroundSpriteFactory : IFactory
     {
         private Texture2D marioBackgroundOne;
         private List<Rectangle> coordinateList;

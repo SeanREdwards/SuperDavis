@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace SuperDavis.Factory
 {
-    class ItemSpriteFactory
+    class ItemSpriteFactory : IFactory
     {
         private Texture2D blocksAndPipes;
         private Texture2D blocksAndPipesTwo;

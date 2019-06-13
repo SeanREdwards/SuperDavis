@@ -17,7 +17,7 @@ namespace SuperDavis.Worlds
 {
     class WorldCreator
     {
-        public IGameObject[][] LocationMap;
+        //public IGameObject[][] LocationMap;
 
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
@@ -76,9 +76,9 @@ namespace SuperDavis.Worlds
             playerDictionary.Add("Davis", (x, y) => world.Davises.Add(new Davis(new Vector2(x, y))));
         }
 
-        public IWorld CreateWorld(string levelFile, int width, int height, Game1 game)
+        public IWorld CreateWorld(string levelFile, int width, int height)
         {
-            return ParseAndLoad(levelFile, width, height, game);
+            return ParseAndLoad(levelFile, width, height);
         }
 
         /* private IWorld ParseAndLoad(string levelFile, int width, int height, Game1 game)
@@ -125,9 +125,9 @@ namespace SuperDavis.Worlds
              return world;
          }*/
 
-        private IWorld ParseAndLoad(string levelFile, int width, int height, Game1 game)
+        private IWorld ParseAndLoad(string levelFile, int width, int height)
         {
-            world = new World(width, height, game);
+            world = new World(width, height);
             CreateObjectDictionary();
             CreateItemDictionary();
             CreateBlockDictionary();
@@ -151,42 +151,42 @@ namespace SuperDavis.Worlds
             return world;
         }
 
-        private void CreateObjects(IWorld world, string objects, string type, float x, float y)
+        private void CreateObjects(IWorld worlds, string objects, string type, float x, float y)
         {
             Action<IWorld, string, float, float> buildObject;
             objectDictionary.TryGetValue(objects, out buildObject);
-            buildObject(world, type, x, y);
+            buildObject(worlds, type, x, y);
         }
 
-        private void CreateCharacter(IWorld world, string type, float x, float y)
+        private void CreateCharacter(IWorld worlds, string type, float x, float y)
         {
             Action<float, float> buildPlayer;
             playerDictionary.TryGetValue(type, out buildPlayer);
             buildPlayer(x, y);
         }
 
-        private void CreateItem(IWorld world, string type, float x, float y)
+        private void CreateItem(IWorld worlds, string type, float x, float y)
         {
             Action<float, float> buildItem;
             itemDictionary.TryGetValue(type, out buildItem);
             buildItem(x, y);
         }
 
-        private void CreateBlock(IWorld world, string type, float x, float y)
+        private void CreateBlock(IWorld worlds, string type, float x, float y)
         {
             Action<float, float> buildBlock;
             blockDictionary.TryGetValue(type, out buildBlock);
             buildBlock(x, y);
         }
 
-        private void CreateEnemy(IWorld world, string type, float x, float y)
+        private void CreateEnemy(IWorld worlds, string type, float x, float y)
         {
             Action<float, float> buildEnemy;
             enemyDictionary.TryGetValue(type, out buildEnemy);
             buildEnemy(x, y);
         }
 
-        private void CreateBackground(IWorld world, string type, float x, float y)
+        private void CreateBackground(IWorld worlds, string type, float x, float y)
         {
             Action<float, float> buildBackground;
             backgroundDictionary.TryGetValue(type, out buildBackground);
