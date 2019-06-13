@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace SuperDavis.Factory
 {
     /* Character Sprites credited for http://www.lf2.net/ */
-    class DavisSpriteFactory : IFactory
+    class DavisSpriteFactory
     {
         private List<Rectangle> coordinateList;
 

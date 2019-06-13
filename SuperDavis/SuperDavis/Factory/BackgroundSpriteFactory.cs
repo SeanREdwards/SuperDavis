@@ -12,7 +12,7 @@ using System.Collections.Generic;
  */
 namespace SuperDavis.Factory
 {
-    class BackgroundSpriteFactory : IFactory
+    class BackgroundSpriteFactory
     {
         private Texture2D marioBackgroundOne;
         private List<Rectangle> coordinateList;
