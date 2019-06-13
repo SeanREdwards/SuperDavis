@@ -23,11 +23,6 @@ namespace SuperDavis.Factory
             marioBackgroundOne = content.Load<Texture2D>("BackgroundSprites/BackgroundsMario1");
         }
 
-        public ISprite Create(Texture2D texture)
-        {
-            return new GenerateSprite(texture, coordinateList);
-        }
-
         public ISprite MarioHillsGreen()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(1072, 0, 512, 447) };

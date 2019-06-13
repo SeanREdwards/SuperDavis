@@ -26,7 +26,7 @@ namespace SuperDavis
         private CollisionDetection collisionDetection;
 
         public IWorld World { get; set; }
-        public bool ToggleMouseControl { get; set; }
+        public bool IsMouseControllerOn { get; set; }
 
         public Game1()
         {
@@ -44,13 +44,12 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
-            ToggleMouseControl = false;
-            InitializaFactory();
-            // TBD
+            IsMouseControllerOn = false;
+            InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
             World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             collisionDetection = new CollisionDetection(World);
-            InitializeKeybinding();
+            InitializeController();
             base.Initialize();
         }
 
@@ -63,10 +62,19 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-            UpdateController();
             foreach (IController controller in controllerList)
             {
-                controller.Update();
+                if (controller is MouseController)
+                {
+                    if (IsMouseControllerOn)
+                    {
+                        controller.Update();
+                    }
+                }
+                else
+                {
+                    controller.Update();
+                }
             }
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
@@ -83,7 +91,7 @@ namespace SuperDavis
         }
 
         /* Helper methods */
-        private void InitializaFactory()
+        private void InitializeFactory()
         {
             DavisSpriteFactory.Instance.Load(Content);
             ItemSpriteFactory.Instance.Load(Content);
@@ -91,7 +99,7 @@ namespace SuperDavis
             BackgroundSpriteFactory.Instance.Load(Content);
         }
 
-        private void InitializeKeybinding()
+        private void InitializeController()
         {
             foreach (IDavis davis in World.Davises)
             {
@@ -131,26 +139,9 @@ namespace SuperDavis
                       (Buttons.A, new DavisSpecialAttackCommand(davis)),
                       (Buttons.B, new ToggleMouseControl(this))
                     ),
+                    new MouseController(this),
                 };
             };
-        }
-
-        /* Needs to be improved */
-        private void UpdateController()
-        {
-            if (ToggleMouseControl)
-            {
-                if (controllerList.Count == 2) { 
-                    controllerList.Add(new MouseController(this));
-                }
-            }
-            else
-            {
-                if (controllerList.Count > 2)
-                {
-                    controllerList.RemoveAt(2);
-                }
-            }
         }
     }
 }

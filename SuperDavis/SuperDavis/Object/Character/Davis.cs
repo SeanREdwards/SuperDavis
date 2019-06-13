@@ -184,9 +184,7 @@ namespace SuperDavis.Object.Character
         {
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            /*Ask why*/
-            //Location = new Vector2(Variables.Variable.WindowsEdgeHeight/2 , Variables.Variable.WindowsEdgeHeight/2);
-            Location = new Vector2(512, 384);
+            Location = new Vector2(Variables.Variable.WindowsEdgeWidth/2 , Variables.Variable.WindowsEdgeHeight/2);
         }
     }
 }
