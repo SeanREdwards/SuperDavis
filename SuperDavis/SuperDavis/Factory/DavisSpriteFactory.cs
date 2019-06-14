@@ -14,31 +14,24 @@ namespace SuperDavis.Factory
 {
     /* Character Sprites credited for http://www.lf2.net/ */
     class DavisSpriteFactory
-
     {
         private List<Rectangle> coordinateList;
 
         /*Davis sprite sheet variables.*/
         private Texture2D davisStaticRight;
-        //private Texture2D davisRightOne;
         private Texture2D davisSpecialAttackOneRight;
         private Texture2D davisStaticLeft;
-        //private Texture2D davisLeftOne;
         private Texture2D davisSpecialAttackOneLeft;
 
         /*Woody sprite sheet variables.*/
         private Texture2D woodyStaticRight;
-        //private Texture2D woodyRightOne;
         private Texture2D woodySpecialAttackOneRight;
         private Texture2D woodyStaticLeft;
-        //private Texture2D woodyLeftOne;
         private Texture2D woodySpecialAttackOneLeft;
 
         /*Bat sprite sheet variables.*/
         private Texture2D batStaticRight;
-        //private Texture2D batRightOne;
         private Texture2D batStaticLeft;
-        //private Texture2D batLeftOne;
         private Texture2D batSpecialAttackOneLeft;
         private Texture2D batSpecialAttackOneRight;
 
@@ -50,40 +43,27 @@ namespace SuperDavis.Factory
         {
             /*Davis sprite sheet assignments*/
             davisStaticRight = content.Load<Texture2D>("DavisSprites/DavisRight_0");
-            //davisRightOne = content.Load<Texture2D>("DavisSprites/DavisRight_1");
             davisSpecialAttackOneRight = content.Load<Texture2D>("DavisSprites/DavisRight_2");
             davisStaticLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_0");
-            //davisLeftOne = content.Load<Texture2D>("DavisSprites/DavisLeft_1");
             davisSpecialAttackOneLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_2");
 
             /*Woody sprite sheet assignements*/
             woodyStaticRight = content.Load<Texture2D>("WoodySprites/WoodyRight_0");
-            //woodyRightOne = content.Load<Texture2D>("WoodySprites/WoodyRight_1");
             woodySpecialAttackOneRight = content.Load<Texture2D>("WoodySprites/WoodyRight_2");
             woodyStaticLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_0");
-            //woodyLeftOne = content.Load<Texture2D>("WoodySprites/WoodyLeft_1");
             woodySpecialAttackOneLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_2");
 
             /*Bat sprite sheet assignements*/
             batStaticRight = content.Load<Texture2D>("BatSprites/BatRight_0");
-            //batRightOne = content.Load<Texture2D>("BatSprites/BatRight_1");
             batStaticLeft = content.Load<Texture2D>("BatSprites/BatLeft_0");
-            //batLeftOne = content.Load<Texture2D>("BatSprites/BatLeft_1");
             batSpecialAttackOneRight = content.Load<Texture2D>("BatSprites/BatRight_2");
             batSpecialAttackOneLeft = content.Load<Texture2D>("BatSprites/BatLeft_2");
+
         }
 
         public ISprite Create(Texture2D texture)
         {
             return new GenerateSprite(texture, coordinateList);
-        }
-
-        /*Basic Davis Sprites*/
-        public ISprite Invincible()
-        {
-            //TODO - Just using batStaticRight for testing purposes
-            coordinateList = new List<Rectangle>() { new Rectangle(744, 0, 37, 80) };
-            return Create(batStaticRight);
         }
 
         public ISprite CreateDavisStaticLeftSprite()
@@ -165,7 +145,6 @@ namespace SuperDavis.Factory
                 new Rectangle(581, 0, 55, 80), new Rectangle(655, 0, 63, 80), new Rectangle(725, 0, 55, 80) };
             return Create(davisSpecialAttackOneRight);
         }
-
 
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()
@@ -262,14 +241,15 @@ namespace SuperDavis.Factory
         public ISprite CreateBatWalkLeftSprite()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(503, 0, 38, 80), new Rectangle(424, 0, 37, 80),
-                new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 38, 80)  };
+                new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 35, 80)  };
             return Create(batStaticLeft);
         }
-
+    
+        //TODO fix right walk here and in the JSON
         public ISprite CreateBatWalkRightSprite()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(259, 0, 38, 80), new Rectangle(339, 0, 37, 80),
-                new Rectangle(419, 0, 37, 80), new Rectangle(499, 0, 37, 80) };
+                new Rectangle(419, 0, 37, 80), new Rectangle(499, 0, 37, 80), new Rectangle(579, 0, 38, 80) };
             return Create(batStaticRight);
         }
 
@@ -312,15 +292,14 @@ namespace SuperDavis.Factory
         /*Advanced Bat Sprites*/
         public ISprite CreateBatSpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(269, 2, 39, 80), new Rectangle(181, 2, 44, 80), new Rectangle(108, 2, 25, 80) };
+            coordinateList = new List<Rectangle>() { new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28) };
             return Create(batSpecialAttackOneLeft);
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 2, 39, 80), new Rectangle(103, 2, 44, 80), new Rectangle(195, 2, 25, 80) };
+            coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28) };
             return Create(batSpecialAttackOneRight);
         }
-
     }
 }

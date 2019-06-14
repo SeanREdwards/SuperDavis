@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.DavisState;
+using SuperDavis.Factory;
+using System.Collections.Generic;
 
 namespace SuperDavis.Object.Character
 {
@@ -11,15 +13,18 @@ namespace SuperDavis.Object.Character
         public IDavisState DavisState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
+        public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
+        public int InvincibleTimer { get; set; }
 
         public Davis(Vector2 location)
         {
             // initial state
+            InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Location = location;
-    }
+        }
 
         public void Update(GameTime gameTime)
         {
@@ -88,17 +93,25 @@ namespace SuperDavis.Object.Character
 
         public void DavisDeath()
         {
-            this.DavisState.Death();
+            DavisState.Death();
         }
 
         public void DavisSpecialAttack()
         {
-            this.DavisState.SpecialAttack();
+            DavisState.SpecialAttack();
         }
         public void DavisToInvincible()
         {
-            // TBD
-            this.DavisState.SpecialAttack();
+            PrevDavisStatus = DavisStatus;
+            DavisStatus = DavisStatus.Invincible;
+            DavisState = new DavisStaticRightState(this);
+        }
+
+        public void Reset()
+        {
+            DavisStatus = DavisStatus.Davis;
+            DavisState = new DavisStaticRightState(this);
+            Location = new Vector2(Variables.Variable.WindowsEdgeWidth/2 , Variables.Variable.WindowsEdgeHeight/2);
         }
     }
 }

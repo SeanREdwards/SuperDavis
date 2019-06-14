@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.EnemyState;
+using SuperDavis.State.OtherState;
 
 namespace SuperDavis.Object.Enemy
 {
@@ -11,8 +12,8 @@ namespace SuperDavis.Object.Enemy
         public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite enemy;
-        private GoombaStateMachine goombaStateMachine;
+        private readonly ISprite enemy;
+        private IGameObjectState goombaState;
 
         public Goomba(Vector2 location)
         {
@@ -20,28 +21,32 @@ namespace SuperDavis.Object.Enemy
             Remove = false;
             Dead = false;
             Location = location;
-            goombaStateMachine = new GoombaStateMachine(this);
-            enemy = goombaStateMachine.Sprite;
+            goombaState = new GoombaStateMachine(this);
+            enemy = goombaState.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
         }
 
         public void Update(GameTime gameTime)
         {
-            goombaStateMachine.Update(gameTime);
+            if (!Remove)
+                goombaState.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
-                goombaStateMachine.Draw(spriteBatch, Location);
-            }
+                goombaState.Draw(spriteBatch, Location);
         }
 
         public void TakeDamage()
         {
             Dead = true;
-            goombaStateMachine = new GoombaStateMachine(this);
+            goombaState = new GoombaStateMachine(this);
+            goombaState = new RemoveState(this, goombaState.Sprite, 100);
+        }
+        public void Reset() {
+            Dead = false;
+            goombaState = new GoombaStateMachine(this);
         }
     }
 }

@@ -8,14 +8,16 @@ namespace SuperDavis.Object.Block
     class Pipe : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         private PipeStateMachine pipeStateMachine;
-        private ISprite block;
+        private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public Pipe(Vector2 location)
         {
             // initial state
             Remove = false;
+            IsHidden = false;
             Location = location;
             pipeStateMachine = new PipeStateMachine();
             block = pipeStateMachine.Sprite;
@@ -24,15 +26,14 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            pipeStateMachine.Update(gameTime);
+            if (!Remove)
+                pipeStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 pipeStateMachine.Draw(spriteBatch, Location);
-            }
         }
         public void SpecialState() { }
         public void Reset() { }

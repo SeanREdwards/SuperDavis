@@ -7,52 +7,96 @@ using SuperDavis.Object.Item;
 using SuperDavis.Object.Scenery;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace SuperDavis.Worlds
 {
-    static class WorldCreator
+    class WorldCreator
     {
-        private const int unitPixels = 16;
+        Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
+        Dictionary<String, Action<float, float>> itemDictionary;
+        Dictionary<String, Action<float, float>> blockDictionary;
+        Dictionary<String, Action<float, float>> playerDictionary;
+        Dictionary<String, Action<float, float>> enemyDictionary;
+        Dictionary<String, Action<float, float>> backgroundDictionary;
+        IWorld world;
 
-        /*public class ObjectInfo
+        private void CreateObjectDictionary()
         {
-            public string Name { get; set; }
-            public int XCoords { get; set; }
-            public int YCoords { get; set; }
-        }*/
-
-        public static IWorld CreateWorld(string levelFile, int width, int height, Game1 game)
-        {
-            return ParseAndLoad(levelFile, width, height, game);
+            objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>
+            {
+                { "Character", CreateCharacter },
+                { "Item", CreateItem },
+                { "Block", CreateBlock },
+                { "Enemy", CreateEnemy },
+                { "Scenery", CreateBackground }
+            };
         }
 
-        //TODO if we want to use for csv
-        /*  Idea from: https://joshclose.github.io/CsvHelper/examples 
-         private IWorld ParseAndLoad(string levelFile, int Width, int Height, Game1 game)
-         {
-             using (var reader = new StreamReader("Content\\Level\\test_level.csv"))
-             using (var csv = new CsvReader(reader))
-             {
-                 csv.Configuration.IgnoreBlankLines = false;
-                 var ObjRecords = new List<ObjectInfo>();
-                 while(csv.Read())
-                 {
-                     //csv.GetRecord < "Davis" >
-                 }
-             }
-             return null;
-         }
-
-         */
-
-        private static IWorld ParseAndLoad(string levelFile, int width, int height, Game1 game)
+        private void CreateItemDictionary()
         {
-            IWorld world = new World(width,height,game);
+            itemDictionary = new Dictionary<String, Action<float, float>>
+            {
+                { "Flower", (x, y) => world.Items.Add(new Flower(new Vector2(x, y))) },
+                { "Coin", (x, y) => world.Items.Add(new Coin(new Vector2(x, y))) },
+                { "Mushroom", (x, y) => world.Items.Add(new Mushroom(new Vector2(x, y))) },
+                { "YoshiEgg", (x, y) => world.Items.Add(new YoshiEgg(new Vector2(x, y))) },
+                { "Star", (x, y) => world.Items.Add(new Star(new Vector2(x, y))) }
+            };
+        }
+
+        private void CreateBlockDictionary()
+        {
+            blockDictionary = new Dictionary<String, Action<float, float>>
+            {
+                { "HiddenBlock", (x, y) => world.Blocks.Add(new HiddenBlock(new Vector2(x, y))) },
+                { "ActivatedBlock", (x, y) => world.Blocks.Add(new ActivatedBlock(new Vector2(x, y))) },
+                { "Brick", (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
+                { "QuestionBlock", (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
+                { "Pipe", (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) }
+            };
+        }
+
+        private void CreateEnemyDictionary()
+        {
+            enemyDictionary = new Dictionary<String, Action<float, float>>
+            {
+                { "Goomba", (x, y) => world.Enemies.Add(new Goomba(new Vector2(x, y))) },
+                { "Koopa", (x, y) => world.Enemies.Add(new Koopa(new Vector2(x, y))) }
+            };
+        }
+
+        private void CreateBackgroundDictionary()
+        {
+            backgroundDictionary = new Dictionary<String, Action<float, float>>
+            {
+                { "Background", (x, y) => world.Backgrounds.Add(new Background(new Vector2(x, y))) }
+            };
+        }
+
+        private void CreatePlayerDictionary()
+        {
+            playerDictionary = new Dictionary<String, Action<float, float>>
+            {
+                { "Davis", (x, y) => world.Davises.Add(new Davis(new Vector2(x, y))) }
+            };
+        }
+
+        public IWorld CreateWorld(string levelFile, int width, int height)
+        {
+            return ParseAndLoad(levelFile, width, height);
+        }
+
+        private IWorld ParseAndLoad(string levelFile, int width, int height)
+        {
+            world = new World(width, height);
+            CreateObjectDictionary();
+            CreateItemDictionary();
+            CreateBlockDictionary();
+            CreateEnemyDictionary();
+            CreatePlayerDictionary();
+            CreateBackgroundDictionary();
+
             XmlReader reader = XmlReader.Create("Content/level/" + levelFile);
             reader.ReadToFollowing("Object");
             while (reader.Read())
@@ -69,118 +113,40 @@ namespace SuperDavis.Worlds
             return world;
         }
 
-        private static void CreateObjects(IWorld world, string objects, string type, float x, float y)
+        private void CreateObjects(IWorld worlds, string objects, string type, float x, float y)
         {
-            switch (objects)
-            {
-                case "Character":
-                    CreateCharacter(world, type, x, y);
-                    break;
-                case "Item":
-                    CreateItem(world, type, x, y);
-                    break;
-                case "Block":
-                    CreateBlock(world, type, x, y);
-                    break;
-                case "Enemy":
-                    CreateEnemy(world, type, x, y);
-                    break;
-                case "Scenery":
-                    CreateBackground(world, type, x, y);
-                    break;
-                default:
-                    break;
-            }
+            objectDictionary.TryGetValue(objects, out Action<IWorld, string, float, float> buildObject);
+            buildObject(worlds, type, x, y);
         }
 
-        private static void CreateCharacter(IWorld world, string type, float x, float y)
+        private void CreateCharacter(IWorld worlds, string type, float x, float y)
         {
-            switch (type)
-            {
-                case nameof(Davis):
-                    world.Davises.Add(new Davis(new Vector2(x, y)));
-                    break;
-                default:
-                    break;
-            }
-
+            playerDictionary.TryGetValue(type, out Action<float, float> buildPlayer);
+            buildPlayer(x, y);
         }
 
-        private static void CreateItem(IWorld world, string type, float x, float y)
+        private void CreateItem(IWorld worlds, string type, float x, float y)
         {
-            switch (type)
-            {
-                case nameof(Flower):
-                    world.Items.Add(new Flower(new Vector2(x, y)));
-                    break;
-                case nameof(Coin):
-                    world.Items.Add(new Coin(new Vector2(x, y)));
-                    break;
-                case nameof(Mushroom):
-                    world.Items.Add(new Mushroom(new Vector2(x, y)));
-                    break;
-                case nameof(YoshiEgg):
-                    world.Items.Add(new YoshiEgg(new Vector2(x, y)));
-                    break;
-                case nameof(Star):
-                    world.Items.Add(new Star(new Vector2(x, y)));
-                    break;
-                default:
-                    break;
-            }
+            itemDictionary.TryGetValue(type, out Action<float, float> buildItem);
+            buildItem(x, y);
         }
 
-        private static void CreateBlock(IWorld world, string type, float x, float y)
+        private void CreateBlock(IWorld worlds, string type, float x, float y)
         {
-            switch (type)
-            {
-                case nameof(HiddenBlock):
-                    world.Blocks.Add(new HiddenBlock(new Vector2(x, y)));
-                    break;
-                case nameof(ActivatedBlock):
-                    world.Blocks.Add(new ActivatedBlock(new Vector2(x, y)));
-                    break;
-                case nameof(Brick):
-                    world.Blocks.Add(new Brick(new Vector2(x, y)));
-                    break;
-                case nameof(QuestionBlock):
-                    world.Blocks.Add(new QuestionBlock(new Vector2(x, y)));
-                    break;
-                case nameof(Pipe):
-                    world.Blocks.Add(new Pipe(new Vector2(x, y)));
-                    break;
-                default:
-                    break;
-            }
+            blockDictionary.TryGetValue(type, out Action<float, float> buildBlock);
+            buildBlock(x, y);
         }
 
-        private static void CreateEnemy(IWorld world, string type, float x, float y)
+        private void CreateEnemy(IWorld worlds, string type, float x, float y)
         {
-            switch (type)
-            {
-                case nameof(Goomba):
-                    world.Enemies.Add(new Goomba(new Vector2(x, y)));
-                    break;
-                case nameof(Koopa):
-                    world.Enemies.Add(new Koopa(new Vector2(x, y)));
-                    break;
-                default:
-                    break;
-            }
+            enemyDictionary.TryGetValue(type, out Action<float, float> buildEnemy);
+            buildEnemy(x, y);
         }
 
-
-
-        private static void CreateBackground(IWorld world, string type, float x, float y)
+        private void CreateBackground(IWorld worlds, string type, float x, float y)
         {
-            switch (type)
-            {
-              case nameof(Background):
-                    world.Backgrounds.Add(new Background(new Vector2(x, y)));
-                break;
-              default:
-                break;
-            }
+            backgroundDictionary.TryGetValue(type, out Action<float, float> buildBackground);
+            buildBackground(x, y);
         }
     }
 }

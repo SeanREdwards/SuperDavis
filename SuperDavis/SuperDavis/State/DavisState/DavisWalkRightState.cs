@@ -7,12 +7,10 @@ namespace SuperDavis.State.DavisState
 {
     class DavisWalkRightState : IDavisState
     {
-        // Needed?
         public int Width { get; set; }
         public int Height { get; set; }
-
-        private IDavis davis;
-        private ISprite sprite;
+        private readonly IDavis davis;
+        public ISprite Sprite { get; set; }
 
         public DavisWalkRightState(IDavis davis)
         {
@@ -20,29 +18,29 @@ namespace SuperDavis.State.DavisState
             switch(davis.DavisStatus)
             {
                 case DavisStatus.Davis:
-                    sprite = DavisSpriteFactory.Instance.CreateDavisWalkRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateDavisWalkRightSprite();
                     break;
                 case DavisStatus.Woody:
-                    sprite = DavisSpriteFactory.Instance.CreateWoodyWalkRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateWoodyWalkRightSprite();
                     break;
                 case DavisStatus.Bat:
-                    sprite = DavisSpriteFactory.Instance.CreateBatWalkRightSprite();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatWalkRightSprite();
                     break;
                 case DavisStatus.Invincible:
-                    sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
+                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
                     break;
                 default:
                     break;
             }
-            // Needed?
-            Width = sprite.Width;
-            Height = sprite.Height;
+            Width = Sprite.Width;
+            Height = Sprite.Height;
         }
 
         public void Static()
         {
             davis.DavisState = new DavisStaticRightState(davis);
         }
+
         public void Left()
         {
             davis.DavisState = new DavisStaticLeftState(davis);
@@ -72,12 +70,22 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            if(davis.DavisStatus == DavisStatus.Invincible)
+            {
+                davis.InvincibleTimer--;
+                if(davis.InvincibleTimer <=0)
+                {
+                    davis.DavisStatus = davis.PrevDavisStatus;
+                    davis.DavisState.Static();
+                    davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
+                }
+            }
+            Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            sprite.Draw(spriteBatch, location);
+            Sprite.Draw(spriteBatch, location);
         }
     }
 }

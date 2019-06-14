@@ -10,8 +10,8 @@ namespace SuperDavis.Object.Item
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite item;
-        private FlowerStateMachine flowerStateMachine;
+        private readonly ISprite item;
+        private readonly FlowerStateMachine flowerStateMachine;
 
         public Flower(Vector2 location)
         {
@@ -25,20 +25,24 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            flowerStateMachine.Update(gameTime);
+            if (!Remove)
+                flowerStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 flowerStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()
         {
             Remove = true;
+        }
+
+        public void Reset()
+        {
+            Remove = false;
         }
     }
 }

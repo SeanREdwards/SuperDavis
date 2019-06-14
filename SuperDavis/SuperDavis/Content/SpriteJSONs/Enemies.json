@@ -1,0 +1,119 @@
+﻿{
+  "GoombaStatic": {
+    "TextureName": "goombaSheet",
+    "SourceFrames": [
+      {
+        "X": 2,
+        "Y": 0,
+        "Width": 16,
+        "Height": 18
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "GoombaAnimated": {
+    "TextureName": "goombaSheet",
+    "SourceFrames": [
+      {
+        "X": 1,
+        "Y": 40,
+        "Width": 17,
+        "Height": 20
+      },
+      {
+        "X": 41,
+        "Y": 40,
+        "Width": 18,
+        "Height": 20
+      },
+      {
+        "X": 80,
+        "Y": 40,
+        "Width": 20,
+        "Height": 20
+      },
+      {
+        "X": 121,
+        "Y": 40,
+        "Width": 18,
+        "Height": 20
+      },
+      {
+        "X": 161,
+        "Y": 40,
+        "Width": 18,
+        "Height": 20
+      },
+      {
+        "X": 202,
+        "Y": 40,
+        "Width": 16,
+        "Height": 20
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "GoombaFlatStatic": {
+    "TextureName": "goombaSheet",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 66,
+        "Width": 20,
+        "Height": 20
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "KoopaGreenStaticLeft": {
+    "TextureName": "koopaGreenSheet",
+    "SourceFrames": [
+      {
+        "X": 167,
+        "Y": 0,
+        "Width": 22,
+        "Height": 30
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  },
+
+  "KoopaGreenShellAnimatedLeft": {
+    "TextureName": "koopaGreenSheet",
+    "SourceFrames": [
+      {
+        "X": 10,
+        "Y": 37,
+        "Width": 16,
+        "Height": 15
+      },
+      {
+        "X": 10,
+        "Y": 67,
+        "Width": 16,
+        "Height": 15
+      },
+      {
+        "X": 10,
+        "Y": 97,
+        "Width": 16,
+        "Height": 15
+      },
+      {
+        "X": 10,
+        "Y": 127,
+        "Width": 16,
+        "Height": 15
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 2
+  }
+}

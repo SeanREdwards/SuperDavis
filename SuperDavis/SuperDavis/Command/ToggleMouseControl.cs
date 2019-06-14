@@ -11,7 +11,7 @@ namespace SuperDavis.Command
         }
         public void Execute()
         {
-            game.ToggleMouseControl = !game.ToggleMouseControl;
+            game.IsMouseControllerOn = !game.IsMouseControllerOn;
         }
     }
 }

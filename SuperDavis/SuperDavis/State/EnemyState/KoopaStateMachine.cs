@@ -6,11 +6,11 @@ using SuperDavis.Object.Enemy;
 
 namespace SuperDavis.State.EnemyState
 {
-    class KoopaStateMachine : IGameState
+    class KoopaStateMachine : IGameObjectState
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public ISprite Sprite;
+        public ISprite Sprite { get; set; }
 
         public KoopaStateMachine(Koopa koopa)
         {
@@ -25,14 +25,15 @@ namespace SuperDavis.State.EnemyState
             Width = Sprite.Width;
             Height = Sprite.Height;
         }
+
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
         }
+
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Sprite.Draw(spriteBatch, location);
         }
-
     }
 }

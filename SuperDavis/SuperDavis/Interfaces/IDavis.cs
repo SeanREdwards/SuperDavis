@@ -1,10 +1,12 @@
 ﻿namespace SuperDavis.Interfaces
 {
-    public enum DavisStatus { Davis, Woody, Bat, Invincible};
+    public enum DavisStatus { Davis, Woody, Bat, Invincible };
     interface IDavis : IGameObject
     {
+        int InvincibleTimer { get; set; }
         IDavisState DavisState { get; set; }
         DavisStatus DavisStatus { get; set; }
+        DavisStatus PrevDavisStatus { get; set; }
         void DavisTurnLeft();
         void DavisTurnRight();
         void DavisJump();
@@ -15,5 +17,6 @@
         void DavisToInvincible();
         void DavisDeath();
         void DavisSpecialAttack();
+        void Reset();
     }
 }

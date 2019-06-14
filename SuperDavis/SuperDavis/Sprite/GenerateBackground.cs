@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace SuperDavis.Sprite
 {
-    class GenerateSprite : ISprite
+    class GenerateBackground : ISprite
     {
         public int Width { get; set; }
         public int Height { get; set; }
@@ -15,9 +15,9 @@ namespace SuperDavis.Sprite
         private readonly List<Rectangle> spriteList;
         private double currentTime;
 
-        private const double frameTime = 0.08d; 
+        private const double frameTime = 0.08d;
 
-        public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)
+        public GenerateBackground(Texture2D texture, List<Rectangle> frameCoords)
         {
             this.texture = texture;
             spriteList = frameCoords;
@@ -33,7 +33,7 @@ namespace SuperDavis.Sprite
             if (currentTime > frameTime)
             {
                 currentFrame++;
-                currentTime = 0d; 
+                currentTime = 0d;
             }
             if (currentFrame == totalFrames)
             {
@@ -46,7 +46,7 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width, sourceRectangle.Height);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             spriteBatch.Draw(this.texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }

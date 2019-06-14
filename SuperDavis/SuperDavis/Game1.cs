@@ -16,6 +16,7 @@ using SuperDavis.Worlds;
 [assembly: CLSCompliant(true)] // CA1014
 [assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
 [assembly: ComVisible(false)] // CA1017
+
 namespace SuperDavis
 {
     class Game1 : Game
@@ -24,34 +25,31 @@ namespace SuperDavis
         private List<IController> controllerList;
         private CollisionDetection collisionDetection;
 
-        public int WindowsEdgeWidth;
-        public int WindowsEdgeHeight;
         public IWorld World { get; set; }
-        public bool ToggleMouseControl { get; set; }
+        public bool IsMouseControllerOn { get; set; }
 
         public Game1()
         {
-            var graphicsDeviceManager = new GraphicsDeviceManager(game: this);
-            WindowsEdgeWidth = 1024;
-            WindowsEdgeHeight = 768;
-            graphicsDeviceManager.PreferredBackBufferWidth = WindowsEdgeWidth;
-            graphicsDeviceManager.PreferredBackBufferHeight = WindowsEdgeHeight;
-            graphicsDeviceManager.DeviceCreated += (o, e) =>
+            using (var graphicsDeviceManager = new GraphicsDeviceManager(game: this))
             {
-                spriteBatch = new SpriteBatch((o as GraphicsDeviceManager).GraphicsDevice);
-            };
+                graphicsDeviceManager.PreferredBackBufferWidth = Variables.Variable.WindowsEdgeWidth;
+                graphicsDeviceManager.PreferredBackBufferHeight = Variables.Variable.WindowsEdgeHeight;
+                graphicsDeviceManager.DeviceCreated += (o, e) =>
+                {
+                    spriteBatch = new SpriteBatch((o as GraphicsDeviceManager).GraphicsDevice);
+                };
+            }
             Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
-            ToggleMouseControl = false;
-            InitializaFactory();
-            // TBD
-            World = WorldCreator.CreateWorld("test-level.xml", WindowsEdgeWidth, WindowsEdgeHeight, this);
-            // Doesn't seems to be a good practice ^^^
+            IsMouseControllerOn = false;
+            InitializeFactory();
+            WorldCreator worldCreator = new WorldCreator();
+            World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             collisionDetection = new CollisionDetection(World);
-            InitializeKeybinding();
+            InitializeController();
             base.Initialize();
         }
 
@@ -64,10 +62,19 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-            UpdateController();
             foreach (IController controller in controllerList)
             {
-                controller.Update();
+                if (controller is MouseController)
+                {
+                    if (IsMouseControllerOn)
+                    {
+                        controller.Update();
+                    }
+                }
+                else
+                {
+                    controller.Update();
+                }
             }
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
@@ -84,14 +91,15 @@ namespace SuperDavis
         }
 
         /* Helper methods */
-        private void InitializaFactory()
+        private void InitializeFactory()
         {
             DavisSpriteFactory.Instance.Load(Content);
             ItemSpriteFactory.Instance.Load(Content);
             EnemySpriteFactory.Instance.Load(Content);
+            BackgroundSpriteFactory.Instance.Load(Content);
         }
 
-        private void InitializeKeybinding()
+        private void InitializeController()
         {
             foreach (IDavis davis in World.Davises)
             {
@@ -131,29 +139,9 @@ namespace SuperDavis
                       (Buttons.A, new DavisSpecialAttackCommand(davis)),
                       (Buttons.B, new ToggleMouseControl(this))
                     ),
+                    new MouseController(this),
                 };
-
             };
-
         }
-
-        private void UpdateController()
-        {
-            if (ToggleMouseControl)
-            {
-                if (controllerList.Count==2) { 
-                    controllerList.Add(new MouseController(this));
-                }
-            }
-            else
-            {
-                if (controllerList.Count > 2)
-                {
-                    controllerList.RemoveAt(2);
-                }
-
-            }
-        }
-
     }
 }

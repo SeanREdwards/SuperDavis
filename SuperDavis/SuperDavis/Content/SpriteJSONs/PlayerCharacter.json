@@ -1,0 +1,877 @@
+﻿{
+  "DavisStaticLeft": {
+    "TextureName": "davisStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 744,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisStaticRight": {
+    "TextureName": "davisStaticRight",
+    "SourceFrames": [
+      {
+        "X": 19,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisWalkLeft": {
+    "TextureName": "davisStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 504,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 424,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 344,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      },
+      {
+        "X": 264,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 183,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisWalkRight": {
+    "TextureName": "davisStaticRight",
+    "SourceFrames": [
+      {
+        "X": 258,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 338,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 421,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      },
+      {
+        "X": 502,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 582,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisCrouchLeft": {
+    "TextureName": "davisStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 740,
+        "Y": 480,
+        "Width": 36,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisCrouchRight": {
+    "TextureName": "davisStaticRight",
+    "SourceFrames": [
+      {
+        "X": 24,
+        "Y": 480,
+        "Width": 36,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisJumpLeft": {
+    "TextureName": "davisStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 575,
+        "Y": 480,
+        "Width": 45,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisJumpRight": {
+    "TextureName": "davisStaticRight",
+    "SourceFrames": [
+      {
+        "X": 180,
+        "Y": 480,
+        "Width": 45,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisDeathLeft": {
+    "TextureName": "davisStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 401,
+        "Y": 320,
+        "Width": 79,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisDeathRight": {
+    "TextureName": "davisStaticRight",
+    "SourceFrames": [
+      {
+        "X": 320,
+        "Y": 320,
+        "Width": 79,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisSpecialAttackLeft": {
+    "TextureName": "davisSpecialAttackOneLeft",
+    "SourceFrames": [
+      {
+        "X": 720,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 640,
+        "Y": 0,
+        "Width": 41,
+        "Height": 80
+      },
+      {
+        "X": 560,
+        "Y": 0,
+        "Width": 48,
+        "Height": 80
+      },
+      {
+        "X": 480,
+        "Y": 0,
+        "Width": 56,
+        "Height": 80
+      },
+      {
+        "X": 400,
+        "Y": 0,
+        "Width": 66,
+        "Height": 80
+      },
+      {
+        "X": 320,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 240,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 160,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      },
+      {
+        "X": 80,
+        "Y": 0,
+        "Width": 63,
+        "Height": 80
+      },
+      {
+        "X": 0,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "DavisSpecialAttackRight": {
+    "TextureName": "davisSpecialAttackOneRight",
+    "SourceFrames": [
+      {
+        "X": 18,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 97,
+        "Y": 0,
+        "Width": 41,
+        "Height": 80
+      },
+      {
+        "X": 181,
+        "Y": 0,
+        "Width": 48,
+        "Height": 80
+      },
+      {
+        "X": 261,
+        "Y": 0,
+        "Width": 56,
+        "Height": 80
+      },
+      {
+        "X": 332,
+        "Y": 0,
+        "Width": 66,
+        "Height": 80
+      },
+      {
+        "X": 421,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 501,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 581,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      },
+      {
+        "X": 655,
+        "Y": 0,
+        "Width": 63,
+        "Height": 80
+      },
+      {
+        "X": 725,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyStaticLeft": {
+    "TextureName": "woodyStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 742,
+        "Y": 0,
+        "Width": 39,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyStaticRight": {
+    "TextureName": "woodyStaticRight",
+    "SourceFrames": [
+      {
+        "X": 19,
+        "Y": 0,
+        "Width": 39,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyWalkLeft": {
+    "TextureName": "woodyStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 502,
+        "Y": 0,
+        "Width": 39,
+        "Height": 80
+      },
+      {
+        "X": 422,
+        "Y": 0,
+        "Width": 39,
+        "Height": 80
+      },
+      {
+        "X": 345,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 267,
+        "Y": 0,
+        "Width": 32,
+        "Height": 80
+      },
+      {
+        "X": 184,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyWalkRight": {
+    "TextureName": "woodyStaticRight",
+    "SourceFrames": [
+      {
+        "X": 259,
+        "Y": 0,
+        "Width": 39,
+        "Height": 75
+      },
+      {
+        "X": 339,
+        "Y": 0,
+        "Width": 39,
+        "Height": 80
+      },
+      {
+        "X": 421,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 501,
+        "Y": 0,
+        "Width": 32,
+        "Height": 80
+      },
+      {
+        "X": 581,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyCrouchLeft": {
+    "TextureName": "woodyStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 744,
+        "Y": 480,
+        "Width": 33,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyCrouchRight": {
+    "TextureName": "woodyStaticRight",
+    "SourceFrames": [
+      {
+        "X": 23,
+        "Y": 480,
+        "Width": 33,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyJumpLeft": {
+    "TextureName": "woodyStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 578,
+        "Y": 480,
+        "Width": 46,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyJumpRight": {
+    "TextureName": "woodyStaticRight",
+    "SourceFrames": [
+      {
+        "X": 176,
+        "Y": 480,
+        "Width": 46,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyDeathLeft": {
+    "TextureName": "woodyStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 401,
+        "Y": 320,
+        "Width": 78,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodyDeathRight": {
+    "TextureName": "woodyStaticRight",
+    "SourceFrames": [
+      {
+        "X": 321,
+        "Y": 320,
+        "Width": 78,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodySpecialAttackLeft": {
+    "TextureName": "woodySpecialAttackOneLeft",
+    "SourceFrames": [
+      {
+        "X": 739,
+        "Y": 80,
+        "Width": 52,
+        "Height": 80
+      },
+      {
+        "X": 662,
+        "Y": 80,
+        "Width": 47,
+        "Height": 80
+      },
+      {
+        "X": 580,
+        "Y": 80,
+        "Width": 53,
+        "Height": 80
+      },
+      {
+        "X": 495,
+        "Y": 80,
+        "Width": 58,
+        "Height": 80
+      },
+      {
+        "X": 414,
+        "Y": 80,
+        "Width": 59,
+        "Height": 80
+      },
+      {
+        "X": 337,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 257,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 177,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 97,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "WoodySpecialAttackRight": {
+    "TextureName": "woodySpecialAttackOneRight",
+    "SourceFrames": [
+      {
+        "X": 739,
+        "Y": 80,
+        "Width": 52,
+        "Height": 80
+      },
+      {
+        "X": 662,
+        "Y": 80,
+        "Width": 47,
+        "Height": 80
+      },
+      {
+        "X": 580,
+        "Y": 80,
+        "Width": 53,
+        "Height": 80
+      },
+      {
+        "X": 495,
+        "Y": 80,
+        "Width": 58,
+        "Height": 80
+      },
+      {
+        "X": 414,
+        "Y": 80,
+        "Width": 59,
+        "Height": 80
+      },
+      {
+        "X": 337,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 257,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 177,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      },
+      {
+        "X": 97,
+        "Y": 80,
+        "Width": 49,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatStaticLeft": {
+    "TextureName": "batStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 744,
+        "Y": 0,
+        "Width": 44,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatStaticRight": {
+    "TextureName": "batStaticRight",
+    "SourceFrames": [
+      {
+        "X": 20,
+        "Y": 0,
+        "Width": 44,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatWalkLeft": {
+    "TextureName": "batStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 503,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 424,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 344,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 264,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 183,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatWalkRight": {
+    "TextureName": "batStaticRight",
+    "SourceFrames": [
+      {
+        "X": 259,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 339,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 419,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 499,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      },
+      {
+        "X": 579,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatCrouchLeft": {
+    "TextureName": "batStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 736,
+        "Y": 480,
+        "Width": 44,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatCrouchRight": {
+    "TextureName": "batStaticRight",
+    "SourceFrames": [
+      {
+        "X": 20,
+        "Y": 480,
+        "Width": 44,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatJumpLeft": {
+    "TextureName": "batStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 581,
+        "Y": 480,
+        "Width": 39,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatJumpRight": {
+    "TextureName": "batStaticRight",
+    "SourceFrames": [
+      {
+        "X": 180,
+        "Y": 480,
+        "Width": 39,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatDeathLeft": {
+    "TextureName": "batStaticLeft",
+    "SourceFrames": [
+      {
+        "X": 403,
+        "Y": 320,
+        "Width": 77,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatDeathRight": {
+    "TextureName": "batStaticRight",
+    "SourceFrames": [
+      {
+        "X": 320,
+        "Y": 320,
+        "Width": 77,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatSpecialAttackLeft": {
+    "TextureName": "batSpecialAttackOneLeft",
+    "SourceFrames": [
+      {
+        "X": 269,
+        "Y": 2,
+        "Width": 39,
+        "Height": 80
+      },
+      {
+        "X": 181,
+        "Y": 2,
+        "Width": 44,
+        "Height": 80
+      },
+      {
+        "X": 108,
+        "Y": 2,
+        "Width": 25,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  },
+
+  "BatSpecialAttackRight": {
+    "TextureName": "batSpecialAttackOneRight",
+    "SourceFrames": [
+      {
+        "X": 20,
+        "Y": 2,
+        "Width": 39,
+        "Height": 80
+      },
+      {
+        "X": 103,
+        "Y": 2,
+        "Width": 44,
+        "Height": 80
+      },
+      {
+        "X": 195,
+        "Y": 2,
+        "Width": 25,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": "0.08d",
+    "Scale": 1
+  }
+}

@@ -9,8 +9,8 @@ namespace SuperDavis.Object.Item
     {
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        private StarStateMachine starStateMachine;
-        private ISprite item;
+        private readonly StarStateMachine starStateMachine;
+        private readonly ISprite item;
         public Rectangle HitBox { get; set; }
 
         public Star(Vector2 location)
@@ -25,20 +25,24 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            starStateMachine.Update(gameTime);
+            if (!Remove)
+                starStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 starStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()
         {
             Remove = true;
+        }
+
+        public void Reset()
+        {
+            Remove = false;
         }
     }
 }

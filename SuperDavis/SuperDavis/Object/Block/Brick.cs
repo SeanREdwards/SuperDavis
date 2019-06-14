@@ -8,15 +8,17 @@ namespace SuperDavis.Object.Block
     class Brick : IBlock
     {
         public bool Remove { get; set; }
+        public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
-        private ISprite block;
+        private readonly ISprite block;
         public Rectangle HitBox { get; set; }
 
         public Brick(Vector2 location)
         {
             // initial state
             Remove = false;
+            IsHidden = false;
             Location = location;
             BrickStateMachine = new BrickStateMachine(false);
             block = BrickStateMachine.Sprite;
@@ -25,15 +27,14 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            BrickStateMachine.Update(gameTime);
+            if (!Remove)
+                BrickStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 BrickStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void SpecialState()
@@ -46,7 +47,5 @@ namespace SuperDavis.Object.Block
             BrickStateMachine = new BrickStateMachine(false);
             Remove = false;
         }
-
-
     }
 }

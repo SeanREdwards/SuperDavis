@@ -46,6 +46,9 @@
     <None Include="Code Reviews\sprint2\Readabilty Review\JasonXu.md" />
     <None Include="Code Reviews\sprint2\Readabilty Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint2\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint3\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint3\Code Quality Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint3\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
     <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
@@ -145,7 +148,9 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Level\test-level.csv" />
+    <None Include="Content\SpriteJSONs\Enemies.json" />
+    <None Include="Content\SpriteJSONs\Items.json" />
+    <None Include="Content\SpriteJSONs\PlayerCharacter.json" />
     <None Include="Content\WoodySprites\WoodyLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -186,10 +191,12 @@
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\ToggleMouseControl.cs" />
     <Compile Include="Controller\MouseController.cs" />
-    <Compile Include="Factory\BackgroundFactory.cs" />
+    <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
-    <Compile Include="Object\Character\InvincibleDavis.cs" />
+    <Compile Include="Sprite\GenerateBackground.cs" />
+    <Compile Include="State\OtherState\RemoveState.cs" />
+    <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />
     <Compile Include="Command\DavisCrouchCommand.cs" />
@@ -197,12 +204,9 @@
     <Compile Include="Command\DavisToBatCommand.cs" />
     <Compile Include="Command\DavisToWoodyCommand.cs" />
     <Compile Include="Command\DavisToDavisCommand.cs" />
-    <Compile Include="Command\BreakBrickCommand.cs" />
     <Compile Include="Command\DavisJumpCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\DavisSpecialAttackCommand.cs" />
-    <Compile Include="Command\UseQuestionBlockCommand.cs" />
-    <Compile Include="Command\ShowHiddenBlockCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />
     <Compile Include="Command\DavisTurnLeftCommand.cs" />
     <Compile Include="Command\ExitCommand.cs" />
@@ -240,7 +244,7 @@
     <Compile Include="State\DavisState\DavisCrouchLeftState.cs" />
     <Compile Include="State\DavisState\DavisCrouchRightState.cs" />
     <Compile Include="State\DavisState\DavisDeathLeftState.cs" />
-    <Compile Include="State\DavisState\DavisDeathRight.cs" />
+    <Compile Include="State\DavisState\DavisDeathRightState.cs" />
     <Compile Include="State\DavisState\DavisJumpLeftState.cs" />
     <Compile Include="State\DavisState\DavisSpecialAttackLeftState.cs" />
     <Compile Include="State\DavisState\DavisSpecialAttackRightState.cs" />

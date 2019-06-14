@@ -2,32 +2,34 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
 
 namespace SuperDavis.Object.Scenery
 {
     class Background : IBackground
     {
         public Vector2 Location { get; set; }
-        private readonly ISprite sprite;
+        private readonly ISprite background;
 
         public Background(Vector2 location)
         {
             // initial state
             Location = location;
-            sprite = ItemSpriteFactory.Instance.CreateBluePipe();
+            background = BackgroundSpriteFactory.Instance.MarioHillsGreen();
         }
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            background.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, Location);
+            background.Draw(spriteBatch, Location);
         }
+
         public void Reset()
-        { }
+        {
+            // Do nothing for current sprint
+        }
     }
 }

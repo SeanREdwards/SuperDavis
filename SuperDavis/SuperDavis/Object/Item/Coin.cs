@@ -10,9 +10,8 @@ namespace SuperDavis.Object.Item
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get;set; }
-        private ISprite item;
-
-        private CoinStateMachine coinStateMachine;
+        private readonly ISprite item;
+        private readonly CoinStateMachine coinStateMachine;
 
         public Coin(Vector2 location)
         {
@@ -26,20 +25,24 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            coinStateMachine.Update(gameTime);
+            if (!Remove)
+                coinStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 coinStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()
         {
             Remove = true;
+        }
+
+        public void Reset()
+        {
+            Remove = false;
         }
     }
 }

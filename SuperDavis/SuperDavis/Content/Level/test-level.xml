@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Object>
-  //Background
-  <Background Type="Hills" X="0" Y="0" />
+  // Background
+  <Scenery Type="Background" X="0" Y="0" />
   // Character
 	<Character Type="Davis" X="512" Y="384" />
   // Item
@@ -19,16 +19,4 @@
   // Enemy
   <Enemy Type="Goomba" X="100" Y="300" />
   <Enemy Type="Koopa" X="200" Y="300" />
-  // Background
-  <Scenery Type="Background" X="500" Y="400" />
-  <Scenery Type="Background" X="516" Y="400" />
-  <Scenery Type="Background" X="532" Y="400" />
-  <Scenery Type="Background" X="548" Y="400" />
-  <Scenery Type="Background" X="564" Y="400" />
-  <Scenery Type="Background" X="580" Y="400" />
-  <Scenery Type="Background" X="596" Y="400" />
-  <Scenery Type="Background" X="612" Y="400" />
-  <Scenery Type="Background" X="628" Y="400" />
-  <Scenery Type="Background" X="644" Y="400" />
-  <Scenery Type="Background" X="660" Y="400" />
 </Object>

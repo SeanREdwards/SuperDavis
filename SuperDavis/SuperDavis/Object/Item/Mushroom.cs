@@ -10,9 +10,8 @@ namespace SuperDavis.Object.Item
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite item;
-
-        private MushroomStateMachine mushroomStateMachine;
+        private readonly ISprite item;
+        private readonly MushroomStateMachine mushroomStateMachine;
 
         public Mushroom(Vector2 location)
         {
@@ -26,20 +25,24 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            mushroomStateMachine.Update(gameTime);
+            if (!Remove)
+                mushroomStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-            {
                 mushroomStateMachine.Draw(spriteBatch, Location);
-            }
         }
 
         public void Clear()
         {
             Remove = true;
+        }
+
+        public void Reset()
+        {
+            Remove = false;
         }
     }
 }

@@ -1,12 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using SuperDavis.Command;
 using SuperDavis.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SuperDavis.Controller
 {
@@ -17,13 +13,13 @@ namespace SuperDavis.Controller
 
         public GamepadController(params (Buttons button, ICommand command)[] args)
         {
-
             buttonCommandDict = new Dictionary<Buttons, ICommand> { };
-            foreach ((Buttons button, ICommand command) pairs in args)
+            foreach ((Buttons button, ICommand command) in args)
             {
-                buttonCommandDict.Add(pairs.button, pairs.command);
+                buttonCommandDict.Add(button, command);
             }
         }
+
         public void Update()
         {
             // TBD : Previous Click Button Set

@@ -5,11 +5,11 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class YoshiEggStateMachine
+    class YoshiEggStateMachine : IGameObjectState
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public ISprite Sprite;
+        public ISprite Sprite { get; set; }
 
         public YoshiEggStateMachine()
         {
@@ -17,10 +17,12 @@ namespace SuperDavis.State.ItemStateMachine
             Width = Sprite.Width;
             Height = Sprite.Height;
         }
+
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Sprite.Draw(spriteBatch, location);
         }
+
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
