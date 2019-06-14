@@ -14,9 +14,9 @@ namespace SuperDavis.Controller
         public GamepadController(params (Buttons button, ICommand command)[] args)
         {
             buttonCommandDict = new Dictionary<Buttons, ICommand> { };
-            foreach ((Buttons button, ICommand command) pairs in args)
+            foreach ((Buttons button, ICommand command) in args)
             {
-                buttonCommandDict.Add(pairs.button, pairs.command);
+                buttonCommandDict.Add(button, command);
             }
         }
 

@@ -13,7 +13,6 @@ namespace SuperDavis.Interfaces
         IList<IItem> Items { get; set; }
         IList<IBlock> Blocks { get; set; }
         IList<IBackground> Backgrounds { get; set; }
-        //IList<IProjectile> Projectiles { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
         void ResetGame();

@@ -34,12 +34,6 @@ namespace SuperDavis.Factory
             return new GenerateSprite(texture, coordinateList);
         }
 
-        /*public ISprite CreateStaticGoomba()
-        {
-            coordinateList = new List<Rectangle>() { new Rectangle(2, 0, 16, 18) };
-            return Create(goombaSheet);
-        }*/
-
         public ISprite CreateGoombaMovingRight()
         {
 
@@ -48,25 +42,11 @@ namespace SuperDavis.Factory
             return Create(goombaSheet);
         }
 
-        /*public ISprite CreateGoombaJump()
-        {
-            coordinateList = new List<Rectangle>() { new Rectangle(1, 41, 17, 20), new Rectangle(41, 41, 18, 19), new Rectangle(80, 42, 20, 18),
-                new Rectangle(121, 41, 18, 19), new Rectangle(161, 41, 18, 20), new Rectangle(202, 41, 16, 19) };
-            return Create(goombaSheet);
-        }*/
-
         public ISprite CreateGoombaFlateStatic()
         {
             coordinateList = new List<Rectangle>() { new Rectangle(0, 66, 20, 20) };
             return Create(goombaSheet);
         }
-
-        /*public ISprite CreateGoombaFlatMovingRight()
-        {
-            coordinateList = new List<Rectangle>() { new Rectangle(38, 75, 24, 20), new Rectangle(77, 75, 25, 20), new Rectangle(118, 75, 24, 20),
-                new Rectangle(157, 75, 26, 20), new Rectangle(196, 75, 28, 20) };
-            return Create(goombaSheet);
-        }*/
 
         public ISprite CreateKoopaGreenStaticLeft()
         {
