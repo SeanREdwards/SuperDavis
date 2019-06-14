@@ -47,6 +47,7 @@
     <None Include="Code Reviews\sprint2\Readabilty Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint2\Readabilty Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint3\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\sprint3\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
@@ -203,12 +204,9 @@
     <Compile Include="Command\DavisToBatCommand.cs" />
     <Compile Include="Command\DavisToWoodyCommand.cs" />
     <Compile Include="Command\DavisToDavisCommand.cs" />
-    <Compile Include="Command\BreakBrickCommand.cs" />
     <Compile Include="Command\DavisJumpCommand.cs" />
     <Compile Include="Command\ResetCommand.cs" />
     <Compile Include="Command\DavisSpecialAttackCommand.cs" />
-    <Compile Include="Command\UseQuestionBlockCommand.cs" />
-    <Compile Include="Command\ShowHiddenBlockCommand.cs" />
     <Compile Include="Command\DavisTurnRightCommand.cs" />
     <Compile Include="Command\DavisTurnLeftCommand.cs" />
     <Compile Include="Command\ExitCommand.cs" />
