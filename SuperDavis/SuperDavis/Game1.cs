@@ -80,8 +80,8 @@ namespace SuperDavis
             System.Console.WriteLine("***************************************");
             for(int i = 0; i<100; i++)
             {
-                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*16+" Y=\"752\" />");
-                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*16+" Y=\"736\" />");
+                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"744\" />");
+                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"720\" />");
             }
             
 
