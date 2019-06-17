@@ -3,17 +3,24 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.ItemStateMachine
+namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class MushroomStateMachine : IGameObjectSpriteState
+    class BrickStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public MushroomStateMachine()
+        public BrickStateMachine(bool isBroken)
         {
-            Sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            if (!isBroken)
+            {
+                Sprite = ItemSpriteFactory.Instance.CreateBrickBlock();
+            }
+            else
+            {
+                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();              
+            }
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

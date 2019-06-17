@@ -4,23 +4,23 @@ using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
 
-namespace SuperDavis.State.EnemyState
+namespace SuperDavis.SpriteState.EnemyState
 {
-    class KoopaStateMachine : IGameObjectSpriteState
+    class GoombaStateMachine: IGameObjectSpriteState
     {
         public float Width { get; set; }
-        public float Height { get; set; }
+        public float Height { get; set;}
         public ISprite Sprite { get; set; }
 
-        public KoopaStateMachine(Koopa koopa)
+        public GoombaStateMachine(Goomba goomba)
         {
-            if (!koopa.Dead)
+            if (!goomba.Dead)
             {
-                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenStaticLeft();
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
             }
             else
             {
-                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlateStatic();
             }
             Width = Sprite.Width;
             Height = Sprite.Height;

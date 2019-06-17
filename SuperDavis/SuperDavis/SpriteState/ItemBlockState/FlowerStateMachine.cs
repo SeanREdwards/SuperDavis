@@ -3,17 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.ItemStateMachine
+namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class MushroomStateMachine : IGameObjectSpriteState
+    class FlowerStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public MushroomStateMachine()
+        public FlowerStateMachine()
         {
-            Sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            Sprite = ItemSpriteFactory.Instance.CreateFireFlower();
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

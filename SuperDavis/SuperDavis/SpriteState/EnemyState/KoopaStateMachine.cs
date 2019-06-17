@@ -4,7 +4,7 @@ using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
 
-namespace SuperDavis.State.EnemyState
+namespace SuperDavis.SpriteState.EnemyState
 {
     class KoopaStateMachine : IGameObjectSpriteState
     {

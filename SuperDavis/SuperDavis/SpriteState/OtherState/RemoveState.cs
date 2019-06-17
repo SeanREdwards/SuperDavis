@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.OtherState
+namespace SuperDavis.SpriteState.OtherState
 {
     class RemoveState : IGameObjectSpriteState
     {

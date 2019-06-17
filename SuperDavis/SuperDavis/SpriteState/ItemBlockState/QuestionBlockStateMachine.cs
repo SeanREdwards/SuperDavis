@@ -3,17 +3,24 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.ItemStateMachine
+namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class MushroomStateMachine : IGameObjectSpriteState
+    class QuestionBlockStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public MushroomStateMachine()
+        public QuestionBlockStateMachine(bool isUsed)
         {
-            Sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            if (!isUsed)
+            {
+                Sprite = ItemSpriteFactory.Instance.CreateQuestionMarkBlockAnimated();
+            }
+            else
+            {
+                Sprite = ItemSpriteFactory.Instance.CreateActivatedBlock();
+            }
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

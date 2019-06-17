@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.ItemStateMachine
+namespace SuperDavis.SpriteState.ItemStateMachine
 {
     class MushroomStateMachine : IGameObjectSpriteState
     {

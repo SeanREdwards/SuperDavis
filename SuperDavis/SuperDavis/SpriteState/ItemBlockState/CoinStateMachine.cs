@@ -3,17 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
-namespace SuperDavis.State.ItemStateMachine
+namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class MushroomStateMachine : IGameObjectSpriteState
+    class CoinStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public MushroomStateMachine()
+        public CoinStateMachine()
         {
-            Sprite = ItemSpriteFactory.Instance.CreateRedMushroom();
+            Sprite = ItemSpriteFactory.Instance.CreateYoshiCoinAnimated();
             Width = Sprite.Width;
             Height = Sprite.Height;
         }
