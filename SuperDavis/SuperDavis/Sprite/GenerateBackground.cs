@@ -7,8 +7,8 @@ namespace SuperDavis.Sprite
 {
     class GenerateBackground : ISprite
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;

@@ -7,7 +7,7 @@ namespace SuperDavis.Interfaces
     {
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        int Width { get;}
-        int Height { get;}
+        float Width { get;}
+        float Height { get;}
     }
 }

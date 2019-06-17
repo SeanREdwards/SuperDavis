@@ -63,7 +63,7 @@ namespace SuperDavis.Factory
 
         public ISprite Create(Texture2D texture)
         {
-            return new GenerateSprite(texture, coordinateList);
+            return new GenerateNotScalingSprite(texture, coordinateList);
         }
 
         public ISprite CreateDavisStaticLeftSprite()

@@ -7,8 +7,8 @@ namespace SuperDavis.Worlds
 {
     class World : IWorld
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         public IList<IDavis> Davises { get; set; }
         public IList<IItem> Items { get; set; }
         public IList<IBlock> Blocks { get; set; }

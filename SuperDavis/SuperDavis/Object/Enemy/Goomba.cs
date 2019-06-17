@@ -23,7 +23,7 @@ namespace SuperDavis.Object.Enemy
             Location = location;
             goombaState = new GoombaStateMachine(this);
             enemy = goombaState.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }
 
         public void Update(GameTime gameTime)

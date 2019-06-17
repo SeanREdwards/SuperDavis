@@ -47,7 +47,7 @@ namespace SuperDavis
             IsMouseControllerOn = false;
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
-            World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
+            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             collisionDetection = new CollisionDetection(World);
             InitializeController();
             base.Initialize();
@@ -76,6 +76,15 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
+            // Just to write the coords for world generator
+            System.Console.WriteLine("***************************************");
+            for(int i = 0; i<100; i++)
+            {
+                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*16+" Y=\"752\" />");
+                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*16+" Y=\"736\" />");
+            }
+            
+
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
             base.Update(gameTime);

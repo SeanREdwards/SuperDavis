@@ -195,6 +195,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Sprite\GenerateBackground.cs" />
+    <Compile Include="Sprite\GenerateNotScalingSprite.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
@@ -269,6 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
+    <Content Include="Content\Level\level1-1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

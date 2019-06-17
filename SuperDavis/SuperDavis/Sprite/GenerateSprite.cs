@@ -7,8 +7,8 @@ namespace SuperDavis.Sprite
 {
     class GenerateSprite : ISprite
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
@@ -23,8 +23,8 @@ namespace SuperDavis.Sprite
             spriteList = frameCoords;
             this.totalFrames = spriteList.Count;
             currentFrame = 0;
-            Width = spriteList[currentFrame].Width;
-            Height = spriteList[currentFrame].Height;
+            Width = spriteList[currentFrame].Width * Variables.Variable.SpriteScaleFactor;
+            Height = spriteList[currentFrame].Height * Variables.Variable.SpriteScaleFactor;
         }
 
         public void Update(GameTime gameTime)
@@ -46,8 +46,7 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, sourceRectangle.Width, sourceRectangle.Height);
-            spriteBatch.Draw(this.texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(this.texture, location, sourceRectangle, Color.White, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
         }
     }
 }

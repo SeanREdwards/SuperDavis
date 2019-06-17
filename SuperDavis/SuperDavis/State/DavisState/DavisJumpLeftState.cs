@@ -7,8 +7,8 @@ namespace SuperDavis.State.DavisState
 {
     class DavisJumpLeftState : IDavisState
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         private readonly IDavis davis;
         public ISprite Sprite { get; set; }
 

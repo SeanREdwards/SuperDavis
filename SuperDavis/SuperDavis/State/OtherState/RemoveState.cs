@@ -6,8 +6,8 @@ namespace SuperDavis.State.OtherState
 {
     class RemoveState : IGameObjectState
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         public ISprite Sprite { get; set; }
         private readonly IGameObject gameObject;
         private readonly ISprite sprite;

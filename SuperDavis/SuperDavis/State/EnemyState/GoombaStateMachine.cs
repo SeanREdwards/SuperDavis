@@ -8,8 +8,8 @@ namespace SuperDavis.State.EnemyState
 {
     class GoombaStateMachine: IGameObjectState
     {
-        public int Width { get; set; }
-        public int Height { get; set;}
+        public float Width { get; set; }
+        public float Height { get; set;}
         public ISprite Sprite { get; set; }
 
         public GoombaStateMachine(Goomba goomba)

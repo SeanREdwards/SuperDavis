@@ -6,8 +6,8 @@ namespace SuperDavis.Interfaces
 {
     interface IWorld
     {
-        int Width { get; set; }
-        int Height { get; set; }
+        float Width { get; set; }
+        float Height { get; set; }
         IList<IDavis> Davises { get; set; }
         IList<IEnemy> Enemies { get; set; }
         IList<IItem> Items { get; set; }

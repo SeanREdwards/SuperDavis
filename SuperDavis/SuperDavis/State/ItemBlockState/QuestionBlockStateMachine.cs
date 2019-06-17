@@ -7,8 +7,8 @@ namespace SuperDavis.State.ItemStateMachine
 {
     class QuestionBlockStateMachine : IGameObjectState
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
         public QuestionBlockStateMachine(bool isUsed)

@@ -21,7 +21,7 @@ namespace SuperDavis.Object.Block
             Location = location;
             HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
             block = HiddenBlockStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)block.Width, (int)block.Height);
         }
 
         public void Update(GameTime gameTime)

@@ -23,7 +23,7 @@ namespace SuperDavis.Object.Enemy
             Location = location;
             koopaStateMachine = new KoopaStateMachine(this);
             enemy = koopaStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, enemy.Width, enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height);
         }
 
         public void Update(GameTime gameTime)

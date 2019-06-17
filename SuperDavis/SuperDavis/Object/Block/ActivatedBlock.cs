@@ -22,7 +22,7 @@ namespace SuperDavis.Object.Block
             Location = location;
             activatedBlockStateMachine = new ActivatedBlockStateMachine();
             block = activatedBlockStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, block.Width, block.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)block.Width, (int)block.Height);
         }
 
         public void Update(GameTime gameTime)

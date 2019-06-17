@@ -29,7 +29,7 @@ namespace SuperDavis.Object.Character
         public void Update(GameTime gameTime)
         {
             DavisState.Update(gameTime);
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, DavisState.Width, DavisState.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)DavisState.Width, (int)DavisState.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)

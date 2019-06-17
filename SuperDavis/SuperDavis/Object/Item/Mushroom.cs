@@ -20,7 +20,7 @@ namespace SuperDavis.Object.Item
             Location = location;
             mushroomStateMachine = new MushroomStateMachine();
             item = mushroomStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, item.Width, item.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)item.Width, (int)item.Height);
         }
 
         public void Update(GameTime gameTime)

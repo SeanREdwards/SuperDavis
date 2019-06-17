@@ -8,8 +8,8 @@ namespace SuperDavis.State.EnemyState
 {
     class KoopaStateMachine : IGameObjectState
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public float Width { get; set; }
+        public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
         public KoopaStateMachine(Koopa koopa)
