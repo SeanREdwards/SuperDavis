@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class StarStateMachine : IGameObjectState
+    class StarStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }

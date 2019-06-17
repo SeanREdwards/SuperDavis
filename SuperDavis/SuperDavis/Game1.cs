@@ -76,13 +76,13 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
-            // Just to write the coords for world generator
-            System.Console.WriteLine("***************************************");
+            /* Just to write the coords for world generator
+            System.Console.WriteLine("************************************************************************************");
             for(int i = 0; i<100; i++)
             {
                 System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"744\" />");
                 System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"720\" />");
-            }
+            }*/
             
 
             World.Update(gameTime);
@@ -93,7 +93,7 @@ namespace SuperDavis
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             World.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

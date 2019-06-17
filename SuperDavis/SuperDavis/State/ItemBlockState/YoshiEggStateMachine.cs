@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class YoshiEggStateMachine : IGameObjectState
+    class YoshiEggStateMachine : IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }

@@ -6,7 +6,7 @@ using SuperDavis.Object.Enemy;
 
 namespace SuperDavis.State.EnemyState
 {
-    class GoombaStateMachine: IGameObjectState
+    class GoombaStateMachine: IGameObjectSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set;}

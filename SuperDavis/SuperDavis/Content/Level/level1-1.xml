@@ -3,7 +3,7 @@
   // Background
   <Scenery Type="Background" X="0" Y="0" />
   // Character
-	<Character Type="Davis" X="512" Y="384" />
+	<Character Type="Davis" X="100" Y="700" />
   // Item
   <Item Type="Flower" X="100" Y="100" />
   <Item Type="Coin" X="200" Y="100" />
