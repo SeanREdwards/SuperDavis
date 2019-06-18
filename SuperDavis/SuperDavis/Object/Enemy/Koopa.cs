@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.EnemyState;
-using SuperDavis.State.OtherState;
+using SuperDavis.SpriteState.EnemyState;
+using SuperDavis.SpriteState.OtherState;
 
 namespace SuperDavis.Object.Enemy
 {

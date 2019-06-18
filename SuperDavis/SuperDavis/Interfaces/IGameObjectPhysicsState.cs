@@ -15,6 +15,6 @@ namespace SuperDavis.Interfaces
         void WalkRight();
         void RunLeft();
         void RunRight();
-        void Update(GameTime game);
+        void Update(GameTime gameTime);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.DavisState;
+using SuperDavis.SpriteState.DavisState;
 using SuperDavis.Factory;
 using System.Collections.Generic;
 

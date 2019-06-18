@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
+using SuperDavis.SpriteState.ItemStateMachine;
 
 namespace SuperDavis.Object.Item
 {
