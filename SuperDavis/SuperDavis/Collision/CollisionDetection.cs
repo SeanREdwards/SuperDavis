@@ -72,8 +72,11 @@ namespace SuperDavis.Collision
             {
                 foreach (IBlock block in blocks)
                 {
-                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(enemy.HitBox, block.HitBox), enemy.HitBox, block.HitBox);
-                    EnemyBlockCollisionHandler.HandleCollision(enemy, block, side);
+                    if (!block.Remove)
+                    {
+                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(enemy.HitBox, block.HitBox), enemy.HitBox, block.HitBox);
+                        EnemyBlockCollisionHandler.HandleCollision(enemy, block, side);
+                    }
                 }
             }
         }
