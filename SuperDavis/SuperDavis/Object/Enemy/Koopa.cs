@@ -14,6 +14,7 @@ namespace SuperDavis.Object.Enemy
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
         private IGameObjectSpriteState koopaStateMachine;
+        public IGameObjectPhysicsState PhysicsState { get; set; }
 
         public Koopa(Vector2 location)
         {

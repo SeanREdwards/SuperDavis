@@ -13,6 +13,8 @@ namespace SuperDavis.Object.Block
         public HiddenBlockStateMachine HiddenBlockStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
+        public IGameObjectPhysicsState PhysicsState { get; set; }
+
         public HiddenBlock(Vector2 location)
         {
             // initial state

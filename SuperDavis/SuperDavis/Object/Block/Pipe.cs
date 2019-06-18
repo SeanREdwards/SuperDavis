@@ -13,6 +13,7 @@ namespace SuperDavis.Object.Block
         private PipeStateMachine pipeStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
+        public IGameObjectPhysicsState PhysicsState { get; set; }
         public Pipe(Vector2 location)
         {
             // initial state

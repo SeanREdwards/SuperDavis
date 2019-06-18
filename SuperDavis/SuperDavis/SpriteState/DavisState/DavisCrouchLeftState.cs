@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.DavisState
 {
-    class DavisCrouchLeftState : IDavisState
+    class DavisCrouchLeftState : IDavisSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
@@ -38,22 +38,22 @@ namespace SuperDavis.SpriteState.DavisState
 
         public void Static()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            davis.DavisSpriteState = new DavisStaticLeftState(davis);
         }
 
         public void Left()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            davis.DavisSpriteState = new DavisStaticLeftState(davis);
         }
 
         public void Right()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            davis.DavisSpriteState = new DavisStaticRightState(davis);
         }
 
         public void Up()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            davis.DavisSpriteState = new DavisStaticLeftState(davis);
         }
 
         public void Down()
@@ -63,12 +63,12 @@ namespace SuperDavis.SpriteState.DavisState
 
         public void Death()
         {
-            davis.DavisState = new DavisDeathLeftState(davis);
+            davis.DavisSpriteState = new DavisDeathLeftState(davis);
         }
 
         public void SpecialAttack()
         {
-            davis.DavisState = new DavisSpecialAttackLeftState(davis);
+            davis.DavisSpriteState = new DavisSpecialAttackLeftState(davis);
         }
 
         public void Update(GameTime gameTime)
@@ -79,7 +79,7 @@ namespace SuperDavis.SpriteState.DavisState
                 if (davis.InvincibleTimer <= 0)
                 {
                     davis.DavisStatus = davis.PrevDavisStatus;
-                    davis.DavisState.Static();
+                    davis.DavisSpriteState.Static();
                     davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
                 }
             }

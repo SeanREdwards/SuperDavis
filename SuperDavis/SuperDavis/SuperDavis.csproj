@@ -208,9 +208,11 @@
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
-    <Content Include="Interfaces\IGameObjectPhysicsState.cs" />
+    <Compile Include="Interfaces\IGameObjectPhysicsState.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
+    <Compile Include="PhysicsState\FallState.cs" />
     <Compile Include="PhysicsState\JumpState.cs" />
+    <Compile Include="PhysicsState\StandingState.cs" />
     <Compile Include="SpriteState\OtherState\RemoveState.cs" />
     <Compile Include="Sprite\GenerateBackground.cs" />
     <Compile Include="Sprite\GenerateNotScalingSprite.cs" />
@@ -240,7 +242,7 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IDavis.cs" />
-    <Compile Include="Interfaces\IDavisState.cs" />
+    <Compile Include="Interfaces\IDavisSpriteState.cs" />
     <Compile Include="Interfaces\IGameObjectSpriteState.cs" />
     <Compile Include="Interfaces\IWorld.cs" />
     <Compile Include="Interfaces\ISprite.cs" />

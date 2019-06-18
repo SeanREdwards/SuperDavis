@@ -8,5 +8,14 @@
         public const int InvincibleTimer = 500;
 
         public const float SpriteScaleFactor = 1.5f;
+
+        // temp for physics param
+        public const float JumpVelocity = 30f;
+        public const float JumpVelocityDecayRate = 0.75f;
+        public const float JumpVelocityMin = 1f;
+
+        public const float FallVelocity = 2f;
+        public const float FallVelocityIncreaseRate = 1.3f;
+        public const float FallVelocityMax = 30f;
     }
 }

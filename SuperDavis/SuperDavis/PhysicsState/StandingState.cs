@@ -9,32 +9,19 @@ using SuperDavis.Interfaces;
 namespace SuperDavis.PhysicsState
 {
 
-    class JumpState : IGameObjectPhysicsState
+    class StandingState : IGameObjectPhysicsState
     {
         // Idea, by passing different igameobject, implement different 
         // param for jumping, using lists
         private IGameObject gameObject;
-        private IDavis davis;
-        private float JumpVelocity;
-        private float JumpVelocityDecayRate;
-        private float JumpVelocityMin;
-        public JumpState(IGameObject gameObjectClass)
+        public StandingState(IGameObject gameObjectClass)
         {
-            gameObject = gameObjectClass;
-            JumpVelocity = Variables.Variable.JumpVelocity;
-            JumpVelocityDecayRate = Variables.Variable.JumpVelocityDecayRate;
-            JumpVelocityMin = Variables.Variable.JumpVelocityMin;
+
         }
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location -= new Vector2(0, JumpVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50);
-            JumpVelocity *= JumpVelocityDecayRate;
-            if (JumpVelocity < JumpVelocityMin)
-            {
-                JumpVelocity = 0;
-                gameObject.PhysicsState = new FallState(gameObject);
-            }
+
         }
     }
 }

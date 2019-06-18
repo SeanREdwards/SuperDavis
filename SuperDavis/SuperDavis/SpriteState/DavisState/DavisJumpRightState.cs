@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.DavisState
 {
-    class DavisJumpRightState : IDavisState
+    class DavisJumpRightState : IDavisSpriteState
     {
         public float Width { get; set; }
         public float Height { get; set; }
@@ -38,34 +38,34 @@ namespace SuperDavis.SpriteState.DavisState
 
         public void Static()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            davis.DavisSpriteState = new DavisStaticRightState(davis);
         }
 
         public void Left()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            davis.DavisSpriteState = new DavisStaticLeftState(davis);
         }
 
         public void Right()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            davis.DavisSpriteState = new DavisStaticRightState(davis);
         }
 
         public void Up() { }
 
         public void Down()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            davis.DavisSpriteState = new DavisStaticRightState(davis);
         }
 
         public void Death()
         {
-            davis.DavisState = new DavisDeathRightState(davis);
+            davis.DavisSpriteState = new DavisDeathRightState(davis);
         }
 
         public void SpecialAttack()
         {
-            davis.DavisState = new DavisSpecialAttackRightState(davis);
+            davis.DavisSpriteState = new DavisSpecialAttackRightState(davis);
         }
 
         public void Update(GameTime gameTime)
@@ -76,7 +76,7 @@ namespace SuperDavis.SpriteState.DavisState
                 if (davis.InvincibleTimer <= 0)
                 {
                     davis.DavisStatus = davis.PrevDavisStatus;
-                    davis.DavisState.Static();
+                    davis.DavisSpriteState.Static();
                     davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
                 }
             }
