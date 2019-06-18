@@ -208,6 +208,7 @@
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
+    <Content Include="Content\Level\test-level.xml" />
     <Content Include="Interfaces\IGameObjectPhysicsState.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Sprite\GenerateBackground.cs" />
@@ -287,9 +288,6 @@
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
     <Content Include="Content\Level\level1-1.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
