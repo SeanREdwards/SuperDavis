@@ -200,7 +200,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collision\Class1.cs" />
     <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
     <Compile Include="Collision\DavisEnemyCollisionHandler.cs" />
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />
