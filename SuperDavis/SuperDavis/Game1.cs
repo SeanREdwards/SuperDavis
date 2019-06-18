@@ -94,6 +94,7 @@ namespace SuperDavis
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            //spriteBatch.DrawString(spriteFont:,"FPS+framerate",newVector2(0,0),color.)
             spriteBatch.Begin();
             World.Draw(spriteBatch);
             spriteBatch.End();

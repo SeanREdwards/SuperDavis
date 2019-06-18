@@ -77,6 +77,8 @@ namespace SuperDavis.Worlds
 
         public void ResetGame()
         {
+            // Clear the list to reload the world
+            // idea from class
             foreach (IDavis character in Davises)
             {
                 character.Reset();

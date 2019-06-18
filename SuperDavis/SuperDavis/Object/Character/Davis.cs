@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Character
     class Davis : IDavis
     {
         public bool Remove { get; set; }
-        public IDavisSpriteState DavisSpriteState { get; set; }
+        public IDavisState DavisSpriteState { get; set; }
         public IGameObjectPhysicsState PhysicsState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
@@ -42,6 +42,10 @@ namespace SuperDavis.Object.Character
         }
 
         // Davis State Change Helper Method
+        public void DavisStatic()
+        {
+            DavisSpriteState.Static();
+        }
         public void DavisTurnLeft()
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState))){
@@ -63,7 +67,8 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                PhysicsState = new JumpState(this);
+                if (!(PhysicsState is JumpState))
+                    PhysicsState = new JumpState(this);
             }
             DavisSpriteState.Up();
         }
@@ -72,7 +77,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                PhysicsState = new FallState(this);
+                
             }
             DavisSpriteState.Down();
         }

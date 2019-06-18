@@ -89,6 +89,25 @@ namespace SuperDavis.Factory
             return Create(brickBlocks);
         }
 
+        public ISprite CreateLeftGreenFloor()
+        {
+            coordinateList = new List<Rectangle>() { new Rectangle(0, 256, 16, 15) };
+            return Create(blocksAndPipesTwo);
+        }
+
+        public ISprite CreateMiddleGreenFloor()
+        {
+            coordinateList = new List<Rectangle>() { new Rectangle(16, 256, 16, 15) };
+            return Create(blocksAndPipesTwo);
+        }
+
+        public ISprite CreateRightGreenFloor()
+        {
+            coordinateList = new List<Rectangle>() { new Rectangle(32, 256, 16, 15) };
+            return Create(blocksAndPipesTwo);
+
+        }
+
         /*Pipes*/
         public ISprite CreateGreenPipe()
         {

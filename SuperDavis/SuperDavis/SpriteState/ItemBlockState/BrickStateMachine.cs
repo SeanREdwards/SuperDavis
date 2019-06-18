@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class BrickStateMachine : IGameObjectSpriteState
+    class BrickStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }

@@ -4,7 +4,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.OtherState
 {
-    class RemoveState : IGameObjectSpriteState
+    class RemoveState : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }

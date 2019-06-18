@@ -38,6 +38,7 @@ namespace SuperDavis.Collision
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                         davis.PhysicsState = new StandingState(davis);
+
                         IsStanding = false;
                     }
                     break;
