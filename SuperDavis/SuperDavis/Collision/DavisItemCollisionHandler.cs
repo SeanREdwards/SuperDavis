@@ -4,9 +4,9 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioItemCollisionHandler
+    class DavisItemCollisionHandler
     {
-        private MarioItemCollisionHandler() { }
+        private DavisItemCollisionHandler() { }
         
         public static void HandleCollision(IDavis davis, IItem item, CollisionSide side)
         {

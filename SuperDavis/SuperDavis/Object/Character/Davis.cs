@@ -42,6 +42,10 @@ namespace SuperDavis.Object.Character
         }
 
         // Davis State Change Helper Method
+        public void DavisStatic()
+        {
+            DavisSpriteState.Static();
+        }
         public void DavisTurnLeft()
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState))){
@@ -63,7 +67,8 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                PhysicsState = new JumpState(this);
+                if (!(PhysicsState is JumpState))
+                    PhysicsState = new JumpState(this);
             }
             DavisSpriteState.Up();
         }
@@ -72,7 +77,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                PhysicsState = new FallState(this);
+                
             }
             DavisSpriteState.Down();
         }

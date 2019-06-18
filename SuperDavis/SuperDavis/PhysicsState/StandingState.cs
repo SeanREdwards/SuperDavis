@@ -13,7 +13,6 @@ namespace SuperDavis.PhysicsState
     {
         // Idea, by passing different igameobject, implement different 
         // param for jumping, using lists
-        private IGameObject gameObject;
         public StandingState(IGameObject gameObjectClass)
         {
 

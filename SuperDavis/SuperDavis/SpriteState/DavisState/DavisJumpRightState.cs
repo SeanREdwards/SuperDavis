@@ -43,12 +43,12 @@ namespace SuperDavis.SpriteState.DavisState
 
         public void Left()
         {
-            davis.DavisSpriteState = new DavisStaticLeftState(davis);
+            davis.DavisSpriteState = new DavisJumpLeftState(davis);
         }
 
         public void Right()
         {
-            davis.DavisSpriteState = new DavisStaticRightState(davis);
+            davis.DavisSpriteState = new DavisJumpRightState(davis);
         }
 
         public void Up() { }

@@ -200,9 +200,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collision\MarioEnemyCollisionHandler.cs" />
-    <Compile Include="Collision\MarioItemCollisionHandler.cs" />
-    <Compile Include="Collision\MarioBlockCollisionHandler.cs" />
+    <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="Collision\DavisEnemyCollisionHandler.cs" />
+    <Compile Include="Collision\DavisItemCollisionHandler.cs" />
+    <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\ToggleMouseControl.cs" />
     <Compile Include="Controller\MouseController.cs" />

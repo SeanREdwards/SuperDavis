@@ -6,12 +6,12 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioBlockCollisionHandler
+    class DavisBlockCollisionHandler
     {
         private static bool IsStanding = false;
         // Bool would be a bad idea, ask grader
 
-        private MarioBlockCollisionHandler() { }
+        private DavisBlockCollisionHandler() { }
         public static void HandleCollision(IDavis davis, IBlock block, CollisionSide side)
         {
             switch (side)

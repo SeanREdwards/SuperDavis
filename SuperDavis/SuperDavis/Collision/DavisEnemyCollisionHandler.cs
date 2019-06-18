@@ -3,9 +3,9 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioEnemyCollisionHandler
+    class DavisEnemyCollisionHandler
     {
-        private MarioEnemyCollisionHandler() { }        
+        private DavisEnemyCollisionHandler() { }        
         public static void HandleCollision(IDavis davis, IEnemy enemy, CollisionSide side)
         {
             if (side != CollisionSide.None)
