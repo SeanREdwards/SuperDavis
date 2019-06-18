@@ -53,7 +53,10 @@ namespace SuperDavis.Worlds
                 { "ActivatedBlock", (x, y) => world.Blocks.Add(new ActivatedBlock(new Vector2(x, y))) },
                 { "Brick", (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
                 { "QuestionBlock", (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
-                { "Pipe", (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) }
+                { "Pipe", (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) },
+                { "LeftGreenFloor", (x,y) => world.Blocks.Add(new LeftGreenFloor(new Vector2(x, y))) },
+                { "MiddleGreenFloor", (x,y) => world.Blocks.Add(new MiddleGreenFloor(new Vector2(x, y))) },
+                { "RightGreenFloor", (x,y) => world.Blocks.Add(new RightGreenFloor(new Vector2(x, y))) }
             };
         }
 
