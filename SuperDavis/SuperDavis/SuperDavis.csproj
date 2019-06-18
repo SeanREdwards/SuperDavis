@@ -209,6 +209,9 @@
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysicsState.cs" />
+    <Compile Include="Object\Block\LeftGreenFloor.cs" />
+    <Compile Include="Object\Block\MiddleGreenFloor.cs" />
+    <Compile Include="Object\Block\RightGreenFloor.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="PhysicsState\FallState.cs" />
     <Compile Include="PhysicsState\JumpState.cs" />
