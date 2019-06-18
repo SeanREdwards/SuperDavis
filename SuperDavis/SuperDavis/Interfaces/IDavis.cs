@@ -7,6 +7,7 @@
         IDavisSpriteState DavisSpriteState { get; set; }
         DavisStatus DavisStatus { get; set; }
         DavisStatus PrevDavisStatus { get; set; }
+        void DavisStatic();
         void DavisTurnLeft();
         void DavisTurnRight();
         void DavisJump();
