@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.DavisState
 {
-    class DavisStaticLeftState : IDavisSpriteState
+    class DavisStaticLeftState : IDavisState
     {
         public float Width { get; set; }
         public float Height { get; set; }

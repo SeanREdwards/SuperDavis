@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.SpriteState.ItemStateMachine
 {
-    class HiddenBlockStateMachine : IGameObjectSpriteState
+    class HiddenBlockStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }

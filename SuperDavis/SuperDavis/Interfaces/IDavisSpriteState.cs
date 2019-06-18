@@ -1,6 +1,6 @@
 ﻿namespace SuperDavis.Interfaces
 {
-    interface IDavisSpriteState : IGameObjectSpriteState
+    interface IDavisState : IGameObjectState
     {
         new float Width { get; set; }
         new float Height { get; set; }
