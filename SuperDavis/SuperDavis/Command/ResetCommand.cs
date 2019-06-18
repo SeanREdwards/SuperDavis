@@ -7,7 +7,7 @@ namespace SuperDavis.Command
         private readonly IWorld world;
         public ResetCommand(IWorld worldClass)
         {
-            this.world = worldClass;
+            world = worldClass;
         }
         public void Execute()
         {

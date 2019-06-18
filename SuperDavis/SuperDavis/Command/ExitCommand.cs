@@ -7,7 +7,7 @@ namespace SuperDavis.Command
         private readonly Game1 game;
         public ExitCommand(Game1 gameClass)
         {
-            this.game = gameClass;
+            game = gameClass;
         }
         public void Execute()
         {
