@@ -1,116 +1,120 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.DavisState;
+using SuperDavis.SpriteState.DavisState;
 using SuperDavis.Factory;
 using System.Collections.Generic;
+using SuperDavis.PhysicsState;
 
 namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
         public bool Remove { get; set; }
-        public IDavisState DavisState { get; set; }
+        public IDavisSpriteState DavisSpriteState { get; set; }
+        public IGameObjectPhysicsState PhysicsState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
         public int InvincibleTimer { get; set; }
-
+    
         public Davis(Vector2 location)
         {
             // initial state
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
+            PhysicsState = new JumpState(this);
             Location = location;
         }
 
         public void Update(GameTime gameTime)
         {
-            DavisState.Update(gameTime);
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)DavisState.Width, (int)DavisState.Height);
+            DavisSpriteState.Update(gameTime);
+            PhysicsState.Update(gameTime);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)DavisSpriteState.Width, (int)DavisSpriteState.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            DavisState.Draw(spriteBatch, Location);
+            DavisSpriteState.Draw(spriteBatch, Location);
         }
 
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
+            if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState))){
                 Location += new Vector2(-2, 0);
             }
-            DavisState.Left();
+            DavisSpriteState.Left();
         }
 
         public void DavisTurnRight()
         {
-            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
                 Location += new Vector2(2, 0);
             }
-            DavisState.Right();
+            DavisSpriteState.Right();
         }
 
         public void DavisJump()
         {
-            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                Location += new Vector2(0, -2);
+                PhysicsState = new JumpState(this);
             }
-            DavisState.Up();
+            DavisSpriteState.Up();
         }
 
         public void DavisCrouch()
         {
-            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            if (!((DavisSpriteState is DavisDeathLeftState) || (DavisSpriteState is DavisDeathRightState)))
             {
-                Location += new Vector2(0, 2);
+                PhysicsState = new FallState(this);
             }
-            DavisState.Down();
+            DavisSpriteState.Down();
         }
 
         public void DavisToDavis()
         {
             DavisStatus = DavisStatus.Davis;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
         }
 
         public void DavisToWoody()
         {
             DavisStatus = DavisStatus.Woody;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
         }
 
         public void DavisToBat()
         {
             DavisStatus = DavisStatus.Bat;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
         }
 
         public void DavisDeath()
         {
-            DavisState.Death();
+            DavisSpriteState.Death();
         }
 
         public void DavisSpecialAttack()
         {
-            DavisState.SpecialAttack();
+            DavisSpriteState.SpecialAttack();
         }
         public void DavisToInvincible()
         {
             PrevDavisStatus = DavisStatus;
             DavisStatus = DavisStatus.Invincible;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
         }
 
         public void Reset()
         {
             DavisStatus = DavisStatus.Davis;
-            DavisState = new DavisStaticRightState(this);
+            DavisSpriteState = new DavisStaticRightState(this);
             Location = new Vector2(Variables.Variable.WindowsEdgeWidth/2 , Variables.Variable.WindowsEdgeHeight/2);
         }
     }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
+using SuperDavis.SpriteState.ItemStateMachine;
 
 namespace SuperDavis.Object.Block
 {
@@ -11,6 +11,8 @@ namespace SuperDavis.Object.Block
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
+        public IGameObjectPhysicsState PhysicsState { get; set; }
+
         private readonly ISprite block;
         private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 

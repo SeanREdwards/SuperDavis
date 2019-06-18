@@ -3,9 +3,9 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioEnemyCollisionHandler
+    class DavisEnemyCollisionHandler
     {
-        private MarioEnemyCollisionHandler() { }        
+        private DavisEnemyCollisionHandler() { }        
         public static void HandleCollision(IDavis davis, IEnemy enemy, CollisionSide side)
         {
             if (side != CollisionSide.None)
@@ -22,7 +22,7 @@ namespace SuperDavis.Collision
                 {
                     if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible)
                     {
-                        davis.DavisState.Death();
+                        davis.DavisSpriteState.Death();
                     }
                 }
             }

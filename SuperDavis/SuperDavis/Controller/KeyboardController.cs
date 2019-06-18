@@ -8,7 +8,7 @@ namespace SuperDavis.Controller
     class KeyboardController : IController
     {
         private readonly Dictionary<Keys, ICommand> keyCommandDict;
-        private readonly Keys[] previousKeys;
+        private Keys[] previousKeys;
 
         public KeyboardController(params(Keys key, ICommand command)[] args)
         {
@@ -31,7 +31,7 @@ namespace SuperDavis.Controller
                 }
             }
             /*Test sequential repeated input*/
-            //previousKeys = currentKeys;
+            //previousKeys.;
         }
     }
 }

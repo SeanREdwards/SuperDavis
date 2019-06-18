@@ -93,7 +93,8 @@ namespace SuperDavis
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            spriteBatch.Begin();
             World.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

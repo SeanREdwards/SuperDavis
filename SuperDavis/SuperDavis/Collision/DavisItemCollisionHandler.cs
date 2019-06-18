@@ -4,9 +4,9 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class MarioItemCollisionHandler
+    class DavisItemCollisionHandler
     {
-        private MarioItemCollisionHandler() { }
+        private DavisItemCollisionHandler() { }
         
         public static void HandleCollision(IDavis davis, IItem item, CollisionSide side)
         {
@@ -15,18 +15,18 @@ namespace SuperDavis.Collision
                 if (item is Flower)
                 {
                     davis.DavisStatus = DavisStatus.Bat;
-                    davis.DavisState.Static();
+                    davis.DavisSpriteState.Static();
                 }
                 else if (item is Mushroom)
                 {
                     davis.DavisStatus = DavisStatus.Woody;
-                    davis.DavisState.Static();
+                    davis.DavisSpriteState.Static();
                 }
                 else if (item is Star)
                 {
                     davis.PrevDavisStatus = davis.DavisStatus;
                     davis.DavisStatus = DavisStatus.Invincible;
-                    davis.DavisState.Static();
+                    davis.DavisSpriteState.Static();
                 }
                 item.Clear();
             }

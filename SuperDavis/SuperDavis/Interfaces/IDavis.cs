@@ -4,7 +4,7 @@
     interface IDavis : IGameObject
     {
         int InvincibleTimer { get; set; }
-        IDavisState DavisState { get; set; }
+        IDavisSpriteState DavisSpriteState { get; set; }
         DavisStatus DavisStatus { get; set; }
         DavisStatus PrevDavisStatus { get; set; }
         void DavisTurnLeft();

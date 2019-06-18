@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
+using SuperDavis.SpriteState.ItemStateMachine;
 
 namespace SuperDavis.Object.Item
 {
@@ -12,6 +12,7 @@ namespace SuperDavis.Object.Item
         public Rectangle HitBox { get;set; }
         private readonly ISprite item;
         private readonly CoinStateMachine coinStateMachine;
+        public IGameObjectPhysicsState PhysicsState { get; set; }
 
         public Coin(Vector2 location)
         {
