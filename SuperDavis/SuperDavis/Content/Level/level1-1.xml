@@ -3,8 +3,8 @@
   // Background
   <Scenery Type="Background" X="0" Y="0" />
   // Character
-  <Block Type="QuestionBlock" X="48" Y="500" />
-  <Character Type="Davis" X="48" Y="572" />
+  <Block Type="QuestionBlock" X="48" Y="600" />
+  <Character Type="Davis" X="48" Y="672" />
   // Item
   <Item Type="Flower" X="100" Y="100" />
   <Item Type="Coin" X="200" Y="100" />
@@ -17,18 +17,18 @@
   <Block Type="Brick" X="300" Y="200" />
   <Block Type="QuestionBlock" X="400" Y="200" />
 
-  <Block Type="HiddenBlock" X="524" Y="500" />
-  <Block Type="Brick" X="548" Y="500" />
-  <Block Type="Brick" X="572" Y="500" />
-  <Block Type="Brick" X="596" Y="500" />
-  <Block Type="QuestionBlock" X="620" Y="500" />
-  <Block Type="Brick" X="644 " Y="500" />
+  <Block Type="HiddenBlock" X="524" Y="600" />
+  <Block Type="Brick" X="548" Y="600" />
+  <Block Type="Brick" X="572" Y="600" />
+  <Block Type="Brick" X="596" Y="600" />
+  <Block Type="QuestionBlock" X="620" Y="600" />
+  <Block Type="Brick" X="644 " Y="600" />
 
   //Pipes
-  <Block Type="Pipe" X="700" Y="572" />
-  <Enemy Type="Goomba" X="748" Y="590" />
-  <Enemy Type="Koopa" X="850" Y="575" />
-  <Block Type="Pipe" X="900" Y="572" />
+  <Block Type="Pipe" X="700" Y="672" />
+  <Enemy Type="Goomba" X="748" Y="690" />
+  <Enemy Type="Koopa" X="850" Y="675" />
+  <Block Type="Pipe" X="900" Y="672" />
   //Fist Enemy
   <Enemy Type="Goomba" X="170" Y="590" />
   // Steps Going up
@@ -47,6 +47,7 @@
   // Top Layer
   <Block Type="Brick" X="288" Y="524" />
 
+  <Item Type="Coin" X="336" Y="500" />
   // Steps Going down
   // First Layer
   <Block Type="Brick" X="384" Y="596" />
@@ -62,6 +63,13 @@
   <Block Type="Brick" X="408" Y="548" />
   // Top Layer
   <Block Type="Brick" X="384" Y="524" />
+
+  <Item Type="Coin" X="524" Y="675" />
+  <Item Type="Coin" X="558" Y="675" />
+  <Item Type="Coin" X="590" Y="675" />
+  <Item Type="Coin" X="620" Y="675" />
+  <Item Type="Coin" X="653" Y="675" />
+
 
   // Base Block
   <Block Type="Brick" X="0" Y="644" />
