@@ -18,7 +18,7 @@ namespace SuperDavis.Collision
             {
                 case CollisionSide.Bottom:
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
-                    if (block is HiddenBlock)
+                    if (block is HiddenBlock && davis.PhysicsState is JumpState)
                     {
                         block.SpecialState();
                     }
