@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Character
     class Davis : IDavis
     {
         public bool Remove { get; set; }
-        public IDavisSpriteState DavisSpriteState { get; set; }
+        public IDavisState DavisSpriteState { get; set; }
         public IGameObjectPhysicsState PhysicsState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }

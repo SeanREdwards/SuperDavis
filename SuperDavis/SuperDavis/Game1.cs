@@ -76,12 +76,12 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
-            /* Just to write the coords for world generator
-            System.Console.WriteLine("************************************************************************************");
-            for(int i = 0; i<100; i++)
+            //Just to write the coords for world generator
+            /*System.Console.WriteLine("************************************************************************************");
+            for(int i = 0; i<=200; i++)
             {
-                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"744\" />");
-                System.Console.WriteLine("  <Block Type=\"ActivatedBlock\" X="+i*24+" Y=\"720\" />");
+                System.Console.WriteLine("  <Block Type=\"Brick\" X="+i*24+" Y=\"744\" />");
+                System.Console.WriteLine("  <Block Type=\"Brick\" X="+i*24+" Y=\"720\" />");
             }*/
             
 
@@ -94,6 +94,7 @@ namespace SuperDavis
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            //spriteBatch.DrawString(spriteFont:,"FPS+framerate",newVector2(0,0),color.)
             spriteBatch.Begin();
             World.Draw(spriteBatch);
             spriteBatch.End();
