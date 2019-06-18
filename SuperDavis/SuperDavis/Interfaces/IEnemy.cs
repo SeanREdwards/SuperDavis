@@ -1,7 +1,8 @@
 ﻿namespace SuperDavis.Interfaces
 {
-     interface IEnemy : IGameObject
+    interface IEnemy : IGameObject
     {
+        bool FacingLeft { get; set; }
         bool Dead { get; set; }
         void TakeDamage();
         void Reset();
