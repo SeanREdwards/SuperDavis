@@ -38,7 +38,7 @@ namespace SuperDavis.State.DavisState
 
         public void Static()
         {
-            davis.DavisSpriteState = new DavisStaticLeftState(davis);
+            davis.DavisState = new DavisStaticLeftState(davis);
         }
 
         public void Left()

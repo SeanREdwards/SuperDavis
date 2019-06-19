@@ -246,8 +246,8 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IDavis.cs" />
-    <Compile Include="Interfaces\IDavisSpriteState.cs" />
-    <Compile Include="Interfaces\IGameObjectSpriteState.cs" />
+    <Compile Include="Interfaces\IDavisState.cs" />
+    <Compile Include="Interfaces\IGameObjectState.cs" />
     <Compile Include="Interfaces\IWorld.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="Object\Block\Pipe.cs" />

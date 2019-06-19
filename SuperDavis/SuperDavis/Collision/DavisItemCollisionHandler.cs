@@ -15,18 +15,18 @@ namespace SuperDavis.Collision
                 if (item is Flower)
                 {
                     davis.DavisStatus = DavisStatus.Bat;
-                    davis.DavisSpriteState.Static();
+                    davis.DavisState.Static();
                 }
                 else if (item is Mushroom)
                 {
                     davis.DavisStatus = DavisStatus.Woody;
-                    davis.DavisSpriteState.Static();
+                    davis.DavisState.Static();
                 }
                 else if (item is Star)
                 {
                     davis.PrevDavisStatus = davis.DavisStatus;
                     davis.DavisStatus = DavisStatus.Invincible;
-                    davis.DavisSpriteState.Static();
+                    davis.DavisState.Static();
                 }
                 item.Clear();
             }

@@ -27,7 +27,7 @@ namespace SuperDavis.Worlds
             }
         }
         public CoordsObjectTuple ObjectMap;*/
-        public IGameObject[,] ObjectMap;
+        public IGameObject[][] ObjectMap;
         
 
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
@@ -104,7 +104,7 @@ namespace SuperDavis.Worlds
 
         public IWorld CreateWorld(string levelFile, int width, int height)
         {
-            ObjectMap = new IGameObject[Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize][Variables.Variable.WindowsEdgeHeight / Variables.Variable.UnitPixelSize];
+            ObjectMap = new IGameObject[Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize][];
             return ParseAndLoad(levelFile, width, height);
         }
 
