@@ -3,7 +3,7 @@
   // Background
   <Scenery Type="Background" X="0" Y="0" />
   // Character
-  <Block Type="QuestionBlock" X="48" Y="500" />
+  <Block Type="QuestionBlock" X="48" Y="600" />
   <Character Type="Davis" X="48" Y="572" />
   // Item
   <Item Type="Flower" X="100" Y="100" />
@@ -47,6 +47,7 @@
   // Top Layer
   <Block Type="Brick" X="288" Y="524" />
 
+  <Item Type="Coin" X="336" Y="500" />
   // Steps Going down
   // First Layer
   <Block Type="Brick" X="384" Y="596" />
@@ -62,6 +63,13 @@
   <Block Type="Brick" X="408" Y="548" />
   // Top Layer
   <Block Type="Brick" X="384" Y="524" />
+
+  <Item Type="Coin" X="524" Y="575" />
+  <Item Type="Coin" X="558" Y="575" />
+  <Item Type="Coin" X="590" Y="575" />
+  <Item Type="Coin" X="620" Y="575" />
+  <Item Type="Coin" X="653" Y="575" />
+
 
   // Base Block
   <Block Type="Brick" X="0" Y="644" />
