@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SuperDavis.Cameras;
 using SuperDavis.Collision;
 using SuperDavis.Command;
 using SuperDavis.Controller;
@@ -24,6 +25,7 @@ namespace SuperDavis
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
         private CollisionDetection collisionDetection;
+        private Camera camera;
 
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
@@ -34,6 +36,7 @@ namespace SuperDavis
             {
                 graphicsDeviceManager.PreferredBackBufferWidth = Variables.Variable.WindowsEdgeWidth;
                 graphicsDeviceManager.PreferredBackBufferHeight = Variables.Variable.WindowsEdgeHeight;
+                graphicsDeviceManager.ApplyChanges();
                 graphicsDeviceManager.DeviceCreated += (o, e) =>
                 {
                     spriteBatch = new SpriteBatch((o as GraphicsDeviceManager).GraphicsDevice);
@@ -95,9 +98,10 @@ namespace SuperDavis
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             //spriteBatch.DrawString(spriteFont:,"FPS+framerate",newVector2(0,0),color.)
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
             World.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
