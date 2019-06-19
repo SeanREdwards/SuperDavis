@@ -9,7 +9,7 @@ using SuperDavis.Interfaces;
 namespace SuperDavis.Physics
 {
 
-    class JumpState : IGameObjectPhysicsState
+    class JumpState : IGameObjectPhysics
     {
         // Idea, by passing different igameobject, implement different 
         // param for Jumping, using lists

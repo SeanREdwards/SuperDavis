@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Block
         public QuestionBlockStateMachine QuestionBlockStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
 
         public QuestionBlock(Vector2 location)
         {

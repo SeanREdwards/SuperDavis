@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Block
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
 
         private readonly ISprite block;
         private readonly ActivatedBlockStateMachine activatedBlockStateMachine;

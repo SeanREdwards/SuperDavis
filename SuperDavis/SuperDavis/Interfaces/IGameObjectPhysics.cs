@@ -2,7 +2,7 @@
 
 namespace SuperDavis.Interfaces
 {
-    interface IGameObjectPhysicsState
+    interface IGameObjectPhysics
     {
         void Update(GameTime gameTime);
     }

@@ -12,7 +12,7 @@ namespace SuperDavis.Object.Item
         private readonly StarStateMachine starStateMachine;
         private readonly ISprite item;
         public Rectangle HitBox { get; set; }
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
 
         public Star(Vector2 location)
         {

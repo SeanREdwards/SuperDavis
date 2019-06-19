@@ -9,7 +9,7 @@ using SuperDavis.Interfaces;
 namespace SuperDavis.Physics
 {
 
-    class FallState : IGameObjectPhysicsState
+    class FallState : IGameObjectPhysics
     {
         // Idea, by passing different igameobject, implement different 
         // param for Falling, using lists

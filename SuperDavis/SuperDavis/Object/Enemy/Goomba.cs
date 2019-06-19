@@ -15,7 +15,7 @@ namespace SuperDavis.Object.Enemy
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
         private IGameObjectState goombaState;
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
 
         public Goomba(Vector2 location)
         {

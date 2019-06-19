@@ -12,7 +12,7 @@ namespace SuperDavis.Object.Character
     {
         public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }

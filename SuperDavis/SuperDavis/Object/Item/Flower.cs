@@ -12,7 +12,7 @@ namespace SuperDavis.Object.Item
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly FlowerStateMachine flowerStateMachine;
-        public IGameObjectPhysicsState PhysicsState { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
 
         public Flower(Vector2 location)
         {
