@@ -33,10 +33,13 @@ namespace SuperDavis.Object.Enemy
         {
             if (!Remove)
                 goombaState.Update(gameTime);
-            if (FacingLeft)
-                Location += new Vector2(-1f, 0);
-            else
-                Location += new Vector2(1f, 0);
+            if (!Dead)
+            {
+                if (FacingLeft)
+                    Location += new Vector2(-1f, 0);
+                else
+                    Location += new Vector2(1f, 0);
+            }
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }
 

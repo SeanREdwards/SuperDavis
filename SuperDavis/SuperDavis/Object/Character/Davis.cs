@@ -5,6 +5,7 @@ using SuperDavis.State.DavisState;
 using SuperDavis.Factory;
 using System.Collections.Generic;
 using SuperDavis.Physics;
+using SuperDavis.State.OtherState;
 
 namespace SuperDavis.Object.Character
 {
@@ -80,6 +81,12 @@ namespace SuperDavis.Object.Character
                 
             }
             DavisState.Down();
+        }
+
+        public void TakeDamage()
+        {
+            DavisState = new DavisDeathRightState(this);
+            //DavisState = new RemoveState(this, DavisState.Sprite, 100);
         }
 
         public void DavisToDavis()

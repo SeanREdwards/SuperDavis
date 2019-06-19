@@ -36,7 +36,7 @@ namespace SuperDavis.Cameras
                 }
                 else
                 {
-                    matrix = Matrix.CreateTranslation(new Vector3(- davis.Location.X, - height / 2 , 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
+                    matrix = Matrix.CreateTranslation(new Vector3(-davis.Location.X, -height / 2, 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
                 }
             }
             return matrix;

@@ -46,7 +46,15 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            spriteBatch.Draw(this.texture, location, sourceRectangle, Color.White, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
+            if (currentFrame % 10 >=5 )
+            {
+                spriteBatch.Draw(this.texture, location, sourceRectangle, Color.White, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
+            }
+            else
+            {
+                spriteBatch.Draw(this.texture, location, sourceRectangle, Color.Black, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
+
+            }
         }
     }
 }
