@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.SpriteState.DavisState;
+using SuperDavis.State.DavisState;
 using SuperDavis.Factory;
 using System.Collections.Generic;
-using SuperDavis.PhysicsState;
+using SuperDavis.Physics;
 
 namespace SuperDavis.Object.Character
 {

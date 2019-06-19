@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
-using SuperDavis.PhysicsState;
+using SuperDavis.Physics;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision

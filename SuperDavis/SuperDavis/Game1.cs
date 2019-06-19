@@ -48,6 +48,8 @@ namespace SuperDavis
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
             World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
+            // After creating world, pass the world into collision detection
+            // But 
             collisionDetection = new CollisionDetection(World);
             InitializeController();
             base.Initialize();
