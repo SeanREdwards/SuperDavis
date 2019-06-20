@@ -15,7 +15,7 @@ namespace SuperDavis.Worlds
         public IList<IEnemy> Enemies { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
 
-        public World(int width, int height)
+        public World(float width, float height)
         {
             Width = width;
             Height = height;

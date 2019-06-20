@@ -13,22 +13,8 @@ namespace SuperDavis.Worlds
 {
     class WorldCreator
     {
-        /*public class CoordsObjectTuple
-        {
-            int x;
-            int y;
-            IGameObject gameObject;
 
-            public CoordsObjectTuple(int x, int y, IGameObject gameObject)
-            {
-                this.x = x;
-                this.y = y;
-                this.gameObject = gameObject;
-            }
-        }
-        public CoordsObjectTuple ObjectMap;*/
-        public IGameObject[][] ObjectMap;
-        
+        public IGameObject[][] ObjectMap;     
 
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
@@ -102,13 +88,17 @@ namespace SuperDavis.Worlds
             };
         }
 
-        public IWorld CreateWorld(string levelFile, int width, int height)
+        public IWorld CreateWorld(string levelFile, float width, float height)
         {
             ObjectMap = new IGameObject[Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize][];
+            for (int i = 0; i < Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize; i++)
+            {
+                ObjectMap[i] = new IGameObject[Variables.Variable.WindowsEdgeHeight / Variables.Variable.UnitPixelSize];
+            }
             return ParseAndLoad(levelFile, width, height);
         }
 
-        private IWorld ParseAndLoad(string levelFile, int width, int height)
+        private IWorld ParseAndLoad(string levelFile, float width, float height)
         {
             world = new World(width, height);
             CreateObjectDictionary();
@@ -129,7 +119,6 @@ namespace SuperDavis.Worlds
                     float x = float.Parse(reader.GetAttribute("X"));
                     float y = float.Parse(reader.GetAttribute("Y"));
                     CreateObjects(world, objects, type, x, y);
-                    
                 }
             }
             return world;
@@ -169,6 +158,12 @@ namespace SuperDavis.Worlds
         {
             backgroundDictionary.TryGetValue(type, out Action<float, float> buildBackground);
             buildBackground(x, y);
+        }
+
+        // Helper method to create object map
+        private void SetObjectMap(IGameObject gameObject, float x, float y)
+        {
+            ObjectMap[(int)Math.Floor(x / world.Width)][(int)Math.Floor(x / world.Width)] = gameObject;
         }
     }
 }
