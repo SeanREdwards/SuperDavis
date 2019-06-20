@@ -63,7 +63,7 @@ namespace SuperDavis.Factory
 
         public ISprite Create(Texture2D texture)
         {
-            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, 1f, SpriteEffects.None );
+            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None );
         }
 
         public ISprite CreateDavisStaticLeftSprite()
@@ -292,14 +292,16 @@ namespace SuperDavis.Factory
         /*Advanced Bat Sprites*/
         public ISprite CreateBatSpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28) };
-            return Create(batSpecialAttackOneLeft);
+            coordinateList = new List<Rectangle>() { new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28), new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28), new Rectangle(269, 26, 39, 21) };
+            return new GenerateSprite(batSpecialAttackOneLeft, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
+
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28) };
-            return Create(batSpecialAttackOneRight);
+            coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28), new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28), new Rectangle(20, 26, 39, 21) };
+            return new GenerateSprite(batSpecialAttackOneRight, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
+
         }
     }
 }

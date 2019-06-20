@@ -31,7 +31,7 @@ namespace SuperDavis.Factory
         /*Goomba Sprite Generation.*/
         public ISprite Create(Texture2D texture)
         {
-            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, 1.5f , SpriteEffects.None);
+            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, 1.5f , SpriteEffects.None) ;
         }
 
         public ISprite CreateGoombaMovingRight()

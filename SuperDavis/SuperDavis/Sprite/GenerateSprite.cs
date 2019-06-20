@@ -53,10 +53,7 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            foreach (Color color in blinkColorList)
-            {
-                spriteBatch.Draw(this.texture, location, sourceRectangle, color, 0f, Vector2.Zero, scale, flipDirection, 0f);
-            }
+            spriteBatch.Draw(this.texture, location, sourceRectangle, blinkColorList[currentFrame % blinkColorList.Count], 0f, Vector2.Zero, scale, flipDirection, 0f);
         }
     }
 }

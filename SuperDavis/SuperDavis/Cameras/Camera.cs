@@ -30,7 +30,7 @@ namespace SuperDavis.Cameras
                 {
                     matrix = Matrix.CreateTranslation(new Vector3(- width / 2, - height / 2 , 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
                 }
-                else if (davis.Location.X >= world.Width * 10 - width / 2)// right edge of scream
+                else if (davis.Location.X >= world.Width * 10 - width / 2)// right edge of screen, can change later on8
                 {
                     matrix = Matrix.CreateTranslation(new Vector3(- world.Width  + width / 2, - height / 2 , 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
                 }
