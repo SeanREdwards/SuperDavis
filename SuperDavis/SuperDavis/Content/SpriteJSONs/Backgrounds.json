@@ -1,0 +1,15 @@
+﻿{
+  "MarioHillsGreen": {
+    "TextureName": "BackgroundSprites/BackgroundsMario1",
+    "SourceFrames": [
+      {
+        "X": 1072,
+        "Y": 0,
+        "Width": 512,
+        "Height": 447
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  }
+}

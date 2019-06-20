@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Web.Script.Serialization;
 
 /*
  * DavisSpriteFactory.cs
@@ -15,292 +18,225 @@ namespace SuperDavis.Factory
     /* Character Sprites credited for http://www.lf2.net/ */
     class DavisSpriteFactory
     {
-        private List<Rectangle> coordinateList;
-
-        /*Davis sprite sheet variables.*/
-        private Texture2D davisStaticRight;
-        private Texture2D davisSpecialAttackOneRight;
-        private Texture2D davisStaticLeft;
-        private Texture2D davisSpecialAttackOneLeft;
-
-        /*Woody sprite sheet variables.*/
-        private Texture2D woodyStaticRight;
-        private Texture2D woodySpecialAttackOneRight;
-        private Texture2D woodyStaticLeft;
-        private Texture2D woodySpecialAttackOneLeft;
-
-        /*Bat sprite sheet variables.*/
-        private Texture2D batStaticRight;
-        private Texture2D batStaticLeft;
-        private Texture2D batSpecialAttackOneLeft;
-        private Texture2D batSpecialAttackOneRight;
 
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();
 
         private DavisSpriteFactory() { }
 
+        /*Sprite Registrar to parse JSONs*/
+        private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
+
         public void Load(ContentManager content)
         {
-            /*Davis sprite sheet assignments*/
-            davisStaticRight = content.Load<Texture2D>("DavisSprites/DavisRight_0");
-            davisSpecialAttackOneRight = content.Load<Texture2D>("DavisSprites/DavisRight_2");
-            davisStaticLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_0");
-            davisSpecialAttackOneLeft = content.Load<Texture2D>("DavisSprites/DavisLeft_2");
+            _spriteRegistrars = new JavaScriptSerializer().Deserialize<Dictionary<string, SpriteRegistrar>>(File.ReadAllText("Content/SpriteJSONs/PlayerCharacter.json"));
 
-            /*Woody sprite sheet assignements*/
-            woodyStaticRight = content.Load<Texture2D>("WoodySprites/WoodyRight_0");
-            woodySpecialAttackOneRight = content.Load<Texture2D>("WoodySprites/WoodyRight_2");
-            woodyStaticLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_0");
-            woodySpecialAttackOneLeft = content.Load<Texture2D>("WoodySprites/WoodyLeft_2");
-
-            /*Bat sprite sheet assignements*/
-            batStaticRight = content.Load<Texture2D>("BatSprites/BatRight_0");
-            batStaticLeft = content.Load<Texture2D>("BatSprites/BatLeft_0");
-            batSpecialAttackOneRight = content.Load<Texture2D>("BatSprites/BatRight_2");
-            batSpecialAttackOneLeft = content.Load<Texture2D>("BatSprites/BatLeft_2");
+            foreach (var spriteRegistrar in _spriteRegistrars)
+            {
+                spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
+            }
 
         }
 
-        public ISprite Create(Texture2D texture)
+        public string GetMethodName()
         {
-            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None );
+            var stackTrace = new StackTrace();
+            var stackFrame = stackTrace.GetFrame(1);
+
+            return stackFrame.GetMethod().Name;
+        }
+
+        private ISprite Create(string key)
+        {
+            _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
+            return new GenerateSprite(spriteInfo.Texture, spriteInfo.SourceFrames, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
         }
 
         public ISprite CreateDavisStaticLeftSprite()
         {
-
-            coordinateList = new List<Rectangle>() { new Rectangle(744, 0, 37, 80) };
-            return Create(davisStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisStaticRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(19, 0, 37, 80) };
-            return Create(davisStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisWalkLeftSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(504, 0, 38, 80), new Rectangle(424, 0, 38, 80),
-                new Rectangle(344, 0, 35, 80), new Rectangle(264, 0, 34, 80), new Rectangle(183, 0, 35, 80) };
-            return Create(davisStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisWalkRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(258, 0, 38, 80), new Rectangle(338, 0, 38, 80),
-                new Rectangle(421, 0, 35, 80), new Rectangle(502, 0, 34, 80), new Rectangle(582, 0, 35, 80) };
-            return Create(davisStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisCrouchLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(740, 480, 36, 80) };
-            return Create(davisStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisCrouchRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(24, 480, 36, 80) };
-            return Create(davisStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisJumpLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(575, 480, 45, 80) };
-            return Create(davisStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisJumpRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(180, 480, 45, 80) };
-            return Create(davisStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisDeathLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(401, 320, 79, 80) };
-            return Create(davisStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisDeathRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(320, 320, 79, 80) };
-            return Create(davisStaticRight);
+            return Create(GetMethodName());
         }
 
         /*Advanced Davis Sprites*/
         public ISprite CreateDavisSpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(720, 0, 80, 80), new Rectangle(640, 0, 80, 80), new Rectangle(560, 0, 80, 80),
-                new Rectangle(480, 0, 80, 80), new Rectangle(400, 0, 80, 80), new Rectangle(320, 0, 80, 80), new Rectangle(240, 0, 80, 80),
-                new Rectangle(160, 0, 80, 80), new Rectangle(80, 0, 80, 80), new Rectangle(0, 0, 80, 80) };
-            return Create(davisSpecialAttackOneLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisSpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(18, 0, 38, 80), new Rectangle(97, 0, 41, 80), new Rectangle(181, 0, 48, 80),
-                new Rectangle(261, 0, 56, 80), new Rectangle(332, 0, 66, 80), new Rectangle(421, 0, 42, 80), new Rectangle(501, 0, 42, 80),
-                new Rectangle(581, 0, 55, 80), new Rectangle(655, 0, 63, 80), new Rectangle(725, 0, 55, 80) };
-            return Create(davisSpecialAttackOneRight);
+            return Create(GetMethodName());
         }
 
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(742, 0, 39, 80) };
-            return Create(woodyStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyStaticRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(19, 0, 39, 80) };
-            return Create(woodyStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyWalkLeftSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(502, 0, 39, 80), new Rectangle(422, 0, 39, 80), new Rectangle(345, 0, 34, 80), new Rectangle(267, 0, 32, 80), new Rectangle(184, 0, 35, 80) };
-            return Create(woodyStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyWalkRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(259, 0, 39, 75), new Rectangle(339, 0, 39, 80), new Rectangle(421, 0, 34, 80), new Rectangle(501, 0, 32, 80), new Rectangle(581, 0, 35, 80) };
-            return Create(woodyStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyCrouchLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(744, 480, 33, 80) };
-            return Create(woodyStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyCrouchRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(23, 480, 33, 80) };
-            return Create(woodyStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyJumpLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(578, 480, 46, 80) };
-            return Create(woodyStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyJumpRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(176, 480, 46, 80) };
-            return Create(woodyStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyDeathLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(401, 320, 78, 80) };
-            return Create(woodyStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodyDeathRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(321, 320, 78, 80) };
-            return Create(woodyStaticRight);
+            return Create(GetMethodName());
         }
 
         /*Advanced Woody Sprites*/
         public ISprite CreateWoodySpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(739, 80, 52, 80), new Rectangle(662, 80, 47, 80), new Rectangle(580, 80, 53, 80),
-                new Rectangle(495, 80, 58, 80), new Rectangle(414, 80, 59, 80), new Rectangle(337, 80, 49, 80), new Rectangle(257, 80, 49, 80),
-                new Rectangle(177, 80, 49, 80), new Rectangle(97, 80, 49, 80)};
-            return Create(woodySpecialAttackOneLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateWoodySpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(9, 80, 52, 80), new Rectangle(91, 80, 47, 80), new Rectangle(167, 80, 53, 80),
-                new Rectangle(247, 80, 58, 80), new Rectangle(327, 80, 59, 80), new Rectangle(414, 80, 49, 80), new Rectangle(494, 80, 49, 80),
-                new Rectangle(574, 80, 49, 80), new Rectangle(654, 80, 49, 80)};
-            return Create(woodySpecialAttackOneRight);
+            return Create(GetMethodName());
         }
 
         /*Basic Bat Sprites*/
         public ISprite CreateBatStaticLeftSprite()
         {
-
-            coordinateList = new List<Rectangle>() { new Rectangle(744, 0, 44, 80) };
-            return Create(batStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatStaticRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 0, 44, 80) };
-            return Create(batStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatWalkLeftSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(503, 0, 38, 80), new Rectangle(424, 0, 37, 80),
-                new Rectangle(344, 0, 37, 80), new Rectangle(264, 0, 37, 80), new Rectangle(183, 0, 35, 80)  };
-            return Create(batStaticLeft);
+            return Create(GetMethodName());
         }
-    
-        //TODO fix right walk here and in the JSON
+
         public ISprite CreateBatWalkRightSprite()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(259, 0, 38, 80), new Rectangle(339, 0, 37, 80),
-                new Rectangle(419, 0, 37, 80), new Rectangle(499, 0, 37, 80), new Rectangle(579, 0, 38, 80) };
-            return Create(batStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatCrouchLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(736, 480, 44, 80) };
-            return Create(batStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatCrouchRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 480, 44, 80) };
-            return Create(batStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatJumpLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(581, 480, 39, 80) };
-            return Create(batStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatJumpRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(180, 480, 39, 80) };
-            return Create(batStaticRight);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatDeathLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(403, 320, 77, 80) };
-            return Create(batStaticLeft);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBatDeathRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(320, 320, 77, 80) };
-            return Create(batStaticRight);
+            return Create(GetMethodName());
         }
 
         /*Advanced Bat Sprites*/
         public ISprite CreateBatSpecialAttackOneLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28), new Rectangle(269, 26, 39, 21), new Rectangle(181, 33, 44, 15), new Rectangle(108, 33, 25, 28), new Rectangle(269, 26, 39, 21) };
-            return new GenerateSprite(batSpecialAttackOneLeft, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
+            _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+            return new GenerateSprite(spriteInfo.Texture, spriteInfo.SourceFrames, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
 
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28), new Rectangle(20, 26, 39, 21), new Rectangle(103, 33, 44, 15), new Rectangle(195, 33, 25, 28), new Rectangle(20, 26, 39, 21) };
-            return new GenerateSprite(batSpecialAttackOneRight, coordinateList, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
+            _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+            return new GenerateSprite(spriteInfo.Texture, spriteInfo.SourceFrames, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None);
 
         }
     }
