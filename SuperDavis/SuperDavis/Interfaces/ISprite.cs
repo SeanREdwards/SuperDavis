@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SuperDavis.Interfaces
 {
+    enum FlipDirection { Horizontal, Vertical };
     interface ISprite
     {
         void Update(GameTime gameTime);

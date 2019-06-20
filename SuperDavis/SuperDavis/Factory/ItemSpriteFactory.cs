@@ -27,7 +27,7 @@ namespace SuperDavis.Factory
 
         public ISprite Create(Texture2D texture)
         {
-            return new GenerateSprite(texture, coordinateList);
+            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, 1f, SpriteEffects.None);
         }
 
         /*Item Sprites*/

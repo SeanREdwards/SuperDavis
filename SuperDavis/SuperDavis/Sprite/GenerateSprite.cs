@@ -10,21 +10,28 @@ namespace SuperDavis.Sprite
         public float Width { get; set; }
         public float Height { get; set; }
         private readonly Texture2D texture;
+        private readonly List<Rectangle> spriteList;
+        private readonly List<Color> blinkColorList;
+        private readonly float scale;
+        private readonly SpriteEffects flipDirection;
         private int currentFrame;
         private readonly int totalFrames;
-        private readonly List<Rectangle> spriteList;
         private double currentTime;
 
         private const double frameTime = 0.08d; 
 
-        public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords)
+        public GenerateSprite(Texture2D texture, List<Rectangle> frameCoords, List<Color> blinkColorList, float scale, SpriteEffects flipDirection)
         {
             this.texture = texture;
             spriteList = frameCoords;
-            this.totalFrames = spriteList.Count;
+            this.blinkColorList = blinkColorList;
+            this.scale = scale;
+            this.flipDirection = flipDirection;
+            totalFrames = spriteList.Count;
             currentFrame = 0;
-            Width = spriteList[currentFrame].Width * Variables.Variable.SpriteScaleFactor;
-            Height = spriteList[currentFrame].Height * Variables.Variable.SpriteScaleFactor;
+            // Initialize the first frame of hitbox width and height
+            Width = spriteList[currentFrame].Width * scale;
+            Height = spriteList[currentFrame].Height * scale;
         }
 
         public void Update(GameTime gameTime)
@@ -46,14 +53,9 @@ namespace SuperDavis.Sprite
             Rectangle sourceRectangle = spriteList[currentFrame];
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
-            if (currentFrame % 10 >=5 )
+            foreach (Color color in blinkColorList)
             {
-                spriteBatch.Draw(this.texture, location, sourceRectangle, Color.White, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
-            }
-            else
-            {
-                spriteBatch.Draw(this.texture, location, sourceRectangle, Color.Black, 0f, Vector2.Zero, Variables.Variable.SpriteScaleFactor, SpriteEffects.None, 0f);
-
+                spriteBatch.Draw(this.texture, location, sourceRectangle, color, 0f, Vector2.Zero, scale, flipDirection, 0f);
             }
         }
     }
