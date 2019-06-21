@@ -27,6 +27,7 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             PhysicsState = new DavisPhysicsState(this);
+            PhysicsState.ApplyForce(new Vector2(0, 0));
             Location = location;
         }
 
@@ -50,7 +51,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                PhysicsState.ApplyForce(new Vector2(-5f,0));
+                PhysicsState.ApplyForce(new Vector2(-3f,0));
             }
             DavisState.Left();
         }
@@ -59,7 +60,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                PhysicsState.ApplyForce(new Vector2(5f, 0));
+                PhysicsState.ApplyForce(new Vector2(3f, 0));
             }
             DavisState.Right();
         }
@@ -68,7 +69,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                PhysicsState.ApplyForce(new Vector2(0, 15f));
+                PhysicsState.ApplyForce(new Vector2(0, -7f));
             }
             DavisState.Up();
         }
