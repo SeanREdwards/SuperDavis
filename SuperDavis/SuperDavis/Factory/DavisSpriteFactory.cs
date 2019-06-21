@@ -48,7 +48,7 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture,  new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo.Texture,  new List<Color> { Color.White}, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         public ISprite CreateDavisStaticLeftSprite()

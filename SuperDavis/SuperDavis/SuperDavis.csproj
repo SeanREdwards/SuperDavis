@@ -239,8 +239,6 @@
     <Compile Include="Physics\DavisPhysicsState.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
-    <Compile Include="Sprite\GenerateBackground.cs" />
-    <Compile Include="Sprite\GenerateNotScalingSprite.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />
