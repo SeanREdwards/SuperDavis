@@ -9,6 +9,7 @@
         void Right();
         void Up();
         void Down();
+        void Land();
         void Death();
         void SpecialAttack();
     }

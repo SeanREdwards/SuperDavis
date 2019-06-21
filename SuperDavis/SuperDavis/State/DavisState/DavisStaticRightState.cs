@@ -57,6 +57,11 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisCrouchRightState(davis);
         }
 
+        public void Land()
+        {
+
+        }
+
         public void Death()
         {
             davis.DavisState = new DavisDeathRightState(davis);

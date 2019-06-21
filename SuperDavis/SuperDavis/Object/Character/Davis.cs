@@ -26,8 +26,8 @@ namespace SuperDavis.Object.Character
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            PhysicsState = new DavisPhysicsState(this);
-            PhysicsState.ApplyForce(new Vector2(0, 0));
+            PhysicsState = new FallState(this);
+            //PhysicsState.ApplyForce(new Vector2(0, 0));
             Location = location;
         }
 
@@ -51,7 +51,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                PhysicsState.ApplyForce(new Vector2(-3f,0));
+                Location += new Vector2(-3, 0);
             }
             DavisState.Left();
         }
@@ -60,7 +60,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                PhysicsState.ApplyForce(new Vector2(3f, 0));
+                Location += new Vector2(3, 0);
             }
             DavisState.Right();
         }
@@ -69,7 +69,8 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                PhysicsState.ApplyForce(new Vector2(0, -7f));
+                if (!(PhysicsState is JumpState))
+                    PhysicsState = new JumpState(this);
             }
             DavisState.Up();
         }
@@ -78,11 +79,15 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                
+
             }
             DavisState.Down();
         }
 
+        public void DavisLand()
+        {
+            DavisState.Land();
+        }
         public void TakeDamage()
         {
             DavisState = new DavisDeathRightState(this);

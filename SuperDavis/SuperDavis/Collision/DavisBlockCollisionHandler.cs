@@ -15,6 +15,7 @@ namespace SuperDavis.Collision
             {
                 case CollisionSide.Bottom:
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
+                    davis.PhysicsState = new FallState(davis);
                     //davis.PhysicsState.VerticalVelocity = 0;
                    // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
                     if (block is HiddenBlock)
@@ -43,8 +44,9 @@ namespace SuperDavis.Collision
                     if (!block.IsHidden)
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
-                       // davis.PhysicsState.VerticalVelocity = 0;
-                       davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
+                        davis.PhysicsState = new StandingState(davis);
+                        davis.DavisState.Land();
+                       //davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
 
                     }
                     break;
@@ -65,6 +67,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.None:
                     // Want this only execute one time
+                    //davis.PhysicsState = new FallState(davis);
                     break;
             }
         }

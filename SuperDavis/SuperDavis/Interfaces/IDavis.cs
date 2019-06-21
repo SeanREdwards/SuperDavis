@@ -12,6 +12,7 @@
         void DavisTurnRight();
         void DavisJump();
         void DavisCrouch();
+        void DavisLand();
         void DavisToDavis();
         void DavisToWoody();
         void DavisToBat();
