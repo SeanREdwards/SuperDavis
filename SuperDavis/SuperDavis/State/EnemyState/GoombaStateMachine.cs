@@ -16,11 +16,11 @@ namespace SuperDavis.State.EnemyState
         {
             if (!goomba.Dead)
             {
-                Sprite = EnemySpriteFactory.Instance.CreateGoombaMovingRight();
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaWalkRight();
             }
             else
             {
-                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlateStatic();
+                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlatAnimated();
             }
             Width = Sprite.Width;
             Height = Sprite.Height;

@@ -154,7 +154,10 @@
     <None Include="Content\Davis\WoodyWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\EnemySprites\Goomba.xnb">
+    <None Include="Content\EnemySprites\GoombaLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\EnemySprites\GoombaRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\EnemySprites\KoopaTroopaGreen.xnb">

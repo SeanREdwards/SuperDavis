@@ -4,15 +4,15 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Web.Script.Serialization;
 
 namespace SuperDavis.Factory
 {
     class ItemSpriteFactory
     {
-        private Texture2D blocksAndPipes;
-        private Texture2D blocksAndPipesTwo;
-        private Texture2D brickBlocks;
-        private List<Rectangle> coordinateList;
+        private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
 
         public static ItemSpriteFactory Instance { get; } = new ItemSpriteFactory();
 
@@ -20,99 +20,106 @@ namespace SuperDavis.Factory
 
         public void Load(ContentManager content)
         {
-            blocksAndPipes = content.Load<Texture2D>("BlockSprites/Blocks&Pipes");
-            blocksAndPipesTwo = content.Load<Texture2D>("BlockSprites/Blocks&Pipes2");
-            brickBlocks = content.Load<Texture2D>("BlockSprites/BrickBlock");
+            _spriteRegistrars = new JavaScriptSerializer().Deserialize<Dictionary<string, SpriteRegistrar>>(File.ReadAllText("Content/SpriteJSONs/Items.json"));
+
+            foreach (var spriteRegistrar in _spriteRegistrars)
+            {
+                spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
+            }
+
         }
 
-        public ISprite Create(Texture2D texture)
+        public string GetMethodName()
         {
-            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, (float)1.5, SpriteEffects.None);
+            var stackTrace = new StackTrace();
+            var stackFrame = stackTrace.GetFrame(1);
+
+            return stackFrame.GetMethod().Name;
+        }
+
+        private ISprite Create(string key)
+        {
+            _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
+            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White}, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         /*Item Sprites*/
         public ISprite CreateStar()
         {
-            coordinateList = new List<Rectangle>() {new Rectangle(224, 106, 15, 16)};
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateYoshiEgg()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(286, 105, 14, 16) };
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateYoshiCoinAnimated()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 32, 16, 32), new Rectangle(16, 32, 16, 32),
-                new Rectangle(32, 32, 16, 32), new Rectangle(48, 32, 16, 32), new Rectangle(64, 32, 16, 32),
-                new Rectangle(80, 32, 16, 32)};
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateFireFlower()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(202, 107, 16, 16)};
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateRedMushroom()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(182, 107, 16, 16) };
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         /*Block Sprites*/
         public ISprite CreateQuestionMarkBlockAnimated()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 64, 16, 16), new Rectangle(16, 64, 16, 16), new Rectangle(32, 64, 16, 16),
-                new Rectangle(48, 64, 16, 16)};
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateActivatedBlock()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(49, 107, 16, 16) };
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateEmptyBlock()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 0, 16, 16) };
-            return Create(blocksAndPipes);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateBrickBlock()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(272, 112, 16, 16) };
-            return Create(brickBlocks);
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateSpinBlockStatic()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateSpinBlockAnimated()
+        {
+            return Create(GetMethodName());
         }
 
         public ISprite CreateLeftGreenFloor()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 256, 16, 15) };
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateMiddleGreenFloor()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(16, 256, 16, 15) };
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
         }
 
         public ISprite CreateRightGreenFloor()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(32, 256, 16, 15) };
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
 
         }
 
         /*Pipes*/
         public ISprite CreateGreenPipe()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(96, 0, 32, 32) };
-            return Create(blocksAndPipesTwo);
+            return Create(GetMethodName());
         }
 
     }

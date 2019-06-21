@@ -1,5 +1,5 @@
 ﻿{
-  "CreateDavisStaticLeftSprite": {
+ "CreateDavisStaticLeftSprite": {
     "TextureName": "DavisSprites/DavisLeft_0",
     "SourceFrames": [
       {
@@ -10,7 +10,8 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1,
+    "Effect": "SpriteEffects.None"
   },
 
   "CreateDavisStaticRightSprite": {

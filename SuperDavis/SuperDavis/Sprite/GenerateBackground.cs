@@ -12,16 +12,16 @@ namespace SuperDavis.Sprite
         private readonly Texture2D texture;
         private int currentFrame;
         private readonly int totalFrames;
-        private readonly List<Rectangle> spriteList;
+        private readonly Rectangle[] spriteList;
         private double currentTime;
 
         private const double frameTime = 0.08d;
 
-        public GenerateBackground(Texture2D texture, List<Rectangle> frameCoords)
+        public GenerateBackground(Texture2D texture, params Rectangle[] frameCoords)
         {
             this.texture = texture;
             spriteList = frameCoords;
-            this.totalFrames = spriteList.Count;
+            this.totalFrames = spriteList.Length;
             currentFrame = 0;
             Width = spriteList[currentFrame].Width;
             Height = spriteList[currentFrame].Height;
