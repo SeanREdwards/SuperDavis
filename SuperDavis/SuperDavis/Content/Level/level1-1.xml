@@ -13,7 +13,7 @@
   <Scenery Type="Background" X="4608" Y="0" />
   <Scenery Type="Background" X="5120" Y="0" />
   // Character
-  <Character Type="Davis" X="48" Y="660" />
+  <Character Type="Davis" X="48" Y="640" />
   //level begin
   <Item Type="Mushroom" X="48" Y="576" />
   <Block Type="QuestionBlock" X="48" Y="600" />
@@ -114,140 +114,138 @@
   <Block Type="Brick" X="1488" Y="696" />
   <Block Type="Brick" X="1512" Y="696" />
   <Block Type="Brick" X="1536" Y="696" />
+ 
   //Pipes
-  <Block Type="Pipe" X="1600" Y="672" />
-  //2nd set of coins
-  <Item Type="Coin" X="1668" Y="675" />
-  <Item Type="Coin" X="1706" Y="675" />
+  <Block Type="Pipe" X="1668" Y="672" />
+  //2nd set of coins 
   <Item Type="Coin" X="1740" Y="675" />
   <Item Type="Coin" X="1774" Y="675" />
   <Item Type="Coin" X="1808" Y="675" />
-  <Enemy Type="Koopa" X="1700" Y="675" />
+  <Enemy Type="Koopa" X="1774" Y="675" />
   <Block Type="Pipe" X="1856" Y="672" />
 
   <Enemy Type="Koopa" X="2072" Y="675" />
   
+  <Block Type="Brick" X="2024" Y="600" />
+  <Block Type="Brick" X="2048" Y="600" />
+  <Block Type="Brick" X="2072" Y="600" />
   <Block Type="Brick" X="2096" Y="600" />
   <Block Type="Brick" X="2120" Y="600" />
-  <Block Type="Brick" X="2144" Y="600" />
-  <Block Type="Brick" X="2168" Y="600" />
-  <Block Type="Brick" X="2192" Y="600" />
 
+  <Block Type="Brick" X="2024" Y="450" />
+  <Block Type="Brick" X="2048" Y="450" />
+  <Block Type="QuestionBlock" X="2072" Y="450" />
+  <Item Type="Coin" X="2072" Y="401" />
   <Block Type="Brick" X="2096" Y="450" />
   <Block Type="Brick" X="2120" Y="450" />
-  <Block Type="QuestionBlock" X="2144" Y="450" />
-  <Item Type="Coin" X="2144" Y="401" />
-  <Block Type="Brick" X="2168" Y="450" />
-  <Block Type="Brick" X="2192" Y="450" />
 
   //Pipes
-  <Block Type="Pipe" X="2500" Y="672" />
-  <Item Type="Coin" X="2554" Y="675" />
-  <Item Type="Coin" X="2588" Y="675" />
-  <Item Type="Coin" X="2622" Y="675" />
-  <Item Type="Coin" X="2656" Y="675" />
-  <Block Type="Pipe" X="2690" Y="672" />
-  <Enemy Type="Koopa" X="2800" Y="675" />
+  <Block Type="Pipe" X="2260" Y="672" />
+  <Item Type="Coin" X="2314" Y="675" />
+  <Item Type="Coin" X="2348" Y="675" />
+  <Item Type="Coin" X="2382" Y="675" />
+  <Item Type="Coin" X="2416" Y="675" />
+  <Block Type="Pipe" X="2450" Y="672" />
+  <Enemy Type="Koopa" X="2560" Y="675" />
   
   //Steps going up
   // First Layer
-  <Block Type="Brick" X="2976" Y="696" />
-  <Block Type="Brick" X="3000" Y="696" />
-  <Block Type="Brick" X="3024" Y="696" />
-  <Block Type="Brick" X="3048" Y="696" />
+  <Block Type="Brick" X="2736" Y="696" />
+  <Block Type="Brick" X="2760" Y="696" />
+  <Block Type="Brick" X="2784" Y="696" />
+  <Block Type="Brick" X="2808" Y="696" />
   // Second Layer
-  <Block Type="Brick" X="3000" Y="672" />
-  <Block Type="Brick" X="3024" Y="672" />
-  <Block Type="Brick" X="3048" Y="672" />
+  <Block Type="Brick" X="2760" Y="672" />
+  <Block Type="Brick" X="2784" Y="672" />
+  <Block Type="Brick" X="2808" Y="672" />
   // Third Layer
-  <Block Type="Brick" X="3024" Y="648" />
-  <Block Type="Brick" X="3048" Y="648" />
+  <Block Type="Brick" X="2784" Y="648" />
+  <Block Type="Brick" X="2808" Y="648" />
   // Top Layer
-  <Block Type="Brick" X="3048" Y="624" />
+  <Block Type="Brick" X="2808" Y="624" />
   
   //Going Down
   // First Layer
-  <Block Type="Brick" X="3144" Y="696" />
-  <Block Type="Brick" X="3168" Y="696" />
-  <Block Type="Brick" X="3192" Y="696" />
-  <Block Type="Brick" X="3216" Y="696" />
+  <Block Type="Brick" X="2904" Y="696" />
+  <Block Type="Brick" X="2928" Y="696" />
+  <Block Type="Brick" X="2952" Y="696" />
+  <Block Type="Brick" X="2976" Y="696" />
   // Second Layer
-  <Block Type="Brick" X="3144" Y="672" />
-  <Block Type="Brick" X="3168" Y="672" />
-  <Block Type="Brick" X="3192" Y="672" />
+  <Block Type="Brick" X="2904" Y="672" />
+  <Block Type="Brick" X="2928" Y="672" />
+  <Block Type="Brick" X="2952" Y="672" />
   // Third Layer
-  <Block Type="Brick" X="3144" Y="648" />
-  <Block Type="Brick" X="3168" Y="648" />
+  <Block Type="Brick" X="2904" Y="648" />
+  <Block Type="Brick" X="2928" Y="648" />
   // Top Layer
-  <Block Type="Brick" X="3144" Y="624" />
+  <Block Type="Brick" X="2904" Y="624" />
 
 
   //Pipes
-  <Block Type="Pipe" X="3324" Y="672" />
+  <Block Type="Pipe" X="3084" Y="672" />
   //2nd set of coins
-  <Item Type="Coin" X="3384" Y="675" />
-  <Item Type="Coin" X="3416" Y="675" />
-  <Item Type="Coin" X="3450" Y="675" />
-  <Item Type="Coin" X="3485" Y="675" />
-  <Item Type="Coin" X="3519" Y="675" />
-  <Enemy Type="Goomba" X="3450" Y="690" />
-  <Enemy Type="Koopa" X="3450" Y="675" />
-  <Block Type="Pipe" X="3550" Y="672" />
+  <Item Type="Coin" X="3140" Y="675" />
+  <Item Type="Coin" X="3176" Y="675" />
+  <Item Type="Coin" X="3210" Y="675" />
+  <Item Type="Coin" X="3254" Y="675" />
+  <Enemy Type="Koopa" X="3210" Y="675" />
+  <Block Type="Pipe" X="3290" Y="672" />
 
+  <Enemy Type="Goomba" X="3350" Y="690" />
 
-  //Last Giant Steps before Flag
+  //Last Giant Steps before Flag and castle
   // First Layer
-  <Block Type="Brick" X="3648" Y="696" />
-  <Block Type="Brick" X="3672" Y="696" />
-  <Block Type="Brick" X="3696" Y="696" />
-  <Block Type="Brick" X="3720" Y="696" />
-  <Block Type="Brick" X="3744" Y="696" />
-  <Block Type="Brick" X="3768" Y="696" />
-  <Block Type="Brick" X="3792" Y="696" />
-  <Block Type="Brick" X="3816" Y="696" />
-  <Block Type="Brick" X="3840" Y="696" />
+  <Block Type="Brick" X="3408" Y="696" />
+  <Block Type="Brick" X="3432" Y="696" />
+  <Block Type="Brick" X="3456" Y="696" />
+  <Block Type="Brick" X="3480" Y="696" />
+  <Block Type="Brick" X="3504" Y="696" />
+  <Block Type="Brick" X="3528" Y="696" />
+  <Block Type="Brick" X="3552" Y="696" />
+  <Block Type="Brick" X="3576" Y="696" />
+  <Block Type="Brick" X="3600" Y="696" />
   // Second Layer
-  <Block Type="Brick" X="3672" Y="672" />
-  <Block Type="Brick" X="3696" Y="672" />
-  <Block Type="Brick" X="3720" Y="672" />
-  <Block Type="Brick" X="3744" Y="672" />
-  <Block Type="Brick" X="3768" Y="672" />
-  <Block Type="Brick" X="3792" Y="672" />
-  <Block Type="Brick" X="3816" Y="672" />
-  <Block Type="Brick" X="3840" Y="672" />
+  <Block Type="Brick" X="3432" Y="672" />
+  <Block Type="Brick" X="3456" Y="672" />
+  <Block Type="Brick" X="3480" Y="672" />
+  <Block Type="Brick" X="3504" Y="672" />
+  <Block Type="Brick" X="3528" Y="672" />
+  <Block Type="Brick" X="3552" Y="672" />
+  <Block Type="Brick" X="3576" Y="672" />
+  <Block Type="Brick" X="3600" Y="672" />
   // Third Layer
-  <Block Type="Brick" X="3696" Y="648" />
-  <Block Type="Brick" X="3720" Y="648" />
-  <Block Type="Brick" X="3744" Y="648" />
-  <Block Type="Brick" X="3768" Y="648" />
-  <Block Type="Brick" X="3792" Y="648" />
-  <Block Type="Brick" X="3816" Y="648" />
-  <Block Type="Brick" X="3840" Y="648" />
+  <Block Type="Brick" X="3456" Y="648" />
+  <Block Type="Brick" X="3480" Y="648" />
+  <Block Type="Brick" X="3504" Y="648" />
+  <Block Type="Brick" X="3528" Y="648" />
+  <Block Type="Brick" X="3552" Y="648" />
+  <Block Type="Brick" X="3576" Y="648" />
+  <Block Type="Brick" X="3600" Y="648" />
   // Fourth Layer
-  <Block Type="Brick" X="3720" Y="624" />
-  <Block Type="Brick" X="3744" Y="624" />
-  <Block Type="Brick" X="3768" Y="624" />
-  <Block Type="Brick" X="3792" Y="624" />
-  <Block Type="Brick" X="3816" Y="624" />
-  <Block Type="Brick" X="3840" Y="624" />
+  <Block Type="Brick" X="3480" Y="624" />
+  <Block Type="Brick" X="3504" Y="624" />
+  <Block Type="Brick" X="3528" Y="624" />
+  <Block Type="Brick" X="3552" Y="624" />
+  <Block Type="Brick" X="3576" Y="624" />
+  <Block Type="Brick" X="3600" Y="624" />
   // Fifth Layer
-  <Block Type="Brick" X="3744" Y="600" />
-  <Block Type="Brick" X="3768" Y="600" />
-  <Block Type="Brick" X="3792" Y="600" />
-  <Block Type="Brick" X="3816" Y="600" />
-  <Block Type="Brick" X="3840" Y="600" />
+  <Block Type="Brick" X="3504" Y="600" />
+  <Block Type="Brick" X="3528" Y="600" />
+  <Block Type="Brick" X="3552" Y="600" />
+  <Block Type="Brick" X="3576" Y="600" />
+  <Block Type="Brick" X="3600" Y="600" />
   // Sixth Layer
-  <Block Type="Brick" X="3768" Y="576" />
-  <Block Type="Brick" X="3792" Y="576" />
-  <Block Type="Brick" X="3816" Y="576" />
-  <Block Type="Brick" X="3840" Y="576" />
+  <Block Type="Brick" X="3528" Y="576" />
+  <Block Type="Brick" X="3552" Y="576" />
+  <Block Type="Brick" X="3576" Y="576" />
+  <Block Type="Brick" X="3600" Y="576" />
   // Seventh Layer
-  <Block Type="Brick" X="3792" Y="552" />
-  <Block Type="Brick" X="3816" Y="552" />
-  <Block Type="Brick" X="3840" Y="552" />
+  <Block Type="Brick" X="3552" Y="552" />
+  <Block Type="Brick" X="3576" Y="552" />
+  <Block Type="Brick" X="3600" Y="552" />
   // Top Layer
-  <Block Type="Brick" X="3816" Y="528" />
-  <Block Type="Brick" X="3840" Y="528" />
+  <Block Type="Brick" X="3576" Y="528" />
+  <Block Type="Brick" X="3600" Y="528" />
 
   // Base Block
   <Block Type="MiddleGreenFloor" X='0' Y="744" />
@@ -486,12 +484,12 @@
   <Block Type="MiddleGreenFloor" X='2784' Y="720" />
   <Block Type="MiddleGreenFloor" X='2808' Y="744" />
   <Block Type="MiddleGreenFloor" X='2808' Y="720" />
-  <Block Type="MiddleGreenFloor" X='2832' Y="744" />
+  <!--<Block Type="MiddleGreenFloor" X='2832' Y="744" />
   <Block Type="MiddleGreenFloor" X='2832' Y="720" />
   <Block Type="MiddleGreenFloor" X='2856' Y="744" />
   <Block Type="MiddleGreenFloor" X='2856' Y="720" />
   <Block Type="MiddleGreenFloor" X='2880' Y="744" />
-  <Block Type="MiddleGreenFloor" X='2880' Y="720" />
+  <Block Type="MiddleGreenFloor" X='2880' Y="720" />-->
   <Block Type="MiddleGreenFloor" X='2904' Y="744" />
   <Block Type="MiddleGreenFloor" X='2904' Y="720" />
   <Block Type="MiddleGreenFloor" X='2928' Y="744" />
@@ -506,12 +504,12 @@
   <Block Type="MiddleGreenFloor" X='3024' Y="720" />
   <Block Type="MiddleGreenFloor" X='3048' Y="744" />
   <Block Type="MiddleGreenFloor" X='3048' Y="720" />
- <!-- <Block Type="MiddleGreenFloor" X='3072' Y="744" />
+ <Block Type="MiddleGreenFloor" X='3072' Y="744" />
   <Block Type="MiddleGreenFloor" X='3072' Y="720" />
   <Block Type="MiddleGreenFloor" X='3096' Y="744" />
   <Block Type="MiddleGreenFloor" X='3096' Y="720" />
   <Block Type="MiddleGreenFloor" X='3120' Y="744" />
-  <Block Type="MiddleGreenFloor" X='3120' Y="720" />-->
+  <Block Type="MiddleGreenFloor" X='3120' Y="720" />
   <Block Type="MiddleGreenFloor" X='3144' Y="744" />
   <Block Type="MiddleGreenFloor" X='3144' Y="720" />
   <Block Type="MiddleGreenFloor" X='3168' Y="744" />
