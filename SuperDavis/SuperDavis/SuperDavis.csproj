@@ -222,6 +222,8 @@
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Command\DavisStaticCommand.cs" />
+    <Compile Include="Command\NullCommand.cs" />
     <Compile Include="Command\ToggleMouseControl.cs" />
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />

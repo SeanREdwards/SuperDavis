@@ -67,7 +67,6 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.None:
                     // Want this only execute one time
-                    //davis.PhysicsState = new FallState(davis);
                     break;
             }
         }
