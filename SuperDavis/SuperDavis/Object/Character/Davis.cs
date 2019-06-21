@@ -79,11 +79,15 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                
+
             }
             DavisState.Down();
         }
 
+        public void DavisLand()
+        {
+            DavisState.Land();
+        }
         public void TakeDamage()
         {
             DavisState = new DavisDeathRightState(this);

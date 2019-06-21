@@ -45,6 +45,7 @@ namespace SuperDavis.Collision
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                         davis.PhysicsState = new StandingState(davis);
+                        davis.DavisState.Land();
                        //davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
 
                     }

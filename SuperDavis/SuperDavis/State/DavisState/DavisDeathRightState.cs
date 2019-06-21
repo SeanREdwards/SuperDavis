@@ -62,6 +62,10 @@ namespace SuperDavis.State.DavisState
             //Do Nothing
         }
 
+        public void Land()
+        {
+
+        }
         public void Death()
         {
             //Do Nothing
