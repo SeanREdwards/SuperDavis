@@ -2,11 +2,11 @@
 <Object>
   // Background
   <Scenery Type="Background" X="0" Y="0" />
-  <Scenery Type="Background" X="1024" Y="0" />
-  <Scenery Type="Background" X="2048" Y="0" />
-  <Scenery Type="Background" X="3072" Y="0" />
-  <Scenery Type="Background" X="4096" Y="0" />
-  <Scenery Type="Background" X="5120" Y="0" />
+  <Scenery Type="Background" X="1002" Y="0" />
+  <Scenery Type="Background" X="2004" Y="0" />
+  <Scenery Type="Background" X="3006" Y="0" />
+  <Scenery Type="Background" X="4008" Y="0" />
+  <Scenery Type="Background" X="5010" Y="0" />
 
   // Character
   <Character Type="Davis" X="48" Y="640" />

@@ -54,33 +54,33 @@
     "TextureName": "BackgroundSprites/AnimatedBackgrounds",
     "SourceFrames": [
       {
-        "X": 6,
+        "X": 10,
         "Y": 3786,
-        "Width": 511,
+        "Width": 501,
         "Height": 431
       },
       {
-        "X": 524,
+        "X": 528,
         "Y": 3786,
-        "Width": 511,
+        "Width": 501,
         "Height": 431
       },
       {
-        "X": 7,
+        "X": 11,
         "Y": 4243,
-        "Width": 511,
+        "Width": 501,
         "Height": 431
       },
       {
-          "X": 524,
+          "X": 528,
           "Y": 3786,
-          "Width": 511,
+          "Width": 501,
           "Height": 431
       },
       {
-          "X": 6,
+          "X": 10,
           "Y": 3786,
-          "Width": 511,
+          "Width": 501,
           "Height": 431
       }
     ],
