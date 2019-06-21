@@ -85,8 +85,8 @@ namespace SuperDavis
             /*System.Console.WriteLine("************************************************************************************");
             for(int i = 0; i<=200; i++)
             {
-                System.Console.WriteLine("  <Block Type=\"Brick\" X="+i*24+" Y=\"744\" />");
-                System.Console.WriteLine("  <Block Type=\"Brick\" X="+i*24+" Y=\"720\" />");
+                System.Console.WriteLine("  <Block Type=\"MiddleGreenFloor\" X='"+i*24+"' Y=\"744\" />");
+                System.Console.WriteLine("  <Block Type=\"MiddleGreenFloor\" X='"+i*24+"' Y=\"720\" />");
             }*/
             
 
