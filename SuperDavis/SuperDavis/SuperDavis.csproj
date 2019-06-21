@@ -58,9 +58,9 @@
     <None Include="Code Reviews\sprint2\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\SeanEdwards.md" />
-    <None Include="Code Reviews\sprint2\Readabilty Review\JasonXu.md" />
-    <None Include="Code Reviews\sprint2\Readabilty Review\RyanKnighton.md" />
-    <None Include="Code Reviews\sprint2\Readabilty Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint2\Readability Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint2\Readability Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint2\Readability Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Code Quality Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\sprint3\Code Quality Review\SeanEdwards.md" />
@@ -334,7 +334,9 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Code Reviews\sprint4\Readability Review\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
