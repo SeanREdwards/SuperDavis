@@ -50,7 +50,7 @@ namespace SuperDavis
             IsMouseControllerOn = false;
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
-            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight,this);
+            World = worldCreator.CreateWorld("test-level.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight,this);
             // After creating world, pass the world into collision detection
             // But 
             collisionDetection = new CollisionDetection(World);
