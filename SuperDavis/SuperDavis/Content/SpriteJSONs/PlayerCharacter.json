@@ -1,5 +1,5 @@
 ﻿{
- "CreateDavisStaticLeftSprite": {
+  "CreateDavisStaticLeftSprite": {
     "TextureName": "DavisSprites/DavisLeft_0",
     "SourceFrames": [
       {
@@ -922,5 +922,70 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 1
+  },
+
+  "BatExplodeLeft": {
+    "TextureName": "BatSprites/BatLeft_2",
+    "SourceFrames": [
+      {
+        "X": 263,
+        "Y": 100,
+        "Width": 49,
+        "Height": 49
+      },
+      {
+        "X": 188,
+        "Y": 101,
+        "Width": 40,
+        "Height": 43
+      },
+      {
+        "X": 106,
+        "Y": 106,
+        "Width": 39,
+        "Height": 39
+      },
+      {
+        "X": 28,
+        "Y": 106,
+        "Width": 33,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "BatExplodeRight": {
+    "TextureName": "BatSprites/BatRight_2",
+    "SourceFrames": [
+      {
+        "X": 16,
+        "Y": 100,
+        "Width": 49,
+        "Height": 49
+      },
+      {
+        "X": 100,
+        "Y": 101,
+        "Width": 40,
+        "Height": 43
+      },
+      {
+        "X": 183,
+        "Y": 106,
+        "Width": 39,
+        "Height": 39
+      },
+      {
+        "X": 267,
+        "Y": 106,
+        "Width": 33,
+        "Height": 32
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
   }
+
 }
