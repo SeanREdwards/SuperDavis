@@ -2,6 +2,7 @@
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Physics;
+using SuperDavis.State.DavisState;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -43,30 +44,24 @@ namespace SuperDavis.Collision
                     //if not hidden block
                     if (!block.IsHidden)
                     {
-                        davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
-                        davis.PhysicsState = new StandingState(davis);
-                        davis.DavisState.Land();
-                       //davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
-
+                            davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
+                            davis.PhysicsState = new StandingState(davis);
+                            davis.DavisState.Land();
+                            //davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
                     }
                     break;
                 case CollisionSide.Left:
                     if (!block.IsHidden)
-                    {
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
-
-                    }
-
                     break;
                 case CollisionSide.Right:
                     if (!block.IsHidden)
-                    {
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
-
-                    }
                     break;
                 case CollisionSide.None:
                     // Want this only execute one time
+                    if (davis.DavisState is DavisWalkRightState || davis.DavisState is DavisWalkLeftState)
+                        davis.PhysicsState = new FallState(davis);
                     break;
             }
         }
