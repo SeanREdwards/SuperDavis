@@ -26,6 +26,7 @@ namespace SuperDavis.Worlds
 
         private void CreateObjectDictionary()
         {
+            string s = nameof(CreateCharacter);
             objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>
             {
                 { "Character", CreateCharacter },
@@ -40,11 +41,11 @@ namespace SuperDavis.Worlds
         {
             itemDictionary = new Dictionary<String, Action<float, float>>
             {
-                { "Flower", (x, y) => world.Items.Add(new Flower(new Vector2(x, y))) },
-                { "Coin", (x, y) => world.Items.Add(new Coin(new Vector2(x, y))) },
-                { "Mushroom", (x, y) => world.Items.Add(new Mushroom(new Vector2(x, y))) },
-                { "YoshiEgg", (x, y) => world.Items.Add(new YoshiEgg(new Vector2(x, y))) },
-                { "Star", (x, y) => world.Items.Add(new Star(new Vector2(x, y))) }
+                { nameof(Flower), (x, y) => world.Items.Add(new Flower(new Vector2(x, y))) },
+                { nameof(Coin), (x, y) => world.Items.Add(new Coin(new Vector2(x, y))) },
+                { nameof(Mushroom), (x, y) => world.Items.Add(new Mushroom(new Vector2(x, y))) },
+                { nameof(YoshiEgg), (x, y) => world.Items.Add(new YoshiEgg(new Vector2(x, y))) },
+                { nameof(Star), (x, y) => world.Items.Add(new Star(new Vector2(x, y))) }
             };
         }
 
@@ -52,14 +53,15 @@ namespace SuperDavis.Worlds
         {
             blockDictionary = new Dictionary<String, Action<float, float>>
             {
-                { "HiddenBlock", (x, y) => world.Blocks.Add(new HiddenBlock(new Vector2(x, y))) },
-                { "ActivatedBlock", (x, y) => world.Blocks.Add(new ActivatedBlock(new Vector2(x, y))) },
-                { "Brick", (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
-                { "QuestionBlock", (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
-                { "Pipe", (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) },
-                { "LeftGreenFloor", (x,y) => world.Blocks.Add(new LeftGreenFloor(new Vector2(x, y))) },
-                { "MiddleGreenFloor", (x,y) => world.Blocks.Add(new MiddleGreenFloor(new Vector2(x, y))) },
-                { "RightGreenFloor", (x,y) => world.Blocks.Add(new RightGreenFloor(new Vector2(x, y))) }
+                { nameof(HiddenBlock), (x, y) => world.Blocks.Add(new HiddenBlock(new Vector2(x, y))) },
+                { nameof(ActivatedBlock), (x, y) => world.Blocks.Add(new ActivatedBlock(new Vector2(x, y))) },
+                { nameof(Brick), (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
+                { nameof(QuestionBlock), (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
+                { nameof(Pipe), (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) },
+                { nameof(LeftGreenFloor), (x,y) => world.Blocks.Add(new LeftGreenFloor(new Vector2(x, y))) },
+                { nameof(MiddleGreenFloor), (x,y) => world.Blocks.Add(new MiddleGreenFloor(new Vector2(x, y))) },
+                { nameof(RightGreenFloor), (x,y) => world.Blocks.Add(new RightGreenFloor(new Vector2(x, y))) },
+               
             };
         }
 
@@ -67,8 +69,8 @@ namespace SuperDavis.Worlds
         {
             enemyDictionary = new Dictionary<String, Action<float, float>>
             {
-                { "Goomba", (x, y) => world.Enemies.Add(new Goomba(new Vector2(x, y))) },
-                { "Koopa", (x, y) => world.Enemies.Add(new Koopa(new Vector2(x, y))) }
+                { nameof(Goomba), (x, y) => world.Enemies.Add(new Goomba(new Vector2(x, y))) },
+                { nameof(Koopa), (x, y) => world.Enemies.Add(new Koopa(new Vector2(x, y))) }
             };
         }
 
@@ -76,7 +78,7 @@ namespace SuperDavis.Worlds
         {
             backgroundDictionary = new Dictionary<String, Action<float, float>>
             {
-                { "Background", (x, y) => world.Backgrounds.Add(new Background(new Vector2(x, y))) }
+                {nameof(Background), (x, y) => world.Backgrounds.Add(new Background(new Vector2(x, y))) }
             };
         }
 
@@ -84,7 +86,7 @@ namespace SuperDavis.Worlds
         {
             playerDictionary = new Dictionary<String, Action<float, float>>
             {
-                { "Davis", (x, y) => world.Davises.Add(new Davis(new Vector2(x, y))) }
+                { nameof(Davis), (x, y) => world.Davises.Add(new Davis(new Vector2(x, y))) }
             };
         }
 

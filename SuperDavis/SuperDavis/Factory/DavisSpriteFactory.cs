@@ -33,6 +33,7 @@ namespace SuperDavis.Factory
             foreach (var spriteRegistrar in _spriteRegistrars)
             {
                 spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
+
             }
 
         }
@@ -233,11 +234,14 @@ namespace SuperDavis.Factory
 
         }
 
-        public ISprite CreateBatSpecialAttackOneRight()
+        public ISprite BatExplodeRight()
         {
-            _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture,  new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
+            return Create(GetMethodName());
+        }
 
+        public ISprite BatExplodeLeft()
+        {
+            return Create(GetMethodName());
         }
     }
 }

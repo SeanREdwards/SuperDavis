@@ -90,6 +90,11 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateSkullBlock()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateSpinBlockStatic()
         {
             return Create(GetMethodName());

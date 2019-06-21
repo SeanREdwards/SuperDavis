@@ -173,6 +173,20 @@
     "Scale": 1.5
   },
 
+  "CreateSkullBlock": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
+    "SourceFrames": [
+      {
+        "X": 71,
+        "Y": 107,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
   "CreateSpinBlockStatic": {
     "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [

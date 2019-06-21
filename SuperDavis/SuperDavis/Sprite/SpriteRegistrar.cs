@@ -15,5 +15,7 @@ namespace SuperDavis.Sprite
         public Rectangle[] SourceFrames { get; set; }
         public float FrameDelay { get; set; }
         public float Scale { get; set; }
+        public string EffectName { get; set; }
+        public SpriteEffects Effects { get; set; }
     }
 }
