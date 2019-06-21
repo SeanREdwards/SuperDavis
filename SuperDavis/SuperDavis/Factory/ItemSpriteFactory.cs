@@ -29,7 +29,7 @@ namespace SuperDavis.Factory
 
         }
 
-        public string GetMethodName()
+        private string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);

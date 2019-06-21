@@ -18,6 +18,5 @@
         void DavisToInvincible();
         void DavisDeath();
         void DavisSpecialAttack();
-        void Reset();
     }
 }

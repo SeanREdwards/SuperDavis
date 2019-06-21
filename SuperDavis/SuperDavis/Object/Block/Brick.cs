@@ -58,6 +58,7 @@ namespace SuperDavis.Object.Block
         {
             BrickStateMachine = new BrickStateMachine(true);
         }
+
         public void Bump()
         {
             for(int i =0; i<30;i++)
@@ -68,12 +69,6 @@ namespace SuperDavis.Object.Block
             {
                 Location += new Vector2(0, 0.5f);
             }
-        }
-
-        public void Reset()
-        {
-            BrickStateMachine = new BrickStateMachine(false);
-            Remove = false;
         }
     }
 }

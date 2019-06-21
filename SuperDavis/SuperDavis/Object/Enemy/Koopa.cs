@@ -55,9 +55,5 @@ namespace SuperDavis.Object.Enemy
             koopaStateMachine = new KoopaStateMachine(this);
             koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 100);
         }
-        public void Reset() {
-            Dead = false;
-            koopaStateMachine = new KoopaStateMachine(this);
-        }
     }
 }

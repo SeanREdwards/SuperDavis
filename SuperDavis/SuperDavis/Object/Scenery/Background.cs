@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Scenery
         {
             // initial state
             Location = location;
-            background = BackgroundSpriteFactory.Instance.MarioHillsGreen();
+            background = BackgroundSpriteFactory.Instance.NightAnimated();
         }
 
         public void Update(GameTime gameTime)
@@ -25,11 +25,6 @@ namespace SuperDavis.Object.Scenery
         public void Draw(SpriteBatch spriteBatch)
         {
             background.Draw(spriteBatch, Location);
-        }
-
-        public void Reset()
-        {
-            // Do nothing for current sprint
         }
     }
 }

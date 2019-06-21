@@ -13,7 +13,6 @@ namespace SuperDavis.Object.Block
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
         public IGameObjectPhysics PhysicsState { get; set; }
-
         private readonly ISprite block;
         private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 
@@ -39,11 +38,8 @@ namespace SuperDavis.Object.Block
             if (!Remove)
                 activatedBlockStateMachine.Draw(spriteBatch, Location);
         }
+
         public void SpecialState()
-        {
-            // No nothing for current sprint
-        }
-        public void Reset()
         {
             // No nothing for current sprint
         }

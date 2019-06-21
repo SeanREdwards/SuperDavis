@@ -45,11 +45,8 @@ namespace SuperDavis.Object.Block
             if (!Remove)
                 sprite.Draw(spriteBatch, Location);
         }
+
         public void SpecialState()
-        {
-            // No nothing for current sprint
-        }
-        public void Reset()
         {
             // No nothing for current sprint
         }

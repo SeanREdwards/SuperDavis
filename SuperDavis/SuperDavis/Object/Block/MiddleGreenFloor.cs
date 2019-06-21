@@ -49,9 +49,5 @@ namespace SuperDavis.Object.Block
         {
             // No nothing for current sprint
         }
-        public void Reset()
-        {
-            // No nothing for current sprint
-        }
     }
 }
