@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Diagnostics; //used for getting names of methods
+using Microsoft.Xna.Framework;
 
 /*
  * BackgroundSpriteFactory.cs
@@ -32,7 +33,7 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateBackground(spriteInfo.Texture, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White}, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         private string GetMethodName()
