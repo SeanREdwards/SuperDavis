@@ -11,5 +11,80 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 2
+  },
+
+  "GhostHouseAnimated": {
+    "TextureName": "BackgroundSprites/AnimatedBackgrounds",
+    "SourceFrames": [
+      {
+        "X": 8,
+        "Y": 1904,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 525,
+        "Y": 1904,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 9,
+        "Y": 2357,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 525,
+        "Y": 1904,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 8,
+        "Y": 1904,
+        "Width": 511,
+        "Height": 431
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+  "NightAnimated": {
+    "TextureName": "BackgroundSprites/AnimatedBackgrounds",
+    "SourceFrames": [
+      {
+        "X": 6,
+        "Y": 3786,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 524,
+        "Y": 3786,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+        "X": 7,
+        "Y": 4243,
+        "Width": 511,
+        "Height": 431
+      },
+      {
+          "X": 524,
+          "Y": 3786,
+          "Width": 511,
+          "Height": 431
+      },
+      {
+          "X": 6,
+          "Y": 3786,
+          "Width": 511,
+          "Height": 431
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
   }
 }

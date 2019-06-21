@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Scenery
         {
             // initial state
             Location = location;
-            background = BackgroundSpriteFactory.Instance.MarioHillsGreen();
+            background = BackgroundSpriteFactory.Instance.NightAnimated();
         }
 
         public void Update(GameTime gameTime)
