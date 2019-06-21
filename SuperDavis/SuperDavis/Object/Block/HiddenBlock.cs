@@ -44,12 +44,5 @@ namespace SuperDavis.Object.Block
             IsHidden = false;
             HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
         }
-
-        public void Reset()
-        {
-            IsHidden = true;
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
-            Remove = false;
-        }
     }
 }

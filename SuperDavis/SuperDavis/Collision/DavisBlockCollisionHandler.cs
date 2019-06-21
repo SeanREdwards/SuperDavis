@@ -14,9 +14,9 @@ namespace SuperDavis.Collision
             switch (side)
             {
                 case CollisionSide.Bottom:
-                    //davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
-                    davis.PhysicsState.VerticalVelocity = 0;
-                    davis.PhysicsState.ApplyForce(new Vector2(0, 0f));
+                    davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
+                    //davis.PhysicsState.VerticalVelocity = 0;
+                   // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
                     if (block is HiddenBlock)
                     {
                         block.SpecialState();
@@ -42,16 +42,16 @@ namespace SuperDavis.Collision
                     //if not hidden block
                     if (!block.IsHidden)
                     {
-                       // davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
-                        davis.PhysicsState.VerticalVelocity = 0;
-                        davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
+                        davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
+                       // davis.PhysicsState.VerticalVelocity = 0;
+                       davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
 
                     }
                     break;
                 case CollisionSide.Left:
                     if (!block.IsHidden)
                     {
-                        //davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
+                        davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
 
                     }
 
@@ -59,7 +59,7 @@ namespace SuperDavis.Collision
                 case CollisionSide.Right:
                     if (!block.IsHidden)
                     {
-                        //davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
+                        davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
 
                     }
                     break;

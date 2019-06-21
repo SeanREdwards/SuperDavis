@@ -37,7 +37,7 @@ namespace SuperDavis.Object.Block
             if (!Remove)
                 pipeStateMachine.Draw(spriteBatch, Location);
         }
+
         public void SpecialState() { }
-        public void Reset() { }
     }
 }

@@ -3,7 +3,7 @@
   // Background
   <Scenery Type="Background" X="0" Y="0" />
   // Character
-  <Character Type="Davis" X="48" Y="672" />
+  <Character Type="Davis" X="48" Y="642" />
   //level begin
   <Item Type="Mushroom" X="48" Y="576" />
   <Block Type="QuestionBlock" X="48" Y="600" />
