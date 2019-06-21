@@ -18,6 +18,7 @@ namespace SuperDavis.Collision
             {
                 case CollisionSide.Bottom:
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
+                    davis.PhysicsState = new FallState(davis);
                     if (block is HiddenBlock && davis.PhysicsState is JumpState)
                     {
                         block.SpecialState();
@@ -28,8 +29,15 @@ namespace SuperDavis.Collision
                     }
                     else if (block is Brick)
                     {
-                        block.SpecialState();
-                        block.Remove = true;
+                        if (davis.DavisStatus != DavisStatus.Davis)
+                        {
+                            block.SpecialState();
+                            block.Remove = true;
+                        }
+                        else
+                        {
+                            block.IsBumped = true;
+                        }
                     }
                     break;
                 case CollisionSide.Top:
@@ -38,7 +46,10 @@ namespace SuperDavis.Collision
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                         davis.PhysicsState = new StandingState(davis);
-
+                        if(IsStanding && !(davis.PhysicsState is StandingState) )
+                        {
+                            davis.DavisState.Static();
+                        }
                         IsStanding = false;
                     }
                     break;

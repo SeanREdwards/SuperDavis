@@ -24,7 +24,7 @@ namespace SuperDavis
     {
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
-        private CollisionDetection collisionDetection;
+        public CollisionDetection collisionDetection;
         private Camera camera;
 
         public IWorld World { get; set; }
@@ -50,7 +50,7 @@ namespace SuperDavis
             IsMouseControllerOn = false;
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
-            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
+            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight,this);
             // After creating world, pass the world into collision detection
             // But 
             collisionDetection = new CollisionDetection(World);
@@ -81,15 +81,7 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
-            //Just to write the coords for world generator
-            /*System.Console.WriteLine("************************************************************************************");
-            for(int i = 0; i<=200; i++)
-            {
-                System.Console.WriteLine("  <Block Type=\"MiddleGreenFloor\" X='"+i*24+"' Y=\"744\" />");
-                System.Console.WriteLine("  <Block Type=\"MiddleGreenFloor\" X='"+i*24+"' Y=\"720\" />");
-            }*/
-            
-
+         
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
             base.Update(gameTime);
@@ -116,7 +108,7 @@ namespace SuperDavis
             BackgroundSpriteFactory.Instance.Load(Content);
         }
 
-        private void InitializeController()
+        public void InitializeController()
         {
             foreach (IDavis davis in World.Davises)
             {

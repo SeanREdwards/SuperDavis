@@ -7,6 +7,7 @@ namespace SuperDavis.Object.Block
 {
     class ActivatedBlock : IBlock
     {
+        public bool IsBumped { get; set; }
         public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }

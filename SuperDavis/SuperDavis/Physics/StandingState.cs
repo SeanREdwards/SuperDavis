@@ -15,7 +15,6 @@ namespace SuperDavis.Physics
         // param for jumping, using lists
         public StandingState(IGameObject gameObjectClass)
         {
-
         }
 
         public void Update(GameTime gameTime)
