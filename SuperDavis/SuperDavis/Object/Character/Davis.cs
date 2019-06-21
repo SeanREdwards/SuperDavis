@@ -122,12 +122,5 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Invincible;
             DavisState = new DavisStaticRightState(this);
         }
-
-        public void Reset()
-        {
-            DavisStatus = DavisStatus.Davis;
-            DavisState = new DavisStaticRightState(this);
-            Location = new Vector2(Variables.Variable.WindowsEdgeWidth/2 , Variables.Variable.WindowsEdgeHeight/2);
-        }
     }
 }

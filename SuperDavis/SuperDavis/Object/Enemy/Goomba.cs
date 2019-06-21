@@ -55,9 +55,5 @@ namespace SuperDavis.Object.Enemy
             goombaState = new GoombaStateMachine(this);
             goombaState = new RemoveState(this, goombaState.Sprite, 100);
         }
-        public void Reset() {
-            Dead = false;
-            goombaState = new GoombaStateMachine(this);
-        }
     }
 }
