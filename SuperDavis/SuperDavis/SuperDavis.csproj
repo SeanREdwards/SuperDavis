@@ -66,6 +66,9 @@
     <None Include="Code Reviews\sprint3\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
+    <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
