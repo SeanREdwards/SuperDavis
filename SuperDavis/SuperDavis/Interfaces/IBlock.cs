@@ -2,6 +2,7 @@
 {
     interface IBlock : IGameObject
     {
+        bool IsBumped { get; set; }
         bool IsHidden { get; set; }
         void SpecialState();
         void Reset();

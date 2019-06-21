@@ -88,19 +88,19 @@ namespace SuperDavis.Worlds
             };
         }
 
-        public IWorld CreateWorld(string levelFile, float width, float height)
+        public IWorld CreateWorld(string levelFile, float width, float height,Game1 game)
         {
             ObjectMap = new IGameObject[Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize][];
             for (int i = 0; i < Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize; i++)
             {
                 ObjectMap[i] = new IGameObject[Variables.Variable.WindowsEdgeHeight / Variables.Variable.UnitPixelSize];
             }
-            return ParseAndLoad(levelFile, width, height);
+            return ParseAndLoad(levelFile, width, height, game);
         }
 
-        private IWorld ParseAndLoad(string levelFile, float width, float height)
+        private IWorld ParseAndLoad(string levelFile, float width, float height, Game1 game)
         {
-            world = new World(width, height);
+            world = new World(width, height, game);
             CreateObjectDictionary();
             CreateItemDictionary();
             CreateBlockDictionary();

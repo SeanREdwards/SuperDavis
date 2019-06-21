@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Collision;
 using SuperDavis.Interfaces;
 using System.Collections.Generic;
 
@@ -14,11 +15,13 @@ namespace SuperDavis.Worlds
         public IList<IBlock> Blocks { get; set; }
         public IList<IEnemy> Enemies { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
+        private Game1 game;
 
-        public World(float width, float height)
+        public World(float width, float height, Game1 game)
         {
             Width = width;
             Height = height;
+            this.game = game;
             // Initialize for lists
             Davises = new List<IDavis>();
             Items = new List<IItem>();
@@ -57,13 +60,13 @@ namespace SuperDavis.Worlds
             {
                 background.Draw(spriteBatch);
             }
-            foreach (IBlock block in Blocks)
-            {
-                block.Draw(spriteBatch);
-            }
             foreach (IItem item in Items)
             {
                 item.Draw(spriteBatch);
+            }
+            foreach (IBlock block in Blocks)
+            {
+                block.Draw(spriteBatch);
             }
             foreach (IEnemy enemy in Enemies)
             {
@@ -77,24 +80,15 @@ namespace SuperDavis.Worlds
 
         public void ResetGame()
         {
-            // Clear the list to reload the world
-            // idea from class
-            foreach (IDavis character in Davises)
-            {
-                character.Reset();
-            }
-            foreach (IBlock block in Blocks)
-            {
-                block.Reset();
-            }
-            foreach (IEnemy enemy in Enemies)
-            {
-                enemy.Reset();
-            }
-            foreach (IItem item in Items)
-            {
-                item.Reset();
-            }
+            Davises.Clear();
+            Blocks.Clear();
+            Enemies.Clear();
+            Items.Clear();
+            Backgrounds.Clear();
+            WorldCreator worldCreator = new WorldCreator();
+            game.World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
+            game.collisionDetection = new CollisionDetection(game.World);
+            game.InitializeController();
         }
     }
 }

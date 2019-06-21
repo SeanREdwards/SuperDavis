@@ -26,7 +26,7 @@ namespace SuperDavis.Object.Character
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            PhysicsState = new JumpState(this);
+            PhysicsState = new DavisPhysicsState(this);
             Location = location;
         }
 
@@ -50,7 +50,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                Location += new Vector2(-2, 0);
+                PhysicsState.ApplyForce(new Vector2(-5f,0));
             }
             DavisState.Left();
         }
@@ -59,7 +59,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                Location += new Vector2(2, 0);
+                PhysicsState.ApplyForce(new Vector2(5f, 0));
             }
             DavisState.Right();
         }
@@ -68,8 +68,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                if (!(PhysicsState is JumpState))
-                    PhysicsState = new JumpState(this);
+                PhysicsState.ApplyForce(new Vector2(0, 15f));
             }
             DavisState.Up();
         }
