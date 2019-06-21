@@ -12,7 +12,7 @@ namespace SuperDavis.Sprite
     {
         public String TextureName { get; set; }
         public Texture2D Texture { get; set; }
-        public List<Rectangle> SourceFrames { get; set; }
+        public Rectangle[] SourceFrames { get; set; }
         public float FrameDelay { get; set; }
         public float Scale { get; set; }
     }

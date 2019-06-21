@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Web.Script.Serialization;
 
 /*
  * EnemySpriteFactory.cs
@@ -14,9 +17,7 @@ namespace SuperDavis.Factory
 {
     class EnemySpriteFactory
     {
-        private Texture2D goombaSheet;
-        private Texture2D koopaGreenSheet;
-        private List<Rectangle> coordinateList;
+        private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
 
         public static EnemySpriteFactory Instance { get; } = new EnemySpriteFactory();
 
@@ -24,40 +25,80 @@ namespace SuperDavis.Factory
 
         public void Load(ContentManager content)
         {
-            goombaSheet = content.Load<Texture2D>("EnemySprites/Goomba");
-            koopaGreenSheet = content.Load<Texture2D>("EnemySprites/KoopaTroopaGreen");
+            _spriteRegistrars = new JavaScriptSerializer().Deserialize<Dictionary<string, SpriteRegistrar>>(File.ReadAllText("Content/SpriteJSONs/Enemies.json"));
+
+            foreach (var spriteRegistrar in _spriteRegistrars)
+            {
+                spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
+            }
+
         }
 
-        /*Goomba Sprite Generation.*/
-        public ISprite Create(Texture2D texture)
+        public string GetMethodName()
         {
-            return new GenerateSprite(texture, coordinateList, new List<Color> { Color.White }, 1.5f , SpriteEffects.None) ;
+            var stackTrace = new StackTrace();
+            var stackFrame = stackTrace.GetFrame(1);
+
+            return stackFrame.GetMethod().Name;
         }
 
-        public ISprite CreateGoombaMovingRight()
+        private ISprite Create(string key)
         {
-
-            coordinateList = new List<Rectangle>() { new Rectangle(1, 40, 17, 20), new Rectangle(41, 40, 18, 20), new Rectangle(80, 40, 20, 20),
-                new Rectangle(121, 40, 18, 20), new Rectangle(161, 40, 18, 20), new Rectangle(202, 40, 16, 20) };
-            return Create(goombaSheet);
+            _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
+            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White }, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
-        public ISprite CreateGoombaFlateStatic()
+
+        public ISprite CreateGoombaMovingLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(0, 66, 20, 20) };
-            return Create(goombaSheet);
+
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateGoombaWalkLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+
+        public ISprite CreateGoombaWalkRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateGoombaFlatAnimated()
+        {
+            return Create(GetMethodName());
         }
 
         public ISprite CreateKoopaGreenStaticLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(167, 0, 22, 30) };
-            return Create(koopaGreenSheet);
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateKoopaGreenStaticRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateKoopaGreenWalkLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateKoopaGreenWalkRight()
+        {
+            return Create(GetMethodName());
         }
 
         public ISprite CreateKoopaGreenShellAnimatedLeft()
         {
-            coordinateList = new List<Rectangle>() { new Rectangle(10, 37, 16, 15), new Rectangle(10, 67, 16, 15), new Rectangle(10, 97, 16, 15), new Rectangle(10, 127, 16, 15) };
-            return Create(koopaGreenSheet);
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateKoopaGreenShellAnimatedRight()
+        {
+            return Create(GetMethodName());
         }
     }
 }

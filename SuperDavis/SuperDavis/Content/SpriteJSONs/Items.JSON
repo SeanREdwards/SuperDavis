@@ -1,6 +1,6 @@
 ﻿{
-  "Star": {
-    "TextureName": "blocksAndPipes",
+  "CreateStar": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 224,
@@ -9,12 +9,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "YoshiEgg": {
-    "TextureName": "blocksAndPipes",
+  "CreateYoshiEgg": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 286,
@@ -23,12 +23,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "YoshiCoinAnimated": {
-    "TextureName": "blocksAndPipesTwo",
+  "CreateYoshiCoinAnimated": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
       {
         "X": 0,
@@ -67,12 +67,12 @@
         "Height": 32
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "FireFlower": {
-    "TextureName": "blocksAndPipes",
+  "CreateFireFlower": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 202,
@@ -81,12 +81,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "RedMushroom": {
-    "TextureName": "blocksAndPipes",
+  "CreateRedMushroom": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 182,
@@ -95,12 +95,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "QuestionMarkBlockAnimated": {
-    "TextureName": "blocksAndPipesTwo",
+  "CreateQuestionMarkBlockAnimated": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
       {
         "X": 0,
@@ -127,12 +127,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "ActivatedBlock": {
-    "TextureName": "blocksAndPipes",
+  "CreateActivatedBlock": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 49,
@@ -141,12 +141,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "EmptyBlock": {
-    "TextureName": "blocksAndPipes",
+  "CreateEmptyBlock": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 0,
@@ -155,12 +155,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "BrickBlock": {
-    "TextureName": "blocksAndPipes",
+  "CreateBrickBlock": {
+    "TextureName": "BlockSprites/BrickBlock",
     "SourceFrames": [
       {
         "X": 272,
@@ -169,12 +169,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "SpinBlockStatic": {
-    "TextureName": "blocksAndPipes",
+  "CreateSpinBlockStatic": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 0,
@@ -183,12 +183,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "SpinBlockAnimated": {
-    "TextureName": "blocksAndPipes",
+  "CreateSpinBlockAnimated": {
+    "TextureName": "BlockSprites/Blocks&Pipes",
     "SourceFrames": [
       {
         "X": 0,
@@ -215,12 +215,12 @@
         "Height": 16
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-  "GreenPipe": {
-    "TextureName": "blocksAndPipesTwo",
+  "CreateGreenPipe": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
       {
         "X": 96,
@@ -229,12 +229,12 @@
         "Height": 32
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-    "YellowPipe": {
-    "TextureName": "blocksAndPipesTwo",
+  "CreateYellowPipe": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
       {
         "X": 128,
@@ -243,12 +243,12 @@
         "Height": 32
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   },
 
-    "BluePipe": {
-    "TextureName": "blocksAndPipesTwo",
+  "CreateBluePipe": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
       {
         "X": 160,
@@ -257,7 +257,49 @@
         "Height": 32
       }
     ],
-    "FrameDelay": "0.08d",
-    "Scale": 2
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateLeftGreenFloor": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
+    "SourceFrames": [
+      {
+        "X": 0,
+        "Y": 256,
+        "Width": 16,
+        "Height": 15
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateMiddleGreenFloor": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
+    "SourceFrames": [
+      {
+        "X": 16,
+        "Y": 256,
+        "Width": 16,
+        "Height": 15
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateRightGreenFloor": {
+    "TextureName": "BlockSprites/Blocks&Pipes2",
+    "SourceFrames": [
+      {
+        "X": 32,
+        "Y": 256,
+        "Width": 16,
+        "Height": 15
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   }
 }
