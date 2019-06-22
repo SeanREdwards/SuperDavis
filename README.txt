@@ -1,16 +1,7 @@
 1. Description
-	This project is designed for Sprint 3 for CSE3902 class, including Level
-Loading, collision detection and more controllers. An addtional mouse controller
-feature has been added, binding to the key 'M'.  Another import feature is collision
-detection. Plugs, a xml parser has been created in order to more the literals into
-a xml file.
-	In the game, character will have 4 states - davis, woody(with mushroom),
-bat(with flower) and invincible(with star). When character is in the invincible status,
-he will not die and will kill every enemy he collided into. However, this state has time
-limit. There also has hidden block, which you can only trigger it by colliding it from its
-bottom. Brick will break if you 'bumped' it from bottom. Question block will become
-used when character collided from bottom as well. For enemy, the enemy will die only
-if you 'stomp' it from top. From all other angle, the character will die.
+	This project is designed for Sprint 4 for CSE 3902. This sprint includes physics and jumping logic for the player,
+    movement for types other than the player/mario object, collision detection and response for all moving objects, 
+    fireballs (or other player attacking abilities) and a scrolling camera.
 
 2. Key Mappings
 	For keyboard:
@@ -29,7 +20,9 @@ if you 'stomp' it from top. From all other angle, the character will die.
                       (Keys.Down, Crouch(Go down)),
                       (Keys.O, Character to Death),
                       (Keys.P, Character Special Attack),
-                      (Keys.M, Toggle mouse control)
+                      (Keys.M, Toggle mouse control),
+                      (Keys.X, Shoot projectile),
+                      (Keys.Z, Jump)
 	For gamepad:
                       (Buttons.Start, Exit),
                       (Buttons.Back, Reset),
@@ -45,4 +38,4 @@ if you 'stomp' it from top. From all other angle, the character will die.
                       (Buttons.B, ToggleMouseControl)	
 
 3. Tag to Grade
-	Sprint3Refactoring1
+	Sprint4Initial
