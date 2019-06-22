@@ -30,17 +30,10 @@
   <Block Type="MushroomBlock" X="800" Y="600" />
   <Enemy Type="Koopa" X="850" Y="635" />
   <Block Type="Pipe" X="900" Y="672" />
-  //STEPS FOR LEVEL
-
-  // STEPS SECTION 1
-  // First Layer
 
   <Item Type="Coin" X="336" Y="500" />
-  // 1st set of steps going down
-  // First Layer
-
   
-  // STEPS SECTION 2
+  // 1st set of steps going down
   // First Layer
   <Block Type="Brick" X="1176" Y="696" />
   <Block Type="Brick" X="1200" Y="696" />

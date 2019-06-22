@@ -1,11 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Cameras
 {
@@ -41,6 +35,5 @@ namespace SuperDavis.Cameras
             }
             return matrix;
         }
-
     }
 }

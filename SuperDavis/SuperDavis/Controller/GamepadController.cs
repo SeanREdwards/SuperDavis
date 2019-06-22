@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Input;
 using SuperDavis.Interfaces;
 using System.Collections.Generic;
 
-
 namespace SuperDavis.Controller
 {
     /* The Gamepad Controller is not needed, but still save for the future */
