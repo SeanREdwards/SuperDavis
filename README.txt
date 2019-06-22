@@ -38,4 +38,4 @@
                       (Buttons.B, ToggleMouseControl)	
 
 3. Tag to Grade
-	Sprint4
+	Sprint4Initial
