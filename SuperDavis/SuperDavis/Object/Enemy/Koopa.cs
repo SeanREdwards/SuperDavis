@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
+using SuperDavis.Physics;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
 
@@ -25,14 +26,18 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             koopaStateMachine = new KoopaStateMachine(this);
+            PhysicsState = new StandingState(this);
             enemy = koopaStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height+15);
         }
 
         public void Update(GameTime gameTime)
         {
             if (!Remove)
+            {
                 koopaStateMachine.Update(gameTime);
+                PhysicsState.Update(gameTime);
+            }
             if (!Dead)
             {
                 if (FacingLeft)
@@ -40,7 +45,7 @@ namespace SuperDavis.Object.Enemy
                 else
                     Location += new Vector2(1f, 0);
             }
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height+15);
         }
 
         public void Draw(SpriteBatch spriteBatch)

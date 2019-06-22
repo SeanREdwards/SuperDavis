@@ -231,6 +231,8 @@
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />
     <Compile Include="Object\Block\MiddleGreenFloor.cs" />
+    <Compile Include="Object\Block\CoinBlock.cs" />
+    <Compile Include="Object\Block\MushroomBlock.cs" />
     <Compile Include="Object\Block\RightGreenFloor.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Physics\StandingState.cs" />
@@ -238,6 +240,8 @@
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Physics\DavisPhysicsState.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
