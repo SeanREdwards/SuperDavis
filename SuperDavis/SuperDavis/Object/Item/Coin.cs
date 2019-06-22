@@ -7,17 +7,20 @@ namespace SuperDavis.Object.Item
 {
     class Coin : IItem
     {
+        public bool IsAnimated { get; set; }
+        public bool FacingLeft { get; set; }
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get;set; }
         private readonly ISprite item;
         private readonly CoinStateMachine coinStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
-
+        private int timer = 20;
         public Coin(Vector2 location)
         {
             // initial state
             Remove = false;
+            IsAnimated = false;
             Location = location;
             coinStateMachine = new CoinStateMachine();
             item = coinStateMachine.Sprite;
@@ -27,7 +30,26 @@ namespace SuperDavis.Object.Item
         public void Update(GameTime gameTime)
         {
             if (!Remove)
+            {
                 coinStateMachine.Update(gameTime);
+                if (!IsAnimated)
+                {
+                    if (timer > 10)
+                    {
+                        Location += new Vector2(0, -3f);
+                        timer--;
+                    }else if(timer > 0)
+                    {
+                        Location += new Vector2(0, 3f);
+                        timer--;
+                    }                    
+                    else
+                    {
+                        timer = 20;
+                        IsAnimated = true;
+                    }
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

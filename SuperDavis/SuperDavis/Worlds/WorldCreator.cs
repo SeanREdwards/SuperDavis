@@ -26,7 +26,6 @@ namespace SuperDavis.Worlds
 
         private void CreateObjectDictionary()
         {
-            string s = nameof(CreateCharacter);
             objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>
             {
                 { "Character", CreateCharacter },
@@ -55,6 +54,10 @@ namespace SuperDavis.Worlds
             {
                 { nameof(HiddenBlock), (x, y) => world.Blocks.Add(new HiddenBlock(new Vector2(x, y))) },
                 { nameof(ActivatedBlock), (x, y) => world.Blocks.Add(new ActivatedBlock(new Vector2(x, y))) },
+                { nameof(MushroomBlock), (x, y) => world.Blocks.Add(new MushroomBlock(new Vector2(x, y))) },
+                { nameof(CoinBlock), (x, y) => world.Blocks.Add(new CoinBlock(new Vector2(x, y))) },
+                { nameof(StarBlock), (x, y) => world.Blocks.Add(new StarBlock(new Vector2(x, y))) },
+                { nameof(FlowerBlock), (x, y) => world.Blocks.Add(new FlowerBlock(new Vector2(x, y))) },
                 { nameof(Brick), (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
                 { nameof(QuestionBlock), (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
                 { nameof(Pipe), (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) },
@@ -163,6 +166,7 @@ namespace SuperDavis.Worlds
         }
 
         // Helper method to create object map
+        // should be move to world.cs
         private void SetObjectMap(IGameObject gameObject, float x, float y)
         {
             ObjectMap[(int)Math.Floor(x / world.Width)][(int)Math.Floor(x / world.Width)] = gameObject;

@@ -17,13 +17,13 @@ namespace SuperDavis.Collision
         /* CheckCollisions */
         public void CheckCollisions()
         {
-            CheckDavisBlockCollision(World.Davises, World.Blocks);
-            CheckDavisItemCollision(World.Davises, World.Items);
-            CheckDavisEnemyCollision(World.Davises, World.Enemies);
-            CheckEnemyBlockCollision(World.Enemies, World.Blocks);
+            CheckDavisBlockCollision(World.Davises, World.Blocks, World);
+            CheckDavisItemCollision(World.Davises, World.Items, World);
+            CheckDavisEnemyCollision(World.Davises, World.Enemies, World);
+            CheckEnemyBlockCollision(World.Enemies, World.Blocks, World);
         }
                    
-        private static void CheckDavisBlockCollision(IList<IDavis> davises, IList<IBlock> blocks)
+        private static void CheckDavisBlockCollision(IList<IDavis> davises, IList<IBlock> blocks, IWorld world)
         {
             foreach (IDavis davis in davises)
             {
@@ -32,14 +32,14 @@ namespace SuperDavis.Collision
                     if (!block.Remove)
                     {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, block.HitBox), davis.HitBox, block.HitBox);
-                        DavisBlockCollisionHandler.HandleCollision(davis, block, side);
+                        DavisBlockCollisionHandler.HandleCollision(davis, block, side, world);
                     }
                    
                 }
             }
         }
 
-        private static void CheckDavisItemCollision(IList<IDavis> davises, IList<IItem> items)
+        private static void CheckDavisItemCollision(IList<IDavis> davises, IList<IItem> items, IWorld world)
         {
             foreach (IDavis davis in davises)
             {
@@ -48,25 +48,25 @@ namespace SuperDavis.Collision
                     if (!item.Remove)
                     {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, item.HitBox), davis.HitBox, item.HitBox);
-                        DavisItemCollisionHandler.HandleCollision(davis, item, side);
+                        DavisItemCollisionHandler.HandleCollision(davis, item, side, world);
                     }
                 }
             }
         }
 
-        private static void CheckDavisEnemyCollision(IList<IDavis> davises, IList<IEnemy> enemies)
+        private static void CheckDavisEnemyCollision(IList<IDavis> davises, IList<IEnemy> enemies, IWorld world)
         {
             foreach (IDavis davis in davises)
             {
                 foreach (IEnemy enemy in enemies)
                 {
                     CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, enemy.HitBox), davis.HitBox, enemy.HitBox);
-                    DavisEnemyCollisionHandler.HandleCollision(davis, enemy, side);
+                    DavisEnemyCollisionHandler.HandleCollision(davis, enemy, side, world);
                 }
             }
         }
 
-        private static void CheckEnemyBlockCollision(IList<IEnemy> enemies, IList<IBlock> blocks)
+        private static void CheckEnemyBlockCollision(IList<IEnemy> enemies, IList<IBlock> blocks, IWorld world)
         {
             foreach (IEnemy enemy in enemies)
             {
@@ -75,7 +75,22 @@ namespace SuperDavis.Collision
                     if (!block.Remove)
                     {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(enemy.HitBox, block.HitBox), enemy.HitBox, block.HitBox);
-                        EnemyBlockCollisionHandler.HandleCollision(enemy, block, side);
+                        EnemyBlockCollisionHandler.HandleCollision(enemy, block, side, world);
+                    }
+                }
+            }
+        }
+
+        private static void CheckItemBlockCollision(IList<IItem> items, IList<IBlock> blocks, IWorld world)
+        {
+            foreach (IItem item in items)
+            {
+                foreach (IBlock block in blocks)
+                {
+                    if (!block.Remove)
+                    {
+                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(item.HitBox, block.HitBox), item.HitBox, block.HitBox);
+                        ItemBlockCollisionHandler.HandleCollision(item, block, side, world);
                     }
                 }
             }

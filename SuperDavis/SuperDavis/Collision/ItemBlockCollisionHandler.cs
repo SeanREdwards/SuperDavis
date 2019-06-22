@@ -6,22 +6,22 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class EnemyBlockCollisionHandler
+    class ItemBlockCollisionHandler
     {
 
-        private EnemyBlockCollisionHandler() { }
-        public static void HandleCollision(IEnemy enemy, IBlock block, CollisionSide side, IWorld world)
+        private ItemBlockCollisionHandler() { }
+        public static void HandleCollision(IItem item, IBlock block, CollisionSide side, IWorld world)
         {
             switch(side)
             { 
                 case CollisionSide.Left:
 
                 case CollisionSide.Right:
-                    enemy.FacingLeft = !enemy.FacingLeft;
+                    item.FacingLeft = !item.FacingLeft;
                     break;
                 case CollisionSide.Top:
-                    enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
-                    enemy.PhysicsState = new StandingState(enemy);
+                    item.Location = new Vector2(item.Location.X, block.Location.Y - item.HitBox.Height);
+                    item.PhysicsState = new StandingState(item);
                     break;
                 default:
                     break;

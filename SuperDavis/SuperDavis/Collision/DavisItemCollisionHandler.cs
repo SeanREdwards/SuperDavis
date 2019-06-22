@@ -8,7 +8,7 @@ namespace SuperDavis.Collision
     {
         private DavisItemCollisionHandler() { }
         
-        public static void HandleCollision(IDavis davis, IItem item, CollisionSide side)
+        public static void HandleCollision(IDavis davis, IItem item, CollisionSide side, IWorld world)
         {
             if (side != CollisionSide.None)
             {

@@ -7,6 +7,8 @@ namespace SuperDavis.Object.Item
 {
     class YoshiEgg : IItem
     {
+        public bool IsAnimated { get; set; }
+        public bool FacingLeft { get; set; }
         public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }

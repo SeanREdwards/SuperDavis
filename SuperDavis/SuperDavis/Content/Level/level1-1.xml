@@ -11,67 +11,34 @@
   // Character
   <Character Type="Davis" X="48" Y="640" />
   //level begin
-  <Item Type="Mushroom" X="48" Y="576" />
-  <Block Type="QuestionBlock" X="48" Y="600" />
-  <Block Type="HiddenBlock" X="48" Y="450" />
-  <Block Type="Brick" X="524" Y="576" />
+  <Block Type="MushroomBlock" X="48" Y="600" />
+  <Block Type="CoinBlock" X="82" Y="600" />
+  <Block Type="HiddenBlock" X="116" Y="600" />
+  <Block Type="StarBlock" X="150" Y="600" />
+  <Block Type="FlowerBlock" X="184" Y="600" />
   <Block Type="Brick" X="548" Y="600" />
   <Block Type="Brick" X="548" Y="600" />
   <Block Type="Brick" X="572" Y="600" />
   <Block Type="Brick" X="596" Y="600" />
   <Enemy Type="Koopa" X="570" Y="515" />
-  <Item Type="Star" X="620" Y="576" />
-  <Block Type="QuestionBlock" X="620" Y="600" />
-  <Block Type="Brick" X="644 " Y="600" />
-  <Block Type="Brick" X="668 " Y="576" />
-  //1st set of coins
-  <Item Type="Coin" X="524" Y="675" />
-  <Item Type="Coin" X="558" Y="675" />
-  <Item Type="Coin" X="590" Y="675" />
-  <Item Type="Coin" X="620" Y="675" />
-  <Item Type="Coin" X="653" Y="675" />
+  <Block Type="CoinBlock" X="620" Y="600" />
+
   //Pipes
   <Block Type="Pipe" X="700" Y="672" />
   <Enemy Type="Goomba" X="748" Y="650" />
-  <Item Type="Flower" X="800" Y="576" />
   <Block Type="Brick" X="800" Y="450" />
-  <Item Type="YoshiEgg" X="800" Y="426" />
-  <Block Type="QuestionBlock" X="800" Y="600" />
+  <Block Type="MushroomBlock" X="800" Y="600" />
   <Enemy Type="Koopa" X="850" Y="635" />
   <Block Type="Pipe" X="900" Y="672" />
   //STEPS FOR LEVEL
 
   // STEPS SECTION 1
   // First Layer
-  <Block Type="Brick" X="216" Y="696" />
-  <Block Type="Brick" X="240" Y="696" />
-  <Block Type="Brick" X="264" Y="696" />
-  <Block Type="Brick" X="288" Y="696" />
-  // Second Layer
-  <Block Type="Brick" X="240" Y="672" />
-  <Block Type="Brick" X="264" Y="672" />
-  <Block Type="Brick" X="288" Y="672" />
-  // Third Layer
-  <Block Type="Brick" X="264" Y="648" />
-  <Block Type="Brick" X="288" Y="648" />
-  // Top Layer
-  <Block Type="Brick" X="288" Y="624" />
+
   <Item Type="Coin" X="336" Y="500" />
   // 1st set of steps going down
   // First Layer
-  <Block Type="Brick" X="384" Y="696" />
-  <Block Type="Brick" X="408" Y="696" />
-  <Block Type="Brick" X="432" Y="696" />
-  <Block Type="Brick" X="456" Y="696" />
-  // Second Layer
-  <Block Type="Brick" X="384" Y="672" />
-  <Block Type="Brick" X="408" Y="672" />
-  <Block Type="Brick" X="432" Y="672" />
-  // Third Layer
-  <Block Type="Brick" X="384" Y="648" />
-  <Block Type="Brick" X="408" Y="648" />
-  // Top Layer
-  <Block Type="Brick" X="384" Y="624" />
+
   
   // STEPS SECTION 2
   // First Layer
@@ -94,7 +61,7 @@
   <Block Type="Brick" X="1344" Y="600" />
   <Block Type="Brick" X="1368" Y="600" />
   <Block Type="Brick" X="1392" Y="600" />
-  <Block Type="QuestionBlock" X="1355" Y="450" />
+  <Block Type="MushroomBlock" X="1355" Y="450" />
   // 2nd set of steps going down
   // Top Layer
   <Block Type="Brick" X="1464" Y="624" />

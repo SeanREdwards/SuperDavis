@@ -5,44 +5,44 @@ using SuperDavis.State.ItemStateMachine;
 
 namespace SuperDavis.Object.Block
 {
-    class HiddenBlock : IBlock
+    class StarBlock : IBlock
     {
         public bool IsBumped { get; set; }
         public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
-        public HiddenBlockStateMachine HiddenBlockStateMachine;
+        public StarBlockStateMachine StarBlockStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        public int CoinCounter = 5;
-        public HiddenBlock(Vector2 location)
+
+        public StarBlock(Vector2 location)
         {
             // initial state
             Remove = false;
-            IsHidden = true;
+            IsHidden = false;
+            IsBumped = false;
             Location = location;
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
-            block = HiddenBlockStateMachine.Sprite;
+            StarBlockStateMachine = new StarBlockStateMachine(false);
+            block = StarBlockStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)block.Width, (int)block.Height);
         }
 
         public void Update(GameTime gameTime)
         {
             if (!Remove)
-                HiddenBlockStateMachine.Update(gameTime);
+                StarBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             if (!Remove)
-                HiddenBlockStateMachine.Draw(spriteBatch, Location);
+                StarBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()
         {
-            IsHidden = false;
-            HiddenBlockStateMachine = new HiddenBlockStateMachine(IsHidden);
+            StarBlockStateMachine = new StarBlockStateMachine(true);
         }
     }
 }

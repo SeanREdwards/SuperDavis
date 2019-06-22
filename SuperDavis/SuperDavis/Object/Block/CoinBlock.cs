@@ -21,6 +21,7 @@ namespace SuperDavis.Object.Block
             // initial state
             Remove = false;
             IsHidden = false;
+            IsBumped = false;
             Location = location;
             CoinBlockStateMachine = new CoinBlockStateMachine(false);
             block = CoinBlockStateMachine.Sprite;

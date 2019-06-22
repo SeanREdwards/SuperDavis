@@ -217,11 +217,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
     <Compile Include="Collision\DavisEnemyCollisionHandler.cs" />
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
     <Compile Include="Command\ToggleMouseControl.cs" />
@@ -229,6 +231,8 @@
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
+    <Compile Include="Object\Block\FlowerBlock.cs" />
+    <Compile Include="Object\Block\StarBlock.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />
     <Compile Include="Object\Block\MiddleGreenFloor.cs" />
     <Compile Include="Object\Block\CoinBlock.cs" />
@@ -240,6 +244,8 @@
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Physics\DavisPhysicsState.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
