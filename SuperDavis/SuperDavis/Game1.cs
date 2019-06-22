@@ -128,10 +128,12 @@ namespace SuperDavis
                       (Keys.Left, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Right, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Up, new DavisJumpCommand(davis),new NullCommand(), true),
+                      (Keys.Z, new DavisJumpCommand(davis),new NullCommand(), true),
+                      (Keys.X, new DavisShootBulletCommand(davis,World),new NullCommand(), false),
                       (Keys.Down, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.O, new DavisDeathCommand(davis), new NullCommand(), true),
                       (Keys.P, new DavisSpecialAttackCommand(davis), new NullCommand(), true),
-                      (Keys.M, new ToggleMouseControl(this), new NullCommand(), false)
+                      (Keys.M, new NullCommand(),new ToggleMouseControl(this), false)
                     ),
                     new GamepadController
                     (

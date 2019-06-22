@@ -6,14 +6,17 @@ using SuperDavis.Factory;
 using System.Collections.Generic;
 using SuperDavis.Physics;
 using SuperDavis.State.OtherState;
+using SuperDavis.Object.Item;
 
 namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
+        public bool FacingLeft { get; set; }
         public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
+        public IList<IProjectile> DavisProjectile { get; set; }
         public Vector2 Location { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
@@ -26,9 +29,15 @@ namespace SuperDavis.Object.Character
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
+            FacingLeft = false;
             PhysicsState = new FallState(this);
             //PhysicsState.ApplyForce(new Vector2(0, 0));
             Location = location;
+            DavisProjectile = new List<IProjectile>()
+            {
+                (new BatProjectile(location,FacingLeft)),
+                (new BatProjectile(location,FacingLeft))
+            };
         }
 
         public void Update(GameTime gameTime)
@@ -53,6 +62,7 @@ namespace SuperDavis.Object.Character
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
                 Location += new Vector2(-3, 0);
             }
+            FacingLeft = true;
             DavisState.Left();
         }
 
@@ -62,6 +72,7 @@ namespace SuperDavis.Object.Character
             {
                 Location += new Vector2(3, 0);
             }
+            FacingLeft = false;
             DavisState.Right();
         }
 

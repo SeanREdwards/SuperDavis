@@ -21,6 +21,8 @@ namespace SuperDavis.Collision
             CheckDavisItemCollision(World.Davises, World.Items, World);
             CheckDavisEnemyCollision(World.Davises, World.Enemies, World);
             CheckEnemyBlockCollision(World.Enemies, World.Blocks, World);
+            CheckProjectileBlockCollision(World.Projectiles, World.Blocks, World);
+            //CheckProjectileEnemyCollision(World.Projectiles, World.Enemies, World);
         }
                    
         private static void CheckDavisBlockCollision(IList<IDavis> davises, IList<IBlock> blocks, IWorld world)
@@ -92,6 +94,22 @@ namespace SuperDavis.Collision
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(item.HitBox, block.HitBox), item.HitBox, block.HitBox);
                         ItemBlockCollisionHandler.HandleCollision(item, block, side, world);
                     }
+                }
+            }
+        }
+
+        private static void CheckProjectileBlockCollision(IList<IProjectile> projectiles, IList<IBlock> blocks, IWorld world)
+        {
+            foreach (IProjectile projectile in projectiles)
+            {
+                foreach (IBlock block in blocks)
+                {
+                    if (!block.Remove)
+                    {
+                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectile.HitBox, block.HitBox), projectile.HitBox, block.HitBox);
+                        ProjectileBlockCollisionHandler.HandleCollision(projectile, block, side, world);
+                    }
+
                 }
             }
         }

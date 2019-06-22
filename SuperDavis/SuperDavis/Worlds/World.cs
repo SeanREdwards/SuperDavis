@@ -14,7 +14,10 @@ namespace SuperDavis.Worlds
         public IList<IItem> Items { get; set; }
         public IList<IBlock> Blocks { get; set; }
         public IList<IEnemy> Enemies { get; set; }
+        public IList<IProjectile> Projectiles { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
+
+        public IList<IProjectile> BufferList { get; set; }
         private Game1 game;
 
         public World(float width, float height, Game1 game)
@@ -27,7 +30,9 @@ namespace SuperDavis.Worlds
             Items = new List<IItem>();
             Blocks = new List<IBlock>();
             Enemies = new List<IEnemy>();
+            Projectiles = new List<IProjectile>();
             Backgrounds = new List<IBackground>();
+            BufferList = new List<IProjectile>();
         }
         
         public void Update(GameTime gameTime)
@@ -48,10 +53,15 @@ namespace SuperDavis.Worlds
             {
                 block.Update(gameTime);
             }
+            foreach (IProjectile projectile in Projectiles)
+            {
+                projectile.Update(gameTime);
+            }
             foreach (IEnemy enemy in Enemies)
             {
                 enemy.Update(gameTime);
             }
+            Projectiles = BufferList;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -67,6 +77,10 @@ namespace SuperDavis.Worlds
             foreach (IBlock block in Blocks)
             {
                 block.Draw(spriteBatch);
+            }
+            foreach (IProjectile projectile in Projectiles)
+            {
+                projectile.Draw(spriteBatch);
             }
             foreach (IEnemy enemy in Enemies)
             {
@@ -84,7 +98,9 @@ namespace SuperDavis.Worlds
             Blocks.Clear();
             Enemies.Clear();
             Items.Clear();
+            Projectiles.Clear();
             Backgrounds.Clear();
+            BufferList.Clear();
             WorldCreator worldCreator = new WorldCreator();
             game.World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
             game.collisionDetection = new CollisionDetection(game.World);

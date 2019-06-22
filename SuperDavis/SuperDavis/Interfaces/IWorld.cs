@@ -12,6 +12,8 @@ namespace SuperDavis.Interfaces
         IList<IEnemy> Enemies { get; set; }
         IList<IItem> Items { get; set; }
         IList<IBlock> Blocks { get; set; }
+        IList<IProjectile> Projectiles { get; set; }
+        IList<IProjectile> BufferList { get; set; }
         IList<IBackground> Backgrounds { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);

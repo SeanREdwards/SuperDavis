@@ -219,12 +219,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Collision\ProjectileBlockCollisionHandler.cs" />
     <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
     <Compile Include="Collision\DavisEnemyCollisionHandler.cs" />
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
+    <Compile Include="Command\DavisShootBulletCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
@@ -233,6 +235,7 @@
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
+    <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />
@@ -240,6 +243,7 @@
     <Compile Include="Object\Block\CoinBlock.cs" />
     <Compile Include="Object\Block\MushroomBlock.cs" />
     <Compile Include="Object\Block\RightGreenFloor.cs" />
+    <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Physics\StandingState.cs" />
     <Compile Include="Physics\JumpState.cs" />
@@ -251,6 +255,7 @@
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
+    <Compile Include="State\ProjectileState\BatProjectileStateMachine.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />
