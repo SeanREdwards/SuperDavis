@@ -237,6 +237,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Object\Block\CoinBrick.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />

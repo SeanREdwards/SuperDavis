@@ -27,6 +27,21 @@ namespace SuperDavis.Collision
                             hiddenBlock.CoinCounter--;
                         }
                     }
+                    if (block is CoinBrick && davis.PhysicsState is JumpState)
+                    {
+                        var coinBrick = (CoinBrick)block;
+                        if (coinBrick.CoinCounter > 0)
+                        {
+                            world.Items.Add(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
+                            coinBrick.CoinCounter--;
+                            coinBrick.IsBumped = true;
+                        }
+                        else 
+                        {
+                            coinBrick.SpecialState();
+                            coinBrick.Remove = true;  
+                        }
+                    }
                     else if (block is QuestionBlock)
                     {
                         block.SpecialState();
@@ -38,7 +53,7 @@ namespace SuperDavis.Collision
                             block.SpecialState();
                             block.Remove = true;
                         }
-                        else
+                        else if (!block.IsBumped)
                         {
                             block.IsBumped = true;
                         }

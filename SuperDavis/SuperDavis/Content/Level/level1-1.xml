@@ -16,7 +16,10 @@
   <Block Type="HiddenBlock" X="116" Y="600" />
   <Block Type="StarBlock" X="150" Y="600" />
   <Block Type="FlowerBlock" X="184" Y="600" />
-  <Block Type="Brick" X="548" Y="600" />
+  <Block Type="QuestionBlock" X="218" Y="600" />
+  <Block Type="CoinBrick" X="242" Y="600" />
+  <Block Type="Brick" X="524" Y="576" />
+  <Block Type="Brick" X="524" Y="600" />
   <Block Type="Brick" X="548" Y="600" />
   <Block Type="Brick" X="572" Y="600" />
   <Block Type="Brick" X="596" Y="600" />

@@ -16,7 +16,7 @@ namespace SuperDavis.State.EnemyState
         {
             if (!koopa.Dead)
             {
-                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenStaticLeft();
+                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenWalkLeft();
             }
             else
             {
