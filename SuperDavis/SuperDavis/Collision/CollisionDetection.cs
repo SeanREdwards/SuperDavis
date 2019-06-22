@@ -109,7 +109,6 @@ namespace SuperDavis.Collision
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectile.HitBox, block.HitBox), projectile.HitBox, block.HitBox);
                         ProjectileBlockCollisionHandler.HandleCollision(projectile, block, side, world);
                     }
-
                 }
             }
         }

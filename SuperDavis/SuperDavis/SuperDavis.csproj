@@ -67,6 +67,7 @@
     <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
     <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -236,6 +237,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Object\Block\CoinBrick.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />

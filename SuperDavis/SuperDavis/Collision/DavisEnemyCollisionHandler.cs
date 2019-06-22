@@ -23,6 +23,7 @@ namespace SuperDavis.Collision
                     if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible)
                     {
                         davis.DavisState.Death();
+                        davis.Remove = true;
                     }
                 }
             }

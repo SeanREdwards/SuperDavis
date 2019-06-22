@@ -25,7 +25,6 @@ namespace SuperDavis.Collision
                     break;
                 default:
                     break;
-
             }
         }
     }

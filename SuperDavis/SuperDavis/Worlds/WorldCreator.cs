@@ -59,6 +59,7 @@ namespace SuperDavis.Worlds
                 { nameof(StarBlock), (x, y) => world.Blocks.Add(new StarBlock(new Vector2(x, y))) },
                 { nameof(FlowerBlock), (x, y) => world.Blocks.Add(new FlowerBlock(new Vector2(x, y))) },
                 { nameof(Brick), (x, y) => world.Blocks.Add(new Brick(new Vector2(x, y))) },
+                { nameof(CoinBrick), (x, y) => world.Blocks.Add(new CoinBrick(new Vector2(x, y))) },
                 { nameof(QuestionBlock), (x, y) => world.Blocks.Add(new QuestionBlock(new Vector2(x, y))) },
                 { nameof(Pipe), (x, y) => world.Blocks.Add(new Pipe(new Vector2(x, y))) },
                 { nameof(LeftGreenFloor), (x,y) => world.Blocks.Add(new LeftGreenFloor(new Vector2(x, y))) },
