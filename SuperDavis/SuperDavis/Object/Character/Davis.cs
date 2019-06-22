@@ -26,6 +26,7 @@ namespace SuperDavis.Object.Character
         public Davis(Vector2 location)
         {
             // initial state
+            Remove = false;
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
@@ -61,9 +62,10 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
                 Location += new Vector2(-3, 0);
+                FacingLeft = true;
+                DavisState.Left();
             }
-            FacingLeft = true;
-            DavisState.Left();
+
         }
 
         public void DavisTurnRight()
@@ -71,9 +73,10 @@ namespace SuperDavis.Object.Character
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
                 Location += new Vector2(3, 0);
+                FacingLeft = false;
+                DavisState.Right();
             }
-            FacingLeft = false;
-            DavisState.Right();
+
         }
 
         public void DavisJump()
@@ -82,17 +85,18 @@ namespace SuperDavis.Object.Character
             {
                 if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
                     PhysicsState = new JumpState(this);
+                DavisState.Up();
             }
-            DavisState.Up();
+
         }
 
         public void DavisCrouch()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-
+                DavisState.Down();
             }
-            DavisState.Down();
+
         }
 
         public void DavisLand()
@@ -126,6 +130,7 @@ namespace SuperDavis.Object.Character
         public void DavisDeath()
         {
             DavisState.Death();
+            Remove = true;
         }
 
         public void DavisSpecialAttack()
