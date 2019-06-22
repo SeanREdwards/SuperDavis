@@ -59,9 +59,6 @@ namespace SuperDavis.Collision
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     break;
                 case CollisionSide.None:
-                    // Want this only execute one time
-                    if (davis.DavisState is DavisWalkRightState || davis.DavisState is DavisWalkLeftState)
-                        davis.PhysicsState = new FallState(davis);
                     break;
             }
         }

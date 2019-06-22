@@ -19,7 +19,7 @@
   <Block Type="Brick" X="548" Y="600" />
   <Block Type="Brick" X="572" Y="600" />
   <Block Type="Brick" X="596" Y="600" />
-  <Enemy Type="Koopa" X="570" Y="555" />
+  <Enemy Type="Koopa" X="570" Y="515" />
   <Item Type="Star" X="620" Y="576" />
   <Block Type="QuestionBlock" X="620" Y="600" />
   <Block Type="Brick" X="644 " Y="600" />
@@ -32,12 +32,12 @@
   <Item Type="Coin" X="653" Y="675" />
   //Pipes
   <Block Type="Pipe" X="700" Y="672" />
-  <Enemy Type="Goomba" X="748" Y="690" />
+  <Enemy Type="Goomba" X="748" Y="650" />
   <Item Type="Flower" X="800" Y="576" />
   <Block Type="Brick" X="800" Y="450" />
   <Item Type="YoshiEgg" X="800" Y="426" />
   <Block Type="QuestionBlock" X="800" Y="600" />
-  <Enemy Type="Koopa" X="850" Y="675" />
+  <Enemy Type="Koopa" X="850" Y="635" />
   <Block Type="Pipe" X="900" Y="672" />
   //STEPS FOR LEVEL
 
