@@ -81,21 +81,14 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
-            if (World.Characters[0].Location.X < - 100 || World.Characters[0].Location.X > 4900 || World.Characters[0].Location.Y > 768)
-            {
-                World.ResetGame();
-            }
+
             if (World.Characters.Count == 0)
             {
-                if(deathTimer > 0)
-                {
-                    deathTimer--;
-                }
-                else
-                {
-                    World.ResetGame();
-                    deathTimer = 100;
-                }
+                    World.ResetGame();                    
+            }
+            else if (World.Characters[0].Location.X < -100 || World.Characters[0].Location.X > 4900 || World.Characters[0].Location.Y > 768)
+            {
+                World.ResetGame();
             }
             World.Update(gameTime);
             collisionDetection.CheckCollisions();

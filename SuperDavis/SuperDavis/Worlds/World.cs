@@ -18,14 +18,13 @@ namespace SuperDavis.Worlds
         public IList<IBackground> Backgrounds { get; set; }
 
         public IList<IGameObject> ObjectToRemove { get; set; }
-        private Game1 game;
+        private readonly Game1 game;
 
         public World(float width, float height, Game1 game)
         {
             Width = width;
             Height = height;
             this.game = game;
-            // Initialize for lists
             Characters = new List<IDavis>();
             Items = new List<IItem>();
             Blocks = new List<IBlock>();
@@ -37,8 +36,7 @@ namespace SuperDavis.Worlds
         
         public void Update(GameTime gameTime)
         {
-            if (ObjectToRemove.Count != 0)
-                RemoveObject();
+
             foreach (IBackground background in Backgrounds)
             {
                 background.Update(gameTime);
@@ -63,6 +61,8 @@ namespace SuperDavis.Worlds
             {
                 enemy.Update(gameTime);
             }
+            if (ObjectToRemove.Count != 0)
+                RemoveObject();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -130,7 +130,7 @@ namespace SuperDavis.Worlds
             Items.Clear();
             Projectiles.Clear();
             Backgrounds.Clear();
-
+            ObjectToRemove.Clear();
             WorldCreator worldCreator = new WorldCreator();
             game.World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
             game.collisionDetection = new CollisionDetection(game.World);
