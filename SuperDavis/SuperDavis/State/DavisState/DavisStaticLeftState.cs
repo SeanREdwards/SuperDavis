@@ -15,25 +15,6 @@ namespace SuperDavis.State.DavisState
         public DavisStaticLeftState(IDavis davis)
         {
             this.davis = davis;
-            switch(davis.DavisStatus)
-            {
-                case DavisStatus.Davis:
-                    Sprite = DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite();
-                    break;
-                case DavisStatus.Woody:
-                    Sprite = DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite();
-                    break;
-                case DavisStatus.Bat:
-                    Sprite = DavisSpriteFactory.Instance.CreateBatStaticLeftSprite();
-                    break;
-                case DavisStatus.Invincible:
-                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
-                    break;
-                default:
-                    break;
-            }
-            Width = Sprite.Width;
-            Height = Sprite.Height;
         }
 
         public void Static()

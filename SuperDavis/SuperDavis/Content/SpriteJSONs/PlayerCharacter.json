@@ -754,7 +754,7 @@
     "Scale": 1
   },
 
-  "BatCrouchRight": {
+  "CreateBatCrouchRight": {
     "TextureName": "BatSprites/BatRight_0",
     "SourceFrames": [
       {
