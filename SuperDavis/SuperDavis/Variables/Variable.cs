@@ -3,7 +3,7 @@
     public static class Variable
     {
         public const int WindowsEdgeWidth = 1024;
-        public const int WindowsEdgeHeight = 768;
+        public const int WindowsEdgeHeight = 668;
         public const int UnitPixelSize = 16;
 
         public const int InvincibleTimer = 300;
