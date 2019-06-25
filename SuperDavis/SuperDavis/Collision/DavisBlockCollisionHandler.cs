@@ -39,7 +39,7 @@ namespace SuperDavis.Collision
                         else 
                         {
                             coinBrick.SpecialState();
-                            coinBrick.Remove = true;  
+                            world.ObjectToRemove.Add(block);
                         }
                     }
                     else if (block is QuestionBlock)
@@ -51,7 +51,7 @@ namespace SuperDavis.Collision
                         if (davis.DavisStatus != DavisStatus.Davis)
                         {
                             block.SpecialState();
-                            block.Remove = true;
+                            world.ObjectToRemove.Add(block);
                         }
                         else if (!block.IsBumped)
                         {

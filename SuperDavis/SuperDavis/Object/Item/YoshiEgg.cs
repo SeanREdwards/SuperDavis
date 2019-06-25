@@ -9,7 +9,7 @@ namespace SuperDavis.Object.Item
     {
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
+
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
@@ -19,7 +19,7 @@ namespace SuperDavis.Object.Item
         public YoshiEgg(Vector2 location)
         {
             // initial state
-            Remove = false;
+
             Location = location;
             yoshiEggStateMachine = new YoshiEggStateMachine();
             item = yoshiEggStateMachine.Sprite;
@@ -28,19 +28,16 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
+ 
                 yoshiEggStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
+
                 yoshiEggStateMachine.Draw(spriteBatch, Location);
         }
 
-        public void Clear()
-        {
-            Remove = true;
-        }
+
     }
 }

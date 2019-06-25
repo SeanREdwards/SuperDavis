@@ -10,7 +10,6 @@ namespace SuperDavis.Object.Enemy
     class Goomba : IEnemy
     {
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
         public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
@@ -21,7 +20,6 @@ namespace SuperDavis.Object.Enemy
         public Goomba(Vector2 location)
         {
             // initial state
-            Remove = false;
             Dead = false;
             FacingLeft = true;
             Location = location;
@@ -33,11 +31,10 @@ namespace SuperDavis.Object.Enemy
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-            {
+
                 PhysicsState.Update(gameTime);
                 goombaState.Update(gameTime);
-            }
+
             if (!Dead)
             {
                 if (FacingLeft)
@@ -50,7 +47,7 @@ namespace SuperDavis.Object.Enemy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
+
                 goombaState.Draw(spriteBatch, Location);
         }
 

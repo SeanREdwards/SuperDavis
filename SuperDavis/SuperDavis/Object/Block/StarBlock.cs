@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class StarBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public StarBlockStateMachine StarBlockStateMachine;
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public StarBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -30,13 +28,11 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
                 StarBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
                 StarBlockStateMachine.Draw(spriteBatch, Location);
         }
 

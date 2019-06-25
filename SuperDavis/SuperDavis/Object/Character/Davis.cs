@@ -15,7 +15,6 @@ namespace SuperDavis.Object.Character
     {
         private readonly CharacterDictionary charDict;
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
         public IDavisState DavisState { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         public IList<IProjectile> DavisProjectile { get; set; }
@@ -34,7 +33,6 @@ namespace SuperDavis.Object.Character
             charDict = new CharacterDictionary();
 
             // initial state
-            Remove = false;
             InvincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
@@ -125,8 +123,7 @@ namespace SuperDavis.Object.Character
         }
         public void TakeDamage()
         {
-            DavisState = new DavisDeathRightState(this);
-            //DavisState = new RemoveState(this, DavisState.Sprite, 100);
+            DavisState.Death();
         }
 
         public void DavisToDavis()
@@ -153,9 +150,8 @@ namespace SuperDavis.Object.Character
         public void DavisDeath()
         {
             DavisState.Death();
-            Console.Out.WriteLine("Status: " + DavisStatus.ToString() + " State: " + DavisState.ToString());
+            //Console.Out.WriteLine("Status: " + DavisStatus.ToString() + " State: " + DavisState.ToString());
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
-            Remove = true;
         }
 
         public void DavisSpecialAttack()

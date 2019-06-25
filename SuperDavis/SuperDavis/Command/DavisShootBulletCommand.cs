@@ -22,7 +22,7 @@ namespace SuperDavis.Command
                     projectile.FacingLeft = davis.FacingLeft;
                     projectile.Location = davis.Location + (new Vector2(0, 30f));
                 }
-                world.BufferList.Add(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);
+                world.Projectiles.Add(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);
                 davis.DavisProjectile.RemoveAt(davis.DavisProjectile.Count - 1);
             }
         }

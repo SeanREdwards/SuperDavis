@@ -30,7 +30,7 @@ namespace SuperDavis.Collision
                     davis.DavisStatus = DavisStatus.Invincible;
                     davis.DavisState.Static();
                 }
-                item.Clear();
+                world.ObjectToRemove.Add(item);
             }
         }
     }

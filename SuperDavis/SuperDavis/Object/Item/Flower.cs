@@ -9,7 +9,6 @@ namespace SuperDavis.Object.Item
     {
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
@@ -20,7 +19,6 @@ namespace SuperDavis.Object.Item
         public Flower(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsAnimated = false;
             Location = location;
             flowerStateMachine = new FlowerStateMachine();
@@ -30,8 +28,7 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-            {
+
                 flowerStateMachine.Update(gameTime);
                 if (!IsAnimated)
                 {
@@ -45,19 +42,16 @@ namespace SuperDavis.Object.Item
                         IsAnimated = true;
                     }
                 }       
-            }
+
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
+
                 flowerStateMachine.Draw(spriteBatch, Location);
         }
 
-        public void Clear()
-        {
-            Remove = true;
-        }
+
     }
 }

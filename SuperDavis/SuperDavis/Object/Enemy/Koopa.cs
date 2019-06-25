@@ -10,7 +10,7 @@ namespace SuperDavis.Object.Enemy
     class Koopa : IEnemy
     {
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
+
         public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
@@ -21,7 +21,7 @@ namespace SuperDavis.Object.Enemy
         public Koopa(Vector2 location)
         {
             // initial state
-            Remove = false;
+
             Dead = false;
             FacingLeft = true;
             Location = location;
@@ -33,11 +33,10 @@ namespace SuperDavis.Object.Enemy
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-            {
+
                 koopaStateMachine.Update(gameTime);
                 PhysicsState.Update(gameTime);
-            }
+
             if (!Dead)
             {
                 if (FacingLeft)
@@ -50,7 +49,7 @@ namespace SuperDavis.Object.Enemy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
+
                 koopaStateMachine.Draw(spriteBatch, Location);
         }
 

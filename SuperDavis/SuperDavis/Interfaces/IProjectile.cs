@@ -4,6 +4,5 @@
     {
         bool FacingLeft { get; set; }
         void Explode();
-        void Clear();
     }
 }

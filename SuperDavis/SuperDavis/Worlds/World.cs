@@ -10,14 +10,14 @@ namespace SuperDavis.Worlds
     {
         public float Width { get; set; }
         public float Height { get; set; }
-        public IList<IDavis> Davises { get; set; }
+        public IList<IDavis> Characters { get; set; }
         public IList<IItem> Items { get; set; }
         public IList<IBlock> Blocks { get; set; }
         public IList<IEnemy> Enemies { get; set; }
         public IList<IProjectile> Projectiles { get; set; }
         public IList<IBackground> Backgrounds { get; set; }
 
-        public IList<IProjectile> BufferList { get; set; }
+        public IList<IGameObject> ObjectToRemove { get; set; }
         private Game1 game;
 
         public World(float width, float height, Game1 game)
@@ -26,22 +26,24 @@ namespace SuperDavis.Worlds
             Height = height;
             this.game = game;
             // Initialize for lists
-            Davises = new List<IDavis>();
+            Characters = new List<IDavis>();
             Items = new List<IItem>();
             Blocks = new List<IBlock>();
             Enemies = new List<IEnemy>();
             Projectiles = new List<IProjectile>();
             Backgrounds = new List<IBackground>();
-            BufferList = new List<IProjectile>();
+            ObjectToRemove = new List<IGameObject>();
         }
         
         public void Update(GameTime gameTime)
         {
+            if (ObjectToRemove.Count != 0)
+                RemoveObject();
             foreach (IBackground background in Backgrounds)
             {
                 background.Update(gameTime);
             }
-            foreach (IDavis character in Davises)
+            foreach (IDavis character in Characters)
             {
                 character.Update(gameTime);
             }
@@ -61,7 +63,6 @@ namespace SuperDavis.Worlds
             {
                 enemy.Update(gameTime);
             }
-            Projectiles = BufferList;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -86,21 +87,50 @@ namespace SuperDavis.Worlds
             {
                 enemy.Draw(spriteBatch);
             }
-            foreach (IDavis character in Davises)
+            foreach (IDavis character in Characters)
             {
                 character.Draw(spriteBatch);
             }
+
+        }
+
+        public void RemoveObject()
+        {
+            foreach(IGameObject removeObject in ObjectToRemove)
+            {
+                if(removeObject is IDavis)
+                {
+                    Characters.Remove((IDavis)removeObject);
+                }
+                else if (removeObject is IItem)
+                {
+                    Items.Remove((IItem)removeObject);
+                }
+                else if (removeObject is IBlock)
+                {
+                    Blocks.Remove((IBlock)removeObject);
+                }
+                else if (removeObject is IEnemy)
+                {
+                    Enemies.Remove((IEnemy)removeObject);
+                }
+                else if (removeObject is IProjectile)
+                {
+                    Projectiles.Remove((IProjectile)removeObject);
+                }
+            }
+            ObjectToRemove.Clear();
         }
 
         public void ResetGame()
         {
-            Davises.Clear();
+            Characters.Clear();
             Blocks.Clear();
             Enemies.Clear();
             Items.Clear();
             Projectiles.Clear();
             Backgrounds.Clear();
-            BufferList.Clear();
+
             WorldCreator worldCreator = new WorldCreator();
             game.World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
             game.collisionDetection = new CollisionDetection(game.World);

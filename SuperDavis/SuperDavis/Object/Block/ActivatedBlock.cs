@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class ActivatedBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get ; set ; }
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public ActivatedBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             Location = location;
             activatedBlockStateMachine = new ActivatedBlockStateMachine();
@@ -29,13 +27,11 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
                 activatedBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
                 activatedBlockStateMachine.Draw(spriteBatch, Location);
         }
 

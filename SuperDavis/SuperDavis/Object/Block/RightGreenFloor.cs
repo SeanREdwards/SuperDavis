@@ -9,7 +9,6 @@ namespace SuperDavis.Object.Block
     class RightGreenFloor : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
@@ -22,7 +21,6 @@ namespace SuperDavis.Object.Block
         public RightGreenFloor(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             Location = location;
 
@@ -42,7 +40,6 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
                 sprite.Draw(spriteBatch, Location);
         }
 

@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class Brick : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
@@ -19,7 +18,7 @@ namespace SuperDavis.Object.Block
         public Brick(Vector2 location)
         {
             // initial state
-            Remove = false;
+
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -30,7 +29,6 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
                 BrickStateMachine.Update(gameTime);
             if (IsBumped)
             {
@@ -50,7 +48,7 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
+
                 BrickStateMachine.Draw(spriteBatch, Location);
         }
 

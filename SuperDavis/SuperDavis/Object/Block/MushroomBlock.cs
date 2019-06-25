@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class MushroomBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public MushroomBlockStateMachine MushroomBlockStateMachine;
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public MushroomBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -30,13 +28,11 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
                 MushroomBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
                 MushroomBlockStateMachine.Draw(spriteBatch, Location);
         }
 

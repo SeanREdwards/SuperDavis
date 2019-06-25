@@ -81,11 +81,11 @@ namespace SuperDavis
                     controller.Update();
                 }
             }
-            if (World.Davises[0].Location.X < - 100 || World.Davises[0].Location.X > 4900 || World.Davises[0].Location.Y > 768)
+            if (World.Characters[0].Location.X < - 100 || World.Characters[0].Location.X > 4900 || World.Characters[0].Location.Y > 768)
             {
                 World.ResetGame();
             }
-            if (World.Davises[0].Remove)
+            if (World.Characters.Count == 0)
             {
                 if(deathTimer > 0)
                 {
@@ -125,7 +125,7 @@ namespace SuperDavis
 
         public void InitializeController()
         {
-            foreach (IDavis davis in World.Davises)
+            foreach (IDavis davis in World.Characters)
             {
                 controllerList = new List<IController>()
                 {
