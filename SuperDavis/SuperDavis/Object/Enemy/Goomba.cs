@@ -32,8 +32,8 @@ namespace SuperDavis.Object.Enemy
         public void Update(GameTime gameTime)
         {
 
-                PhysicsState.Update(gameTime);
-                goombaState.Update(gameTime);
+            PhysicsState.Update(gameTime);
+            goombaState.Update(gameTime);
 
             if (!Dead)
             {
@@ -41,6 +41,10 @@ namespace SuperDavis.Object.Enemy
                     Location += new Vector2(-1f, 0);
                 else
                     Location += new Vector2(1f, 0);
+            }
+            else
+            {
+                    Location = new Vector2(Location.X, 610);
             }
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height+10);
         }
