@@ -44,6 +44,7 @@ namespace SuperDavis.Worlds
             foreach (IDavis character in Characters)
             {
                 character.Update(gameTime);
+                character.HitBox = new Rectangle((int)character.Location.X, (int)character.Location.Y, (int)character.Sprite.Width, (int)character.Sprite.Height);
             }
             foreach (IItem item in Items)
             {

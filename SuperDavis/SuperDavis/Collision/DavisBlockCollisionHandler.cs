@@ -53,9 +53,10 @@ namespace SuperDavis.Collision
                             block.SpecialState();
                             world.ObjectToRemove.Add(block);
                         }
-                        else if (!block.IsBumped)
+                        else 
                         {
-                            block.IsBumped = true;
+                            var brick = (Brick)block;
+                            brick.IsBumped = true;
                         }
                     }
                     else if (block is MushroomBlock)
