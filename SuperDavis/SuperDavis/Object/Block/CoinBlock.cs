@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class CoinBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public CoinBlockStateMachine CoinBlockStateMachine;
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public CoinBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -30,14 +28,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-                CoinBlockStateMachine.Update(gameTime);
+            CoinBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                CoinBlockStateMachine.Draw(spriteBatch, Location);
+            CoinBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

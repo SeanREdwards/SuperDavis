@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class QuestionBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public QuestionBlockStateMachine QuestionBlockStateMachine;
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public QuestionBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             Location = location;
             QuestionBlockStateMachine = new QuestionBlockStateMachine(false);
@@ -29,14 +27,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-                QuestionBlockStateMachine.Update(gameTime);
+            QuestionBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                QuestionBlockStateMachine.Draw(spriteBatch, Location);
+            QuestionBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

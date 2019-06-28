@@ -3,7 +3,6 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-
     class StandingState : IGameObjectPhysics
     {
         // Idea, by passing different igameobject, implement different 

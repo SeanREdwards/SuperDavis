@@ -9,6 +9,7 @@ namespace SuperDavis.Command
         {
             game = gameClass;
         }
+
         public void Execute()
         {
             game.Exit();

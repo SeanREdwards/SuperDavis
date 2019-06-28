@@ -44,6 +44,7 @@ namespace SuperDavis.Physics
                 }
             }
         }
+
         public void Update(GameTime gameTime)
         {
             HorizontalVelocity += HorizontalAcceleration * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50;

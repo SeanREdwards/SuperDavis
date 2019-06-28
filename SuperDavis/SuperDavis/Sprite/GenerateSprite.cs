@@ -17,7 +17,6 @@ namespace SuperDavis.Sprite
         private int currentFrame;
         private readonly int totalFrames;
         private double currentTime;
-
         private const double frameTime = 0.08d; 
 
         public GenerateSprite(Texture2D texture, List<Color> blinkColorList, float scale, SpriteEffects flipDirection, params Rectangle[] frameCoords)

@@ -17,12 +17,12 @@ namespace SuperDavis.Collision
         /* CheckCollisions */
         public void CheckCollisions()
         {
-            CheckDavisBlockCollision(World.Davises, World.Blocks, World);
-            CheckDavisItemCollision(World.Davises, World.Items, World);
-            CheckDavisEnemyCollision(World.Davises, World.Enemies, World);
+            CheckDavisBlockCollision(World.Characters, World.Blocks, World);
+            CheckDavisItemCollision(World.Characters, World.Items, World);
+            CheckDavisEnemyCollision(World.Characters, World.Enemies, World);
             CheckEnemyBlockCollision(World.Enemies, World.Blocks, World);
             CheckProjectileBlockCollision(World.Projectiles, World.Blocks, World);
-            //CheckProjectileEnemyCollision(World.Projectiles, World.Enemies, World);
+            CheckProjectileEnemyCollision(World.Projectiles, World.Enemies, World);
         }
                    
         private static void CheckDavisBlockCollision(IList<IDavis> davises, IList<IBlock> blocks, IWorld world)
@@ -31,12 +31,8 @@ namespace SuperDavis.Collision
             {
                 foreach(IBlock block in blocks)
                 {
-                    if (!block.Remove)
-                    {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, block.HitBox), davis.HitBox, block.HitBox);
                         DavisBlockCollisionHandler.HandleCollision(davis, block, side, world);
-                    }
-                   
                 }
             }
         }
@@ -47,11 +43,8 @@ namespace SuperDavis.Collision
             {
                 foreach (IItem item in items)
                 {
-                    if (!item.Remove)
-                    {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(davis.HitBox, item.HitBox), davis.HitBox, item.HitBox);
                         DavisItemCollisionHandler.HandleCollision(davis, item, side, world);
-                    }
                 }
             }
         }
@@ -74,11 +67,8 @@ namespace SuperDavis.Collision
             {
                 foreach (IBlock block in blocks)
                 {
-                    if (!block.Remove)
-                    {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(enemy.HitBox, block.HitBox), enemy.HitBox, block.HitBox);
                         EnemyBlockCollisionHandler.HandleCollision(enemy, block, side, world);
-                    }
                 }
             }
         }
@@ -89,26 +79,32 @@ namespace SuperDavis.Collision
             {
                 foreach (IBlock block in blocks)
                 {
-                    if (!block.Remove)
-                    {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(item.HitBox, block.HitBox), item.HitBox, block.HitBox);
                         ItemBlockCollisionHandler.HandleCollision(item, block, side, world);
-                    }
                 }
             }
         }
 
         private static void CheckProjectileBlockCollision(IList<IProjectile> projectiles, IList<IBlock> blocks, IWorld world)
         {
-            foreach (IProjectile projectile in projectiles)
+            for (int i = 0; i < projectiles.Count ; i++)
             {
                 foreach (IBlock block in blocks)
                 {
-                    if (!block.Remove)
-                    {
-                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectile.HitBox, block.HitBox), projectile.HitBox, block.HitBox);
-                        ProjectileBlockCollisionHandler.HandleCollision(projectile, block, side, world);
-                    }
+                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectiles[i].HitBox, block.HitBox), projectiles[i].HitBox, block.HitBox);
+                    ProjectileBlockCollisionHandler.HandleCollision(projectiles[i], block, side, world);
+                }
+            }
+        }
+
+        private static void CheckProjectileEnemyCollision(IList<IProjectile> projectiles, IList<IEnemy> enemies, IWorld world)
+        {
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                foreach (IEnemy enemy in enemies)
+                {
+                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectiles[i].HitBox, enemy.HitBox), projectiles[i].HitBox, enemy.HitBox);
+                    ProjectileEnemyCollisionHandler.HandleCollision(projectiles[i], enemy, side, world);
                 }
             }
         }

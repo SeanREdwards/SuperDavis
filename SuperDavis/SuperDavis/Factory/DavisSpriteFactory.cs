@@ -232,14 +232,12 @@ namespace SuperDavis.Factory
         {
             _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
             return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
-
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
             _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
             return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
-
         }
 
         public ISprite BatExplodeRight()
