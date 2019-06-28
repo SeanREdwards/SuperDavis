@@ -18,11 +18,11 @@ namespace SuperDavis.Object.Character
 {
     class CharacterDictionary
     {
-        private Dictionary<string, Dictionary<string, ISprite>> characterDictionary;
+        private readonly Dictionary<string, Dictionary<string, ISprite>> characterDictionary;
 
         public CharacterDictionary() {
             characterDictionary = new Dictionary<string, Dictionary<string, ISprite>>() { { "Davis", CreateDavisDictionary() },
-            { "Woody", CreateWoodyDictionary()}, {"Bat", CreateBatDictionary() } };
+            { "Woody", CreateWoodyDictionary()}, {"Bat", CreateBatDictionary() }, {"Invincible", CreateInvincibleDavisDictionary() } };
         }
 
         private Dictionary<string, ISprite> CreateDavisDictionary()
@@ -81,6 +81,24 @@ namespace SuperDavis.Object.Character
                 { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateBatStaticRightSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateBatWalkLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateBatWalkRightSprite() }
+            };
+            return dict;
+        }
+
+        private Dictionary<string, ISprite> CreateInvincibleDavisDictionary()
+        {
+            Dictionary<string, ISprite> dict = new Dictionary<string, ISprite>
+            {
+                { "SuperDavis.State.DavisState.DavisCrouchLeftState", DavisSpriteFactory.Instance.CreateInvincibleDavisCrouchLeft() },
+                { "SuperDavis.State.DavisState.DavisCrouchRightState", DavisSpriteFactory.Instance.CreateInvincibleDavisCrouchRight() },
+                { "SuperDavis.State.DavisState.DavisJumpLeftState", DavisSpriteFactory.Instance.CreateInvincibleDavisJumpLeft() },
+                { "SuperDavis.State.DavisState.DavisJumpRightState", DavisSpriteFactory.Instance.CreateInvincibleDavisJumpRight() },
+                { "SuperDavis.State.DavisState.DavisSpecialAttackLeftState", DavisSpriteFactory.Instance.CreateInvincibleDavisSpecialAttackOneLeft() },
+                { "SuperDavis.State.DavisState.DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateInvincibleDavisSpecialAttackOneRight() },
+                { "SuperDavis.State.DavisState.DavisStaticLeftState", DavisSpriteFactory.Instance.CreateInvincibleDavisStaticLeftSprite() },
+                { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateInvincibleDavisStaticRightSprite() },
+                { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateInvincibleDavisWalkLeftSprite() },
+                { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateInvincibleDavisWalkRightSprite() }
             };
             return dict;
         }

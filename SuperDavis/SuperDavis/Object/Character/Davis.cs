@@ -138,6 +138,8 @@ namespace SuperDavis.Object.Character
         {
             DavisStatus = DavisStatus.Bat;
             DavisState = new DavisStaticRightState(this);
+
+            //DavisStatus.GetMethod().Name;
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
@@ -158,7 +160,8 @@ namespace SuperDavis.Object.Character
             /*
             PrevDavisStatus = DavisStatus;
             DavisStatus = DavisStatus.Invincible;
-            DavisState = new DavisStaticRightState(this);*/
+            DavisState = new DavisStaticRightState(this);
+            */
         }
     }
 }

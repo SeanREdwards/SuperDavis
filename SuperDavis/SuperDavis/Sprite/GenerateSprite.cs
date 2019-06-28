@@ -11,20 +11,19 @@ namespace SuperDavis.Sprite
         public float Height { get; set; }
         private readonly Texture2D texture;
         private readonly Rectangle[] spriteList;
-        private readonly List<Color> blinkColorList;
+        private List<Color> blinkColorList;
         private readonly float scale;
         private readonly SpriteEffects flipDirection;
         private int currentFrame;
         private readonly int totalFrames;
         private double currentTime;
-        private const double frameTime = 0.08d; 
+        private const double frameTime = 0.08d;
 
-        public GenerateSprite(Texture2D texture, List<Color> blinkColorList, float scale, SpriteEffects flipDirection, params Rectangle[] frameCoords)
-        {
-            this.texture = texture;
-            spriteList = frameCoords;
-            this.blinkColorList = blinkColorList;
-            this.scale = scale;
+        public GenerateSprite(SpriteRegistrar spriteInfo) { 
+            this.texture = spriteInfo.Texture;
+            spriteList = spriteInfo.SourceFrames;
+            this.blinkColorList = spriteInfo.ColorList;
+            this.scale = spriteInfo.Scale;
             this.flipDirection = flipDirection;
             totalFrames = spriteList.Length;
             currentFrame = 0;
@@ -54,5 +53,6 @@ namespace SuperDavis.Sprite
             Height = spriteList[currentFrame].Height;
             spriteBatch.Draw(this.texture, location, sourceRectangle, blinkColorList[currentFrame % blinkColorList.Count], 0f, Vector2.Zero, scale, flipDirection, 0f);
         }
+
     }
 }

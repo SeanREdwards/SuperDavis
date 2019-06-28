@@ -1,12 +1,10 @@
-﻿using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SuperDavis.Interfaces;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.State.DavisState;
 using SuperDavis.Interfaces;
+using SuperDavis.State.DavisState;
 using System.Collections.Generic;
+using SuperDavis.Physics;
+using SuperDavis.Object.Item;
 
 namespace SuperDavis.Object.Character
 {
@@ -29,11 +27,10 @@ namespace SuperDavis.Object.Character
         public InvincibleDavis(IDavis decoratedDavis)
         {
             this.decoratedDavis = decoratedDavis;
+            this.DavisStatus = DavisStatus.Invincible;
+            charDict = new CharacterDictionary();
         }
-        void TakeDamage()
-        {
-            // StarMario does not take damage
-        }
+
         public void Update(GameTime gameTime)
         {
             InvincibleTimer--;
@@ -45,7 +42,7 @@ namespace SuperDavis.Object.Character
         }
         void RemoveStar()
         {
-               //TODO Remove star
+               //TODO reassign the davis to original.
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -54,26 +51,49 @@ namespace SuperDavis.Object.Character
 
         public void DavisStatic()
         {
-            //do nothing
+            DavisState.Static();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            //do nothing
+            Location += new Vector2(-3, 0);
+            FacingLeft = true;
+            DavisState.Left();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisTurnRight()
         {
-            //do nothing
+            Location += new Vector2(3, 0);
+            FacingLeft = false;
+            DavisState.Right();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisJump()
         {
-            //do nothing
+            if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
+                PhysicsState = new JumpState(this);
+            DavisState.Up();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisCrouch()
         {
-            //do nothing
+            DavisState.Down();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
+
+        public void DavisLand()
+        {
+            DavisState.Land();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+        }
+
+        void TakeDamage()
+        {
+            // StarMario does not take damage
+        }
+
         public void DavisToDavis()
         {
             //Do nothing
@@ -88,17 +108,14 @@ namespace SuperDavis.Object.Character
         }
         public void DavisDeath()
         {
-            //do nothing
+            //do nothing, Davis cant die.
         }
         public void DavisSpecialAttack()
         {
-            //do nothing
+            DavisState.SpecialAttack();
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
-        public void DavisLand()
-        {
-            //do nothing
-        }
         public void DavisToInvincible()
         {
             //do nothing, already invincible.

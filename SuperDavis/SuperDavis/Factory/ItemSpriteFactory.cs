@@ -39,7 +39,7 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White}, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo);
         }
 
         /*Item Sprites*/
