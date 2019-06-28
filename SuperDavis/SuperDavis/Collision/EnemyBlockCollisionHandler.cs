@@ -15,8 +15,6 @@ namespace SuperDavis.Collision
             {
                 
                 case CollisionSide.Left:
-                    enemy.FacingRight = !enemy.FacingRight;
-                    break;
                 case CollisionSide.Right:
                     enemy.FacingLeft = !enemy.FacingLeft;
                     break;

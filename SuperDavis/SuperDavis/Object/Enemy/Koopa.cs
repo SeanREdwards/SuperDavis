@@ -17,6 +17,7 @@ namespace SuperDavis.Object.Enemy
         private readonly ISprite enemy;
         private IGameObjectState koopaStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
+        private readonly int groundLevel = 600;
 
         public Koopa(Vector2 location)
         {
@@ -27,12 +28,11 @@ namespace SuperDavis.Object.Enemy
             koopaStateMachine = new KoopaStateMachine(this);
             PhysicsState = new StandingState(this);
             enemy = koopaStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height+15);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width+16, (int)enemy.Height+15);
         }
 
         public void Update(GameTime gameTime)
         {
-
             koopaStateMachine.Update(gameTime);
             PhysicsState.Update(gameTime);
 
@@ -45,9 +45,9 @@ namespace SuperDavis.Object.Enemy
             }
             else
             {
-                Location = new Vector2(Location.X, 600);
+                Location = new Vector2(Location.X, groundLevel);
             }
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height+15);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width+16, (int)enemy.Height+15);
         }
 
         public void Draw(SpriteBatch spriteBatch)
