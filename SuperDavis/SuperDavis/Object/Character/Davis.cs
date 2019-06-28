@@ -2,12 +2,11 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.DavisState;
-using SuperDavis.Factory;
 using System.Collections.Generic;
 using SuperDavis.Physics;
 using SuperDavis.State.OtherState;
 using SuperDavis.Object.Item;
-using System;
+
 
 namespace SuperDavis.Object.Character
 {
@@ -24,8 +23,6 @@ namespace SuperDavis.Object.Character
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
         public int InvincibleTimer { get; set; }
-
-        //for seperating sprites and state
         public ISprite Sprite { get; set; }
 
         public Davis(Vector2 location)
@@ -61,10 +58,7 @@ namespace SuperDavis.Object.Character
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //for seperating sprite from state.
             Sprite.Draw(spriteBatch, Location);
-
-            //DavisState.Draw(spriteBatch, Location);
         }
 
         // Davis State Change Helper Method
@@ -153,7 +147,6 @@ namespace SuperDavis.Object.Character
         public void DavisDeath()
         {
             DavisState.Death();
-            Console.Out.WriteLine("Status: " + DavisStatus.ToString() + " State: " + DavisState.ToString());
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             Remove = true;
         }
@@ -165,9 +158,9 @@ namespace SuperDavis.Object.Character
         }
         public void DavisToInvincible()
         {
+
             /*
             PrevDavisStatus = DavisStatus;
-            DavisStatus = DavisStatus.Invincible;
             DavisState = new DavisStaticRightState(this);*/
         }
     }

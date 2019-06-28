@@ -16,6 +16,15 @@ namespace SuperDavis.Sprite
         public float FrameDelay { get; set; }
         public float Scale { get; set; }
         public string EffectName { get; set; }
+
+        //Standard generic color list is set to White
+        public List<Color> ColorList = new List<Color>{ Color.White };
+
         public SpriteEffects Effects { get; set; }
     }
+
+   /* public void SetInvicibleColors()
+    {
+
+    }*/
 }

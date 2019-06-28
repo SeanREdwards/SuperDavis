@@ -1,4 +1,13 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*
+ * CharacterDictionary.cs
+ * @Author Sean Edwards
+ * A one-stop-shop location to access character sprites in a flyweight pattern so that player sprites are only generated a single time and merely ascessed rather than
+ * created on every single sprite call. 
+ * 
+ * TODO Data drive the dictionary strings/sprite call tuples via JSON.
+ * 
+ */
+ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using System.Collections.Generic;
@@ -73,6 +82,7 @@ namespace SuperDavis.Object.Character
         public ISprite GetSprite(string charStr, string stateStr)
         {
             characterDictionary.TryGetValue(charStr, out Dictionary<string, ISprite> dict);
+            Console.Out.WriteLine(charStr + "          " + stateStr);
             dict.TryGetValue(stateStr,out ISprite sprite);
             return sprite;
         }

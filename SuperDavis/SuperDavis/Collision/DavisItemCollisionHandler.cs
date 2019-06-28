@@ -27,7 +27,7 @@ namespace SuperDavis.Collision
                 else if (item is Star)
                 {
                     davis.PrevDavisStatus = davis.DavisStatus;
-                    davis.DavisStatus = DavisStatus.Invincible;
+                    davis.DavisToInvincible();
                     davis.DavisState.Static();
                 }
                 item.Clear();
