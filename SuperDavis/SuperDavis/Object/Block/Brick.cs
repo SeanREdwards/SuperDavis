@@ -18,7 +18,6 @@ namespace SuperDavis.Object.Block
         public Brick(Vector2 location)
         {
             // initial state
-
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -48,8 +47,7 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
-                BrickStateMachine.Draw(spriteBatch, Location);
+            BrickStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

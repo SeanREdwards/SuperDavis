@@ -9,6 +9,7 @@ namespace SuperDavis.Command
         {
             world = worldClass;
         }
+
         public void Execute()
         {
             world.ResetGame();

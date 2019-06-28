@@ -84,7 +84,7 @@ namespace SuperDavis
 
             if (World.Characters.Count == 0)
             {
-                    World.ResetGame();                    
+                World.ResetGame();                    
             }
             else if (World.Characters[0].Location.X < -100 || World.Characters[0].Location.X > 4900 || World.Characters[0].Location.Y > 768)
             {

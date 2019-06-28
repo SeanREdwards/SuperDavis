@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.DavisState
@@ -18,6 +17,7 @@ namespace SuperDavis.State.DavisState
         }
 
         public void Static() { }
+
         public void Left()
         {
             davis.DavisState = new DavisStaticLeftState(davis);

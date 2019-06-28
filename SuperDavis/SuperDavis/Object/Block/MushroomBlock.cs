@@ -28,12 +28,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-                MushroomBlockStateMachine.Update(gameTime);
+            MushroomBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                MushroomBlockStateMachine.Draw(spriteBatch, Location);
+            MushroomBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

@@ -15,7 +15,6 @@ namespace SuperDavis.Worlds
     {
 
         public IGameObject[][] ObjectMap;     
-
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
         Dictionary<String, Action<float, float>> blockDictionary;
@@ -113,7 +112,6 @@ namespace SuperDavis.Worlds
             CreateEnemyDictionary();
             CreatePlayerDictionary();
             CreateBackgroundDictionary();
-
             XmlReader reader = XmlReader.Create("Content/level/" + levelFile);
             reader.ReadToFollowing("Object");
             while (reader.Read())

@@ -28,12 +28,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-                StarBlockStateMachine.Update(gameTime);
+            StarBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                StarBlockStateMachine.Draw(spriteBatch, Location);
+            StarBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

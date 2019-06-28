@@ -16,13 +16,13 @@ namespace SuperDavis.Collision
                 {
                     if(davis.DavisStatus != DavisStatus.Invincible)
                         davis.DavisStatus = DavisStatus.Bat;
-                    davis.DavisState.Static();
+                        davis.DavisState.Static();
                 }
                 else if (item is Mushroom)
                 {
                     if(davis.DavisStatus == DavisStatus.Davis)
                         davis.DavisStatus = DavisStatus.Woody;
-                    davis.DavisState.Static();
+                        davis.DavisState.Static();
                 }
                 else if (item is Star)
                 {

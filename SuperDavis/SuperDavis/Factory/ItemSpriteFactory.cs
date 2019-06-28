@@ -26,7 +26,6 @@ namespace SuperDavis.Factory
             {
                 spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
             }
-
         }
 
         private string GetMethodName()
@@ -118,7 +117,6 @@ namespace SuperDavis.Factory
         public ISprite CreateRightGreenFloor()
         {
             return Create(GetMethodName());
-
         }
 
         /*Pipes*/
@@ -126,6 +124,5 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
-
     }
 }

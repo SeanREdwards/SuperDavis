@@ -10,6 +10,7 @@ namespace SuperDavis.Object.Enemy
     class Goomba : IEnemy
     {
         public bool FacingLeft { get; set; }
+        public bool FacingRight { get; set; }
         public bool Dead { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }

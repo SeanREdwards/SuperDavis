@@ -28,12 +28,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-                FlowerBlockStateMachine.Update(gameTime);
+            FlowerBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                FlowerBlockStateMachine.Draw(spriteBatch, Location);
+            FlowerBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

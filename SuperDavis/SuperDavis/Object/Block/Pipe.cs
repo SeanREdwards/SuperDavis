@@ -31,7 +31,7 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                pipeStateMachine.Draw(spriteBatch, Location);
+            pipeStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState() { }

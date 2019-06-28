@@ -12,9 +12,11 @@ namespace SuperDavis.Collision
         public static void HandleCollision(IEnemy enemy, IBlock block, CollisionSide side, IWorld world)
         {
             switch(side)
-            { 
+            {
+                
                 case CollisionSide.Left:
-
+                    enemy.FacingRight = !enemy.FacingRight;
+                    break;
                 case CollisionSide.Right:
                     enemy.FacingLeft = !enemy.FacingLeft;
                     break;

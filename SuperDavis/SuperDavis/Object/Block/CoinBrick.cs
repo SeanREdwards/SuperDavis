@@ -29,7 +29,7 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-                BrickStateMachine.Update(gameTime);
+            BrickStateMachine.Update(gameTime);
             if (IsBumped)
             {
                 if (bumpTimer > 5)
@@ -42,13 +42,12 @@ namespace SuperDavis.Object.Block
                     IsBumped = false;
                 }
                 bumpTimer--;
-            }
-                
+            }     
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                BrickStateMachine.Draw(spriteBatch, Location);
+            BrickStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

@@ -27,6 +27,7 @@ namespace SuperDavis.Controller
                     pressedKeyList.Add(key);               
             }
         }
+
         public void Update()
         {
             /* Prevent the repeated pressed, credited to grader */
@@ -49,9 +50,7 @@ namespace SuperDavis.Controller
                         keyPressedCommandDict[key].Execute();
                 }
             }
-
             previousKeys = currentKeys;
-
         }
     }
 }

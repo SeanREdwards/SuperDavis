@@ -2,12 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.DavisState;
-using SuperDavis.Factory;
 using System.Collections.Generic;
 using SuperDavis.Physics;
-using SuperDavis.State.OtherState;
 using SuperDavis.Object.Item;
-using System;
 
 namespace SuperDavis.Object.Character
 {
@@ -79,7 +76,6 @@ namespace SuperDavis.Object.Character
                 DavisState.Left();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
-
         }
 
         public void DavisTurnRight()
@@ -91,7 +87,6 @@ namespace SuperDavis.Object.Character
                 DavisState.Right();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
-
         }
 
         public void DavisJump()
@@ -103,7 +98,6 @@ namespace SuperDavis.Object.Character
                 DavisState.Up();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
-
         }
 
         public void DavisCrouch()
@@ -113,7 +107,6 @@ namespace SuperDavis.Object.Character
                 DavisState.Down();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
-
         }
 
         public void DavisLand()
@@ -121,6 +114,7 @@ namespace SuperDavis.Object.Character
             DavisState.Land();
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
+
         public void TakeDamage()
         {
             DavisState.Death();

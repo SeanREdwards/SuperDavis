@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Item
     class BatProjectile : IProjectile
     {
         public bool FacingLeft { get; set; }
-
         public Vector2 Location { get; set; }
         private BatProjectileStateMachine BatProjectileStateMachine;
         private readonly ISprite projectile;
@@ -29,30 +28,26 @@ namespace SuperDavis.Object.Item
         public void Update(GameTime gameTime)
         {
 
-                BatProjectileStateMachine.Update(gameTime);
-                if(FacingLeft)
-                {
-                    Location += new Vector2(-8f, 0);
-                }
-                else
-                {
-                    Location += new Vector2(8f, 0);
-                }
-
+            BatProjectileStateMachine.Update(gameTime);
+            if(FacingLeft)
+            {
+                Location += new Vector2(-8f, 0);
+            }
+            else
+            {
+                Location += new Vector2(8f, 0);
+            }
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectile.Width, (int)projectile.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
-                BatProjectileStateMachine.Draw(spriteBatch, Location);
+            BatProjectileStateMachine.Draw(spriteBatch, Location);
         }
 
         public void Explode()
         {
             BatProjectileStateMachine = new BatProjectileStateMachine(true);
         }
-
-
     }
 }

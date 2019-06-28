@@ -13,6 +13,7 @@ namespace SuperDavis.Command
             this.davis = davis;
             this.world = world;
         }
+
         public void Execute()
         {
             if (davis.DavisProjectile.Count > 0 && davis.DavisStatus == DavisStatus.Bat)

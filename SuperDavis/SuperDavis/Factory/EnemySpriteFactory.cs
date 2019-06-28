@@ -38,7 +38,6 @@ namespace SuperDavis.Factory
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
-
             return stackFrame.GetMethod().Name;
         }
 
@@ -51,7 +50,6 @@ namespace SuperDavis.Factory
 
         public ISprite CreateGoombaMovingLeft()
         {
-
             return Create(GetMethodName());
         }
 
