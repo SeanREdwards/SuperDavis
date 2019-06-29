@@ -335,7 +335,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
-    <Content Include="Code Reviews\sprint4\Code Quality Review\PlaceholderFile.txt" />
     <Content Include="Content\Level\level1-1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
