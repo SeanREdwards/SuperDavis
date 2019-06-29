@@ -9,6 +9,7 @@ namespace SuperDavis.Command
         {
             this.game = game;
         }
+
         public void Execute()
         {
             game.IsMouseControllerOn = !game.IsMouseControllerOn;

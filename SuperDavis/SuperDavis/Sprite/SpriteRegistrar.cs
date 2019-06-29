@@ -2,13 +2,10 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Sprite
-{
-    class SpriteRegistrar
+{ 
+    internal class SpriteRegistrar
     {
         public String TextureName { get; set; }
         public Texture2D Texture { get; set; }
@@ -16,6 +13,16 @@ namespace SuperDavis.Sprite
         public float FrameDelay { get; set; }
         public float Scale { get; set; }
         public string EffectName { get; set; }
+
+        //Standard generic color list is set to White
+        public List<Color> ColorList = new List<Color>{ Color.White };
+
         public SpriteEffects Effects { get; set; }
+        public SpriteRegistrar() { }
     }
+
+   /* public void SetInvicibleColors()
+    {
+
+    }*/
 }

@@ -3,7 +3,6 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
-using SuperDavis.State.DavisState;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -20,13 +19,7 @@ namespace SuperDavis.Collision
                     // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
                     if (block is HiddenBlock && davis.PhysicsState is JumpState)
                     {
-                        var hiddenBlock = (HiddenBlock)block;
                         block.SpecialState();
-                        if (hiddenBlock.CoinCounter > 0)
-                        {
-                            world.Items.Add(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
-                            hiddenBlock.CoinCounter--;
-                        }
                     }
                     if (block is CoinBrick && davis.PhysicsState is JumpState)
                     {
@@ -40,7 +33,7 @@ namespace SuperDavis.Collision
                         else 
                         {
                             coinBrick.SpecialState();
-                            coinBrick.Remove = true;  
+                            world.ObjectToRemove.Add(block);
                         }
                     }
                     else if (block is QuestionBlock)
@@ -52,11 +45,12 @@ namespace SuperDavis.Collision
                         if (davis.DavisStatus != DavisStatus.Davis)
                         {
                             block.SpecialState();
-                            block.Remove = true;
+                            world.ObjectToRemove.Add(block);
                         }
-                        else if (!block.IsBumped)
+                        else 
                         {
-                            block.IsBumped = true;
+                            var brick = (Brick)block;
+                            brick.IsBumped = true;
                         }
                     }
                     else if (block is MushroomBlock)
@@ -105,7 +99,6 @@ namespace SuperDavis.Collision
                             davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                             davis.PhysicsState = new StandingState(davis);
                             davis.DavisState.Land();
-                            //davis.PhysicsState.ApplyForce(new Vector2(0, -5f));
                     }
                     break;
                 case CollisionSide.Left:

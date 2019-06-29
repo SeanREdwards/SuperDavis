@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class FlowerBlock : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public FlowerBlockStateMachine FlowerBlockStateMachine;
@@ -19,7 +18,6 @@ namespace SuperDavis.Object.Block
         public FlowerBlock(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -30,14 +28,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-                FlowerBlockStateMachine.Update(gameTime);
+            FlowerBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                FlowerBlockStateMachine.Draw(spriteBatch, Location);
+            FlowerBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

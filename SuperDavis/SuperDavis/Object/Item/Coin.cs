@@ -9,9 +9,8 @@ namespace SuperDavis.Object.Item
     {
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-        public bool Remove { get; set; }
         public Vector2 Location { get; set; }
-        public Rectangle HitBox { get;set; }
+        public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly CoinStateMachine coinStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
@@ -19,7 +18,7 @@ namespace SuperDavis.Object.Item
         public Coin(Vector2 location)
         {
             // initial state
-            Remove = false;
+
             IsAnimated = false;
             Location = location;
             coinStateMachine = new CoinStateMachine();
@@ -29,38 +28,32 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
+
+            coinStateMachine.Update(gameTime);
+            if (!IsAnimated)
             {
-                coinStateMachine.Update(gameTime);
-                if (!IsAnimated)
+                if (timer > 10)
                 {
-                    if (timer > 10)
-                    {
-                        Location += new Vector2(0, -3f);
-                        timer--;
-                    }else if(timer > 0)
-                    {
-                        Location += new Vector2(0, 3f);
-                        timer--;
-                    }                    
-                    else
-                    {
-                        timer = 20;
-                        IsAnimated = true;
-                    }
+                    Location += new Vector2(0, -3f);
+                    timer--;
+                } else if (timer > 0)
+                {
+                    Location += new Vector2(0, 3f);
+                    timer--;
+                }
+                else
+                {
+                    timer = 20;
+                    IsAnimated = true;
                 }
             }
         }
-
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                coinStateMachine.Draw(spriteBatch, Location);
-        }
-
-        public void Clear()
-        {
-            Remove = true;
+            coinStateMachine.Draw(spriteBatch, Location);
         }
     }
+
+
 }
+

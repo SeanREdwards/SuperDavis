@@ -17,16 +17,14 @@ namespace SuperDavis.Sprite
         private int currentFrame;
         private readonly int totalFrames;
         private double currentTime;
+        private const double frameTime = 0.08d;
 
-        private const double frameTime = 0.08d; 
-
-        public GenerateSprite(Texture2D texture, List<Color> blinkColorList, float scale, SpriteEffects flipDirection, params Rectangle[] frameCoords)
-        {
-            this.texture = texture;
-            spriteList = frameCoords;
-            this.blinkColorList = blinkColorList;
-            this.scale = scale;
-            this.flipDirection = flipDirection;
+        public GenerateSprite(SpriteRegistrar spriteInfo) { 
+            this.texture = spriteInfo.Texture;
+            spriteList = spriteInfo.SourceFrames;
+            this.blinkColorList = spriteInfo.ColorList;
+            this.scale = spriteInfo.Scale;
+            this.flipDirection = SpriteEffects.None;
             totalFrames = spriteList.Length;
             currentFrame = 0;
             // Initialize the first frame of hitbox width and height
@@ -55,5 +53,6 @@ namespace SuperDavis.Sprite
             Height = spriteList[currentFrame].Height;
             spriteBatch.Draw(this.texture, location, sourceRectangle, blinkColorList[currentFrame % blinkColorList.Count], 0f, Vector2.Zero, scale, flipDirection, 0f);
         }
+
     }
 }

@@ -33,10 +33,10 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White}, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo);
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
@@ -44,19 +44,19 @@ namespace SuperDavis.Factory
             return stackFrame.GetMethod().Name;
         }
 
-        public ISprite MarioHillsGreen()
+        /*public ISprite MarioHillsGreen()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite NightAnimated()
         {
             return Create(GetMethodName());
         }
 
-        public ISprite GhostHouseAnimated()
+        /*public ISprite GhostHouseAnimated()
         {
             return Create(GetMethodName());
-        }
+        }*/
     }
 }

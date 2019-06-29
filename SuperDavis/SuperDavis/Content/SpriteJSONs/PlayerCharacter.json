@@ -754,7 +754,7 @@
     "Scale": 1
   },
 
-  "BatCrouchRight": {
+  "CreateBatCrouchRight": {
     "TextureName": "BatSprites/BatRight_0",
     "SourceFrames": [
       {
@@ -982,6 +982,331 @@
         "Y": 106,
         "Width": 33,
         "Height": 32
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisStaticLeftSprite": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 744,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1,
+    "Effect": "SpriteEffects.None"
+  },
+
+  "CreateInvincibleDavisStaticRightSprite": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 19,
+        "Y": 0,
+        "Width": 37,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisWalkLeftSprite": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 504,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 424,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 344,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      },
+      {
+        "X": 264,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 183,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisWalkRightSprite": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 258,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 338,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 421,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      },
+      {
+        "X": 502,
+        "Y": 0,
+        "Width": 34,
+        "Height": 80
+      },
+      {
+        "X": 582,
+        "Y": 0,
+        "Width": 35,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisCrouchLeft": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 740,
+        "Y": 480,
+        "Width": 36,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisCrouchRight": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 24,
+        "Y": 480,
+        "Width": 36,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisJumpLeft": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 575,
+        "Y": 480,
+        "Width": 45,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisJumpRight": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 180,
+        "Y": 480,
+        "Width": 45,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisDeathLeft": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 401,
+        "Y": 320,
+        "Width": 79,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisDeathRight": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 320,
+        "Y": 320,
+        "Width": 79,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisSpecialAttackOneLeft": {
+    "TextureName": "DavisSprites/DavisLeft_2",
+    "SourceFrames": [
+      {
+        "X": 720,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 640,
+        "Y": 0,
+        "Width": 41,
+        "Height": 80
+      },
+      {
+        "X": 560,
+        "Y": 0,
+        "Width": 48,
+        "Height": 80
+      },
+      {
+        "X": 480,
+        "Y": 0,
+        "Width": 56,
+        "Height": 80
+      },
+      {
+        "X": 400,
+        "Y": 0,
+        "Width": 66,
+        "Height": 80
+      },
+      {
+        "X": 320,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 240,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 160,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      },
+      {
+        "X": 80,
+        "Y": 0,
+        "Width": 63,
+        "Height": 80
+      },
+      {
+        "X": 0,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateInvincibleDavisSpecialAttackOneRight": {
+    "TextureName": "DavisSprites/DavisRight_2",
+    "SourceFrames": [
+      {
+        "X": 18,
+        "Y": 0,
+        "Width": 38,
+        "Height": 80
+      },
+      {
+        "X": 97,
+        "Y": 0,
+        "Width": 41,
+        "Height": 80
+      },
+      {
+        "X": 181,
+        "Y": 0,
+        "Width": 48,
+        "Height": 80
+      },
+      {
+        "X": 261,
+        "Y": 0,
+        "Width": 56,
+        "Height": 80
+      },
+      {
+        "X": 332,
+        "Y": 0,
+        "Width": 66,
+        "Height": 80
+      },
+      {
+        "X": 421,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 501,
+        "Y": 0,
+        "Width": 42,
+        "Height": 80
+      },
+      {
+        "X": 581,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
+      },
+      {
+        "X": 655,
+        "Y": 0,
+        "Width": 63,
+        "Height": 80
+      },
+      {
+        "X": 725,
+        "Y": 0,
+        "Width": 55,
+        "Height": 80
       }
     ],
     "FrameDelay": 0.08,

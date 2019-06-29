@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
     class CoinBrick : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
@@ -20,7 +19,6 @@ namespace SuperDavis.Object.Block
         public CoinBrick(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             IsBumped = false;
             Location = location;
@@ -31,8 +29,7 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            if (!Remove)
-                BrickStateMachine.Update(gameTime);
+            BrickStateMachine.Update(gameTime);
             if (IsBumped)
             {
                 if (bumpTimer > 5)
@@ -45,31 +42,18 @@ namespace SuperDavis.Object.Block
                     IsBumped = false;
                 }
                 bumpTimer--;
-            }
-                
+            }     
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                BrickStateMachine.Draw(spriteBatch, Location);
+            BrickStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()
         {
             BrickStateMachine = new BrickStateMachine(true);
         }
-
-        public void Bump()
-        {
-            for(int i =0; i<30;i++)
-            {
-                Location += new Vector2(0, -0.5f);
-            }
-            for(int i = 0; i<30;i++ )
-            {
-                Location += new Vector2(0, 0.5f);
-            }
-        }
+      
     }
 }

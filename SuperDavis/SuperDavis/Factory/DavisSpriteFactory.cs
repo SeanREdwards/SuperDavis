@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -25,6 +26,7 @@ namespace SuperDavis.Factory
 
         /*Sprite Registrar to parse JSONs*/
         private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
+        private List<Color> invincibleColors;
 
         public void Load(ContentManager content)
         {
@@ -35,10 +37,10 @@ namespace SuperDavis.Factory
                 spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
 
             }
-
+            invincibleColors = new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black };
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
@@ -49,7 +51,14 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture,  new List<Color> { Color.White}, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo);
+        }
+
+        private ISprite CreateInvincible(string key)
+        {
+            _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
+            spriteInfo.ColorList = invincibleColors;
+            return new GenerateSprite(spriteInfo);
         }
 
         public ISprite CreateDavisStaticLeftSprite()
@@ -229,16 +238,16 @@ namespace SuperDavis.Factory
         /*Advanced Bat Sprites*/
         public ISprite CreateBatSpecialAttackOneLeft()
         {
-            _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
-
+            return Create(GetMethodName());
+           // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+           // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
-            _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
-
+            return Create(GetMethodName());
+           // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+           // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         public ISprite BatExplodeRight()
@@ -246,9 +255,61 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite BatExplodeLeft()
+        /*public ISprite BatExplodeLeft()
         {
             return Create(GetMethodName());
+        }*/
+
+        /*Invincible Davis.*/
+
+        public ISprite CreateInvincibleDavisStaticLeftSprite()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisStaticRightSprite()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisWalkLeftSprite()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisWalkRightSprite()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisCrouchLeft()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisCrouchRight()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisJumpLeft()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisJumpRight()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisSpecialAttackOneLeft()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateInvincibleDavisSpecialAttackOneRight()
+        {
+            return CreateInvincible(GetMethodName());
         }
     }
 }

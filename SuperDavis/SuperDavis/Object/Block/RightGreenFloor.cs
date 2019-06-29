@@ -9,25 +9,20 @@ namespace SuperDavis.Object.Block
     class RightGreenFloor : IBlock
     {
         public bool IsBumped { get; set; }
-        public bool Remove { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
+        private readonly ISprite sprite;
 
-        private ISprite sprite;
-
-        private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 
         public RightGreenFloor(Vector2 location)
         {
             // initial state
-            Remove = false;
             IsHidden = false;
             Location = location;
 
             //Re-use of activatedBlockStateMachine since floor ultimately functions like an activated block.
-            activatedBlockStateMachine = new ActivatedBlockStateMachine();
 
             sprite = ItemSpriteFactory.Instance.CreateRightGreenFloor();
 
@@ -42,8 +37,7 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (!Remove)
-                sprite.Draw(spriteBatch, Location);
+            sprite.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

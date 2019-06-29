@@ -1,14 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Physics
 {
-    class DavisPhysicsState : IGameObjectPhysics
+    /*class DavisPhysicsState : IGameObjectPhysics
     {
         private readonly IDavis davis;
         public float HorizontalVelocity { get; set; }
@@ -49,11 +44,12 @@ namespace SuperDavis.Physics
                 }
             }
         }
+
         public void Update(GameTime gameTime)
         {
             HorizontalVelocity += HorizontalAcceleration * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50;
             VerticalVelocity += VerticalAcceleration * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50;
             davis.Location += new Vector2(HorizontalVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50, VerticalVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50);
         }
-    }
+    }*/
 }

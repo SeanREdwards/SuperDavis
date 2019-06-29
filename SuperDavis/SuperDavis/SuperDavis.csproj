@@ -66,6 +66,9 @@
     <None Include="Code Reviews\sprint3\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint3\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint3\Readability Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint4\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint4\Code Quality Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint4\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
@@ -220,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\Camera.cs" />
+    <Compile Include="Collision\ProjectileEnemyCollisionHandler.cs" />
     <Compile Include="Collision\ProjectileBlockCollisionHandler.cs" />
     <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
@@ -245,6 +249,8 @@
     <Compile Include="Object\Block\CoinBlock.cs" />
     <Compile Include="Object\Block\MushroomBlock.cs" />
     <Compile Include="Object\Block\RightGreenFloor.cs" />
+    <Compile Include="Object\Character\CharacterDictionary.cs" />
+    <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Physics\StandingState.cs" />
@@ -331,7 +337,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
-    <Content Include="Code Reviews\sprint4\Code Quality Review\PlaceholderFile.txt" />
     <Content Include="Content\Level\level1-1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

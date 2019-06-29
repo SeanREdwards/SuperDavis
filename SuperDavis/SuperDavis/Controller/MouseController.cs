@@ -15,7 +15,7 @@ namespace SuperDavis.Controller
          public void Update()
          {
             MouseState mouseState = Mouse.GetState();
-            foreach (IDavis davis in game.World.Davises) { 
+            foreach (IDavis davis in game.World.Characters) { 
                 davis.Location = new Vector2(mouseState.X, mouseState.Y);
             }
          }

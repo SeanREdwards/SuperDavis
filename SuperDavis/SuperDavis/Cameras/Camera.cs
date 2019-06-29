@@ -1,11 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Cameras
 {
@@ -24,7 +18,7 @@ namespace SuperDavis.Cameras
 
         public Matrix Draw()
         {
-            foreach (IDavis davis in world.Davises)
+            foreach (IDavis davis in world.Characters)
             {
                 if (davis.Location.X <= width / 2)
                 {
@@ -41,6 +35,5 @@ namespace SuperDavis.Cameras
             }
             return matrix;
         }
-
     }
 }

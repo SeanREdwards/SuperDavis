@@ -15,7 +15,6 @@ namespace SuperDavis.Worlds
     {
 
         public IGameObject[][] ObjectMap;     
-
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
         Dictionary<String, Action<float, float>> blockDictionary;
@@ -90,7 +89,7 @@ namespace SuperDavis.Worlds
         {
             playerDictionary = new Dictionary<String, Action<float, float>>
             {
-                { nameof(Davis), (x, y) => world.Davises.Add(new Davis(new Vector2(x, y))) }
+                { nameof(Davis), (x, y) => world.Characters.Add(new Davis(new Vector2(x, y))) }
             };
         }
 
@@ -113,7 +112,6 @@ namespace SuperDavis.Worlds
             CreateEnemyDictionary();
             CreatePlayerDictionary();
             CreateBackgroundDictionary();
-
             XmlReader reader = XmlReader.Create("Content/level/" + levelFile);
             reader.ReadToFollowing("Object");
             while (reader.Read())
@@ -168,9 +166,9 @@ namespace SuperDavis.Worlds
 
         // Helper method to create object map
         // should be move to world.cs
-        private void SetObjectMap(IGameObject gameObject, float x, float y)
+        /*private void SetObjectMap(IGameObject gameObject, float x, float y)
         {
             ObjectMap[(int)Math.Floor(x / world.Width)][(int)Math.Floor(x / world.Width)] = gameObject;
-        }
+        }*/
     }
 }

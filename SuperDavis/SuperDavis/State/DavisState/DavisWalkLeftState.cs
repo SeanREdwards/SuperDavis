@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.DavisState
@@ -15,25 +14,6 @@ namespace SuperDavis.State.DavisState
         public DavisWalkLeftState(IDavis davis)
         {
             this.davis = davis;
-            switch(davis.DavisStatus)
-            {
-                case DavisStatus.Davis:
-                    Sprite = DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite();
-                    break;
-                case DavisStatus.Woody:
-                    Sprite = DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite();
-                    break;
-                case DavisStatus.Bat:
-                    Sprite = DavisSpriteFactory.Instance.CreateBatWalkLeftSprite();
-                    break;
-                case DavisStatus.Invincible:
-                    Sprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
-                    break;
-                default:
-                    break;
-            }
-            Width = Sprite.Width;
-            Height = Sprite.Height;
         }
 
         public void Static()
@@ -61,9 +41,10 @@ namespace SuperDavis.State.DavisState
         {
 
         }
+
         public void Death()
         {
-            davis.DavisState = new DavisDeathLeftState(davis);
+            davis.DavisState = new DavisDeathLeftState();
         }
 
         public void SpecialAttack()

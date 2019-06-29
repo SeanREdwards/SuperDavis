@@ -34,31 +34,29 @@ namespace SuperDavis.Factory
 
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
-
             return stackFrame.GetMethod().Name;
         }
 
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White }, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo);
         }
 
 
-        public ISprite CreateGoombaMovingLeft()
+       /* public ISprite CreateGoombaMovingLeft()
         {
-
             return Create(GetMethodName());
         }
 
         public ISprite CreateGoombaWalkLeft()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
 
         public ISprite CreateGoombaWalkRight()
@@ -71,34 +69,34 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateKoopaGreenStaticLeft()
+        /*public ISprite CreateKoopaGreenStaticLeft()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
-        public ISprite CreateKoopaGreenStaticRight()
+       /* public ISprite CreateKoopaGreenStaticRight()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateKoopaGreenWalkLeft()
         {
             return Create(GetMethodName());
         }
 
-        public ISprite CreateKoopaGreenWalkRight()
+       /* public ISprite CreateKoopaGreenWalkRight()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateKoopaGreenShellAnimatedLeft()
         {
             return Create(GetMethodName());
         }
 
-        public ISprite CreateKoopaGreenShellAnimatedRight()
+        /*public ISprite CreateKoopaGreenShellAnimatedRight()
         {
             return Create(GetMethodName());
-        }
+        }*/
     }
 }

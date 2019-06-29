@@ -26,10 +26,9 @@ namespace SuperDavis.Factory
             {
                 spriteRegistrar.Value.Texture = content.Load<Texture2D>(spriteRegistrar.Value.TextureName);
             }
-
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
@@ -40,7 +39,7 @@ namespace SuperDavis.Factory
         private ISprite Create(string key)
         {
             _spriteRegistrars.TryGetValue(key, out SpriteRegistrar spriteInfo);
-            return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White}, spriteInfo.Scale, SpriteEffects.None, spriteInfo.SourceFrames);
+            return new GenerateSprite(spriteInfo);
         }
 
         /*Item Sprites*/
@@ -90,20 +89,20 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateSkullBlock()
+       /* public ISprite CreateSkullBlock()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
-        public ISprite CreateSpinBlockStatic()
+        /*public ISprite CreateSpinBlockStatic()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
-        public ISprite CreateSpinBlockAnimated()
+       /* public ISprite CreateSpinBlockAnimated()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateLeftGreenFloor()
         {
@@ -118,7 +117,6 @@ namespace SuperDavis.Factory
         public ISprite CreateRightGreenFloor()
         {
             return Create(GetMethodName());
-
         }
 
         /*Pipes*/
@@ -126,6 +124,5 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
-
     }
 }

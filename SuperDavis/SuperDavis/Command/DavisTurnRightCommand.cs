@@ -9,6 +9,7 @@ namespace SuperDavis.Command
         {
             this.davis = davis;
         }
+
         public void Execute()
         {
             davis.DavisTurnRight();
