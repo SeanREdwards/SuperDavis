@@ -43,7 +43,7 @@ namespace SuperDavis.State.DavisState
         }
         public void Death()
         {
-            davis.DavisState = new DavisDeathRightState(davis);
+            davis.DavisState = new DavisDeathRightState();
         }
 
         public void SpecialAttack()

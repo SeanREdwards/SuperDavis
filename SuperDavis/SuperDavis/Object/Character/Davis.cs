@@ -115,10 +115,10 @@ namespace SuperDavis.Object.Character
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
-        public void TakeDamage()
+       /* public void TakeDamage()
         {
             DavisState.Death();
-        }
+        }*/
 
         public void DavisToDavis()
         {

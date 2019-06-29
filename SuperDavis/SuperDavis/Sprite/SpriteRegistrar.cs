@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 
 namespace SuperDavis.Sprite
-{
-    class SpriteRegistrar
+{ 
+    internal class SpriteRegistrar
     {
         public String TextureName { get; set; }
         public Texture2D Texture { get; set; }
@@ -18,6 +18,7 @@ namespace SuperDavis.Sprite
         public List<Color> ColorList = new List<Color>{ Color.White };
 
         public SpriteEffects Effects { get; set; }
+        public SpriteRegistrar() { }
     }
 
    /* public void SetInvicibleColors()

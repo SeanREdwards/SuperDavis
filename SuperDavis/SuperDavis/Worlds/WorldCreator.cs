@@ -166,9 +166,9 @@ namespace SuperDavis.Worlds
 
         // Helper method to create object map
         // should be move to world.cs
-        private void SetObjectMap(IGameObject gameObject, float x, float y)
+        /*private void SetObjectMap(IGameObject gameObject, float x, float y)
         {
             ObjectMap[(int)Math.Floor(x / world.Width)][(int)Math.Floor(x / world.Width)] = gameObject;
-        }
+        }*/
     }
 }

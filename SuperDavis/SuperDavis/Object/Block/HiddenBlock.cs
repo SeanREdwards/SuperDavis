@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Block
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        public int CoinCounter = 5;
+
         public HiddenBlock(Vector2 location)
         {
             // initial state

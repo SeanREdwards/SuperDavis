@@ -28,7 +28,7 @@ namespace SuperDavis.Factory
             }
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
@@ -89,20 +89,20 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateSkullBlock()
+       /* public ISprite CreateSkullBlock()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
-        public ISprite CreateSpinBlockStatic()
+        /*public ISprite CreateSpinBlockStatic()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
-        public ISprite CreateSpinBlockAnimated()
+       /* public ISprite CreateSpinBlockAnimated()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateLeftGreenFloor()
         {

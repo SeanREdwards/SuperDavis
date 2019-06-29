@@ -8,7 +8,7 @@ using SuperDavis.Object.Item;
 
 namespace SuperDavis.Object.Character
 {
-    class InvincibleDavis : IDavis
+    /*class InvincibleDavis : IDavis
     {
         IDavis decoratedDavis;
         public int InvincibleTimer { get; set; }
@@ -121,4 +121,5 @@ namespace SuperDavis.Object.Character
             //do nothing, already invincible.
         }
     }
+    */
 }

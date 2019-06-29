@@ -3,7 +3,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-    class DavisPhysicsState : IGameObjectPhysics
+    /*class DavisPhysicsState : IGameObjectPhysics
     {
         private readonly IDavis davis;
         public float HorizontalVelocity { get; set; }
@@ -51,5 +51,5 @@ namespace SuperDavis.Physics
             VerticalVelocity += VerticalAcceleration * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50;
             davis.Location += new Vector2(HorizontalVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50, VerticalVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50);
         }
-    }
+    }*/
 }

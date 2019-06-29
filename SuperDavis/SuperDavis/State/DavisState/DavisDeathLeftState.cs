@@ -8,12 +8,12 @@ namespace SuperDavis.State.DavisState
     {
         public float Width { get; set; }
         public float Height { get; set; }
-        private readonly IDavis davis;
+
         public ISprite Sprite { get; set; }
         private int timer = 100;
-        public DavisDeathLeftState(IDavis davis)
+        public DavisDeathLeftState()
         {
-            this.davis = davis;
+
         }
 
         public void Static(){ }

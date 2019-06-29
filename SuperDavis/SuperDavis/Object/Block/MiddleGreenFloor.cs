@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Block
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly ISprite sprite;
-        private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
+
 
         public MiddleGreenFloor(Vector2 location)
         {
@@ -23,7 +23,7 @@ namespace SuperDavis.Object.Block
             Location = location;
 
             //Re-use of activatedBlockStateMachine since floor ultimately functions like an activated block.
-            activatedBlockStateMachine = new ActivatedBlockStateMachine();
+
             sprite = ItemSpriteFactory.Instance.CreateMiddleGreenFloor();
 
             //Hitbox size for all green floor tiles is same size

@@ -40,7 +40,7 @@ namespace SuperDavis.Factory
             invincibleColors = new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black };
         }
 
-        private string GetMethodName()
+        private static string GetMethodName()
         {
             var stackTrace = new StackTrace();
             var stackFrame = stackTrace.GetFrame(1);
@@ -255,10 +255,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite BatExplodeLeft()
+        /*public ISprite BatExplodeLeft()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         /*Invincible Davis.*/
 

@@ -5,7 +5,7 @@ using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
 {
-    class ItemBlockCollisionHandler
+    /*class ItemBlockCollisionHandler
     {
         private ItemBlockCollisionHandler() { }
         public static void HandleCollision(IItem item, IBlock block, CollisionSide side, IWorld world)
@@ -25,5 +25,5 @@ namespace SuperDavis.Collision
                     break;
             }
         }
-    }
+    }*/
 }

@@ -11,6 +11,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Sprite;
 using SuperDavis.Worlds;
 
 /*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
@@ -26,7 +27,7 @@ namespace SuperDavis
         private List<IController> controllerList;
         public CollisionDetection collisionDetection;
         private Camera camera;
-        private int deathTimer = 100;
+
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
 

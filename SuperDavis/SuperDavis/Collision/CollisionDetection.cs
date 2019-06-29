@@ -20,7 +20,7 @@ namespace SuperDavis.Collision
             CheckDavisBlockCollision(World.Characters, World.Blocks, World);
             CheckDavisItemCollision(World.Characters, World.Items, World);
             CheckDavisEnemyCollision(World.Characters, World.Enemies, World);
-            CheckEnemyBlockCollision(World.Enemies, World.Blocks, World);
+            CheckEnemyBlockCollision(World.Enemies, World.Blocks);
             CheckProjectileBlockCollision(World.Projectiles, World.Blocks, World);
             CheckProjectileEnemyCollision(World.Projectiles, World.Enemies, World);
         }
@@ -61,19 +61,19 @@ namespace SuperDavis.Collision
             }
         }
 
-        private static void CheckEnemyBlockCollision(IList<IEnemy> enemies, IList<IBlock> blocks, IWorld world)
+        private static void CheckEnemyBlockCollision(IList<IEnemy> enemies, IList<IBlock> blocks)
         {
             foreach (IEnemy enemy in enemies)
             {
                 foreach (IBlock block in blocks)
                 {
                         CollisionSide side = GetCollisionSide(Rectangle.Intersect(enemy.HitBox, block.HitBox), enemy.HitBox, block.HitBox);
-                        EnemyBlockCollisionHandler.HandleCollision(enemy, block, side, world);
+                        EnemyBlockCollisionHandler.HandleCollision(enemy, block, side);
                 }
             }
         }
 
-        private static void CheckItemBlockCollision(IList<IItem> items, IList<IBlock> blocks, IWorld world)
+        /*private static void CheckItemBlockCollision(IList<IItem> items, IList<IBlock> blocks, IWorld world)
         {
             foreach (IItem item in items)
             {
@@ -83,7 +83,7 @@ namespace SuperDavis.Collision
                         ItemBlockCollisionHandler.HandleCollision(item, block, side, world);
                 }
             }
-        }
+        }*/
 
         private static void CheckProjectileBlockCollision(IList<IProjectile> projectiles, IList<IBlock> blocks, IWorld world)
         {
@@ -92,7 +92,7 @@ namespace SuperDavis.Collision
                 foreach (IBlock block in blocks)
                 {
                     CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectiles[i].HitBox, block.HitBox), projectiles[i].HitBox, block.HitBox);
-                    ProjectileBlockCollisionHandler.HandleCollision(projectiles[i], block, side, world);
+                    ProjectileBlockCollisionHandler.HandleCollision(projectiles[i], side, world);
                 }
             }
         }

@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Item
         private readonly ISprite projectile;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int timer = 35;
+ 
         public BatProjectile(Vector2 location, bool FacingLeft)
         {
             // initial state

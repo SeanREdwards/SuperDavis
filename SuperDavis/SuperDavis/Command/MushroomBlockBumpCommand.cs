@@ -2,11 +2,11 @@
 
 namespace SuperDavis.Command
 {
-    class MushroomBlockBumpCommand : ICommand
+    /*class MushroomBlockBumpCommand : ICommand
     {
         public void Execute()
         {
             throw new System.NotImplementedException();
         }
-    }
+    }*/
 }

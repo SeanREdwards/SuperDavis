@@ -19,13 +19,7 @@ namespace SuperDavis.Collision
                     // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
                     if (block is HiddenBlock && davis.PhysicsState is JumpState)
                     {
-                        var hiddenBlock = (HiddenBlock)block;
                         block.SpecialState();
-                        if (hiddenBlock.CoinCounter > 0)
-                        {
-                            world.Items.Add(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
-                            hiddenBlock.CoinCounter--;
-                        }
                     }
                     if (block is CoinBrick && davis.PhysicsState is JumpState)
                     {

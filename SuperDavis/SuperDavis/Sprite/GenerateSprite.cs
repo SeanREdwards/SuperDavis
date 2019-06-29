@@ -11,7 +11,7 @@ namespace SuperDavis.Sprite
         public float Height { get; set; }
         private readonly Texture2D texture;
         private readonly Rectangle[] spriteList;
-        private List<Color> blinkColorList;
+        private readonly List<Color> blinkColorList;
         private readonly float scale;
         private readonly SpriteEffects flipDirection;
         private int currentFrame;
@@ -24,7 +24,7 @@ namespace SuperDavis.Sprite
             spriteList = spriteInfo.SourceFrames;
             this.blinkColorList = spriteInfo.ColorList;
             this.scale = spriteInfo.Scale;
-            this.flipDirection = flipDirection;
+            this.flipDirection = SpriteEffects.None;
             totalFrames = spriteList.Length;
             currentFrame = 0;
             // Initialize the first frame of hitbox width and height

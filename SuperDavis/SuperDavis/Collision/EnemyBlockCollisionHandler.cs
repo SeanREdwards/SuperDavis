@@ -8,7 +8,7 @@ namespace SuperDavis.Collision
     class EnemyBlockCollisionHandler
     {
         private EnemyBlockCollisionHandler() { }
-        public static void HandleCollision(IEnemy enemy, IBlock block, CollisionSide side, IWorld world)
+        public static void HandleCollision(IEnemy enemy, IBlock block, CollisionSide side)
         {
             switch(side)
             {

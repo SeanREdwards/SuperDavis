@@ -25,7 +25,7 @@ namespace SuperDavis.Object.Character
             { "Woody", CreateWoodyDictionary()}, {"Bat", CreateBatDictionary() }, {"Invincible", CreateInvincibleDavisDictionary() } };
         }
 
-        private Dictionary<string, ISprite> CreateDavisDictionary()
+        private static Dictionary<string, ISprite> CreateDavisDictionary()
         {
             Dictionary<string, ISprite> dict = new Dictionary<string, ISprite>
             {
@@ -45,7 +45,7 @@ namespace SuperDavis.Object.Character
             return dict;
         }
 
-        private Dictionary<string, ISprite> CreateWoodyDictionary()
+        private static Dictionary<string, ISprite> CreateWoodyDictionary()
         {
             Dictionary<string, ISprite> dict = new Dictionary<string, ISprite>
             {
@@ -65,7 +65,7 @@ namespace SuperDavis.Object.Character
             return dict;
         }
 
-        private Dictionary<string, ISprite> CreateBatDictionary()
+        private static Dictionary<string, ISprite> CreateBatDictionary()
         {
             Dictionary<string, ISprite> dict = new Dictionary<string, ISprite>
             {
@@ -85,7 +85,7 @@ namespace SuperDavis.Object.Character
             return dict;
         }
 
-        private Dictionary<string, ISprite> CreateInvincibleDavisDictionary()
+        private static Dictionary<string, ISprite> CreateInvincibleDavisDictionary()
         {
             Dictionary<string, ISprite> dict = new Dictionary<string, ISprite>
             {
