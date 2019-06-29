@@ -4,10 +4,14 @@
     {
         public const int WindowsEdgeWidth = 1024;
         public const int WindowsEdgeHeight = 668;
-        public const int UnitPixelSize = 16;
+        public const float SpriteScaleFactor = 1.5f;
+        public const int UnitPixelSize = 24;
+
+        public const int level11Width = 4800;
+        public const int level11Height = 668;
 
         public const int InvincibleTimer = 300;
-        public const float SpriteScaleFactor = 1.5f;
+
 
         // temp for physics param
         public const float JumpVelocity = 75f;

@@ -12,9 +12,7 @@ using System.Xml;
 namespace SuperDavis.Worlds
 {
     class WorldCreator
-    {
-
-        public IGameObject[][] ObjectMap;     
+    {   
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
         Dictionary<String, Action<float, float>> blockDictionary;
@@ -23,6 +21,7 @@ namespace SuperDavis.Worlds
         Dictionary<String, Action<float, float>> backgroundDictionary;
         IWorld world;
 
+        // Need to get rid of string classifier
         private void CreateObjectDictionary()
         {
             objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>
@@ -93,14 +92,12 @@ namespace SuperDavis.Worlds
             };
         }
 
-        public IWorld CreateWorld(string levelFile, float width, float height,Game1 game)
+        public IWorld CreateWorld(string levelFile, float width, float height, Game1 game)
         {
-            ObjectMap = new IGameObject[Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize][];
-            for (int i = 0; i < Variables.Variable.WindowsEdgeWidth / Variables.Variable.UnitPixelSize; i++)
-            {
-                ObjectMap[i] = new IGameObject[Variables.Variable.WindowsEdgeHeight / Variables.Variable.UnitPixelSize];
-            }
-            return ParseAndLoad(levelFile, width, height, game);
+            // Some extra code could be filled in
+            IWorld worldObject = ParseAndLoad(levelFile, width, height, game);
+            world.CreateWorldGrid();
+            return worldObject;
         }
 
         private IWorld ParseAndLoad(string levelFile, float width, float height, Game1 game)
@@ -112,6 +109,7 @@ namespace SuperDavis.Worlds
             CreateEnemyDictionary();
             CreatePlayerDictionary();
             CreateBackgroundDictionary();
+            // Start to read xml file
             XmlReader reader = XmlReader.Create("Content/level/" + levelFile);
             reader.ReadToFollowing("Object");
             while (reader.Read())
@@ -163,12 +161,5 @@ namespace SuperDavis.Worlds
             backgroundDictionary.TryGetValue(type, out Action<float, float> buildBackground);
             buildBackground(x, y);
         }
-
-        // Helper method to create object map
-        // should be move to world.cs
-        /*private void SetObjectMap(IGameObject gameObject, float x, float y)
-        {
-            ObjectMap[(int)Math.Floor(x / world.Width)][(int)Math.Floor(x / world.Width)] = gameObject;
-        }*/
     }
 }

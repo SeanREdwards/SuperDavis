@@ -106,7 +106,6 @@ namespace SuperDavis.Object.Character
         public ISprite GetSprite(string charStr, string stateStr)
         {
             characterDictionary.TryGetValue(charStr, out Dictionary<string, ISprite> dict);
-            Console.Out.WriteLine(charStr + "          " + stateStr);
             dict.TryGetValue(stateStr,out ISprite sprite);
             return sprite;
         }

@@ -8,6 +8,7 @@ namespace SuperDavis.Interfaces
     {
         float Width { get; set; }
         float Height { get; set; }
+        IList<IGameObject>[][] WorldGrid { get; set; }
         IList<IDavis> Characters { get; set; }
         IList<IEnemy> Enemies { get; set; }
         IList<IItem> Items { get; set; }
@@ -17,6 +18,7 @@ namespace SuperDavis.Interfaces
         IList<IGameObject> ObjectToRemove { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
+        void CreateWorldGrid();
         void ResetGame();
     }
 }

@@ -49,8 +49,8 @@ namespace SuperDavis.Sprite
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = spriteList[currentFrame];
-            Width = spriteList[currentFrame].Width;
-            Height = spriteList[currentFrame].Height;
+            Width = spriteList[currentFrame].Width * scale;
+            Height = spriteList[currentFrame].Height * scale;
             spriteBatch.Draw(this.texture, location, sourceRectangle, blinkColorList[currentFrame % blinkColorList.Count], 0f, Vector2.Zero, scale, flipDirection, 0f);
         }
 
