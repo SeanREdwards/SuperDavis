@@ -27,11 +27,16 @@ namespace SuperDavis.Worlds
             Height = height;
             this.game = game;
             /* Initialize WorldGrid - 2 Dimensional Array */
-            WorldGrid = new IList<IGameObject>[(int)Width / Variables.Variable.UnitPixelSize][];
+            WorldGrid = new IList<IGameObject>[(int)Width / Variables.Variable.UnitPixelSize][]; 
+            // i = 200; j = 27
             for(int i = 0; i < (int)Width / Variables.Variable.UnitPixelSize; i++)
             {
                 WorldGrid[i] = new List<IGameObject>[(int)Height / Variables.Variable.UnitPixelSize];
             }
+            for (int i = 0; i < WorldGrid.Length; i++)
+                for (int j = 0; j < WorldGrid[i].Length; j++)
+                    WorldGrid[i][j] = new List<IGameObject>();
+
             /* Lists Initialization */
             Characters = new List<IDavis>();
             Items = new List<IItem>();
@@ -47,10 +52,7 @@ namespace SuperDavis.Worlds
             foreach (IBackground background in Backgrounds)
                 background.Update(gameTime);
             foreach (IDavis character in Characters)
-            {
                 character.Update(gameTime);
-                character.HitBox = new Rectangle((int)character.Location.X, (int)character.Location.Y, (int)character.Sprite.Width, (int)character.Sprite.Height);
-            }
             foreach (IItem item in Items)
                 item.Update(gameTime);
             foreach (IBlock block in Blocks)
@@ -80,44 +82,47 @@ namespace SuperDavis.Worlds
                 character.Draw(spriteBatch);
         }
 
-        public void CreateWorldGrid()
+        public void InitializeWorldGrid()
         {
-            /* Mover List */
-
             for (int i = 0; i < WorldGrid.Length; i++)
             {
                 foreach (IItem item in Items)
-                    if( i == (int)WorldGrid.Length / item.Location.X)
+                    if( i == (int) item.Location.X / Variables.Variable.UnitPixelSize)
                     {
-                        var j = (int)(WorldGrid[i].Length / item.Location.Y);
+                        var j = (int) item.Location.Y / Variables.Variable.UnitPixelSize;
                         WorldGrid[i][j].Add(item);
                     }
                 foreach (IBlock block in Blocks)
-                    if (i == (int)WorldGrid.Length / block.Location.X)
+                    if (i == (int) block.Location.X / Variables.Variable.UnitPixelSize)
                     {
-                        var j = (int)(WorldGrid[i].Length / block.Location.Y);
+                        
+                        var j = (int) block.Location.Y / Variables.Variable.UnitPixelSize;                  
                         WorldGrid[i][j].Add(block);
                     }
                 foreach (IProjectile projectile in Projectiles)
-                    if (i == (int)WorldGrid.Length / projectile.Location.X)
+                    if (i == (int) projectile.Location.X / Variables.Variable.UnitPixelSize)
                     {
-                        var j = (int)(WorldGrid[i].Length / projectile.Location.Y);
+                        var j = (int) projectile.Location.Y / Variables.Variable.UnitPixelSize;
                         WorldGrid[i][j].Add(projectile);
                     }
                 foreach (IEnemy enemy in Enemies)
-                    if (i == (int)WorldGrid.Length / enemy.Location.X)
+                    if (i == (int) enemy.Location.X / Variables.Variable.UnitPixelSize)
                     {
-                        var j = (int)(WorldGrid[i].Length / enemy.Location.Y);
+                        var j = (int) enemy.Location.Y / Variables.Variable.UnitPixelSize;
                         WorldGrid[i][j].Add(enemy);
                     }
                 foreach (IDavis character in Characters)
-                    if (i == (int)WorldGrid.Length / character.Location.X)
+                    if (i == (int) character.Location.X / Variables.Variable.UnitPixelSize)
                     {
-                        var j = (int)(WorldGrid[i].Length / character.Location.Y);
+                        var j = (int) character.Location.Y / Variables.Variable.UnitPixelSize;
                         WorldGrid[i][j].Add(character);                       
                     }
-
             }
+            /*for (int i = 0; i < WorldGrid.Length; i++)
+                for (int j = 0; j < WorldGrid[i].Length; j++)
+                    System.Console.WriteLine(WorldGrid.Length+"/"+WorldGrid[i].Length+"/"+WorldGrid[i][j].Count);
+                    */
+                    
         }
 
         public void RemoveObject()

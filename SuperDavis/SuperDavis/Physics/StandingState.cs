@@ -21,12 +21,7 @@ namespace SuperDavis.Physics
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location += new Vector2(0, FallVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50);
-            FallVelocity *= FallVelocityDecayRate;
-            if (FallVelocity > FallVelocityMax)
-            {
-                FallVelocity = FallVelocityMax;
-            }
+
         }
     }
 }

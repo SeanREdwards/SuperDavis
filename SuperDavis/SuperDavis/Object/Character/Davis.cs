@@ -51,7 +51,7 @@ namespace SuperDavis.Object.Character
             Sprite.Update(gameTime);
 
             PhysicsState.Update(gameTime);
-            //HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -9,7 +9,7 @@
   <Scenery Type="Background" X="5010" Y="0" />
 
   // Character
-  <Character Type="Davis" X="48" Y="540" />
+  <Character Type="Davis" X="48" Y="530" />
   //level begin
   <Block Type="MushroomBlock" X="48" Y="500" />
   <Block Type="CoinBlock" X="82" Y="500" />

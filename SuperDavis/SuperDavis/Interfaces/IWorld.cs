@@ -18,7 +18,7 @@ namespace SuperDavis.Interfaces
         IList<IGameObject> ObjectToRemove { get; set; }
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
-        void CreateWorldGrid();
+        void InitializeWorldGrid();
         void ResetGame();
     }
 }
