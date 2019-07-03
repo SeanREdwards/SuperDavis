@@ -118,10 +118,13 @@ namespace SuperDavis.Worlds
                         WorldGrid[i][j].Add(character);                       
                     }
             }
-            /*for (int i = 0; i < WorldGrid.Length; i++)
+            for (int i = 0; i < WorldGrid.Length; i++)
                 for (int j = 0; j < WorldGrid[i].Length; j++)
-                    System.Console.WriteLine(WorldGrid.Length+"/"+WorldGrid[i].Length+"/"+WorldGrid[i][j].Count);
-                    */
+                {
+                    if(WorldGrid[i][j].Count>0)
+                    System.Console.WriteLine(WorldGrid[i][j][0]);
+                }
+                    
                     
         }
 
@@ -150,6 +153,22 @@ namespace SuperDavis.Worlds
                     }
             }
             ObjectToRemove.Clear();
+        }
+
+        public void AddObject<T>(T @object) where T : IGameObject
+        {
+            //Code to add object
+
+
+
+            @object.OnPositionChanged += object_OnPositionChanged;
+        }
+
+        private void object_OnPositionChanged(object sender, System.EventArgs e)
+        {
+            var @object = (sender as IGameObject);
+
+            //Code to change position in array
         }
 
         public void ResetGame()

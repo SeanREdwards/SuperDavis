@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
+using SuperDavis.Worlds;
 using System.Collections.Generic;
 
 namespace SuperDavis.Collision
@@ -31,17 +32,26 @@ namespace SuperDavis.Collision
         
         private static void CheckCharactersSurroundingCollision(IList<IDavis> movers, IWorld world)
         {
+            if (!world.TryGetObjects(out IList<IDavis> davis)) return;
+
+
             foreach(IDavis mover in movers)
             { 
                 var i = (int)(mover.Location.X / Variables.Variable.UnitPixelSize);
                 /* Could do WorldGrid[i].length, but since it is a "Grid", i doesn't matter, save space for iteration */
                 var j = (int)(mover.Location.Y / Variables.Variable.UnitPixelSize);
                 // Initialization for future use
-                IDavis moverObject = new Davis(Vector2.Zero);
+                IList<IDavis> davisList = (world as World).GetObjects<IDavis>();
+
+                IList<IDavis> davisList = new Hash
+
+                IDavis moverObject;
                 if (i > 0 && i < world.WorldGrid.Length && j > 0 && j < world.WorldGrid[0].Length)
                     foreach (IGameObject obj in world.WorldGrid[i][j])
+                    { 
                         if (obj.Equals(mover))
                             moverObject = (IDavis)obj;
+                    }
 
                 for (int iOffset = -1; iOffset < 1; iOffset++)
                     for (int jOffset = -1; jOffset < 1; jOffset++)

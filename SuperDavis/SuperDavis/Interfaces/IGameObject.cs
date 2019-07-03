@@ -5,6 +5,7 @@ namespace SuperDavis.Interfaces
 {
     interface IGameObject
     {
+        event System.EventHandler OnPositionChanged;
         Rectangle HitBox { get; set; }
         Vector2 Location { get; set; }
         IGameObjectPhysics PhysicsState { get; set; }

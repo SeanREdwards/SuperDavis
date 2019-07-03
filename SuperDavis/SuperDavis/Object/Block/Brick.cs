@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -9,12 +10,28 @@ namespace SuperDavis.Object.Block
     {
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
-        public Vector2 Location { get; set; }
+
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                location = value;
+                OnPositionChanged?.Invoke(this, EventArgs.Empty); 
+            }
+        }
         public BrickStateMachine BrickStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = 10;
+
+        public event EventHandler OnPositionChanged;
+
         public Brick(Vector2 location)
         {
             // initial state
