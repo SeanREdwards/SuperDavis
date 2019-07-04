@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -16,6 +17,9 @@ namespace SuperDavis.Object.Item
         private readonly MushroomStateMachine mushroomStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = 40;
+
+        public event EventHandler OnPositionChanged;
+
         public Mushroom(Vector2 location)
         {
             // initial state

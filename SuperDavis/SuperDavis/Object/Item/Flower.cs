@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -15,6 +16,8 @@ namespace SuperDavis.Object.Item
         private readonly FlowerStateMachine flowerStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = 40;
+
+        public event EventHandler OnPositionChanged;
 
         public Flower(Vector2 location)
         {

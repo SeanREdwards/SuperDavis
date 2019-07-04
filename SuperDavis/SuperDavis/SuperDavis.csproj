@@ -172,6 +172,9 @@
     <None Include="Content\EnemySprites\KoopaTroopaGreen.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Font\File.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

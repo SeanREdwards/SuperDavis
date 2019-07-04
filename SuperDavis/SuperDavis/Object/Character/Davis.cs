@@ -5,17 +5,47 @@ using SuperDavis.State.DavisState;
 using System.Collections.Generic;
 using SuperDavis.Physics;
 using SuperDavis.Object.Item;
+using System;
 
 namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
         private readonly CharacterDictionary charDict;
+
+        public event EventHandler OnPositionChanged;
+
+        public class EventData : EventArgs
+        {
+            public readonly float x;
+            public readonly float y;
+
+            public EventData(float x, float y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                EventData args = new EventData(location.X, location.Y);
+                OnPositionChanged?.Invoke(this, args);
+                location = value;
+            }
+        }
         public bool FacingLeft { get; set; }
         public IDavisState DavisState { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         public IList<IProjectile> DavisProjectile { get; set; }
-        public Vector2 Location { get; set; }
+
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }

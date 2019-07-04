@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
@@ -19,6 +20,8 @@ namespace SuperDavis.Object.Enemy
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly int groundLevel = 610;
 
+        public event EventHandler OnPositionChanged;
+
         public Goomba(Vector2 location)
         {
             // initial state
@@ -26,7 +29,7 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             goombaState = new GoombaStateMachine(this);
-            PhysicsState = new StandingState(this);
+            PhysicsState = new FallState(this);
             enemy = goombaState.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }

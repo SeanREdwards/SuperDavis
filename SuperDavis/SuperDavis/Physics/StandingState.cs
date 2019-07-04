@@ -13,10 +13,7 @@ namespace SuperDavis.Physics
         private float FallVelocityMax;
         public StandingState(IGameObject gameObjectClass)
         {
-            gameObject = gameObjectClass;
-            FallVelocity = Variables.Variable.FallVelocity;
-            FallVelocityDecayRate = Variables.Variable.FallVelocityIncreaseRate;
-            FallVelocityMax = Variables.Variable.FallVelocityMax;
+           
         }
 
         public void Update(GameTime gameTime)

@@ -1,11 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace SuperDavis.Interfaces
 {
     interface IGameObject
     {
-        event System.EventHandler OnPositionChanged;
+        event EventHandler OnPositionChanged;
         Rectangle HitBox { get; set; }
         Vector2 Location { get; set; }
         IGameObjectPhysics PhysicsState { get; set; }

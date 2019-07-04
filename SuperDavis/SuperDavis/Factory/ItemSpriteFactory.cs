@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 
 namespace SuperDavis.Factory
 {
-    class ItemSpriteFactory
+    sealed class ItemSpriteFactory
     {
         private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
 

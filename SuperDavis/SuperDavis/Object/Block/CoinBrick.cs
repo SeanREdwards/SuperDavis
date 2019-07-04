@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -16,6 +17,9 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = 10;
         public int CoinCounter = 5;
+
+        public event EventHandler OnPositionChanged;
+
         public CoinBrick(Vector2 location)
         {
             // initial state

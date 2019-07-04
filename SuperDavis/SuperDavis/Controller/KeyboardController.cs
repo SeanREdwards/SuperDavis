@@ -32,8 +32,6 @@ namespace SuperDavis.Controller
         {
             /* Prevent the repeated pressed, credited to grader */
             Keys[] currentKeys = Keyboard.GetState().GetPressedKeys();
-            // execute the pressed key command
-
             foreach(Keys key in keyReleasedCommandDict.Keys)
             {
                 if(previousKeys.Contains(key) && !currentKeys.Contains(key))
@@ -41,7 +39,6 @@ namespace SuperDavis.Controller
                     keyReleasedCommandDict[key].Execute();
                 }
             }
-
             foreach (Keys key in currentKeys)
             {
                 if (keyPressedCommandDict.ContainsKey(key))
