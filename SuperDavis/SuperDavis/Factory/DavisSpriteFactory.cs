@@ -17,7 +17,7 @@ using System.Web.Script.Serialization;
 namespace SuperDavis.Factory
 {
     /* Character Sprites credited for http://www.lf2.net/ */
-    class DavisSpriteFactory
+    sealed class DavisSpriteFactory
     {
 
         public static DavisSpriteFactory Instance { get; } = new DavisSpriteFactory();

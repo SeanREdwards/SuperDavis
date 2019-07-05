@@ -2,51 +2,58 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Collision;
 using SuperDavis.Interfaces;
+using System;
 using System.Collections.Generic;
+using static SuperDavis.Object.Character.Davis;
 
 namespace SuperDavis.Worlds
 {
     class World : IWorld
     {
-        public IList<IGameObject>[][] WorldGrid { get; set; }
-        public IList<IGameObject> ObjectToRemove { get; set; }
-        public float Width { get; set; }
-        public float Height { get; set; }
-        public IList<IDavis> Characters { get; set; }
-        public IList<IItem> Items { get; set; }
-        public IList<IBlock> Blocks { get; set; }
-        public IList<IEnemy> Enemies { get; set; }
-        public IList<IProjectile> Projectiles { get; set; }
-        public IList<IBackground> Backgrounds { get; set; }
+        public float Width { get; }
+        public float Height { get; }
+
+        public HashSet<IGameObject>[][] WorldGrid { get; set; }
+        public HashSet<IGameObject> ObjectToRemove { get; set; }
+        public HashSet<IDavis> Characters { get; set; }
+        public HashSet<IItem> Items { get; set; }
+        public HashSet<IBlock> Blocks { get; set; }
+        public HashSet<IEnemy> Enemies { get; set; }
+        public HashSet<IProjectile> Projectiles { get; set; }
+        public HashSet<IBackground> Backgrounds { get; set; }
 
         private readonly Game1 game;
+        public int UNIT_SIZE = Variables.Variable.UnitPixelSize;
+        public int WorldGridWidth, WorldGridHeight;
 
         public World(float width, float height, Game1 game)
         {
             Width = width;
             Height = height;
             this.game = game;
+
             /* Initialize WorldGrid - 2 Dimensional Array */
-            WorldGrid = new IList<IGameObject>[(int)Width / Variables.Variable.UnitPixelSize][]; 
-            // i = 200; j = 27
-            for(int i = 0; i < (int)Width / Variables.Variable.UnitPixelSize; i++)
+            WorldGridWidth = (int)Width / UNIT_SIZE;
+            WorldGridHeight = (int)Height / UNIT_SIZE;
+            WorldGrid = new HashSet<IGameObject>[WorldGridWidth][];
+            for (int i = 0; i < WorldGridWidth; i++)
             {
-                WorldGrid[i] = new List<IGameObject>[(int)Height / Variables.Variable.UnitPixelSize];
+                WorldGrid[i] = new HashSet<IGameObject>[WorldGridHeight];
             }
-            for (int i = 0; i < WorldGrid.Length; i++)
-                for (int j = 0; j < WorldGrid[i].Length; j++)
-                    WorldGrid[i][j] = new List<IGameObject>();
+            for (int i = 0; i < WorldGridWidth; i++)
+                for (int j = 0; j < WorldGridHeight; j++)
+                    WorldGrid[i][j] = new HashSet<IGameObject>();
 
             /* Lists Initialization */
-            Characters = new List<IDavis>();
-            Items = new List<IItem>();
-            Blocks = new List<IBlock>();
-            Enemies = new List<IEnemy>();
-            Projectiles = new List<IProjectile>();
-            Backgrounds = new List<IBackground>();
-            ObjectToRemove = new List<IGameObject>();
+            Characters = new HashSet<IDavis>();
+            Items = new HashSet<IItem>();
+            Blocks = new HashSet<IBlock>();
+            Enemies = new HashSet<IEnemy>();
+            Projectiles = new HashSet<IProjectile>();
+            Backgrounds = new HashSet<IBackground>();
+            ObjectToRemove = new HashSet<IGameObject>();
         }
-        
+
         public void Update(GameTime gameTime)
         {
             foreach (IBackground background in Backgrounds)
@@ -62,7 +69,7 @@ namespace SuperDavis.Worlds
             foreach (IEnemy enemy in Enemies)
                 enemy.Update(gameTime);
 
-            if (ObjectToRemove.Count != 0)
+            if (ObjectToRemove.Count > 0)
                 RemoveObject();
         }
 
@@ -87,69 +94,90 @@ namespace SuperDavis.Worlds
             for (int i = 0; i < WorldGrid.Length; i++)
             {
                 foreach (IItem item in Items)
-                    if( i == (int) item.Location.X / Variables.Variable.UnitPixelSize)
+                    if (i == (int)item.Location.X / UNIT_SIZE)
                     {
-                        var j = (int) item.Location.Y / Variables.Variable.UnitPixelSize;
+                        var j = (int)item.Location.Y / UNIT_SIZE;
                         WorldGrid[i][j].Add(item);
                     }
                 foreach (IBlock block in Blocks)
-                    if (i == (int) block.Location.X / Variables.Variable.UnitPixelSize)
+                    if (i == (int)block.Location.X / UNIT_SIZE)
                     {
-                        
-                        var j = (int) block.Location.Y / Variables.Variable.UnitPixelSize;                  
+
+                        var j = (int)block.Location.Y / UNIT_SIZE;
                         WorldGrid[i][j].Add(block);
                     }
                 foreach (IProjectile projectile in Projectiles)
-                    if (i == (int) projectile.Location.X / Variables.Variable.UnitPixelSize)
+                    if (i == (int)projectile.Location.X / UNIT_SIZE)
                     {
-                        var j = (int) projectile.Location.Y / Variables.Variable.UnitPixelSize;
+                        var j = (int)projectile.Location.Y / UNIT_SIZE;
                         WorldGrid[i][j].Add(projectile);
                     }
                 foreach (IEnemy enemy in Enemies)
-                    if (i == (int) enemy.Location.X / Variables.Variable.UnitPixelSize)
+                    if (i == (int)enemy.Location.X / UNIT_SIZE)
                     {
-                        var j = (int) enemy.Location.Y / Variables.Variable.UnitPixelSize;
+                        var j = (int)enemy.Location.Y / UNIT_SIZE;
                         WorldGrid[i][j].Add(enemy);
                     }
                 foreach (IDavis character in Characters)
-                    if (i == (int) character.Location.X / Variables.Variable.UnitPixelSize)
+                    if (i == (int)character.Location.X / UNIT_SIZE)
                     {
-                        var j = (int) character.Location.Y / Variables.Variable.UnitPixelSize;
-                        WorldGrid[i][j].Add(character);                       
+                        var j = (int)character.Location.Y / UNIT_SIZE;
+                        WorldGrid[i][j].Add(character);
                     }
             }
-            /*for (int i = 0; i < WorldGrid.Length; i++)
-                for (int j = 0; j < WorldGrid[i].Length; j++)
-                    System.Console.WriteLine(WorldGrid.Length+"/"+WorldGrid[i].Length+"/"+WorldGrid[i][j].Count);
-                    */
-                    
+
         }
 
         public void RemoveObject()
         {
-            foreach(IGameObject removeObject in ObjectToRemove)
+            foreach (IGameObject removeObject in ObjectToRemove)
             {
-                if(removeObject is IDavis)
+                if (removeObject is IDavis)
                     Characters.Remove((IDavis)removeObject);
-                else if (removeObject is IItem)
+                if (removeObject is IItem)
                     Items.Remove((IItem)removeObject);
-                else if (removeObject is IBlock)
+                if (removeObject is IBlock)
                     Blocks.Remove((IBlock)removeObject);
-                else if (removeObject is IEnemy)
+                if (removeObject is IEnemy)
                     Enemies.Remove((IEnemy)removeObject);
-                else if (removeObject is IProjectile)
+                if (removeObject is IProjectile)
                     Projectiles.Remove((IProjectile)removeObject);
 
                 /* Check remove items in World Grid*/
-                for(int i = 0; i < WorldGrid.Length; i++)
-                    for(int j = 0; j < WorldGrid[i].Length; j++)
-                    {
-                        var index = WorldGrid[i][j].IndexOf(removeObject);
-                        if (index > -1)
-                            WorldGrid[i][j].RemoveAt(index);
-                    }
+                for (int i = 0; i < WorldGrid.Length; i++)
+                    for (int j = 0; j < WorldGrid[i].Length; j++)
+                        if (WorldGrid[i][j].Contains(removeObject))
+                            WorldGrid[i][j].Remove(removeObject);
             }
             ObjectToRemove.Clear();
+        }
+
+        public IGameObject GetObject(IGameObject @object, int i, int j)
+        {
+            if (WorldGrid[i][j].TryGetValue(@object, out IGameObject returnObject))
+                return returnObject;                
+            else
+                return null;            
+        }
+
+        public void AddObject<T>(T @object) where T : IGameObject
+        {
+            //Code to add object
+
+
+
+            @object.OnPositionChanged += object_OnPositionChanged;
+        }
+
+        private void object_OnPositionChanged(object sender, EventArgs e)
+        {
+            var @object = (sender as IGameObject);
+            // Change the position of the obj in the world grid
+            var i = (int)(@object.Location.X/ UNIT_SIZE);
+            var j = (int)(@object.Location.Y / UNIT_SIZE);
+
+            WorldGrid[i][j].Remove(@object);
+            // Code to add new position in the WorldGrid
         }
 
         public void ResetGame()

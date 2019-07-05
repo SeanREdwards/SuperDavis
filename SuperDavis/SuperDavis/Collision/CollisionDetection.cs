@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
+using SuperDavis.Worlds;
 using System.Collections.Generic;
 
 namespace SuperDavis.Collision
@@ -29,53 +30,60 @@ namespace SuperDavis.Collision
             CheckProjectileEnemyCollision(World.Projectiles, World.Enemies, World);
         }
         
-        private static void CheckCharactersSurroundingCollision(IList<IDavis> movers, IWorld world)
+        private static void CheckCharactersSurroundingCollision(HashSet<IDavis> movers, IWorld world)
         {
             foreach(IDavis mover in movers)
             { 
-                var i = (int)(mover.Location.X / Variables.Variable.UnitPixelSize);
-                /* Could do WorldGrid[i].length, but since it is a "Grid", i doesn't matter, save space for iteration */
-                var j = (int)(mover.Location.Y / Variables.Variable.UnitPixelSize);
-                // Initialization for future use
-                IDavis moverObject = new Davis(Vector2.Zero);
-                if (i > 0 && i < world.WorldGrid.Length && j > 0 && j < world.WorldGrid[0].Length)
-                    foreach (IGameObject obj in world.WorldGrid[i][j])
-                        if (obj.Equals(mover))
-                            moverObject = (IDavis)obj;
+                var i = (int)(mover.Location.X / (world as World).UNIT_SIZE);
+                var j = (int)(mover.Location.Y / (world as World).UNIT_SIZE);
 
-                for (int iOffset = -1; iOffset < 1; iOffset++)
-                    for (int jOffset = -1; jOffset < 1; jOffset++)
-                        if((i+iOffset) > 0 && (i+iOffset) < world.WorldGrid.Length && (j+jOffset) > 0 && (j+jOffset) < world.WorldGrid[0].Length)
-                            if(world.WorldGrid[i+iOffset][j+jOffset].Count != 0)
-                                foreach (IGameObject target in world.WorldGrid[i + iOffset][j + jOffset])
+                if (CheckIndexOutOfBounds(i, j, world))
+                {
+                    // Get instance of character reference in the World Grid
+                    IDavis moverObject = (IDavis)world.GetObject(mover, i, j);
+  
+                    if (moverObject != null)
+                    {
+                        int hitBoxWidthScaleFactor = (int)(moverObject.HitBox.Width / (world as World).UNIT_SIZE) + 1;
+                        int hitBoxHeightScaleFactor = (int)(moverObject.HitBox.Height / (world as World).UNIT_SIZE) + 1;
+                        int offsetFactor = 3; // Magic number here!
+
+                        for (int iOffset = -offsetFactor*hitBoxWidthScaleFactor; iOffset < offsetFactor * hitBoxWidthScaleFactor; iOffset++)
+                                for (int jOffset = -offsetFactor*hitBoxHeightScaleFactor; jOffset < offsetFactor * hitBoxHeightScaleFactor; jOffset++)
                                 {
-                                    if(!target.Equals(mover))
-                                    {
-                                        var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), mover.HitBox, target.HitBox);
-                                        System.Console.WriteLine(moverObject.HitBox + "/" + target.HitBox + side);
-                                        if (target is IBlock) CheckDavisBlockCollision(moverObject, (IBlock)target, side, world);
-                                        if (target is IItem) CheckDavisItemCollision(moverObject, (IItem)target, side, world);
-                                        if (target is IEnemy) CheckDavisEnemyCollision(moverObject, (IEnemy)target, side, world);
-                                    }
+                                    if (CheckIndexOutOfBounds(i + iOffset, j + jOffset, world))
+                                        if (world.WorldGrid[i + iOffset][j + jOffset].Count != 0)
+                                            foreach (IGameObject target in world.WorldGrid[i + iOffset][j + jOffset])
+                                            {
+                                                if (!target.Equals(mover))
+                                                {
+                                                    var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);                                                  
+                                                    if (target is IBlock) CheckCharacterBlockCollision(moverObject, (IBlock)target, side, world);
+                                                    if (target is IItem) CheckCharacterItemCollision(moverObject, (IItem)target, side, world);
+                                                    if (target is IEnemy) CheckCharacterEnemyCollision(moverObject, (IEnemy)target, side, world);
+                                                }
+                                            }
                                 }
+                    }
+                }
             }
         }
-        private static void CheckDavisBlockCollision(IDavis davis, IBlock block, CollisionSide side, IWorld world)
+        private static void CheckCharacterBlockCollision(IDavis davis, IBlock block, CollisionSide side, IWorld world)
         {
             DavisBlockCollisionHandler.HandleCollision(davis, block, side, world);
         }
 
-        private static void CheckDavisItemCollision(IDavis davis, IItem item, CollisionSide side, IWorld world)
+        private static void CheckCharacterItemCollision(IDavis davis, IItem item, CollisionSide side, IWorld world)
         {
             DavisItemCollisionHandler.HandleCollision(davis, item, side, world);
         }
 
-        private static void CheckDavisEnemyCollision(IDavis davis, IEnemy enemy, CollisionSide side, IWorld world)
+        private static void CheckCharacterEnemyCollision(IDavis davis, IEnemy enemy, CollisionSide side, IWorld world)
         {
             DavisEnemyCollisionHandler.HandleCollision(davis, enemy, side, world);
         }
 
-        private static void CheckEnemyBlockCollision(IList<IEnemy> enemies, IList<IBlock> blocks)
+        private static void CheckEnemyBlockCollision(HashSet<IEnemy> enemies, HashSet<IBlock> blocks)
         {
             foreach (IEnemy enemy in enemies)
             {
@@ -99,42 +107,44 @@ namespace SuperDavis.Collision
             }
         }*/
 
-        private static void CheckProjectileBlockCollision(IList<IProjectile> projectiles, IList<IBlock> blocks, IWorld world)
+        private static void CheckProjectileBlockCollision(HashSet<IProjectile> projectiles, HashSet<IBlock> blocks, IWorld world)
         {
-            for (int i = 0; i < projectiles.Count ; i++)
+            foreach (IProjectile projectile in projectiles)
             {
                 foreach (IBlock block in blocks)
                 {
-                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectiles[i].HitBox, block.HitBox), projectiles[i].HitBox, block.HitBox);
-                    ProjectileBlockCollisionHandler.HandleCollision(projectiles[i], side, world);
+                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectile.HitBox, block.HitBox), projectile.HitBox, block.HitBox);
+                    ProjectileBlockCollisionHandler.HandleCollision(projectile, side, world);
                 }
             }
         }
 
-        private static void CheckProjectileEnemyCollision(IList<IProjectile> projectiles, IList<IEnemy> enemies, IWorld world)
+        private static void CheckProjectileEnemyCollision(HashSet<IProjectile> projectiles, HashSet<IEnemy> enemies, IWorld world)
         {
-            for (int i = 0; i < projectiles.Count; i++)
+            foreach(IProjectile projectile in projectiles)
             {
                 foreach (IEnemy enemy in enemies)
                 {
-                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectiles[i].HitBox, enemy.HitBox), projectiles[i].HitBox, enemy.HitBox);
-                    ProjectileEnemyCollisionHandler.HandleCollision(projectiles[i], enemy, side, world);
+                    CollisionSide side = GetCollisionSide(Rectangle.Intersect(projectile.HitBox, enemy.HitBox), projectile.HitBox, enemy.HitBox);
+                    ProjectileEnemyCollisionHandler.HandleCollision(projectile, enemy, side, world);
                 }
             }
         }
 
+        /* Helper Method*/
         private static CollisionSide GetCollisionSide(Rectangle intersection, Rectangle HitBox1, Rectangle HitBox2)
         {
             CollisionSide side;
             if (!intersection.IsEmpty)
-            {
                 side = intersection.Width >= intersection.Height ? (HitBox1.Top <= HitBox2.Top ? CollisionSide.Top : CollisionSide.Bottom) : (HitBox1.Left <= HitBox2.Left ? CollisionSide.Left : CollisionSide.Right);
-            }
             else
-            {
                 side = CollisionSide.None;
-            }
             return side;
+        }
+
+        private static bool CheckIndexOutOfBounds(int x, int y, IWorld world)
+        {
+            return (x > 0 && x < (world as World).WorldGridWidth && y > 0 && y < (world as World).WorldGridHeight);
         }
     }
 }

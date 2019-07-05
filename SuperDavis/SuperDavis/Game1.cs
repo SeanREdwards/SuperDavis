@@ -11,10 +11,10 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.Sprite;
 using SuperDavis.Worlds;
 
-/*Author: Jason Xu, Ryan Knighton, and Sean Edwards */
+
+/* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
 [assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
 [assembly: ComVisible(false)] // CA1017
@@ -27,6 +27,7 @@ namespace SuperDavis
         private List<IController> controllerList;
         public CollisionDetection collisionDetection;
         private Camera camera;
+        private SpriteFont font;
 
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
@@ -48,6 +49,7 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
+            font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
@@ -87,10 +89,7 @@ namespace SuperDavis
             {
                 World.ResetGame();                    
             }
-            else if (World.Characters[0].Location.X < -100 || World.Characters[0].Location.X > 4900 || World.Characters[0].Location.Y > 768)
-            {
-                World.ResetGame();
-            }
+
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
             base.Update(gameTime);
@@ -101,9 +100,10 @@ namespace SuperDavis
             GraphicsDevice.Clear(Color.CornflowerBlue);
             camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            //spriteBatch.DrawString(spriteFont:,"FPS+framerate",newVector2(0,0),color.)
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
+
             World.Draw(spriteBatch);
+            //spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -12,6 +13,9 @@ namespace SuperDavis.Object.Block
         public Vector2 Location { get; set; }
         public HiddenBlockStateMachine HiddenBlockStateMachine;
         private readonly ISprite block;
+
+        public event EventHandler OnPositionChanged;
+
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
 

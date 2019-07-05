@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
 using SuperDavis.Factory;
+using System;
 
 namespace SuperDavis.Object.Block
 {
@@ -15,6 +16,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly ISprite sprite;
 
+        public event EventHandler OnPositionChanged;
 
         public RightGreenFloor(Vector2 location)
         {

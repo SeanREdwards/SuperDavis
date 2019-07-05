@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -11,6 +12,9 @@ namespace SuperDavis.Object.Item
         public Vector2 Location { get; set; }
         private BatProjectileStateMachine BatProjectileStateMachine;
         private readonly ISprite projectile;
+
+        public event EventHandler OnPositionChanged;
+
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
  

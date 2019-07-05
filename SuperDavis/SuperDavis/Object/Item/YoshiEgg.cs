@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
@@ -14,6 +15,9 @@ namespace SuperDavis.Object.Item
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly YoshiEggStateMachine yoshiEggStateMachine;
+
+        public event EventHandler OnPositionChanged;
+
         public IGameObjectPhysics PhysicsState { get; set; }
 
         public YoshiEgg(Vector2 location)

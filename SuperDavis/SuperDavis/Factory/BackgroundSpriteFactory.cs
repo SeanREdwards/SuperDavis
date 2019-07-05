@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework;
  */
 namespace SuperDavis.Factory
 {
-    class BackgroundSpriteFactory
+    sealed class BackgroundSpriteFactory
     {
         public static BackgroundSpriteFactory Instance { get; } = new BackgroundSpriteFactory();
         private BackgroundSpriteFactory() { }

@@ -15,7 +15,7 @@ using System.Web.Script.Serialization;
  */
 namespace SuperDavis.Factory
 {
-    class EnemySpriteFactory
+    sealed class EnemySpriteFactory
     {
         private Dictionary<string, SpriteRegistrar> _spriteRegistrars;
 

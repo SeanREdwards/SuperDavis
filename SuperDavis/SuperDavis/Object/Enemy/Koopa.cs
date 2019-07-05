@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
@@ -19,6 +20,8 @@ namespace SuperDavis.Object.Enemy
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly int groundLevel = 600;
 
+        public event EventHandler OnPositionChanged;
+
         public Koopa(Vector2 location)
         {
             // initial state
@@ -26,7 +29,7 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             koopaStateMachine = new KoopaStateMachine(this);
-            PhysicsState = new StandingState(this);
+            PhysicsState = new FallState(this);
             enemy = koopaStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height);
         }
