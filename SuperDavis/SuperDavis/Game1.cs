@@ -11,8 +11,8 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.Sprite;
 using SuperDavis.Worlds;
+
 
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
@@ -103,7 +103,7 @@ namespace SuperDavis
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
 
             World.Draw(spriteBatch);
-            spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
+            //spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

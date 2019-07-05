@@ -125,8 +125,8 @@ namespace SuperDavis.Object.Character
             {
                 if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
                     PhysicsState = new JumpState(this);
-                DavisState.Up();
-                Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+                    DavisState.Up();
+                    Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
         }
 
