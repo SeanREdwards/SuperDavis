@@ -177,7 +177,7 @@ namespace SuperDavis.Worlds
             // Change the position of the obj in the world grid
             var i = (int)(e.X / UNIT_SIZE);
             var j = (int)(e.Y / UNIT_SIZE);
-            WorldGrid[i][j].Remove(@object);
+             WorldGrid[i][j].Remove(@object);
 
             // Code to add new position in the WorldGrid
             i = (int)(@object.Location.X / UNIT_SIZE);
