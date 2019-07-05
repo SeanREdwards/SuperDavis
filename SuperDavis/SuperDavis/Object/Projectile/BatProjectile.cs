@@ -13,7 +13,7 @@ namespace SuperDavis.Object.Item
         private BatProjectileStateMachine BatProjectileStateMachine;
         private readonly ISprite projectile;
 
-        public event EventHandler<Vector2> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }

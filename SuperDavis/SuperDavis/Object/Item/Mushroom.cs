@@ -18,7 +18,7 @@ namespace SuperDavis.Object.Item
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = 40;
 
-        public event EventHandler<Vector2> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Mushroom(Vector2 location)
         {

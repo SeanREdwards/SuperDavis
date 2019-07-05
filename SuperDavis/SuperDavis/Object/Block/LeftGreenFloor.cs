@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private ISprite sprite;
 
-        public event EventHandler<Vector2> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public LeftGreenFloor(Vector2 location)
         {

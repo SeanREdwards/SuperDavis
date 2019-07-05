@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Block
         private PipeStateMachine pipeStateMachine;
         private readonly ISprite block;
 
-        public event EventHandler<Vector2> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }

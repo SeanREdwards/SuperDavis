@@ -20,7 +20,7 @@ namespace SuperDavis.Object.Enemy
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly int groundLevel = 600;
 
-        public event EventHandler<Vector2> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Koopa(Vector2 location)
         {
