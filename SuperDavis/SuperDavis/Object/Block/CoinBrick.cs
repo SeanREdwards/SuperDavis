@@ -18,7 +18,7 @@ namespace SuperDavis.Object.Block
         private int bumpTimer = 10;
         public int CoinCounter = 5;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
         public CoinBrick(Vector2 location)
         {

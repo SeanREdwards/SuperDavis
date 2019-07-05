@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly ISprite sprite;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
         public MiddleGreenFloor(Vector2 location)
         {

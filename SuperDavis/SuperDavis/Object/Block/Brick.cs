@@ -11,26 +11,14 @@ namespace SuperDavis.Object.Block
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
 
-        private Vector2 location;
-        public Vector2 Location
-        {
-            get
-            {
-                return location;
-            }
-            set
-            {
-                location = value;
-                OnPositionChanged?.Invoke(this, EventArgs.Empty); 
-            }
-        }
+        public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = 10;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
         public Brick(Vector2 location)
         {

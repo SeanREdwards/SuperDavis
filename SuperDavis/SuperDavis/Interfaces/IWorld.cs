@@ -24,6 +24,8 @@ namespace SuperDavis.Interfaces
         void InitializeWorldGrid();
         IGameObject GetObject(IGameObject @object, int i, int j);
 
+        void AddObject(IGameObject @object);
+
         void ResetGame();
     }
 }

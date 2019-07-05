@@ -13,19 +13,8 @@ namespace SuperDavis.Object.Character
     {
         private readonly CharacterDictionary charDict;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
-        public class EventData : EventArgs
-        {
-            public readonly float x;
-            public readonly float y;
-
-            public EventData(float x, float y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-        }
 
         private Vector2 location;
         public Vector2 Location
@@ -36,8 +25,7 @@ namespace SuperDavis.Object.Character
             }
             set
             {
-                EventData args = new EventData(location.X, location.Y);
-                OnPositionChanged?.Invoke(this, args);
+                OnPositionChanged?.Invoke(this, location);
                 location = value;
             }
         }

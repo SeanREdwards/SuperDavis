@@ -20,7 +20,7 @@ namespace SuperDavis.Object.Enemy
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly int groundLevel = 610;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
         public Goomba(Vector2 location)
         {

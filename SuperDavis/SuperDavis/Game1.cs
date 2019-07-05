@@ -101,9 +101,8 @@ namespace SuperDavis
             camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
-
             World.Draw(spriteBatch);
-            //spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
+            spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

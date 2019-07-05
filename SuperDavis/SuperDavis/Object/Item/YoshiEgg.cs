@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Item
         private readonly ISprite item;
         private readonly YoshiEggStateMachine yoshiEggStateMachine;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Vector2> OnPositionChanged;
 
         public IGameObjectPhysics PhysicsState { get; set; }
 

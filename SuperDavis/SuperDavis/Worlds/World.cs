@@ -160,24 +160,29 @@ namespace SuperDavis.Worlds
                 return null;            
         }
 
-        public void AddObject<T>(T @object) where T : IGameObject
+        public void AddObject(IGameObject @object)
         {
             //Code to add object
+            if (@object is IDavis)
+                Characters.Add(@object as IDavis);
 
 
 
             @object.OnPositionChanged += object_OnPositionChanged;
         }
 
-        private void object_OnPositionChanged(object sender, EventArgs e)
+        private void object_OnPositionChanged(object sender, Vector2 e)
         {
             var @object = (sender as IGameObject);
             // Change the position of the obj in the world grid
-            var i = (int)(@object.Location.X/ UNIT_SIZE);
-            var j = (int)(@object.Location.Y / UNIT_SIZE);
-
+            var i = (int)(e.X / UNIT_SIZE);
+            var j = (int)(e.Y / UNIT_SIZE);
             WorldGrid[i][j].Remove(@object);
+
             // Code to add new position in the WorldGrid
+            i = (int)(@object.Location.X / UNIT_SIZE);
+            j = (int)(@object.Location.Y / UNIT_SIZE);
+            WorldGrid[i][j].Add(@object);
         }
 
         public void ResetGame()

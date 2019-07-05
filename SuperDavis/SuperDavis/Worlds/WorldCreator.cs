@@ -88,7 +88,7 @@ namespace SuperDavis.Worlds
         {
             playerDictionary = new Dictionary<String, Action<float, float>>
             {
-                { nameof(Davis), (x, y) => world.Characters.Add(new Davis(new Vector2(x, y))) }
+                { nameof(Davis), (x, y) => world.AddObject(new Davis(new Vector2(x, y))) }
             };
         }
 
