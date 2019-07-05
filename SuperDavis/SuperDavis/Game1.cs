@@ -30,8 +30,8 @@ namespace SuperDavis
         private SpriteFont font;
         public int score;
         public int coins;
-        public string world;
-        public int time;
+        public string worldText;
+        public double time;
 
 
         public IWorld World { get; set; }
@@ -56,7 +56,7 @@ namespace SuperDavis
         {
             score = 0;
             coins = 0;
-            world = "1-1";
+            worldText = "1-1";
             time = 400;
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
@@ -98,7 +98,13 @@ namespace SuperDavis
             {
                 World.ResetGame();                    
             }
-
+            //if timer runs out reset game.
+            time -= gameTime.ElapsedGameTime.TotalSeconds;
+            if ((int)time == 0)
+            {
+                World.ResetGame();
+                time = 400;
+            }
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
             base.Update(gameTime);
@@ -106,6 +112,7 @@ namespace SuperDavis
 
         protected override void Draw(GameTime gameTime)
         {
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
             camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
@@ -118,11 +125,12 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Coins", new Vector2(400, 20), Color.White);
             spriteBatch.DrawString(font, "" + coins, new Vector2(400, 60), Color.White);
             spriteBatch.DrawString(font, "World", new Vector2(600, 20), Color.White);
-            spriteBatch.DrawString(font, world, new Vector2(600, 60), Color.White);
+            spriteBatch.DrawString(font, worldText, new Vector2(600, 60), Color.White);
             spriteBatch.DrawString(font, "Time", new Vector2(800, 20), Color.White);
-            spriteBatch.DrawString(font, "" + time, new Vector2(800, 60), Color.White);
-            spriteBatch.End();
+            spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
+            
             base.Draw(gameTime);
+            spriteBatch.End();
         }
 
         /* Helper methods */
