@@ -28,6 +28,11 @@ namespace SuperDavis
         public CollisionDetection collisionDetection;
         private Camera camera;
         private SpriteFont font;
+        public int score;
+        public int coins;
+        public string world;
+        public int time;
+
 
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
@@ -49,6 +54,10 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
+            score = 0;
+            coins = 0;
+            world = "1-1";
+            time = 400;
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();
@@ -102,7 +111,16 @@ namespace SuperDavis
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
             World.Draw(spriteBatch);
-            spriteBatch.DrawString(font, "FPS " + (int)(1 / gameTime.ElapsedGameTime.TotalSeconds), new Vector2(20, 20), Color.White);
+            spriteBatch.End();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(font, "SuperDavis", new Vector2(100, 20), Color.White);
+            spriteBatch.DrawString(font, "" + score, new Vector2(100, 60), Color.White);
+            spriteBatch.DrawString(font, "Coins", new Vector2(400, 20), Color.White);
+            spriteBatch.DrawString(font, "" + coins, new Vector2(400, 60), Color.White);
+            spriteBatch.DrawString(font, "World", new Vector2(600, 20), Color.White);
+            spriteBatch.DrawString(font, world, new Vector2(600, 60), Color.White);
+            spriteBatch.DrawString(font, "Time", new Vector2(800, 20), Color.White);
+            spriteBatch.DrawString(font, "" + time, new Vector2(800, 60), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
