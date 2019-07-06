@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Block
         private readonly ISprite block;
         private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Tuple<Vector2,Vector2>> OnPositionChanged;
 
         public ActivatedBlock(Vector2 location)
         {

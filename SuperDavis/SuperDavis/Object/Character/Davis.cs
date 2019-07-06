@@ -13,31 +13,14 @@ namespace SuperDavis.Object.Character
     {
         private readonly CharacterDictionary charDict;
 
-        public event EventHandler OnPositionChanged;
-
-        public class EventData : EventArgs
-        {
-            public readonly float x;
-            public readonly float y;
-
-            public EventData(float x, float y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-        }
-
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
         public Vector2 Location
         {
-            get
-            {
-                return location;
-            }
+            get { return location; }
             set
             {
-                EventData args = new EventData(location.X, location.Y);
-                OnPositionChanged?.Invoke(this, args);
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
                 location = value;
             }
         }
@@ -50,8 +33,6 @@ namespace SuperDavis.Object.Character
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
         public int InvincibleTimer { get; set; }
-
-        //for seperating sprites and state
         public ISprite Sprite { get; set; }
 
         public Davis(Vector2 location)

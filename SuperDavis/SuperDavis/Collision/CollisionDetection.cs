@@ -36,8 +36,7 @@ namespace SuperDavis.Collision
             { 
                 var i = (int)(mover.Location.X / (world as World).UNIT_SIZE);
                 var j = (int)(mover.Location.Y / (world as World).UNIT_SIZE);
-
-                if (CheckIndexOutOfBounds(i, j, world))
+                if (!(world as World).IsIndexOutOfBounds(i, j))
                 {
                     // Get instance of character reference in the World Grid
                     IDavis moverObject = (IDavis)world.GetObject(mover, i, j);
@@ -46,24 +45,24 @@ namespace SuperDavis.Collision
                     {
                         int hitBoxWidthScaleFactor = (int)(moverObject.HitBox.Width / (world as World).UNIT_SIZE) + 1;
                         int hitBoxHeightScaleFactor = (int)(moverObject.HitBox.Height / (world as World).UNIT_SIZE) + 1;
-                        int offsetFactor = 3; // Magic number here!
+                        int offsetFactor = Variables.Variable.offsetRange; // Magic number here!
 
-                        for (int iOffset = -offsetFactor*hitBoxWidthScaleFactor; iOffset < offsetFactor * hitBoxWidthScaleFactor; iOffset++)
-                                for (int jOffset = -offsetFactor*hitBoxHeightScaleFactor; jOffset < offsetFactor * hitBoxHeightScaleFactor; jOffset++)
-                                {
-                                    if (CheckIndexOutOfBounds(i + iOffset, j + jOffset, world))
+                        for (int iOffset = -offsetFactor*hitBoxWidthScaleFactor; iOffset < (offsetFactor+1) * hitBoxWidthScaleFactor; iOffset++)
+                              for (int jOffset = -offsetFactor*hitBoxHeightScaleFactor; jOffset < (offsetFactor+1) * hitBoxHeightScaleFactor; jOffset++)
+                                   if (!(world as World).IsIndexOutOfBounds(i + iOffset, j + jOffset))
                                         if (world.WorldGrid[i + iOffset][j + jOffset].Count != 0)
-                                            foreach (IGameObject target in world.WorldGrid[i + iOffset][j + jOffset])
+                                            for(int k = 0; k < world.WorldGrid[i+iOffset][j+jOffset].Count; k++)
                                             {
+                                                var target = world.WorldGrid[i + iOffset][j + jOffset][k];
                                                 if (!target.Equals(mover))
                                                 {
+                                                //System.Console.WriteLine(moverObject.HitBox + "/" + target.HitBox);
                                                     var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);                                                  
                                                     if (target is IBlock) CheckCharacterBlockCollision(moverObject, (IBlock)target, side, world);
                                                     if (target is IItem) CheckCharacterItemCollision(moverObject, (IItem)target, side, world);
                                                     if (target is IEnemy) CheckCharacterEnemyCollision(moverObject, (IEnemy)target, side, world);
                                                 }
                                             }
-                                }
                     }
                 }
             }
@@ -140,11 +139,6 @@ namespace SuperDavis.Collision
             else
                 side = CollisionSide.None;
             return side;
-        }
-
-        private static bool CheckIndexOutOfBounds(int x, int y, IWorld world)
-        {
-            return (x > 0 && x < (world as World).WorldGridWidth && y > 0 && y < (world as World).WorldGridHeight);
         }
     }
 }

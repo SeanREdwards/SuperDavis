@@ -26,7 +26,7 @@ namespace SuperDavis.Collision
                         var coinBrick = (CoinBrick)block;
                         if (coinBrick.CoinCounter > 0)
                         {
-                            world.Items.Add(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
+                            world.AddObject(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
                             coinBrick.CoinCounter--;
                             coinBrick.IsBumped = true;
                         }
@@ -57,7 +57,7 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.Items.Add(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 10)));
+                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 10)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -66,7 +66,7 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.Items.Add(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
+                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 10)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -76,6 +76,7 @@ namespace SuperDavis.Collision
                         if (!block.IsBumped)
                         {
                             world.Items.Add(new Star(new Vector2(block.Location.X, block.Location.Y-10)));
+                            world.AddObject(new Star(new Vector2(block.Location.X, block.Location.Y - 10)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -84,7 +85,7 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.Items.Add(new Flower(new Vector2(block.Location.X, block.Location.Y-10)));
+                            world.AddObject(new Flower(new Vector2(block.Location.X, block.Location.Y - 10)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }

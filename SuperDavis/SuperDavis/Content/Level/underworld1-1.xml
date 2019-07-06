@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Object>
+  // Background
+  <Scenery Type="Background" X="0" Y="0" />
+  // Character
+  <Character Type="Davis" X="48" Y="0" />
+</Object>

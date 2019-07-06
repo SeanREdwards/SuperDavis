@@ -16,8 +16,7 @@ namespace SuperDavis.Object.Item
         private readonly FlowerStateMachine flowerStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = 40;
-
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Flower(Vector2 location)
         {

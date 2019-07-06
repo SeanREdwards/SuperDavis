@@ -14,7 +14,7 @@ namespace SuperDavis.Object.Block
         public FlowerBlockStateMachine FlowerBlockStateMachine;
         private readonly ISprite block;
 
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
