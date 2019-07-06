@@ -8,12 +8,22 @@ namespace SuperDavis.Object.Item
 {
     class BatProjectile : IProjectile
     {
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
+
         public bool FacingLeft { get; set; }
-        public Vector2 Location { get; set; }
+
         private BatProjectileStateMachine BatProjectileStateMachine;
         private readonly ISprite projectile;
-
-        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }

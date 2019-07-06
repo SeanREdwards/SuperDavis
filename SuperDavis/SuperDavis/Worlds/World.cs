@@ -192,7 +192,9 @@ namespace SuperDavis.Worlds
                         WorldGrid[newLocationX][newLocationY].Add(@object);
                     }
                 }
-          
+                else
+                    WorldGrid[oldLocationX][oldLocationY].Remove(@object);
+
         }
 
         public void ResetGame()
