@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Item
 {
     class Mushroom : IItem
     {
+        public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
 

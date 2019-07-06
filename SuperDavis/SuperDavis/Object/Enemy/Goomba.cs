@@ -10,6 +10,7 @@ namespace SuperDavis.Object.Enemy
 {
     class Goomba : IEnemy
     {
+        public float Mass { get; set; }
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
         public Vector2 Location
@@ -39,7 +40,7 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             goombaState = new GoombaStateMachine(this);
-            PhysicsState = new FallState(this);
+            //PhysicsState = new FallState(this);
             enemy = goombaState.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }
