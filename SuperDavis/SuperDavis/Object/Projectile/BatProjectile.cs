@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Item
 {
     class BatProjectile : IProjectile
     {
+        public float Mass { get; set; }
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
         public Vector2 Location

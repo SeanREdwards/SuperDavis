@@ -3,7 +3,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-    class StandingState : IGameObjectPhysics
+    /*class StandingState : IGameObjectPhysics
     {
         // Idea, by passing different igameobject, implement different 
         // param for Falling, using lists
@@ -20,5 +20,5 @@ namespace SuperDavis.Physics
         {
 
         }
-    }
+    }*/
 }

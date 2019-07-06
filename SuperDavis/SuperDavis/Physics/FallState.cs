@@ -3,8 +3,10 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-    class FallState : IGameObjectPhysics
+  /*  class FallState : IGameObjectPhysics
     {
+
+        public float Mass { get; set; }
         // Idea, by passing different igameobject, implement different 
         // param for Falling, using lists
         private IGameObject gameObject;
@@ -28,5 +30,5 @@ namespace SuperDavis.Physics
                 FallVelocity = FallVelocityMax;
             }
         }
-    }
+    }*/
 }

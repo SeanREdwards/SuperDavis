@@ -11,6 +11,7 @@ namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
+        public float Mass { get; set; }
         private readonly CharacterDictionary charDict;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
@@ -46,8 +47,9 @@ namespace SuperDavis.Object.Character
             DavisState = new DavisStaticRightState(this);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             FacingLeft = false;
-            PhysicsState = new FallState(this);
+            //PhysicsState = new FallState(this);
             //PhysicsState.ApplyForce(new Vector2(0, 0));
+            Mass = 5f;
             Location = location;
             DavisProjectile = new List<IProjectile>()
             {
@@ -104,10 +106,11 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
+                /*if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
                     PhysicsState = new JumpState(this);
                     DavisState.Up();
                     Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+                    */
             }
         }
 

@@ -137,15 +137,7 @@ namespace SuperDavis.Collision
             }
         }
 
-
-        /*private static void CheckItemBlockCollision(IList<IItem> items, IList<IBlock> blocks, IWorld world)
-        {
-
-                        CollisionSide side = GetCollisionSide(Rectangle.Intersect(item.HitBox, block.HitBox), item.HitBox, block.HitBox);
-                        ItemBlockCollisionHandler.HandleCollision(item, block, side, world);
-
-        }*/
-
+        // TBD: item collision detection
 
         /* Helper Method */
         private static CollisionSide GetCollisionSide(Rectangle intersection, Rectangle HitBox1, Rectangle HitBox2)

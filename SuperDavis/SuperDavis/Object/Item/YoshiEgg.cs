@@ -8,6 +8,7 @@ namespace SuperDavis.Object.Item
 {
     class YoshiEgg : IItem
     {
+        public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
         public Vector2 Location { get; set; }
