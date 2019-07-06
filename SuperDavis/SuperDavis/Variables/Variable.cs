@@ -16,12 +16,14 @@
 
         public const int WindowsEdgeWidth = 1024;
         public const int WindowsEdgeHeight = 668;
-        public const int UnitPixelSize = 24;
+
+        public const float SpriteScaleFactor = 1.5f;
+        public const float UnitPixelSize = 24;
+
         public const int level11Width = 4800;
         public const int level11Height = 668;
 
         public const int InvincibleTimer = 300;
-        public const float SpriteScaleFactor = 1.5f;
 
         // temp for physics param
         public const float JumpVelocity = 75f;
@@ -55,6 +57,27 @@
         public const int LeftDistance = -3;
         public const int RightDistance = 3;
 
+        // for collision detection
+        public const int offsetRange = 3;
+
+        //Enemies
+        public const float EnemyVectorUpdateLeft = -1f;
+        public const float EnemyVectorUpdateRight = 1f;
+        public const int EnemyRemoveInt = 100;
+
+        public const int GroundLevelKoopa = 600;
+        public const int GroundLeveGoomba = 610;
+
+        //Items
+        public const int CoinTimer = 20;
+        public const float CoinOffsetUp = 3f;
+        public const float CoinOffsetDown = -3f;
+
+        public const int FlowerTimer = 40;
+        public const float FlowerOffsetDown = -0.35f;
+
+        public const int MushroomTimer = 40;
+        public const float MushroomOffsetDown = -0.35f;
 
     }
 }

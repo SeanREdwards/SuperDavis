@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Block
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = Variables.Variable.BumpTime;
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         public Brick(Vector2 location)
         {
             // initial state

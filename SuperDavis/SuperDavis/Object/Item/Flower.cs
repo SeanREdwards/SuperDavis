@@ -15,7 +15,7 @@ namespace SuperDavis.Object.Item
         private readonly ISprite item;
         private readonly FlowerStateMachine flowerStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int timer = 40;
+        private int timer = Variables.Variable.FlowerTimer;
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Flower(Vector2 location)
@@ -36,11 +36,11 @@ namespace SuperDavis.Object.Item
                 {
                     if (timer > 0)
                     {
-                        Location += new Vector2(0, -0.35f);
+                        Location += new Vector2(0, Variables.Variable.FlowerOffsetDown);
                         timer--;
                     } else
                     {
-                        timer = 50;
+                        timer = Variables.Variable.FlowerTimer;
                         IsAnimated = true;
                     }
                 }       

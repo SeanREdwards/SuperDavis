@@ -18,7 +18,7 @@ namespace SuperDavis.Object.Enemy
         private readonly ISprite enemy;
         private IGameObjectState koopaStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private readonly int groundLevel = 600;
+        private readonly int groundLevel = Variables.Variable.GroundLevelKoopa;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
@@ -42,9 +42,9 @@ namespace SuperDavis.Object.Enemy
             if (!Dead)
             {
                 if (FacingLeft)
-                    Location += new Vector2(-1f, 0);
+                    Location += new Vector2(Variables.Variable.EnemyVectorUpdateLeft, 0);
                 else
-                    Location += new Vector2(1f, 0);
+                    Location += new Vector2(Variables.Variable.EnemyVectorUpdateRight, 0);
             }
             else
             {
@@ -62,7 +62,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             koopaStateMachine = new KoopaStateMachine(this);
-            koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 100);
+            koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, Variables.Variable.EnemyRemoveInt);
         }
     }
 }

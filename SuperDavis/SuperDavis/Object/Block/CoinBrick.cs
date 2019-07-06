@@ -17,7 +17,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = Variables.Variable.BumpTime;
         public int CoinCounter = Variables.Variable.CoinBrickCounter;
-        public event EventHandler OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         public CoinBrick(Vector2 location)
         {
             // initial state
