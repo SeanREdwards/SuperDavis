@@ -101,7 +101,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                Location += new Vector2(-3, 0);
+                Location += new Vector2(Variables.Variable.LeftDistance, 0);
                 FacingLeft = true;
                 DavisState.Left();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
@@ -112,7 +112,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                Location += new Vector2(3, 0);
+                Location += new Vector2(Variables.Variable.RightDistance, 0);
                 FacingLeft = false;
                 DavisState.Right();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());

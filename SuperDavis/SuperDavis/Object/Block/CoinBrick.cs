@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Block
 {
@@ -16,6 +17,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
         private int bumpTimer = Variables.Variable.BumpTime;
         public int CoinCounter = Variables.Variable.CoinBrickCounter;
+        public event EventHandler OnPositionChanged;
         public CoinBrick(Vector2 location)
         {
             // initial state

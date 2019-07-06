@@ -51,6 +51,10 @@
         //Coin Brick
         public const int CoinBrickCounter = 5;
 
+        //Davis
+        public const int LeftDistance = -3;
+        public const int RightDistance = 3;
+
 
     }
 }
