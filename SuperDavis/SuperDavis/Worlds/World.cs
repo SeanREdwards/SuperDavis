@@ -208,7 +208,7 @@ namespace SuperDavis.Worlds
             ObjectToRemove.Clear();
             WorldGrid.Initialize();
             WorldCreator worldCreator = new WorldCreator();
-            game.World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
+            game.World = worldCreator.CreateWorld(Variables.Variable.LevelOne, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
             game.collisionDetection = new CollisionDetection(game.World);
             game.InitializeController();
         }

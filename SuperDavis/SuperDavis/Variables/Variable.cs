@@ -25,7 +25,7 @@
 
         public const int InvincibleTimer = 300;
 
-        // temp for physics param
+        //Physics
         public const float JumpVelocity = 75f;
         public const float JumpVelocityDecayRate = 0.8f;
         public const float JumpVelocityMin = 1f;
@@ -33,6 +33,8 @@
         public const float FallVelocity = 2f;
         public const float FallVelocityIncreaseRate = 1.4f;
         public const float FallVelocityMax = 30f;
+
+        public const int PhysicsDivisor = 50;
 
         /*Camera variables.*/
         public const int CameraDivisor = 2;
@@ -79,5 +81,25 @@
         public const int MushroomTimer = 40;
         public const float MushroomOffsetDown = -0.35f;
 
+        public const int StarTimer = 35;
+        public const float StarOffsetDown = -0.35f;
+
+        //Projectiles
+        public const float BatProjLeftMovement = -8f;
+        public const float BatProjRightMovement = 8f;
+
+        //Remove State Variables
+        public const int RemovalTimerCeiling = 70;
+        public const float RemovalOffsetDown = -0.5f;
+        public const int RemovalOffsetUp = 3;
+
+        //World Creator String Dict Accesors
+        public const string Character = "Character";
+        public const string Item = "Item";
+        public const string Block = "Block";
+        public const string Enemy = "Enemy";
+        public const string Scenery = "Scenery";
+
+        //Variables.Variable.
     }
 }

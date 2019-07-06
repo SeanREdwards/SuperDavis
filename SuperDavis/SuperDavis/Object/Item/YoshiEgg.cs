@@ -10,14 +10,11 @@ namespace SuperDavis.Object.Item
     {
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-
         public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly YoshiEggStateMachine yoshiEggStateMachine;
-
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
-
         public IGameObjectPhysics PhysicsState { get; set; }
 
         public YoshiEgg(Vector2 location)

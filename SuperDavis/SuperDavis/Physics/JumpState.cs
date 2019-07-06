@@ -21,7 +21,7 @@ namespace SuperDavis.Physics
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location -= new Vector2(0, JumpVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / 50);
+            gameObject.Location -= new Vector2(0, JumpVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
             JumpVelocity *= JumpVelocityDecayRate;
             if (JumpVelocity < JumpVelocityMin)
             {

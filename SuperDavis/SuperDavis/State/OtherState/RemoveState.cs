@@ -27,10 +27,10 @@ namespace SuperDavis.State.OtherState
         {
             timer--;
             sprite.Update(gameTime);
-            if (timer > 70)
-                gameObject.Location += new Vector2(0, -0.5f);
+            if (timer > Variables.Variable.RemovalTimerCeiling)
+                gameObject.Location += new Vector2(0, Variables.Variable.RemovalOffsetDown);
             else
-                gameObject.Location += new Vector2(0, 3);
+                gameObject.Location += new Vector2(0, Variables.Variable.RemovalOffsetUp);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

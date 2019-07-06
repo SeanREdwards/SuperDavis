@@ -10,7 +10,6 @@ namespace SuperDavis.State.DavisState
         public float Height { get; set; }
 
         public ISprite Sprite { get; set; }
-        private int timer = 100;
         public DavisDeathLeftState()
         {
 
@@ -52,16 +51,15 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            timer--;
+
             Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            if (timer >= 0)
-            {
+
                 Sprite.Draw(spriteBatch, location);
-            }
+    
         }
     }
 }

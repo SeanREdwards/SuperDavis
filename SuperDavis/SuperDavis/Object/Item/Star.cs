@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Item
         private readonly ISprite item;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int timer = 35;
+        private int timer = Variables.Variable.StarTimer;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
@@ -39,12 +39,12 @@ namespace SuperDavis.Object.Item
                 {
                     if (timer > 0)
                     {
-                        Location += new Vector2(0, -0.35f);
+                        Location += new Vector2(0, Variables.Variable.StarOffsetDown);
                         timer--;
                     }
                     else
                     {
-                        timer = 30;
+                        timer = Variables.Variable.StarTimer;
                         IsAnimated = true;
                     }
                 }
