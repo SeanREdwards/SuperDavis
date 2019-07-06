@@ -2,8 +2,21 @@
 {
     public static class Variable
     {
+        public const int Zero = 0;
+
+
+        //Game1.cs string variables.
+        public const string ContentDirectory = "Content";
+        public const string LevelOne = "level1-1.xml";
+
+        //Game1.cs reset distances.
+        public const int FloorReset = -100;
+        public const int CeilingReset = 768;
+        public const int RightReset = 4900;
+
         public const int WindowsEdgeWidth = 1024;
         public const int WindowsEdgeHeight = 668;
+
         public const float SpriteScaleFactor = 1.5f;
         public const float UnitPixelSize = 24;
 
@@ -11,7 +24,6 @@
         public const int level11Height = 668;
 
         public const int InvincibleTimer = 300;
-
 
         // temp for physics param
         public const float JumpVelocity = 75f;
@@ -22,7 +34,50 @@
         public const float FallVelocityIncreaseRate = 1.4f;
         public const float FallVelocityMax = 30f;
 
+        /*Camera variables.*/
+        public const int CameraDivisor = 2;
+        public const int CameraWorldWidthMultiplier = 4;
+        public const float CameraModifier = 0.5f;
+
+
+        /*Block Collision Variables.*/
+        public const int BlockOffsetTen = 10;
+        public const int BlockOffsetForty = 40;
+
+        //Block/Brick Bump time.
+        public const int BumpTime = 10;
+        public const int BumpTimeHalf = 5;
+        public const float BumpShiftUp = 1f;
+        public const float BumpShiftDown = -1f;
+
+        //Coin Brick
+        public const int CoinBrickCounter = 5;
+
+        //Davis
+        public const int LeftDistance = -3;
+        public const int RightDistance = 3;
+
         // for collision detection
-        public const int offsetRange = 2;
+        public const int offsetRange = 3;
+
+        //Enemies
+        public const float EnemyVectorUpdateLeft = -1f;
+        public const float EnemyVectorUpdateRight = 1f;
+        public const int EnemyRemoveInt = 100;
+
+        public const int GroundLevelKoopa = 600;
+        public const int GroundLeveGoomba = 610;
+
+        //Items
+        public const int CoinTimer = 20;
+        public const float CoinOffsetUp = 3f;
+        public const float CoinOffsetDown = -3f;
+
+        public const int FlowerTimer = 40;
+        public const float FlowerOffsetDown = -0.35f;
+
+        public const int MushroomTimer = 40;
+        public const float MushroomOffsetDown = -0.35f;
+
     }
 }

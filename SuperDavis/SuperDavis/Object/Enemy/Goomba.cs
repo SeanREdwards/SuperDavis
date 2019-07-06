@@ -31,7 +31,7 @@ namespace SuperDavis.Object.Enemy
         private readonly ISprite enemy;
         private IGameObjectState goombaState;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private readonly int groundLevel = 610;
+        private readonly int groundLevel = Variables.Variable.GroundLeveGoomba;
 
         public Goomba(Vector2 location)
         {
@@ -53,9 +53,9 @@ namespace SuperDavis.Object.Enemy
             if (!Dead)
             {
                 if (FacingLeft)
-                    Location += new Vector2(-1f, 0);
+                    Location += new Vector2(Variables.Variable.EnemyVectorUpdateLeft, 0);
                 else
-                    Location += new Vector2(1f, 0);
+                    Location += new Vector2(Variables.Variable.EnemyVectorUpdateRight, 0);
             }
 
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
@@ -70,7 +70,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             goombaState = new GoombaStateMachine(this);
-            goombaState = new RemoveState(this, goombaState.Sprite, 100);
+            goombaState = new RemoveState(this, goombaState.Sprite, Variables.Variable.EnemyRemoveInt);
         }
     }
 }

@@ -58,14 +58,14 @@ namespace SuperDavis.Object.Character
         // Davis State Change Helper Method
         public void DavisTurnLeft()
         {
-            Location += new Vector2(-3, 0);
+            Location += new Vector2(Variables.Variable.LeftDistance, 0);
             FacingLeft = true;
             DavisState.Left();
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisTurnRight()
         {
-            Location += new Vector2(3, 0);
+            Location += new Vector2(Variables.Variable.RightDistance, 0);
             FacingLeft = false;
             DavisState.Right();
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());

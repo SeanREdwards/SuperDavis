@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Block
 {
@@ -16,10 +16,9 @@ namespace SuperDavis.Object.Block
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int bumpTimer = 10;
-        public int CoinCounter = 5;
+        private int bumpTimer = Variables.Variable.BumpTime;
+        public int CoinCounter = Variables.Variable.CoinBrickCounter;
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
-
         public CoinBrick(Vector2 location)
         {
             // initial state
@@ -36,13 +35,13 @@ namespace SuperDavis.Object.Block
             BrickStateMachine.Update(gameTime);
             if (IsBumped)
             {
-                if (bumpTimer > 5)
-                    Location += new Vector2(0, -1f);
+                if (bumpTimer > Variables.Variable.BumpTimeHalf)
+                    Location += new Vector2(0, Variables.Variable.BumpShiftDown);
                 else if (bumpTimer  > 0)
-                    Location += new Vector2(0, 1f);
+                    Location += new Vector2(0, Variables.Variable.BumpShiftUp);
                 else
                 {
-                    bumpTimer = 10;
+                    bumpTimer = Variables.Variable.BumpTime;
                     IsBumped = false;
                 }
                 bumpTimer--;

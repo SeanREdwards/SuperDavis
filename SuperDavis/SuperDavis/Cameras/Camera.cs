@@ -20,17 +20,17 @@ namespace SuperDavis.Cameras
         {
             foreach (IDavis davis in world.Characters)
             {
-                if (davis.Location.X <= width / 2)
+                if (davis.Location.X <= width / Variables.Variable.CameraDivisor)
                 {
-                    matrix = Matrix.CreateTranslation(new Vector3(- width / 2, - height / 2 , 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
+                    matrix = Matrix.CreateTranslation(new Vector3(- width / Variables.Variable.CameraDivisor, - height / Variables.Variable.CameraDivisor, 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
                 }
-                else if (davis.Location.X >= world.Width * 4 - width / 2)// right edge of screen, can change later on8
+                else if (davis.Location.X >= world.Width * Variables.Variable.CameraWorldWidthMultiplier - width / Variables.Variable.CameraDivisor)// right edge of screen, can change later on8
                 {
-                    matrix = Matrix.CreateTranslation(new Vector3(- world.Width * 4 + width / 2, - height / 2 , 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
+                    matrix = Matrix.CreateTranslation(new Vector3(- world.Width * Variables.Variable.CameraWorldWidthMultiplier + width / Variables.Variable.CameraDivisor, - height / Variables.Variable.CameraDivisor , 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
                 }
                 else
                 {
-                    matrix = Matrix.CreateTranslation(new Vector3(-davis.Location.X, -height / 2, 0)) * Matrix.CreateTranslation(new Vector3(width * 0.5f, height * 0.5f, 0));
+                    matrix = Matrix.CreateTranslation(new Vector3(-davis.Location.X, -height / Variables.Variable.CameraDivisor, 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
                 }
             }
             return matrix;

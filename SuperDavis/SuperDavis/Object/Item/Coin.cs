@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Item
         private readonly ISprite item;
         private readonly CoinStateMachine coinStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int timer = 20;
+        private int timer = Variables.Variable.CoinTimer;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
@@ -39,16 +39,16 @@ namespace SuperDavis.Object.Item
             {
                 if (timer > 10)
                 {
-                    Location += new Vector2(0, -3f);
+                    Location += new Vector2(0, Variables.Variable.CoinOffsetDown);
                     timer--;
                 } else if (timer > 0)
                 {
-                    Location += new Vector2(0, 3f);
+                    Location += new Vector2(0, Variables.Variable.CoinOffsetUp);
                     timer--;
                 }
                 else
                 {
-                    timer = 20;
+                    timer = Variables.Variable.CoinTimer;
                     IsAnimated = true;
                 }
             }
