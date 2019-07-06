@@ -23,6 +23,6 @@
         public const float FallVelocityMax = 30f;
 
         // for collision detection
-        public const int offsetRange = 3;
+        public const int offsetRange = 2;
     }
 }

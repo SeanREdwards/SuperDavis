@@ -10,17 +10,26 @@ namespace SuperDavis.Object.Enemy
 {
     class Koopa : IEnemy
     {
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
+
         public bool FacingLeft { get; set; }
         public bool FacingRight { get; set; }
         public bool Dead { get; set; }
-        public Vector2 Location { get; set; }
+
         public Rectangle HitBox { get; set; }
         private readonly ISprite enemy;
         private IGameObjectState koopaStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private readonly int groundLevel = 600;
-
-        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public Koopa(Vector2 location)
         {
@@ -46,10 +55,7 @@ namespace SuperDavis.Object.Enemy
                 else
                     Location += new Vector2(1f, 0);
             }
-            else
-            {
-                Location = new Vector2(Location.X, groundLevel);
-            }
+
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }
 
