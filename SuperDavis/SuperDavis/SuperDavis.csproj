@@ -241,7 +241,6 @@
     <Compile Include="Command\ToggleMouseControl.cs" />
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Factory\BackgroundSpriteFactory.cs" />
-    <Compile Include="HUD.cs" />
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
@@ -347,6 +346,7 @@
     <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Level\underworld1-1.xml" />
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_0.png" />
