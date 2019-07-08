@@ -47,7 +47,7 @@ namespace SuperDavis.Object.Enemy
 
         public void Update(GameTime gameTime)
         {
-            PhysicsState.Update(gameTime);
+            //PhysicsState.Update(gameTime);
             goombaState.Update(gameTime);
 
             if (!Dead)

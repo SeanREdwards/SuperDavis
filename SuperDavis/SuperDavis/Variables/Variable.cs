@@ -57,6 +57,11 @@
         public const int LeftDistance = -3;
         public const int RightDistance = 3;
 
+        public const float XMaxVelocity = 10f;
+        public const float YMaxVeloctiy = 30f;
+
+        public const float GRAVITY = 5f;
+        public const float DavisMass = 5f;
         // for collision detection
         public const int offsetRange = 3;
 

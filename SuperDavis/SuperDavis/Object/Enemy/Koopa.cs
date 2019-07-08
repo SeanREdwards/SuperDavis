@@ -47,7 +47,7 @@ namespace SuperDavis.Object.Enemy
         public void Update(GameTime gameTime)
         {
             koopaStateMachine.Update(gameTime);
-            PhysicsState.Update(gameTime);
+            //PhysicsState.Update(gameTime);
 
             if (!Dead)
             {

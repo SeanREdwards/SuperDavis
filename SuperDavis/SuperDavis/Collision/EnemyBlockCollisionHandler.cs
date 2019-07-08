@@ -18,7 +18,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
-                    enemy.PhysicsState = new StandingState(enemy);
+                    //enemy.PhysicsState = new StandingState(enemy);
                     break;
                 default:
                     break;

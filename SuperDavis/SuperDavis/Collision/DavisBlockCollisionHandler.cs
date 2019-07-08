@@ -17,11 +17,11 @@ namespace SuperDavis.Collision
                 case CollisionSide.Bottom:
                     //davis.PhysicsState.VerticalVelocity = 0;
                     // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
-                    if (block is HiddenBlock && davis.PhysicsState is JumpState)
+                    if (block is HiddenBlock /*davis.PhysicsState is JumpState*/)
                     {
                         block.SpecialState();
                     }
-                    if (block is CoinBrick && davis.PhysicsState is JumpState)
+                    if (block is CoinBrick /*&& davis.PhysicsState is JumpState*/)
                     {
                         var coinBrick = (CoinBrick)block;
                         if (coinBrick.CoinCounter > 0)
@@ -91,14 +91,15 @@ namespace SuperDavis.Collision
                         }
                     }
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
-                    davis.PhysicsState = new FallState(davis);
+                    //davis.PhysicsState = new FallState(davis);
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
                     if (!block.IsHidden)
                     {
-                            davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
-                            davis.PhysicsState = new StandingState(davis);
+                        if(davis.PhysicsState.Velocity.Y != 0)
+                            davis.PhysicsState.ApplyForce(new Vector2(0, -Variables.Variable.GRAVITY*Variables.Variable.DavisMass));
+                        davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, 0);
                             davis.DavisState.Land();
                     }
                     break;

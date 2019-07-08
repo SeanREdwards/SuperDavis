@@ -14,6 +14,7 @@ namespace SuperDavis.Object.Character
         public float Mass { get; set; }
         private readonly CharacterDictionary charDict;
 
+        // Collision Detection Params
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
         public Vector2 Location
@@ -46,8 +47,9 @@ namespace SuperDavis.Object.Character
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+            PhysicsState = new PhysicsManager(this, new Vector2(Variables.Variable.XMaxVelocity,Variables.Variable.YMaxVeloctiy));
             FacingLeft = false;
-            //PhysicsState = new FallState(this);
+ 
             //PhysicsState.ApplyForce(new Vector2(0, 0));
             Mass = 5f;
             Location = location;
@@ -62,7 +64,6 @@ namespace SuperDavis.Object.Character
         {
             //For seperating sprite from state
             Sprite.Update(gameTime);
-
             PhysicsState.Update(gameTime);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
         }
@@ -84,7 +85,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                Location += new Vector2(Variables.Variable.LeftDistance, 0);
+                PhysicsState.ApplyForce(new Vector2(-3f,0));
                 FacingLeft = true;
                 DavisState.Left();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
@@ -95,7 +96,8 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                Location += new Vector2(Variables.Variable.RightDistance, 0);
+                PhysicsState.ApplyForce(new Vector2(3f, 0));
+
                 FacingLeft = false;
                 DavisState.Right();
                 Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());

@@ -120,7 +120,7 @@ namespace SuperDavis
             World.Draw(spriteBatch);
             spriteBatch.End();
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "SuperDavis", new Vector2(100, 20), Color.White);
+            spriteBatch.DrawString(font, "SuperFkingDavis", new Vector2(100, 20), Color.White);
             spriteBatch.DrawString(font, "" + score, new Vector2(100, 60), Color.White);
             spriteBatch.DrawString(font, "Coins", new Vector2(400, 20), Color.White);
             spriteBatch.DrawString(font, "" + coins, new Vector2(400, 60), Color.White);
