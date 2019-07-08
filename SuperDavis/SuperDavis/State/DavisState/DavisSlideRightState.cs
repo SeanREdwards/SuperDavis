@@ -36,6 +36,7 @@ namespace SuperDavis.State.DavisState
 
         public void Up()
         {
+            davis.PhysicsState.Acceleration = new Vector2(0, davis.PhysicsState.Acceleration.Y);
             davis.DavisState = new DavisJumpRightState(davis);
         }
 

@@ -6,8 +6,6 @@ namespace SuperDavis.Physics
 {
     class PhysicsManager : IGameObjectPhysics
     {
-        private const float GRAVITY = 5f;
-
         private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
         public Vector2 MaxVelocity { get; set; }
@@ -18,7 +16,7 @@ namespace SuperDavis.Physics
             gameObject = @object;
             Velocity = Vector2.Zero;
             MaxVelocity = maxVelocity;
-            Acceleration = new Vector2(0, GRAVITY);
+            Acceleration = new Vector2(0, Variables.Variable.GRAVITY);
         }
 
         public void ApplyForce(Vector2 force)
@@ -45,8 +43,13 @@ namespace SuperDavis.Physics
                 else
                     Velocity = new Vector2(-MaxVelocity.X, Velocity.Y);
             }
-            if (Velocity.Y > MaxVelocity.Y)
-                Velocity = new Vector2(Velocity.X, MaxVelocity.Y);
+            if (Math.Abs(Velocity.Y) > MaxVelocity.Y)
+            {
+                if (Velocity.Y > 0)
+                    Velocity = new Vector2(Velocity.X, MaxVelocity.Y);
+                else
+                    Velocity = new Vector2(Velocity.X, -MaxVelocity.Y);
+            }
         }
     }
 }

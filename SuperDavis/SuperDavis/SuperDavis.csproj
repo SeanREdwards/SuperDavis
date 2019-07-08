@@ -236,6 +236,7 @@
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
     <Compile Include="Command\DavisSlideCommand.cs" />
+    <Compile Include="Command\DavisFreeFallCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />

@@ -14,6 +14,8 @@ namespace SuperDavis.State.DavisState
         public DavisJumpLeftState(IDavis davis)
         {
             this.davis = davis;
+            davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, -Variables.Variable.YMaxVeloctiy);
+            davis.PhysicsState.Acceleration = new Vector2(davis.PhysicsState.Acceleration.X, Variables.Variable.GRAVITY);
         }
 
         public void Static()
@@ -71,6 +73,7 @@ namespace SuperDavis.State.DavisState
                 }
             }
             davis.Sprite.Update(gameTime);
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
