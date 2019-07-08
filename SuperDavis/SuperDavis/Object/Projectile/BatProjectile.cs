@@ -46,11 +46,11 @@ namespace SuperDavis.Object.Item
             BatProjectileStateMachine.Update(gameTime);
             if(FacingLeft)
             {
-                Location += new Vector2(-8f, 0);
+                Location += new Vector2(Variables.Variable.BatProjLeftMovement, 0);
             }
             else
             {
-                Location += new Vector2(8f, 0);
+                Location += new Vector2(Variables.Variable.BatProjRightMovement, 0);
             }
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectile.Width, (int)projectile.Height);
         }

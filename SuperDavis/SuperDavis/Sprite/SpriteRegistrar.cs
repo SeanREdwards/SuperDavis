@@ -20,9 +20,4 @@ namespace SuperDavis.Sprite
         public SpriteEffects Effects { get; set; }
         public SpriteRegistrar() { }
     }
-
-   /* public void SetInvicibleColors()
-    {
-
-    }*/
 }

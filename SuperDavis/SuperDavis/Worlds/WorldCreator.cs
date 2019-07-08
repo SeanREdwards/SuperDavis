@@ -26,11 +26,11 @@ namespace SuperDavis.Worlds
         {
             objectDictionary = new Dictionary<String, Action<IWorld, string, float, float>>
             {
-                { "Character", CreateCharacter },
-                { "Item", CreateItem },
-                { "Block", CreateBlock },
-                { "Enemy", CreateEnemy },
-                { "Scenery", CreateBackground }
+                { Variables.Variable.Character, CreateCharacter },
+                { Variables.Variable.Item, CreateItem },
+                { Variables.Variable.Block, CreateBlock },
+                { Variables.Variable.Enemy, CreateEnemy },
+                { Variables.Variable.Scenery, CreateBackground }
             };
         }
 
