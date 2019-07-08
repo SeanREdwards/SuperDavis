@@ -39,6 +39,8 @@ namespace SuperDavis.Object.Character
                 { "SuperDavis.State.DavisState.DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateDavisSpecialAttackOneRight() },
                 { "SuperDavis.State.DavisState.DavisStaticLeftState", DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateDavisStaticRightSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideLeftState", DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideRightState", DavisSpriteFactory.Instance.CreateDavisStaticRightSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateDavisWalkRightSprite() }
             };
@@ -59,6 +61,8 @@ namespace SuperDavis.Object.Character
                 { "SuperDavis.State.DavisState.DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateWoodySpecialAttackOneRight() },
                 { "SuperDavis.State.DavisState.DavisStaticLeftState", DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateWoodyStaticRightSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideLeftState", DavisSpriteFactory.Instance.CreateWoodyStaticLeftSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideRightState", DavisSpriteFactory.Instance.CreateWoodyStaticRightSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateWoodyWalkLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateWoodyWalkRightSprite() }
             };
@@ -79,6 +83,8 @@ namespace SuperDavis.Object.Character
                 { "SuperDavis.State.DavisState.DavisSpecialAttackRightState", DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight() },
                 { "SuperDavis.State.DavisState.DavisStaticLeftState", DavisSpriteFactory.Instance.CreateBatStaticLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateBatStaticRightSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideLeftState", DavisSpriteFactory.Instance.CreateBatStaticLeftSprite() },
+                { "SuperDavis.State.DavisState.DavisSlideRightState", DavisSpriteFactory.Instance.CreateBatStaticRightSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateBatWalkLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateBatWalkRightSprite() }
             };

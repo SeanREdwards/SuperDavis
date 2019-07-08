@@ -10,6 +10,7 @@
         void Up();
         void Down();
         void Land();
+        void Slide();
         void Death();
         void SpecialAttack();
     }

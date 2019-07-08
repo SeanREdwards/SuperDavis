@@ -129,8 +129,9 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Time", new Vector2(800, 20), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
             
-            base.Draw(gameTime);
             spriteBatch.End();
+            base.Draw(gameTime);
+
         }
 
         /* Helper methods */
@@ -153,14 +154,14 @@ namespace SuperDavis
                       (Keys.Q, new ExitCommand(this), new NullCommand(), false),
                       (Keys.R, new ResetCommand(World), new NullCommand(), false),
                       (Keys.S, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.A, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.D, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
+                      (Keys.A, new DavisTurnLeftCommand(davis), new DavisSlideCommand(davis), true),
+                      (Keys.D, new DavisTurnRightCommand(davis), new DavisSlideCommand(davis), true),
                       (Keys.W, new DavisJumpCommand(davis),new NullCommand(), true),
                       (Keys.Y, new DavisToDavisCommand(davis),new NullCommand(), true),
                       (Keys.U, new DavisToWoodyCommand(davis),new NullCommand(), true),
                       (Keys.I, new DavisToBatCommand(davis),new NullCommand(), true),
-                      (Keys.Left, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.Right, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
+                      (Keys.Left, new DavisTurnLeftCommand(davis), new DavisSlideCommand(davis), true),
+                      (Keys.Right, new DavisTurnRightCommand(davis), new DavisSlideCommand(davis), true),
                       (Keys.Up, new DavisJumpCommand(davis),new NullCommand(), true),
                       (Keys.Z, new DavisJumpCommand(davis),new NullCommand(), true),
                       (Keys.X, new DavisShootBulletCommand(davis,World),new NullCommand(), false),

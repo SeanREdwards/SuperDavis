@@ -18,6 +18,7 @@ namespace SuperDavis.Interfaces
         void DavisJump();
         void DavisCrouch();
         void DavisLand();
+        void DavisSlide();
         void DavisToDavis();
         void DavisToWoody();
         void DavisToBat();

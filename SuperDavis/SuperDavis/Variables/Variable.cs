@@ -63,7 +63,8 @@
         public const float YMaxVeloctiy = 30f;
 
         public const float GRAVITY = 5f;
-        public const float DavisMass = 5f;
+        public const float FRICTION = 5f;
+        public const float DavisMass = 1f;
         // for collision detection
         public const int offsetRange = 3;
 

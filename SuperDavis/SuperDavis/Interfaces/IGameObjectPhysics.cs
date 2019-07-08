@@ -9,5 +9,7 @@ namespace SuperDavis.Interfaces
 
         void ApplyForce(Vector2 forceVector);
         void Update(GameTime gameTime);
+
+        //void FreeFalling();
     }
 }

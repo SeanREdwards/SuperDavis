@@ -8,13 +8,13 @@ namespace SuperDavis.State.DavisState
     {
         public float Width { get; set; }
         public float Height { get; set; }
-
+        private readonly IDavis davis;
         public ISprite Sprite { get; set; }
 
 
-        public DavisDeathRightState()
+        public DavisDeathRightState(IDavis davis)
         {
-
+            this.davis = davis;
         }
 
         public void Static()
@@ -45,6 +45,11 @@ namespace SuperDavis.State.DavisState
         {
 
         }
+
+        public void Slide()
+        {
+
+        }
         public void Death()
         {
             //Do Nothing
@@ -58,13 +63,13 @@ namespace SuperDavis.State.DavisState
         public void Update(GameTime gameTime)
         {
 
-            Sprite.Update(gameTime);
+            davis.Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
 
-                Sprite.Draw(spriteBatch, location);
+            davis.Sprite.Draw(spriteBatch, location);
 
         }
     }

@@ -43,9 +43,14 @@ namespace SuperDavis.State.DavisState
 
         }
 
+        public void Slide()
+        {
+            davis.DavisState = new DavisSlideRightState(davis);
+        }
+
         public void Death()
         {
-            davis.DavisState = new DavisDeathRightState();
+            davis.DavisState = new DavisDeathRightState(davis);
         }
 
         public void SpecialAttack()
@@ -65,12 +70,12 @@ namespace SuperDavis.State.DavisState
                     davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
                 }
             }
-            Sprite.Update(gameTime);
+            davis.Sprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Sprite.Draw(spriteBatch, location);
+            davis.Sprite.Draw(spriteBatch, location);
         }
     }
 }
