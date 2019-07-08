@@ -97,9 +97,11 @@ namespace SuperDavis.Collision
                     //if not hidden block
                     if (!block.IsHidden)
                     {
-                        if(davis.PhysicsState.Velocity.Y != 0)
+                        davis.DavisState.Land();
+                        if (davis.PhysicsState.Velocity.Y != 0)
                             davis.PhysicsState.ApplyForce(new Vector2(0, -Variables.Variable.GRAVITY * Variables.Variable.DavisMass));
-                        davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, 0);                   
+                        davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, 0);
+
                     }
                     break;
                 case CollisionSide.Left:
