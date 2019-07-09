@@ -14,6 +14,8 @@ using SuperDavis.Interfaces;
 using SuperDavis.Worlds;
 
 
+
+
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
 [assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
@@ -108,6 +110,9 @@ namespace SuperDavis
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
             World.Draw(spriteBatch);
+            spriteBatch.End();
+            spriteBatch.Begin();
+            HUD.Draw(gameTime, font, spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
 
