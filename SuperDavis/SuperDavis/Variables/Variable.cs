@@ -107,6 +107,13 @@
         public const string Enemy = "Enemy";
         public const string Scenery = "Scenery";
 
+        //HUD varables
+        public static int score = 0;
+        public static int coins = 0;
+        public static int lives = 3;
+        public static string worldText = "1-1";
+        public static double time = 400;
+
         //Variables.Variable.
     }
 }

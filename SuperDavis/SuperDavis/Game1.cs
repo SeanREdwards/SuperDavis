@@ -13,9 +13,6 @@ using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Worlds;
 
-
-
-
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
 [assembly: AssemblyVersionAttribute("6.6.6.6")] // CA1016
@@ -30,11 +27,6 @@ namespace SuperDavis
         public CollisionDetection collisionDetection;
         private Camera camera;
         private SpriteFont font;
-        public int score;
-        public int coins;
-        public string worldText;
-        public double time;
-
 
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
@@ -56,7 +48,6 @@ namespace SuperDavis
 
         protected override void Initialize()
         {
-
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();

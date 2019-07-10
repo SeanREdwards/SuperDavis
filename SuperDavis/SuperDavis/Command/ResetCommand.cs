@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interfaces;
+using SuperDavis.Variables;
 
 namespace SuperDavis.Command
 {
@@ -12,6 +13,10 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
+            Variable.coins = 0;
+            Variable.score = 0;
+            Variable.time = 400;
+            Variable.lives = 3;
             world.ResetGame();
         }
     }
