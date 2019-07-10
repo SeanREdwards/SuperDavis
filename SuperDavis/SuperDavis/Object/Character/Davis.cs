@@ -39,8 +39,7 @@ namespace SuperDavis.Object.Character
 
         public Davis(Vector2 location)
         {
-            Mass = 5f;
-            PhysicsState = new PhysicsManager(this, new Vector2(Variables.Variable.XMaxVelocity, Variables.Variable.YMaxVeloctiy));
+            PhysicsState = new FallState(this);
             //Instantiate character dictionary
             charDict = new CharacterDictionary();
 
@@ -67,6 +66,7 @@ namespace SuperDavis.Object.Character
             //For seperating sprite from state
             //Sprite.Update(gameTime);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+            System.Console.WriteLine(DavisState);
             DavisState.Update(gameTime);
             PhysicsState.Update(gameTime);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
@@ -89,7 +89,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                PhysicsState.ApplyForce(new Vector2(-5f,0));
+                Location += new Vector2(-3f, 0);
                 FacingLeft = true;
                 DavisState.Left();
                 //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
@@ -100,7 +100,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                PhysicsState.ApplyForce(new Vector2(5f, 0));
+                Location += new Vector2(3f, 0);
                 FacingLeft = false;
                 DavisState.Right();
                 //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
@@ -111,7 +111,9 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                DavisState.Up();
+                if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
+                    PhysicsState = new JumpState(this);
+                DavisState.Up();                
             }
         }
 
@@ -127,7 +129,8 @@ namespace SuperDavis.Object.Character
         public void DavisLand()
         {
             DavisState.Land();
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+            PhysicsState = new FallState(this);
+                //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisSlide()

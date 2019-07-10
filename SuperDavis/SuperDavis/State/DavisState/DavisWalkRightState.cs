@@ -45,7 +45,6 @@ namespace SuperDavis.State.DavisState
 
         public void Slide()
         {
-            davis.DavisState = new DavisSlideRightState(davis);
         }
 
         public void Death()

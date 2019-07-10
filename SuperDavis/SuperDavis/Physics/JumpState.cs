@@ -3,31 +3,31 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-  /*  class JumpState : IGameObjectPhysics
+    class JumpState : IGameObjectPhysics
     {
-        // Idea, by passing different igameobject, implement different 
-        // param for Jumping, using lists
+
         private IGameObject gameObject;
-        private float JumpVelocity;
-        private float JumpVelocityDecayRate;
-        private float JumpVelocityMin;
+        public Vector2 Velocity { get; set; }
+        public Vector2 MaxVelocity { get; set; }
+        public Vector2 Acceleration { get; set; }
+
         public JumpState(IGameObject gameObjectClass)
         {
             gameObject = gameObjectClass;
-            JumpVelocity = Variables.Variable.JumpVelocity;
-            JumpVelocityDecayRate = Variables.Variable.JumpVelocityDecayRate;
-            JumpVelocityMin = Variables.Variable.JumpVelocityMin;
+            Velocity =  new Vector2(0, Variables.Variable.JumpVelocity);
+            Acceleration = new Vector2(0, Variables.Variable.JumpVelocityDecayRate);
+            MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location -= new Vector2(0, JumpVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
-            JumpVelocity *= JumpVelocityDecayRate;
-            if (JumpVelocity < JumpVelocityMin)
+            gameObject.Location -= Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
+            Velocity *= Acceleration;
+            if (Velocity.Y < MaxVelocity.Y)
             {
-                JumpVelocity = 0;
+                Velocity = new Vector2(Velocity.X, 0);
                 gameObject.PhysicsState = new FallState(gameObject);
             }
         }
-    }*/
+    }
 }

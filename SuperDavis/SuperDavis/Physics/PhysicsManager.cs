@@ -4,9 +4,9 @@ using System;
 
 namespace SuperDavis.Physics
 {
-    class PhysicsManager : IGameObjectPhysics
+    /*class PhysicsManager : IGameObjectPhysics
     {
-        private readonly IGameObject gameObject;
+        /*private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
@@ -19,10 +19,6 @@ namespace SuperDavis.Physics
             Acceleration = new Vector2(0, Variables.Variable.GRAVITY);
         }
 
-        public void ApplyForce(Vector2 force)
-        {
-            Acceleration += force / gameObject.Mass;
-        }
 
         public void Update(GameTime gameTime)
         {
@@ -33,7 +29,7 @@ namespace SuperDavis.Physics
             System.Console.WriteLine(Velocity + "/" + Acceleration);
         }
 
-        /* Helper Method */
+
         public void CheckMaxVelocity()
         {
             if (Math.Abs(Velocity.X) > MaxVelocity.X)
@@ -51,5 +47,7 @@ namespace SuperDavis.Physics
                     Velocity = new Vector2(Velocity.X, -MaxVelocity.Y);
             }
         }
-    }
+        
+    }*/
+
 }

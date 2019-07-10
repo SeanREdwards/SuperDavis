@@ -3,32 +3,30 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Physics
 {
-  /*  class FallState : IGameObjectPhysics
+    class FallState : IGameObjectPhysics
     {
 
-        public float Mass { get; set; }
-        // Idea, by passing different igameobject, implement different 
-        // param for Falling, using lists
         private IGameObject gameObject;
-        private float FallVelocity;
-        private float FallVelocityDecayRate;
-        private float FallVelocityMax;
+        public Vector2 Velocity { get; set; }
+        public Vector2 MaxVelocity { get; set; }
+        public Vector2 Acceleration { get; set; }
+
         public FallState(IGameObject gameObjectClass)
         {
             gameObject = gameObjectClass;
-            FallVelocity = Variables.Variable.FallVelocity;
-            FallVelocityDecayRate = Variables.Variable.FallVelocityIncreaseRate;
-            FallVelocityMax = Variables.Variable.FallVelocityMax;
+            Velocity = new Vector2(0, Variables.Variable.FallVelocity);
+            Acceleration = new Vector2(0, Variables.Variable.FallVelocityIncreaseRate);
+            MaxVelocity = new Vector2(0, Variables.Variable.FallVelocityMax);
         }
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location += new Vector2(0, FallVelocity * (float)gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
-            FallVelocity *= FallVelocityDecayRate;
-            if (FallVelocity > FallVelocityMax)
+            gameObject.Location += Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
+            Velocity *= Acceleration;
+            if (Velocity.Y > MaxVelocity.Y)
             {
-                FallVelocity = FallVelocityMax;
+                Velocity = new Vector2(Velocity.X, MaxVelocity.Y);
             }
         }
-    }*/
+    }
 }

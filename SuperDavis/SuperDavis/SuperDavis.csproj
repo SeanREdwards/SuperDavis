@@ -235,8 +235,6 @@
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
-    <Compile Include="Command\DavisSlideCommand.cs" />
-    <Compile Include="Command\DavisFreeFallCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
@@ -263,8 +261,6 @@
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Physics\PhysicsManager.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
-    <Compile Include="State\DavisState\DavisSlideLeftState.cs" />
-    <Compile Include="State\DavisState\DavisSlideRightState.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />

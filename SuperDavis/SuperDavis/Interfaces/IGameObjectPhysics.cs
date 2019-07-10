@@ -7,7 +7,6 @@ namespace SuperDavis.Interfaces
         Vector2 Velocity { get; set; }
         Vector2 Acceleration { get; set; }
 
-        void ApplyForce(Vector2 forceVector);
         void Update(GameTime gameTime);
 
         //void FreeFalling();

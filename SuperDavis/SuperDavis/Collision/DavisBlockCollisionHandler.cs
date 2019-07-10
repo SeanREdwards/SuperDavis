@@ -15,8 +15,6 @@ namespace SuperDavis.Collision
             switch (side)
             {
                 case CollisionSide.Bottom:
-                    //davis.PhysicsState.VerticalVelocity = 0;
-                    // davis.PhysicsState.ApplyForce(new Vector2(0, -10f));
                     if (block is HiddenBlock /*davis.PhysicsState is JumpState*/)
                     {
                         block.SpecialState();
@@ -91,17 +89,15 @@ namespace SuperDavis.Collision
                         }
                     }
                     davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
-                    //davis.PhysicsState = new FallState(davis);
+                    davis.PhysicsState = new FallState(davis);
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
                     if (!block.IsHidden)
                     {
                         davis.DavisState.Land();
-                        if (davis.PhysicsState.Velocity.Y != 0)
-                            davis.PhysicsState.ApplyForce(new Vector2(0, -Variables.Variable.GRAVITY * Variables.Variable.DavisMass));
-                        davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, 0);
-
+                        davis.PhysicsState = new StandingState(davis);
+                        davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                     }
                     break;
                 case CollisionSide.Left:

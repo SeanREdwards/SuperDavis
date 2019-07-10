@@ -14,8 +14,6 @@ namespace SuperDavis.State.DavisState
         public DavisStaticLeftState(IDavis davis)
         {
             this.davis = davis;
-            davis.PhysicsState.Velocity = new Vector2(0, davis.PhysicsState.Velocity.Y);
-            davis.PhysicsState.Acceleration = new Vector2(0, davis.PhysicsState.Acceleration.Y);
         }
 
         public void Static()

@@ -60,7 +60,7 @@
         public const int RightDistance = 3;
 
         public const float XMaxVelocity = 10f;
-        public const float YMaxVeloctiy = 30f;
+        public const float YMaxVeloctiy = 40f;
 
         public const float GRAVITY = 5f;
         public const float FRICTION = 5f;

@@ -14,9 +14,6 @@ namespace SuperDavis.State.DavisState
         public DavisJumpRightState(IDavis davis)
         {
             this.davis = davis;
-            if(davis.PhysicsState.Velocity.Y == 0)
-                davis.PhysicsState.Velocity = new Vector2(davis.PhysicsState.Velocity.X, -Variables.Variable.YMaxVeloctiy);
-            davis.PhysicsState.Acceleration = new Vector2(davis.PhysicsState.Acceleration.X, Variables.Variable.GRAVITY);
         }
 
         public void Static()
