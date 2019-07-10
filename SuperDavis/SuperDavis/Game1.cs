@@ -11,6 +11,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 using SuperDavis.Worlds;
 
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
@@ -51,6 +52,7 @@ namespace SuperDavis
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();
+            InitializeSounds();
             WorldCreator worldCreator = new WorldCreator();
             World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             // After creating world, pass the world into collision detection
@@ -116,6 +118,11 @@ namespace SuperDavis
             ItemSpriteFactory.Instance.Load(Content);
             EnemySpriteFactory.Instance.Load(Content);
             BackgroundSpriteFactory.Instance.Load(Content);
+        }
+
+        private void InitializeSounds()
+        {
+            Sounds.Instance.Load(Content);
         }
 
         public void InitializeController()

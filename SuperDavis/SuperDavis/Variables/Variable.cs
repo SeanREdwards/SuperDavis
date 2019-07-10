@@ -1,5 +1,7 @@
 ﻿namespace SuperDavis.Variables
 {
+
+    /*Class to hold variables to eliminate magic numbers, will data drive in the refactor from JSON file.*/
     public static class Variable
     {
         public const int Zero = 0;

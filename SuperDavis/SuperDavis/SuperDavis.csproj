@@ -178,6 +178,18 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\SoundFX\Jump.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\Death.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\ItemPickup.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\MarioMusic.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\SpriteJSONs\Backgrounds.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -261,6 +273,7 @@
     <Compile Include="Physics\JumpState.cs" />
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Physics\PhysicsManager.cs" />
+    <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
