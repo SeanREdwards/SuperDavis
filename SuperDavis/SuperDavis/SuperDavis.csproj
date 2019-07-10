@@ -347,7 +347,9 @@
     <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Level\underworld1-1.xml" />
+    <Content Include="Content\Level\underworld1-1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_0.png" />

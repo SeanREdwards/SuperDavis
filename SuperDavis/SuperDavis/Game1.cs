@@ -22,6 +22,7 @@ namespace SuperDavis
 {
     class Game1 : Game
     {
+
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
         public CollisionDetection collisionDetection;
@@ -45,14 +46,16 @@ namespace SuperDavis
             }
             Content.RootDirectory = "Content";
         }
-
         protected override void Initialize()
         {
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();
             WorldCreator worldCreator = new WorldCreator();
+            //For level 1-1 testing
             World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            //For Underworld Testing
+            //World = worldCreator.CreateWorld("underworld1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             // After creating world, pass the world into collision detection
             // But 
             collisionDetection = new CollisionDetection(World);
@@ -96,7 +99,7 @@ namespace SuperDavis
         protected override void Draw(GameTime gameTime)
         {
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
