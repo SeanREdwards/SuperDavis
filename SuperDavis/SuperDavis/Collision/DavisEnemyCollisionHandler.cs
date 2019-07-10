@@ -17,7 +17,7 @@ namespace SuperDavis.Collision
                     if (!enemy.Dead)
                     {
                         enemy.TakeDamage();
-                        Variable.score += 100;
+                        HUD.score += 100;
                     }
                 }
                 else
@@ -25,8 +25,8 @@ namespace SuperDavis.Collision
                     if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible)
                     {
                         davis.DavisState.Death();
-                        Variable.time = 400;
-                        Variable.lives--;
+                        HUD.lives--;
+                        HUD.time = Variable.time;
                         world.ObjectToRemove.Add(davis);
                     }
                 }
