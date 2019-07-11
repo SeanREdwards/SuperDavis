@@ -1,7 +1,5 @@
 1. Description
-  This project is designed for Sprint 4 for CSE 3902. This sprint includes physics and jumping logic for the player,
-    movement for types other than the player/mario object, collision detection and response for all moving objects, 
-    fireballs (or other player attacking abilities) and a scrolling camera.
+  This project is designed for Sprint 5 for CSE 3902. Adding HUDs, BGMs, and undone stuff for previous sprint.
 
 2. Key Mappings
   For keyboard:
@@ -38,4 +36,4 @@
                       (Buttons.B, ToggleMouseControl) 
 
 3. Tag to Grade
-  Sprint4Refactored
+  Sprint5Initial
