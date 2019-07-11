@@ -1,7 +1,208 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Object>
-  // Background
-  <Scenery Type="Background" X="0" Y="0" />
   // Character
   <Character Type="Davis" X="48" Y="0" />
+  
+  // Cieling
+  <Block Type = 'Brick' X = '0' Y = '0' />
+  <Block Type = 'Brick' X = '96' Y = '0' />
+  <Block Type = 'Brick' X = '120' Y = '0' />
+  <Block Type = 'Brick' X = '144' Y = '0' />
+  <Block Type = 'Brick' X = '168' Y = '0' />
+  <Block Type = 'Brick' X = '192' Y = '0' />
+  <Block Type = 'Brick' X = '216' Y = '0' />
+  <Block Type = 'Brick' X = '240' Y = '0' />
+  <Block Type = 'Brick' X = '264' Y = '0' />
+  <Block Type = 'Brick' X = '288' Y = '0' />
+  <Block Type = 'Brick' X = '312' Y = '0' />
+  <Block Type = 'Brick' X = '336' Y = '0' />
+  <Block Type = 'Brick' X = '360' Y = '0' />
+  <Block Type = 'Brick' X = '384' Y = '0' />
+  <Block Type = 'Brick' X = '408' Y = '0' />
+  <Block Type = 'Brick' X = '432' Y = '0' />
+  <Block Type = 'Brick' X = '456' Y = '0' />
+  <Block Type = 'Brick' X = '480' Y = '0' />
+  <Block Type = 'Brick' X = '504' Y = '0' />
+  <Block Type = 'Brick' X = '528' Y = '0' />
+  <Block Type = 'Brick' X = '552' Y = '0' />
+  <Block Type = 'Brick' X = '576' Y = '0' />
+  <Block Type = 'Brick' X = '600' Y = '0' />
+  <Block Type = 'Brick' X = '624' Y = '0' />
+  <Block Type = 'Brick' X = '648' Y = '0' />
+  <Block Type = 'Brick' X = '672' Y = '0' />
+  <Block Type = 'Brick' X = '696' Y = '0' />
+  <Block Type = 'Brick' X = '720' Y = '0' />
+  <Block Type = 'Brick' X = '744' Y = '0' />
+  <Block Type = 'Brick' X = '768' Y = '0' />
+  <Block Type = 'Brick' X = '792' Y = '0' />
+  <Block Type = 'Brick' X = '816' Y = '0' />
+  <Block Type = 'Brick' X = '840' Y = '0' />
+  <Block Type = 'Brick' X = '864' Y = '0' />
+  <Block Type = 'Brick' X = '888' Y = '0' />
+  <Block Type = 'Brick' X = '912' Y = '0' />
+  <Block Type = 'Brick' X = '936' Y = '0' />
+  <Block Type = 'Brick' X = '960' Y = '0' />
+  <Block Type = 'Brick' X = '984' Y = '0' />
+
+  //Left Wall
+  <Block Type = 'Brick' X = '0' Y = '0' />
+  <Block Type = 'Brick' X = '0' Y = '24' />
+  <Block Type = 'Brick' X = '0' Y = '48' />
+  <Block Type = 'Brick' X = '0' Y = '72' />
+  <Block Type = 'Brick' X = '0' Y = '96' />
+  <Block Type = 'Brick' X = '0' Y = '120' />
+  <Block Type = 'Brick' X = '0' Y = '144' />
+  <Block Type = 'Brick' X = '0' Y = '168' />
+  <Block Type = 'Brick' X = '0' Y = '192' />
+  <Block Type = 'Brick' X = '0' Y = '216' />
+  <Block Type = 'Brick' X = '0' Y = '240' />
+  <Block Type = 'Brick' X = '0' Y = '264' />
+  <Block Type = 'Brick' X = '0' Y = '288' />
+  <Block Type = 'Brick' X = '0' Y = '312' />
+  <Block Type = 'Brick' X = '0' Y = '336' />
+  <Block Type = 'Brick' X = '0' Y = '360' />
+  <Block Type = 'Brick' X = '0' Y = '384' />
+  <Block Type = 'Brick' X = '0' Y = '408' />
+  <Block Type = 'Brick' X = '0' Y = '432' />
+  <Block Type = 'Brick' X = '0' Y = '456' />
+  <Block Type = 'Brick' X = '0' Y = '480' />
+  <Block Type = 'Brick' X = '0' Y = '504' />
+  <Block Type = 'Brick' X = '0' Y = '528' />
+  <Block Type = 'Brick' X = '0' Y = '552' />
+  <Block Type = 'Brick' X = '0' Y = '576' />
+  <Block Type = 'Brick' X = '0' Y = '600' />
+  <Block Type = 'Brick' X = '0' Y = '624' />
+  
+  //Right Wall
+  <Block Type = 'Brick' X = '1008' Y = '0' />
+  <Block Type = 'Brick' X = '1008' Y = '24' />
+  <Block Type = 'Brick' X = '1008' Y = '48' />
+  <Block Type = 'Brick' X = '1008' Y = '72' />
+  <Block Type = 'Brick' X = '1008' Y = '96' />
+  <Block Type = 'Brick' X = '1008' Y = '120' />
+  <Block Type = 'Brick' X = '1008' Y = '144' />
+  <Block Type = 'Brick' X = '1008' Y = '168' />
+  <Block Type = 'Brick' X = '1008' Y = '192' />
+  <Block Type = 'Brick' X = '1008' Y = '216' />
+  <Block Type = 'Brick' X = '1008' Y = '240' />
+  <Block Type = 'Brick' X = '1008' Y = '264' />
+  <Block Type = 'Brick' X = '1008' Y = '288' />
+  <Block Type = 'Brick' X = '1008' Y = '312' />
+  <Block Type = 'Brick' X = '1008' Y = '336' />
+  <Block Type = 'Brick' X = '1008' Y = '360' />
+  <Block Type = 'Brick' X = '1008' Y = '384' />
+  <Block Type = 'Brick' X = '1008' Y = '408' />
+  <Block Type = 'Brick' X = '1008' Y = '432' />
+  <Block Type = 'Brick' X = '1008' Y = '456' />
+  <Block Type = 'Brick' X = '1008' Y = '480' />
+  <Block Type = 'Brick' X = '1008' Y = '504' />
+  <Block Type = 'Brick' X = '1008' Y = '528' />
+  <Block Type = 'Brick' X = '1008' Y = '552' />
+  <Block Type = 'Brick' X = '1008' Y = '576' />
+  <Block Type = 'Brick' X = '1008' Y = '600' />
+  
+  // Floor
+  <Block Type="Brick" X='0' Y="644" />
+  <Block Type="Brick" X='0' Y="620" />
+  <Block Type="Brick" X='24' Y="644" />
+  <Block Type="Brick" X='24' Y="620" />
+  <Block Type="Brick" X='48' Y="644" />
+  <Block Type="Brick" X='48' Y="620" />
+  <Block Type="Brick" X='72' Y="644" />
+  <Block Type="Brick" X='72' Y="620" />
+  <Block Type="Brick" X='96' Y="644" />
+  <Block Type="Brick" X='96' Y="620" />
+  <Block Type="Brick" X='120' Y="644" />
+  <Block Type="Brick" X='120' Y="620" />
+  <Block Type="Brick" X='144' Y="644" />
+  <Block Type="Brick" X='144' Y="620" />
+  <Block Type="Brick" X='168' Y="644" />
+  <Block Type="Brick" X='168' Y="620" />
+  <Block Type="Brick" X='192' Y="644" />
+  <Block Type="Brick" X='192' Y="620" />
+  <Block Type="Brick" X='216' Y="644" />
+  <Block Type="Brick" X='216' Y="620" />
+  <Block Type="Brick" X='240' Y="644" />
+  <Block Type="Brick" X='240' Y="620" />
+  <Block Type="Brick" X='264' Y="644" />
+  <Block Type="Brick" X='264' Y="620" />
+  <Block Type="Brick" X='288' Y="644" />
+  <Block Type="Brick" X='288' Y="620" />
+  <Block Type="Brick" X='312' Y="644" />
+  <Block Type="Brick" X='312' Y="620" />
+  <Block Type="Brick" X='336' Y="644" />
+  <Block Type="Brick" X='336' Y="620" />
+  <Block Type="Brick" X='360' Y="644" />
+  <Block Type="Brick" X='360' Y="620" />
+  <Block Type="Brick" X='384' Y="644" />
+  <Block Type="Brick" X='384' Y="620" />
+  <Block Type="Brick" X='408' Y="644" />
+  <Block Type="Brick" X='408' Y="620" />
+  <Block Type="Brick" X='432' Y="644" />
+  <Block Type="Brick" X='432' Y="620" />
+  <Block Type="Brick" X='456' Y="644" />
+  <Block Type="Brick" X='456' Y="620" />
+  <Block Type="Brick" X='480' Y="644" />
+  <Block Type="Brick" X='480' Y="620" />
+  <Block Type="Brick" X='504' Y="644" />
+  <Block Type="Brick" X='504' Y="620" />
+  <Block Type="Brick" X='528' Y="644" />
+  <Block Type="Brick" X='528' Y="620" />
+  <Block Type="Brick" X='552' Y="644" />
+  <Block Type="Brick" X='552' Y="620" />
+  <Block Type="Brick" X='576' Y="644" />
+  <Block Type="Brick" X='576' Y="620" />
+  <Block Type="Brick" X='600' Y="644" />
+  <Block Type="Brick" X='600' Y="620" />
+  <Block Type="Brick" X='624' Y="644" />
+  <Block Type="Brick" X='624' Y="620" />
+  <Block Type="Brick" X='648' Y="644" />
+  <Block Type="Brick" X='648' Y="620" />
+  <Block Type="Brick" X='672' Y="644" />
+  <Block Type="Brick" X='672' Y="620" />
+  <Block Type="Brick" X='696' Y="644" />
+  <Block Type="Brick" X='696' Y="620" />
+  <Block Type="Brick" X='720' Y="644" />
+  <Block Type="Brick" X='720' Y="620" />
+  <Block Type="Brick" X='744' Y="644" />
+  <Block Type="Brick" X='744' Y="620" />
+  <Block Type="Brick" X='768' Y="644" />
+  <Block Type="Brick" X='768' Y="620" />
+  <Block Type="Brick" X='792' Y="644" />
+  <Block Type="Brick" X='792' Y="620" />
+  <Block Type="Brick" X='816' Y="644" />
+  <Block Type="Brick" X='816' Y="620" />
+  <Block Type="Brick" X='840' Y="644" />
+  <Block Type="Brick" X='840' Y="620" />
+  <Block Type="Brick" X='864' Y="644" />
+  <Block Type="Brick" X='864' Y="620" />
+  <Block Type="Brick" X='888' Y="644" />
+  <Block Type="Brick" X='888' Y="620" />
+  <Block Type="Brick" X='912' Y="644" />
+  <Block Type="Brick" X='912' Y="620" />
+  <Block Type="Brick" X='936' Y="644" />
+  <Block Type="Brick" X='936' Y="620" />
+  <Block Type="Brick" X='960' Y="644" />
+  <Block Type="Brick" X='960' Y="620" />
+  <Block Type="Brick" X='984' Y="644" />
+  <Block Type="Brick" X='984' Y="620" />
+  <Block Type="Brick" X='1008' Y="644" />
+  <Block Type="Brick" X='1008' Y="620" />
+
+  // Coins
+  <Item Type='Coin' X='130' Y='576' />
+  <Item Type='Coin' X='230' Y='576' />
+  <Item Type='Coin' X='330' Y='576' />
+  <Item Type='Coin' X='430' Y='576' />
+  
+  <Enemy Type="Koopa" X="370" Y="620" />
+  <Block Type="CoinBlock" X="514" Y="428" />
+  <Block Type="Pipe" X="504" Y="572" />
+  <Enemy Type="Koopa" X="570" Y="620" />
+
+  <Item Type='Coin' X='630' Y='576' />
+  <Item Type='Coin' X='730' Y='576' />
+  <Item Type='Coin' X='830' Y='576' />
+  <Item Type='Coin' X='930' Y='576' />
+  
 </Object>

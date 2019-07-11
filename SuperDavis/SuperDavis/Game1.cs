@@ -11,6 +11,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 using SuperDavis.Worlds;
 
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
@@ -22,6 +23,7 @@ namespace SuperDavis
 {
     class Game1 : Game
     {
+
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
         public CollisionDetection collisionDetection;
@@ -45,14 +47,17 @@ namespace SuperDavis
             }
             Content.RootDirectory = "Content";
         }
-
         protected override void Initialize()
         {
             font = Content.Load<SpriteFont>("Font/File");
             IsMouseControllerOn = false;
             InitializeFactory();
+            InitializeSounds();
             WorldCreator worldCreator = new WorldCreator();
+            //For level 1-1 testing
             World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            //For Underworld Testing
+            //World = worldCreator.CreateWorld("underworld1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             // After creating world, pass the world into collision detection
             // But 
             collisionDetection = new CollisionDetection(World);
@@ -96,7 +101,7 @@ namespace SuperDavis
         protected override void Draw(GameTime gameTime)
         {
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
@@ -114,6 +119,11 @@ namespace SuperDavis
             ItemSpriteFactory.Instance.Load(Content);
             EnemySpriteFactory.Instance.Load(Content);
             BackgroundSpriteFactory.Instance.Load(Content);
+        }
+
+        private void InitializeSounds()
+        {
+            Sounds.Instance.Load(Content);
         }
 
         public void InitializeController()

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using SuperDavis.Physics;
 using SuperDavis.Object.Item;
 using System;
+using SuperDavis.Sound;
 
 namespace SuperDavis.Object.Character
 {
@@ -112,8 +113,13 @@ namespace SuperDavis.Object.Character
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
                 if (!(PhysicsState is JumpState) && !(PhysicsState is FallState))
+                {
                     PhysicsState = new JumpState(this);
-                DavisState.Up();                
+                    Sounds.Instance.SetJump();
+                }
+
+                DavisState.Up();
+                Sounds.Instance.PlayJump();
             }
         }
 
@@ -171,6 +177,7 @@ namespace SuperDavis.Object.Character
         public void DavisDeath()
         {
             DavisState.Death();
+            Sounds.Instance.Death.Play();
             //Console.Out.WriteLine("Status: " + DavisStatus.ToString() + " State: " + DavisState.ToString());
             //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }

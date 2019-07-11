@@ -1,5 +1,7 @@
 ﻿namespace SuperDavis.Variables
 {
+
+    /*Class to hold variables to eliminate magic numbers, will data drive in the refactor from JSON file.*/
     public static class Variable
     {
         public const int Zero = 0;
@@ -8,6 +10,7 @@
         //Game1.cs string variables.
         public const string ContentDirectory = "Content";
         public const string LevelOne = "level1-1.xml";
+        public const string UnderworldLevelOne = "underworld1-1.xml";
 
         //Game1.cs reset distances.
         public const int FloorReset = -100;

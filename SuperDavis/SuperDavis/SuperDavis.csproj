@@ -72,6 +72,7 @@
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint5\SeanEdwards.md" />
     <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -178,6 +179,18 @@
     <None Include="Content\Item\coin.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\SoundFX\Jump.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\Death.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\ItemPickup.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\SoundFX\MarioMusic.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\SpriteJSONs\Backgrounds.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -261,6 +274,7 @@
     <Compile Include="Physics\JumpState.cs" />
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Physics\PhysicsManager.cs" />
+    <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
@@ -347,7 +361,9 @@
     <Content Include="Content\Level\test-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Level\underworld1-1.xml" />
+    <Content Include="Content\Level\underworld1-1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\RawSpriteSheets\BatLeft_0.png" />
     <Content Include="Content\RawSpriteSheets\BatLeft_1.png" />
     <Content Include="Content\RawSpriteSheets\BatRight_0.png" />
@@ -370,9 +386,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code Reviews\sprint5\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

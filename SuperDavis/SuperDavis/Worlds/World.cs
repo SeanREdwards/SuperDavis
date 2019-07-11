@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Collision;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 using System;
 using System.Collections.Generic;
 using static SuperDavis.Object.Character.Davis;
@@ -52,6 +53,9 @@ namespace SuperDavis.Worlds
             Projectiles = new HashSet<IProjectile>();
             Backgrounds = new HashSet<IBackground>();
             ObjectToRemove = new HashSet<IGameObject>();
+
+            //Play Level Music
+            Sounds.Instance.MusicInstance.Play();
         }
 
         public void Update(GameTime gameTime)
