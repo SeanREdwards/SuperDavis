@@ -40,14 +40,14 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             goombaState = new GoombaStateMachine(this);
-            //PhysicsState = new FallState(this);
+            PhysicsState = new FallState(this);
             enemy = goombaState.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
         }
 
         public void Update(GameTime gameTime)
         {
-            //PhysicsState.Update(gameTime);
+            PhysicsState.Update(gameTime);
             goombaState.Update(gameTime);
 
             if (!Dead)

@@ -55,10 +55,13 @@ namespace SuperDavis.Collision
                                                 var target = world.WorldGrid[i + iOffset][j + jOffset][k];
                                                 if (!target.Equals(mover) && (target is IBlock || target is IItem || target is IEnemy))
                                                 {
-                                                    var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);                                                  
-                                                    if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
-                                                    if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
-                                                    if (target is IEnemy) DavisEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
+                                                    var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
+                                                    if (side != CollisionSide.None)
+                                                    {
+                                                        if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
+                                                        if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
+                                                        if (target is IEnemy) DavisEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
+                                                    }
                                                 }
                                             }
                     }
@@ -93,7 +96,8 @@ namespace SuperDavis.Collision
                                             if (!target.Equals(mover) && (target is IBlock))
                                             {
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
-                                                if (target is IBlock) EnemyBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side);
+                                                if (side != CollisionSide.None)
+                                                    if (target is IBlock) EnemyBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side);
                                             }
                                         }
                     }
@@ -128,8 +132,11 @@ namespace SuperDavis.Collision
                                             if (!target.Equals(mover) && (target is IBlock || target is IEnemy))
                                             {
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
-                                                if (target is IBlock) ProjectileBlockCollisionHandler.HandleCollision(moverObject, side, world);
-                                                if (target is IEnemy) ProjectileEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
+                                                if (side != CollisionSide.None)
+                                                {
+                                                    if (target is IBlock) ProjectileBlockCollisionHandler.HandleCollision(moverObject, side, world);
+                                                    if (target is IEnemy) ProjectileEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
+                                                }
                                             }
                                         }
                     }

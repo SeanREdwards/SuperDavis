@@ -102,9 +102,7 @@ namespace SuperDavis
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
             World.Draw(spriteBatch);
             spriteBatch.End();
-            spriteBatch.Begin();
             HUD.Draw(gameTime, font, spriteBatch);
-            spriteBatch.End();
             base.Draw(gameTime);
 
         }

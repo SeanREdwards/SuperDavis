@@ -39,7 +39,7 @@ namespace SuperDavis.Object.Enemy
             FacingLeft = true;
             Location = location;
             koopaStateMachine = new KoopaStateMachine(this);
-            //PhysicsState = new FallState(this);
+            PhysicsState = new FallState(this);
             enemy = koopaStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height);
         }
@@ -47,7 +47,7 @@ namespace SuperDavis.Object.Enemy
         public void Update(GameTime gameTime)
         {
             koopaStateMachine.Update(gameTime);
-            //PhysicsState.Update(gameTime);
+            PhysicsState.Update(gameTime);
 
             if (!Dead)
             {

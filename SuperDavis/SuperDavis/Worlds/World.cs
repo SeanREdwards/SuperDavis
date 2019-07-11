@@ -102,7 +102,6 @@ namespace SuperDavis.Worlds
                 foreach (IBlock block in Blocks)
                     if (i == (int)(block.Location.X / UNIT_SIZE))
                     {
-
                         var j = (int)(block.Location.Y / UNIT_SIZE);
                         WorldGrid[i][j].Add(block);
                     }
@@ -206,9 +205,13 @@ namespace SuperDavis.Worlds
             Projectiles.Clear();
             Backgrounds.Clear();
             ObjectToRemove.Clear();
-            WorldGrid.Initialize();
+            for (int i = 0; i < WorldGridWidth; i++)
+                for (int j = 0; j < WorldGridHeight; j++)
+                    if (WorldGrid[i][j].Count > 0)
+                        WorldGrid[i][j].Clear();
+
             WorldCreator worldCreator = new WorldCreator();
-            game.World = worldCreator.CreateWorld(Variables.Variable.LevelOne, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight, game);
+            game.World = worldCreator.CreateWorld(Variables.Variable.LevelOne, Variables.Variable.level11Width, Variables.Variable.level11Height, game);
             game.collisionDetection = new CollisionDetection(game.World);
             game.InitializeController();
         }

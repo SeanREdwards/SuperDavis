@@ -14,7 +14,7 @@
         public const int CeilingReset = 768;
         public const int RightReset = 4900;
 
-        public const int WindowsEdgeWidth = 1024;
+        public const int WindowsEdgeWidth = 1000;
         public const int WindowsEdgeHeight = 668;
 
         public const float SpriteScaleFactor = 1.5f;

@@ -14,6 +14,7 @@ namespace SuperDavis
 
         public static void Draw(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch) {
             time -= gameTime.ElapsedGameTime.TotalSeconds;
+            spriteBatch.Begin();
             spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
             spriteBatch.DrawString(font, "" + score, new Vector2(50, 60), Color.White);
             spriteBatch.DrawString(font, "Coins", new Vector2(300, 20), Color.White);
@@ -24,6 +25,7 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(700, 60), Color.White);
             spriteBatch.DrawString(font, "Lives", new Vector2(850, 20), Color.White);
             spriteBatch.DrawString(font, "" + (int)lives, new Vector2(850, 60), Color.White);
+            spriteBatch.End();
         }
     }
 }
