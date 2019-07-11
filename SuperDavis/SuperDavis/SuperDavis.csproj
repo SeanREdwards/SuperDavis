@@ -72,6 +72,9 @@
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint5\Readability Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint5\Readability Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint5\Readability Review\SeanEdwards.md" />
     <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -386,7 +389,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code Reviews\sprint5\NewFolder1\" />
+    <Folder Include="Code Reviews\sprint5\Code Quality Review\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
