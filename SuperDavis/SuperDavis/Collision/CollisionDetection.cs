@@ -96,8 +96,7 @@ namespace SuperDavis.Collision
                                             if (!target.Equals(mover) && (target is IBlock))
                                             {
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
-                                                if (side != CollisionSide.None)
-                                                    if (target is IBlock) EnemyBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side);
+                                                if (target is IBlock) EnemyBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side);
                                             }
                                         }
                     }

@@ -15,23 +15,18 @@ namespace SuperDavis.Collision
             switch (side)
             {
                 case CollisionSide.Bottom:
-                    if (block is HiddenBlock /*davis.PhysicsState is JumpState*/)
+                    if (block is HiddenBlock && davis.PhysicsState is JumpState)
                     {
                         block.SpecialState();
                     }
-                    if (block is CoinBrick /*&& davis.PhysicsState is JumpState*/)
+                    if (block is CoinBrick && davis.PhysicsState is JumpState)
                     {
-                        var coinBrick = (CoinBrick)block;
+                        CoinBrick coinBrick = (CoinBrick)block;
                         if (coinBrick.CoinCounter > 0)
                         {
                             world.AddObject(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
                             coinBrick.CoinCounter--;
                             coinBrick.IsBumped = true;
-                        }
-                        else 
-                        {
-                            coinBrick.SpecialState();
-                            world.ObjectToRemove.Add(block);
                         }
                     }
                     else if (block is QuestionBlock)
@@ -73,7 +68,6 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.Items.Add(new Star(new Vector2(block.Location.X, block.Location.Y-10)));
                             world.AddObject(new Star(new Vector2(block.Location.X, block.Location.Y - 10)));
                             block.SpecialState();
                             block.IsBumped = true;

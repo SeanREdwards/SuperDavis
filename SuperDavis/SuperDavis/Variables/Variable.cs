@@ -5,7 +5,7 @@
     public static class Variable
     {
         public const int Zero = 0;
-
+        public const int One = 1;
 
         //Game1.cs string variables.
         public const string ContentDirectory = "Content";

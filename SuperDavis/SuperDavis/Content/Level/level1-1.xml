@@ -16,11 +16,13 @@
   <Block Type="HiddenBlock" X="116" Y="500" />
   <Block Type="StarBlock" X="150" Y="500" />
   <Block Type="FlowerBlock" X="184" Y="500" />
+  <Block Type="Brick" X="524" Y="476" />
   <Block Type="Brick" X="548" Y="500" />
   <Block Type="Brick" X="548" Y="500" />
   <Block Type="Brick" X="572" Y="500" />
   <Block Type="Brick" X="596" Y="500" />
-  <Enemy Type="Koopa" X="570" Y="415" />
+  <Block Type="Brick" X="644" Y="476" />
+  <Enemy Type="Koopa" X="570" Y="450" />
   <Block Type="CoinBlock" X="620" Y="500" />
 
   //Pipes

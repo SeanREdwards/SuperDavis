@@ -62,7 +62,7 @@ namespace SuperDavis.Object.Enemy
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                koopaStateMachine.Draw(spriteBatch, Location);
+            koopaStateMachine.Draw(spriteBatch, Location);
         }
 
         public void TakeDamage()

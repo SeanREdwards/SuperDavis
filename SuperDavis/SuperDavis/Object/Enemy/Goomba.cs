@@ -31,7 +31,6 @@ namespace SuperDavis.Object.Enemy
         private readonly ISprite enemy;
         private IGameObjectState goombaState;
         public IGameObjectPhysics PhysicsState { get; set; }
-        private readonly int groundLevel = Variables.Variable.GroundLeveGoomba;
 
         public Goomba(Vector2 location)
         {

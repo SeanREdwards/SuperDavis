@@ -24,8 +24,9 @@ namespace SuperDavis.Physics
 
         public void Update(GameTime gameTime)
         {
-            if ((davis.DavisState is DavisWalkLeftState) || (davis.DavisState is DavisWalkRightState))
-                davis.PhysicsState = new FallState(davis);
+            if(gameObject is IDavis)
+                if ((davis.DavisState is DavisWalkLeftState) || (davis.DavisState is DavisWalkRightState))
+                    davis.PhysicsState = new FallState(davis);
         }
     }
 }
