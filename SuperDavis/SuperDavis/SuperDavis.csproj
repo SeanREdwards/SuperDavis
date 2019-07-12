@@ -72,7 +72,9 @@
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
-    <None Include="Code Reviews\sprint5\Code Quality Review\RyanKnighton.md" />
+    <None Include="Code Reviews\sprint5\Code Quality Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Code Reviews\sprint5\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint5\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint5\Readability Review\SeanEdwards.md" />
