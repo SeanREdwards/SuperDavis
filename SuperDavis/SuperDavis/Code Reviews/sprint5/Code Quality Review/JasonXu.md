@@ -1,24 +1,85 @@
-﻿# Code Quality Review - Sean Edwards
-1. Sean Edwards
+﻿# Code Quality Review - Jason Xu
+1. Jason Xu
 2. 7/12/2019
 3. Sprint 5
-4. HUD.cs 8 minutes
-7.I looked at the HUD.cs since it was one of the nw implementations for this sprint I hadn't worked on. Overall the number of code smells are at a minimum for this file
-as the complexity is extremly low (it mostly just draws strings to notify the player of game information), however one that is blatently obvious is the excessive use of literals
-as there are numerous hard coded strings. These can be seen in the following code snippet.
+4. CollisionDetection.cs, JumpState.cs
+5. 10 minutes
+6. in CollisionDetection.cs, 
+```
+        private static void CheckCharactersSurroundingBox(HashSet<IDavis> movers, IWorld world)
+        {
+            foreach(IDavis mover in movers)
+            { 
+                var i = (int)(mover.Location.X / (world as World).UNIT_SIZE);
+                var j = (int)(mover.Location.Y / (world as World).UNIT_SIZE);
+                if (!(world as World).IsIndexOutOfBounds(i, j))
+                {
+                    // Get instance of character reference in the World Grid
+                    IDavis moverObject = (IDavis)world.GetObject(mover, i, j);
+  
+                    if (moverObject != null)
+                    {
+                        int hitBoxWidthScaleFactor = (int)(moverObject.HitBox.Width / (world as World).UNIT_SIZE) + 1;
+                        int hitBoxHeightScaleFactor = (int)(moverObject.HitBox.Height / (world as World).UNIT_SIZE) + 1;
+                        int offsetFactor = Variables.Variable.offsetRange; // Magic number here!
 
----
-            spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
-            spriteBatch.DrawString(font, "" + score, new Vector2(50, 60), Color.White);
-            spriteBatch.DrawString(font, "Coins", new Vector2(300, 20), Color.White);
-            spriteBatch.DrawString(font, "" + coins, new Vector2(300, 60), Color.White);
-            spriteBatch.DrawString(font, "World", new Vector2(500, 20), Color.White);
-            spriteBatch.DrawString(font, worldText, new Vector2(500, 60), Color.White);
-            spriteBatch.DrawString(font, "Time", new Vector2(700, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)time, new Vector2(700, 60), Color.White);
-            spriteBatch.DrawString(font, "Lives", new Vector2(850, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)lives, new Vector2(850, 60), Color.White);
----
+                        for (int iOffset = -offsetFactor*hitBoxWidthScaleFactor; iOffset < (offsetFactor+1) * hitBoxWidthScaleFactor; iOffset++)
+                              for (int jOffset = -offsetFactor*hitBoxHeightScaleFactor; jOffset < (offsetFactor+1) * hitBoxHeightScaleFactor; jOffset++)
+                                   if (!(world as World).IsIndexOutOfBounds(i + iOffset, j + jOffset))
+                                        if (world.WorldGrid[i + iOffset][j + jOffset].Count != 0)
+                                            for(int k = 0; k < world.WorldGrid[i+iOffset][j+jOffset].Count; k++)
+                                            {
+                                                var target = world.WorldGrid[i + iOffset][j + jOffset][k];
+                                                if (!target.Equals(mover) && (target is IBlock || target is IItem || target is IEnemy))
+                                                {
+                                                    var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
+                                                    if (side != CollisionSide.None)
+                                                    {
+                                                        if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
+                                                        if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
+                                                        if (target is IEnemy) DavisEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
+                                                    }
+                                                }
+                                            }
+                    }
+                }
+            }
+        }
+	```
 
-Blatently obvious are string literals for nearly every line, and the vector location integer literals that are hardcoded into the file. This issue with string and integer literals could easily
-be solved by data driving all of them (purpose of the variables.cs file in the first place).
+	The cyclomatic complexity is super high, due to the multiple nested if loop. A better way is to split them into world.cs and worldCreator.cs to increase its cohesion, however,
+	the performance will not change a lot. It is a setback for applying new mechanism.
+
+	In jumpState.cs,
+	```
+	    class JumpState : IGameObjectPhysics
+    {
+
+        private IGameObject gameObject;
+        public Vector2 Velocity { get; set; }
+        public Vector2 MaxVelocity { get; set; }
+        public Vector2 Acceleration { get; set; }
+
+        public JumpState(IGameObject gameObjectClass)
+        {
+            gameObject = gameObjectClass;
+            Velocity =  new Vector2(0, Variables.Variable.JumpVelocity);
+            Acceleration = new Vector2(0, Variables.Variable.JumpVelocityDecayRate);
+            MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            gameObject.Location -= Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
+            Velocity *= Acceleration;
+            if (Velocity.Y < MaxVelocity.Y)
+            {
+                Velocity = new Vector2(Velocity.X, 0);
+                gameObject.PhysicsState = new FallState(gameObject);
+            }
+        }
+    }
+	```
+
+	I finally decide to go back the previous setting is because the applyforce mechanism is hard to cooperate with collision detection. The design is kinda bad cuz the parameter is 
+	actually magic number instead of object-oriented numbers. The coupling is bad due to this design. I have made the velocity editable to avoid this kind of problems.
