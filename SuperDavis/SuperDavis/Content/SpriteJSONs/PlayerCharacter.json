@@ -188,6 +188,58 @@
     "Scale": 1
   },
 
+  "CreateDavisRunLeft": {
+    "TextureName": "DavisSprites/DavisLeft_0",
+    "SourceFrames": [
+      {
+        "X": 731,
+        "Y": 170,
+        "Width": 58,
+        "Height": 69
+      },
+      {
+        "X": 659,
+        "Y": 168,
+        "Width": 46,
+        "Height": 71
+      },
+      {
+        "X": 575,
+        "Y": 168,
+        "Width": 54,
+        "Height": 71
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateDavisRunRight": {
+    "TextureName": "DavisSprites/DavisRight_0",
+    "SourceFrames": [
+      {
+        "X": 11,
+        "Y": 170,
+        "Width": 58,
+        "Height": 69
+      },
+      {
+        "X": 104,
+        "Y": 168,
+        "Width": 46,
+        "Height": 71
+      },
+      {
+        "X": 171,
+        "Y": 168,
+        "Width": 54,
+        "Height": 71
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
   "CreateDavisSpecialAttackOneLeft": {
     "TextureName": "DavisSprites/DavisLeft_2",
     "SourceFrames": [

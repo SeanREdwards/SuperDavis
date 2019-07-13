@@ -29,6 +29,7 @@ namespace SuperDavis
         public CollisionDetection collisionDetection;
         private Camera camera;
         private SpriteFont font;
+        private bool resetFlag;
 
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
@@ -50,6 +51,7 @@ namespace SuperDavis
         protected override void Initialize()
         {
             font = Content.Load<SpriteFont>("Font/File");
+            resetFlag = false;
             IsMouseControllerOn = false;
             InitializeFactory();
             InitializeSounds();
@@ -74,27 +76,10 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-            foreach (IController controller in controllerList)
-            {
-                if (controller is MouseController)
-                {
-                    if (IsMouseControllerOn)
-                    {
-                        controller.Update();
-                    }
-                }
-                else
-                {
-                    controller.Update();
-                }
-            }
-
-            if (World.Characters.Count == 0)
-            {
-                World.ResetGame();                    
-            }
+            ControllerUpdate();
             World.Update(gameTime);
             collisionDetection.CheckCollisions();
+            CheckGameReset();
             base.Update(gameTime);
         }
 
@@ -171,6 +156,45 @@ namespace SuperDavis
                     new MouseController(this),
                 };
             };
+        }
+
+        public void ControllerUpdate()
+        {
+            foreach (IController controller in controllerList)
+            {
+                if (controller is MouseController)
+                {
+                    if (IsMouseControllerOn)
+                    {
+                        controller.Update();
+                    }
+                }
+                else
+                {
+                    controller.Update();
+                }
+            }
+        }
+        public void CheckGameReset()
+        {
+            if (World.Characters.Count == 0)
+            {
+                resetFlag = true;
+            }
+            else
+            {
+                foreach (IDavis character in World.Characters)
+                {
+                    if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
+                        resetFlag = true;
+                }
+            }
+
+            if (resetFlag)
+            {
+                World.ResetGame();
+                resetFlag = false;
+            }
         }
     }
  }

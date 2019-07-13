@@ -54,6 +54,16 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite BigCastle()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite SmallCastle()
+        {
+            return Create(GetMethodName());
+        }
+
         /*public ISprite GhostHouseAnimated()
         {
             return Create(GetMethodName());

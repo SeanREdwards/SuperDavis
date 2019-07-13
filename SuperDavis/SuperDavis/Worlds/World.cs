@@ -163,7 +163,7 @@ namespace SuperDavis.Worlds
 
         public void AddObject(IGameObject @object)
         {
-            //Code to add object
+            //Code to add object          
             if (@object is IDavis)
                 Characters.Add(@object as IDavis);
             if (@object is IItem)
@@ -174,6 +174,10 @@ namespace SuperDavis.Worlds
                 Blocks.Add(@object as IBlock);
             if (@object is IProjectile)
                 Projectiles.Add(@object as IProjectile);
+
+            //Add object to world grid as well
+            if(!IsIndexOutOfBounds((int)(@object.Location.X / UNIT_SIZE), (int)(@object.Location.Y / UNIT_SIZE)))
+                WorldGrid[(int)(@object.Location.X / UNIT_SIZE)][(int)(@object.Location.Y / UNIT_SIZE)].Add(@object);
 
             @object.OnPositionChanged += Object_OnPositionChanged;
         }
