@@ -85,6 +85,9 @@
     <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BackgroundSprites\Castle&amp;Flag.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BatSprites\BatLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

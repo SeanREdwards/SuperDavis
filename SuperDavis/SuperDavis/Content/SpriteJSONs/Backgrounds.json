@@ -50,6 +50,7 @@
     "FrameDelay": 0.08,
     "Scale": 2
   },
+
   "NightAnimated": {
     "TextureName": "BackgroundSprites/AnimatedBackgrounds",
     "SourceFrames": [
@@ -72,16 +73,44 @@
         "Height": 431
       },
       {
-          "X": 528,
-          "Y": 3786,
-          "Width": 501,
-          "Height": 431
+        "X": 528,
+        "Y": 3786,
+        "Width": 501,
+        "Height": 431
       },
       {
-          "X": 10,
-          "Y": 3786,
-          "Width": 501,
-          "Height": 431
+        "X": 10,
+        "Y": 3786,
+        "Width": 501,
+        "Height": 431
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+
+  "BigCastle": {
+    "TextureName": "BackgroundSprites/Castle&Flag",
+    "SourceFrames": [
+      {
+        "X": 79,
+        "Y": 767,
+        "Width": 148,
+        "Height": 176
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+
+    "SmallCastle": {
+    "TextureName": "BackgroundSprites/Castle&Flag",
+    "SourceFrames": [
+      {
+        "X": 247,
+        "Y": 863,
+        "Width": 80,
+        "Height": 80
       }
     ],
     "FrameDelay": 0.08,
