@@ -72,6 +72,11 @@
     <None Include="Code Reviews\sprint4\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint4\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint4\Readability Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint5\Code Quality Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Code Reviews\sprint5\Code Quality Review\JasonXu.md" />
+    <None Include="Code Reviews\sprint5\Code Quality Review\SeanEdwards.md" />
     <None Include="Code Reviews\sprint5\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint5\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint5\Readability Review\SeanEdwards.md" />
@@ -79,6 +84,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BackgroundSprites\BackgroundsMario1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\BackgroundSprites\Castle&amp;Flag.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BatSprites\BatLeft_0.xnb">
@@ -388,9 +396,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Code Reviews\sprint5\Code Quality Review\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

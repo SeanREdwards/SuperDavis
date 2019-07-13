@@ -311,5 +311,15 @@ namespace SuperDavis.Factory
         {
             return CreateInvincible(GetMethodName());
         }
+
+        public ISprite CreateDavisRunLeft()
+        {
+            return CreateInvincible(GetMethodName());
+        }
+
+        public ISprite CreateDavisRunRight()
+        {
+            return CreateInvincible(GetMethodName());
+        }
     }
 }

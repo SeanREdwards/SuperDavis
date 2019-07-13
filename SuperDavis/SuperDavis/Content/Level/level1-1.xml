@@ -212,6 +212,9 @@
   <Block Type="Brick" X="3576" Y="428" />
   <Block Type="Brick" X="3600" Y="428" />
 
+  //Ending Pipe
+  <Block Type="Pipe" X="4000" Y="572" />
+
   // Base Block
   <Block Type="MiddleGreenFloor" X='0' Y="644" />
   <Block Type="MiddleGreenFloor" X='0' Y="620" />
