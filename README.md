@@ -1,5 +1,5 @@
 1. Description
-  This project is designed for Sprint 5 for CSE 3902. Adding HUDs, BGMs, and undone stuff for previous sprint.
+  This project is designed for Sprint 5 for CSE 3902. This sprint includes sound, HUD, the underworld level and transition types as well as ending items for the end of the level.
 
 2. Key Mappings
   For keyboard:
@@ -36,4 +36,4 @@
                       (Buttons.B, ToggleMouseControl) 
 
 3. Tag to Grade
-  Sprint5Initial
+  Sprint5Refactoring
