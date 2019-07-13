@@ -64,10 +64,7 @@ namespace SuperDavis.Object.Character
 
         public void Update(GameTime gameTime)
         {
-            //For seperating sprite from state
-            //Sprite.Update(gameTime);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
-            System.Console.WriteLine(DavisState);
             DavisState.Update(gameTime);
             PhysicsState.Update(gameTime);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
@@ -75,9 +72,6 @@ namespace SuperDavis.Object.Character
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            //for seperating sprite from state.
-            //Sprite.Draw(spriteBatch, Location);
-
             DavisState.Draw(spriteBatch, Location);
         }
 
@@ -85,15 +79,12 @@ namespace SuperDavis.Object.Character
         public void DavisStatic()
         {
             DavisState.Static();
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                Location += new Vector2(-3f, 0);
                 FacingLeft = true;
                 DavisState.Left();
-                //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
         }
 
@@ -101,10 +92,8 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                Location += new Vector2(3f, 0);
                 FacingLeft = false;
                 DavisState.Right();
-                //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
         }
 
@@ -117,7 +106,6 @@ namespace SuperDavis.Object.Character
                     PhysicsState = new JumpState(this);
                     Sounds.Instance.SetJump();
                 }
-
                 DavisState.Up();
                 Sounds.Instance.PlayJump();
             }
@@ -128,7 +116,6 @@ namespace SuperDavis.Object.Character
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
                 DavisState.Down();
-                //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             }
         }
 
@@ -136,13 +123,11 @@ namespace SuperDavis.Object.Character
         {
             DavisState.Land();
             PhysicsState = new FallState(this);
-                //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisSlide()
         {
             DavisState.Slide();
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
        /* public void TakeDamage()
@@ -155,37 +140,29 @@ namespace SuperDavis.Object.Character
         {
             DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisToWoody()
         {
             DavisStatus = DavisStatus.Woody;
             DavisState = new DavisStaticRightState(this);
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisToBat()
         {
             DavisStatus = DavisStatus.Bat;
             DavisState = new DavisStaticRightState(this);
-
-            //DavisStatus.GetMethod().Name;
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisDeath()
         {
             DavisState.Death();
             Sounds.Instance.Death.Play();
-            //Console.Out.WriteLine("Status: " + DavisStatus.ToString() + " State: " + DavisState.ToString());
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
 
         public void DavisSpecialAttack()
         {
             DavisState.SpecialAttack();
-            //Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
         }
         public void DavisToInvincible()
         {

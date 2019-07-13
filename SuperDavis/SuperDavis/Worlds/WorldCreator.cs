@@ -94,9 +94,8 @@ namespace SuperDavis.Worlds
 
         public IWorld CreateWorld(string levelFile, float width, float height, Game1 game)
         {
-            // Some extra code could be filled in
             IWorld worldObject = ParseAndLoad(levelFile, width, height, game);
-            world.InitializeWorldGrid();
+            //world.InitializeWorldGrid();
             return worldObject;
         }
 

@@ -23,12 +23,11 @@ namespace SuperDavis.State.DavisState
 
         public void Left()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+            davis.DavisState = new DavisCrouchLeftState(davis);
         }
 
         public void Right()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
         }
 
         public void Up()
