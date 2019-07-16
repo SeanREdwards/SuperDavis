@@ -44,7 +44,6 @@ namespace SuperDavis.Collision
                         {
                             var brick = (Brick)block;
                             brick.Bumped();
-                            //123
                         }
                     }
                     else if (block is MushroomBlock)
@@ -88,7 +87,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!block.IsHidden)
+                    if (!(block is HiddenBlock))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);
@@ -96,11 +95,11 @@ namespace SuperDavis.Collision
                     }
                     break;
                 case CollisionSide.Left:
-                    if (!block.IsHidden)
+                    if (!(block is HiddenBlock))
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     break;
                 case CollisionSide.Right:
-                    if (!block.IsHidden)
+                    if (!(block is HiddenBlock))
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     break;
                 case CollisionSide.None:

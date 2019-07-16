@@ -58,16 +58,6 @@ namespace SuperDavis.State.DavisState
 
         public void Update(GameTime gameTime)
         {
-            if (davis.DavisStatus == DavisStatus.Invincible)
-            {
-                davis.InvincibleTimer--;
-                if (davis.InvincibleTimer <= 0)
-                {
-                    davis.DavisStatus = davis.PrevDavisStatus;
-                    davis.DavisState.Static();
-                    davis.InvincibleTimer = Variables.Variable.InvincibleTimer;
-                }
-            }
             davis.Sprite.Update(gameTime);
         }
 

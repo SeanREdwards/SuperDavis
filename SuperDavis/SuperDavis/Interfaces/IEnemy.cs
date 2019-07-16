@@ -2,8 +2,7 @@
 {
     interface IEnemy : IGameObject
     {
-        bool FacingLeft { get; set; }
-        bool FacingRight { get; set; }
+        FacingDirection FacingDirection { get; set;}
         bool Dead { get; set; }
         void TakeDamage();
     }

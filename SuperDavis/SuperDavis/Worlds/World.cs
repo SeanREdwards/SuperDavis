@@ -16,7 +16,7 @@ namespace SuperDavis.Worlds
 
         public IList<IGameObject>[][] WorldGrid { get; set; }
         public HashSet<IGameObject> ObjectToRemove { get; set; }
-        public HashSet<IDavis> Characters { get; set; }
+        public IList<IDavis> Characters { get; set; }
         public HashSet<IItem> Items { get; set; }
         public HashSet<IBlock> Blocks { get; set; }
         public HashSet<IEnemy> Enemies { get; set; }
@@ -46,7 +46,7 @@ namespace SuperDavis.Worlds
                     WorldGrid[i][j] = new List<IGameObject>();
 
             /* Lists Initialization */
-            Characters = new HashSet<IDavis>();
+            Characters = new List<IDavis>();
             Items = new HashSet<IItem>();
             Blocks = new HashSet<IBlock>();
             Enemies = new HashSet<IEnemy>();
@@ -91,44 +91,6 @@ namespace SuperDavis.Worlds
                 enemy.Draw(spriteBatch);
             foreach (IDavis character in Characters)
                 character.Draw(spriteBatch);
-        }
-
-        public void InitializeWorldGrid()
-        {
-            for (int i = 0; i < WorldGrid.Length; i++)
-            {
-                foreach (IItem item in Items)
-                    if (i == (int)(item.Location.X / UNIT_SIZE))
-                    {
-                        var j = (int)(item.Location.Y / UNIT_SIZE);
-                        WorldGrid[i][j].Add(item);
-                    }
-                foreach (IBlock block in Blocks)
-                    if (i == (int)(block.Location.X / UNIT_SIZE))
-                    {
-                        var j = (int)(block.Location.Y / UNIT_SIZE);
-                        WorldGrid[i][j].Add(block);
-                    }
-                foreach (IProjectile projectile in Projectiles)
-                    if (i == (int)(projectile.Location.X / UNIT_SIZE))
-                    {
-                        var j = (int)(projectile.Location.Y / UNIT_SIZE);
-                        WorldGrid[i][j].Add(projectile);
-                    }
-                foreach (IEnemy enemy in Enemies)
-                    if (i == (int)(enemy.Location.X / UNIT_SIZE))
-                    {
-                        var j = (int)(enemy.Location.Y / UNIT_SIZE);
-                        WorldGrid[i][j].Add(enemy);
-                    }
-                foreach (IDavis character in Characters)
-                    if (i == (int)(character.Location.X / UNIT_SIZE))
-                    {
-                        var j = (int)(character.Location.Y / UNIT_SIZE);
-                        WorldGrid[i][j].Add(character);
-                    }
-            }
-
         }
 
         public void RemoveObject()

@@ -12,7 +12,6 @@ namespace SuperDavis.Object.Character
 {
     class Davis : IDavis
     {
-        public float Mass { get; set; }
         private readonly CharacterDictionary charDict;
 
         // Collision Detection Params
@@ -27,7 +26,7 @@ namespace SuperDavis.Object.Character
                 location = value;
             }
         }
-        public bool FacingLeft { get; set; }
+        public FacingDirection FacingDirection { get; set; }
         public IDavisState DavisState { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         public IList<IProjectile> DavisProjectile { get; set; }
@@ -35,7 +34,7 @@ namespace SuperDavis.Object.Character
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
-        public int InvincibleTimer { get; set; }
+
         public ISprite Sprite { get; set; }
 
         public Davis(Vector2 location)
@@ -45,20 +44,20 @@ namespace SuperDavis.Object.Character
             charDict = new CharacterDictionary();
 
             // initial state
-            InvincibleTimer = Variables.Variable.InvincibleTimer;
-            DavisStatus = DavisStatus.Davis;
+
+            DavisStatus = DavisStatus.Invincible;
             DavisState = new DavisStaticRightState(this);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
 
-            FacingLeft = false;
+            FacingDirection = FacingDirection.Right;
  
             //PhysicsState.ApplyForce(new Vector2(0, 0));
 
             Location = location;
             DavisProjectile = new List<IProjectile>()
             {
-                (new BatProjectile(location,FacingLeft)),
-                (new BatProjectile(location,FacingLeft))
+                (new BatProjectile(location,FacingDirection)),
+                (new BatProjectile(location,FacingDirection))
             };
         }
 
@@ -83,7 +82,7 @@ namespace SuperDavis.Object.Character
         public void DavisTurnLeft()
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
-                FacingLeft = true;
+                FacingDirection = FacingDirection.Left;
                 DavisState.Left();
             }
         }
@@ -92,7 +91,7 @@ namespace SuperDavis.Object.Character
         {
             if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
             {
-                FacingLeft = false;
+                FacingDirection = FacingDirection.Right;
                 DavisState.Right();
             }
         }
@@ -164,13 +163,6 @@ namespace SuperDavis.Object.Character
         {
             DavisState.SpecialAttack();
         }
-        public void DavisToInvincible()
-        {
-            /*
-            PrevDavisStatus = DavisStatus;
-            DavisStatus = DavisStatus.Invincible;
-            DavisState = new DavisStaticRightState(this);
-            */
-        }
+
     }
 }

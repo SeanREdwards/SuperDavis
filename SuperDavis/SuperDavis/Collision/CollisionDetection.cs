@@ -29,16 +29,16 @@ namespace SuperDavis.Collision
             //CheckItemSurroundingBox(World.Items, World);
         }
         
-        private static void CheckCharactersSurroundingBox(HashSet<IDavis> movers, IWorld world)
+        private static void CheckCharactersSurroundingBox(IList<IDavis> movers, IWorld world)
         {
-            foreach(IDavis mover in movers)
-            { 
-                var i = (int)(mover.Location.X / (world as World).UNIT_SIZE);
-                var j = (int)(mover.Location.Y / (world as World).UNIT_SIZE);
+            for(int n = 0; n < movers.Count; n++)
+            {
+                var i = (int)(movers[n].Location.X / (world as World).UNIT_SIZE);
+                var j = (int)(movers[n].Location.Y / (world as World).UNIT_SIZE);
                 if (!(world as World).IsIndexOutOfBounds(i, j))
                 {
                     // Get instance of character reference in the World Grid
-                    IDavis moverObject = (IDavis)world.GetObject(mover, i, j);
+                    IDavis moverObject = (IDavis)world.GetObject(movers[n], i, j);
   
                     if (moverObject != null)
                     {
@@ -53,7 +53,7 @@ namespace SuperDavis.Collision
                                             for(int k = 0; k < world.WorldGrid[i+iOffset][j+jOffset].Count; k++)
                                             {
                                                 var target = world.WorldGrid[i + iOffset][j + jOffset][k];
-                                                if (!target.Equals(mover) && (target is IBlock || target is IItem || target is IEnemy))
+                                                if (!target.Equals(moverObject) && (target is IBlock || target is IItem || target is IEnemy))
                                                 {
                                                     var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
                                                     if (side != CollisionSide.None)
@@ -93,7 +93,7 @@ namespace SuperDavis.Collision
                                         for (int k = 0; k < world.WorldGrid[i + iOffset][j + jOffset].Count; k++)
                                         {
                                             var target = world.WorldGrid[i + iOffset][j + jOffset][k];
-                                            if (!target.Equals(mover) && (target is IBlock))
+                                            if (!target.Equals(moverObject) && (target is IBlock))
                                             {
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
                                                 if (target is IBlock) EnemyBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side);
@@ -128,7 +128,7 @@ namespace SuperDavis.Collision
                                         for (int k = 0; k < world.WorldGrid[i + iOffset][j + jOffset].Count; k++)
                                         {
                                             var target = world.WorldGrid[i + iOffset][j + jOffset][k];
-                                            if (!target.Equals(mover) && (target is IBlock || target is IEnemy))
+                                            if (!target.Equals(moverObject) && (target is IBlock || target is IEnemy))
                                             {
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
                                                 if (side != CollisionSide.None)

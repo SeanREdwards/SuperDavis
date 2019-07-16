@@ -10,7 +10,7 @@ namespace SuperDavis.Interfaces
         float Height { get; }
 
         IList<IGameObject>[][] WorldGrid { get; set; }
-        HashSet<IDavis> Characters { get; set; }
+        IList<IDavis> Characters { get; set; }
         HashSet<IEnemy> Enemies { get; set; }
         HashSet<IItem> Items { get; set; }
         HashSet<IBlock> Blocks { get; set; }
@@ -21,7 +21,6 @@ namespace SuperDavis.Interfaces
         void Update(GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
 
-        void InitializeWorldGrid();
         IGameObject GetObject(IGameObject @object, int i, int j);
 
         void AddObject(IGameObject @object);

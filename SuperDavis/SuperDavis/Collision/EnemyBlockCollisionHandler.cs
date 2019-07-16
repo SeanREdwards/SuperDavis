@@ -14,7 +14,10 @@ namespace SuperDavis.Collision
             {
                 case CollisionSide.Left:
                 case CollisionSide.Right:
-                    enemy.FacingLeft = !enemy.FacingLeft;
+                    if (enemy.FacingDirection == FacingDirection.Left)
+                        enemy.FacingDirection = FacingDirection.Right;
+                    else
+                        enemy.FacingDirection = FacingDirection.Left;
                     break;
                 case CollisionSide.Top:
                     enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);

@@ -10,7 +10,6 @@ namespace SuperDavis.Object.Enemy
 {
     class Koopa : IEnemy
     {
-        public float Mass { get; set; }
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
         public Vector2 Location
@@ -23,8 +22,7 @@ namespace SuperDavis.Object.Enemy
             }
         }
 
-        public bool FacingLeft { get; set; }
-        public bool FacingRight { get; set; }
+        public FacingDirection FacingDirection { get; set; }
         public bool Dead { get; set; }
 
         public Rectangle HitBox { get; set; }
@@ -36,7 +34,7 @@ namespace SuperDavis.Object.Enemy
         {
             // initial state
             Dead = false;
-            FacingLeft = true;
+            FacingDirection = FacingDirection.Left;
             Location = location;
             koopaStateMachine = new KoopaStateMachine(this);
             PhysicsState = new FallState(this);
@@ -51,7 +49,7 @@ namespace SuperDavis.Object.Enemy
 
             if (!Dead)
             {
-                if (FacingLeft)
+                if (FacingDirection == FacingDirection.Left)
                     Location += new Vector2(-1f, 0);
                 else
                     Location += new Vector2(1f, 0);

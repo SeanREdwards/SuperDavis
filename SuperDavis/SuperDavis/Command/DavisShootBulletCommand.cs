@@ -20,7 +20,7 @@ namespace SuperDavis.Command
             {
                 foreach(IProjectile projectile in davis.DavisProjectile)
                 {
-                    projectile.FacingLeft = davis.FacingLeft;
+                    projectile.FacingDirection = davis.FacingDirection;
                     projectile.Location = davis.Location + (new Vector2(0, 30f));
                 }
                 world.AddObject(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);

@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interfaces;
+using SuperDavis.Object.Character;
 using SuperDavis.Object.Item;
 using SuperDavis.Variables;
 using static SuperDavis.Collision.CollisionDetection;
@@ -27,9 +28,7 @@ namespace SuperDavis.Collision
                 }
                 else if (item is Star)
                 {
-                    davis.PrevDavisStatus = davis.DavisStatus;
-                    davis.DavisToInvincible();
-                    davis.DavisState.Static();
+                    davis = new InvincibleDavis(davis, world);
                 }
                 else if (item is Coin)
                 {

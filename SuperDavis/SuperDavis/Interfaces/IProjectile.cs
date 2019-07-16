@@ -2,7 +2,7 @@
 {
     interface IProjectile : IGameObject
     {
-        bool FacingLeft { get; set; }
+        FacingDirection FacingDirection { get; set; }
         void Explode();
     }
 }
