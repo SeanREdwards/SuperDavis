@@ -37,7 +37,7 @@ namespace SuperDavis.Object.Character
         public ISprite Sprite { get; set; }
 
         // private member
-        private int invincibleTimer;
+        private int invincibleTimer = Variables.Variable.InvincibleTimer;
         private IDavis decoratedDavis;
         private IWorld world;
 
@@ -52,14 +52,10 @@ namespace SuperDavis.Object.Character
             FacingDirection = decoratedDavis.FacingDirection;
             DavisProjectile = decoratedDavis.DavisProjectile;
 
-            world.AddObject(this);
-            world.ObjectToRemove.Add(decoratedDavis);
-
             //Instantiate character dictionary
             charDict = new CharacterDictionary();
 
             // initial state
-            invincibleTimer = Variables.Variable.InvincibleTimer;
             DavisStatus = DavisStatus.Invincible;
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             Location = location;
@@ -76,7 +72,6 @@ namespace SuperDavis.Object.Character
             {
                 RemoveInvincible();
             }
-            System.Console.WriteLine(invincibleTimer + "");
             invincibleTimer--;
         }
 

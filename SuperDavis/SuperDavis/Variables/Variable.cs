@@ -26,7 +26,7 @@
         public const int level11Width = 4800;
         public const int level11Height = 668;
 
-        public const int InvincibleTimer = 10;
+        public const int InvincibleTimer = 400;
 
         //Physics
         public const float JumpVelocity = 75f;
@@ -70,7 +70,7 @@
         public const float DavisMass = 1f;
         public const float DavisJumpForce = 20f;
         // for collision detection
-        public const int offsetRange = 3;
+        public const int offsetRange = 2;
 
         //Enemies
         public const float EnemyVectorUpdateLeft = -1f;

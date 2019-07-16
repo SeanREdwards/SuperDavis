@@ -31,6 +31,7 @@ namespace SuperDavis.Collision
         
         private static void CheckCharactersSurroundingBox(IList<IDavis> movers, IWorld world)
         {
+            var m = -1;
             for(int n = 0; n < movers.Count; n++)
             {
                 var i = (int)(movers[n].Location.X / (world as World).UNIT_SIZE);
@@ -66,7 +67,18 @@ namespace SuperDavis.Collision
                                             }
                     }
                 }
+                if (movers[n].DavisStatus == DavisStatus.Invincible && movers[n] is Davis)
+                {
+                    m = n;
+                    break;
+                }
             }
+            if (m != -1)
+            {
+                world.ObjectToRemove.Add(world.Characters[m]);
+                world.AddObject(new InvincibleDavis(world.Characters[m], world));
+            }
+            
         }
 
         private static void CheckEnemySurroundingBox(HashSet<IEnemy> movers, IWorld world)

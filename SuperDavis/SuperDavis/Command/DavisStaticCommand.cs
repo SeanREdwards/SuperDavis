@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interfaces;
+using SuperDavis.State.DavisState;
 
 namespace SuperDavis.Command
 {
@@ -12,7 +13,8 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            davis.DavisStatic();
+            if(!(davis.DavisState is DavisJumpLeftState || davis.DavisState is DavisJumpRightState))
+                davis.DavisStatic();
         }
     }
 }

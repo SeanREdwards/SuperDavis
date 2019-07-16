@@ -77,8 +77,8 @@ namespace SuperDavis
         protected override void Update(GameTime gameTime)
         {
             ControllerUpdate();
-            World.Update(gameTime);
             collisionDetection.CheckCollisions();
+            World.Update(gameTime);
             CheckGameReset();
             base.Update(gameTime);
         }
@@ -165,14 +165,10 @@ namespace SuperDavis
                 if (controller is MouseController)
                 {
                     if (IsMouseControllerOn)
-                    {
                         controller.Update();
-                    }
                 }
                 else
-                {
                     controller.Update();
-                }
             }
         }
         public void CheckGameReset()

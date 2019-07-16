@@ -45,7 +45,7 @@ namespace SuperDavis.Object.Character
 
             // initial state
 
-            DavisStatus = DavisStatus.Invincible;
+            DavisStatus = DavisStatus.Davis;
             DavisState = new DavisStaticRightState(this);
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
 

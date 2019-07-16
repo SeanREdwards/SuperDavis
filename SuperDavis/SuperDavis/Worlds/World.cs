@@ -62,8 +62,8 @@ namespace SuperDavis.Worlds
         {
             foreach (IBackground background in Backgrounds)
                 background.Update(gameTime);
-            foreach (IDavis character in Characters)
-                character.Update(gameTime);
+            for(int i = 0; i < Characters.Count; i++)
+                Characters[i].Update(gameTime);
             foreach (IItem item in Items)
                 item.Update(gameTime);
             foreach (IBlock block in Blocks)
