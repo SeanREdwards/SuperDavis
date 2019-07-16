@@ -43,7 +43,7 @@ namespace SuperDavis.Collision
                         else 
                         {
                             var brick = (Brick)block;
-                            brick.IsBumped = true;
+                            brick.Bumped();
                         }
                     }
                     else if (block is MushroomBlock)

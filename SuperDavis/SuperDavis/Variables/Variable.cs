@@ -34,7 +34,7 @@
         public const float JumpVelocityMin = 1f;
 
         public const float FallVelocity = 2f;
-        public const float FallVelocityIncreaseRate = 1.4f;
+        public const float FallVelocityIncreaseRate = 1.3f;
         public const float FallVelocityMax = 30f;
 
         public const int PhysicsDivisor = 50;

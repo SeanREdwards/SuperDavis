@@ -286,6 +286,7 @@
     <Compile Include="Physics\PhysicsManager.cs" />
     <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />

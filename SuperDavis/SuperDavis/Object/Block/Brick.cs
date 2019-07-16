@@ -12,7 +12,7 @@ namespace SuperDavis.Object.Block
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
-        public BrickStateMachine BrickStateMachine;
+        public IGameObjectState BrickStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
@@ -31,21 +31,7 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            BrickStateMachine.Update(gameTime);
-            if (IsBumped)
-            {
-                if (bumpTimer > Variables.Variable.BumpTimeHalf)
-                    Location += new Vector2(0, Variables.Variable.BumpShiftDown);
-                else if (bumpTimer  > 0)
-                    Location += new Vector2(0, Variables.Variable.BumpShiftUp);
-                else
-                {
-                    bumpTimer = Variables.Variable.BumpTime;
-                    IsBumped = false;
-                }
-                bumpTimer--;
-            }
-                
+            BrickStateMachine.Update(gameTime);    
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -58,6 +44,10 @@ namespace SuperDavis.Object.Block
             BrickStateMachine = new BrickStateMachine(true);
         }
 
+        public void Bumped()
+        {
+            BrickStateMachine = new BrickBumpStateMachine(false, this);
+        }
         
     }
 }
