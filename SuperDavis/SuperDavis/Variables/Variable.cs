@@ -26,7 +26,7 @@
         public const int level11Width = 4800;
         public const int level11Height = 668;
 
-        public const int InvincibleTimer = 400;
+        public const int InvincibleTimer = 10;
 
         //Physics
         public const float JumpVelocity = 75f;

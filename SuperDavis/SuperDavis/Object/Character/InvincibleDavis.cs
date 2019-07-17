@@ -77,8 +77,7 @@ namespace SuperDavis.Object.Character
 
         public void RemoveInvincible()
         {
-            world.AddObject(decoratedDavis);
-            world.ObjectToRemove.Add(this);
+            world.Characters[0] = decoratedDavis;
         }
 
 
