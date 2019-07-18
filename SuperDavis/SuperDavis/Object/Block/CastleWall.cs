@@ -42,17 +42,15 @@ namespace SuperDavis.Object.Block
         public void Draw(SpriteBatch spriteBatch)
         {
             wallSprite.Draw(spriteBatch, Location);
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 16));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 32));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 48));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 64));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 80));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 96));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 112));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 128));
-            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + 144));
-
-
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 1)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 2)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 3)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 4)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 5)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 6)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 7)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 8)));
+            wallSprite.Draw(spriteBatch, new Vector2((int)Location.X, (int)Location.Y + (wallSprite.Height * 9)));
         }
     }
 }
