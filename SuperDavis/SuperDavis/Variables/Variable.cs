@@ -9,7 +9,7 @@
 
         //Game1.cs string variables.
         public const string ContentDirectory = "Content";
-        public const string LevelOne = "demo-level.xml";
+        public const string LevelOne = "level1-1.xml";
         public const string UnderworldLevelOne = "underworld1-1.xml";
         public const string DemoLevel = "demo-level.xml";
 

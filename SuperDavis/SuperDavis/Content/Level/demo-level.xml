@@ -3,6 +3,7 @@
   		// Background
   		<Scenery Type="Background" X="0" Y="0" />
   		<Scenery Type="Background" X="976" Y="0" />
+    <Scenery Type="Background" X="1952" Y="0" />
   		// Character
   		<Character Type="Davis" X="48" Y="642" />
   		// level begin
@@ -108,4 +109,111 @@
 		<Block Type='MiddleGreenFloor' X='1152' Y='672' />
 		<Block Type='MiddleGreenFloor' X='1176' Y='696' />
 		<Block Type='MiddleGreenFloor' X='1176' Y='672' />
+    
+    
+    
+    
+    
+    
+    // Second Room
+    <Block Type='MiddleGreenFloor' X='1200' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1200' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1224' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1224' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1248' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1248' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1272' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1272' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1296' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1296' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1320' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1320' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1344' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1344' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1368' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1368' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1392' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1392' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1416' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1416' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1440' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1440' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1464' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1464' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1488' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1488' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1512' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1512' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1536' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1536' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1560' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1560' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1584' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1584' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1608' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1608' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1632' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1632' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1656' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1656' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1680' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1680' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1704' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1704' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1728' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1728' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1752' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1752' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1776' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1776' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1800' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1800' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1824' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1824' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1848' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1848' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1872' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1872' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1896' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1896' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1920' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1920' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1944' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1944' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1968' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1968' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1992' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1992' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2016' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2016' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2040' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2040' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2064' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2064' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2088' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2088' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2112' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2112' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2136' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2136' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2160' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2160' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2184' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2184' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2208' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2208' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2232' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2232' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2256' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2256' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2280' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2280' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2304' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2304' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2328' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2328' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2352' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2352' Y='672' />
+  <Block Type='MiddleGreenFloor' X='2376' Y='696' />
+  <Block Type='MiddleGreenFloor' X='2376' Y='672' />
 </Object>
