@@ -119,6 +119,9 @@
     <None Include="Content\BlockSprites\BrickBlock.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Castle1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\DavisSprites\DavisLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -268,6 +271,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Object\Block\CastleWall.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />
