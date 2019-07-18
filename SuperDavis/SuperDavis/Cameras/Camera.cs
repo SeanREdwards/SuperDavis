@@ -13,8 +13,6 @@ namespace SuperDavis.Cameras
             this.world = world;
             this.width = width;
             this.height = height;
-            System.Console.WriteLine("Window Width: " + this.width);
-            System.Console.WriteLine("Window Height: " + this.height);
         }
 
         public Matrix Draw()

@@ -9,22 +9,23 @@
 
         //Game1.cs string variables.
         public const string ContentDirectory = "Content";
-        public const string LevelOne = "level1-1.xml";
+        public const string LevelOne = "demo-level.xml";
         public const string UnderworldLevelOne = "underworld1-1.xml";
+        public const string DemoLevel = "demo-level.xml";
 
         //Game1.cs reset distances.
         public const int FloorReset = -100;
-        public const int CeilingReset = 768;
+        public const int CeilingReset = 620;
         public const int RightReset = 4900;
 
-        public const int WindowsEdgeWidth = 1000;
-        public const int WindowsEdgeHeight = 668;
+        public const int WindowsEdgeWidth = 1200;
+        public const int WindowsEdgeHeight = 720;
 
         public const float SpriteScaleFactor = 1.5f;
         public const float UnitPixelSize = 24;
 
         public const int level11Width = 4800;
-        public const int level11Height = 668;
+        public const int level11Height = 720;
 
         public const int InvincibleTimer = 10;
 

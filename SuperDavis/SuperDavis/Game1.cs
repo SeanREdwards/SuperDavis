@@ -57,9 +57,12 @@ namespace SuperDavis
             InitializeSounds();
             WorldCreator worldCreator = new WorldCreator();
             //For level 1-1 testing
-            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            //World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             //For Underworld Testing
             //World = worldCreator.CreateWorld("underworld1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            //For Demo Level Testing
+            World = worldCreator.CreateWorld("demo-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+
             // After creating world, pass the world into collision detection
             // But 
             collisionDetection = new CollisionDetection(World);
@@ -95,6 +98,12 @@ namespace SuperDavis
             HUD.Draw(gameTime, font, spriteBatch);
             base.Draw(gameTime);
 
+            System.Console.WriteLine("******************" + GraphicsDevice.Viewport.Bounds);
+            for (int i = 0; i < 1200; i+=24) {
+                System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='696' />");
+                System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='672' />");
+            }
+            System.Console.WriteLine("******************" + Variables.Variable.WindowsEdgeHeight);
         }
 
         /* Helper methods */
