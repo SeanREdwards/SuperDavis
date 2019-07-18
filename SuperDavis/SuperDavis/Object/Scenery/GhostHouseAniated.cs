@@ -5,27 +5,27 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.Object.Scenery
 {
-    class Background : IBackground
+    class GhostHouseAnimated : IBackground
     {
         public Vector2 Location { get; set; }
-        private readonly ISprite background;
-   
+        private readonly ISprite ghostHouseAnimated;
 
-        public Background(Vector2 location)
+
+        public GhostHouseAnimated(Vector2 location)
         {
             // initial state
             Location = location;
-            background = BackgroundSpriteFactory.Instance.NightAnimated();
+            ghostHouseAnimated = BackgroundSpriteFactory.Instance.GhostHouseAnimated();
         }
 
         public void Update(GameTime gameTime)
         {
-            background.Update(gameTime);
+            ghostHouseAnimated.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            background.Draw(spriteBatch, Location);
+            ghostHouseAnimated.Draw(spriteBatch, Location);
         }
     }
 }

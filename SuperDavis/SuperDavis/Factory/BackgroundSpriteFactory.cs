@@ -64,9 +64,9 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        /*public ISprite GhostHouseAnimated()
+        public ISprite GhostHouseAnimated()
         {
             return Create(GetMethodName());
-        }*/
+        }
     }
 }

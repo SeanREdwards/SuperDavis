@@ -2,8 +2,8 @@
 	<Object>
   		// Background
   		<Scenery Type="Background" X="0" Y="0" />
-  		<Scenery Type="Background" X="976" Y="0" />
-    <Scenery Type="Background" X="1952" Y="0" />
+  		<Scenery Type="GhostHouseAnimated" X="976" Y="0" />
+      
   		// Character
   		<Character Type="Davis" X="48" Y="642" />
   		// level begin

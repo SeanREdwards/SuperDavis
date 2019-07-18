@@ -57,11 +57,11 @@ namespace SuperDavis
             InitializeSounds();
             WorldCreator worldCreator = new WorldCreator();
             //For level 1-1 testing
-            World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            //World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             //For Underworld Testing
             //World = worldCreator.CreateWorld("underworld1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
             //For Demo Level Testing
-            //World = worldCreator.CreateWorld("demo-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
+            World = worldCreator.CreateWorld("demo-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
 
             // After creating world, pass the world into collision detection
             // But 

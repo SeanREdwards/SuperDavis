@@ -21,6 +21,8 @@ namespace SuperDavis.Worlds
         Dictionary<String, Action<float, float>> backgroundDictionary;
         IWorld world;
 
+    
+
         // Need to get rid of string classifier
         private void CreateObjectDictionary()
         {
@@ -88,7 +90,9 @@ namespace SuperDavis.Worlds
         {
             backgroundDictionary = new Dictionary<String, Action<float, float>>
             {
-                {nameof(Background), (x, y) => world.Backgrounds.Add(new Background(new Vector2(x, y))) }
+                {nameof(Background), (x, y) => world.Backgrounds.Add(new Background(new Vector2(x, y))) },
+                {nameof(GhostHouseAnimated), (x, y) => world.Backgrounds.Add(new GhostHouseAnimated(new Vector2(x, y))) }
+
             };
         }
 
