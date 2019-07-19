@@ -17,7 +17,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if (davis.DavisState is DavisStaticLeftState || davis.DavisState is DavisWalkLeftState || davis.DavisState is DavisJumpLeftState || !(davis.PhysicsState is FallStraightState))
+            if (davis.DavisState is DavisStaticLeftState || davis.DavisState is DavisWalkLeftState || davis.DavisState is DavisJumpLeftState)
                 davis.Location += new Vector2(-3f, 0);
             davis.DavisTurnLeft();
         }

@@ -282,6 +282,7 @@
     <Compile Include="Object\Block\RightGreenFloor.cs" />
     <Compile Include="Object\Character\CharacterDictionary.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
+    <Compile Include="Object\GoombaSpawnPoint\GoombaSpawnPoint.cs" />
     <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />

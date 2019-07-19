@@ -100,7 +100,7 @@ namespace SuperDavis.Collision
                 case CollisionSide.Left:
                     if (!(block.IsHidden))
                     {
-                        davis.PhysicsState = new FallStraightState(davis);
+                        //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     }
                     davis.CollideOnSide = true;
@@ -108,7 +108,7 @@ namespace SuperDavis.Collision
                 case CollisionSide.Right:
                     if (!(block.IsHidden))
                     {
-                        davis.PhysicsState = new FallStraightState(davis);
+                        //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     }
                     davis.CollideOnSide = true;
