@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
+using SuperDavis.Physics;
 using SuperDavis.State.ItemStateMachine;
 
 namespace SuperDavis.Object.Item
@@ -33,6 +34,7 @@ namespace SuperDavis.Object.Item
             // initial state
 
             this.FacingDirection = facingDirection;
+            PhysicsState = new BatProjectilePhysicsState(this);
             Location = location;
             BatProjectileStateMachine = new BatProjectileStateMachine(false);
             projectile = BatProjectileStateMachine.Sprite;
@@ -43,11 +45,11 @@ namespace SuperDavis.Object.Item
         {
 
             BatProjectileStateMachine.Update(gameTime);
-            if(FacingDirection == FacingDirection.Left)
-                Location += new Vector2(Variables.Variable.BatProjLeftMovement, 0);
-            else
-                Location += new Vector2(Variables.Variable.BatProjRightMovement, 0);
-
+            //if(FacingDirection == FacingDirection.Left)
+            //    Location += new Vector2(Variables.Variable.BatProjLeftMovement, 0);
+            //else
+            //    Location += new Vector2(Variables.Variable.BatProjRightMovement, 0);
+            PhysicsState.Update(gameTime);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectile.Width, (int)projectile.Height);
         }
 
