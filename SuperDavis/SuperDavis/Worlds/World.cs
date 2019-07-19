@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Collision;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Character;
 using SuperDavis.Sound;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace SuperDavis.Worlds
 
         public IList<IGameObject>[][] WorldGrid { get; set; }
         public HashSet<IGameObject> ObjectToRemove { get; set; }
-        public IList<IDavis> Characters { get; set; }
+
+        public IDavis Characters { get; set; }
         public HashSet<IItem> Items { get; set; }
         public HashSet<IBlock> Blocks { get; set; }
         public HashSet<IEnemy> Enemies { get; set; }
@@ -46,7 +48,7 @@ namespace SuperDavis.Worlds
                     WorldGrid[i][j] = new List<IGameObject>();
 
             /* Lists Initialization */
-            Characters = new List<IDavis>();
+            //Characters = new List<IDavis>();
             Items = new HashSet<IItem>();
             Blocks = new HashSet<IBlock>();
             Enemies = new HashSet<IEnemy>();
@@ -62,8 +64,7 @@ namespace SuperDavis.Worlds
         {
             foreach (IBackground background in Backgrounds)
                 background.Update(gameTime);
-            for(int i = 0; i < Characters.Count; i++)
-                Characters[i].Update(gameTime);
+            Characters.Update(gameTime);
             foreach (IItem item in Items)
                 item.Update(gameTime);
             foreach (IBlock block in Blocks)
@@ -89,8 +90,8 @@ namespace SuperDavis.Worlds
                 projectile.Draw(spriteBatch);
             foreach (IEnemy enemy in Enemies)
                 enemy.Draw(spriteBatch);
-            foreach (IDavis character in Characters)
-                character.Draw(spriteBatch);
+            if (Characters != null)
+                Characters.Draw(spriteBatch);
         }
 
         public void RemoveObject()
@@ -98,7 +99,7 @@ namespace SuperDavis.Worlds
             foreach (IGameObject removeObject in ObjectToRemove)
             {
                 if (removeObject is IDavis)
-                    Characters.Remove((IDavis)removeObject);
+                    Characters = null;
                 if (removeObject is IItem)
                     Items.Remove((IItem)removeObject);
                 if (removeObject is IBlock)
@@ -127,7 +128,7 @@ namespace SuperDavis.Worlds
         {
             //Code to add object          
             if (@object is IDavis)
-                Characters.Add(@object as IDavis);
+                Characters = (Davis)@object;
             if (@object is IItem)
                 Items.Add(@object as IItem);
             if (@object is IEnemy)
@@ -166,9 +167,20 @@ namespace SuperDavis.Worlds
 
         }
 
+        public void DecoratorReplacement(IGameObject prevObject, IGameObject newObject)
+        {
+            var LocationX = (int)(prevObject.Location.X / UNIT_SIZE);
+            var LocationY = (int)(prevObject.Location.Y / UNIT_SIZE);
+            WorldGrid[LocationX][LocationY].Remove(prevObject);
+            WorldGrid[LocationX][LocationY].Add(newObject);
+
+            prevObject.OnPositionChanged -= Object_OnPositionChanged;
+            newObject.OnPositionChanged += Object_OnPositionChanged;
+        }
+
         public void ResetGame()
         {
-            Characters.Clear();
+            Characters = null;
             Blocks.Clear();
             Enemies.Clear();
             Items.Clear();

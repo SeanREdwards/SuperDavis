@@ -6,6 +6,7 @@ namespace SuperDavis.Interfaces
     public enum FacingDirection { Left, Right };
     interface IDavis : IGameObject
     {
+        bool CollideOnSide { get; set; }
         ISprite Sprite { get; set; }
         IDavisState DavisState { get; set; }
         DavisStatus DavisStatus { get; set; }

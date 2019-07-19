@@ -122,8 +122,7 @@ namespace SuperDavis
 
         public void InitializeController()
         {
-            foreach (IDavis davis in World.Characters)
-            {
+            var davis = World.Characters;
                 controllerList = new List<IController>()
                 {
                     new KeyboardController
@@ -131,13 +130,13 @@ namespace SuperDavis
                       (Keys.Q, new ExitCommand(this), new NullCommand(), false),
                       (Keys.R, new ResetCommand(World), new NullCommand(), false),
                       (Keys.S, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.A, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
+                      (Keys.A, new DavisTurnLeftCommand(davis, World), new DavisStaticCommand(davis), true),
                       (Keys.D, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.W, new DavisJumpCommand(davis),new DavisStaticCommand(davis), true),
                       (Keys.Y, new DavisToDavisCommand(davis),new NullCommand(), true),
                       (Keys.U, new DavisToWoodyCommand(davis),new NullCommand(), true),
                       (Keys.I, new DavisToBatCommand(davis),new NullCommand(), true),
-                      (Keys.Left, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
+                      (Keys.Left, new DavisTurnLeftCommand(davis, World), new DavisStaticCommand(davis), true),
                       (Keys.Right, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Up, new DavisJumpCommand(davis),new DavisStaticCommand(davis), true),
                       (Keys.Z, new DavisJumpCommand(davis),new NullCommand(), true),
@@ -151,7 +150,7 @@ namespace SuperDavis
                     (
                       (Buttons.Start, new ExitCommand(this)),
                       (Buttons.Back, new ResetCommand(World)),
-                      (Buttons.LeftThumbstickLeft, new DavisTurnLeftCommand(davis)),
+                      (Buttons.LeftThumbstickLeft, new DavisTurnLeftCommand(davis, World)),
                       (Buttons.LeftThumbstickRight, new DavisTurnRightCommand(davis)),
                       (Buttons.LeftThumbstickUp, new DavisJumpCommand(davis)),
                       (Buttons.LeftThumbstickDown, new DavisCrouchCommand(davis)),
@@ -164,7 +163,7 @@ namespace SuperDavis
                     ),
                     new MouseController(this),
                 };
-            };
+            
         }
 
         public void ControllerUpdate()
@@ -182,17 +181,15 @@ namespace SuperDavis
         }
         public void CheckGameReset()
         {
-            if (World.Characters.Count == 0)
+            if (World.Characters == null)
             {
                 resetFlag = true;
             }
             else
             {
-                foreach (IDavis character in World.Characters)
-                {
+                var character = World.Characters;
                     if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
                         resetFlag = true;
-                }
             }
 
             if (resetFlag)

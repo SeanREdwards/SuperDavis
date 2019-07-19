@@ -10,7 +10,7 @@ namespace SuperDavis.Interfaces
         float Height { get; }
 
         IList<IGameObject>[][] WorldGrid { get; set; }
-        IList<IDavis> Characters { get; set; }
+        IDavis Characters { get; set; }
         HashSet<IEnemy> Enemies { get; set; }
         HashSet<IItem> Items { get; set; }
         HashSet<IBlock> Blocks { get; set; }
@@ -24,6 +24,7 @@ namespace SuperDavis.Interfaces
         IGameObject GetObject(IGameObject @object, int i, int j);
 
         void AddObject(IGameObject @object);
+        void DecoratorReplacement(IGameObject prevObject, IGameObject newObject);
 
         void ResetGame();
     }

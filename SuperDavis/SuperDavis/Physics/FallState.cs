@@ -6,7 +6,7 @@ namespace SuperDavis.Physics
     class FallState : IGameObjectPhysics
     {
 
-        private IGameObject gameObject;
+        private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }

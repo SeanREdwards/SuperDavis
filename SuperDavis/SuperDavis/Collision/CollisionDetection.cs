@@ -29,17 +29,15 @@ namespace SuperDavis.Collision
             //CheckItemSurroundingBox(World.Items, World);
         }
         
-        private static void CheckCharactersSurroundingBox(IList<IDavis> movers, IWorld world)
+        private static void CheckCharactersSurroundingBox(IDavis movers, IWorld world)
         {
-            var m = -1;
-            for(int n = 0; n < movers.Count; n++)
-            {
-                var i = (int)(movers[n].Location.X / (world as World).UNIT_SIZE);
-                var j = (int)(movers[n].Location.Y / (world as World).UNIT_SIZE);
+
+                var i = (int)(movers.Location.X / (world as World).UNIT_SIZE);
+                var j = (int)(movers.Location.Y / (world as World).UNIT_SIZE);
                 if (!(world as World).IsIndexOutOfBounds(i, j))
                 {
                     // Get instance of character reference in the World Grid
-                    IDavis moverObject = (IDavis)world.GetObject(movers[n], i, j);
+                    IDavis moverObject = (IDavis)world.GetObject(movers, i, j);
   
                     if (moverObject != null)
                     {
@@ -57,7 +55,7 @@ namespace SuperDavis.Collision
                                                 if (!target.Equals(moverObject) && (target is IBlock || target is IItem || target is IEnemy))
                                                 {
                                                     var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
-                                                    if (side != CollisionSide.None)
+                                                    /*if (side != CollisionSide.None)*/
                                                     {
                                                         if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
                                                         if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
@@ -67,17 +65,8 @@ namespace SuperDavis.Collision
                                             }
                     }
                 }
-                if (movers[n].DavisStatus == DavisStatus.Invincible && movers[n] is Davis)
-                {
-                    m = n;
-                    break;
-                }
-            }
-            if (m != -1)
-            {
-                world.ObjectToRemove.Add(world.Characters[m]);
-                world.AddObject(new InvincibleDavis(world.Characters[m], world));
-            }
+            
+
             
         }
 

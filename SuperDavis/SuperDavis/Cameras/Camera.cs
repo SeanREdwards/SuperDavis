@@ -17,7 +17,7 @@ namespace SuperDavis.Cameras
 
         public Matrix Draw()
         {
-            foreach (IDavis davis in world.Characters)
+            var davis = world.Characters;
             {
                 if (davis.Location.X <= width / Variables.Variable.CameraDivisor)
                 {

@@ -35,7 +35,7 @@ namespace SuperDavis.Object.Character
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
         public ISprite Sprite { get; set; }
-
+        public bool CollideOnSide { get; set; }
         // private member
         private int invincibleTimer = Variables.Variable.InvincibleTimer;
         private IDavis decoratedDavis;
@@ -43,22 +43,24 @@ namespace SuperDavis.Object.Character
 
         public InvincibleDavis(IDavis decoratedDavis, IWorld world)
         {
+            //Instantiate character dictionary
+            charDict = new CharacterDictionary();
+
             // get info from decorated davis
             this.decoratedDavis = decoratedDavis;
             this.world = world;
             Location = decoratedDavis.Location;
-            DavisState = decoratedDavis.DavisState;
-            PhysicsState = decoratedDavis.PhysicsState;
             FacingDirection = decoratedDavis.FacingDirection;
             DavisProjectile = decoratedDavis.DavisProjectile;
-
-            //Instantiate character dictionary
-            charDict = new CharacterDictionary();
+            DavisState = decoratedDavis.DavisState;
+            PhysicsState = new FallState(this);
 
             // initial state
             DavisStatus = DavisStatus.Invincible;
+
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             Location = location;
+            CollideOnSide = false;
 
         }
 
@@ -77,7 +79,8 @@ namespace SuperDavis.Object.Character
 
         public void RemoveInvincible()
         {
-            world.Characters[0] = decoratedDavis;
+            world.Characters = decoratedDavis;
+            //world.DecoratorReplacement(this, decoratedDavis);
         }
 
 
@@ -134,7 +137,7 @@ namespace SuperDavis.Object.Character
         public void DavisLand()
         {
             DavisState.Land();
-            PhysicsState = new FallState(this);
+            PhysicsState = new StandingState(this);
         }
 
         public void DavisSlide()
@@ -142,10 +145,10 @@ namespace SuperDavis.Object.Character
             DavisState.Slide();
         }
 
-        /* public void TakeDamage()
+         public void TakeDamage()
          {
-             DavisState.Death();
-         }*/
+             
+         }
 
 
         public void DavisToDavis()

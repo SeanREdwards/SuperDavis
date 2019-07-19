@@ -16,7 +16,7 @@ namespace SuperDavis.Object.Block
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int bumpTimer = Variables.Variable.BumpTime;
+
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         public Brick(Vector2 location)
         {
