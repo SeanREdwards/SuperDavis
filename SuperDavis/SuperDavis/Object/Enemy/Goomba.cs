@@ -30,11 +30,11 @@ namespace SuperDavis.Object.Enemy
         private IGameObjectState goombaState;
         public IGameObjectPhysics PhysicsState { get; set; }
 
-        public Goomba(Vector2 location)
+        public Goomba(Vector2 location, FacingDirection facingDirection)
         {
             // initial state
             Dead = false;
-            FacingDirection = FacingDirection.Left;
+            FacingDirection = facingDirection;
             Location = location;
             goombaState = new GoombaStateMachine(this);
             PhysicsState = new FallState(this);

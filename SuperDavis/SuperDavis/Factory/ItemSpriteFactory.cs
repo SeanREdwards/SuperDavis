@@ -89,10 +89,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-       /* public ISprite CreateSkullBlock()
+        public ISprite CreateSkullBlock()
         {
             return Create(GetMethodName());
-        }*/
+        }
 
         /*public ISprite CreateSpinBlockStatic()
         {

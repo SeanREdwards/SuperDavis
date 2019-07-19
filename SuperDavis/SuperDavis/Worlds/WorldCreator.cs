@@ -5,6 +5,7 @@ using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
 using SuperDavis.Object.Scenery;
+using SuperDavis.Object.SpawnPoint;
 using System;
 using System.Collections.Generic;
 using System.Xml;
@@ -65,7 +66,8 @@ namespace SuperDavis.Worlds
                 { nameof(LeftGreenFloor), (x,y) => world.AddObject(new LeftGreenFloor(new Vector2(x, y))) },
                 { nameof(MiddleGreenFloor), (x,y) => world.AddObject(new MiddleGreenFloor(new Vector2(x, y))) },
                 { nameof(RightGreenFloor), (x,y) => world.AddObject(new RightGreenFloor(new Vector2(x, y))) },
-               
+                { nameof(GoombaSpawnPoint), (x,y) => world.AddObject(new GoombaSpawnPoint(new Vector2(x, y), world)) },
+
             };
         }
 
@@ -73,7 +75,7 @@ namespace SuperDavis.Worlds
         {
             enemyDictionary = new Dictionary<String, Action<float, float>>
             {
-                { nameof(Goomba), (x, y) => world.AddObject(new Goomba(new Vector2(x, y))) },
+                { nameof(Goomba), (x, y) => world.AddObject(new Goomba(new Vector2(x, y), FacingDirection.Left))},
                 { nameof(Koopa), (x, y) => world.AddObject(new Koopa(new Vector2(x, y))) }
             };
         }

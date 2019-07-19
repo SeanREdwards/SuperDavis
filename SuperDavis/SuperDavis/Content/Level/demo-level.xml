@@ -10,6 +10,7 @@
   		// 1st room (Rooms are 1200 wide)
   		// Base Block
       <Block Type ="RightGreenFloor" X ="120" Y="648"/>
+    <Block Type ="GoombaSpawnPoint" X ="300" Y =" 0"/>
     <Block Type ="RightGreenFloor" X ="120" Y="624"/>
     <Block Type ="RightGreenFloor" X ="120" Y="600"/>
     <Block Type ="RightGreenFloor" X ="120" Y="576"/>

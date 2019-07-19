@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
+using SuperDavis.Physics;
 using SuperDavis.State.DavisState;
 
 namespace SuperDavis.Command
@@ -14,7 +15,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if (davis.DavisState is DavisStaticRightState || davis.DavisState is DavisWalkRightState || davis.DavisState is DavisJumpRightState)
+            if (davis.DavisState is DavisStaticRightState || davis.DavisState is DavisWalkRightState || !(davis.PhysicsState is FallStraightState))
                 davis.Location += new Vector2(3f, 0);
             davis.DavisTurnRight();
         }
