@@ -120,6 +120,9 @@
     <None Include="Content\BlockSprites\BrickBlock.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Castle1.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\DavisSprites\DavisLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -282,8 +285,7 @@
     <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
-    <Compile Include="Object\SpawnPoint\GoombaSpawnPoint.cs" />
-    <Compile Include="Physics\FallStraightState.cs" />
+    <Compile Include="Object\Scenery\Wall.cs" />
     <Compile Include="Physics\StandingState.cs" />
     <Compile Include="Physics\JumpState.cs" />
     <Compile Include="Physics\FallState.cs" />
