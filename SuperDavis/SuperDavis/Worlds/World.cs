@@ -173,6 +173,9 @@ namespace SuperDavis.Worlds
             var LocationY = (int)(prevObject.Location.Y / UNIT_SIZE);
             WorldGrid[LocationX][LocationY].Remove(prevObject);
             WorldGrid[LocationX][LocationY].Add(newObject);
+
+            prevObject.OnPositionChanged -= Object_OnPositionChanged;
+            newObject.OnPositionChanged += Object_OnPositionChanged;
         }
 
         public void ResetGame()

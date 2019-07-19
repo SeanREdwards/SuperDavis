@@ -121,7 +121,7 @@ namespace SuperDavis.Object.Character
         public void DavisLand()
         {
             DavisState.Land();
-            PhysicsState = new FallState(this);
+            PhysicsState = new StandingState(this);
         }
 
         public void DavisSlide()
