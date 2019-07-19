@@ -16,7 +16,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if (davis.DavisProjectile.Count > 0 && davis.DavisStatus == DavisStatus.Bat)
+            if (davis.DavisProjectile.Count > 0 )
             {
                 foreach(IProjectile projectile in davis.DavisProjectile)
                 {
@@ -25,6 +25,7 @@ namespace SuperDavis.Command
                 }
                 world.AddObject(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);
                 davis.DavisProjectile.RemoveAt(davis.DavisProjectile.Count - 1);
+                davis.DavisState.SpecialAttack();
             }
         }
     }

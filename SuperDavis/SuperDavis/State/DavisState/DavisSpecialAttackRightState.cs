@@ -10,6 +10,7 @@ namespace SuperDavis.State.DavisState
         public float Height { get; set; }
         private readonly IDavis davis;
         public ISprite Sprite { get; set; }
+        private int specialAttackTimer = 25;
 
         public DavisSpecialAttackRightState(IDavis davis)
         {
@@ -53,12 +54,15 @@ namespace SuperDavis.State.DavisState
 
         public void SpecialAttack()
         {
-            //Do Nothing.
+            
         }
 
         public void Update(GameTime gameTime)
         {
             davis.Sprite.Update(gameTime);
+            if (specialAttackTimer == 0)
+                davis.DavisState = new DavisStaticRightState(davis);
+            specialAttackTimer--;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
