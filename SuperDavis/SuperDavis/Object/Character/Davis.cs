@@ -34,7 +34,7 @@ namespace SuperDavis.Object.Character
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
-
+        public bool CollideOnSide { get; set; }
         public ISprite Sprite { get; set; }
 
         public Davis(Vector2 location)
@@ -59,6 +59,7 @@ namespace SuperDavis.Object.Character
                 (new BatProjectile(location,FacingDirection)),
                 (new BatProjectile(location,FacingDirection))
             };
+            CollideOnSide = false;
         }
 
         public void Update(GameTime gameTime)
@@ -81,7 +82,8 @@ namespace SuperDavis.Object.Character
         }
         public void DavisTurnLeft()
         {
-            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState))){
+            if (!((DavisState is DavisDeathLeftState) || (DavisState is DavisDeathRightState)))
+            {
                 FacingDirection = FacingDirection.Left;
                 DavisState.Left();
             }
@@ -129,10 +131,10 @@ namespace SuperDavis.Object.Character
             DavisState.Slide();
         }
 
-       /* public void TakeDamage()
+        public void TakeDamage()
         {
             DavisState.Death();
-        }*/
+        }
 
 
         public void DavisToDavis()
