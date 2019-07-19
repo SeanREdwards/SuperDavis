@@ -122,8 +122,7 @@ namespace SuperDavis
 
         public void InitializeController()
         {
-            foreach (IDavis davis in World.Characters)
-            {
+            var davis = World.Characters;
                 controllerList = new List<IController>()
                 {
                     new KeyboardController
@@ -164,7 +163,7 @@ namespace SuperDavis
                     ),
                     new MouseController(this),
                 };
-            };
+            
         }
 
         public void ControllerUpdate()
@@ -182,17 +181,15 @@ namespace SuperDavis
         }
         public void CheckGameReset()
         {
-            if (World.Characters.Count == 0)
+            if (World.Characters == null)
             {
                 resetFlag = true;
             }
             else
             {
-                foreach (IDavis character in World.Characters)
-                {
+                var character = World.Characters;
                     if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
                         resetFlag = true;
-                }
             }
 
             if (resetFlag)

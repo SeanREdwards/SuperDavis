@@ -10,23 +10,26 @@ namespace SuperDavis.Physics
         // Idea, by passing different igameobject, implement different 
         // param for Falling, using lists
         private IGameObject gameObject;
-        private IDavis davis;
+        private readonly IDavis davis;
         public Vector2 Velocity { get; set; }
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
         public StandingState(IGameObject gameObjectClass)
         {
-            this.gameObject = gameObjectClass;
-            if (gameObjectClass is IDavis)
-                davis = (IDavis)gameObject;
+            Velocity = new Vector2(0, Variables.Variable.FallVelocity);
+            Acceleration = new Vector2(0, Variables.Variable.FallVelocityIncreaseRate);
+            MaxVelocity = new Vector2(0, Variables.Variable.FallVelocityMax);
 
         }
 
         public void Update(GameTime gameTime)
         {
-            if(gameObject is IDavis)
-                if ((davis.DavisState is DavisWalkLeftState) || (davis.DavisState is DavisWalkRightState))
-                    davis.PhysicsState = new FallState(davis);
+            gameObject.Location += Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
+            Velocity *= Acceleration;
+            if (Velocity.Y > MaxVelocity.Y)
+            {
+                Velocity = new Vector2(Velocity.X, MaxVelocity.Y);
+            }
         }
     }
 }

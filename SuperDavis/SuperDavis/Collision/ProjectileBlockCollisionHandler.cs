@@ -11,11 +11,9 @@ namespace SuperDavis.Collision
             switch (side)
             {
                 case CollisionSide.Left:
-                case CollisionSide.Right:                  
-                    foreach(IDavis davis in world.Characters)
-                    {
-                        davis.DavisProjectile.Add(projectile);
-                    }
+                case CollisionSide.Right:
+                    var davis = world.Characters;
+                    davis.DavisProjectile.Add(projectile);
                     world.ObjectToRemove.Add(projectile);
                     break;
                 case CollisionSide.None:

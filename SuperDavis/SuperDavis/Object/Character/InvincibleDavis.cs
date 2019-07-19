@@ -43,6 +43,7 @@ namespace SuperDavis.Object.Character
 
         public InvincibleDavis(IDavis decoratedDavis, IWorld world)
         {
+            world.DecoratorReplacement(decoratedDavis, this);
             // get info from decorated davis
             this.decoratedDavis = decoratedDavis;
             this.world = world;
@@ -77,7 +78,8 @@ namespace SuperDavis.Object.Character
 
         public void RemoveInvincible()
         {
-            world.Characters[0] = decoratedDavis;
+            world.Characters = decoratedDavis;
+            world.DecoratorReplacement(this, decoratedDavis);
         }
 
 

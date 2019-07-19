@@ -28,7 +28,7 @@ namespace SuperDavis.Collision
                 }
                 else if (item is Star)
                 {
-                    davis = new InvincibleDavis(davis, world);
+                    world.Characters = new InvincibleDavis(davis, world);
                 }
                 else if (item is Coin)
                 {

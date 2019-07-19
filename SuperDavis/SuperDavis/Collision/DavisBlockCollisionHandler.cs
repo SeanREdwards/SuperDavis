@@ -3,6 +3,7 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
+using SuperDavis.State.DavisState;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -87,7 +88,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!(block is HiddenBlock))
+                    if (!(block.IsHidden))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);
@@ -95,14 +96,15 @@ namespace SuperDavis.Collision
                     }
                     break;
                 case CollisionSide.Left:
-                    if (!(block is HiddenBlock))
+                    if (!(block.IsHidden))
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     break;
                 case CollisionSide.Right:
-                    if (!(block is HiddenBlock))
+                    if (!(block.IsHidden))
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     break;
                 case CollisionSide.None:
+
                     break;
             }
         }

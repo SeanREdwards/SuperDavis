@@ -13,11 +13,9 @@ namespace SuperDavis.Collision
                 case CollisionSide.Top:
                 case CollisionSide.Bottom:
                 case CollisionSide.Left:
-                case CollisionSide.Right:                  
-                    foreach(IDavis davis in world.Characters)
-                    {
-                        davis.DavisProjectile.Add(projectile);
-                    }
+                case CollisionSide.Right:
+                    var davis = world.Characters;
+                    davis.DavisProjectile.Add(projectile);
                     world.ObjectToRemove.Add(projectile);
                     world.ObjectToRemove.Add(enemy);
                     break;
