@@ -303,6 +303,20 @@
     "Scale": 1.5
   },
 
+  "CreateMiddleCastleBlock": {
+    "TextureName": "BlockSprites/Castle1",
+    "SourceFrames": [
+      {
+        "X": 86,
+        "Y": 18,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
   "CreateRightGreenFloor": {
     "TextureName": "BlockSprites/Blocks&Pipes2",
     "SourceFrames": [
