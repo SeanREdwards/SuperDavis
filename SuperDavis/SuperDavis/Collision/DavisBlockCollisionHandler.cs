@@ -83,9 +83,12 @@ namespace SuperDavis.Collision
                             block.IsBumped = true;
                         }
                     }
-                    davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
-                    davis.PhysicsState = new FallState(davis);
-                    davis.CollideOnSide = false;
+                    if (!(block is EmptyBlock))
+                    {
+                        davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
+                        davis.PhysicsState = new FallState(davis);
+                        davis.CollideOnSide = false;
+                    }
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
