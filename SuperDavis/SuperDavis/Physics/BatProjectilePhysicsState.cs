@@ -19,12 +19,12 @@ namespace SuperDavis.Physics
         {
             this.projectile = projectile;
             if (projectile.FacingDirection == FacingDirection.Left)
-                velocityX = -8f;
+                velocityX = -15f;
             else
-                velocityX = 8f;
-            Velocity = new Vector2(velocityX, 0);
-            Acceleration = new Vector2(1f, 1.2f);
-            MaxVelocity = new Vector2(0, 5f);
+                velocityX = 15f;
+            Velocity = new Vector2(velocityX, 1f);
+            Acceleration = new Vector2(1f, 1.3f);
+            MaxVelocity = new Vector2(0, 10f);
 
         }
 
@@ -32,9 +32,15 @@ namespace SuperDavis.Physics
         {
             projectile.Location += Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
             Velocity *= Acceleration;
-            if (Math.Abs(Velocity.Y - MaxVelocity.Y) < 1)
+            System.Console.WriteLine(Velocity);
+            if (Math.Abs(Velocity.Y) - MaxVelocity.Y > 1)
             {
-                Velocity = new Vector2(Velocity.X, -Velocity.Y);
+                var y = Velocity.Y;
+                if (y < 0)
+                    y = 1f;
+                else
+                    y = -1f;
+                Velocity = new Vector2(Velocity.X, y);
             }
         }
     }
