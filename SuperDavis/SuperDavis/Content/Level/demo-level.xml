@@ -40,7 +40,6 @@
     <Item Type="Coin" X="648" Y="352" />
     <Block Type='Brick' X='648' Y='400' />
 
-    //Block Section 3
     <Item Type="Coin" X="552" Y="502" />
     <Block Type='Brick' X='552' Y='550' />
     <Block Type='Brick' X='576' Y='550' />
@@ -64,10 +63,97 @@
     <Block Type='FlowerBlock' X='874' Y='550' />
 
     //Section 2-----------------------------------------------------------------------
+    <Enemy Type="Koopa" X="1450" Y="624" />
+    <Block Type='Brick' X='1500' Y='250' />
+    <Block Type='Brick' X='1400' Y='250' />
+    <Block Type='Brick' X='1300' Y='250' />
+    //This is for the "key"
+    <Item Type="Coin" X="1300" Y="202" />
+    <Block Type="Pipe" X="1500" Y="624" />
 
+    <Item Type="Coin" X="1548" Y="624" />
+    <Item Type="Coin" X="1572" Y="624" />
+    <Item Type="Coin" X="1596" Y="624" />
+    <Item Type="Coin" X="1620" Y="624" />
+    <Item Type="Coin" X="1644" Y="624" />
+    <Item Type="Coin" X="1668" Y="624" />
+
+    <Item Type="Coin" X="1932" Y="624" />
+    <Item Type="Coin" X="1956" Y="624" />
+    <Item Type="Coin" X="1980" Y="624" />
+    <Item Type="Coin" X="2004" Y="624" />
+    <Item Type="Coin" X="2028" Y="624" />
+    <Item Type="Coin" X="2052" Y="624" />
+
+
+    <Enemy Type="Koopa" X="1600" Y="624" />
+    <Enemy Type="Koopa" X="2000" Y="624" />
+    <Block Type="Pipe" X="2100" Y="624" />
+    <Enemy Type="Koopa" X="2150" Y="624" />
+    
+    <Block Type='Brick' X='1600' Y='550' />
+    <Block Type='Brick' X='1624' Y='550' />
+    <Block Type='Brick' X='1648' Y='550' />
+    <Block Type='Brick' X='1672' Y='550' />
+
+    <Block Type='Brick' X='1700' Y='450' />
+    <Block Type='Brick' X='1724' Y='450' />
+    <Block Type='Brick' X='1748' Y='450' />
+    <Block Type='Brick' X='1772' Y='450' />
+
+    <Block Type='Brick' X='1600' Y='250' />
+    <Block Type='Brick' X='1624' Y='250' />
+    <Block Type='Brick' X='1648' Y='250' />
+    <Block Type='Brick' X='1672' Y='250' />
+
+    <Block Type="FlowerBlock" X="1832" Y="200" />
+    <Block Type='Brick' X='1796' Y='350' />
+    <Block Type='Brick' X='1820' Y='350' />
+    <Block Type='Brick' X='1844' Y='350' />
+    <Block Type='Brick' X='1868' Y='350' />
+
+    <Block Type='Brick' X='1892' Y='450' />
+    <Block Type='Brick' X='1916' Y='450' />
+    <Block Type='Brick' X='1940' Y='450' />
+    <Block Type='Brick' X='1964' Y='450' />
+
+    <Block Type='Brick' X='1988' Y='250' />
+    <Block Type='Brick' X='2012' Y='250' />
+    <Block Type='Brick' X='2036' Y='250' />
+    <Block Type='Brick' X='2060' Y='250' />
+
+    
+    
+    <Item Type="Coin" X="2160" Y="202" />
+    <Item Type="Coin" X="2196" Y="202" />
+    <Item Type="Coin" X="2232" Y="202" />
+    
+    <Block Type='Brick' X='2160' Y='250' />
+    <Block Type='Brick' X='2184' Y='250' />
+    <Block Type='Brick' X='2208' Y='250' />
+    <Block Type='Brick' X='2232' Y='250' />
+
+    <Block Type='Brick' X='1988' Y='550' />
+    <Block Type='Brick' X='2012' Y='550' />
+    <Block Type='Brick' X='2036' Y='550' />
+    <Block Type='Brick' X='2060' Y='550' />
 
     //Boss Section-----------------------------------------------------------------------
-
+  
+    <Block Type='Brick' X='2700' Y='550' />
+    <Block Type='Brick' X='2724' Y='550' />
+    <Block Type='Brick' X='2748' Y='550' />
+    <Block Type='Brick' X='2772' Y='550' />
+    <Block Type='Brick' X='2796' Y='550' />
+    <Enemy Type="Koopa" X="3000" Y="624" />
+    <Block Type='Brick' X='3200' Y='550' />
+    <Block Type='Brick' X='3224' Y='550' />
+    <Block Type='Brick' X='3248' Y='550' />
+    <Block Type='Brick' X='3272' Y='550' />
+    <Block Type='Brick' X='3296' Y='550' />
+    
+    
+    
     //Base Block------------------------------------------------------------------------------------------
     <Block Type='MiddleGreenFloor' X='0' Y='696' />
   <Block Type='MiddleGreenFloor' X='0' Y='672' />
