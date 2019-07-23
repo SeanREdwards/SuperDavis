@@ -98,12 +98,29 @@ namespace SuperDavis
             HUD.Draw(gameTime, font, spriteBatch);
             base.Draw(gameTime);
 
+            //creates floor
             //System.Console.WriteLine("******************" + GraphicsDevice.Viewport.Bounds);
-            //for (int i = 1200; i < 2400; i+=24) {
-            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='696' />");
-            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='672' />");
+            //for (int i = 3600; i < 4800; i+=24) {
+            //    System.Console.WriteLine("<Block Type='BrickBlock' X='" + i + "' Y='696' />");
+            //    System.Console.WriteLine("<Block Type='BrickBlock' X='" + i + "' Y='672' />");
             //}
             //System.Console.WriteLine("******************" + Variables.Variable.WindowsEdgeHeight);
+
+
+            //creates walls
+            System.Console.WriteLine("******************" + GraphicsDevice.Viewport.Bounds);
+            for (int i = 0; i < 696; i += 24)
+            {
+                System.Console.WriteLine("<Block Type='Brick' X='4752' Y='"+i+"' />");
+                System.Console.WriteLine("<Block Type='Brick' X='4776' Y='" + i + "' />");
+            }
+            System.Console.WriteLine("******************" + Variables.Variable.WindowsEdgeHeight);
+
+
+
+
+
+
         }
 
         /* Helper methods */

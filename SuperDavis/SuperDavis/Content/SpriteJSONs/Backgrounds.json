@@ -48,7 +48,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 2.3
   },
 
   "NightAnimated": {
@@ -86,7 +86,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 2.3
   },
 
   "BigCastle": {
