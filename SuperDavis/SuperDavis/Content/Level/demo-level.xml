@@ -17,23 +17,57 @@
     
     //Section 1-----------------------------------------------------------------------
     //Goomba spawn
-    <Block Type ="GoombaSpawnPoint" X ="300" Y ="200"/>
-    <Block Type ="GoombaSpawnPoint" X ="900" Y ="200"/>
-    <Block Type='EmptyBlock' X='252' Y='276' />
-    <Block Type='Brick' X='276' Y='300' />
-    <Block Type='Brick' X='300' Y='300' />
-    <Block Type='Brick' X='324' Y='300' />
-    <Block Type='Brick' X='348' Y='300' />
-    <Block Type='EmptyBlock' X='372' Y='276' />
+    <Block Type ="GoombaSpawnPoint" X ="300" Y ="300"/>
+    <Block Type ="GoombaSpawnPoint" X ="874" Y ="300"/>
+    
+    //Block Section 1
+    <Block Type='EmptyBlock' X='228' Y='376' />
+    <Block Type='Brick' X='252' Y='400' />
+    <Block Type='Brick' X='276' Y='400' />
+    <Block Type='Brick' X='300' Y='400' />
+    <Block Type='Brick' X='324' Y='400' />
+    <Block Type='Brick' X='348' Y='400' />
+    <Block Type='EmptyBlock' X='372' Y='376' />
     <Block Type='MushroomBlock' X='300' Y='550' />
-    <Block Type='Brick' X='850' Y='300' />
-    <Block Type='Brick' X='874' Y='300' />
-    <Block Type='Brick' X='898' Y='300' />
-    <Block Type='Brick' X='922' Y='300' />
-    <Block Type='FlowerBlock' X='900' Y='550' />
-  
+
+    //Block Section 2
+    <Item Type="Coin" X="552" Y="352" />
+    <Block Type='Brick' X='552' Y='400' />
+    <Block Type='Brick' X='576' Y='400' />
+    <Item Type="Coin" X="600" Y="352" />
+    <Block Type='Brick' X='600' Y='400' />
+    <Block Type='Brick' X='624' Y='400' />
+    <Item Type="Coin" X="648" Y="352" />
+    <Block Type='Brick' X='648' Y='400' />
+
+    //Block Section 3
+    <Item Type="Coin" X="552" Y="502" />
+    <Block Type='Brick' X='552' Y='550' />
+    <Block Type='Brick' X='576' Y='550' />
+    <Item Type="Coin" X="600" Y="502" />
+    <Block Type='Brick' X='600' Y='550' />
+    <Block Type='Brick' X='624' Y='550' />
+    <Item Type="Coin" X="648" Y="502" />
+    <Block Type='Brick' X='648' Y='550' />
+
+    <Enemy Type="Koopa" X="570" Y="624" />
+    <Item Type="Coin" X="552" Y="624" />
+    <Item Type="Coin" X="600" Y="624" />
+    <Item Type="Coin" X="648" Y="624" />
     
-    
+    //Block Section 3
+    <Block Type='Brick' X='826' Y='400' />
+    <Block Type='Brick' X='850' Y='400' />
+    <Block Type='Brick' X='874' Y='400' />
+    <Block Type='Brick' X='898' Y='400' />
+    <Block Type='Brick' X='922' Y='400' />
+    <Block Type='FlowerBlock' X='874' Y='550' />
+
+    //Section 2-----------------------------------------------------------------------
+
+
+    //Boss Section-----------------------------------------------------------------------
+
     //Base Block------------------------------------------------------------------------------------------
     <Block Type='MiddleGreenFloor' X='0' Y='696' />
   <Block Type='MiddleGreenFloor' X='0' Y='672' />
