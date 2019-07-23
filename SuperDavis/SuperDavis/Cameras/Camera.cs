@@ -23,9 +23,9 @@ namespace SuperDavis.Cameras
                 {
                     matrix = Matrix.CreateTranslation(new Vector3(- width / Variables.Variable.CameraDivisor, - height / Variables.Variable.CameraDivisor, 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
                 }
-                else if (davis.Location.X >= world.Width * Variables.Variable.CameraWorldWidthMultiplier - width / Variables.Variable.CameraDivisor)// right edge of screen, can change later on8
+                else if (davis.Location.X >= world.Width - width / Variables.Variable.CameraDivisor)// right edge of screen, can change later on8
                 {
-                    matrix = Matrix.CreateTranslation(new Vector3(- world.Width * Variables.Variable.CameraWorldWidthMultiplier + width / Variables.Variable.CameraDivisor, - height / Variables.Variable.CameraDivisor , 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
+                    matrix = Matrix.CreateTranslation(new Vector3(- world.Width + width / Variables.Variable.CameraDivisor, - height / Variables.Variable.CameraDivisor , 0)) * Matrix.CreateTranslation(new Vector3(width * Variables.Variable.CameraModifier, height * Variables.Variable.CameraModifier, 0));
                 }
                 else
                 {
