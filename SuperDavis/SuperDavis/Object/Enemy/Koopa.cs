@@ -58,9 +58,9 @@ namespace SuperDavis.Object.Enemy
                         Location += new Vector2(1f, 0);
                 else
                     if (FacingDirection == FacingDirection.Left)
-                        Location += new Vector2(-8f, 0);
+                        Location += new Vector2(-6f, 0);
                     else
-                        Location += new Vector2(8f, 0);
+                        Location += new Vector2(6f, 0);
             }
 
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
