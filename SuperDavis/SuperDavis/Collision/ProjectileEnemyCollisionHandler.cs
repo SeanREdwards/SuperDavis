@@ -18,9 +18,11 @@ namespace SuperDavis.Collision
                     case CollisionSide.Bottom:
                     case CollisionSide.Left:
                     case CollisionSide.Right:
-                        if (!(projectile.PhysicsState is NullPhysicsState))
-                              projectile.Explode();
-                        enemy.TakeDamage();
+                        if (!(projectile.PhysicsState is NullPhysicsState) && !projectile.IsExploded)
+                        {
+                            projectile.Explode();
+                            enemy.TakeDamage();
+                        }
                         break;
                     case CollisionSide.None:
                         break;

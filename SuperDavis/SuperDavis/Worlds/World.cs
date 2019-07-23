@@ -225,6 +225,7 @@ namespace SuperDavis.Worlds
         /* Enemy AI Helper Class */
         public void EnemyAI(IEnemy enemy)
         {
+            // Koopa jump AI
             if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState) && !enemy.Dead)
                 enemy.Jump();
         }
