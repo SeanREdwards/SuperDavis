@@ -12,10 +12,12 @@
     //Goomba spawn
     <Block Type ="GoombaSpawnPoint" X ="300" Y ="200"/>
     <Block Type ="GoombaSpawnPoint" X ="900" Y ="200"/>
+    <Block Type='EmptyBlock' X='252' Y='276' />
     <Block Type='Brick' X='276' Y='300' />
     <Block Type='Brick' X='300' Y='300' />
     <Block Type='Brick' X='324' Y='300' />
     <Block Type='Brick' X='348' Y='300' />
+    <Block Type='EmptyBlock' X='372' Y='276' />
     <Block Type='MushroomBlock' X='300' Y='550' />
     <Block Type='Brick' X='850' Y='300' />
     <Block Type='Brick' X='874' Y='300' />

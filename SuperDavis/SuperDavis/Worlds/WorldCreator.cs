@@ -68,6 +68,7 @@ namespace SuperDavis.Worlds
                 { nameof(RightGreenFloor), (x,y) => world.AddObject(new RightGreenFloor(new Vector2(x, y))) },
                 { nameof(CastleBlock), (x,y) => world.AddObject(new CastleBlock(new Vector2(x, y))) },
                 { nameof(GoombaSpawnPoint), (x,y) => world.AddObject(new GoombaSpawnPoint(new Vector2(x, y), world)) },
+                { nameof(EmptyBlock), (x,y) => world.AddObject(new EmptyBlock(new Vector2(x, y))) },
 
             };
         }

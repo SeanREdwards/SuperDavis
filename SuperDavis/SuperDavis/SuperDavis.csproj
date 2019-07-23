@@ -272,6 +272,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
@@ -299,6 +300,7 @@
     <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
     <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\EmptyBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CastleBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
