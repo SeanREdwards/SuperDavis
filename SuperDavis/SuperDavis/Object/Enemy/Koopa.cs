@@ -69,7 +69,7 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             PhysicsState = new EnemyDeadState(this);
-            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedRight();
+            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
             koopaStateMachine = new KoopaStateMachine(sprite);
             koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 200);
         }

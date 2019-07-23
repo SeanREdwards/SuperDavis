@@ -86,9 +86,7 @@ namespace SuperDavis.Worlds
             foreach (IEnemy enemy in Enemies)
             {
                 enemy.Update(gameTime);
-                if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState))
-                    enemy.Jump();
-
+                EnemyAI(enemy);
             }
 
             if (ObjectToRemove.Count > 0)
@@ -222,6 +220,13 @@ namespace SuperDavis.Worlds
         public bool IsIndexOutOfBounds(int x, int y)
         {
             return !(x >= 0 && x < WorldGridWidth && y >= 0 && y < WorldGridHeight);
+        }
+
+        /* Enemy AI Helper Class */
+        public void EnemyAI(IEnemy enemy)
+        {
+            if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState) && !enemy.Dead)
+                enemy.Jump();
         }
     }
 }

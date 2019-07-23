@@ -14,19 +14,26 @@ namespace SuperDavis.Collision
             if(!(enemy.PhysicsState is EnemyDeadState))
                 switch(side)
                 {
-                   case CollisionSide.Left:
-                   case CollisionSide.Right:
+                    case CollisionSide.Left:
+                    case CollisionSide.Right:
                         enemy.ChangeDirection();
-                       break;
-                   case CollisionSide.Top:
+                        break;
+                    case CollisionSide.Bottom:
+                        if (!(block is EmptyBlock))
+                        {
+                            enemy.Location = new Vector2(enemy.Location.X, block.Location.Y + block.HitBox.Height);
+                            enemy.PhysicsState = new FallState(enemy);
+                        }
+                        break;
+                    case CollisionSide.Top:
                         if (!(block is EmptyBlock))
                         {
                             enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
                             enemy.PhysicsState = new StandingState(enemy);
                         }
-                       break;
-                   default:
-                       break;
+                        break;
+                    default:
+                        break;
             }   
         }
     }
