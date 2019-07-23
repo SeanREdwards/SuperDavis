@@ -288,6 +288,7 @@
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
     <Compile Include="Object\Scenery\Wall.cs" />
     <Compile Include="Physics\BatProjectilePhysicsState.cs" />
+    <Compile Include="Physics\NullPhysicsState.cs" />
     <Compile Include="Physics\StandingState.cs" />
     <Compile Include="Physics\JumpState.cs" />
     <Compile Include="Physics\FallState.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
+    <Compile Include="State\ProjectileState\BatProjectileExplodeStateMachine.cs" />
     <Compile Include="State\ProjectileState\BatProjectileStateMachine.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />

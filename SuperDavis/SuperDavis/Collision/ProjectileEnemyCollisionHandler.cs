@@ -1,4 +1,7 @@
-﻿using SuperDavis.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using SuperDavis.Interfaces;
+using SuperDavis.Object.Item;
+using SuperDavis.Physics;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -14,9 +17,11 @@ namespace SuperDavis.Collision
                 case CollisionSide.Bottom:
                 case CollisionSide.Left:
                 case CollisionSide.Right:
-                    var davis = world.Characters;
-                    davis.DavisProjectile.Add(projectile);
-                    world.ObjectToRemove.Add(projectile);
+                    if (!(projectile.PhysicsState is NullPhysicsState))
+                        projectile.Explode();
+
+
+                    // TBD
                     world.ObjectToRemove.Add(enemy);
                     break;
                 case CollisionSide.None:

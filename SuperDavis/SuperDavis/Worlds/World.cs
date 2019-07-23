@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Collision;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
+using SuperDavis.Object.Item;
 using SuperDavis.Sound;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,16 @@ namespace SuperDavis.Worlds
             foreach (IBlock block in Blocks)
                 block.Update(gameTime);
             foreach (IProjectile projectile in Projectiles)
+            {
                 projectile.Update(gameTime);
+                if (projectile.IsExploded)
+                {
+                    var davis = Characters;
+                    if (davis.DavisProjectile.Count < 3)
+                        davis.DavisProjectile.Add(new BatProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                    ObjectToRemove.Add(projectile);
+                }
+            }
             foreach (IEnemy enemy in Enemies)
                 enemy.Update(gameTime);
 

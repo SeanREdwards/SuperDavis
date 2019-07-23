@@ -41,8 +41,8 @@ namespace SuperDavis.Object.Character
                 { "SuperDavis.State.DavisState.DavisStaticRightState", DavisSpriteFactory.Instance.CreateDavisStaticRightSprite() },
                 { "SuperDavis.State.DavisState.DavisSlideLeftState", DavisSpriteFactory.Instance.CreateDavisStaticLeftSprite() },
                 { "SuperDavis.State.DavisState.DavisSlideRightState", DavisSpriteFactory.Instance.CreateDavisStaticRightSprite() },
-                { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateDavisWalkLeftSprite() },
-                { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateDavisWalkRightSprite() }
+                { "SuperDavis.State.DavisState.DavisWalkLeftState", DavisSpriteFactory.Instance.CreateDavisRunLeft() },
+                { "SuperDavis.State.DavisState.DavisWalkRightState", DavisSpriteFactory.Instance.CreateDavisRunRight() }
             };
             return dict;
         }
