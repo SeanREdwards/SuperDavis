@@ -21,10 +21,10 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "" + coins, new Vector2(350, 60), Color.White);
             spriteBatch.DrawString(font, "World", new Vector2(600, 20), Color.White);
             spriteBatch.DrawString(font, worldText, new Vector2(600, 60), Color.White);
-            spriteBatch.DrawString(font, "Time", new Vector2(800, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
-            spriteBatch.DrawString(font, "Lives", new Vector2(1000, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)lives, new Vector2(1000, 60), Color.White);
+            spriteBatch.DrawString(font, "Time", new Vector2(850, 20), Color.White);
+            spriteBatch.DrawString(font, "" + (int)time, new Vector2(850, 60), Color.White);
+            spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
+            spriteBatch.DrawString(font, "" + (int)lives, new Vector2(1050, 60), Color.White);
             spriteBatch.End();
         }
     }

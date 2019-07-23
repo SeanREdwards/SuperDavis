@@ -19,6 +19,7 @@ namespace SuperDavis.Collision
                     if (davis.DavisStatus != DavisStatus.Invincible)
                         davis.DavisStatus = DavisStatus.Bat;
                         davis.DavisState.Static();
+                        
                 }
                 else if (item is Mushroom)
                 {
@@ -34,6 +35,7 @@ namespace SuperDavis.Collision
                 else if (item is Coin)
                 {
                     HUD.coins++;
+                    HUD.score += 50;
                 }
                 world.ObjectToRemove.Add(item);
             }

@@ -22,6 +22,7 @@ namespace SuperDavis.Collision
                         {
                             projectile.Explode();
                             enemy.TakeDamage();
+                            HUD.score += 200;
                         }
                         break;
                     case CollisionSide.None:
