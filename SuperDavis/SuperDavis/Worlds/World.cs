@@ -148,9 +148,13 @@ namespace SuperDavis.Worlds
             if (@object is IProjectile)
                 Projectiles.Add(@object as IProjectile);
 
-            //Add object to world grid as well
-            if(!IsIndexOutOfBounds((int)(@object.Location.X / UNIT_SIZE), (int)(@object.Location.Y / UNIT_SIZE)))
-                WorldGrid[(int)(@object.Location.X / UNIT_SIZE)][(int)(@object.Location.Y / UNIT_SIZE)].Add(@object);
+            var i = (int)(@object.Location.X / UNIT_SIZE);
+            var j = (int)(@object.Location.Y / UNIT_SIZE);
+
+            if (i == -1 && j >= 0 && j <= WorldGridHeight )
+                WorldGrid[0][j].Add(@object);
+            else if (!IsIndexOutOfBounds(i, j))
+                WorldGrid[i][j].Add(@object);
 
             @object.OnPositionChanged += Object_OnPositionChanged;
         }

@@ -473,34 +473,34 @@
     <Block Type='Brick' X='4776' Y='672' />
 
     //left most wall x = 0
-<Block Type='Brick' X='0' Y='0' />
-  <Block Type='Brick' X='0' Y='24' />
-  <Block Type='Brick' X='0' Y='48' />
-  <Block Type='Brick' X='0' Y='72' />
-  <Block Type='Brick' X='0' Y='96' />
-  <Block Type='Brick' X='0' Y='120' />
-  <Block Type='Brick' X='0' Y='144' />
-  <Block Type='Brick' X='0' Y='168' />
-  <Block Type='Brick' X='0' Y='192' />
-  <Block Type='Brick' X='0' Y='216' />
-  <Block Type='Brick' X='0' Y='240' />
-  <Block Type='Brick' X='0' Y='264' />
-  <Block Type='Brick' X='0' Y='288' />
-  <Block Type='Brick' X='0' Y='312' />
-  <Block Type='Brick' X='0' Y='336' />
-  <Block Type='Brick' X='0' Y='360' />
-  <Block Type='Brick' X='0' Y='384' />
-  <Block Type='Brick' X='0' Y='408' />
-  <Block Type='Brick' X='0' Y='432' />
-  <Block Type='Brick' X='0' Y='456' />
-  <Block Type='Brick' X='0' Y='480' />
-  <Block Type='Brick' X='0' Y='504' />
-  <Block Type='Brick' X='0' Y='528' />
-  <Block Type='Brick' X='0' Y='552' />
-  <Block Type='Brick' X='0' Y='576' />
-  <Block Type='Brick' X='0' Y='600' />
-  <Block Type='Brick' X='0' Y='624' />
-  <Block Type='Brick' X='0' Y='648' />
+<Block Type='Brick' X='-24' Y='0' />
+  <Block Type='Brick' X='-24' Y='24' />
+  <Block Type='Brick' X='-24' Y='48' />
+  <Block Type='Brick' X='-24' Y='72' />
+  <Block Type='Brick' X='-24' Y='96' />
+  <Block Type='Brick' X='-24' Y='120' />
+  <Block Type='Brick' X='-24' Y='144' />
+  <Block Type='Brick' X='-24' Y='168' />
+  <Block Type='Brick' X='-24' Y='192' />
+  <Block Type='Brick' X='-24' Y='216' />
+  <Block Type='Brick' X='-24' Y='240' />
+  <Block Type='Brick' X='-24' Y='264' />
+  <Block Type='Brick' X='-24' Y='288' />
+  <Block Type='Brick' X='-24' Y='312' />
+  <Block Type='Brick' X='-24' Y='336' />
+  <Block Type='Brick' X='-24' Y='360' />
+  <Block Type='Brick' X='-24' Y='384' />
+  <Block Type='Brick' X='-24' Y='408' />
+  <Block Type='Brick' X='-24' Y='432' />
+  <Block Type='Brick' X='-24' Y='456' />
+  <Block Type='Brick' X='-24' Y='480' />
+  <Block Type='Brick' X='-24' Y='504' />
+  <Block Type='Brick' X='-24' Y='528' />
+  <Block Type='Brick' X='-24' Y='552' />
+  <Block Type='Brick' X='-24' Y='576' />
+  <Block Type='Brick' X='-24' Y='600' />
+  <Block Type='Brick' X='-24' Y='624' />
+  <Block Type='Brick' X='-24' Y='648' />
     
     //second set of walls
 <Block Type='Brick' X='1152' Y='0' />
