@@ -3,7 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Collision;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
+using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
+using SuperDavis.Physics;
 using SuperDavis.Sound;
 using System;
 using System.Collections.Generic;
@@ -22,7 +24,7 @@ namespace SuperDavis.Worlds
         public IDavis Characters { get; set; }
         public HashSet<IItem> Items { get; set; }
         public HashSet<IBlock> Blocks { get; set; }
-        public HashSet<IEnemy> Enemies { get; set; }
+        public IList<IEnemy> Enemies { get; set; }
         public HashSet<IProjectile> Projectiles { get; set; }
         public HashSet<IBackground> Backgrounds { get; set; }
 
@@ -52,7 +54,7 @@ namespace SuperDavis.Worlds
             //Characters = new List<IDavis>();
             Items = new HashSet<IItem>();
             Blocks = new HashSet<IBlock>();
-            Enemies = new HashSet<IEnemy>();
+            Enemies = new List<IEnemy>();
             Projectiles = new HashSet<IProjectile>();
             Backgrounds = new HashSet<IBackground>();
             ObjectToRemove = new HashSet<IGameObject>();
@@ -82,7 +84,12 @@ namespace SuperDavis.Worlds
                 }
             }
             foreach (IEnemy enemy in Enemies)
+            {
                 enemy.Update(gameTime);
+                if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState))
+                    enemy.Jump();
+
+            }
 
             if (ObjectToRemove.Count > 0)
                 RemoveObject();

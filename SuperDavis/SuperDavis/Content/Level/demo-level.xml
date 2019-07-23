@@ -165,6 +165,7 @@
   <Block Type='MiddleGreenFloor' X='72' Y='672' />
   <Block Type='MiddleGreenFloor' X='96' Y='696' />
   <Block Type='MiddleGreenFloor' X='96' Y='672' />
+    <Block Type='MiddleGreenFloor' X='96' Y='648' />
   <Block Type='MiddleGreenFloor' X='120' Y='696' />
   <Block Type='MiddleGreenFloor' X='120' Y='672' />
   <Block Type='MiddleGreenFloor' X='144' Y='696' />
@@ -464,35 +465,35 @@
 
 
     //Wall sections--------------------------------------------------------------------------
-<Block Type='EmptyBlock' X='-24' Y='0' />
-  <Block Type='EmptyBlock' X='-24' Y='24' />
-  <Block Type='EmptyBlock' X='-24' Y='48' />
-  <Block Type='EmptyBlock' X='-24' Y='72' />
-  <Block Type='EmptyBlock' X='-24' Y='96' />
-  <Block Type='EmptyBlock' X='-24' Y='120' />
-  <Block Type='EmptyBlock' X='-24' Y='144' />
-  <Block Type='EmptyBlock' X='-24' Y='168' />
-  <Block Type='EmptyBlock' X='-24' Y='192' />
-  <Block Type='EmptyBlock' X='-24' Y='216' />
-  <Block Type='EmptyBlock' X='-24' Y='240' />
-  <Block Type='EmptyBlock' X='-24' Y='264' />
-  <Block Type='EmptyBlock' X='-24' Y='288' />
-  <Block Type='EmptyBlock' X='-24' Y='312' />
-  <Block Type='EmptyBlock' X='-24' Y='336' />
-  <Block Type='EmptyBlock' X='-24' Y='360' />
-  <Block Type='EmptyBlock' X='-24' Y='384' />
-  <Block Type='EmptyBlock' X='-24' Y='408' />
-  <Block Type='EmptyBlock' X='-24' Y='432' />
-  <Block Type='EmptyBlock' X='-24' Y='456' />
-  <Block Type='EmptyBlock' X='-24' Y='480' />
-  <Block Type='EmptyBlock' X='-24' Y='504' />
-  <Block Type='EmptyBlock' X='-24' Y='528' />
-  <Block Type='EmptyBlock' X='-24' Y='552' />
-  <Block Type='EmptyBlock' X='-24' Y='576' />
-  <Block Type='EmptyBlock' X='-24' Y='600' />
-  <Block Type='EmptyBlock' X='-24' Y='624' />
-  <Block Type='EmptyBlock' X='-24' Y='648' />
-  <Block Type='EmptyBlock' X='-24' Y='672' />
+<Block Type='EmptyBlock' X='-8' Y='0' />
+  <Block Type='EmptyBlock' X='-8' Y='24' />
+  <Block Type='EmptyBlock' X='-8' Y='48' />
+  <Block Type='EmptyBlock' X='-8' Y='72' />
+  <Block Type='EmptyBlock' X='-8' Y='96' />
+  <Block Type='EmptyBlock' X='-8' Y='120' />
+  <Block Type='EmptyBlock' X='-8' Y='144' />
+  <Block Type='EmptyBlock' X='-8' Y='168' />
+  <Block Type='EmptyBlock' X='-8' Y='192' />
+  <Block Type='EmptyBlock' X='-8' Y='216' />
+  <Block Type='EmptyBlock' X='-8' Y='240' />
+  <Block Type='EmptyBlock' X='-8' Y='264' />
+  <Block Type='EmptyBlock' X='-8' Y='288' />
+  <Block Type='EmptyBlock' X='-8' Y='312' />
+  <Block Type='EmptyBlock' X='-8' Y='336' />
+  <Block Type='EmptyBlock' X='-8' Y='360' />
+  <Block Type='EmptyBlock' X='-8' Y='384' />
+  <Block Type='EmptyBlock' X='-8' Y='408' />
+  <Block Type='EmptyBlock' X='-8' Y='432' />
+  <Block Type='EmptyBlock' X='-8' Y='456' />
+  <Block Type='EmptyBlock' X='-8' Y='480' />
+  <Block Type='EmptyBlock' X='-8' Y='504' />
+  <Block Type='EmptyBlock' X='-8' Y='528' />
+  <Block Type='EmptyBlock' X='-8' Y='552' />
+  <Block Type='EmptyBlock' X='-8' Y='576' />
+  <Block Type='EmptyBlock' X='-8' Y='600' />
+  <Block Type='EmptyBlock' X='-8' Y='624' />
+  <Block Type='EmptyBlock' X='-8' Y='648' />
+  <Block Type='EmptyBlock' X='-8' Y='672' />
   <Block Type='CastleBlock' X='1152' Y='0' />
   <Block Type='CastleBlock' X='1176' Y='0' />
   <Block Type='CastleBlock' X='1152' Y='24' />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Block;
 using SuperDavis.Physics;
 using static SuperDavis.Collision.CollisionDetection;
 
@@ -15,14 +16,14 @@ namespace SuperDavis.Collision
                 {
                    case CollisionSide.Left:
                    case CollisionSide.Right:
-                       if (enemy.FacingDirection == FacingDirection.Left)
-                           enemy.FacingDirection = FacingDirection.Right;
-                       else
-                           enemy.FacingDirection = FacingDirection.Left;
+                        enemy.ChangeDirection();
                        break;
                    case CollisionSide.Top:
-                       enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
-                       enemy.PhysicsState = new StandingState(enemy);
+                        if (!(block is EmptyBlock))
+                        {
+                            enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
+                            enemy.PhysicsState = new StandingState(enemy);
+                        }
                        break;
                    default:
                        break;

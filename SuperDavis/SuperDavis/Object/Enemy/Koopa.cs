@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using SuperDavis.State.EnemyState;
@@ -26,7 +27,7 @@ namespace SuperDavis.Object.Enemy
         public bool Dead { get; set; }
 
         public Rectangle HitBox { get; set; }
-        private readonly ISprite enemy;
+        private ISprite sprite;
         private IGameObjectState koopaStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
 
@@ -36,10 +37,11 @@ namespace SuperDavis.Object.Enemy
             Dead = false;
             FacingDirection = FacingDirection.Left;
             Location = location;
-            koopaStateMachine = new KoopaStateMachine(this);
+            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenWalkLeft();
+            koopaStateMachine = new KoopaStateMachine(sprite);
             PhysicsState = new FallState(this);
-            enemy = koopaStateMachine.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)(int)enemy.Width, (int)enemy.Height);
+            sprite = koopaStateMachine.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -55,7 +57,7 @@ namespace SuperDavis.Object.Enemy
                     Location += new Vector2(1f, 0);
             }
 
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -67,8 +69,30 @@ namespace SuperDavis.Object.Enemy
         {
             Dead = true;
             PhysicsState = new EnemyDeadState(this);
-            koopaStateMachine = new KoopaStateMachine(this);
-            koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 100);
+            sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedRight();
+            koopaStateMachine = new KoopaStateMachine(sprite);
+            koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 200);
+        }
+
+        public void ChangeDirection()
+        {
+            if (FacingDirection == FacingDirection.Left)
+            {
+                sprite = EnemySpriteFactory.Instance.CreateKoopaGreenWalkRight();
+                FacingDirection = FacingDirection.Right;
+            }
+            else
+            {
+                sprite = EnemySpriteFactory.Instance.CreateKoopaGreenWalkLeft();
+                FacingDirection = FacingDirection.Left;
+            }
+            koopaStateMachine = new GoombaStateMachine(sprite);
+        }
+
+        public void Jump()
+        {
+            if (!(PhysicsState is JumpState) || !(PhysicsState is FallState))
+                PhysicsState = new JumpState(this);
         }
     }
 }
