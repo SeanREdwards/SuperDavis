@@ -134,7 +134,7 @@ namespace SuperDavis.Collision
                                                 var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
                                                 if (side != CollisionSide.None)
                                                 {
-                                                    if (target is IBlock) ProjectileBlockCollisionHandler.HandleCollision(moverObject, target, side, world);
+                                                    if (target is IBlock) ProjectileBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
                                                     if (target is IEnemy) ProjectileEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
                                                 }
                                             }
