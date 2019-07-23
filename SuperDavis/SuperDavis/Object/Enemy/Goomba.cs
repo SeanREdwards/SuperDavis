@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using SuperDavis.State.EnemyState;
@@ -26,7 +27,7 @@ namespace SuperDavis.Object.Enemy
         public bool Dead { get; set; }
 
         public Rectangle HitBox { get; set; }
-        private readonly ISprite enemy;
+        private ISprite sprite;
         private IGameObjectState goombaState;
         public IGameObjectPhysics PhysicsState { get; set; }
 
@@ -36,10 +37,11 @@ namespace SuperDavis.Object.Enemy
             Dead = false;
             FacingDirection = facingDirection;
             Location = location;
-            goombaState = new GoombaStateMachine(this);
+            sprite = EnemySpriteFactory.Instance.CreateGoombaWalkRight();
+            goombaState = new GoombaStateMachine(sprite);
             PhysicsState = new FallState(this);
-            enemy = goombaState.Sprite;
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
+            sprite = goombaState.Sprite;
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
         }
 
         public void Update(GameTime gameTime)
@@ -55,7 +57,7 @@ namespace SuperDavis.Object.Enemy
                     Location += new Vector2(Variables.Variable.EnemyVectorUpdateRight, 0);
             }
 
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)enemy.Width, (int)enemy.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -63,12 +65,34 @@ namespace SuperDavis.Object.Enemy
             goombaState.Draw(spriteBatch, Location);
         }
 
+        public void Jump()
+        {
+            if(!(PhysicsState is JumpState) || !(PhysicsState is FallState))
+                PhysicsState = new JumpState(this);
+        }
+
         public void TakeDamage()
         {
             Dead = true;
             PhysicsState = new EnemyDeadState(this);
-            goombaState = new GoombaStateMachine(this);
+            sprite = EnemySpriteFactory.Instance.CreateGoombaFlatAnimated();
+            goombaState = new GoombaStateMachine(sprite);
             goombaState = new RemoveState(this, goombaState.Sprite, Variables.Variable.EnemyRemoveInt);
+        }
+
+        public void ChangeDirection()
+        {
+            if (FacingDirection == FacingDirection.Left)
+            {
+                sprite = EnemySpriteFactory.Instance.CreateGoombaWalkRight();
+                FacingDirection = FacingDirection.Right;
+            }
+            else
+            {
+                sprite = EnemySpriteFactory.Instance.CreateGoombaWalkLeft();
+                FacingDirection = FacingDirection.Left;
+            }
+            goombaState = new GoombaStateMachine(sprite);
         }
     }
 }

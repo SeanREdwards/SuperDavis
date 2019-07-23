@@ -11,7 +11,7 @@ namespace SuperDavis.Interfaces
 
         IList<IGameObject>[][] WorldGrid { get; set; }
         IDavis Characters { get; set; }
-        HashSet<IEnemy> Enemies { get; set; }
+        IList<IEnemy> Enemies { get; set; }
         HashSet<IItem> Items { get; set; }
         HashSet<IBlock> Blocks { get; set; }
         HashSet<IProjectile> Projectiles { get; set; }

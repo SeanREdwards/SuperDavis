@@ -70,7 +70,7 @@ namespace SuperDavis.Collision
             
         }
 
-        private static void CheckEnemySurroundingBox(HashSet<IEnemy> movers, IWorld world)
+        private static void CheckEnemySurroundingBox(IList<IEnemy> movers, IWorld world)
         {
             foreach (IEnemy mover in movers)
             {

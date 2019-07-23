@@ -57,9 +57,13 @@ namespace SuperDavis.Object.SpawnPoint
                     if (spawnFacingTick)
                         facingDirection = FacingDirection.Right;
                     spawnFacingTick = !spawnFacingTick;
+                    // Random location setup
                     var rndLocationX = random.Next(250);
                     var rndLocation = new Vector2(Location.X + rndLocationX, Location.Y);
+                    rndLocation = Location;
                     EnemySpawnPool.Add(new Goomba(rndLocation, facingDirection));
+                    if (rndLocationX <= 125)
+                        world.Enemies[world.Enemies.Count - 1].Jump();
                     spawnTimeInterval = 35;
                 }
                 spawnTimeInterval--;

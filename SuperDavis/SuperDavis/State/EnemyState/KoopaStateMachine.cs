@@ -12,16 +12,9 @@ namespace SuperDavis.State.EnemyState
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public KoopaStateMachine(Koopa koopa)
+        public KoopaStateMachine(ISprite sprite)
         {
-            if (!koopa.Dead)
-            {
-                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenWalkLeft();
-            }
-            else
-            {
-                Sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
-            }
+            this.Sprite = sprite;
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

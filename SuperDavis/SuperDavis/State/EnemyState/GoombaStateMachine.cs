@@ -12,16 +12,9 @@ namespace SuperDavis.State.EnemyState
         public float Height { get; set;}
         public ISprite Sprite { get; set; }
 
-        public GoombaStateMachine(Goomba goomba)
+        public GoombaStateMachine(ISprite sprite)
         {
-            if (!goomba.Dead)
-            {
-                Sprite = EnemySpriteFactory.Instance.CreateGoombaWalkRight();
-            }
-            else
-            {
-                Sprite = EnemySpriteFactory.Instance.CreateGoombaFlatAnimated();
-            }
+            this.Sprite = sprite;
             Width = Sprite.Width;
             Height = Sprite.Height;
         }
