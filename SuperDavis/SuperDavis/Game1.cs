@@ -143,7 +143,7 @@ namespace SuperDavis
                       (Keys.X, new DavisShootBulletCommand(davis,World),new NullCommand(), false),
                       (Keys.Down, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.O, new DavisDeathCommand(davis), new NullCommand(), true),
-                      (Keys.P, new DavisSpecialAttackCommand(davis), new NullCommand(), true),
+                      (Keys.P, new DavisSpecialAttackCommand(davis), new NullCommand(), false),
                       (Keys.M, new NullCommand(),new ToggleMouseControl(this), false)
                     ),
                     new GamepadController
