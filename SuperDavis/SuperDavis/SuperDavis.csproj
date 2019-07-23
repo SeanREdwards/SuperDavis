@@ -288,6 +288,7 @@
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
     <Compile Include="Object\Scenery\Wall.cs" />
     <Compile Include="Physics\BatProjectilePhysicsState.cs" />
+    <Compile Include="Physics\EnemyDeadState.cs" />
     <Compile Include="Physics\NullPhysicsState.cs" />
     <Compile Include="Physics\StandingState.cs" />
     <Compile Include="Physics\JumpState.cs" />

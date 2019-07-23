@@ -66,6 +66,7 @@ namespace SuperDavis.Object.Enemy
         public void TakeDamage()
         {
             Dead = true;
+            PhysicsState = new EnemyDeadState(this);
             koopaStateMachine = new KoopaStateMachine(this);
             koopaStateMachine = new RemoveState(this, koopaStateMachine.Sprite, 100);
         }

@@ -11,21 +11,19 @@ namespace SuperDavis.Collision
         private ProjectileEnemyCollisionHandler() { }
         public static void HandleCollision(IProjectile projectile, IEnemy enemy, CollisionSide side, IWorld world)
         {
-            switch (side)
-            {
-                case CollisionSide.Top:
-                case CollisionSide.Bottom:
-                case CollisionSide.Left:
-                case CollisionSide.Right:
-                    if (!(projectile.PhysicsState is NullPhysicsState))
-                        projectile.Explode();
-
-
-                    // TBD
-                    world.ObjectToRemove.Add(enemy);
-                    break;
-                case CollisionSide.None:
-                    break;
+            if (!(enemy.PhysicsState is EnemyDeadState))
+                switch (side)
+                {
+                    case CollisionSide.Top:
+                    case CollisionSide.Bottom:
+                    case CollisionSide.Left:
+                    case CollisionSide.Right:
+                        if (!(projectile.PhysicsState is NullPhysicsState))
+                              projectile.Explode();
+                        enemy.TakeDamage();
+                        break;
+                    case CollisionSide.None:
+                        break;
             }
         }
     }

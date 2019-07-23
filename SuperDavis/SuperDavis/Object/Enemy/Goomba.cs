@@ -66,6 +66,7 @@ namespace SuperDavis.Object.Enemy
         public void TakeDamage()
         {
             Dead = true;
+            PhysicsState = new EnemyDeadState(this);
             goombaState = new GoombaStateMachine(this);
             goombaState = new RemoveState(this, goombaState.Sprite, Variables.Variable.EnemyRemoveInt);
         }
