@@ -90,7 +90,7 @@ namespace SuperDavis
         {
 
             GraphicsDevice.Clear(Color.Black);
-            camera = new Camera(World, Variables.Variable.WindowsEdgeWidth,Variables.Variable.WindowsEdgeHeight);
+            camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
             //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
             World.Draw(spriteBatch);
@@ -98,23 +98,54 @@ namespace SuperDavis
             HUD.Draw(gameTime, font, spriteBatch);
             base.Draw(gameTime);
 
-            //creates floor
-            //System.Console.WriteLine("******************" + GraphicsDevice.Viewport.Bounds);
-            //for (int i = 3600; i < 4800; i+=24) {
-            //    System.Console.WriteLine("<Block Type='BrickBlock' X='" + i + "' Y='696' />");
-            //    System.Console.WriteLine("<Block Type='BrickBlock' X='" + i + "' Y='672' />");
+
+            //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
+            //creates  green middle block floor
+            //System.Console.WriteLine("//////////////////");
+            //for (int i = 0; i < 2400; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='696' />");
+            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='672' />");
             //}
-            //System.Console.WriteLine("******************" + Variables.Variable.WindowsEdgeHeight);
+
+            //creates castle floor
+            //for (int i = 2400; i < 3600; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='696' />");
+            //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='672' />");
+            //}
+            //System.Console.WriteLine("//////////////////");
 
 
             //creates walls
-            System.Console.WriteLine("******************" + GraphicsDevice.Viewport.Bounds);
-            for (int i = 0; i < 696; i += 24)
-            {
-                System.Console.WriteLine("<Block Type='Brick' X='4752' Y='"+i+"' />");
-                System.Console.WriteLine("<Block Type='Brick' X='4776' Y='" + i + "' />");
-            }
-            System.Console.WriteLine("******************" + Variables.Variable.WindowsEdgeHeight);
+            //System.Console.WriteLine("******************");
+            //hidden wall all the way to the left
+            //for (int i = 0; i < 696; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='EmptyBlock' X='-24' Y='" + i + "' />");
+            //}
+
+            //castle wall between first 2 sections
+            //for (int i = 0; i < 576; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='1152' Y='" + i+"' />");
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='1176' Y='" + i + "' />");
+            //}
+
+            //castle wall going into castle
+            //for (int i = 0; i < 576; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='2352' Y='" + i + "' />");
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='2376' Y='" + i + "' />");
+            //}
+
+            //castle wall at the end of the level
+            //for (int i = 0; i < 700; i += 24)
+            //{
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='3552' Y='" + i+"' />");
+            //    System.Console.WriteLine("<Block Type='CastleBlock' X='3576' Y='" + i + "' />");
+            //}
+            //System.Console.WriteLine("******************");
 
 
 
@@ -140,7 +171,7 @@ namespace SuperDavis
         public void InitializeController()
         {
             var davis = World.Characters;
-                controllerList = new List<IController>()
+            controllerList = new List<IController>()
                 {
                     new KeyboardController
                     (
@@ -180,7 +211,7 @@ namespace SuperDavis
                     ),
                     new MouseController(this),
                 };
-            
+
         }
 
         public void ControllerUpdate()
@@ -205,8 +236,8 @@ namespace SuperDavis
             else
             {
                 var character = World.Characters;
-                    if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
-                        resetFlag = true;
+                if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
+                    resetFlag = true;
             }
 
             if (resetFlag)
@@ -216,4 +247,4 @@ namespace SuperDavis
             }
         }
     }
- }
+}
