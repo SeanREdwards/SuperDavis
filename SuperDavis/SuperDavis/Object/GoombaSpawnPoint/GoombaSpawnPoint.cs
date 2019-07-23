@@ -22,7 +22,7 @@ namespace SuperDavis.Object.SpawnPoint
         public Vector2 Location { get; set; }
         private readonly IWorld world;
         private readonly ISprite sprite;
-        private int spawnTimeInterval = 25;
+        private int spawnTimeInterval = 35;
         private bool spawnFacingTick = true;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
@@ -46,18 +46,21 @@ namespace SuperDavis.Object.SpawnPoint
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);
-            if (Math.Abs(world.Characters.Location.X - Location.X) < 50)
+            if (Math.Abs(world.Characters.Location.X - Location.X) < 250 )
             {
                 if (spawnTimeInterval == 0)
                 {
+                    Random random = new Random();
                     world.AddObject(EnemySpawnPool[0]);
                     EnemySpawnPool.RemoveAt(0);
                     var facingDirection = FacingDirection.Left;
                     if (spawnFacingTick)
                         facingDirection = FacingDirection.Right;
                     spawnFacingTick = !spawnFacingTick;
-                    EnemySpawnPool.Add(new Goomba(Location, facingDirection));
-                    spawnTimeInterval = 25;
+                    var rndLocationX = random.Next(250);
+                    var rndLocation = new Vector2(Location.X + rndLocationX, Location.Y);
+                    EnemySpawnPool.Add(new Goomba(rndLocation, facingDirection));
+                    spawnTimeInterval = 35;
                 }
                 spawnTimeInterval--;
             }
