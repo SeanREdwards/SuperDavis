@@ -114,6 +114,31 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateLeftCastleFloor()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateMiddleCastleFloor()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateRightCastleFloor()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBeerBottle()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateMilkJug()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateMiddleGreenFloor()
         {
             return Create(GetMethodName());

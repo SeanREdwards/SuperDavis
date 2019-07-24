@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Code Reviews\sprint2\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\SeanEdwards.md" />
@@ -80,6 +81,12 @@
     <None Include="Code Reviews\sprint5\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint5\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint5\Readability Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint6\Code Quality Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Code Reviews\sprint6\Readability Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -122,6 +129,9 @@
     <None Include="Content\BlockSprites\Castle1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Doors.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\DavisSprites\DavisLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -153,6 +163,12 @@
     <None Include="Content\Davis\BatWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\DavisSprites\DavisProjectileLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisProjectileRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Davis\DavisStaticLeft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -163,6 +179,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Davis\DavisWalkRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyProjectileLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyProjectileRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Davis\WoodyStaticLeft.xnb">
@@ -189,10 +211,16 @@
     <None Include="Content\Font\File.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Font\fontMenu.xnb">
+    <None Include="Content\Item\BeerBottle.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Item\coin.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Item\KeySprite.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Item\MilkJug.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\SoundFX\Jump.xnb">
@@ -264,7 +292,6 @@
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
-    <Compile Include="Command\StartGameCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
@@ -275,7 +302,6 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
-    <Compile Include="LevelManager\Momento.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />
@@ -386,9 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
-    <Content Include="Content\Level\empty.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Level\demo-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
