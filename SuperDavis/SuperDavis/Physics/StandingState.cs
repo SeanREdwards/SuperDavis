@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using SuperDavis.Object.Character;
-using SuperDavis.State.DavisState;
 
 namespace SuperDavis.Physics
 {

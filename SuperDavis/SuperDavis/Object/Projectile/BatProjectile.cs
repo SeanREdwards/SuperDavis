@@ -1,10 +1,10 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Item
 {
@@ -29,14 +29,14 @@ namespace SuperDavis.Object.Item
         public bool IsExploded { get; set; }
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
- 
+
         public BatProjectile(Vector2 location, FacingDirection facingDirection)
         {
             // initial state
             IsExploded = false;
             this.FacingDirection = facingDirection;
             PhysicsState = new BatProjectilePhysicsState(this);
-            Location = location;            
+            Location = location;
             if (FacingDirection == FacingDirection.Right)
                 projectileSprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
             else

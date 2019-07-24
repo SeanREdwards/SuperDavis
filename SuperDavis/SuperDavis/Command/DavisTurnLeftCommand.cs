@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using SuperDavis.Physics;
 using SuperDavis.State.DavisState;
 
 namespace SuperDavis.Command

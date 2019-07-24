@@ -3,10 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
 using System.Collections.Generic;
+using System.Diagnostics; //used for getting names of methods
 using System.IO;
 using System.Web.Script.Serialization;
-using System.Diagnostics; //used for getting names of methods
-using Microsoft.Xna.Framework;
 
 /*
  * BackgroundSpriteFactory.cs

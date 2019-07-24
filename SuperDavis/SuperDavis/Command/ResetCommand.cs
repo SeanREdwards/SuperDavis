@@ -13,12 +13,12 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-        HUD.score = Variable.score;
-        HUD.coins = Variable.coins;
-        HUD.lives = Variable.lives;
-        HUD.worldText = Variable.worldText;
-        HUD.time = Variable.time;
-        world.ResetGame();
+            HUD.score = Variable.score;
+            HUD.coins = Variable.coins;
+            HUD.lives = Variable.lives;
+            HUD.worldText = Variable.worldText;
+            HUD.time = Variable.time;
+            world.ResetGame();
         }
     }
 }

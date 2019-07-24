@@ -3,7 +3,6 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
-using SuperDavis.State.DavisState;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -42,7 +41,7 @@ namespace SuperDavis.Collision
                             world.ObjectToRemove.Add(block);
                             HUD.score += 50;
                         }
-                        else 
+                        else
                         {
                             var brick = (Brick)block;
                             brick.Bumped();

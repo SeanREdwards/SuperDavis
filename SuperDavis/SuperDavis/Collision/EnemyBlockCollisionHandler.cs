@@ -11,8 +11,8 @@ namespace SuperDavis.Collision
         private EnemyBlockCollisionHandler() { }
         public static void HandleCollision(IEnemy enemy, IBlock block, CollisionSide side)
         {
-            if(!(enemy.PhysicsState is EnemyDeadState))
-                switch(side)
+            if (!(enemy.PhysicsState is EnemyDeadState))
+                switch (side)
                 {
                     case CollisionSide.Left:
                     case CollisionSide.Right:
@@ -34,7 +34,7 @@ namespace SuperDavis.Collision
                         break;
                     default:
                         break;
-            }   
+                }
         }
     }
 }

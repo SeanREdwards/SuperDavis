@@ -14,7 +14,7 @@ namespace SuperDavis.Physics
         public JumpState(IGameObject gameObjectClass)
         {
             gameObject = gameObjectClass;
-            Velocity =  new Vector2(0, Variables.Variable.JumpVelocity);
+            Velocity = new Vector2(0, Variables.Variable.JumpVelocity);
             Acceleration = new Vector2(0, Variables.Variable.JumpVelocityDecayRate);
             MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }

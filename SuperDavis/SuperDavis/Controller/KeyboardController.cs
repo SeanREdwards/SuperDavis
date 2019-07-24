@@ -7,13 +7,13 @@ using System.Linq;
 namespace SuperDavis.Controller
 {
     class KeyboardController : IController
-    {                                                                                                                                                   
+    {
         private readonly Dictionary<Keys, ICommand> keyPressedCommandDict;
         private readonly Dictionary<Keys, ICommand> keyReleasedCommandDict;
         private readonly List<Keys> pressedKeyList;
         private Keys[] previousKeys;
 
-        public KeyboardController(params(Keys key, ICommand keyPressedCommand, ICommand keyReleasedCommand, bool holdKeyFlag)[] args)
+        public KeyboardController(params (Keys key, ICommand keyPressedCommand, ICommand keyReleasedCommand, bool holdKeyFlag)[] args)
         {
             previousKeys = new Keys[0];
             pressedKeyList = new List<Keys>();
@@ -24,7 +24,7 @@ namespace SuperDavis.Controller
                 keyPressedCommandDict.Add(key, keyPressedCommand);
                 keyReleasedCommandDict.Add(key, keyReleasedCommand);
                 if (holdKeyFlag)
-                    pressedKeyList.Add(key);               
+                    pressedKeyList.Add(key);
             }
         }
 
@@ -32,9 +32,9 @@ namespace SuperDavis.Controller
         {
             /* Prevent the repeated pressed, credited to grader */
             Keys[] currentKeys = Keyboard.GetState().GetPressedKeys();
-            foreach(Keys key in keyReleasedCommandDict.Keys)
+            foreach (Keys key in keyReleasedCommandDict.Keys)
             {
-                if(previousKeys.Contains(key) && !currentKeys.Contains(key))
+                if (previousKeys.Contains(key) && !currentKeys.Contains(key))
                 {
                     keyReleasedCommandDict[key].Execute();
                 }

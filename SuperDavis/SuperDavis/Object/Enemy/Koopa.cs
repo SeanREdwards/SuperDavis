@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
+using System;
 
 namespace SuperDavis.Object.Enemy
 {
@@ -58,9 +58,9 @@ namespace SuperDavis.Object.Enemy
                         Location += new Vector2(1f, 0);
                 else
                     if (FacingDirection == FacingDirection.Left)
-                        Location += new Vector2(-6f, 0);
-                    else
-                        Location += new Vector2(6f, 0);
+                    Location += new Vector2(-6f, 0);
+                else
+                    Location += new Vector2(6f, 0);
             }
 
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
@@ -123,6 +123,6 @@ namespace SuperDavis.Object.Enemy
             if (!(PhysicsState is JumpState) || !(PhysicsState is FallState))
                 PhysicsState = new JumpState(this);
         }
-        
+
     }
 }

@@ -31,7 +31,7 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            EmptyBlockStateMachine.Update(gameTime);    
+            EmptyBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -42,6 +42,6 @@ namespace SuperDavis.Object.Block
         public void SpecialState()
         {
         }
-        
+
     }
 }

@@ -7,12 +7,9 @@
  * TODO Data drive the dictionary strings/sprite call tuples via JSON.
  * 
  */
- using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using System.Collections.Generic;
-using System;
-using SuperDavis.Factory;
 
 namespace SuperDavis.Object.Character
 {
@@ -20,7 +17,8 @@ namespace SuperDavis.Object.Character
     {
         private readonly Dictionary<string, Dictionary<string, ISprite>> characterDictionary;
 
-        public CharacterDictionary() {
+        public CharacterDictionary()
+        {
             characterDictionary = new Dictionary<string, Dictionary<string, ISprite>>() { { "Davis", CreateDavisDictionary() },
             { "Woody", CreateWoodyDictionary()}, {"Bat", CreateBatDictionary() }, {"Invincible", CreateInvincibleDavisDictionary() } };
         }
@@ -112,7 +110,7 @@ namespace SuperDavis.Object.Character
         public ISprite GetSprite(string charStr, string stateStr)
         {
             characterDictionary.TryGetValue(charStr, out Dictionary<string, ISprite> dict);
-            dict.TryGetValue(stateStr,out ISprite sprite);
+            dict.TryGetValue(stateStr, out ISprite sprite);
             return sprite;
         }
     }

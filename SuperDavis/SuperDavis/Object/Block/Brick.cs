@@ -31,7 +31,7 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-            BrickStateMachine.Update(gameTime);    
+            BrickStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -48,6 +48,6 @@ namespace SuperDavis.Object.Block
         {
             BrickStateMachine = new BrickBumpStateMachine(false, this);
         }
-        
+
     }
 }

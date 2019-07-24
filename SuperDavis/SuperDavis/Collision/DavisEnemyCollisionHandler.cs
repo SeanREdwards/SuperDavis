@@ -6,7 +6,7 @@ namespace SuperDavis.Collision
 {
     class DavisEnemyCollisionHandler
     {
-        private DavisEnemyCollisionHandler() { }        
+        private DavisEnemyCollisionHandler() { }
         public static void HandleCollision(IDavis davis, IEnemy enemy, CollisionSide side, IWorld world)
         {
             if (side != CollisionSide.None)

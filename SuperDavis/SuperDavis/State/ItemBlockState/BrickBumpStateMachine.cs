@@ -21,7 +21,7 @@ namespace SuperDavis.State.ItemStateMachine
             }
             else
             {
-                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();              
+                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
             }
             this.brick = brick;
             Width = Sprite.Width;

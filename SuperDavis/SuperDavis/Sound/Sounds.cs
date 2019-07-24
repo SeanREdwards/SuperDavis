@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using System;
-using System.IO;
 
 /*Class to hold game sound effects, will be data driven in the refactor from file.*/
 namespace SuperDavis.Sound
@@ -39,11 +37,12 @@ namespace SuperDavis.Sound
             }
         }
 
-        public void SetJump() {
+        public void SetJump()
+        {
             readyJump = true;
         }
 
 
-        
+
     }
 }

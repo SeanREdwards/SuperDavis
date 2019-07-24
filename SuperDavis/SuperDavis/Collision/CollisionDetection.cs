@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using SuperDavis.Object.Character;
 using SuperDavis.Worlds;
 using System.Collections.Generic;
 
@@ -8,7 +7,7 @@ namespace SuperDavis.Collision
 {
     class CollisionDetection
     {
-        public enum CollisionSide { Top, Bottom, Left, Right, None};
+        public enum CollisionSide { Top, Bottom, Left, Right, None };
         public IWorld World { get; }
 
         public CollisionDetection(IWorld world)
@@ -28,46 +27,46 @@ namespace SuperDavis.Collision
             CheckProjectileSurroundingBox(World.Projectiles, World);
             //CheckItemSurroundingBox(World.Items, World);
         }
-        
+
         private static void CheckCharactersSurroundingBox(IDavis movers, IWorld world)
         {
 
-                var i = (int)(movers.Location.X / (world as World).UNIT_SIZE);
-                var j = (int)(movers.Location.Y / (world as World).UNIT_SIZE);
-                if (!(world as World).IsIndexOutOfBounds(i, j))
+            var i = (int)(movers.Location.X / (world as World).UNIT_SIZE);
+            var j = (int)(movers.Location.Y / (world as World).UNIT_SIZE);
+            if (!(world as World).IsIndexOutOfBounds(i, j))
+            {
+                // Get instance of character reference in the World Grid
+                IDavis moverObject = (IDavis)world.GetObject(movers, i, j);
+
+                if (moverObject != null)
                 {
-                    // Get instance of character reference in the World Grid
-                    IDavis moverObject = (IDavis)world.GetObject(movers, i, j);
-  
-                    if (moverObject != null)
-                    {
-                        int hitBoxWidthScaleFactor = (int)(moverObject.HitBox.Width / (world as World).UNIT_SIZE) + 1;
-                        int hitBoxHeightScaleFactor = (int)(moverObject.HitBox.Height / (world as World).UNIT_SIZE) + 1;
-                        int offsetFactor = Variables.Variable.offsetRange; // Magic number here!
+                    int hitBoxWidthScaleFactor = (int)(moverObject.HitBox.Width / (world as World).UNIT_SIZE) + 1;
+                    int hitBoxHeightScaleFactor = (int)(moverObject.HitBox.Height / (world as World).UNIT_SIZE) + 1;
+                    int offsetFactor = Variables.Variable.offsetRange; // Magic number here!
 
-                        for (int iOffset = -offsetFactor*hitBoxWidthScaleFactor; iOffset < (offsetFactor+1) * hitBoxWidthScaleFactor; iOffset++)
-                              for (int jOffset = -offsetFactor*hitBoxHeightScaleFactor; jOffset < (offsetFactor+1) * hitBoxHeightScaleFactor; jOffset++)
-                                   if (!(world as World).IsIndexOutOfBounds(i + iOffset, j + jOffset))
-                                        if (world.WorldGrid[i + iOffset][j + jOffset].Count != 0)
-                                            for(int k = 0; k < world.WorldGrid[i+iOffset][j+jOffset].Count; k++)
+                    for (int iOffset = -offsetFactor * hitBoxWidthScaleFactor; iOffset < (offsetFactor + 1) * hitBoxWidthScaleFactor; iOffset++)
+                        for (int jOffset = -offsetFactor * hitBoxHeightScaleFactor; jOffset < (offsetFactor + 1) * hitBoxHeightScaleFactor; jOffset++)
+                            if (!(world as World).IsIndexOutOfBounds(i + iOffset, j + jOffset))
+                                if (world.WorldGrid[i + iOffset][j + jOffset].Count != 0)
+                                    for (int k = 0; k < world.WorldGrid[i + iOffset][j + jOffset].Count; k++)
+                                    {
+                                        var target = world.WorldGrid[i + iOffset][j + jOffset][k];
+                                        if (!target.Equals(moverObject) && (target is IBlock || target is IItem || target is IEnemy))
+                                        {
+                                            var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
+                                            /*if (side != CollisionSide.None)*/
                                             {
-                                                var target = world.WorldGrid[i + iOffset][j + jOffset][k];
-                                                if (!target.Equals(moverObject) && (target is IBlock || target is IItem || target is IEnemy))
-                                                {
-                                                    var side = GetCollisionSide(Rectangle.Intersect(moverObject.HitBox, target.HitBox), moverObject.HitBox, target.HitBox);
-                                                    /*if (side != CollisionSide.None)*/
-                                                    {
-                                                        if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
-                                                        if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
-                                                        if (target is IEnemy) DavisEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
-                                                    }
-                                                }
+                                                if (target is IBlock) DavisBlockCollisionHandler.HandleCollision(moverObject, (IBlock)target, side, world);
+                                                if (target is IItem) DavisItemCollisionHandler.HandleCollision(moverObject, (IItem)target, side, world);
+                                                if (target is IEnemy) DavisEnemyCollisionHandler.HandleCollision(moverObject, (IEnemy)target, side, world);
                                             }
-                    }
+                                        }
+                                    }
                 }
-            
+            }
 
-            
+
+
         }
 
         private static void CheckEnemySurroundingBox(IList<IEnemy> movers, IWorld world)

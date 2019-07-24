@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.DavisState;
-using System.Collections.Generic;
-using SuperDavis.Physics;
 using SuperDavis.Object.Item;
-using System;
+using SuperDavis.Physics;
 using SuperDavis.Sound;
+using SuperDavis.State.DavisState;
+using System;
+using System.Collections.Generic;
 
 namespace SuperDavis.Object.Character
 {
@@ -50,7 +50,7 @@ namespace SuperDavis.Object.Character
             Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
 
             FacingDirection = FacingDirection.Right;
- 
+
             //PhysicsState.ApplyForce(new Vector2(0, 0));
 
             Location = location;
@@ -164,7 +164,7 @@ namespace SuperDavis.Object.Character
         public void DavisSpecialAttack()
         {
             DavisState.SpecialAttack();
-            if(DavisStatus == DavisStatus.Woody)
+            if (DavisStatus == DavisStatus.Woody)
             {
                 PhysicsState = new FlyingKneeState(this);
             }

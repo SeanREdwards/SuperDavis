@@ -37,7 +37,7 @@ namespace SuperDavis.Object.Block
             {
                 if (bumpTimer > Variables.Variable.BumpTimeHalf)
                     Location += new Vector2(0, Variables.Variable.BumpShiftDown);
-                else if (bumpTimer  > 0)
+                else if (bumpTimer > 0)
                     Location += new Vector2(0, Variables.Variable.BumpShiftUp);
                 else
                 {
@@ -45,7 +45,7 @@ namespace SuperDavis.Object.Block
                     IsBumped = false;
                 }
                 bumpTimer--;
-            }     
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -57,6 +57,6 @@ namespace SuperDavis.Object.Block
         {
             BrickStateMachine = new BrickStateMachine(true);
         }
-      
+
     }
 }

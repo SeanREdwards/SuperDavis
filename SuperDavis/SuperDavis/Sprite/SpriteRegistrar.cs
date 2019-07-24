@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 namespace SuperDavis.Sprite
-{ 
+{
     internal class SpriteRegistrar
     {
         public String TextureName { get; set; }
@@ -15,7 +15,7 @@ namespace SuperDavis.Sprite
         public string EffectName { get; set; }
 
         //Standard generic color list is set to White
-        public List<Color> ColorList = new List<Color>{ Color.White };
+        public List<Color> ColorList = new List<Color> { Color.White };
 
         public SpriteEffects Effects { get; set; }
         public SpriteRegistrar() { }

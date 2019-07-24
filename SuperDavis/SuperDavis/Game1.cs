@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SuperDavis.Cameras;
@@ -11,9 +7,12 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
-using SuperDavis.LevelManager;
 using SuperDavis.Sound;
 using SuperDavis.Worlds;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 /* Author: Jason Xu, Ryan Knighton, and Sean Edwards */
 [assembly: CLSCompliant(true)] // CA1014
@@ -223,7 +222,7 @@ namespace SuperDavis
                 new KeyboardController((Keys.Space, new StartGameCommand(this), new NullCommand(), false))
             };
         }
-          
+
         public void LoadFonts()
         {
             fontHUD = Content.Load<SpriteFont>("Font/File");

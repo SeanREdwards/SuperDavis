@@ -9,7 +9,7 @@ namespace SuperDavis.State.DavisState
         public float Width { get; set; }
         public float Height { get; set; }
         private readonly IDavis davis;
-        public ISprite Sprite { get; set;}
+        public ISprite Sprite { get; set; }
 
         public DavisCrouchRightState(IDavis davis)
         {

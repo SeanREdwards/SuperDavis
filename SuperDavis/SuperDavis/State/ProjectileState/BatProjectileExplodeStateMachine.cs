@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
@@ -29,7 +28,7 @@ namespace SuperDavis.State.ItemStateMachine
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
-            if(timer == 0)
+            if (timer == 0)
             {
                 projectile.IsExploded = true;
             }

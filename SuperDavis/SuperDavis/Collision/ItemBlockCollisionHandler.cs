@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
-using SuperDavis.Physics;
-using static SuperDavis.Collision.CollisionDetection;
-
-namespace SuperDavis.Collision
+﻿namespace SuperDavis.Collision
 {
     /*class ItemBlockCollisionHandler
     {

@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Item
 {
@@ -11,7 +11,7 @@ namespace SuperDavis.Object.Item
         public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
- 
+
         public Vector2 Location { get; set; }
         private readonly StarStateMachine starStateMachine;
         private readonly ISprite item;
@@ -35,27 +35,27 @@ namespace SuperDavis.Object.Item
         public void Update(GameTime gameTime)
         {
 
-                starStateMachine.Update(gameTime);
-                if (!IsAnimated)
+            starStateMachine.Update(gameTime);
+            if (!IsAnimated)
+            {
+                if (timer > 0)
                 {
-                    if (timer > 0)
-                    {
-                        Location += new Vector2(0, Variables.Variable.StarOffsetDown);
-                        timer--;
-                    }
-                    else
-                    {
-                        timer = Variables.Variable.StarTimer;
-                        IsAnimated = true;
-                    }
+                    Location += new Vector2(0, Variables.Variable.StarOffsetDown);
+                    timer--;
                 }
+                else
+                {
+                    timer = Variables.Variable.StarTimer;
+                    IsAnimated = true;
+                }
+            }
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
 
-                starStateMachine.Draw(spriteBatch, Location);
+            starStateMachine.Draw(spriteBatch, Location);
         }
 
 

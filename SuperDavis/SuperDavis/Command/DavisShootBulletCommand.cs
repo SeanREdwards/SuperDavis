@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using System.Collections.Generic;
 
 namespace SuperDavis.Command
 {
@@ -16,9 +15,9 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if (davis.DavisProjectile.Count > 0 )
+            if (davis.DavisProjectile.Count > 0)
             {
-                foreach(IProjectile projectile in davis.DavisProjectile)
+                foreach (IProjectile projectile in davis.DavisProjectile)
                 {
                     projectile.FacingDirection = davis.FacingDirection;
                     projectile.Location = davis.Location + (new Vector2(0, 30f));

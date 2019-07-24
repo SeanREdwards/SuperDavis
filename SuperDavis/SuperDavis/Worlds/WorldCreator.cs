@@ -13,7 +13,7 @@ using System.Xml;
 namespace SuperDavis.Worlds
 {
     class WorldCreator
-    {   
+    {
         Dictionary<String, Action<IWorld, string, float, float>> objectDictionary;
         Dictionary<String, Action<float, float>> itemDictionary;
         Dictionary<String, Action<float, float>> blockDictionary;
@@ -22,7 +22,7 @@ namespace SuperDavis.Worlds
         Dictionary<String, Action<float, float>> backgroundDictionary;
         IWorld world;
 
-    
+
 
         // Need to get rid of string classifier
         private void CreateObjectDictionary()

@@ -18,7 +18,7 @@ namespace SuperDavis.State.DavisState
         }
 
         public void Static()
-        { 
+        {
         }
 
         public void Left()

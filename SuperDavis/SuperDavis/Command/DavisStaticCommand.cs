@@ -13,7 +13,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if(!(davis.DavisState is DavisJumpLeftState || davis.DavisState is DavisJumpRightState))
+            if (!(davis.DavisState is DavisJumpLeftState || davis.DavisState is DavisJumpRightState))
                 davis.DavisStatic();
         }
     }

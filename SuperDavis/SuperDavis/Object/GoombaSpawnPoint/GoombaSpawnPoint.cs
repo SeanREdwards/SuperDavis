@@ -5,9 +5,6 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.Object.SpawnPoint
 {
@@ -46,7 +43,7 @@ namespace SuperDavis.Object.SpawnPoint
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);
-            if (Math.Abs(world.Characters.Location.X - Location.X) < 250 )
+            if (Math.Abs(world.Characters.Location.X - Location.X) < 250)
             {
                 if (spawnTimeInterval == 0)
                 {

@@ -19,7 +19,8 @@ namespace SuperDavis.Sprite
         private double currentTime;
         private const double frameTime = 0.08d;
 
-        public GenerateSprite(SpriteRegistrar spriteInfo) { 
+        public GenerateSprite(SpriteRegistrar spriteInfo)
+        {
             this.texture = spriteInfo.Texture;
             spriteList = spriteInfo.SourceFrames;
             this.blinkColorList = spriteInfo.ColorList;
@@ -38,7 +39,7 @@ namespace SuperDavis.Sprite
             if (currentTime > frameTime)
             {
                 currentFrame++;
-                currentTime = 0d; 
+                currentTime = 0d;
             }
             if (currentFrame == totalFrames)
             {

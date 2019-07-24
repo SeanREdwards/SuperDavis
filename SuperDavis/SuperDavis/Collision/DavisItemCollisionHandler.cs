@@ -1,7 +1,6 @@
 ﻿using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Item;
-using SuperDavis.Variables;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -9,7 +8,7 @@ namespace SuperDavis.Collision
     class DavisItemCollisionHandler
     {
         private DavisItemCollisionHandler() { }
-        
+
         public static void HandleCollision(IDavis davis, IItem item, CollisionSide side, IWorld world)
         {
             if (side != CollisionSide.None)
@@ -18,14 +17,14 @@ namespace SuperDavis.Collision
                 {
                     if (davis.DavisStatus != DavisStatus.Invincible)
                         davis.DavisStatus = DavisStatus.Bat;
-                        davis.DavisState.Static();
-                        
+                    davis.DavisState.Static();
+
                 }
                 else if (item is Mushroom)
                 {
                     if (davis.DavisStatus == DavisStatus.Davis)
                         davis.DavisStatus = DavisStatus.Woody;
-                        davis.DavisState.Static();
+                    davis.DavisState.Static();
                 }
                 else if (item is Star)
                 {

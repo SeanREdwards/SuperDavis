@@ -9,7 +9,7 @@ namespace SuperDavis.Object.Scenery
     {
         public Vector2 Location { get; set; }
         private readonly ISprite background;
-   
+
 
         public Background(Vector2 location)
         {

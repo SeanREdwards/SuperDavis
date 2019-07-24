@@ -15,7 +15,7 @@ namespace SuperDavis.State.DavisState
             this.davis = davis;
         }
 
-        public void Static(){ }
+        public void Static() { }
 
         public void Left()
         {
@@ -37,7 +37,7 @@ namespace SuperDavis.State.DavisState
             //Do Nothing
         }
 
-        public void Land(){ }
+        public void Land() { }
 
         public void Slide()
         {
@@ -61,7 +61,7 @@ namespace SuperDavis.State.DavisState
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            davis.Sprite.Draw(spriteBatch, location);    
+            davis.Sprite.Draw(spriteBatch, location);
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
+using System;
 
 namespace SuperDavis.Object.Enemy
 {
@@ -67,7 +67,7 @@ namespace SuperDavis.Object.Enemy
 
         public void Jump()
         {
-            if(!(PhysicsState is JumpState) || !(PhysicsState is FallState))
+            if (!(PhysicsState is JumpState) || !(PhysicsState is FallState))
                 PhysicsState = new JumpState(this);
         }
 

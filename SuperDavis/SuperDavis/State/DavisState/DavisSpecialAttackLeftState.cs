@@ -55,7 +55,7 @@ namespace SuperDavis.State.DavisState
 
         public void SpecialAttack()
         {
-            
+
         }
 
         public void Update(GameTime gameTime)

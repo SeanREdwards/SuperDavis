@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Item
 {
@@ -30,14 +30,14 @@ namespace SuperDavis.Object.Item
 
         public void Update(GameTime gameTime)
         {
- 
-                yoshiEggStateMachine.Update(gameTime);
+
+            yoshiEggStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
 
-                yoshiEggStateMachine.Draw(spriteBatch, Location);
+            yoshiEggStateMachine.Draw(spriteBatch, Location);
         }
 
 

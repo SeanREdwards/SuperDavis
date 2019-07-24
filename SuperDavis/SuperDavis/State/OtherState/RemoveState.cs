@@ -37,7 +37,7 @@ namespace SuperDavis.State.OtherState
         {
             if (timer >= 0)
             {
-                sprite.Draw(spriteBatch,location);
+                sprite.Draw(spriteBatch, location);
             }
         }
     }

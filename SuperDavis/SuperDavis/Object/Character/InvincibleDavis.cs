@@ -1,12 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
-using SuperDavis.State.DavisState;
-using System.Collections.Generic;
 using SuperDavis.Physics;
-using SuperDavis.Object.Item;
-using System;
 using SuperDavis.Sound;
+using SuperDavis.State.DavisState;
+using System;
+using System.Collections.Generic;
 
 namespace SuperDavis.Object.Character
 {
@@ -70,7 +69,7 @@ namespace SuperDavis.Object.Character
             DavisState.Update(gameTime);
             PhysicsState.Update(gameTime);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
-            if(invincibleTimer == 0)
+            if (invincibleTimer == 0)
             {
                 RemoveInvincible();
             }
@@ -145,10 +144,10 @@ namespace SuperDavis.Object.Character
             DavisState.Slide();
         }
 
-         public void TakeDamage()
-         {
-             
-         }
+        public void TakeDamage()
+        {
+
+        }
 
 
         public void DavisToDavis()

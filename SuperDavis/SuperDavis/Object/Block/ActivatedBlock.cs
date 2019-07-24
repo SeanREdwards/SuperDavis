@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Block
 {
@@ -12,12 +12,12 @@ namespace SuperDavis.Object.Block
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
-        public Rectangle HitBox { get ; set ; }
+        public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private readonly ISprite block;
         private readonly ActivatedBlockStateMachine activatedBlockStateMachine;
 
-        public event EventHandler<Tuple<Vector2,Vector2>> OnPositionChanged;
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
         public ActivatedBlock(Vector2 location)
         {
@@ -31,12 +31,12 @@ namespace SuperDavis.Object.Block
 
         public void Update(GameTime gameTime)
         {
-                activatedBlockStateMachine.Update(gameTime);
+            activatedBlockStateMachine.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-                activatedBlockStateMachine.Draw(spriteBatch, Location);
+            activatedBlockStateMachine.Draw(spriteBatch, Location);
         }
 
         public void SpecialState()

@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Item
 {
@@ -32,19 +32,20 @@ namespace SuperDavis.Object.Item
         public void Update(GameTime gameTime)
         {
 
-                flowerStateMachine.Update(gameTime);
-                if (!IsAnimated)
+            flowerStateMachine.Update(gameTime);
+            if (!IsAnimated)
+            {
+                if (timer > 0)
                 {
-                    if (timer > 0)
-                    {
-                        Location += new Vector2(0, Variables.Variable.FlowerOffsetDown);
-                        timer--;
-                    } else
-                    {
-                        timer = Variables.Variable.FlowerTimer;
-                        IsAnimated = true;
-                    }
-                }       
+                    Location += new Vector2(0, Variables.Variable.FlowerOffsetDown);
+                    timer--;
+                }
+                else
+                {
+                    timer = Variables.Variable.FlowerTimer;
+                    IsAnimated = true;
+                }
+            }
 
 
         }
@@ -52,7 +53,7 @@ namespace SuperDavis.Object.Item
         public void Draw(SpriteBatch spriteBatch)
         {
 
-                flowerStateMachine.Draw(spriteBatch, Location);
+            flowerStateMachine.Draw(spriteBatch, Location);
         }
 
 

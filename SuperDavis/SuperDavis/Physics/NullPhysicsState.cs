@@ -18,7 +18,7 @@ namespace SuperDavis.Physics
 
         public void Update(GameTime gameTime)
         {
- 
+
         }
     }
 }

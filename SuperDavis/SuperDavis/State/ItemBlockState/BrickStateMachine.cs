@@ -19,7 +19,7 @@ namespace SuperDavis.State.ItemStateMachine
             }
             else
             {
-                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();              
+                Sprite = ItemSpriteFactory.Instance.CreateEmptyBlock();
             }
             Width = Sprite.Width;
             Height = Sprite.Height;

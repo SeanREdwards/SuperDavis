@@ -9,7 +9,6 @@ using SuperDavis.Physics;
 using SuperDavis.Sound;
 using System;
 using System.Collections.Generic;
-using static SuperDavis.Object.Character.Davis;
 
 namespace SuperDavis.Worlds
 {
@@ -133,10 +132,10 @@ namespace SuperDavis.Worlds
         public IGameObject GetObject(IGameObject @object, int i, int j)
         {
             var k = WorldGrid[i][j].IndexOf(@object);
-            if ( k > -1)
-                return WorldGrid[i][j][k];                
+            if (k > -1)
+                return WorldGrid[i][j][k];
             else
-                return null;            
+                return null;
         }
 
         public void AddObject(IGameObject @object)
@@ -156,7 +155,7 @@ namespace SuperDavis.Worlds
             var i = (int)(@object.Location.X / UNIT_SIZE);
             var j = (int)(@object.Location.Y / UNIT_SIZE);
 
-            if (i == -1 && j >= 0 && j <= WorldGridHeight )
+            if (i == -1 && j >= 0 && j <= WorldGridHeight)
                 WorldGrid[0][j].Add(@object);
             else if (!IsIndexOutOfBounds(i, j))
                 WorldGrid[i][j].Add(@object);

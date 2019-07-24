@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -279,15 +278,15 @@ namespace SuperDavis.Factory
         public ISprite CreateBatSpecialAttackOneLeft()
         {
             return Create(GetMethodName());
-           // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
-           // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
+            // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+            // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         public ISprite CreateBatSpecialAttackOneRight()
         {
             return Create(GetMethodName());
-           // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
-           // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
+            // _spriteRegistrars.TryGetValue(GetMethodName(), out SpriteRegistrar spriteInfo);
+            // return new GenerateSprite(spriteInfo.Texture, new List<Color> { Color.White, Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Blue, Color.Purple, Color.Black }, 1f, SpriteEffects.None, spriteInfo.SourceFrames);
         }
 
         public ISprite BatExplodeRight()

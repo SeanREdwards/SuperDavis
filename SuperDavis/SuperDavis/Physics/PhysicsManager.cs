@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
-using System;
-
-namespace SuperDavis.Physics
+﻿namespace SuperDavis.Physics
 {
     /*class PhysicsManager : IGameObjectPhysics
     {

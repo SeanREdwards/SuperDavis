@@ -48,7 +48,8 @@ namespace SuperDavis.Object.Block
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < wallSprite.Width; i++) { 
+            for (int i = 0; i < wallSprite.Width; i++)
+            {
                 for (int j = 0; j < wallSprite.Height; j++)
                 {
                     wallSprite.Draw(spriteBatch, new Vector2((int)Location.X + (wallSprite.Width * i), (int)Location.Y + (wallSprite.Height * j)));

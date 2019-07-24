@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Interfaces;
 using SuperDavis.Sprite;
@@ -94,10 +93,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-         public ISprite CreateSkullBlock()
-         {
-             return Create(GetMethodName());
-         }
+        public ISprite CreateSkullBlock()
+        {
+            return Create(GetMethodName());
+        }
 
         /*public ISprite CreateSpinBlockStatic()
         {

@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
-using SuperDavis.Object.Item;
+﻿using SuperDavis.Interfaces;
 using SuperDavis.Physics;
 using static SuperDavis.Collision.CollisionDetection;
 
@@ -18,7 +16,7 @@ namespace SuperDavis.Collision
                     case CollisionSide.Bottom:
                     case CollisionSide.Left:
                     case CollisionSide.Right:
-                        if (!(projectile.PhysicsState is NullPhysicsState) )
+                        if (!(projectile.PhysicsState is NullPhysicsState))
                         {
                             projectile.Explode();
                             enemy.TakeDamage();
@@ -27,7 +25,7 @@ namespace SuperDavis.Collision
                         break;
                     case CollisionSide.None:
                         break;
-            }
+                }
         }
     }
 }

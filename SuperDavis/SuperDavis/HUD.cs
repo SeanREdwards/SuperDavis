@@ -12,7 +12,8 @@ namespace SuperDavis
         public static string worldText = Variable.worldText;
         public static double time = Variable.time;
 
-        public static void Draw(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch) {
+        public static void Draw(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
             time -= gameTime.ElapsedGameTime.TotalSeconds;
             spriteBatch.Begin();
             spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
