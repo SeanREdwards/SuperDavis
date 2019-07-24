@@ -13,7 +13,7 @@
   	<Scenery Type="GhostHouseAnimated" X="2400" Y="0" />
     
   	//Character-----------------------------------------------------------------------
-  	<Character Type="Davis" X="48" Y="642" />
+  	<Character Type="Davis" X="48" Y="580" />
     
     //Section 1-----------------------------------------------------------------------
     //Goomba spawn

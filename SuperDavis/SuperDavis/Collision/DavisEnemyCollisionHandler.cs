@@ -22,7 +22,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible)
+                    if (davis.DavisStatus != DavisStatus.Invincible)
                     {
                         davis.DavisState.Death();
                         HUD.lives--;

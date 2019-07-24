@@ -11,6 +11,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.LevelManager;
 using SuperDavis.Sound;
 using SuperDavis.Worlds;
 
@@ -23,16 +24,18 @@ namespace SuperDavis
 {
     class Game1 : Game
     {
+        public IWorld World { get; set; }
+        public bool IsMouseControllerOn { get; set; }
+        public CollisionDetection CollisionDetection;
+        public Momento Momento;
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
-        public CollisionDetection collisionDetection;
         private Camera camera;
-        private SpriteFont font;
-        private bool resetFlag;
+        private SpriteFont fontHUD;
+        private SpriteFont fontMenu;
 
-        public IWorld World { get; set; }
-        public bool IsMouseControllerOn { get; set; }
+        private bool resetFlag;
 
         public Game1()
         {
@@ -50,23 +53,15 @@ namespace SuperDavis
         }
         protected override void Initialize()
         {
-            font = Content.Load<SpriteFont>("Font/File");
             resetFlag = false;
             IsMouseControllerOn = false;
             InitializeFactory();
             InitializeSounds();
+            LoadFonts();
             WorldCreator worldCreator = new WorldCreator();
-            //For level 1-1 testing
-            //World = worldCreator.CreateWorld("level1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
-            //For Underworld Testing
-            //World = worldCreator.CreateWorld("underworld1-1.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
-            //For Demo Level Testing
-            World = worldCreator.CreateWorld("demo-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, this);
-
-            // After creating world, pass the world into collision detection
-            // But 
-            collisionDetection = new CollisionDetection(World);
-            InitializeController();
+            Momento = new Momento(World, worldCreator, this);
+            World = Momento.LoadEmpty();
+            InitializeMenuController();
             base.Initialize();
         }
 
@@ -79,23 +74,29 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-            ControllerUpdate();
-            collisionDetection.CheckCollisions();
-            World.Update(gameTime);
-            CheckGameReset();
+            controllerList[0].Update();
+            if (!Momento.IsEmpty)
+            {
+                CollisionDetection.CheckCollisions();
+                World.Update(gameTime);
+                CheckGameReset();
+            }
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-
             GraphicsDevice.Clear(Color.Black);
-            camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
-            //spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
-            World.Draw(spriteBatch);
-            spriteBatch.End();
-            HUD.Draw(gameTime, font, spriteBatch);
+            if (!Momento.IsEmpty)
+            {
+                camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
+                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
+                World.Draw(spriteBatch);
+                spriteBatch.End();
+                HUD.Draw(gameTime, fontHUD, spriteBatch);
+            }
+            else
+                HUD.DrawMenu(gameTime, fontMenu, spriteBatch);
             base.Draw(gameTime);
 
 
@@ -170,6 +171,7 @@ namespace SuperDavis
 
         public void InitializeController()
         {
+            controllerList.Clear();
             var davis = World.Characters;
             controllerList = new List<IController>()
                 {
@@ -193,7 +195,7 @@ namespace SuperDavis
                       (Keys.O, new DavisDeathCommand(davis), new NullCommand(), true),
                       (Keys.P, new DavisSpecialAttackCommand(davis), new NullCommand(), false),
                       (Keys.M, new NullCommand(),new ToggleMouseControl(this), false)
-                    ),
+                    )/*,
                     new GamepadController
                     (
                       (Buttons.Start, new ExitCommand(this)),
@@ -209,23 +211,42 @@ namespace SuperDavis
                       (Buttons.A, new DavisSpecialAttackCommand(davis)),
                       (Buttons.B, new ToggleMouseControl(this))
                     ),
-                    new MouseController(this),
+                    new MouseController(this),*/
                 };
 
         }
 
+        public void InitializeMenuController()
+        {
+            controllerList = new List<IController>()
+            {
+                new KeyboardController((Keys.Space, new StartGameCommand(this), new NullCommand(), false))
+            };
+        }
+          
+        public void LoadFonts()
+        {
+            fontHUD = Content.Load<SpriteFont>("Font/File");
+            fontMenu = Content.Load<SpriteFont>("Font/fontMenu");
+        }
+
         public void ControllerUpdate()
         {
-            foreach (IController controller in controllerList)
+            if (!Momento.IsEmpty)
             {
-                if (controller is MouseController)
+                foreach (IController controller in controllerList)
                 {
-                    if (IsMouseControllerOn)
+                    if (controller is MouseController)
+                    {
+                        if (IsMouseControllerOn)
+                            controller.Update();
+                    }
+                    else
                         controller.Update();
                 }
-                else
-                    controller.Update();
             }
+            else
+                controllerList[0].Update();
         }
         public void CheckGameReset()
         {

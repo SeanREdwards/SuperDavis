@@ -11,7 +11,7 @@ namespace SuperDavis.State.ItemStateMachine
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
         private IProjectile projectile;
-        private int timer = 5;
+        private int timer = 15;
 
         public BatProjectileExplodeStateMachine(ISprite sprite, IProjectile projectile)
         {

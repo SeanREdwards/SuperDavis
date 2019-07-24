@@ -59,7 +59,6 @@ namespace SuperDavis.Object.Item
 
         public void Explode()
         {
-            IsExploded = true;
             PhysicsState = new NullPhysicsState();
             projectileSprite = DavisSpriteFactory.Instance.BatExplodeRight();
             BatProjectileStateMachine = new BatProjectileExplodeStateMachine(projectileSprite, this);

@@ -211,9 +211,8 @@ namespace SuperDavis.Worlds
                     if (WorldGrid[i][j].Count > 0)
                         WorldGrid[i][j].Clear();
 
-            WorldCreator worldCreator = new WorldCreator();
-            game.World = worldCreator.CreateWorld(Variables.Variable.LevelOne, Variables.Variable.level11Width, Variables.Variable.level11Height, game);
-            game.collisionDetection = new CollisionDetection(game.World);
+            game.World = game.Momento.ResetToCheckPoint();
+            game.CollisionDetection = new CollisionDetection(game.World);
             game.InitializeController();
         }
 

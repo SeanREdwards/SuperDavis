@@ -145,6 +145,30 @@
 /processorParam:TextureFormat=Color
 /build:BrickBlock.png
 
+#begin Castle&Flag.gif
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Castle&Flag.gif
+
+#begin Castle1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Castle1.png
+
 #begin DavisLeft_0.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -217,12 +241,25 @@
 /processorParam:TextureFormat=Color
 /build:DavisRight_2.png
 
+#begin Death.WAV
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Death.WAV
+
 #begin File.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:File.spritefont
+
+#begin fontMenu.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fontMenu.spritefont
 
 #begin GoombaLeft.png
 /importer:TextureImporter
@@ -248,6 +285,18 @@
 /processorParam:TextureFormat=Color
 /build:GoombaRight.png
 
+#begin ItemPickup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ItemPickup.wav
+
+#begin Jump.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Jump.wav
+
 #begin KoopaTroopaGreen.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -259,6 +308,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:KoopaTroopaGreen.png
+
+#begin MarioMusic.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:MarioMusic.wav
 
 #begin WoodyLeft_0.png
 /importer:TextureImporter
@@ -331,52 +386,4 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:WoodyRight_2.png
-
-#begin Death.WAV
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Death.WAV
-
-#begin ItemPickup.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:ItemPickup.wav
-
-#begin MarioMusic.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:MarioMusic.wav
-
-#begin Jump.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Jump.wav
-
-#begin Castle&Flag.gif
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Castle&Flag.gif
-
-#begin Castle1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Castle1.png
 
