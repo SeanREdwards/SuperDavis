@@ -55,7 +55,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Code Reviews\sprint2\Code Quality Review\JasonXu.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint2\Code Quality Review\SeanEdwards.md" />
