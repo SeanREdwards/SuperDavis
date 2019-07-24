@@ -376,6 +376,86 @@
     "Scale": 1
   },
 
+  "CreateDavisProjectileLeft": {
+    "TextureName": "DavisSprites/DavisProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 9,
+        "Y": 11,
+        "Width": 49,
+        "Height": 24
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateDavisProjectileRight": {
+    "TextureName": "DavisSprites/DavisProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 270,
+        "Y": 11,
+        "Width": 49,
+        "Height": 24
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateDavisProjectileExplodeLeft": {
+    "TextureName": "DavisSprites/DavisProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 252,
+        "Y": 48,
+        "Width": 50,
+        "Height": 44
+      },
+      {
+        "X": 169,
+        "Y": 49,
+        "Width": 59,
+        "Height": 41
+      },
+      {
+        "X": 91,
+        "Y": 50,
+        "Width": 45,
+        "Height": 40
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateDavisProjectileExplodeRight": {
+    "TextureName": "DavisSprites/DavisProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 26,
+        "Y": 48,
+        "Width": 50,
+        "Height": 44
+      },
+      {
+        "X": 100,
+        "Y": 49,
+        "Width": 59,
+        "Height": 41
+      },
+      {
+        "X": 192,
+        "Y": 50,
+        "Width": 45,
+        "Height": 40
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
   "CreateWoodyStaticLeftSprite": {
     "TextureName": "WoodySprites/WoodyLeft_0",
     "SourceFrames": [
@@ -682,6 +762,174 @@
         "Y": 80,
         "Width": 49,
         "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyRunLeft": {
+    "TextureName": "WoodySprites/WoodyLeft_0",
+    "SourceFrames": [
+      {
+        "X": 739,
+        "Y": 165,
+        "Width": 53,
+        "Height": 74
+      },
+      {
+        "X": 654,
+        "Y": 164,
+        "Width": 42,
+        "Height": 75
+      },
+      {
+        "X": 575,
+        "Y": 165,
+        "Width": 48,
+        "Height": 74
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyRunRight": {
+    "TextureName": "WoodySprites/WoodyRight_0",
+    "SourceFrames": [
+      {
+        "X": 8,
+        "Y": 165,
+        "Width": 53,
+        "Height": 74
+      },
+      {
+        "X": 104,
+        "Y": 164,
+        "Width": 42,
+        "Height": 75
+      },
+      {
+        "X": 177,
+        "Y": 165,
+        "Width": 48,
+        "Height": 74
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyProjectileLeft": {
+    "TextureName": "WoodySprites/WoodyProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 260,
+        "Y": 24,
+        "Width": 51,
+        "Height": 34
+      },
+      {
+        "X": 178,
+        "Y": 24,
+        "Width": 53,
+        "Height": 34
+      },
+      {
+        "X": 99,
+        "Y": 24,
+        "Width": 39,
+        "Height": 34
+      },
+      {
+        "X": 15,
+        "Y": 24,
+        "Width": 54,
+        "Height": 34
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyProjectileExplodeLeft": {
+    "TextureName": "WoodySprites/WoodyProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 251,
+        "Y": 86,
+        "Width": 55,
+        "Height": 78
+      },
+      {
+        "X": 168,
+        "Y": 88,
+        "Width": 58,
+        "Height": 75
+      },
+      {
+        "X": 85,
+        "Y": 88,
+        "Width": 61,
+        "Height": 72
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyProjectileRight": {
+    "TextureName": "WoodySprites/WoodyProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 17,
+        "Y": 24,
+        "Width": 51,
+        "Height": 34
+      },
+      {
+        "X": 97,
+        "Y": 24,
+        "Width": 53,
+        "Height": 34
+      },
+      {
+        "X": 190,
+        "Y": 24,
+        "Width": 39,
+        "Height": 34
+      },
+      {
+        "X": 259,
+        "Y": 24,
+        "Width": 54,
+        "Height": 34
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyProjectileExplodeRight": {
+    "TextureName": "WoodySprites/WoodyProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 22,
+        "Y": 86,
+        "Width": 55,
+        "Height": 78
+      },
+      {
+        "X": 102,
+        "Y": 88,
+        "Width": 58,
+        "Height": 75
+      },
+      {
+        "X": 182,
+        "Y": 88,
+        "Width": 61,
+        "Height": 72
       }
     ],
     "FrameDelay": 0.08,
@@ -1359,6 +1607,58 @@
         "Y": 0,
         "Width": 55,
         "Height": 80
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateBatRunLeft": {
+    "TextureName": "BatSprites/BatLeft_0",
+    "SourceFrames": [
+      {
+        "X": 735,
+        "Y": 167,
+        "Width": 52,
+        "Height": 72
+      },
+      {
+        "X": 652,
+        "Y": 167,
+        "Width": 45,
+        "Height": 72
+      },
+      {
+        "X": 576,
+        "Y": 167,
+        "Width": 48,
+        "Height": 72
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateBatRunRight": {
+    "TextureName": "BatSprites/BatRight_0",
+    "SourceFrames": [
+      {
+        "X": 13,
+        "Y": 167,
+        "Width": 52,
+        "Height": 72
+      },
+      {
+        "X": 103,
+        "Y": 167,
+        "Width": 45,
+        "Height": 72
+      },
+      {
+        "X": 176,
+        "Y": 167,
+        "Width": 48,
+        "Height": 72
       }
     ],
     "FrameDelay": 0.08,

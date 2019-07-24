@@ -122,6 +122,26 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateDavisProjectileLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateDavisProjectileRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateDavisProjectileExplodeLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateDavisProjectileExplodeRight()
+        {
+            return Create(GetMethodName());
+        }
+
         /*Basic Woody Sprites*/
         public ISprite CreateWoodyStaticLeftSprite()
         {
@@ -180,6 +200,26 @@ namespace SuperDavis.Factory
         }
 
         public ISprite CreateWoodySpecialAttackOneRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyProjectileLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyProjectileRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyProjectileExplodeLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyProjectileExplodeRight()
         {
             return Create(GetMethodName());
         }
@@ -314,12 +354,32 @@ namespace SuperDavis.Factory
 
         public ISprite CreateDavisRunLeft()
         {
-            return CreateInvincible(GetMethodName());
+            return Create(GetMethodName());
         }
 
         public ISprite CreateDavisRunRight()
         {
-            return CreateInvincible(GetMethodName());
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyRunLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyRunRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatRunLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatRunRight()
+        {
+            return Create(GetMethodName());
         }
     }
 }

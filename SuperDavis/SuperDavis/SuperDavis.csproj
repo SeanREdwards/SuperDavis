@@ -123,6 +123,9 @@
     <None Include="Content\BlockSprites\Castle1.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Doors.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\DavisSprites\DavisLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -154,6 +157,12 @@
     <None Include="Content\Davis\BatWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\DavisSprites\DavisProjectileLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\DavisProjectileRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Davis\DavisStaticLeft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -164,6 +173,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Davis\DavisWalkRight.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyProjectileLeft.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\WoodySprites\WoodyProjectileRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Davis\WoodyStaticLeft.xnb">
@@ -190,7 +205,16 @@
     <None Include="Content\Font\File.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Item\BeerBottle.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Item\coin.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Item\KeySprite.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Item\MilkJug.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\SoundFX\Jump.xnb">

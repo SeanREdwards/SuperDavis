@@ -329,5 +329,33 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 1.5
+  },
+
+  "CreateCastleDoorClosed": {
+    "TextureName": "BlockSprites/Doors",
+    "SourceFrames": [
+      {
+        "X": 82,
+        "Y": 676,
+        "Width": 12,
+        "Height": 48
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateCastleDoorOpened": {
+    "TextureName": "BlockSprites/Doors",
+    "SourceFrames": [
+      {
+        "X": 100,
+        "Y": 676,
+        "Width": 28,
+        "Height": 48
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   }
 }
