@@ -81,6 +81,12 @@
     <None Include="Code Reviews\sprint5\Readability Review\RyanKnighton.md" />
     <None Include="Code Reviews\sprint5\Readability Review\JasonXu.md" />
     <None Include="Code Reviews\sprint5\Readability Review\SeanEdwards.md" />
+    <None Include="Code Reviews\sprint6\Code Quality Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Code Reviews\sprint6\Readability Review\RyanKnighton.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BackgroundSprites\AnimatedBackgrounds.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
