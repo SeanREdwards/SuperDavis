@@ -180,6 +180,9 @@
     <None Include="Content\Davis\DavisWalkRight.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Font\fontMenu.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\WoodySprites\WoodyProjectileLeft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -291,6 +294,7 @@
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
+    <Compile Include="Command\StartCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
@@ -301,6 +305,7 @@
     <Compile Include="Interfaces\IBackground.cs" />
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="LvlManager\Momento.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />
@@ -445,9 +450,7 @@
     <Content Include="Content\RawSpriteSheets\WoodyRight_1.png" />
     <Content Include="Content\RawSpriteSheets\WoodyRight_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

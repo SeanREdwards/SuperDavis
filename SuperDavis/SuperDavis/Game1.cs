@@ -7,6 +7,7 @@ using SuperDavis.Command;
 using SuperDavis.Controller;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.LvlManager;
 using SuperDavis.Sound;
 using SuperDavis.Worlds;
 using System;
@@ -219,7 +220,7 @@ namespace SuperDavis
         {
             controllerList = new List<IController>()
             {
-                new KeyboardController((Keys.Space, new StartGameCommand(this), new NullCommand(), false))
+                new KeyboardController((Keys.Space, new StartCommand(this), new NullCommand(), false))
             };
         }
 
