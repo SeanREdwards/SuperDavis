@@ -9,7 +9,7 @@
     
   	//Background----------------------------------------------------------------------
   	<Scenery Type="Background" X="0" Y="0" />
-    <Scenery Type="Background" X="1200" Y="0" />
+    <Scenery Type="GhostHouseAnimated" X="1200" Y="0" />
   	
     
   	//Character-----------------------------------------------------------------------
