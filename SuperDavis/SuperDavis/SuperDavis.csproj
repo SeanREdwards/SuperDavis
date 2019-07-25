@@ -393,7 +393,6 @@
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="LvlManager\Momento.cs" />
     <Compile Include="Object\Block\Door.cs" />
-    <Compile Include="Object\Character\CharacterSelector.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />

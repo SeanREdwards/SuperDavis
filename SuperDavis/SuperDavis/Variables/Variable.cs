@@ -26,7 +26,7 @@
         public const float SpriteScaleFactor = 1.5f;
         public const float UnitPixelSize = 24;
 
-        public const int level11Width = 3600;
+        public const int level11Width = 2400;
         public const int level11Height = 720;
 
         public const int InvincibleTimer = 10;

@@ -57,7 +57,7 @@ namespace SuperDavis
             else
                 DavisSpriteFactory.Instance.CreateBatWalkRightSprite().Draw(spriteBatch, new Vector2(850, 450));
 
-            spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
+            spriteBatch.DrawString(font, "SuperDavis - Team Shoryuken", new Vector2(50, 50), Color.White);
             DavisSpriteFactory.Instance.CreateDavisPortrait().Draw(spriteBatch, new Vector2(300, 300));
             DavisSpriteFactory.Instance.CreateWoodyPortrait().Draw(spriteBatch, new Vector2(550, 300));
             DavisSpriteFactory.Instance.CreateBatPortrait().Draw(spriteBatch, new Vector2(800, 300));
