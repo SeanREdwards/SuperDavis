@@ -57,8 +57,8 @@ namespace SuperDavis.LvlManager
                 world.Characters.DavisToWoody();
             else if (game1.HUD.CharacterSelect == 3)
                 world.Characters.DavisToBat();
-            world.HUD.time = Variables.Variable.time;
-            return world;
+                world.HUD.time = Variables.Variable.time;
+                return world;
         }
     }
 }

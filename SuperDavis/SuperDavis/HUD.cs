@@ -35,7 +35,6 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Time", new Vector2(850, 20), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(850, 60), Color.White);
             spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
-            
             spriteBatch.End();
 
             if (lives < 0)
@@ -70,6 +69,18 @@ namespace SuperDavis
         public void PauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(font, "Game Paused!", new Vector2(500, 400), Color.White);
+        }
+
+        public void DrawWinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+            WinMenu(gameTime, font, spriteBatch);
+            spriteBatch.End();
+        }
+
+        public void WinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(font, "You Win!", new Vector2(500, 400), Color.White);
         }
 
         public void DrawGameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
