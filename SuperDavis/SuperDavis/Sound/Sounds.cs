@@ -19,7 +19,7 @@ namespace SuperDavis.Sound
 
         public void Load(ContentManager content)
         {
-            Music = content.Load<SoundEffect>("SoundFX/MarioMusic");
+            Music = content.Load<SoundEffect>("SoundFX/DemoMusic");
             MusicInstance = Music.CreateInstance();
             MusicInstance.IsLooped = true;
             Jump = content.Load<SoundEffect>("SoundFX/Jump");

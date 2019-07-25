@@ -264,6 +264,9 @@
     <None Include="Content\Font\fontMenu.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\SoundFX\DemoMusic.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\WoodySprites\WoodyProjectileLeft.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

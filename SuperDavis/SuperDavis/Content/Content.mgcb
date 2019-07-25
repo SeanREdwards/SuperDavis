@@ -860,3 +860,9 @@
 /processorParam:TextureFormat=Color
 /build:WoodyProjectileRight.png
 
+#begin DemoMusic.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:DemoMusic.wav
+
