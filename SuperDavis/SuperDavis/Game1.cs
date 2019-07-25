@@ -112,8 +112,9 @@ namespace SuperDavis
             }*/
 
             //creates castle floor
-            //for (int i = 2400; i < 3600; i += 24)
-            //{
+            //System.Console.WriteLine("//////////////////");
+            //for (int i = 0; i <= 1200; i += 24)
+           //{
             //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='696' />");
             //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='672' />");
             //}
