@@ -100,16 +100,16 @@ namespace SuperDavis.Worlds
             };
         }
 
-        public IWorld CreateWorld(string levelFile, float width, float height, Game1 game)
+        public IWorld CreateWorld(string levelFile, float width, float height, Game1 game, HUD HUD)
         {
-            IWorld worldObject = ParseAndLoad(levelFile, width, height, game);
+            IWorld worldObject = ParseAndLoad(levelFile, width, height, game, HUD);
             //world.InitializeWorldGrid();
             return worldObject;
         }
 
-        private IWorld ParseAndLoad(string levelFile, float width, float height, Game1 game)
+        private IWorld ParseAndLoad(string levelFile, float width, float height, Game1 game, HUD HUD)
         {
-            world = new World(width, height, game);
+            world = new World(width, height, game, HUD);
             CreateObjectDictionary();
             CreateItemDictionary();
             CreateBlockDictionary();

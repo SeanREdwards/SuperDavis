@@ -39,7 +39,7 @@ namespace SuperDavis.Collision
                         {
                             block.SpecialState();
                             world.ObjectToRemove.Add(block);
-                            HUD.score += 50;
+                            world.HUD.score += 50;
                         }
                         else
                         {

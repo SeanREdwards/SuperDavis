@@ -9,6 +9,7 @@ namespace SuperDavis.Interfaces
         float Width { get; }
         float Height { get; }
 
+        HUD HUD { get; set; }
         IList<IGameObject>[][] WorldGrid { get; set; }
         IDavis Characters { get; set; }
         IList<IEnemy> Enemies { get; set; }

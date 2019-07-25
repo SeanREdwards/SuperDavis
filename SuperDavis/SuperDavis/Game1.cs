@@ -28,6 +28,7 @@ namespace SuperDavis
         public bool IsMouseControllerOn { get; set; }
         public CollisionDetection CollisionDetection;
         public Momento Momento;
+        public HUD HUD;
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
@@ -58,6 +59,8 @@ namespace SuperDavis
             InitializeFactory();
             InitializeSounds();
             LoadFonts();
+            HUD = new HUD();
+
             WorldCreator worldCreator = new WorldCreator();
             Momento = new Momento(World, worldCreator, this);
             World = Momento.LoadEmpty();
@@ -95,18 +98,18 @@ namespace SuperDavis
                 HUD.Draw(gameTime, fontHUD, spriteBatch);
             }
             else
-                HUD.DrawMenu(gameTime, fontMenu, spriteBatch);
-                base.Draw(gameTime);
+                HUD.DrawStartMenu(gameTime, fontMenu, spriteBatch);
+            base.Draw(gameTime);
 
 
             //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
             //creates  green middle block floor
-            System.Console.WriteLine("//////////////////");
+            /*System.Console.WriteLine("//////////////////");
             for (int i = 0; i < 1200; i += 24)
             {
                 System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='696' />");
                 System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='672' />");
-            }
+            }*/
 
             //creates castle floor
             //for (int i = 2400; i < 3600; i += 24)
@@ -213,7 +216,13 @@ namespace SuperDavis
         {
             controllerList = new List<IController>()
             {
-                new KeyboardController((Keys.Space, new StartCommand(this), new NullCommand(), false))
+                new KeyboardController
+                (
+                    (Keys.Space, new StartCommand(this), new NullCommand(), false),
+                    (Keys.Left, new StartMenuLeftCommand(this), new NullCommand(), false),
+                    (Keys.Right, new StartMenuRightCommand(this), new NullCommand(), false)
+                )
+                
             };
         }
 

@@ -378,6 +378,8 @@
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
+    <Compile Include="Command\StartMenuRightCommand.cs" />
+    <Compile Include="Command\StartMenuLeftCommand.cs" />
     <Compile Include="Command\StartCommand.cs" />
     <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />

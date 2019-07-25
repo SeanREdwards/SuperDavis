@@ -33,8 +33,8 @@ namespace SuperDavis.Collision
                 }
                 else if (item is Coin)
                 {
-                    HUD.coins++;
-                    HUD.score += 50;
+                    world.HUD.coins++;
+                    world.HUD.score += 50;
                 }
                 world.ObjectToRemove.Add(item);
             }

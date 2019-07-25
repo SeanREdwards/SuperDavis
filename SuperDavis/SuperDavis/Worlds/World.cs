@@ -27,15 +27,18 @@ namespace SuperDavis.Worlds
         public HashSet<IProjectile> Projectiles { get; set; }
         public HashSet<IBackground> Backgrounds { get; set; }
 
-        private readonly Game1 game;
         public float UNIT_SIZE = Variables.Variable.UnitPixelSize;
         public int WorldGridWidth, WorldGridHeight;
 
-        public World(float width, float height, Game1 game)
+        private readonly Game1 game;
+        public HUD HUD { get; set; }
+
+        public World(float width, float height, Game1 game, HUD HUD)
         {
             Width = width;
             Height = height;
             this.game = game;
+            this.HUD = HUD;
 
             /* Initialize WorldGrid - 2 Dimensional Array */
             WorldGridWidth = (int)(Width / UNIT_SIZE);
