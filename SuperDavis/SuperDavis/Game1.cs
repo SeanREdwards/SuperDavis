@@ -101,12 +101,12 @@ namespace SuperDavis
 
             //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
             //creates  green middle block floor
-            //System.Console.WriteLine("//////////////////");
-            //for (int i = 0; i < 2400; i += 24)
-            //{
-            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='696' />");
-            //    System.Console.WriteLine("<Block Type='MiddleGreenFloor' X='" + i + "' Y='672' />");
-            //}
+            System.Console.WriteLine("//////////////////");
+            for (int i = 0; i < 1200; i += 24)
+            {
+                System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='696' />");
+                System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='672' />");
+            }
 
             //creates castle floor
             //for (int i = 2400; i < 3600; i += 24)

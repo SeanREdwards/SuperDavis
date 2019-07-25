@@ -491,6 +491,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Code Reviews\sprint3\Readability Review\SeanEdwards.md" />
+    <Content Include="Content\Level\boss-level.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Level\demo-level.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
