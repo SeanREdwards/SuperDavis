@@ -12,7 +12,7 @@ namespace SuperDavis.Collision
         {
             if (side != CollisionSide.None)
             {
-                if (davis.PhysicsState is FlyingKneeState)
+                if (davis.PhysicsState is FlyingKneeState || davis.PhysicsState is ShoryukenState)
                 {
                     enemy.TakeDamage();
                     world.HUD.score += 100;
@@ -29,7 +29,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) )
+                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState) )
                     {
                         davis.DavisDeath();
                         world.HUD.lives--;

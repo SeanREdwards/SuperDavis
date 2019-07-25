@@ -66,7 +66,7 @@ namespace SuperDavis
 
         public void PauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Game Paused!", new Vector2(500, 400), Color.White);
+            spriteBatch.DrawString(font, "Paused, Go grab some snacks kid", new Vector2(450, 400), Color.White);
         }
 
         public void DrawWinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
@@ -78,7 +78,7 @@ namespace SuperDavis
 
         public void WinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "You Win!", new Vector2(500, 400), Color.White);
+            spriteBatch.DrawString(font, "Well, You have made it!", new Vector2(500, 400), Color.White);
         }
 
         public void DrawGameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
@@ -92,6 +92,7 @@ namespace SuperDavis
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
             spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 350), Color.White);
+            spriteBatch.DrawString(font, "COME ON! YOU SUCKKKKKKKK", new Vector2(380, 400), Color.White);
             Sounds.Instance.MusicInstance.IsLooped = false;
             Sounds.Instance.MusicInstance.Pause();
 

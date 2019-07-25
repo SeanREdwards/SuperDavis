@@ -436,6 +436,7 @@
     <Compile Include="Physics\DavisProjectilePhysicsState.cs" />
     <Compile Include="Physics\BatProjectilePhysicsState.cs" />
     <Compile Include="Physics\EnemyDeadState.cs" />
+    <Compile Include="Physics\ShoryukenState.cs" />
     <Compile Include="Physics\FlyingKneeState.cs" />
     <Compile Include="Physics\NullPhysicsState.cs" />
     <Compile Include="Physics\StandingState.cs" />
