@@ -19,6 +19,7 @@
     //Goomba spawn
     <Block Type ="GoombaSpawnPoint" X ="300" Y ="100"/>
     <Block Type ="GoombaSpawnPoint" X ="874" Y ="100"/>
+    <Enemy Type ="Julian" X ="874" Y ="100" />
     
     //Block Section 1
     <Block Type='Brick' X='252' Y='400' />
@@ -48,7 +49,7 @@
     <Item Type="Coin" X="648" Y="502" />
     <Block Type='Brick' X='648' Y='550' />
 
-    <Enemy Type="Koopa" X="570" Y="624" />
+    <Enemy Type="Koopa" X="570" Y="600" />
     <Item Type="Coin" X="552" Y="624" />
     <Item Type="Coin" X="600" Y="624" />
     <Item Type="Coin" X="648" Y="624" />
@@ -62,7 +63,7 @@
     <Block Type='FlowerBlock' X='874' Y='550' />
 
     //Section 2-----------------------------------------------------------------------
-    <Enemy Type="Koopa" X="1450" Y="624" />
+    <Enemy Type="Koopa" X="1450" Y="600" />
     <Block Type='Brick' X='1500' Y='250' />
     <Block Type='Brick' X='1400' Y='250' />
     <Block Type='Brick' X='1300' Y='250' />
@@ -120,9 +121,7 @@
     <Block Type='Brick' X='2012' Y='250' />
     <Block Type='Brick' X='2036' Y='250' />
     <Block Type='Brick' X='2060' Y='250' />
-
-    
-    
+       
     <Item Type="Coin" X="2160" Y="202" />
     <Item Type="Coin" X="2196" Y="202" />
     <Item Type="Coin" X="2232" Y="202" />
@@ -154,7 +153,7 @@
     
     
     //Base Block------------------------------------------------------------------------------------------
-    <Block Type='MiddleGreenFloor' X='0' Y='696' />
+  <Block Type='MiddleGreenFloor' X='0' Y='696' />
   <Block Type='MiddleGreenFloor' X='0' Y='672' />
   <Block Type='MiddleGreenFloor' X='24' Y='696' />
   <Block Type='MiddleGreenFloor' X='24' Y='672' />
@@ -164,7 +163,6 @@
   <Block Type='MiddleGreenFloor' X='72' Y='672' />
   <Block Type='MiddleGreenFloor' X='96' Y='696' />
   <Block Type='MiddleGreenFloor' X='96' Y='672' />
-    <Block Type='MiddleGreenFloor' X='96' Y='648' />
   <Block Type='MiddleGreenFloor' X='120' Y='696' />
   <Block Type='MiddleGreenFloor' X='120' Y='672' />
   <Block Type='MiddleGreenFloor' X='144' Y='696' />
@@ -541,8 +539,7 @@
   <Block Type='CastleBlock' X='1176' Y='528' />
   <Block Type='CastleBlock' X='1152' Y='552' />
   <Block Type='CastleBlock' X='1176' Y='552' />
-  <Block Type='CastleBlock' X='1152' Y='576' />
-  <Block Type='CastleBlock' X='1176' Y='576' />
+
   <Block Type='Door' X='1148' Y='576' />
     
   <Block Type='CastleBlock' X='2352' Y='0' />

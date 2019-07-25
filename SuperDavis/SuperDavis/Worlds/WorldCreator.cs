@@ -79,7 +79,8 @@ namespace SuperDavis.Worlds
             enemyDictionary = new Dictionary<String, Action<float, float>>
             {
                 { nameof(Goomba), (x, y) => world.AddObject(new Goomba(new Vector2(x, y), FacingDirection.Left))},
-                { nameof(Koopa), (x, y) => world.AddObject(new Koopa(new Vector2(x, y))) }
+                { nameof(Koopa), (x, y) => world.AddObject(new Koopa(new Vector2(x, y))) },
+                { nameof(Julian), (x, y) => world.AddObject(new Julian(new Vector2(x, y))) }
             };
         }
 

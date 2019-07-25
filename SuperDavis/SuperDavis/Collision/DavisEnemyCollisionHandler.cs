@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interfaces;
+using SuperDavis.Physics;
 using SuperDavis.Variables;
 using static SuperDavis.Collision.CollisionDetection;
 
@@ -22,7 +23,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag)
+                    if (davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) )
                     {
                         davis.DavisDeath();
                         world.HUD.lives--;

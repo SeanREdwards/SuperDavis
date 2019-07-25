@@ -29,6 +29,10 @@ namespace SuperDavis.LvlManager
             IsEmpty = false;
             this.checkPoint = levelName;
             world = worldCreator.CreateWorld(levelName, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+            if (game1.HUD.CharacterSelect == 2)
+                world.Characters.DavisToWoody();
+            else if (game1.HUD.CharacterSelect == 3)
+                world.Characters.DavisToBat();
             return world;
         }
         public IWorld LoadEmpty()
@@ -48,6 +52,11 @@ namespace SuperDavis.LvlManager
                 world = worldCreator.CreateWorld(checkPoint, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
             else
                 world = worldCreator.CreateWorld("boss-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+
+            if (game1.HUD.CharacterSelect == 2)
+                world.Characters.DavisToWoody();
+            else if (game1.HUD.CharacterSelect == 3)
+                world.Characters.DavisToBat();
             world.HUD.time = Variables.Variable.time;
             return world;
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Item;
+using System;
 
 namespace SuperDavis.Command
 {
@@ -20,18 +21,19 @@ namespace SuperDavis.Command
             {
                 var count = davis.DavisProjectile.Count;
                 davis.DavisProjectile.Clear();
+                Random random = new Random();
                 for (int i = count; i > 0; i--)
-                {
+                {                    
                     switch (davis.DavisStatus)
-                    {
+                    {                                           
                         case (DavisStatus.Davis):
-                            davis.DavisProjectile.Add(new DavisProjectile((davis.Location + new Vector2(0, 30f)), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new DavisProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
                             break;
                         case (DavisStatus.Woody):
-                            davis.DavisProjectile.Add(new WoodyProjectile((davis.Location + new Vector2(0, 30f)), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new WoodyProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
                             break;
                         case (DavisStatus.Bat):
-                            davis.DavisProjectile.Add(new BatProjectile((davis.Location + new Vector2(0, 30f)), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new BatProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
                             break;
                     }
                 }

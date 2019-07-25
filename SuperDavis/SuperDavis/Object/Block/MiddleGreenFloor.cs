@@ -25,7 +25,7 @@ namespace SuperDavis.Object.Block
 
             //Re-use of activatedBlockStateMachine since floor ultimately functions like an activated block.
 
-            sprite = ItemSpriteFactory.Instance.CreateMiddleGreenFloor();
+            sprite = ItemSpriteFactory.Instance.CreateBrickBlock();
 
             //Hitbox size for all green floor tiles is same size
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);

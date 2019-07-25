@@ -1,4 +1,5 @@
 ﻿using SuperDavis.Interfaces;
+using SuperDavis.Physics;
 
 namespace SuperDavis.Command
 {
@@ -12,7 +13,8 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            davis.DavisSpecialAttack();
+            if(!(davis.PhysicsState is FlyingKneeState))
+                davis.DavisSpecialAttack();
         }
     }
 }

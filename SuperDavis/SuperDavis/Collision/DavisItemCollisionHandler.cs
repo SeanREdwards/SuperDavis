@@ -38,6 +38,11 @@ namespace SuperDavis.Collision
                     world.HUD.score += 50;
                     Sounds.Instance.PlayItemPickUp();
                 }
+                else if (item is Key)
+                {
+                    world.HUD.score += 150;
+                    Sounds.Instance.PlayItemPickUp();
+                }
                 world.ObjectToRemove.Add(item);
             }
         }
