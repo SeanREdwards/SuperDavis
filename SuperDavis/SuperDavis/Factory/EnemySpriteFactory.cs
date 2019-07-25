@@ -97,5 +97,65 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+
+        public ISprite CreateJulianLeftStatic()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianRightStatic()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianWalkLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianWalkRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianShootLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianShootRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianLeftJump()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianRightJump()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianPowerPunchsOneLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianPowerPunchsOneRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianMegaAttackLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianMegaAttackRight()
+        {
+            return Create(GetMethodName());
+        }
     }
 }

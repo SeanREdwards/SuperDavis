@@ -138,6 +138,11 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateKey()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateMiddleGreenFloor()
         {
             return Create(GetMethodName());
@@ -153,5 +158,6 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+
     }
 }

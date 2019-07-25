@@ -357,5 +357,47 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 1.5
+  },
+
+  "CreateKey": {
+    "TextureName": "Item/KeySprite",
+    "SourceFrames": [
+      {
+        "X": 87,
+        "Y": 69,
+        "Width": 82,
+        "Height": 123
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateBeerBottle": {
+    "TextureName": "Item/BeerBottle",
+    "SourceFrames": [
+      {
+        "X": 18,
+        "Y": 9,
+        "Width": 11,
+        "Height": 30
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateMilkJug": {
+    "TextureName": "Item/MilkJug",
+    "SourceFrames": [
+      {
+        "X": 17,
+        "Y": 12,
+        "Width": 13,
+        "Height": 23
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
   }
 }
