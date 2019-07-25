@@ -768,6 +768,142 @@
     "Scale": 1
   },
 
+  "CreateWoodyShootLeft": {
+    "TextureName": "WoodySprites/WoodyLeft_2",
+    "SourceFrames": [
+      {
+        "X": 744,
+        "Y": 5,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 661,
+        "Y": 5,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 579,
+        "Y": 6,
+        "Width": 37,
+        "Height": 74
+      },
+      {
+        "X": 503,
+        "Y": 7,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 407,
+        "Y": 9,
+        "Width": 55,
+        "Height": 74
+      },
+      {
+        "X": 335,
+        "Y": 9,
+        "Width": 47,
+        "Height": 74
+      },
+      {
+        "X": 225,
+        "Y": 9,
+        "Width": 49,
+        "Height": 74
+      },
+      {
+        "X": 165,
+        "Y": 10,
+        "Width": 61,
+        "Height": 74
+      },
+      {
+        "X": 93,
+        "Y": 9,
+        "Width": 55,
+        "Height": 74
+      },
+      {
+        "X": 19,
+        "Y": 9,
+        "Width": 52,
+        "Height": 74
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
+  "CreateWoodyShootRight": {
+    "TextureName": "WoodySprites/WoodyRight_2",
+    "SourceFrames": [
+      {
+        "X": 21,
+        "Y": 5,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 104,
+        "Y": 5,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 184,
+        "Y": 6,
+        "Width": 37,
+        "Height": 74
+      },
+      {
+        "X": 262,
+        "Y": 7,
+        "Width": 35,
+        "Height": 74
+      },
+      {
+        "X": 338,
+        "Y": 9,
+        "Width": 55,
+        "Height": 74
+      },
+      {
+        "X": 418,
+        "Y": 9,
+        "Width": 47,
+        "Height": 74
+      },
+      {
+        "X": 496,
+        "Y": 9,
+        "Width": 49,
+        "Height": 74
+      },
+      {
+        "X": 574,
+        "Y": 10,
+        "Width": 61,
+        "Height": 74
+      },
+      {
+        "X": 652,
+        "Y": 9,
+        "Width": 55,
+        "Height": 74
+      },
+      {
+        "X": 729,
+        "Y": 9,
+        "Width": 52,
+        "Height": 74
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1
+  },
+
   "CreateWoodyRunLeft": {
     "TextureName": "WoodySprites/WoodyLeft_0",
     "SourceFrames": [

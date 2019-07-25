@@ -376,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\Camera.cs" />
+    <None Include="Code Reviews\sprint6\Readability Review\SeanEdwards.md" />
     <Compile Include="Collision\ProjectileEnemyCollisionHandler.cs" />
     <Compile Include="Collision\ProjectileBlockCollisionHandler.cs" />
     <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
