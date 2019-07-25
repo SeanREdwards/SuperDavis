@@ -35,8 +35,22 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Time", new Vector2(850, 20), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(850, 60), Color.White);
             spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)lives, new Vector2(1050, 60), Color.White);
+            
             spriteBatch.End();
+
+            if (lives < 0)
+            {
+                DrawGameOverMenu(gameTime, font, spriteBatch);
+                spriteBatch.Begin();
+                spriteBatch.DrawString(font, "0", new Vector2(1050, 60), Color.White);
+                spriteBatch.End();
+            }
+            else
+            {
+                spriteBatch.Begin();
+                spriteBatch.DrawString(font, "" + (int)lives, new Vector2(1050, 60), Color.White);
+                spriteBatch.End();
+            }
         }
 
         public void DrawStartMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
@@ -46,6 +60,29 @@ namespace SuperDavis
             spriteBatch.End();
         }
 
+        public void DrawPauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+            PauseMenu(gameTime, font, spriteBatch);
+            spriteBatch.End();
+        }
+
+        public void PauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(font, "Game Paused!", new Vector2(500, 400), Color.White);
+        }
+
+        public void DrawGameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+            GameOverMenu(gameTime, font, spriteBatch);
+            spriteBatch.End();
+        }
+
+        public void GameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 400), Color.White);
+        }
         /* Helper Method */
         public void StartMenuContext(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {

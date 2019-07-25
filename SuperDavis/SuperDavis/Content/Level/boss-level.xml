@@ -3,6 +3,8 @@
   <Scenery Type="GhostHouseAnimated" X="0" Y="0" />
   //Character-----------------------------------------------------------------------
   <Character Type="Davis" X="48" Y="580" />
+  //Boss----------------------------------------------------------------------------
+  <Enemy Type ="Julian" X ="874" Y ="100" />
   //Wall sections-------------------------------------------------------------------
   <Block Type='EmptyBlock' X='-8' Y='0' />
   <Block Type='EmptyBlock' X='-8' Y='24' />
@@ -85,6 +87,8 @@
   <Block Type='CastleBlock' X='1176' Y='600' />
   <Block Type='CastleBlock' X='1152' Y='624' />
   <Block Type='CastleBlock' X='1176' Y='648' />
+  
+  
   //Floor Blocks---------------------------------------------------------------------
   <Block Type='Brick' X='0' Y='696' />
   <Block Type='Brick' X='0' Y='672' />
