@@ -30,10 +30,10 @@ namespace SuperDavis.Command
                             davis.DavisProjectile.Add(new DavisProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
                             break;
                         case (DavisStatus.Woody):
-                            davis.DavisProjectile.Add(new WoodyProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new WoodyProjectile((davis.Location + new Vector2(0, 15f + random.Next(10))), davis.FacingDirection));
                             break;
                         case (DavisStatus.Bat):
-                            davis.DavisProjectile.Add(new BatProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new BatProjectile((davis.Location + new Vector2(0, 20f + random.Next(10))), davis.FacingDirection));
                             break;
                     }
                 }

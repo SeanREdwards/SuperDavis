@@ -4,7 +4,7 @@
   //Character-----------------------------------------------------------------------
   <Character Type="Davis" X="48" Y="580" />
   //Boss----------------------------------------------------------------------------
-  <Enemy Type ="Julian" X ="874" Y ="100" />
+  <Enemy Type ="Julian" X ="650" Y ="520" />
   //Wall sections-------------------------------------------------------------------
   <Block Type='EmptyBlock' X='-8' Y='0' />
   <Block Type='EmptyBlock' X='-8' Y='24' />
@@ -87,7 +87,25 @@
   <Block Type='CastleBlock' X='1176' Y='600' />
   <Block Type='CastleBlock' X='1152' Y='624' />
   <Block Type='CastleBlock' X='1176' Y='648' />
-  
+
+  //Platform Blocks------------------------------------------------------------------
+  <Block Type='Brick' X='300' Y='535' />
+  <Block Type='Brick' X='324' Y='535' />
+  <Block Type='Brick' X='348' Y='535' />
+  <Block Type='Brick' X='372' Y='535' />
+  <Block Type='Brick' X='396' Y='535' />
+
+  <Block Type='Brick' X='600' Y='535' />
+  <Block Type='Brick' X='624' Y='535' />
+  <Block Type='Brick' X='648' Y='535' />
+  <Block Type='Brick' X='672' Y='535' />
+  <Block Type='Brick' X='696' Y='535' />
+
+  <Block Type='Brick' X='900' Y='535' />
+  <Block Type='Brick' X='924' Y='535' />
+  <Block Type='Brick' X='948' Y='535' />
+  <Block Type='Brick' X='972' Y='535' />
+  <Block Type='Brick' X='996' Y='535' />
   
   //Floor Blocks---------------------------------------------------------------------
   <Block Type='Brick' X='0' Y='696' />

@@ -1,5 +1,5 @@
 1. Description
-  This project is designed for Sprint 5 for CSE 3902. This sprint includes sound, HUD, the underworld level and transition types as well as ending items for the end of the level.
+  This project is designed for Sprint 6 for CSE 3902. This is our last sprint, which newly added features.
 
 2. Key Mappings
   For keyboard:
@@ -21,19 +21,11 @@
                       (Keys.M, Toggle mouse control),
                       (Keys.X, Shoot projectile),
                       (Keys.Z, Jump)
-  For gamepad:
-                      (Buttons.Start, Exit),
-                      (Buttons.Back, Reset),
-                      (Buttons.LeftThumbstickLeft, TurnLeft),
-                      (Buttons.LeftThumbstickRight, TurnRight),
-                      (Buttons.LeftThumbstickUp, Jump),
-                      (Buttons.LeftThumbstickDown, Crouch),
-                      (Buttons.X, DavisToDavis),
-                      (Buttons.Y, DavisToWoody),
-                      (Buttons.LeftTrigger, DavisToBat),
-                      (Buttons.RightTrigger, DavisDeath),
-                      (Buttons.A, DavisSpecialAttack),
-                      (Buttons.B, ToggleMouseControl) 
 
+  For start game menu:
+                    (Keys.Space, Start Game),
+                    (Keys.Left, Character select left),
+                    (Keys.Right, Character select left),
+                    (Keys.Q, Exit)
 3. Tag to Grade
-  Sprint5Refactoring
+  Sprint6Refactoring

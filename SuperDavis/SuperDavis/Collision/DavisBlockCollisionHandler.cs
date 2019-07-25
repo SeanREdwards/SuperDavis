@@ -83,7 +83,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!(block.IsHidden) && !(block is Door))
+                    if (!(block.IsHidden) && !(block is Door) && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);

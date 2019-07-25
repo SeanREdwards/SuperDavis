@@ -176,21 +176,16 @@ namespace SuperDavis
                     (
                       (Keys.Q, new ExitCommand(this), new NullCommand(), false),
                       (Keys.R, new ResetCommand(World), new NullCommand(), false),
-                      (Keys.S, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.A, new DavisTurnLeftCommand(davis, World), new DavisStaticCommand(davis), true),
-                      (Keys.D, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.W, new DavisJumpCommand(davis),new DavisStaticCommand(davis), true),
                       (Keys.Y, new DavisToDavisCommand(davis),new NullCommand(), true),
                       (Keys.U, new DavisToWoodyCommand(davis),new NullCommand(), true),
                       (Keys.I, new DavisToBatCommand(davis),new NullCommand(), true),
                       (Keys.Left, new DavisTurnLeftCommand(davis, World), new DavisStaticCommand(davis), true),
                       (Keys.Right, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Up, new DavisJumpCommand(davis),new DavisStaticCommand(davis), true),
+                      (Keys.Down, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Z, new DavisJumpCommand(davis),new NullCommand(), true),
                       (Keys.X, new DavisShootBulletCommand(davis,World),new NullCommand(), false),
-                      (Keys.Down, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
-                      (Keys.O, new DavisDeathCommand(davis), new NullCommand(), true),
-                      (Keys.P, new DavisSpecialAttackCommand(davis), new NullCommand(), false),
+                      (Keys.C, new DavisSpecialAttackCommand(davis), new NullCommand(), false),
                       (Keys.M, new NullCommand(),new ToggleMouseControl(this), false)
                     )/*,
                     new GamepadController
@@ -221,9 +216,11 @@ namespace SuperDavis
                 (
                     (Keys.Space, new StartCommand(this), new NullCommand(), false),
                     (Keys.Left, new StartMenuLeftCommand(this), new NullCommand(), false),
-                    (Keys.Right, new StartMenuRightCommand(this), new NullCommand(), false)
+                    (Keys.Right, new StartMenuRightCommand(this), new NullCommand(), false),
+                    (Keys.Q, new ExitCommand(this), new NullCommand(), false)
+
                 )
-                
+
             };
         }
 

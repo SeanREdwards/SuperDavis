@@ -4,7 +4,7 @@ using System;
 
 namespace SuperDavis.Physics
 {
-    class FlyingKneeState : IGameObjectPhysics
+    class ShoryukenState : IGameObjectPhysics
     {
 
         private readonly IGameObject gameObject;
@@ -12,17 +12,17 @@ namespace SuperDavis.Physics
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
         private float velocityX;
-        public FlyingKneeState(IGameObject gameObjectClass)
+        public ShoryukenState(IGameObject gameObjectClass)
         {
-
+            
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 50f;
+                velocityX = 10f;
             else
-                velocityX = -50f;
+                velocityX = -10f;
 
-            Velocity = new Vector2(velocityX, 15f);
-            Acceleration = new Vector2(0.95f, 0.9f);
+            Velocity = new Vector2(velocityX, 80f);
+            Acceleration = new Vector2(1f, 0.85f);
             MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }
 

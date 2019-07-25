@@ -177,10 +177,18 @@ namespace SuperDavis.Object.Character
         public void DavisSpecialAttack()
         {
             DavisState.SpecialAttack();
-            if (DavisStatus == DavisStatus.Woody)
+            if (!(PhysicsState is FallState))
             {
-                if(!DeadFlag)
-                    PhysicsState = new FlyingKneeState(this);
+                if (DavisStatus == DavisStatus.Woody)
+                {
+                    if (!DeadFlag)
+                        PhysicsState = new FlyingKneeState(this);
+                }
+                if (DavisStatus == DavisStatus.Davis)
+                {
+                    if (!DeadFlag)
+                        PhysicsState = new ShoryukenState(this);
+                }
             }
         }
 

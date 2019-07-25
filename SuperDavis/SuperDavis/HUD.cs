@@ -4,6 +4,7 @@ using SuperDavis.Variables;
 using SuperDavis.Object.Character;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 
 namespace SuperDavis
 {
@@ -35,15 +36,11 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Time", new Vector2(850, 20), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(850, 60), Color.White);
             spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
-            
             spriteBatch.End();
 
             if (lives < 0)
             {
                 DrawGameOverMenu(gameTime, font, spriteBatch);
-                spriteBatch.Begin();
-                spriteBatch.DrawString(font, "0", new Vector2(1050, 60), Color.White);
-                spriteBatch.End();
             }
             else
             {
@@ -69,7 +66,19 @@ namespace SuperDavis
 
         public void PauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Game Paused!", new Vector2(500, 400), Color.White);
+            spriteBatch.DrawString(font, "Paused, Go grab some snacks kid", new Vector2(450, 400), Color.White);
+        }
+
+        public void DrawWinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Begin();
+            WinMenu(gameTime, font, spriteBatch);
+            spriteBatch.End();
+        }
+
+        public void WinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(font, "Well, You have made it!", new Vector2(500, 400), Color.White);
         }
 
         public void DrawGameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
@@ -81,7 +90,12 @@ namespace SuperDavis
 
         public void GameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 400), Color.White);
+            spriteBatch.GraphicsDevice.Clear(Color.Black);
+            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 300), Color.White);
+            spriteBatch.DrawString(font, "COME ON! YOU SUCKKKKKKKK", new Vector2(380, 350), Color.White);
+            Sounds.Instance.MusicInstance.IsLooped = false;
+            Sounds.Instance.MusicInstance.Pause();
+
         }
         /* Helper Method */
         public void StartMenuContext(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
