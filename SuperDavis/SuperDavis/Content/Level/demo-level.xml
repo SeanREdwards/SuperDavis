@@ -9,7 +9,7 @@
     
   	//Background----------------------------------------------------------------------
   	<Scenery Type="Background" X="0" Y="0" />
-    <Scenery Type="GhostHouseAnimated" X="1200" Y="0" />
+    <Scenery Type="Background" X="1200" Y="0" />
   	
     
   	//Character-----------------------------------------------------------------------
@@ -19,7 +19,7 @@
     //Goomba spawn
     <Block Type ="GoombaSpawnPoint" X ="300" Y ="100"/>
     <Block Type ="GoombaSpawnPoint" X ="874" Y ="100"/>
-    <Enemy Type ="Julian" X ="874" Y ="100" />
+    <!--<Enemy Type ="Julian" X ="874" Y ="100" />-->
     
     //Block Section 1
     <Block Type='Brick' X='252' Y='400' />
@@ -135,120 +135,104 @@
     <Block Type='Brick' X='2012' Y='550' />
     <Block Type='Brick' X='2036' Y='550' />
     <Block Type='Brick' X='2060' Y='550' />
-
-    //Boss Section-----------------------------------------------------------------------
-  
-    <!--<Block Type='Brick' X='2700' Y='550' />
-    <Block Type='Brick' X='2724' Y='550' />
-    <Block Type='Brick' X='2748' Y='550' />
-    <Block Type='Brick' X='2772' Y='550' />
-    <Block Type='Brick' X='2796' Y='550' />
-    <Enemy Type="Koopa" X="3000" Y="624" />
-    <Block Type='Brick' X='3200' Y='550' />
-    <Block Type='Brick' X='3224' Y='550' />
-    <Block Type='Brick' X='3248' Y='550' />
-    <Block Type='Brick' X='3272' Y='550' />
-    <Block Type='Brick' X='3296' Y='550' />-->
     
-    
-    
-    //Base Block------------------------------------------------------------------------------------------
-  <Block Type='MiddleGrassBlock' X='0' Y='696' />
-  <Block Type='MiddleGrassBlock' X='0' Y='672' />
-  <Block Type='MiddleGrassBlock' X='24' Y='696' />
-  <Block Type='MiddleGrassBlock' X='24' Y='672' />
-  <Block Type='MiddleGrassBlock' X='48' Y='696' />
-  <Block Type='MiddleGrassBlock' X='48' Y='672' />
-  <Block Type='MiddleGrassBlock' X='72' Y='696' />
-  <Block Type='MiddleGrassBlock' X='72' Y='672' />
-  <Block Type='MiddleGrassBlock' X='96' Y='696' />
-  <Block Type='MiddleGrassBlock' X='96' Y='672' />
-  <Block Type='MiddleGrassBlock' X='120' Y='696' />
-  <Block Type='MiddleGrassBlock' X='120' Y='672' />
-  <Block Type='MiddleGrassBlock' X='144' Y='696' />
-  <Block Type='MiddleGrassBlock' X='144' Y='672' />
-  <Block Type='MiddleGrassBlock' X='168' Y='696' />
-  <Block Type='MiddleGrassBlock' X='168' Y='672' />
-  <Block Type='MiddleGrassBlock' X='192' Y='696' />
-  <Block Type='MiddleGrassBlock' X='192' Y='672' />
-  <Block Type='MiddleGrassBlock' X='216' Y='696' />
-  <Block Type='MiddleGrassBlock' X='216' Y='672' />
-  <Block Type='MiddleGrassBlock' X='240' Y='696' />
-  <Block Type='MiddleGrassBlock' X='240' Y='672' />
-  <Block Type='MiddleGrassBlock' X='264' Y='696' />
-  <Block Type='MiddleGrassBlock' X='264' Y='672' />
-  <Block Type='MiddleGrassBlock' X='288' Y='696' />
-  <Block Type='MiddleGrassBlock' X='288' Y='672' />
-  <Block Type='MiddleGrassBlock' X='312' Y='696' />
-  <Block Type='MiddleGrassBlock' X='312' Y='672' />
-  <Block Type='MiddleGrassBlock' X='336' Y='696' />
-  <Block Type='MiddleGrassBlock' X='336' Y='672' />
-  <Block Type='MiddleGrassBlock' X='360' Y='696' />
-  <Block Type='MiddleGrassBlock' X='360' Y='672' />
-  <Block Type='MiddleGrassBlock' X='384' Y='696' />
-  <Block Type='MiddleGrassBlock' X='384' Y='672' />
-  <Block Type='MiddleGrassBlock' X='408' Y='696' />
-  <Block Type='MiddleGrassBlock' X='408' Y='672' />
-  <Block Type='MiddleGrassBlock' X='432' Y='696' />
-  <Block Type='MiddleGrassBlock' X='432' Y='672' />
-  <Block Type='MiddleGrassBlock' X='456' Y='696' />
-  <Block Type='MiddleGrassBlock' X='456' Y='672' />
-  <Block Type='MiddleGrassBlock' X='480' Y='696' />
-  <Block Type='MiddleGrassBlock' X='480' Y='672' />
-  <Block Type='MiddleGrassBlock' X='504' Y='696' />
-  <Block Type='MiddleGrassBlock' X='504' Y='672' />
-  <Block Type='MiddleGrassBlock' X='528' Y='696' />
-  <Block Type='MiddleGrassBlock' X='528' Y='672' />
-  <Block Type='MiddleGrassBlock' X='552' Y='696' />
-  <Block Type='MiddleGrassBlock' X='552' Y='672' />
-  <Block Type='MiddleGrassBlock' X='576' Y='696' />
-  <Block Type='MiddleGrassBlock' X='576' Y='672' />
-  <Block Type='MiddleGrassBlock' X='600' Y='696' />
-  <Block Type='MiddleGrassBlock' X='600' Y='672' />
-  <Block Type='MiddleGrassBlock' X='624' Y='696' />
-  <Block Type='MiddleGrassBlock' X='624' Y='672' />
-  <Block Type='MiddleGrassBlock' X='648' Y='696' />
-  <Block Type='MiddleGrassBlock' X='648' Y='672' />
-  <Block Type='MiddleGrassBlock' X='672' Y='696' />
-  <Block Type='MiddleGrassBlock' X='672' Y='672' />
-  <Block Type='MiddleGrassBlock' X='696' Y='696' />
-  <Block Type='MiddleGrassBlock' X='696' Y='672' />
-  <Block Type='MiddleGrassBlock' X='720' Y='696' />
-  <Block Type='MiddleGrassBlock' X='720' Y='672' />
-  <Block Type='MiddleGrassBlock' X='744' Y='696' />
-  <Block Type='MiddleGrassBlock' X='744' Y='672' />
-  <Block Type='MiddleGrassBlock' X='768' Y='696' />
-  <Block Type='MiddleGrassBlock' X='768' Y='672' />
-  <Block Type='MiddleGrassBlock' X='792' Y='696' />
-  <Block Type='MiddleGrassBlock' X='792' Y='672' />
-  <Block Type='MiddleGrassBlock' X='816' Y='696' />
-  <Block Type='MiddleGrassBlock' X='816' Y='672' />
-  <Block Type='MiddleGrassBlock' X='840' Y='696' />
-  <Block Type='MiddleGrassBlock' X='840' Y='672' />
-  <Block Type='MiddleGrassBlock' X='864' Y='696' />
-  <Block Type='MiddleGrassBlock' X='864' Y='672' />
-  <Block Type='MiddleGrassBlock' X='888' Y='696' />
-  <Block Type='MiddleGrassBlock' X='888' Y='672' />
-  <Block Type='MiddleGrassBlock' X='912' Y='696' />
-  <Block Type='MiddleGrassBlock' X='912' Y='672' />
-  <Block Type='MiddleGrassBlock' X='936' Y='696' />
-  <Block Type='MiddleGrassBlock' X='936' Y='672' />
-  <Block Type='MiddleGrassBlock' X='960' Y='696' />
-  <Block Type='MiddleGrassBlock' X='960' Y='672' />
-  <Block Type='MiddleGrassBlock' X='984' Y='696' />
-  <Block Type='MiddleGrassBlock' X='984' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1008' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1008' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1032' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1032' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1056' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1056' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1080' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1080' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1104' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1104' Y='672' />
-  <Block Type='MiddleGrassBlock' X='1128' Y='696' />
-  <Block Type='MiddleGrassBlock' X='1128' Y='672' />
+   //Base Block------------------------------------------------------------------------------------------
+  <Block Type='MiddleGreenFloor' X='0' Y='696' />
+  <Block Type='MiddleGreenFloor' X='0' Y='672' />
+  <Block Type='MiddleGreenFloor' X='24' Y='696' />
+  <Block Type='MiddleGreenFloor' X='24' Y='672' />
+  <Block Type='MiddleGreenFloor' X='48' Y='696' />
+  <Block Type='MiddleGreenFloor' X='48' Y='672' />
+  <Block Type='MiddleGreenFloor' X='72' Y='696' />
+  <Block Type='MiddleGreenFloor' X='72' Y='672' />
+  <Block Type='MiddleGreenFloor' X='96' Y='696' />
+  <Block Type='MiddleGreenFloor' X='96' Y='672' />
+  <Block Type='MiddleGreenFloor' X='120' Y='696' />
+  <Block Type='MiddleGreenFloor' X='120' Y='672' />
+  <Block Type='MiddleGreenFloor' X='144' Y='696' />
+  <Block Type='MiddleGreenFloor' X='144' Y='672' />
+  <Block Type='MiddleGreenFloor' X='168' Y='696' />
+  <Block Type='MiddleGreenFloor' X='168' Y='672' />
+  <Block Type='MiddleGreenFloor' X='192' Y='696' />
+  <Block Type='MiddleGreenFloor' X='192' Y='672' />
+  <Block Type='MiddleGreenFloor' X='216' Y='696' />
+  <Block Type='MiddleGreenFloor' X='216' Y='672' />
+  <Block Type='MiddleGreenFloor' X='240' Y='696' />
+  <Block Type='MiddleGreenFloor' X='240' Y='672' />
+  <Block Type='MiddleGreenFloor' X='264' Y='696' />
+  <Block Type='MiddleGreenFloor' X='264' Y='672' />
+  <Block Type='MiddleGreenFloor' X='288' Y='696' />
+  <Block Type='MiddleGreenFloor' X='288' Y='672' />
+  <Block Type='MiddleGreenFloor' X='312' Y='696' />
+  <Block Type='MiddleGreenFloor' X='312' Y='672' />
+  <Block Type='MiddleGreenFloor' X='336' Y='696' />
+  <Block Type='MiddleGreenFloor' X='336' Y='672' />
+  <Block Type='MiddleGreenFloor' X='360' Y='696' />
+  <Block Type='MiddleGreenFloor' X='360' Y='672' />
+  <Block Type='MiddleGreenFloor' X='384' Y='696' />
+  <Block Type='MiddleGreenFloor' X='384' Y='672' />
+  <Block Type='MiddleGreenFloor' X='408' Y='696' />
+  <Block Type='MiddleGreenFloor' X='408' Y='672' />
+  <Block Type='MiddleGreenFloor' X='432' Y='696' />
+  <Block Type='MiddleGreenFloor' X='432' Y='672' />
+  <Block Type='MiddleGreenFloor' X='456' Y='696' />
+  <Block Type='MiddleGreenFloor' X='456' Y='672' />
+  <Block Type='MiddleGreenFloor' X='480' Y='696' />
+  <Block Type='MiddleGreenFloor' X='480' Y='672' />
+  <Block Type='MiddleGreenFloor' X='504' Y='696' />
+  <Block Type='MiddleGreenFloor' X='504' Y='672' />
+  <Block Type='MiddleGreenFloor' X='528' Y='696' />
+  <Block Type='MiddleGreenFloor' X='528' Y='672' />
+  <Block Type='MiddleGreenFloor' X='552' Y='696' />
+  <Block Type='MiddleGreenFloor' X='552' Y='672' />
+  <Block Type='MiddleGreenFloor' X='576' Y='696' />
+  <Block Type='MiddleGreenFloor' X='576' Y='672' />
+  <Block Type='MiddleGreenFloor' X='600' Y='696' />
+  <Block Type='MiddleGreenFloor' X='600' Y='672' />
+  <Block Type='MiddleGreenFloor' X='624' Y='696' />
+  <Block Type='MiddleGreenFloor' X='624' Y='672' />
+  <Block Type='MiddleGreenFloor' X='648' Y='696' />
+  <Block Type='MiddleGreenFloor' X='648' Y='672' />
+  <Block Type='MiddleGreenFloor' X='672' Y='696' />
+  <Block Type='MiddleGreenFloor' X='672' Y='672' />
+  <Block Type='MiddleGreenFloor' X='696' Y='696' />
+  <Block Type='MiddleGreenFloor' X='696' Y='672' />
+  <Block Type='MiddleGreenFloor' X='720' Y='696' />
+  <Block Type='MiddleGreenFloor' X='720' Y='672' />
+  <Block Type='MiddleGreenFloor' X='744' Y='696' />
+  <Block Type='MiddleGreenFloor' X='744' Y='672' />
+  <Block Type='MiddleGreenFloor' X='768' Y='696' />
+  <Block Type='MiddleGreenFloor' X='768' Y='672' />
+  <Block Type='MiddleGreenFloor' X='792' Y='696' />
+  <Block Type='MiddleGreenFloor' X='792' Y='672' />
+  <Block Type='MiddleGreenFloor' X='816' Y='696' />
+  <Block Type='MiddleGreenFloor' X='816' Y='672' />
+  <Block Type='MiddleGreenFloor' X='840' Y='696' />
+  <Block Type='MiddleGreenFloor' X='840' Y='672' />
+  <Block Type='MiddleGreenFloor' X='864' Y='696' />
+  <Block Type='MiddleGreenFloor' X='864' Y='672' />
+  <Block Type='MiddleGreenFloor' X='888' Y='696' />
+  <Block Type='MiddleGreenFloor' X='888' Y='672' />
+  <Block Type='MiddleGreenFloor' X='912' Y='696' />
+  <Block Type='MiddleGreenFloor' X='912' Y='672' />
+  <Block Type='MiddleGreenFloor' X='936' Y='696' />
+  <Block Type='MiddleGreenFloor' X='936' Y='672' />
+  <Block Type='MiddleGreenFloor' X='960' Y='696' />
+  <Block Type='MiddleGreenFloor' X='960' Y='672' />
+  <Block Type='MiddleGreenFloor' X='984' Y='696' />
+  <Block Type='MiddleGreenFloor' X='984' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1008' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1008' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1032' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1032' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1056' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1056' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1080' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1080' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1104' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1104' Y='672' />
+  <Block Type='MiddleGreenFloor' X='1128' Y='696' />
+  <Block Type='MiddleGreenFloor' X='1128' Y='672' />
   <Block Type='MiddleCastleFloor' X='1152' Y='696' />
   <Block Type='LeftCastleFloor' X='1152' Y='672' />
   <Block Type='MiddleCastleFloor' X='1176' Y='696' />
@@ -353,116 +337,9 @@
   <Block Type='MiddleCastleFloor' X='2352' Y='672' />
   <Block Type='MiddleCastleFloor' X='2376' Y='696' />
   <Block Type='RightCastleFloor' X='2376' Y='672' />
-  <!--<Block Type='Brick' X='2400' Y='696' />
-  <Block Type='Brick' X='2400' Y='672' />
-  <Block Type='Brick' X='2424' Y='696' />
-  <Block Type='Brick' X='2424' Y='672' />
-  <Block Type='Brick' X='2448' Y='696' />
-  <Block Type='Brick' X='2448' Y='672' />
-  <Block Type='Brick' X='2472' Y='696' />
-  <Block Type='Brick' X='2472' Y='672' />
-  <Block Type='Brick' X='2496' Y='696' />
-  <Block Type='Brick' X='2496' Y='672' />
-  <Block Type='Brick' X='2520' Y='696' />
-  <Block Type='Brick' X='2520' Y='672' />
-  <Block Type='Brick' X='2544' Y='696' />
-  <Block Type='Brick' X='2544' Y='672' />
-  <Block Type='Brick' X='2568' Y='696' />
-  <Block Type='Brick' X='2568' Y='672' />
-  <Block Type='Brick' X='2592' Y='696' />
-  <Block Type='Brick' X='2592' Y='672' />
-  <Block Type='Brick' X='2616' Y='696' />
-  <Block Type='Brick' X='2616' Y='672' />
-  <Block Type='Brick' X='2640' Y='696' />
-  <Block Type='Brick' X='2640' Y='672' />
-  <Block Type='Brick' X='2664' Y='696' />
-  <Block Type='Brick' X='2664' Y='672' />
-  <Block Type='Brick' X='2688' Y='696' />
-  <Block Type='Brick' X='2688' Y='672' />
-  <Block Type='Brick' X='2712' Y='696' />
-  <Block Type='Brick' X='2712' Y='672' />
-  <Block Type='Brick' X='2736' Y='696' />
-  <Block Type='Brick' X='2736' Y='672' />
-  <Block Type='Brick' X='2760' Y='696' />
-  <Block Type='Brick' X='2760' Y='672' />
-  <Block Type='Brick' X='2784' Y='696' />
-  <Block Type='Brick' X='2784' Y='672' />
-  <Block Type='Brick' X='2808' Y='696' />
-  <Block Type='Brick' X='2808' Y='672' />
-  <Block Type='Brick' X='2832' Y='696' />
-  <Block Type='Brick' X='2832' Y='672' />
-  <Block Type='Brick' X='2856' Y='696' />
-  <Block Type='Brick' X='2856' Y='672' />
-  <Block Type='Brick' X='2880' Y='696' />
-  <Block Type='Brick' X='2880' Y='672' />
-  <Block Type='Brick' X='2904' Y='696' />
-  <Block Type='Brick' X='2904' Y='672' />
-  <Block Type='Brick' X='2928' Y='696' />
-  <Block Type='Brick' X='2928' Y='672' />
-  <Block Type='Brick' X='2952' Y='696' />
-  <Block Type='Brick' X='2952' Y='672' />
-  <Block Type='Brick' X='2976' Y='696' />
-  <Block Type='Brick' X='2976' Y='672' />
-  <Block Type='Brick' X='3000' Y='696' />
-  <Block Type='Brick' X='3000' Y='672' />
-  <Block Type='Brick' X='3024' Y='696' />
-  <Block Type='Brick' X='3024' Y='672' />
-  <Block Type='Brick' X='3048' Y='696' />
-  <Block Type='Brick' X='3048' Y='672' />
-  <Block Type='Brick' X='3072' Y='696' />
-  <Block Type='Brick' X='3072' Y='672' />
-  <Block Type='Brick' X='3096' Y='696' />
-  <Block Type='Brick' X='3096' Y='672' />
-  <Block Type='Brick' X='3120' Y='696' />
-  <Block Type='Brick' X='3120' Y='672' />
-  <Block Type='Brick' X='3144' Y='696' />
-  <Block Type='Brick' X='3144' Y='672' />
-  <Block Type='Brick' X='3168' Y='696' />
-  <Block Type='Brick' X='3168' Y='672' />
-  <Block Type='Brick' X='3192' Y='696' />
-  <Block Type='Brick' X='3192' Y='672' />
-  <Block Type='Brick' X='3216' Y='696' />
-  <Block Type='Brick' X='3216' Y='672' />
-  <Block Type='Brick' X='3240' Y='696' />
-  <Block Type='Brick' X='3240' Y='672' />
-  <Block Type='Brick' X='3264' Y='696' />
-  <Block Type='Brick' X='3264' Y='672' />
-  <Block Type='Brick' X='3288' Y='696' />
-  <Block Type='Brick' X='3288' Y='672' />
-  <Block Type='Brick' X='3312' Y='696' />
-  <Block Type='Brick' X='3312' Y='672' />
-  <Block Type='Brick' X='3336' Y='696' />
-  <Block Type='Brick' X='3336' Y='672' />
-  <Block Type='Brick' X='3360' Y='696' />
-  <Block Type='Brick' X='3360' Y='672' />
-  <Block Type='Brick' X='3384' Y='696' />
-  <Block Type='Brick' X='3384' Y='672' />
-  <Block Type='Brick' X='3408' Y='696' />
-  <Block Type='Brick' X='3408' Y='672' />
-  <Block Type='Brick' X='3432' Y='696' />
-  <Block Type='Brick' X='3432' Y='672' />
-  <Block Type='Brick' X='3456' Y='696' />
-  <Block Type='Brick' X='3456' Y='672' />
-  <Block Type='Brick' X='3480' Y='696' />
-  <Block Type='Brick' X='3480' Y='672' />
-  <Block Type='Brick' X='3504' Y='696' />
-  <Block Type='Brick' X='3504' Y='672' />
-  <Block Type='Brick' X='3528' Y='696' />
-  <Block Type='Brick' X='3528' Y='672' />
-  <Block Type='Brick' X='3552' Y='696' />
-  <Block Type='Brick' X='3552' Y='672' />
-  <Block Type='Brick' X='3576' Y='696' />
-  <Block Type='Brick' X='3576' Y='672' />-->
 
-
-
-
-
-
-
-
-    //Wall sections--------------------------------------------------------------------------
-<Block Type='EmptyBlock' X='-8' Y='0' />
+   //Wall sections--------------------------------------------------------------------------
+  <Block Type='EmptyBlock' X='-8' Y='0' />
   <Block Type='EmptyBlock' X='-8' Y='24' />
   <Block Type='EmptyBlock' X='-8' Y='48' />
   <Block Type='EmptyBlock' X='-8' Y='72' />
@@ -589,62 +466,5 @@
   <Block Type='CastleBlock' X='2352' Y='528' />
   <Block Type='CastleBlock' X='2376' Y='528' />
   <Block Type='LeftCastleCeiling' X='2352' Y='552' />
-  <Block Type='RightCastleCeiling' X='2376' Y='552' />
- <!-- <Block Type='CastleBlock' X='3552' Y='0' />
-  <Block Type='CastleBlock' X='3576' Y='0' />
-  <Block Type='CastleBlock' X='3552' Y='24' />
-  <Block Type='CastleBlock' X='3576' Y='24' />
-  <Block Type='CastleBlock' X='3552' Y='48' />
-  <Block Type='CastleBlock' X='3576' Y='48' />
-  <Block Type='CastleBlock' X='3552' Y='72' />
-  <Block Type='CastleBlock' X='3576' Y='72' />
-  <Block Type='CastleBlock' X='3552' Y='96' />
-  <Block Type='CastleBlock' X='3576' Y='96' />
-  <Block Type='CastleBlock' X='3552' Y='120' />
-  <Block Type='CastleBlock' X='3576' Y='120' />
-  <Block Type='CastleBlock' X='3552' Y='144' />
-  <Block Type='CastleBlock' X='3576' Y='144' />
-  <Block Type='CastleBlock' X='3552' Y='168' />
-  <Block Type='CastleBlock' X='3576' Y='168' />
-  <Block Type='CastleBlock' X='3552' Y='192' />
-  <Block Type='CastleBlock' X='3576' Y='192' />
-  <Block Type='CastleBlock' X='3552' Y='216' />
-  <Block Type='CastleBlock' X='3576' Y='216' />
-  <Block Type='CastleBlock' X='3552' Y='240' />
-  <Block Type='CastleBlock' X='3576' Y='240' />
-  <Block Type='CastleBlock' X='3552' Y='264' />
-  <Block Type='CastleBlock' X='3576' Y='264' />
-  <Block Type='CastleBlock' X='3552' Y='288' />
-  <Block Type='CastleBlock' X='3576' Y='288' />
-  <Block Type='CastleBlock' X='3552' Y='312' />
-  <Block Type='CastleBlock' X='3576' Y='312' />
-  <Block Type='CastleBlock' X='3552' Y='336' />
-  <Block Type='CastleBlock' X='3576' Y='336' />
-  <Block Type='CastleBlock' X='3552' Y='360' />
-  <Block Type='CastleBlock' X='3576' Y='360' />
-  <Block Type='CastleBlock' X='3552' Y='384' />
-  <Block Type='CastleBlock' X='3576' Y='384' />
-  <Block Type='CastleBlock' X='3552' Y='408' />
-  <Block Type='CastleBlock' X='3576' Y='408' />
-  <Block Type='CastleBlock' X='3552' Y='432' />
-  <Block Type='CastleBlock' X='3576' Y='432' />
-  <Block Type='CastleBlock' X='3552' Y='456' />
-  <Block Type='CastleBlock' X='3576' Y='456' />
-  <Block Type='CastleBlock' X='3552' Y='480' />
-  <Block Type='CastleBlock' X='3576' Y='480' />
-  <Block Type='CastleBlock' X='3552' Y='504' />
-  <Block Type='CastleBlock' X='3576' Y='504' />
-  <Block Type='CastleBlock' X='3552' Y='528' />
-  <Block Type='CastleBlock' X='3576' Y='528' />
-  <Block Type='CastleBlock' X='3552' Y='552' />
-  <Block Type='CastleBlock' X='3576' Y='552' />
-  <Block Type='CastleBlock' X='3552' Y='576' />
-  <Block Type='CastleBlock' X='3576' Y='576' />
-  <Block Type='CastleBlock' X='3552' Y='600' />
-  <Block Type='CastleBlock' X='3576' Y='600' />
-  <Block Type='CastleBlock' X='3552' Y='624' />
-  <Block Type='CastleBlock' X='3576' Y='624' />
-  <Block Type='CastleBlock' X='3552' Y='648' />
-  <Block Type='CastleBlock' X='3576' Y='648' />-->
-    
+  <Block Type='RightCastleCeiling' X='2376' Y='552' />    
 </Object>
