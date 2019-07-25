@@ -134,6 +134,9 @@
     <None Include="Content\BlockSprites\Doors.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BlockSprites\Grass.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Content.mgcb" />
     <None Include="Content\DavisSprites\DavisLeft_0.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -402,6 +405,7 @@
     <Compile Include="Object\Block\LeftCastleCeiling.cs" />
     <Compile Include="Object\Block\LeftCastleFloor.cs" />
     <Compile Include="Object\Block\MiddleCastleFloor.cs" />
+    <Compile Include="Object\Block\MiddleGrassBlock.cs" />
     <Compile Include="Object\Block\RightCastleCeiling.cs" />
     <Compile Include="Object\Block\RightCastleFloor.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />

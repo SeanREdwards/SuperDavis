@@ -147,6 +147,11 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateMiddleGrassBlock()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateBeerBottle()
         {
             return Create(GetMethodName());
