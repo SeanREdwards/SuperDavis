@@ -44,10 +44,10 @@ namespace SuperDavis.LvlManager
 
         public IWorld ResetToCheckPoint()
         {
-            if(checkPoint.Equals("demo-level"))
+            if(checkPoint.Equals("boss-level"))
                 world = worldCreator.CreateWorld(checkPoint, Variables.Variable.level11Width, Variables.Variable.level11Height, game1);
             else
-                world = worldCreator.CreateWorld("demo-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, game1);
+                world = worldCreator.CreateWorld("boss-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, game1);
             return world;
         }
     }

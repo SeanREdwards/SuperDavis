@@ -10,7 +10,7 @@
   	//Background----------------------------------------------------------------------
   	<Scenery Type="Background" X="0" Y="0" />
     <Scenery Type="Background" X="1200" Y="0" />
-  	<Scenery Type="GhostHouseAnimated" X="2400" Y="0" />
+  	
     
   	//Character-----------------------------------------------------------------------
   	<Character Type="Davis" X="48" Y="580" />
@@ -140,7 +140,7 @@
 
     //Boss Section-----------------------------------------------------------------------
   
-    <Block Type='Brick' X='2700' Y='550' />
+    <!--<Block Type='Brick' X='2700' Y='550' />
     <Block Type='Brick' X='2724' Y='550' />
     <Block Type='Brick' X='2748' Y='550' />
     <Block Type='Brick' X='2772' Y='550' />
@@ -150,7 +150,7 @@
     <Block Type='Brick' X='3224' Y='550' />
     <Block Type='Brick' X='3248' Y='550' />
     <Block Type='Brick' X='3272' Y='550' />
-    <Block Type='Brick' X='3296' Y='550' />
+    <Block Type='Brick' X='3296' Y='550' />-->
     
     
     
@@ -356,7 +356,7 @@
   <Block Type='MiddleGreenFloor' X='2352' Y='672' />
   <Block Type='MiddleGreenFloor' X='2376' Y='696' />
   <Block Type='MiddleGreenFloor' X='2376' Y='672' />
-  <Block Type='Brick' X='2400' Y='696' />
+  <!--<Block Type='Brick' X='2400' Y='696' />
   <Block Type='Brick' X='2400' Y='672' />
   <Block Type='Brick' X='2424' Y='696' />
   <Block Type='Brick' X='2424' Y='672' />
@@ -455,7 +455,7 @@
   <Block Type='Brick' X='3552' Y='696' />
   <Block Type='Brick' X='3552' Y='672' />
   <Block Type='Brick' X='3576' Y='696' />
-  <Block Type='Brick' X='3576' Y='672' />
+  <Block Type='Brick' X='3576' Y='672' />-->
 
 
 
@@ -590,7 +590,7 @@
   <Block Type='CastleBlock' X='2376' Y='528' />
   <Block Type='CastleBlock' X='2352' Y='552' />
   <Block Type='CastleBlock' X='2376' Y='552' />
-  <Block Type='CastleBlock' X='3552' Y='0' />
+ <!-- <Block Type='CastleBlock' X='3552' Y='0' />
   <Block Type='CastleBlock' X='3576' Y='0' />
   <Block Type='CastleBlock' X='3552' Y='24' />
   <Block Type='CastleBlock' X='3576' Y='24' />
@@ -645,6 +645,6 @@
   <Block Type='CastleBlock' X='3552' Y='624' />
   <Block Type='CastleBlock' X='3576' Y='624' />
   <Block Type='CastleBlock' X='3552' Y='648' />
-  <Block Type='CastleBlock' X='3576' Y='648' />
+  <Block Type='CastleBlock' X='3576' Y='648' />-->
     
 </Object>

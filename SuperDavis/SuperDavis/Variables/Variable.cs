@@ -9,9 +9,11 @@
 
         //Game1.cs string variables.
         public const string ContentDirectory = "Content";
-        public const string LevelOne = "demo-level.xml";
+        //public const string LevelOne = "demo-level.xml";
+        public const string LevelOne = "boss-level.xml";
         public const string UnderworldLevelOne = "underworld1-1.xml";
-        public const string DemoLevel = "demo-level.xml";
+        //public const string DemoLevel = "demo-level.xml";
+        public const string DemoLevel = "boss-level.xml";
 
         //Game1.cs reset distances.
         public const int FloorReset = -100;
