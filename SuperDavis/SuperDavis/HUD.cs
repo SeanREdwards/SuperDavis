@@ -4,6 +4,7 @@ using SuperDavis.Variables;
 using SuperDavis.Object.Character;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 
 namespace SuperDavis
 {
@@ -91,6 +92,9 @@ namespace SuperDavis
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
             spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 350), Color.White);
+            Sounds.Instance.MusicInstance.IsLooped = false;
+            Sounds.Instance.MusicInstance.Pause();
+
         }
         /* Helper Method */
         public void StartMenuContext(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
