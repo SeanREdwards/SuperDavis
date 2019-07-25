@@ -12,10 +12,16 @@ namespace SuperDavis.Collision
         {
             if (side != CollisionSide.None)
             {
-                //if collision is not on bottom
+                if (davis.PhysicsState is FlyingKneeState)
+                {
+                    enemy.TakeDamage();
+                    world.HUD.score += 100;
+                }
+
+                    //if collision is not on bottom
                 if (side == CollisionSide.Top)
                 {
-                    if (!enemy.Dead)
+                    if (!enemy.Dead && !davis.DeadFlag)
                     {
                         enemy.TakeDamage();
                         world.HUD.score += 100;
@@ -23,7 +29,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) )
+                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) )
                     {
                         davis.DavisDeath();
                         world.HUD.lives--;

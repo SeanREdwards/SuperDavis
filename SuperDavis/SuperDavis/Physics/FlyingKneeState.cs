@@ -14,14 +14,15 @@ namespace SuperDavis.Physics
         private float velocityX;
         public FlyingKneeState(IGameObject gameObjectClass)
         {
+
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 40f;
+                velocityX = 60f;
             else
-                velocityX = -40f;
+                velocityX = -60f;
 
             Velocity = new Vector2(velocityX, 10f);
-            Acceleration = new Vector2(1f, 0.9f);
+            Acceleration = new Vector2(0.95f, 0.9f);
             MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }
 
