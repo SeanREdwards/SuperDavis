@@ -4,15 +4,14 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisSpecialAttackRightState : IDavisState
+    class DavisShootBulletRightState : IDavisState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         private readonly IDavis davis;
         public ISprite Sprite { get; set; }
-        private int specialAttackTimer = 25;
 
-        public DavisSpecialAttackRightState(IDavis davis)
+        public DavisShootBulletRightState(IDavis davis)
         {
             this.davis = davis;
         }
@@ -21,6 +20,7 @@ namespace SuperDavis.State.DavisState
         {
             davis.DavisState = new DavisStaticRightState(davis);
         }
+
         public void Left()
         {
 
@@ -42,7 +42,6 @@ namespace SuperDavis.State.DavisState
         {
 
         }
-
         public void Death()
         {
             davis.DavisState = new DavisDeathRightState(davis);
@@ -50,20 +49,17 @@ namespace SuperDavis.State.DavisState
 
         public void SpecialAttack()
         {
-
+            davis.DavisState = new DavisSpecialAttackRightState(davis);
         }
 
         public void ShootBullet()
         {
 
         }
-
         public void Update(GameTime gameTime)
         {
             davis.Sprite.Update(gameTime);
-            if (specialAttackTimer == 0)
-                davis.DavisState = new DavisStaticRightState(davis);
-            specialAttackTimer--;
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

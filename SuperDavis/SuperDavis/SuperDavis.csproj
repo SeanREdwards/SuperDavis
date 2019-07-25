@@ -446,6 +446,8 @@
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\DavisState\DavisShootBulletRightState.cs" />
+    <Compile Include="State\DavisState\DavisShootBulletLeftState.cs" />
     <Compile Include="State\ItemBlockState\CoinBrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\DoorStateMachine .cs" />

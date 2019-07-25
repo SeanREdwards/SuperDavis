@@ -53,6 +53,10 @@ namespace SuperDavis.State.DavisState
 
         }
 
+        public void ShootBullet()
+        {
+
+        }
         public void Update(GameTime gameTime)
         {
             davis.Sprite.Update(gameTime);

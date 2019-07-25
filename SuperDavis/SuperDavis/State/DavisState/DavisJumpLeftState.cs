@@ -52,6 +52,10 @@ namespace SuperDavis.State.DavisState
             davis.DavisState = new DavisSpecialAttackLeftState(davis);
         }
 
+        public void ShootBullet()
+        {
+            davis.DavisState = new DavisShootBulletLeftState(davis);
+        }
         public void Update(GameTime gameTime)
         {
             davis.Sprite.Update(gameTime);

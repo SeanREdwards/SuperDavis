@@ -192,5 +192,10 @@ namespace SuperDavis.Object.Character
             }
         }
 
+        public void DavisShootBullet()
+        {
+            DavisState.ShootBullet();
+        }
+
     }
 }
