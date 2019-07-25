@@ -168,5 +168,8 @@ namespace SuperDavis.Object.Character
             DavisState.SpecialAttack();
         }
 
+        public void DavisShootBullet()
+        { }
+
     }
 }
