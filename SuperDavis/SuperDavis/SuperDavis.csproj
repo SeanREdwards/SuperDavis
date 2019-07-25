@@ -383,7 +383,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cameras\Camera.cs" />
-    <None Include="Code Reviews\sprint6\Readability Review\SeanEdwards.md" />
     <Compile Include="Collision\ProjectileEnemyCollisionHandler.cs" />
     <Compile Include="Collision\ProjectileBlockCollisionHandler.cs" />
     <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
@@ -406,6 +405,7 @@
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="LvlManager\Momento.cs" />
+    <Compile Include="Object\Block\DirtBlock.cs" />
     <Compile Include="Object\Block\Door.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />

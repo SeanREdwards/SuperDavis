@@ -203,6 +203,16 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateWoodyShootLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateWoodyShootRight()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateWoodyProjectileLeft()
         {
             return Create(GetMethodName());
@@ -377,6 +387,26 @@ namespace SuperDavis.Factory
         }
 
         public ISprite CreateBatRunRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatShootLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatShootRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatProjectileLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatProjectileRight()
         {
             return Create(GetMethodName());
         }

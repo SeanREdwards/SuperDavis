@@ -157,5 +157,15 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+
+        public ISprite CreateJulianDeadLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianDeadRight()
+        {
+            return Create(GetMethodName());
+        }
     }
 }

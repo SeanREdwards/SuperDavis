@@ -317,6 +317,20 @@
     "Scale": 1.5
   },
 
+  "CreateDirtBlock": {
+    "TextureName": "BlockSprites/Grass",
+    "SourceFrames": [
+      {
+        "X": 154,
+        "Y": 116,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
   "CreateMiddleCastleBlock": {
     "TextureName": "BlockSprites/Castle1",
     "SourceFrames": [

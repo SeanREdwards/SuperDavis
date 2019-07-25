@@ -881,6 +881,33 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 1.5
-  }
+  },
 
+  "CreateJulianDeadLeft": {
+    "TextureName": "EnemySprites/JulianLeft_1",
+    "SourceFrames": [
+      {
+        "X": 482,
+        "Y": 151,
+        "Width": 92,
+        "Height": 46
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateJulianDeadRight": {
+    "TextureName": "EnemySprites/JulianRight_1",
+    "SourceFrames": [
+      {
+        "X": 226,
+        "Y": 151,
+        "Width": 92,
+        "Height": 46
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  }
 }
