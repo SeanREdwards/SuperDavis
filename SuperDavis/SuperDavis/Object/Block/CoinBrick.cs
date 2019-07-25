@@ -8,17 +8,17 @@ namespace SuperDavis.Object.Block
 {
     class CoinBrick : IBlock
     {
-        public float Mass { get; set; }
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }
-        public BrickStateMachine BrickStateMachine;
+        public IGameObjectState BrickStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int bumpTimer = Variables.Variable.BumpTime;
-        public int CoinCounter = Variables.Variable.CoinBrickCounter;
+
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+
+        public int CoinCounter = 5;
         public CoinBrick(Vector2 location)
         {
             // initial state
@@ -33,19 +33,6 @@ namespace SuperDavis.Object.Block
         public void Update(GameTime gameTime)
         {
             BrickStateMachine.Update(gameTime);
-            if (IsBumped)
-            {
-                if (bumpTimer > Variables.Variable.BumpTimeHalf)
-                    Location += new Vector2(0, Variables.Variable.BumpShiftDown);
-                else if (bumpTimer > 0)
-                    Location += new Vector2(0, Variables.Variable.BumpShiftUp);
-                else
-                {
-                    bumpTimer = Variables.Variable.BumpTime;
-                    IsBumped = false;
-                }
-                bumpTimer--;
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -56,6 +43,11 @@ namespace SuperDavis.Object.Block
         public void SpecialState()
         {
             BrickStateMachine = new BrickStateMachine(true);
+        }
+
+        public void Bumped()
+        {
+            BrickStateMachine = new CoinBrickBumpStateMachine(false, this);
         }
 
     }

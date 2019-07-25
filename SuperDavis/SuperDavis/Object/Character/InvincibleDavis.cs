@@ -29,7 +29,7 @@ namespace SuperDavis.Object.Character
         public IDavisState DavisState { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         public IList<IProjectile> DavisProjectile { get; set; }
-
+        public bool DeadFlag { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
@@ -138,17 +138,6 @@ namespace SuperDavis.Object.Character
             DavisState.Land();
             PhysicsState = new StandingState(this);
         }
-
-        public void DavisSlide()
-        {
-            DavisState.Slide();
-        }
-
-        public void TakeDamage()
-        {
-
-        }
-
 
         public void DavisToDavis()
         {

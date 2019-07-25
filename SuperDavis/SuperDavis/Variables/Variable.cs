@@ -32,7 +32,7 @@
         public const int InvincibleTimer = 10;
 
         //Physics
-        public const float JumpVelocity = 75f;
+        public const float JumpVelocity = 85f;
         public const float JumpVelocityDecayRate = 0.8f;
         public const float JumpVelocityMin = 1f;
 
@@ -72,6 +72,7 @@
         public const float FRICTION = 5f;
         public const float DavisMass = 1f;
         public const float DavisJumpForce = 20f;
+        public const int DavisDeathTimer = 150;
         // for collision detection
         public const int offsetRange = 2;
 

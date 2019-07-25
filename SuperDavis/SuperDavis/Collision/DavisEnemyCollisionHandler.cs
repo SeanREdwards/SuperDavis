@@ -22,12 +22,10 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (davis.DavisStatus != DavisStatus.Invincible)
+                    if (davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag)
                     {
-                        davis.DavisState.Death();
+                        davis.DavisDeath();
                         world.HUD.lives--;
-                        world.HUD.time = Variable.time;
-                        world.ObjectToRemove.Add(davis);
                     }
                 }
             }

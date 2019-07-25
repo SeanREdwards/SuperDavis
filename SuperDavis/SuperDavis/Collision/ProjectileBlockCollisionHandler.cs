@@ -10,10 +10,11 @@ namespace SuperDavis.Collision
         private ProjectileBlockCollisionHandler() { }
         public static void HandleCollision(IProjectile projectile, IBlock block, CollisionSide side, IWorld world)
         {
-            if (!(block is EmptyBlock))
-            {
+
                 switch (side)
                 {
+                    case CollisionSide.Top:
+                    case CollisionSide.Bottom:
                     case CollisionSide.Left:
                     case CollisionSide.Right:
                         if (!(projectile.PhysicsState is NullPhysicsState))
@@ -22,7 +23,7 @@ namespace SuperDavis.Collision
                     case CollisionSide.None:
                         break;
                 }
-            }
+
         }
     }
 }

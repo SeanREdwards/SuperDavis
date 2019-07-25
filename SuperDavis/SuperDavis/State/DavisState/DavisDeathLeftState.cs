@@ -39,11 +39,6 @@ namespace SuperDavis.State.DavisState
 
         public void Land() { }
 
-        public void Slide()
-        {
-
-        }
-
         public void Death()
         {
             //Do Nothing

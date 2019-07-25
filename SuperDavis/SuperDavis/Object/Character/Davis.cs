@@ -5,6 +5,7 @@ using SuperDavis.Object.Item;
 using SuperDavis.Physics;
 using SuperDavis.Sound;
 using SuperDavis.State.DavisState;
+using SuperDavis.State.OtherState;
 using System;
 using System.Collections.Generic;
 
@@ -34,11 +35,13 @@ namespace SuperDavis.Object.Character
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }
-        public bool CollideOnSide { get; set; }
+
         public ISprite Sprite { get; set; }
+        public bool DeadFlag { get; set;}
 
         public Davis(Vector2 location)
         {
+            DeadFlag = false;
             PhysicsState = new FallState(this);
             //Instantiate character dictionary
             charDict = new CharacterDictionary();
@@ -56,10 +59,9 @@ namespace SuperDavis.Object.Character
             Location = location;
             DavisProjectile = new List<IProjectile>()
             {
-                (new BatProjectile(location,FacingDirection)),
-                (new BatProjectile(location,FacingDirection))
+                (new DavisProjectile(location,FacingDirection)),
+                (new DavisProjectile(location,FacingDirection))
             };
-            CollideOnSide = false;
         }
 
         public void Update(GameTime gameTime)
@@ -126,39 +128,50 @@ namespace SuperDavis.Object.Character
             PhysicsState = new StandingState(this);
         }
 
-        public void DavisSlide()
-        {
-            DavisState.Slide();
-        }
-
-        public void TakeDamage()
-        {
-            DavisState.Death();
-        }
-
-
         public void DavisToDavis()
         {
             DavisStatus = DavisStatus.Davis;
-            DavisState = new DavisStaticRightState(this);
+            DavisState.Static();
+            DavisProjectile.Clear();
+            DavisProjectile = new List<IProjectile>()
+            {
+                (new DavisProjectile(location,FacingDirection)),
+                (new DavisProjectile(location,FacingDirection))
+            };
         }
 
         public void DavisToWoody()
         {
             DavisStatus = DavisStatus.Woody;
-            DavisState = new DavisStaticRightState(this);
+            DavisState.Static();
+            DavisProjectile.Clear();
+            DavisProjectile = new List<IProjectile>()
+            {
+                (new WoodyProjectile(location,FacingDirection)),
+                (new WoodyProjectile(location,FacingDirection))
+            };
         }
 
         public void DavisToBat()
         {
             DavisStatus = DavisStatus.Bat;
-            DavisState = new DavisStaticRightState(this);
+            DavisState.Static();
+            DavisProjectile.Clear();
+            DavisProjectile = new List<IProjectile>()
+            {
+                (new BatProjectile(location,FacingDirection)),
+                (new BatProjectile(location,FacingDirection))
+            };
         }
 
         public void DavisDeath()
         {
-            DavisState.Death();
-            Sounds.Instance.Death.Play();
+            if (!DeadFlag)
+            {
+                DavisState.Death();
+                Sounds.Instance.Death.Play();
+                DeadFlag = true;
+            }
         }
 
         public void DavisSpecialAttack()

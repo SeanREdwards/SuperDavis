@@ -1,6 +1,7 @@
 ﻿using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Item;
+using SuperDavis.Sound;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -35,6 +36,7 @@ namespace SuperDavis.Collision
                 {
                     world.HUD.coins++;
                     world.HUD.score += 50;
+                    Sounds.Instance.PlayItemPickUp();
                 }
                 world.ObjectToRemove.Add(item);
             }

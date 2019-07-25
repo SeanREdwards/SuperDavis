@@ -342,7 +342,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateCastleDoorOpened": {
@@ -356,7 +356,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKey": {
@@ -370,7 +370,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 0.25
   },
 
   "CreateBeerBottle": {

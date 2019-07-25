@@ -1,31 +1,59 @@
-﻿using SuperDavis.Interfaces;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
+using SuperDavis.Interfaces;
+using SuperDavis.State.ItemStateMachine;
+using System;
 
 namespace SuperDavis.Object.Block
 {
-    class Door
+    class Door : IBlock
     {
-        private bool isClosed;
-        private bool isLocked;
-        ISprite doorSprite;
+        public float Mass { get; set; }
+        public bool IsBumped { get; set; }
+        public bool IsHidden { get; set; }
+        public Vector2 Location { get; set; }
+        public Rectangle HitBox { get; set; }
+        public IGameObjectPhysics PhysicsState { get; set; }
+        private ISprite block;
+        private DoorStateMachine doorStateMachine;
 
-        public Door()
+        public bool IsOpen { get; set; }
+
+        public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+
+        public Door(Vector2 location)
         {
-            isClosed = true;
-            isLocked = false;
-            doorSprite = ItemSpriteFactory.Instance.CreateCastleDoorClosed();
+            // initial state
+            IsOpen = false;
+            IsHidden = false;
+            Location = location;
+            block = ItemSpriteFactory.Instance.CreateCastleDoorOpened();
+            doorStateMachine = new DoorStateMachine(block);
+
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)block.Width, (int)block.Height);
         }
 
-        public void Open()
+        public void Update(GameTime gameTime)
         {
-            isClosed = false;
-            doorSprite = ItemSpriteFactory.Instance.CreateCastleDoorOpened();
+            doorStateMachine.Update(gameTime);
         }
 
-        public void Close()
+        public void Draw(SpriteBatch spriteBatch)
         {
-            isClosed = true;
-            doorSprite = ItemSpriteFactory.Instance.CreateCastleDoorClosed();
+            doorStateMachine.Draw(spriteBatch, Location);
+        }
+
+        public void SpecialState()
+        {
+            // No nothing for current sprint
+        }
+
+        public void OpenDoor()
+        {
+            IsOpen = true;
+            block = ItemSpriteFactory.Instance.CreateCastleDoorOpened();
+            doorStateMachine = new DoorStateMachine(block);
         }
     }
 }

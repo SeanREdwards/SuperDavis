@@ -17,17 +17,16 @@
     
     //Section 1-----------------------------------------------------------------------
     //Goomba spawn
-    <Block Type ="GoombaSpawnPoint" X ="300" Y ="300"/>
-    <Block Type ="GoombaSpawnPoint" X ="874" Y ="300"/>
+    <Block Type ="GoombaSpawnPoint" X ="300" Y ="100"/>
+    <Block Type ="GoombaSpawnPoint" X ="874" Y ="100"/>
     
     //Block Section 1
-    <Block Type='EmptyBlock' X='228' Y='376' />
     <Block Type='Brick' X='252' Y='400' />
     <Block Type='Brick' X='276' Y='400' />
-    <Block Type='Brick' X='300' Y='400' />
+    <Block Type='CoinBrick' X='300' Y='400' />
     <Block Type='Brick' X='324' Y='400' />
     <Block Type='Brick' X='348' Y='400' />
-    <Block Type='EmptyBlock' X='372' Y='376' />
+
     <Block Type='MushroomBlock' X='300' Y='550' />
 
     //Block Section 2
@@ -68,7 +67,7 @@
     <Block Type='Brick' X='1400' Y='250' />
     <Block Type='Brick' X='1300' Y='250' />
     //This is for the "key"
-    <Item Type="Coin" X="1300" Y="202" />
+    <Item Type="Key" X="1300" Y="212" />
     <Block Type="Pipe" X="1500" Y="624" />
 
     <Item Type="Coin" X="1548" Y="624" />
@@ -542,6 +541,10 @@
   <Block Type='CastleBlock' X='1176' Y='528' />
   <Block Type='CastleBlock' X='1152' Y='552' />
   <Block Type='CastleBlock' X='1176' Y='552' />
+  <Block Type='CastleBlock' X='1152' Y='576' />
+  <Block Type='CastleBlock' X='1176' Y='576' />
+  <Block Type='Door' X='1148' Y='576' />
+    
   <Block Type='CastleBlock' X='2352' Y='0' />
   <Block Type='CastleBlock' X='2376' Y='0' />
   <Block Type='CastleBlock' X='2352' Y='24' />

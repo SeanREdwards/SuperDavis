@@ -48,6 +48,7 @@ namespace SuperDavis.LvlManager
                 world = worldCreator.CreateWorld(checkPoint, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
             else
                 world = worldCreator.CreateWorld("boss-level.xml", Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+            world.HUD.time = Variables.Variable.time;
             return world;
         }
     }

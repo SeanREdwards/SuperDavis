@@ -24,7 +24,7 @@ namespace SuperDavis.Collision
                         CoinBrick coinBrick = (CoinBrick)block;
                         if (coinBrick.CoinCounter > 0)
                         {
-                            world.AddObject(new Coin(new Vector2(block.Location.X, block.Location.Y - 40)));
+                            world.AddObject(new Coin(new Vector2(block.Location.X, block.Location.Y - 45)));
                             coinBrick.CoinCounter--;
                             coinBrick.IsBumped = true;
                         }
@@ -35,23 +35,14 @@ namespace SuperDavis.Collision
                     }
                     else if (block is Brick)
                     {
-                        if (davis.DavisStatus != DavisStatus.Davis)
-                        {
-                            block.SpecialState();
-                            world.ObjectToRemove.Add(block);
-                            world.HUD.score += 50;
-                        }
-                        else
-                        {
-                            var brick = (Brick)block;
-                            brick.Bumped();
-                        }
+                        var brick = (Brick)block;
+                        brick.Bumped();
                     }
                     else if (block is MushroomBlock)
                     {
                         if (!block.IsBumped)
                         {
-                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 10)));
+                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 25)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -60,7 +51,7 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 10)));
+                            world.AddObject(new Mushroom(new Vector2(block.Location.X, block.Location.Y - 25)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -69,7 +60,7 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.AddObject(new Star(new Vector2(block.Location.X, block.Location.Y - 10)));
+                            world.AddObject(new Star(new Vector2(block.Location.X, block.Location.Y - 25)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
@@ -78,43 +69,40 @@ namespace SuperDavis.Collision
                     {
                         if (!block.IsBumped)
                         {
-                            world.AddObject(new Flower(new Vector2(block.Location.X, block.Location.Y - 10)));
+                            world.AddObject(new Flower(new Vector2(block.Location.X, block.Location.Y - 30)));
                             block.SpecialState();
                             block.IsBumped = true;
                         }
                     }
-                    if (!(block is EmptyBlock))
+                    if (!(block is EmptyBlock) && !(block is Door))
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
                         davis.PhysicsState = new FallState(davis);
-                        davis.CollideOnSide = false;
                     }
+
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!(block.IsHidden))
+                    if (!(block.IsHidden) && !(block is Door))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y - davis.HitBox.Height);
                     }
-                    davis.CollideOnSide = false;
                     break;
                 case CollisionSide.Left:
-                    if (!(block.IsHidden))
+                    if (!(block.IsHidden) && !(block is Door))
                     {
                         //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     }
-                    davis.CollideOnSide = true;
                     break;
                 case CollisionSide.Right:
-                    if (!(block.IsHidden))
+                    if (!(block.IsHidden) && !(block is Door))
                     {
                         //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     }
-                    davis.CollideOnSide = true;
                     break;
                 case CollisionSide.None:
                     break;

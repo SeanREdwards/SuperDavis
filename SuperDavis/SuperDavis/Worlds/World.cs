@@ -29,6 +29,7 @@ namespace SuperDavis.Worlds
 
         public float UNIT_SIZE = Variables.Variable.UnitPixelSize;
         public int WorldGridWidth, WorldGridHeight;
+        private int characterDeathTimer = Variables.Variable.DavisDeathTimer;
 
         private readonly Game1 game;
         public HUD HUD { get; set; }
@@ -70,6 +71,7 @@ namespace SuperDavis.Worlds
             foreach (IBackground background in Backgrounds)
                 background.Update(gameTime);
             Characters.Update(gameTime);
+            CheckCharacterDeath();
             foreach (IItem item in Items)
                 item.Update(gameTime);
             foreach (IBlock block in Blocks)
@@ -81,7 +83,20 @@ namespace SuperDavis.Worlds
                 {
                     var davis = Characters;
                     if (davis.DavisProjectile.Count < 3)
-                        davis.DavisProjectile.Add(new BatProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                        switch (davis.DavisStatus)
+                        {
+                            case (DavisStatus.Davis):
+                                davis.DavisProjectile.Add(new DavisProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            case (DavisStatus.Woody):
+                                davis.DavisProjectile.Add(new WoodyProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            case (DavisStatus.Bat):
+                                davis.DavisProjectile.Add(new BatProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            default:
+                                break;
+                        }
                     ObjectToRemove.Add(projectile);
                 }
             }
@@ -223,6 +238,21 @@ namespace SuperDavis.Worlds
             return !(x >= 0 && x < WorldGridWidth && y >= 0 && y < WorldGridHeight);
         }
 
+        public void CheckCharacterDeath()
+        {
+            if (Characters.DeadFlag)
+            {
+                characterDeathTimer--;
+                if (characterDeathTimer == 0)
+                {
+                    ObjectToRemove.Add(Characters);
+                    characterDeathTimer = Variables.Variable.DavisDeathTimer;
+                }
+            }
+
+
+        }
+
         /* Enemy AI Helper Class */
         public void EnemyAI(IEnemy enemy)
         {
@@ -230,5 +260,7 @@ namespace SuperDavis.Worlds
             if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState) && !enemy.Dead)
                 enemy.Jump();
         }
+
+        
     }
 }

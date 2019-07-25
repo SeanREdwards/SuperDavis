@@ -45,10 +45,6 @@ namespace SuperDavis.State.DavisState
 
         }
 
-        public void Slide()
-        {
-
-        }
 
         public void Death()
         {

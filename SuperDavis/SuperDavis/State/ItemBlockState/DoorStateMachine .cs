@@ -1,18 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class BatProjectileStateMachine : IGameObjectState
+    class DoorStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public BatProjectileStateMachine(ISprite sprite, IProjectile projectile)
+        public DoorStateMachine(ISprite sprite)
         {
-            Sprite = sprite;
+            this.Sprite = sprite;
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

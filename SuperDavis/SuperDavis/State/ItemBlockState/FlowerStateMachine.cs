@@ -13,7 +13,7 @@ namespace SuperDavis.State.ItemStateMachine
 
         public FlowerStateMachine()
         {
-            Sprite = ItemSpriteFactory.Instance.CreateFireFlower();
+            Sprite = ItemSpriteFactory.Instance.CreateBeerBottle();
             Width = Sprite.Width;
             Height = Sprite.Height;
         }

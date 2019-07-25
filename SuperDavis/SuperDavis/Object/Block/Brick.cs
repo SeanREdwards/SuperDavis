@@ -8,7 +8,6 @@ namespace SuperDavis.Object.Block
 {
     class Brick : IBlock
     {
-        public float Mass { get; set; }
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
         public Vector2 Location { get; set; }

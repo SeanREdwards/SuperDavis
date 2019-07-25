@@ -42,7 +42,10 @@ namespace SuperDavis.Sound
             readyJump = true;
         }
 
-
+        public void PlayItemPickUp()
+        {
+            ItemPickup.Play();
+        }
 
     }
 }

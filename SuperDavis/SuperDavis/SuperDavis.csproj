@@ -381,7 +381,6 @@
     <Compile Include="Command\StartMenuRightCommand.cs" />
     <Compile Include="Command\StartMenuLeftCommand.cs" />
     <Compile Include="Command\StartCommand.cs" />
-    <Compile Include="Command\MushroomBlockBumpCommand.cs" />
     <Compile Include="Command\DavisStaticCommand.cs" />
     <Compile Include="Command\NullCommand.cs" />
     <Compile Include="Command\ToggleMouseControl.cs" />
@@ -407,10 +406,13 @@
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Object\GoombaSpawnPoint\GoombaSpawnPoint.cs" />
     <Compile Include="Object\Item\Key.cs" />
+    <Compile Include="Object\Projectile\WoodyProjectile.cs" />
+    <Compile Include="Object\Projectile\DavisProjectile.cs" />
     <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
     <Compile Include="Object\Scenery\Wall.cs" />
+    <Compile Include="Physics\DavisProjectilePhysicsState.cs" />
     <Compile Include="Physics\BatProjectilePhysicsState.cs" />
     <Compile Include="Physics\EnemyDeadState.cs" />
     <Compile Include="Physics\FlyingKneeState.cs" />
@@ -421,7 +423,9 @@
     <Compile Include="Physics\PhysicsManager.cs" />
     <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\ItemBlockState\CoinBrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\DoorStateMachine .cs" />
     <Compile Include="State\ItemBlockState\EmptyBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CastleBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
@@ -429,9 +433,10 @@
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
+    <Compile Include="State\OtherState\DavisRemoveState.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
-    <Compile Include="State\ProjectileState\BatProjectileExplodeStateMachine.cs" />
-    <Compile Include="State\ProjectileState\BatProjectileStateMachine.cs" />
+    <Compile Include="State\ProjectileState\ProjectileExplodeStateMachine.cs" />
+    <Compile Include="State\ProjectileState\ProjectileStateMachine.cs" />
     <Compile Include="Variables\Variable.cs" />
     <Compile Include="Worlds\WorldCreator.cs" />
     <Compile Include="Worlds\World.cs" />

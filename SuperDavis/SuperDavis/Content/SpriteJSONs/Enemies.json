@@ -362,7 +362,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 1.75
   },
 
   "CreateKoopaGreenShellAnimatedRight": {
@@ -394,7 +394,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 1.75
   },
 
   "CreateJulianLeftStatic": {

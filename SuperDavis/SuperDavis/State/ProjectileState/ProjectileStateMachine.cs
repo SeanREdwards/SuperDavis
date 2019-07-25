@@ -4,17 +4,14 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class BatProjectileExplodeStateMachine : IGameObjectState
+    class ProjectileStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
-        private IProjectile projectile;
-        private int timer = 15;
 
-        public BatProjectileExplodeStateMachine(ISprite sprite, IProjectile projectile)
+        public ProjectileStateMachine(ISprite sprite, IProjectile projectile)
         {
-            this.projectile = projectile;
             Sprite = sprite;
             Width = Sprite.Width;
             Height = Sprite.Height;
@@ -28,11 +25,6 @@ namespace SuperDavis.State.ItemStateMachine
         public void Update(GameTime gameTime)
         {
             Sprite.Update(gameTime);
-            if (timer == 0)
-            {
-                projectile.IsExploded = true;
-            }
-            timer--;
         }
     }
 }

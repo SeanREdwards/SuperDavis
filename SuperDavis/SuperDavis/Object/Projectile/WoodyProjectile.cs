@@ -8,7 +8,7 @@ using System;
 
 namespace SuperDavis.Object.Item
 {
-    class BatProjectile : IProjectile
+    class WoodyProjectile : IProjectile
     {
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
         private Vector2 location;
@@ -30,7 +30,7 @@ namespace SuperDavis.Object.Item
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
 
-        public BatProjectile(Vector2 location, FacingDirection facingDirection)
+        public WoodyProjectile(Vector2 location, FacingDirection facingDirection)
         {
             // initial state
             IsExploded = false;
@@ -38,9 +38,9 @@ namespace SuperDavis.Object.Item
             PhysicsState = new BatProjectilePhysicsState(this);
             Location = location;
             if (FacingDirection == FacingDirection.Right)
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
+                projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileRight();
             else
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
+                projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileLeft();
             BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite, this);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectileSprite.Width, (int)projectileSprite.Height);
         }
@@ -60,7 +60,10 @@ namespace SuperDavis.Object.Item
         public void Explode()
         {
             PhysicsState = new NullPhysicsState();
-            projectileSprite = DavisSpriteFactory.Instance.BatExplodeRight();
+            if (FacingDirection == FacingDirection.Right)
+                projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileExplodeRight();
+            else
+                projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileExplodeLeft();
             BatProjectileStateMachine = new ProjectileExplodeStateMachine(projectileSprite, this);
         }
     }

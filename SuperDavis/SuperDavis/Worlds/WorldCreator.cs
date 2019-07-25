@@ -45,7 +45,8 @@ namespace SuperDavis.Worlds
                 { nameof(Coin), (x, y) => world.AddObject(new Coin(new Vector2(x, y))) },
                 { nameof(Mushroom), (x, y) => world.AddObject(new Mushroom(new Vector2(x, y))) },
                 { nameof(YoshiEgg), (x, y) => world.AddObject(new YoshiEgg(new Vector2(x, y))) },
-                { nameof(Star), (x, y) => world.AddObject(new Star(new Vector2(x, y))) }
+                { nameof(Star), (x, y) => world.AddObject(new Star(new Vector2(x, y))) },
+                { nameof(Key), (x, y) => world.AddObject(new Key(new Vector2(x, y))) }
             };
         }
 
@@ -54,7 +55,7 @@ namespace SuperDavis.Worlds
             blockDictionary = new Dictionary<String, Action<float, float>>
             {
                 { nameof(HiddenBlock), (x, y) => world.AddObject(new HiddenBlock(new Vector2(x, y))) },
-                { nameof(ActivatedBlock), (x, y) => world.AddObject(new ActivatedBlock(new Vector2(x, y))) },
+                { nameof(Door), (x, y) => world.AddObject(new Door(new Vector2(x, y))) },
                 { nameof(MushroomBlock), (x, y) => world.AddObject(new MushroomBlock(new Vector2(x, y))) },
                 { nameof(CoinBlock), (x, y) => world.AddObject(new CoinBlock(new Vector2(x, y))) },
                 { nameof(StarBlock), (x, y) => world.AddObject(new StarBlock(new Vector2(x, y))) },
