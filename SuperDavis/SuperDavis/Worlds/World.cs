@@ -62,8 +62,6 @@ namespace SuperDavis.Worlds
             Backgrounds = new HashSet<IBackground>();
             ObjectToRemove = new HashSet<IGameObject>();
 
-            //Play Level Music
-            Sounds.Instance.MusicInstance.Play();
         }
 
         public void Update(GameTime gameTime)

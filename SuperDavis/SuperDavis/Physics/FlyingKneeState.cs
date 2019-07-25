@@ -16,11 +16,11 @@ namespace SuperDavis.Physics
         {
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 25f;
+                velocityX = 40f;
             else
-                velocityX = -25f;
+                velocityX = -40f;
 
-            Velocity = new Vector2(velocityX, 20f);
+            Velocity = new Vector2(velocityX, 10f);
             Acceleration = new Vector2(1f, 0.9f);
             MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }
@@ -29,10 +29,8 @@ namespace SuperDavis.Physics
         {
             gameObject.Location -= Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
             Velocity *= Acceleration;
-            System.Console.WriteLine(Velocity);
             if (Math.Abs(Velocity.Y - MaxVelocity.Y) < 1)
             {
-
                 Velocity = new Vector2(Velocity.X, 0);
                 gameObject.PhysicsState = new FallState(gameObject);
             }

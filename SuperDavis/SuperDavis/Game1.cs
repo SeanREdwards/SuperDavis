@@ -221,9 +221,11 @@ namespace SuperDavis
                 (
                     (Keys.Space, new StartCommand(this), new NullCommand(), false),
                     (Keys.Left, new StartMenuLeftCommand(this), new NullCommand(), false),
-                    (Keys.Right, new StartMenuRightCommand(this), new NullCommand(), false)
+                    (Keys.Right, new StartMenuRightCommand(this), new NullCommand(), false),
+                    (Keys.Q, new ExitCommand(this), new NullCommand(), false)
+
                 )
-                
+
             };
         }
 
