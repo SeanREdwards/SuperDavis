@@ -110,6 +110,17 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateDavisShootLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateDavisShootRight()
+        {
+            return Create(GetMethodName());
+        }
+
+
         /*Advanced Davis Sprites*/
         public ISprite CreateDavisSpecialAttackOneLeft()
         {
