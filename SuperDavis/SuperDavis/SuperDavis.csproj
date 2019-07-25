@@ -392,6 +392,7 @@
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="LvlManager\Momento.cs" />
+    <Compile Include="Object\Block\Door.cs" />
     <Compile Include="Object\Character\CharacterSelector.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
@@ -406,6 +407,7 @@
     <Compile Include="Object\Character\CharacterDictionary.cs" />
     <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Object\GoombaSpawnPoint\GoombaSpawnPoint.cs" />
+    <Compile Include="Object\Item\Key.cs" />
     <Compile Include="Object\Projectile\BatProjectile.cs" />
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
@@ -424,6 +426,7 @@
     <Compile Include="State\ItemBlockState\EmptyBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CastleBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\FlowerBlockStateMachine.cs" />
+    <Compile Include="State\ItemBlockState\KeyStateMachine.cs" />
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
