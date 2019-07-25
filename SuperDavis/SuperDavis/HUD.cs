@@ -40,9 +40,6 @@ namespace SuperDavis
             if (lives < 0)
             {
                 DrawGameOverMenu(gameTime, font, spriteBatch);
-                spriteBatch.Begin();
-                spriteBatch.DrawString(font, "0", new Vector2(1050, 60), Color.White);
-                spriteBatch.End();
             }
             else
             {
@@ -92,7 +89,8 @@ namespace SuperDavis
 
         public void GameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 400), Color.White);
+            spriteBatch.GraphicsDevice.Clear(Color.Black);
+            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 350), Color.White);
         }
         /* Helper Method */
         public void StartMenuContext(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
