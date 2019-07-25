@@ -88,6 +88,10 @@
         public const float CoinOffsetUp = 3f;
         public const float CoinOffsetDown = -3f;
 
+        public const int KeyTimer = 20;
+        public const float KeyOffsetUp = 3f;
+        public const float KeyOffsetDown = -3f;
+
         public const int FlowerTimer = 40;
         public const float FlowerOffsetDown = -0.35f;
 
