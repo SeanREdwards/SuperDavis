@@ -86,7 +86,6 @@ namespace SuperDavis
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
             if (!Momento.IsEmpty)
             {
                 camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
@@ -97,7 +96,7 @@ namespace SuperDavis
             }
             else
                 HUD.DrawMenu(gameTime, fontMenu, spriteBatch);
-            base.Draw(gameTime);
+                base.Draw(gameTime);
 
 
             //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
@@ -147,12 +146,6 @@ namespace SuperDavis
             //    System.Console.WriteLine("<Block Type='CastleBlock' X='3576' Y='" + i + "' />");
             //}
             //System.Console.WriteLine("******************");
-
-
-
-
-
-
         }
 
         /* Helper methods */

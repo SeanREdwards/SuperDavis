@@ -32,8 +32,8 @@ namespace SuperDavis
         public static void DrawMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
-            spriteBatch.DrawString(font, "Press Space To Start", new Vector2(50, 100), Color.White);
+            spriteBatch.DrawString(font, "SuperDavis", new Vector2(500, 300), Color.White);
+            spriteBatch.DrawString(font, "Press Space To Start", new Vector2(425, 400), Color.White);
             spriteBatch.End();
         }
     }
