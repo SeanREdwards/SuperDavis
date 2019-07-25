@@ -17,11 +17,11 @@ namespace SuperDavis.Physics
 
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 60f;
+                velocityX = 50f;
             else
-                velocityX = -60f;
+                velocityX = -50f;
 
-            Velocity = new Vector2(velocityX, 10f);
+            Velocity = new Vector2(velocityX, 15f);
             Acceleration = new Vector2(0.95f, 0.9f);
             MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }

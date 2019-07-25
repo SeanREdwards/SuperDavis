@@ -91,8 +91,8 @@ namespace SuperDavis
         public void GameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
-            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 350), Color.White);
-            spriteBatch.DrawString(font, "COME ON! YOU SUCKKKKKKKK", new Vector2(380, 400), Color.White);
+            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 300), Color.White);
+            spriteBatch.DrawString(font, "COME ON! YOU SUCKKKKKKKK", new Vector2(380, 350), Color.White);
             Sounds.Instance.MusicInstance.IsLooped = false;
             Sounds.Instance.MusicInstance.Pause();
 

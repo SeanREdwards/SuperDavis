@@ -35,7 +35,7 @@ namespace SuperDavis.Object.Item
             // initial state
             IsExploded = false;
             this.FacingDirection = facingDirection;
-            PhysicsState = new BatProjectilePhysicsState(this);
+            PhysicsState = new WoodyProjectilePhysicsState(this);
             Location = location;
             if (FacingDirection == FacingDirection.Right)
                 projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileRight();
