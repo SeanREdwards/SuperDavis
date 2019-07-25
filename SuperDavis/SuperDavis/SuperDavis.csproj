@@ -113,6 +113,9 @@
     <None Include="Content\BatSprites\BatRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\BatSprites\bat_f.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Content\BlockSprites\Blocks&amp;Pipes.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -148,6 +151,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\DavisSprites\DavisRight_2.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\DavisSprites\davis_f.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Davis\BatStaticLeft.xnb">
@@ -342,6 +348,9 @@
     <None Include="Content\WoodySprites\WoodyRight_2.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\WoodySprites\woody_f.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +390,7 @@
     <Compile Include="Interfaces\IGameObjectPhysics.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
     <Compile Include="LvlManager\Momento.cs" />
+    <Compile Include="Object\Character\CharacterSelector.cs" />
     <Compile Include="Object\Block\EmptyBlock.cs" />
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />

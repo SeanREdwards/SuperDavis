@@ -380,5 +380,21 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+
+        /*Character portrait avatars for character select.*/
+        public ISprite CreateDavisPortrait()
+        {
+            return Create(GetMethodName());
+        }
+        public ISprite CreateWoodyPortrait()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateBatPortrait()
+        {
+            return Create(GetMethodName());
+        }
+
     }
 }
