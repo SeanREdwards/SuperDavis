@@ -335,8 +335,8 @@
     "TextureName": "BlockSprites/Castle1",
     "SourceFrames": [
       {
-        "X": 103,
-        "Y": 53,
+        "X": 52,
+        "Y": 1,
         "Width": 16,
         "Height": 16
       }
@@ -349,8 +349,8 @@
     "TextureName": "BlockSprites/Castle1",
     "SourceFrames": [
       {
-        "X": 120,
-        "Y": 53,
+        "X": 69,
+        "Y": 1,
         "Width": 16,
         "Height": 16
       }
@@ -363,8 +363,36 @@
     "TextureName": "BlockSprites/Castle1",
     "SourceFrames": [
       {
-        "X": 137,
-        "Y": 53,
+        "X": 86,
+        "Y": 1,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateLeftCastleCeiling": {
+    "TextureName": "BlockSprites/Castle1",
+    "SourceFrames": [
+      {
+        "X": 52,
+        "Y": 35,
+        "Width": 16,
+        "Height": 16
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 1.5
+  },
+
+  "CreateRightCastleCeiling": {
+    "TextureName": "BlockSprites/Castle1",
+    "SourceFrames": [
+      {
+        "X": 86,
+        "Y": 35,
         "Width": 16,
         "Height": 16
       }

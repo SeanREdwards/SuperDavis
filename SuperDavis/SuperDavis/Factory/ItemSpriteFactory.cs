@@ -138,6 +138,15 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateRightCastleCeiling()
+        {
+            return Create(GetMethodName());
+        }
+        public ISprite CreateLeftCastleCeiling()
+        {
+            return Create(GetMethodName());
+        }
+
         public ISprite CreateBeerBottle()
         {
             return Create(GetMethodName());

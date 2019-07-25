@@ -396,6 +396,11 @@
     <Compile Include="Object\Block\CastleBlock.cs" />
     <Compile Include="Object\Block\CoinBrick.cs" />
     <Compile Include="Object\Block\FlowerBlock.cs" />
+    <Compile Include="Object\Block\LeftCastleCeiling.cs" />
+    <Compile Include="Object\Block\LeftCastleFloor.cs" />
+    <Compile Include="Object\Block\MiddleCastleFloor.cs" />
+    <Compile Include="Object\Block\RightCastleCeiling.cs" />
+    <Compile Include="Object\Block\RightCastleFloor.cs" />
     <Compile Include="Object\Block\StarBlock.cs" />
     <Compile Include="Object\Block\LeftGreenFloor.cs" />
     <Compile Include="Object\Block\MiddleGreenFloor.cs" />
