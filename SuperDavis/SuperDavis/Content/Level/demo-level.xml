@@ -3,15 +3,14 @@
     
     //Important Notes------------------------------------------------------------------
     //Level is 720 pixels high
-    //Level is 3600 pixels wide
+    //Level is 2400 pixels wide
     //Sections (or rooms) are 1200 pixels wide
-    //We have 3 sections
+    //We have 2 sections
     
   	//Background----------------------------------------------------------------------
   	<Scenery Type="Background" X="0" Y="0" />
     <Scenery Type="Background" X="1200" Y="0" />
   	
-    
   	//Character-----------------------------------------------------------------------
   	<Character Type="Davis" X="48" Y="580" />
     
@@ -19,26 +18,25 @@
     //Goomba spawn
     <Block Type ="GoombaSpawnPoint" X ="300" Y ="100"/>
     <Block Type ="GoombaSpawnPoint" X ="874" Y ="100"/>
-    <!--<Enemy Type ="Julian" X ="874" Y ="100" />-->
     
     //Block Section 1
-    <Block Type='Brick' X='252' Y='400' />
-    <Block Type='Brick' X='276' Y='400' />
-    <Block Type='CoinBrick' X='300' Y='400' />
-    <Block Type='Brick' X='324' Y='400' />
-    <Block Type='Brick' X='348' Y='400' />
+    <Block Type='Brick' X='252' Y='425' />
+    <Block Type='Brick' X='276' Y='425' />
+    <Block Type='CoinBrick' X='300' Y='425' />
+    <Block Type='Brick' X='324' Y='425' />
+    <Block Type='Brick' X='348' Y='425' />
 
     <Block Type='MushroomBlock' X='300' Y='550' />
 
     //Block Section 2
-    <Item Type="Coin" X="552" Y="352" />
-    <Block Type='Brick' X='552' Y='400' />
-    <Block Type='Brick' X='576' Y='400' />
-    <Item Type="Coin" X="600" Y="352" />
-    <Block Type='Brick' X='600' Y='400' />
-    <Block Type='Brick' X='624' Y='400' />
-    <Item Type="Coin" X="648" Y="352" />
-    <Block Type='Brick' X='648' Y='400' />
+    <Item Type="Coin" X="552" Y="377" />
+    <Block Type='Brick' X='552' Y='425' />
+    <Block Type='Brick' X='576' Y='425' />
+    <Item Type="Coin" X="600" Y="377" />
+    <Block Type='Brick' X='600' Y='425' />
+    <Block Type='Brick' X='624' Y='425' />
+    <Item Type="Coin" X="648" Y="377" />
+    <Block Type='Brick' X='648' Y='425' />
 
     <Item Type="Coin" X="552" Y="502" />
     <Block Type='Brick' X='552' Y='550' />
@@ -55,11 +53,11 @@
     <Item Type="Coin" X="648" Y="624" />
     
     //Block Section 3
-    <Block Type='Brick' X='826' Y='400' />
-    <Block Type='Brick' X='850' Y='400' />
-    <Block Type='Brick' X='874' Y='400' />
-    <Block Type='Brick' X='898' Y='400' />
-    <Block Type='Brick' X='922' Y='400' />
+    <Block Type='Brick' X='826' Y='425' />
+    <Block Type='Brick' X='850' Y='425' />
+    <Block Type='Brick' X='874' Y='425' />
+    <Block Type='Brick' X='898' Y='425' />
+    <Block Type='Brick' X='922' Y='425' />
     <Block Type='FlowerBlock' X='874' Y='550' />
 
     //Section 2-----------------------------------------------------------------------
@@ -91,50 +89,40 @@
     <Block Type="Pipe" X="2100" Y="624" />
     <Enemy Type="Koopa" X="2150" Y="624" />
     
-    <Block Type='Brick' X='1600' Y='550' />
-    <Block Type='Brick' X='1624' Y='550' />
-    <Block Type='Brick' X='1648' Y='550' />
-    <Block Type='Brick' X='1672' Y='550' />
+    <Block Type='Brick' X='1600' Y='500' />
+    <Block Type='Brick' X='1624' Y='500' />
+    <Block Type='Brick' X='1648' Y='500' />
+    <Block Type='Brick' X='1672' Y='500' />
+    <Block Type='HiddenBlock' X='1633' Y='370' />
 
-    <Block Type='Brick' X='1700' Y='450' />
-    <Block Type='Brick' X='1724' Y='450' />
-    <Block Type='Brick' X='1748' Y='450' />
-    <Block Type='Brick' X='1772' Y='450' />
 
-    <Block Type='Brick' X='1600' Y='250' />
-    <Block Type='Brick' X='1624' Y='250' />
-    <Block Type='Brick' X='1648' Y='250' />
-    <Block Type='Brick' X='1672' Y='250' />
+
+
 
     <Block Type="FlowerBlock" X="1832" Y="200" />
-    <Block Type='Brick' X='1796' Y='350' />
-    <Block Type='Brick' X='1820' Y='350' />
-    <Block Type='Brick' X='1844' Y='350' />
-    <Block Type='Brick' X='1868' Y='350' />
+    <Block Type='Brick' X='1772' Y='300' />
+    <Block Type='Brick' X='1796' Y='300' />
+    <Block Type='Brick' X='1820' Y='300' />
+    <Block Type='Brick' X='1844' Y='300' />
+    <Block Type='Brick' X='1868' Y='300' />
+    <Block Type='Brick' X='1892' Y='300' />
 
-    <Block Type='Brick' X='1892' Y='450' />
-    <Block Type='Brick' X='1916' Y='450' />
-    <Block Type='Brick' X='1940' Y='450' />
-    <Block Type='Brick' X='1964' Y='450' />
-
-    <Block Type='Brick' X='1988' Y='250' />
-    <Block Type='Brick' X='2012' Y='250' />
     <Block Type='Brick' X='2036' Y='250' />
-    <Block Type='Brick' X='2060' Y='250' />
        
     <Item Type="Coin" X="2160" Y="202" />
     <Item Type="Coin" X="2196" Y="202" />
     <Item Type="Coin" X="2232" Y="202" />
-    
     <Block Type='Brick' X='2160' Y='250' />
     <Block Type='Brick' X='2184' Y='250' />
     <Block Type='Brick' X='2208' Y='250' />
     <Block Type='Brick' X='2232' Y='250' />
+    
 
-    <Block Type='Brick' X='1988' Y='550' />
-    <Block Type='Brick' X='2012' Y='550' />
-    <Block Type='Brick' X='2036' Y='550' />
-    <Block Type='Brick' X='2060' Y='550' />
+
+    <Block Type='Brick' X='1988' Y='500' />
+    <Block Type='Brick' X='2012' Y='500' />
+    <Block Type='Brick' X='2036' Y='500' />
+    <Block Type='Brick' X='2060' Y='500' />
     
    //Base Block------------------------------------------------------------------------------------------
   <Block Type='MiddleGreenFloor' X='0' Y='696' />
