@@ -74,7 +74,7 @@ namespace SuperDavis.Collision
                             block.IsBumped = true;
                         }
                     }
-                    if (!(block is EmptyBlock) && !(block is Door))
+                    if (!(block is EmptyBlock))
                     {
                         davis.Location = new Vector2(davis.Location.X, block.Location.Y + block.HitBox.Height);
                         davis.PhysicsState = new FallState(davis);
@@ -83,7 +83,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!(block.IsHidden) && !(block is Door) && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState) &&!(davis.PhysicsState is ShunpoState))
+                    if (!block.IsHidden && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState) &&!(davis.PhysicsState is ShunpoState))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);
@@ -91,15 +91,17 @@ namespace SuperDavis.Collision
                     }
                     break;
                 case CollisionSide.Left:
-                    if (!(block.IsHidden) && !(block is Door))
+                    if (!(block.IsHidden))
                     {
-                        davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
+                        if(!(block is Door && world.HUD.score > 5000))
+                            davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     }
                     break;
                 case CollisionSide.Right:
-                    if (!(block.IsHidden) && !(block is Door))
+                    if (!(block.IsHidden))
                     {
-                        davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
+                        if (!(block is Door && world.HUD.score > 5000))
+                            davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     }
                     break;
                 case CollisionSide.None:

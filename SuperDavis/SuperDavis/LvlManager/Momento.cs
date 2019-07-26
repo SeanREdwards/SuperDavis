@@ -29,7 +29,11 @@ namespace SuperDavis.LvlManager
         {
             IsEmpty = false;
             this.checkPoint = levelName;
-            world = worldCreator.CreateWorld(levelName, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+            if (levelName.Equals("demo-level.xml"))
+                world = worldCreator.CreateWorld(levelName, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+            else
+                world = worldCreator.CreateWorld(levelName, Variables.Variable.bosslevelWidth, Variables.Variable.bosslevelHeight, game1, game1.HUD);
+
             if (game1.HUD.CharacterSelect == 2)
                 world.Characters.DavisToWoody();
             else if (game1.HUD.CharacterSelect == 3)

@@ -5,6 +5,7 @@ using SuperDavis.Object.Character;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Sound;
+using Microsoft.Xna.Framework.Content;
 
 namespace SuperDavis
 {
@@ -16,14 +17,22 @@ namespace SuperDavis
         public string worldText = Variable.worldText;
         public double time = Variable.time;
 
+        private int scrollingFactor = 0;
         public int CharacterSelect { get; set; }
 
-        public HUD()
+        private readonly SpriteFont font;
+        private readonly SpriteFont fontBig;
+        private readonly SpriteFont fontMenu;
+
+        public HUD(ContentManager Content)
         {
             CharacterSelect = 1;
+            font = Content.Load<SpriteFont>("Font/File");
+            fontMenu = Content.Load<SpriteFont>("Font/fontMenu");
+            fontBig = Content.Load<SpriteFont>("Font/Bigfont");
         }
 
-        public void Draw(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             time -= gameTime.ElapsedGameTime.TotalSeconds;
             spriteBatch.Begin();
@@ -38,9 +47,9 @@ namespace SuperDavis
             spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
             spriteBatch.End();
 
-            if (lives < 0)
+            if (lives <= 0)
             {
-                DrawGameOverMenu(gameTime, font, spriteBatch);
+                DrawGameOverMenu(spriteBatch);
             }
             else
             {
@@ -50,55 +59,45 @@ namespace SuperDavis
             }
         }
 
-        public void DrawStartMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void DrawStartMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            StartMenuContext(gameTime, font, spriteBatch);
+            StartMenuContext(spriteBatch);
             spriteBatch.End();
         }
 
-        public void DrawPauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void DrawPauseMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            PauseMenu(gameTime, font, spriteBatch);
+            spriteBatch.DrawString(font, "PAUSE! GO GRAB SOME SNACKS KIDDO", new Vector2(350, 300), Color.Gold);
             spriteBatch.End();
         }
 
-        public void PauseMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
-        {
-            spriteBatch.DrawString(font, "Paused, Go grab some snacks kid", new Vector2(450, 400), Color.White);
-        }
-
-        public void DrawWinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void DrawWinMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            WinMenu(gameTime, font, spriteBatch);
+            spriteBatch.DrawString(fontBig, "HUH, PURE LUCK MORTAL", new Vector2(500, 360), Color.White);
             spriteBatch.End();
         }
 
-        public void WinMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
-        {
-            spriteBatch.DrawString(font, "Well, You have made it!", new Vector2(500, 400), Color.White);
-        }
-
-        public void DrawGameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void DrawGameOverMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            GameOverMenu(gameTime, font, spriteBatch);
+            GameOverMenu(spriteBatch);
             spriteBatch.End();
         }
 
-        public void GameOverMenu(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void GameOverMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
-            spriteBatch.DrawString(font, "Game Over!", new Vector2(500, 300), Color.White);
-            spriteBatch.DrawString(font, "COME ON! YOU SUCKKKKKKKK", new Vector2(380, 350), Color.White);
+            spriteBatch.DrawString(fontBig, "Death Recap:", new Vector2(420, 250), Color.Gray);
+            spriteBatch.DrawString(fontBig, "STUPUDITY!!!", new Vector2(420, 350), Color.Red);
             Sounds.Instance.MusicInstance.IsLooped = false;
             Sounds.Instance.MusicInstance.Pause();
 
         }
         /* Helper Method */
-        public void StartMenuContext(GameTime gameTime, SpriteFont font, SpriteBatch spriteBatch)
+        public void StartMenuContext(SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
             if (this.CharacterSelect == 1)
@@ -108,11 +107,17 @@ namespace SuperDavis
             else
                 DavisSpriteFactory.Instance.CreateBatWalkRightSprite().Draw(spriteBatch, new Vector2(850, 450));
 
-            spriteBatch.DrawString(font, "SuperDavis - Team Shoryuken", new Vector2(50, 50), Color.White);
+            spriteBatch.DrawString(fontMenu, "Team SHORYUKEN", new Vector2(50 , 50), Color.Gray);
+
+            spriteBatch.DrawString(fontMenu, "SUPER DUPER DAVIS", new Vector2((float)3.6 * scrollingFactor, 150 + (float) 1 * (scrollingFactor % 100)), Color.Yellow);
             DavisSpriteFactory.Instance.CreateDavisPortrait().Draw(spriteBatch, new Vector2(300, 300));
             DavisSpriteFactory.Instance.CreateWoodyPortrait().Draw(spriteBatch, new Vector2(550, 300));
             DavisSpriteFactory.Instance.CreateBatPortrait().Draw(spriteBatch, new Vector2(800, 300));
-            spriteBatch.DrawString(font, "Press Space To Start", new Vector2(450, 550), Color.White);
+            spriteBatch.DrawString(fontMenu, "Press Space To Start", new Vector2(450, 600), Color.White);
+            scrollingFactor++;
+            if (scrollingFactor == 333)
+                scrollingFactor = 0;
         }
+
     }
 }

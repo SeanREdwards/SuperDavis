@@ -18,9 +18,9 @@ namespace SuperDavis.Physics
 
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 50f;
+                velocityX = 70f;
             else
-                velocityX = -50f;
+                velocityX = -70f;
 
             Velocity = new Vector2(velocityX, 15f);
             Acceleration = new Vector2(0.95f, 0.9f);
