@@ -4,7 +4,7 @@
   //Character-----------------------------------------------------------------------
   <Character Type="Davis" X="48" Y="580" />
   //Boss----------------------------------------------------------------------------
-  <Enemy Type ="Julian" X ="650" Y ="520" />
+  <Enemy Type ="Julian" X ="800" Y ="300" />
   //Wall sections-------------------------------------------------------------------
   <Block Type='EmptyBlock' X='-8' Y='0' />
   <Block Type='EmptyBlock' X='-8' Y='24' />
@@ -84,8 +84,12 @@
   <Block Type='CastleBlock' X='1152' Y='552' />
   <Block Type='CastleBlock' X='1176' Y='552' />
   <Block Type='CastleBlock' X='1152' Y='576' />
+  <Block Type='CastleBlock' X='1176' Y='576' />
+  <Block Type='CastleBlock' X='1152' Y='600' />
   <Block Type='CastleBlock' X='1176' Y='600' />
   <Block Type='CastleBlock' X='1152' Y='624' />
+  <Block Type='CastleBlock' X='1176' Y='624' />
+  <Block Type='CastleBlock' X='1152' Y='648' />
   <Block Type='CastleBlock' X='1176' Y='648' />
 
   //Platform Blocks------------------------------------------------------------------

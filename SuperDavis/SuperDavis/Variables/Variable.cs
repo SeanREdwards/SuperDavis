@@ -29,6 +29,9 @@
         public const int level11Width = 2400;
         public const int level11Height = 720;
 
+        public const int bosslevelWidth = 1200;
+        public const int bosslevelHeight = 720;
+
         public const int InvincibleTimer = 10;
 
         //Physics
@@ -129,7 +132,7 @@
 
         //SpecialAttackTimer
         public static int DavisSpecialAttackTimer = 25;
-        public static int WoodySpecialAttackTimer = 25;
+        public static int WoodySpecialAttackTimer = 20;
         public static int BatSpecialAttackTimer = 16;
         //ShootBulletTimer
 

@@ -16,8 +16,9 @@
     
     //Section 1-----------------------------------------------------------------------
     //Goomba spawn
-    <Block Type ="GoombaSpawnPoint" X ="300" Y ="100"/>
-    <Block Type ="GoombaSpawnPoint" X ="874" Y ="100"/>
+    <Block Type ="GoombaSpawnPoint" X ="300" Y ="0"/>
+    <Block Type ="GoombaSpawnPoint" X ="637" Y ="0"/>
+    <Block Type ="GoombaSpawnPoint" X ="874" Y ="300"/>
     
     //Block Section 1
     <Block Type='CastleBlock' X='252' Y='425' />

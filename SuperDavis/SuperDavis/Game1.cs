@@ -26,15 +26,15 @@ namespace SuperDavis
     {
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
+        public bool PauseFlag { get; set; }
+        public Camera Camera { get; set; }
+
         public CollisionDetection CollisionDetection;
         public Momento Momento;
         public HUD HUD;
 
         private SpriteBatch spriteBatch;
         private List<IController> controllerList;
-        private Camera camera;
-        private SpriteFont fontHUD;
-        private SpriteFont fontMenu;
 
         private bool resetFlag;
 
@@ -55,11 +55,11 @@ namespace SuperDavis
         protected override void Initialize()
         {
             resetFlag = false;
+            PauseFlag = false;
             IsMouseControllerOn = false;
             InitializeFactory();
             InitializeSounds();
-            LoadFonts();
-            HUD = new HUD();
+            HUD = new HUD(Content);
 
             WorldCreator worldCreator = new WorldCreator();
             Momento = new Momento(World, worldCreator, this);
@@ -78,7 +78,7 @@ namespace SuperDavis
         protected override void Update(GameTime gameTime)
         {
             controllerList[0].Update();
-            if (!Momento.IsEmpty)
+            if (!Momento.IsEmpty && !PauseFlag)
             {
                 CollisionDetection.CheckCollisions();
                 World.Update(gameTime);
@@ -89,18 +89,19 @@ namespace SuperDavis
 
         protected override void Draw(GameTime gameTime)
         {
-            if (!Momento.IsEmpty)
+            if (!Momento.IsEmpty && !PauseFlag)
             {
-                camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
-                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, camera.Draw());
+                Camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
+                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, Camera.Draw());
                 World.Draw(spriteBatch);
                 spriteBatch.End();
-                HUD.Draw(gameTime, fontHUD, spriteBatch);
+                HUD.Draw(gameTime, spriteBatch);
+                base.Draw(gameTime);
             }
+            else if (PauseFlag)
+                HUD.DrawPauseMenu(spriteBatch);
             else
-                HUD.DrawStartMenu(gameTime, fontMenu, spriteBatch);
-            base.Draw(gameTime);
-
+                HUD.DrawStartMenu(spriteBatch);
 
             //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
             //creates  green middle block floor
@@ -176,6 +177,7 @@ namespace SuperDavis
                     (
                       (Keys.Q, new ExitCommand(this), new NullCommand(), false),
                       (Keys.R, new ResetCommand(World), new NullCommand(), false),
+                      (Keys.W, new PauseCommand(this), new NullCommand(), false),
                       (Keys.Y, new DavisToDavisCommand(davis),new NullCommand(), true),
                       (Keys.U, new DavisToWoodyCommand(davis),new NullCommand(), true),
                       (Keys.I, new DavisToBatCommand(davis),new NullCommand(), true),
@@ -222,12 +224,6 @@ namespace SuperDavis
                 )
 
             };
-        }
-
-        public void LoadFonts()
-        {
-            fontHUD = Content.Load<SpriteFont>("Font/File");
-            fontMenu = Content.Load<SpriteFont>("Font/fontMenu");
         }
 
         public void ControllerUpdate()
