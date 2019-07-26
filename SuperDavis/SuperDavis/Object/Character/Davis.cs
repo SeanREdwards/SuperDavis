@@ -183,17 +183,28 @@ namespace SuperDavis.Object.Character
                 if (DavisStatus == DavisStatus.Woody)
                 {
                     if (!DeadFlag && !(PhysicsState is FlyingKneeState))
+                    {
                         PhysicsState = new FlyingKneeState(this);
+                        Sounds.Instance.PlayWoodyYell();
+                    }
+
                 }
                 if (DavisStatus == DavisStatus.Davis)
                 {
                     if (!DeadFlag && !(PhysicsState is ShoryukenState))
+                    {
                         PhysicsState = new ShoryukenState(this);
+                        Sounds.Instance.PlayDavisYell();
+                    }
                 }
                 if (DavisStatus == DavisStatus.Bat)
                 {
                     if (!DeadFlag && !(PhysicsState is ShunpoState))
+                    {
                         PhysicsState = new ShunpoState(this);
+                        Sounds.Instance.PlayTeleportSound();
+                    }
+                    
                 }
             }
         }

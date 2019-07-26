@@ -93,18 +93,7 @@
   <Block Type='CastleBlock' X='1176' Y='648' />
 
   //Platform Blocks------------------------------------------------------------------
-  <Block Type='Brick' X='300' Y='535' />
-  <Block Type='Brick' X='324' Y='535' />
-  <Block Type='Brick' X='348' Y='535' />
-  <Block Type='Brick' X='372' Y='535' />
-  <Block Type='Brick' X='396' Y='535' />
 
-
-  <Block Type='Brick' X='900' Y='535' />
-  <Block Type='Brick' X='924' Y='535' />
-  <Block Type='Brick' X='948' Y='535' />
-  <Block Type='Brick' X='972' Y='535' />
-  <Block Type='Brick' X='996' Y='535' />
   
   //Floor Blocks---------------------------------------------------------------------
   <Block Type='Brick' X='0' Y='696' />

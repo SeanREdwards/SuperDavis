@@ -48,13 +48,17 @@ namespace SuperDavis
             spriteBatch.DrawString(fontMenu, "Time", new Vector2(800, 30), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
             spriteBatch.DrawString(fontMenu, "Lives", new Vector2(1000, 30), Color.White);
+            spriteBatch.End();
 
             if (lives <= 0)
                 DrawGameOverMenu(spriteBatch);
             else
+            {
+                spriteBatch.Begin();
                 spriteBatch.DrawString(fontBig, "" + (int)lives, new Vector2(1000, 40), Color.Red);
+                spriteBatch.End();
+            }
 
-            spriteBatch.End();
         }
 
         public void DrawStartMenu(SpriteBatch spriteBatch)

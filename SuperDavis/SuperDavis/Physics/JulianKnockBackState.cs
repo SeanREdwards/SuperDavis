@@ -18,12 +18,12 @@ namespace SuperDavis.Physics
         {
             gameObject = gameObjectClass;
             if ((gameObject as Julian).FacingDirection == FacingDirection.Left)
-                velocityX = 4f;
+                velocityX = 1f;
             else
-                velocityX = -4f;
+                velocityX = -1f;
 
             Velocity = new Vector2(velocityX, -3f);
-            Acceleration = new Vector2(1f, 0.75f);
+            Acceleration = new Vector2(1f, 0.9f);
             MaxVelocity = new Vector2(0, -0.5f);
         }
 

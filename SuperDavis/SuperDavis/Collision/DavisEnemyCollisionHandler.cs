@@ -12,16 +12,19 @@ namespace SuperDavis.Collision
         {
             if (side != CollisionSide.None)
             {
-                if (davis.PhysicsState is FlyingKneeState || davis.PhysicsState is ShoryukenState || davis.PhysicsState is ShunpoState)
+                if (!(enemy.PhysicsState is JulianKnockBackState))
                 {
-                    enemy.TakeDamage();
-                    world.HUD.score += 100;
+                    if (davis.PhysicsState is FlyingKneeState || davis.PhysicsState is ShoryukenState || davis.PhysicsState is ShunpoState)
+                    {
+                        enemy.TakeDamage();
+                        world.HUD.score += 100;
+                    }
                 }
 
                     //if collision is not on bottom
                 if (side == CollisionSide.Top)
                 {
-                    if (!enemy.Dead && !davis.DeadFlag)
+                    if (!enemy.Dead && !davis.DeadFlag && !(enemy.PhysicsState is JulianKnockBackState))
                     {
                         enemy.TakeDamage();
                         world.HUD.score += 100;

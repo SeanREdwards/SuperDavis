@@ -125,5 +125,20 @@ namespace SuperDavis.Sound
             ItemPickup.Play();
         }
 
+        public void PlayTeleportSound()
+        {
+            TeleportSound.Play();
+        }
+
+        public void PlayDavisYell()
+        {
+            KiyahTwoSound.Play();
+        }
+
+        public void PlayWoodyYell()
+        {
+            KiyahOneSound.Play();
+        }
+
     }
 }

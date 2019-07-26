@@ -35,6 +35,7 @@ namespace SuperDavis.Worlds
 
         private readonly Game1 game;
         private HashSet<IGameObject> ObjectToAdd { get; set; }
+        private int enemyCounter = 0;
 
         public HUD HUD { get; set; }
 
@@ -245,6 +246,7 @@ namespace SuperDavis.Worlds
             game.World = game.Momento.ResetToCheckPoint();
             game.CollisionDetection = new CollisionDetection(game.World);
             game.InitializeController();
+            enemyCounter = 0;
         }
 
         public bool IsIndexOutOfBounds(int x, int y)
@@ -281,11 +283,23 @@ namespace SuperDavis.Worlds
                     julian.MetaAttack();
                 else if (Math.Abs(Characters.Location.X - enemy.Location.X) >= 600 && Math.Abs(Characters.Location.Y - enemy.Location.Y) < 50)
                     julian.PowerPunch();
-                if (julian.HealthCounter == 10)
-                    ObjectToAdd.Add(new GoombaSpawnPoint(new Vector2(300 + random.Next(600), 0), this));
-                if (julian.HealthCounter == 5)
-                    if(Enemies.Count < 8)
-                        ObjectToAdd.Add(new Koopa(new Vector2(300 + random.Next(600), 0)));
+
+                if (julian.HealthCounter < 16 && julian.HealthCounter >= 6)
+                {
+                    if (enemyCounter < 10)
+                    {
+                        ObjectToAdd.Add(new Goomba(new Vector2(0 + random.Next(300), 0), FacingDirection.Right));
+                        enemyCounter++;
+                    }
+                }
+                else if (julian.HealthCounter < 6)
+                {
+                    if (enemyCounter > 6)
+                    {
+                        ObjectToAdd.Add(new Koopa(new Vector2(300 + random.Next(300), 0)));
+                        enemyCounter--;
+                    }
+                }
 
             }
 
