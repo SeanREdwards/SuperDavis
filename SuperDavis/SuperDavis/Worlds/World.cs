@@ -5,6 +5,7 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
+using SuperDavis.Object.SpawnPoint;
 using SuperDavis.Physics;
 using SuperDavis.Sound;
 using System;
@@ -33,6 +34,8 @@ namespace SuperDavis.Worlds
         private int characterDeathTimer = Variables.Variable.DavisDeathTimer;
 
         private readonly Game1 game;
+        private HashSet<IGameObject> ObjectToAdd { get; set; }
+
         public HUD HUD { get; set; }
 
         public World(float width, float height, Game1 game, HUD HUD)
@@ -61,6 +64,7 @@ namespace SuperDavis.Worlds
             Projectiles = new HashSet<IProjectile>();
             Backgrounds = new HashSet<IBackground>();
             ObjectToRemove = new HashSet<IGameObject>();
+            ObjectToAdd = new HashSet<IGameObject>();
 
         }
 
@@ -108,6 +112,14 @@ namespace SuperDavis.Worlds
                 if (ObjectToRemove.Count > 0)
                     RemoveObject();
 
+            if (ObjectToAdd.Count > 0)
+            {
+                foreach (IGameObject gameObject in ObjectToAdd)
+                    AddObject(gameObject);
+                ObjectToAdd.Clear();
+            }
+
+                               
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -258,9 +270,26 @@ namespace SuperDavis.Worlds
         /* Enemy AI Helper Class */
         public void EnemyAI(IEnemy enemy)
         {
+            Random random = new Random();
             // Koopa jump AI
             if (enemy is Koopa && Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(enemy.PhysicsState is JumpState) && !(enemy.PhysicsState is FallState) && !enemy.Dead)
                 enemy.Jump();
+            // Julian AI
+            if (enemy is Julian julian && !julian.Dead)
+            {
+                if (Math.Abs(Characters.Location.X - enemy.Location.X) < 200)
+                    julian.MetaAttack();
+                else if (Math.Abs(Characters.Location.X - enemy.Location.X) >= 600 && Math.Abs(Characters.Location.Y - enemy.Location.Y) < 50)
+                    julian.PowerPunch();
+                if (julian.HealthCounter == 10)
+                    ObjectToAdd.Add(new GoombaSpawnPoint(new Vector2(300 + random.Next(600), 0), this));
+                if (julian.HealthCounter == 5)
+                    if(Enemies.Count < 8)
+                        ObjectToAdd.Add(new Koopa(new Vector2(300 + random.Next(600), 0)));
+
+            }
+
+
         }
 
         

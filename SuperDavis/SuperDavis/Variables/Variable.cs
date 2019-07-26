@@ -87,6 +87,8 @@
         public const int GroundLevelKoopa = 600;
         public const int GroundLeveGoomba = 610;
 
+        public const int JulianPowerPunchTimer = 50;
+
         //Items
         public const int CoinTimer = 20;
         public const float CoinOffsetUp = 3f;

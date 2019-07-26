@@ -27,7 +27,7 @@ namespace SuperDavis.Command
                     switch (davis.DavisStatus)
                     {                                           
                         case (DavisStatus.Davis):
-                            davis.DavisProjectile.Add(new DavisProjectile((davis.Location + new Vector2(0, 25f + random.Next(10))), davis.FacingDirection));
+                            davis.DavisProjectile.Add(new DavisProjectile((davis.Location + new Vector2(0, 30f + random.Next(10))), davis.FacingDirection));
                             break;
                         case (DavisStatus.Woody):
                             davis.DavisProjectile.Add(new WoodyProjectile((davis.Location + new Vector2(0, 15f + random.Next(10))), davis.FacingDirection));

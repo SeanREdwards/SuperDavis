@@ -30,16 +30,22 @@ namespace SuperDavis.LvlManager
             IsEmpty = false;
             this.CheckPoint = levelName;
             if (levelName.Equals("demo-level.xml"))
+            {
                 world = worldCreator.CreateWorld(levelName, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
+                Sounds.Instance.MusicInstance.Play();
+            }
             else
+            {
                 world = worldCreator.CreateWorld(levelName, Variables.Variable.bosslevelWidth, Variables.Variable.bosslevelHeight, game1, game1.HUD);
+                Sounds.Instance.BossMusicInstance.Play();
+            }
 
             if (game1.HUD.CharacterSelect == 2)
                 world.Characters.DavisToWoody();
             else if (game1.HUD.CharacterSelect == 3)
                 world.Characters.DavisToBat();
             // Different levels
-            Sounds.Instance.MusicInstance.Play();
+
             return world;
         }
         public IWorld LoadEmpty()

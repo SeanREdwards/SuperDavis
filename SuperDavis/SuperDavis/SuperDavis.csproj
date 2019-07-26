@@ -504,6 +504,7 @@
     <Compile Include="Object\Enemy\Julian.cs" />
     <Compile Include="Object\GoombaSpawnPoint\GoombaSpawnPoint.cs" />
     <Compile Include="Object\Item\Key.cs" />
+    <Compile Include="Object\Projectile\JulianProjectile.cs" />
     <Compile Include="Object\Projectile\WoodyProjectile.cs" />
     <Compile Include="Object\Projectile\DavisProjectile.cs" />
     <Compile Include="Object\Projectile\BatProjectile.cs" />
@@ -526,6 +527,8 @@
     <Compile Include="Sprite\SpriteRegistrar.cs" />
     <Compile Include="State\DavisState\DavisShootBulletRightState.cs" />
     <Compile Include="State\DavisState\DavisShootBulletLeftState.cs" />
+    <Compile Include="State\EnemyState\JulianPowerPunchState.cs" />
+    <Compile Include="State\EnemyState\JulianStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\DoorStateMachine .cs" />
