@@ -878,3 +878,147 @@
 /processorParam:TextureFormat=Color
 /build:Grass.png
 
+#begin SuperDavisSounds/BatShootSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/BatShootSound.wav
+
+#begin SuperDavisSounds/CharacterSelectSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/CharacterSelectSound.wav
+
+#begin SuperDavisSounds/DavisShootSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/DavisShootSound.wav
+
+#begin SuperDavisSounds/DoorCloseSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/DoorCloseSound.wav
+
+#begin SuperDavisSounds/DoorOpenSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/DoorOpenSound.wav
+
+#begin SuperDavisSounds/DrinkMilkSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/DrinkMilkSound.wav
+
+#begin SuperDavisSounds/Explode1Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/Explode1Sound.wav
+
+#begin SuperDavisSounds/Explode2Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/Explode2Sound.wav
+
+#begin SuperDavisSounds/Explode3Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/Explode3Sound.wav
+
+#begin SuperDavisSounds/Explode4Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/Explode4Sound.wav
+
+#begin SuperDavisSounds/GameOverSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/GameOverSound.wav
+
+#begin SuperDavisSounds/HealSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/HealSound.wav
+
+#begin SuperDavisSounds/JulianShootSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/JulianShootSound.wav
+
+#begin SuperDavisSounds/KeyPickupSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/KeyPickupSound.wav
+
+#begin SuperDavisSounds/KiyahOneSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/KiyahOneSound.wav
+
+#begin SuperDavisSounds/KiyahThreeSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/KiyahThreeSound.wav
+
+#begin SuperDavisSounds/KiyahTwoSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/KiyahTwoSound.wav
+
+#begin SuperDavisSounds/PhysicalAttackCollisionSoundOne.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/PhysicalAttackCollisionSoundOne.wav
+
+#begin SuperDavisSounds/RegularGameMusic.wma
+/importer:WmaImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/RegularGameMusic.wma
+
+#begin SuperDavisSounds/TeleportSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/TeleportSound.wav
+
+#begin SuperDavisSounds/WinSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/WinSound.wav
+
+#begin SuperDavisSounds/WoodyShootSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/WoodyShootSound.wav
+
+#begin SuperDavisSounds/BossFightMusic.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/BossFightMusic.wav
+
+#begin SuperDavisSounds/RegularGameMusic.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SuperDavisSounds/RegularGameMusic.wav
+
