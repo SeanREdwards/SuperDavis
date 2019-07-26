@@ -8,7 +8,6 @@ namespace SuperDavis.Physics
 
         private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
-        public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
         private float velocityX;
         private int specialAttackTimer = Variables.Variable.WoodySpecialAttackTimer;
@@ -23,7 +22,6 @@ namespace SuperDavis.Physics
 
             Velocity = new Vector2(velocityX, 15f);
             Acceleration = new Vector2(0.95f, 0.9f);
-            MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
         }
 
         public void Update(GameTime gameTime)

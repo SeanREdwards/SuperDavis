@@ -163,10 +163,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateWoodyWalkLeftSprite()
+        /*public ISprite CreateWoodyWalkLeftSprite()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateWoodyWalkRightSprite()
         {

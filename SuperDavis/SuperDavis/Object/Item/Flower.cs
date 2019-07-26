@@ -8,16 +8,25 @@ namespace SuperDavis.Object.Item
 {
     class Flower : IItem
     {
-        public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-        public Vector2 Location { get; set; }
+
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly FlowerStateMachine flowerStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = Variables.Variable.FlowerTimer;
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public Flower(Vector2 location)
         {

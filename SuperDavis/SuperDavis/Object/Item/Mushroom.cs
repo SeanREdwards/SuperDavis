@@ -8,11 +8,10 @@ namespace SuperDavis.Object.Item
 {
     class Mushroom : IItem
     {
-        public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
 
-        public Vector2 Location { get; set; }
+
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly MushroomStateMachine mushroomStateMachine;
@@ -20,6 +19,16 @@ namespace SuperDavis.Object.Item
         private int timer = Variables.Variable.MushroomTimer;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public Mushroom(Vector2 location)
         {

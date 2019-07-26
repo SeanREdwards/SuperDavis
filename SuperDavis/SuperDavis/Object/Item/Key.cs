@@ -8,17 +8,25 @@ namespace SuperDavis.Object.Item
 {
     class Key : IItem
     {
-        public float Mass { get; set; }
         public bool IsAnimated { get; set; }
         public bool FacingLeft { get; set; }
-        public Vector2 Location { get; set; }
+
         public Rectangle HitBox { get; set; }
         private readonly ISprite item;
         private readonly KeyStateMachine KeyStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
         private int timer = Variables.Variable.KeyTimer;
-
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public Key(Vector2 location)
         {

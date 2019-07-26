@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
-using System;
-
-namespace SuperDavis.Object.Item
+﻿namespace SuperDavis.Object.Item
 {
     /*class Star : IItem
     {

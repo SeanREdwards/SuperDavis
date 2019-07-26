@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interfaces;
-using SuperDavis.State.ItemStateMachine;
-using System;
-
-/*
+﻿/*
  Class to create and represent walls of variable heighth/width
  @Author Sean Edwards
  */

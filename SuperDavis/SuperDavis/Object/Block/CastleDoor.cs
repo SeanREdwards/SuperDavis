@@ -9,23 +9,29 @@ namespace SuperDavis.Object.Block
 {
     class CastleDoor : IBlock
     {
-        public float Mass { get; set; }
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
-        public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private ISprite block;
         private DoorStateMachine doorStateMachine;
 
-        public bool IsOpen { get; set; }
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public CastleDoor(Vector2 location)
         {
             // initial state
-            IsOpen = false;
             IsHidden = false;
             Location = location;
             block = ItemSpriteFactory.Instance.CreateCastleDoorClosed();
@@ -49,11 +55,10 @@ namespace SuperDavis.Object.Block
             // No nothing for current sprint
         }
 
-        public void OpenDoor()
+        /*public void OpenDoor()
         {
-            IsOpen = true;
             block = ItemSpriteFactory.Instance.CreateCastleDoorOpened();
             doorStateMachine = new DoorStateMachine(block);
-        }
+        }*/
     }
 }

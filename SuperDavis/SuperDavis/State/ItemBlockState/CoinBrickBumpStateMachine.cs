@@ -1,10 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Factory;
-using SuperDavis.Interfaces;
-using SuperDavis.Object.Block;
-
-namespace SuperDavis.State.ItemStateMachine
+﻿namespace SuperDavis.State.ItemStateMachine
 {
     /*class CoinBrickBumpStateMachine : IGameObjectState
     {

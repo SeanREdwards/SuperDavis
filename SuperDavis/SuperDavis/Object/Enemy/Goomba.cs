@@ -74,7 +74,7 @@ namespace SuperDavis.Object.Enemy
 
         public void TakeDamage()
         {
-            if(!Dead)
+            if (!Dead)
                 Sounds.Instance.PlayPhysicsCollision();
             Dead = true;
             PhysicsState = new EnemyDeadState(this);

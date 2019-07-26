@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using SuperDavis.Interfaces;
-using System.Collections.Generic;
-
-namespace SuperDavis.Controller
+﻿namespace SuperDavis.Controller
 {
     /*
     class GamepadController : IController

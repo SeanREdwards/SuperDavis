@@ -8,7 +8,7 @@ namespace SuperDavis.Physics
 
         private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
-        public Vector2 MaxVelocity { get; set; }
+
         public Vector2 Acceleration { get; set; }
         private readonly float velocityX;
         private int specialAttackTimer = Variables.Variable.BatSpecialAttackTimer;
@@ -19,7 +19,7 @@ namespace SuperDavis.Physics
                 velocityX = -50f;
             else
                 velocityX = 50f;
-            MaxVelocity = new Vector2(0, 0);
+
             Velocity = new Vector2(velocityX, 0f);
 
         }

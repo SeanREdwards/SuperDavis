@@ -1,5 +1,4 @@
 ﻿using SuperDavis.Interfaces;
-using SuperDavis.Object.Character;
 using SuperDavis.Object.Item;
 using SuperDavis.Sound;
 using static SuperDavis.Collision.CollisionDetection;

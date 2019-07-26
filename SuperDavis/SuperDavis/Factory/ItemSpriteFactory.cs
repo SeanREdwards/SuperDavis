@@ -42,7 +42,7 @@ namespace SuperDavis.Factory
         }
 
         /*Item Sprites*/
-        public ISprite CreateStar()
+        /*public ISprite CreateStar()
         {
             return Create(GetMethodName());
         }
@@ -50,7 +50,7 @@ namespace SuperDavis.Factory
         public ISprite CreateYoshiEgg()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateYoshiCoinAnimated()
         {
@@ -105,10 +105,10 @@ namespace SuperDavis.Factory
         }
 
 
-        public ISprite CreateSkullBlock()
+        /*public ISprite CreateSkullBlock()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         /*public ISprite CreateSpinBlockStatic()
         {
@@ -184,10 +184,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateBossHealthSkull()
+        /*public ISprite CreateBossHealthSkull()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
 
         /*Pipes*/

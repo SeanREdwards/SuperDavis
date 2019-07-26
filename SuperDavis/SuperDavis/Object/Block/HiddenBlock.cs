@@ -8,14 +8,22 @@ namespace SuperDavis.Object.Block
 {
     class HiddenBlock : IBlock
     {
-        public float Mass { get; set; }
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
-        public Vector2 Location { get; set; }
         public HiddenBlockStateMachine HiddenBlockStateMachine;
         private readonly ISprite block;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }

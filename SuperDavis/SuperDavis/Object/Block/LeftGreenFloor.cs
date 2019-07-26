@@ -8,15 +8,23 @@ namespace SuperDavis.Object.Block
 {
     class LeftGreenFloor : IBlock
     {
-        public float Mass { get; set; }
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
-        public Vector2 Location { get; set; }
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
         private ISprite sprite;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public LeftGreenFloor(Vector2 location)
         {

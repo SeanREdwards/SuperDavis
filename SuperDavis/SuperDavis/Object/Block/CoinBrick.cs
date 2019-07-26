@@ -10,13 +10,22 @@ namespace SuperDavis.Object.Block
     {
         public bool IsBumped { get; set; }
         public bool IsHidden { get; set; }
-        public Vector2 Location { get; set; }
         public IGameObjectState BrickStateMachine;
         private readonly ISprite block;
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public int CoinCounter = 5;
         public CoinBrick(Vector2 location)
@@ -45,10 +54,10 @@ namespace SuperDavis.Object.Block
             BrickStateMachine = new BrickStateMachine(true);
         }
 
-        public void Bumped()
+        /*public void Bumped()
         {
             //BrickStateMachine = new CoinBrickBumpStateMachine(false, this);
-        }
+        }*/
 
     }
 }

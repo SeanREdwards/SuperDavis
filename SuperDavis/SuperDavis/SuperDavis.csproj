@@ -500,7 +500,6 @@
     <Compile Include="Object\Block\MushroomBlock.cs" />
     <Compile Include="Object\Block\RightGreenFloor.cs" />
     <Compile Include="Object\Character\CharacterDictionary.cs" />
-    <Compile Include="Object\Character\InvincibleDavis.cs" />
     <Compile Include="Object\Enemy\Julian.cs" />
     <Compile Include="Object\GoombaSpawnPoint\GoombaSpawnPoint.cs" />
     <Compile Include="Object\Item\Key.cs" />

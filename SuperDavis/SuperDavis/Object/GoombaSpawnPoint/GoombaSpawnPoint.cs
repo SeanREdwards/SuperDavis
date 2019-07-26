@@ -16,13 +16,22 @@ namespace SuperDavis.Object.SpawnPoint
         public IGameObjectPhysics PhysicsState { get; set; }
 
 
-        public Vector2 Location { get; set; }
         private readonly IWorld world;
         private readonly ISprite sprite;
         private int spawnTimeInterval = 50;
         private bool spawnFacingTick = true;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+        private Vector2 location;
+        public Vector2 Location
+        {
+            get { return location; }
+            set
+            {
+                OnPositionChanged?.Invoke(this, Tuple.Create(location, value));
+                location = value;
+            }
+        }
 
         public IList<IEnemy> EnemySpawnPool { get; set; }
 

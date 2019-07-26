@@ -1,8 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using SuperDavis.Interfaces;
-
-namespace SuperDavis.Controller
+﻿namespace SuperDavis.Controller
 {
     /*class MouseController : IController
     {
