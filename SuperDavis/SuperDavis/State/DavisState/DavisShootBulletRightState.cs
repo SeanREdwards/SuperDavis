@@ -4,16 +4,22 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.DavisState
 {
-    class DavisWalkRightState : IDavisState
+    class DavisShootBulletRightState : IDavisState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         private readonly IDavis davis;
         public ISprite Sprite { get; set; }
-
-        public DavisWalkRightState(IDavis davis)
+        private int specialAttackTimer;
+        public DavisShootBulletRightState(IDavis davis)
         {
             this.davis = davis;
+            if (davis.DavisStatus == DavisStatus.Davis)
+                specialAttackTimer = Variables.Variable.DavisShootBulletTimer;
+            else if (davis.DavisStatus == DavisStatus.Woody)
+                specialAttackTimer = Variables.Variable.WoodyShootBulletTimer;
+            else if (davis.DavisStatus == DavisStatus.Bat)
+                specialAttackTimer = Variables.Variable.BatShootBulletTimer;
         }
 
         public void Static()
@@ -23,19 +29,19 @@ namespace SuperDavis.State.DavisState
 
         public void Left()
         {
-            davis.DavisState = new DavisStaticLeftState(davis);
+
         }
 
-        public void Right() { }
-
-        public void Up()
+        public void Right()
         {
-            davis.DavisState = new DavisJumpRightState(davis);
+
         }
+
+        public void Up() { }
 
         public void Down()
         {
-            davis.DavisState = new DavisCrouchRightState(davis);
+
         }
 
         public void Land()
@@ -54,12 +60,15 @@ namespace SuperDavis.State.DavisState
 
         public void ShootBullet()
         {
-            davis.DavisState = new DavisShootBulletRightState(davis);
-        }
 
+        }
         public void Update(GameTime gameTime)
         {
             davis.Sprite.Update(gameTime);
+            if (specialAttackTimer == 0)
+                davis.DavisState.Static();
+            specialAttackTimer--;
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

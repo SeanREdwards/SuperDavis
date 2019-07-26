@@ -12,6 +12,7 @@ namespace SuperDavis.Physics
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
         private float velocityX;
+        private int specialAttackTimer = Variables.Variable.WoodySpecialAttackTimer;
         public FlyingKneeState(IGameObject gameObjectClass)
         {
 
@@ -30,11 +31,12 @@ namespace SuperDavis.Physics
         {
             gameObject.Location -= Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
             Velocity *= Acceleration;
-            if (Math.Abs(Velocity.Y - MaxVelocity.Y) < 1)
+            if (specialAttackTimer == 0)
             {
                 Velocity = new Vector2(Velocity.X, 0);
                 gameObject.PhysicsState = new FallState(gameObject);
             }
+            specialAttackTimer--;
         }
     }
 }

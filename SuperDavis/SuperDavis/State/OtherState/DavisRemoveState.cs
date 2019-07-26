@@ -76,5 +76,8 @@ namespace SuperDavis.State.OtherState
         {
 
         }
+
+        public void ShootBullet()
+        { }
     }
 }

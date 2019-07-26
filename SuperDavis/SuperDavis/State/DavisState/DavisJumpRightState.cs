@@ -35,7 +35,7 @@ namespace SuperDavis.State.DavisState
 
         public void Down()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            
         }
 
         public void Land()
@@ -50,6 +50,11 @@ namespace SuperDavis.State.DavisState
         public void SpecialAttack()
         {
             davis.DavisState = new DavisSpecialAttackRightState(davis);
+        }
+
+        public void ShootBullet()
+        {
+            davis.DavisState = new DavisShootBulletRightState(davis);
         }
 
         public void Update(GameTime gameTime)

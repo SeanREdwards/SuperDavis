@@ -126,5 +126,15 @@
         public static double time = 400;
 
         //Variables.Variable.
+
+        //SpecialAttackTimer
+        public static int DavisSpecialAttackTimer = 25;
+        public static int WoodySpecialAttackTimer = 25;
+        public static int BatSpecialAttackTimer = 16;
+        //ShootBulletTimer
+
+        public static int DavisShootBulletTimer = 25;
+        public static int WoodyShootBulletTimer = 33;
+        public static int BatShootBulletTimer = 20;
     }
 }

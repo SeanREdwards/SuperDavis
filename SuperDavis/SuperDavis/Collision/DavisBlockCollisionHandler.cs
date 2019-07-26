@@ -35,7 +35,7 @@ namespace SuperDavis.Collision
                     }
                     else if (block is Brick)
                     {
-                        var brick = (Brick)block;
+                        Brick brick = (Brick)block;
                         brick.Bumped();
                     }
                     else if (block is MushroomBlock)
@@ -83,7 +83,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!(block.IsHidden) && !(block is Door) && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState))
+                    if (!(block.IsHidden) && !(block is Door) && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState) &&!(davis.PhysicsState is ShunpoState))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);
@@ -93,14 +93,12 @@ namespace SuperDavis.Collision
                 case CollisionSide.Left:
                     if (!(block.IsHidden) && !(block is Door))
                     {
-                        //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
                     }
                     break;
                 case CollisionSide.Right:
                     if (!(block.IsHidden) && !(block is Door))
                     {
-                        //davis.PhysicsState = new FallStraightState(davis);
                         davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     }
                     break;

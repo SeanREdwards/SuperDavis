@@ -56,6 +56,10 @@ namespace SuperDavis.State.DavisState
             //Do Nothing.
         }
 
+        public void ShootBullet()
+        {
+
+        }
         public void Update(GameTime gameTime)
         {
 

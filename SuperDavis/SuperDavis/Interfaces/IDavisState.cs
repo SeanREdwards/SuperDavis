@@ -12,5 +12,6 @@
         void Land();
         void Death();
         void SpecialAttack();
+        void ShootBullet();
     }
 }

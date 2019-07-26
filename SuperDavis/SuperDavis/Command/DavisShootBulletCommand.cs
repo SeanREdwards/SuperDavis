@@ -39,7 +39,7 @@ namespace SuperDavis.Command
                 }
                 world.AddObject(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);
                 davis.DavisProjectile.RemoveAt(davis.DavisProjectile.Count - 1);
-                davis.DavisState.SpecialAttack();
+                davis.DavisState.ShootBullet();
             }
         }
     }

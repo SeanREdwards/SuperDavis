@@ -27,5 +27,6 @@ namespace SuperDavis.Interfaces
         //void DavisToInvincible();
         void DavisDeath();
         void DavisSpecialAttack();
+        void DavisShootBullet();
     }
 }

@@ -176,20 +176,32 @@ namespace SuperDavis.Object.Character
 
         public void DavisSpecialAttack()
         {
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
             DavisState.SpecialAttack();
             if (!(PhysicsState is FallState))
             {
                 if (DavisStatus == DavisStatus.Woody)
                 {
-                    if (!DeadFlag)
+                    if (!DeadFlag && !(PhysicsState is FlyingKneeState))
                         PhysicsState = new FlyingKneeState(this);
                 }
                 if (DavisStatus == DavisStatus.Davis)
                 {
-                    if (!DeadFlag)
+                    if (!DeadFlag && !(PhysicsState is ShoryukenState))
                         PhysicsState = new ShoryukenState(this);
                 }
+                if (DavisStatus == DavisStatus.Bat)
+                {
+                    if (!DeadFlag && !(PhysicsState is ShunpoState))
+                        PhysicsState = new ShunpoState(this);
+                }
             }
+        }
+
+        public void DavisShootBullet()
+        {
+            Sprite = charDict.GetSprite(DavisStatus.ToString(), DavisState.ToString());
+            DavisState.ShootBullet();
         }
 
     }

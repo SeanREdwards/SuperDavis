@@ -38,9 +38,9 @@ namespace SuperDavis.Object.Item
             PhysicsState = new BatProjectilePhysicsState(this);
             Location = location;
             if (FacingDirection == FacingDirection.Right)
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneRight();
+                projectileSprite = DavisSpriteFactory.Instance.CreateBatProjectileRight();
             else
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatSpecialAttackOneLeft();
+                projectileSprite = DavisSpriteFactory.Instance.CreateBatProjectileLeft();
             BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite, this);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectileSprite.Width, (int)projectileSprite.Height);
         }

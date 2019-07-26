@@ -503,6 +503,7 @@
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
     <Compile Include="Object\Scenery\Wall.cs" />
+    <Compile Include="Physics\ShunpoState.cs" />
     <Compile Include="Physics\WoodyProjectilePhysicsState .cs" />
     <Compile Include="Physics\DavisProjectilePhysicsState.cs" />
     <Compile Include="Physics\BatProjectilePhysicsState.cs" />
@@ -515,6 +516,8 @@
     <Compile Include="Physics\FallState.cs" />
     <Compile Include="Sound\Sounds.cs" />
     <Compile Include="Sprite\SpriteRegistrar.cs" />
+    <Compile Include="State\DavisState\DavisShootBulletRightState.cs" />
+    <Compile Include="State\DavisState\DavisShootBulletLeftState.cs" />
     <Compile Include="State\ItemBlockState\CoinBrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\BrickBumpStateMachine.cs" />
     <Compile Include="State\ItemBlockState\DoorStateMachine .cs" />

@@ -4,7 +4,7 @@ using System;
 
 namespace SuperDavis.Physics
 {
-    class ShoryukenState : IGameObjectPhysics
+    class ShunpoState : IGameObjectPhysics
     {
 
         private readonly IGameObject gameObject;
@@ -12,28 +12,31 @@ namespace SuperDavis.Physics
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }
         private float velocityX;
-        private int specialAttackTimer = Variables.Variable.DavisSpecialAttackTimer;
-        public ShoryukenState(IGameObject gameObjectClass)
+        private int specialAttackTimer = Variables.Variable.BatSpecialAttackTimer;
+        public ShunpoState(IGameObject gameObjectClass)
         {
-            
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
-                velocityX = 10f;
+                velocityX = -50f;
             else
-                velocityX = -10f;
+                velocityX = 50f;
 
-            Velocity = new Vector2(velocityX, 80f);
-            Acceleration = new Vector2(1f, 0.85f);
-            MaxVelocity = new Vector2(0, Variables.Variable.JumpVelocityMin);
+            Velocity = new Vector2(velocityX, 0f);
+
         }
 
         public void Update(GameTime gameTime)
         {
-            gameObject.Location -= Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
-            Velocity *= Acceleration;
+            //gameObject.Location += Velocity * (float)(gameTime.ElapsedGameTime.TotalMilliseconds / Variables.Variable.PhysicsDivisor);
+            if (specialAttackTimer == Variables.Variable.BatSpecialAttackTimer / 2)
+            {
+                if (velocityX > 0)
+                    gameObject.Location += new Vector2(200f, 0);
+                else
+                    gameObject.Location += new Vector2(-200f, 0);
+            }
             if (specialAttackTimer == 0)
             {
-                Velocity = new Vector2(Velocity.X, 0);
                 gameObject.PhysicsState = new FallState(gameObject);
             }
             specialAttackTimer--;
