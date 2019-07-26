@@ -169,8 +169,8 @@ namespace SuperDavis.Object.Character
             if (!DeadFlag)
             {
                 DavisState.Death();
-                Sounds.Instance.Death.Play();
                 DeadFlag = true;
+                //Sounds.Instance.Death.Play();
             }
         }
 

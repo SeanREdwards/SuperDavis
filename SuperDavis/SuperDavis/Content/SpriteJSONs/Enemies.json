@@ -805,20 +805,6 @@
     "Scale": 1.28
   },
 
-  "CreateJulianRightJump": {
-    "TextureName": "EnemySprites/JulianRight_0",
-    "SourceFrames": [
-      {
-        "X": 450,
-        "Y": 193,
-        "Width": 42,
-        "Height": 57
-      }
-    ],
-    "FrameDelay": 0.08,
-    "Scale": 2
-  },
-
   "CreateJulianMegaAttackLeft": {
     "TextureName": "EnemySprites/JulianEnergyColumnLeft",
     "SourceFrames": [

@@ -18,6 +18,7 @@ namespace SuperDavis.Object.Block
         public IGameObjectPhysics PhysicsState { get; set; }
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+
         public CastleBlock(Vector2 location)
         {
             // initial state

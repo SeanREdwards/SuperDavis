@@ -22,6 +22,7 @@ namespace SuperDavis.Object.Block
         private readonly ISprite sprite;
 
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
+
         public MiddleCastleFloor(Vector2 location)
         {
             // initial state

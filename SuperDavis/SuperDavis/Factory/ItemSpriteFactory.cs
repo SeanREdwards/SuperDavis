@@ -94,15 +94,16 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        /*public ISprite CreateCastleDoorClosed()
+        public ISprite CreateCastleDoorClosed()
         {
             return Create(GetMethodName());
-        }*/
+        }
 
         public ISprite CreateCastleDoorOpened()
         {
             return Create(GetMethodName());
         }
+
 
         public ISprite CreateSkullBlock()
         {
