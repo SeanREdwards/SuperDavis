@@ -59,12 +59,11 @@ namespace SuperDavis
             IsMouseControllerOn = false;
             InitializeFactory();
             InitializeSounds();
-            HUD = new HUD(Content);
-
+            InitializeMenuController();
             WorldCreator worldCreator = new WorldCreator();
             Momento = new Momento(World, worldCreator, this);
+            HUD = new HUD(Content, Momento);
             World = Momento.LoadEmpty();
-            InitializeMenuController();
             base.Initialize();
         }
 

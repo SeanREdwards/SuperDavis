@@ -6,15 +6,16 @@ using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Sound;
 using Microsoft.Xna.Framework.Content;
+using SuperDavis.LvlManager;
 
 namespace SuperDavis
 {
-    public class HUD
+    class HUD
     {
         public int score = Variable.score;
         public int coins = Variable.coins;
         public int lives = Variable.lives;
-        public string worldText = Variable.worldText;
+        public string worldText;
         public double time = Variable.time;
 
         private int scrollingFactor = 0;
@@ -23,28 +24,30 @@ namespace SuperDavis
         private readonly SpriteFont font;
         private readonly SpriteFont fontBig;
         private readonly SpriteFont fontMenu;
+        private readonly Momento momento;
 
-        public HUD(ContentManager Content)
+        public HUD(ContentManager Content, Momento momento)
         {
             CharacterSelect = 1;
             font = Content.Load<SpriteFont>("Font/File");
             fontMenu = Content.Load<SpriteFont>("Font/fontMenu");
             fontBig = Content.Load<SpriteFont>("Font/Bigfont");
+            this.momento = momento;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             time -= gameTime.ElapsedGameTime.TotalSeconds;
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "SuperDavis", new Vector2(50, 20), Color.White);
+            spriteBatch.DrawString(fontMenu, "Score", new Vector2(50, 30), Color.White);
             spriteBatch.DrawString(font, "" + score, new Vector2(50, 60), Color.White);
-            spriteBatch.DrawString(font, "Coins", new Vector2(350, 20), Color.White);
-            spriteBatch.DrawString(font, "" + coins, new Vector2(350, 60), Color.White);
-            spriteBatch.DrawString(font, "World", new Vector2(600, 20), Color.White);
-            spriteBatch.DrawString(font, worldText, new Vector2(600, 60), Color.White);
-            spriteBatch.DrawString(font, "Time", new Vector2(850, 20), Color.White);
-            spriteBatch.DrawString(font, "" + (int)time, new Vector2(850, 60), Color.White);
-            spriteBatch.DrawString(font, "Lives", new Vector2(1050, 20), Color.White);
+            spriteBatch.DrawString(fontMenu, "Coins", new Vector2(300, 30), Color.White);
+            spriteBatch.DrawString(font, "" + coins, new Vector2(300, 60), Color.White);
+            spriteBatch.DrawString(fontMenu, "World", new Vector2(550, 30), Color.White);
+            spriteBatch.DrawString(font, momento.CheckPoint.Substring(0,momento.CheckPoint.IndexOf(".")), new Vector2(550, 60), Color.White);
+            spriteBatch.DrawString(fontMenu, "Time", new Vector2(800, 30), Color.White);
+            spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
+            spriteBatch.DrawString(fontMenu, "Lives", new Vector2(1000, 30), Color.White);
             spriteBatch.End();
 
             if (lives <= 0)
@@ -54,7 +57,7 @@ namespace SuperDavis
             else
             {
                 spriteBatch.Begin();
-                spriteBatch.DrawString(font, "" + (int)lives, new Vector2(1050, 60), Color.White);
+                spriteBatch.DrawString(fontBig, "" + (int)lives, new Vector2(1000, 60), Color.Red);
                 spriteBatch.End();
             }
         }
