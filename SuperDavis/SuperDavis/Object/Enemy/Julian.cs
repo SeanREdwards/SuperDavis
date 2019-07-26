@@ -71,8 +71,10 @@ namespace SuperDavis.Object.Enemy
 
         public void TakeDamage()
         {
+
             if (HealthCounter > 0)
             {
+                Sounds.Instance.PlayPhysicsCollision();
                 HealthCounter--;
                 PhysicsState = new JulianKnockBackState(this);
             }

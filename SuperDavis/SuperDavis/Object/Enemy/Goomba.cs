@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
+using SuperDavis.Sound;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
 using System;
@@ -73,6 +74,8 @@ namespace SuperDavis.Object.Enemy
 
         public void TakeDamage()
         {
+            if(!Dead)
+                Sounds.Instance.PlayPhysicsCollision();
             Dead = true;
             PhysicsState = new EnemyDeadState(this);
             sprite = EnemySpriteFactory.Instance.CreateGoombaFlatAnimated();
