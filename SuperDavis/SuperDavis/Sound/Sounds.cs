@@ -10,22 +10,100 @@ namespace SuperDavis.Sound
         private Sounds() { }
 
         public SoundEffect Music;
+        public SoundEffect BossMusic;
         public SoundEffectInstance MusicInstance;
+        public SoundEffectInstance BossMusicInstance;
+
         public SoundEffect Jump;
+        private bool readyJump;
+
         public SoundEffect Death;
         public SoundEffect ItemPickup;
 
-        private bool readyJump = true;
+        //Sounds for player character ranged attack
+        public SoundEffect DavisShootSound;
+        public SoundEffect WoodyShootSound;
+        public SoundEffect BatShootSound;
+        public SoundEffect JulianShootSound;
+
+        public SoundEffect CharacterSelectSound;
+
+        public SoundEffect DoorOpenSound;
+        public SoundEffect DoorCloseSound;
+
+        public SoundEffect DrinkMilkSound;
+
+        public SoundEffect Explode1Sound;
+        public SoundEffect Explode2Sound;
+        public SoundEffect Explode3Sound;
+        public SoundEffect Explode4Sound;
+
+        public SoundEffect GameOverSound;
+
+        public SoundEffect HealSound;
+
+        public SoundEffect KeyPickupSound;
+
+        public SoundEffect KiyahOneSound;
+        public SoundEffect KiyahTwoSound;
+        public SoundEffect KiyahThreeSound;
+
+        public SoundEffect PhysicalAttackCollisionSoundOne;
+
+        public SoundEffect TeleportSound;
+
+        public SoundEffect WinSound;
 
         public void Load(ContentManager content)
         {
-            Music = content.Load<SoundEffect>("SoundFX/DemoMusic");
+            Music = content.Load<SoundEffect>("SoundFX/RegularGameMusic");
             MusicInstance = Music.CreateInstance();
             MusicInstance.IsLooped = true;
+
+            BossMusic = content.Load<SoundEffect>("SoundFX/BossFightMusic");
+            BossMusicInstance = BossMusic.CreateInstance();
+            BossMusicInstance.IsLooped = true;
+
             Jump = content.Load<SoundEffect>("SoundFX/Jump");
+            readyJump = true;
+
             Death = content.Load<SoundEffect>("SoundFX/Death");
             ItemPickup = content.Load<SoundEffect>("SoundFX/ItemPickup");
-            readyJump = true;
+
+            /*Sounds from Little Fighter 2 (same game where we got the sprites)*/
+            DavisShootSound = content.Load<SoundEffect>("SoundFX/DavisShootSound");
+            WoodyShootSound = content.Load<SoundEffect>("SoundFX/WoodyShootSound");
+            BatShootSound = content.Load<SoundEffect>("SoundFX/WoodyShootSound");
+            JulianShootSound = content.Load<SoundEffect>("SoundFX/JulianShootSound");
+
+            DrinkMilkSound = content.Load<SoundEffect>("SoundFX/DrinkMilkSound");
+
+            CharacterSelectSound = content.Load<SoundEffect>("SoundFX/CharacterSelectSound");
+            GameOverSound = content.Load<SoundEffect>("SoundFX/GameOverSound");
+
+            HealSound = content.Load<SoundEffect>("SoundFX/HealSound");
+
+            KeyPickupSound = content.Load<SoundEffect>("SoundFX/KeyPickupSound");
+
+            KiyahOneSound = content.Load<SoundEffect>("SoundFX/KiyahOneSound");
+            KiyahTwoSound = content.Load<SoundEffect>("SoundFX/KiyahTwoSound");
+            KiyahThreeSound = content.Load<SoundEffect>("SoundFX/KiyahThreeSound");
+
+            PhysicalAttackCollisionSoundOne = content.Load<SoundEffect>("SoundFX/PhysicalAttackCollisionSoundOne");
+
+            TeleportSound = content.Load<SoundEffect>("SoundFX/TeleportSound");
+
+            WinSound = content.Load<SoundEffect>("SoundFX/WinSound");
+
+            /*Sounds taken from Mojang's Minecraft*/
+            DoorOpenSound = content.Load<SoundEffect>("SoundFX/DoorOpenSound");
+            DoorCloseSound = content.Load<SoundEffect>("SoundFX/DoorCloseSound");
+
+            Explode1Sound = content.Load<SoundEffect>("SoundFX/Explode1Sound");
+            Explode2Sound = content.Load<SoundEffect>("SoundFX/Explode2Sound");
+            Explode3Sound = content.Load<SoundEffect>("SoundFX/Explode3Sound");
+            Explode4Sound = content.Load<SoundEffect>("SoundFX/Explode4Sound");
+
         }
 
         public void PlayJump()
