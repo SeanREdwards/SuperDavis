@@ -3,7 +3,6 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
-using SuperDavis.Sound;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -84,7 +83,7 @@ namespace SuperDavis.Collision
                     break;
                 case CollisionSide.Top:
                     //if not hidden block
-                    if (!block.IsHidden && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState) &&!(davis.PhysicsState is ShunpoState))
+                    if (!block.IsHidden && !(davis.PhysicsState is FlyingKneeState) && !(davis.PhysicsState is ShoryukenState) && !(davis.PhysicsState is ShunpoState))
                     {
                         davis.DavisState.Land();
                         davis.PhysicsState = new StandingState(davis);

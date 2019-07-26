@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
-using System;
 
 namespace SuperDavis.Physics
 {
@@ -15,7 +14,7 @@ namespace SuperDavis.Physics
         private int specialAttackTimer = Variables.Variable.DavisSpecialAttackTimer;
         public ShoryukenState(IGameObject gameObjectClass)
         {
-            
+
             gameObject = gameObjectClass;
             if ((gameObject as IDavis).FacingDirection == FacingDirection.Left)
                 velocityX = 10f;

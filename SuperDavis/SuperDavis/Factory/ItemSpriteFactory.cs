@@ -113,10 +113,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-         public ISprite CreateSpinBlockAnimated()
-         {
-             return Create(GetMethodName());
-         }
+        public ISprite CreateSpinBlockAnimated()
+        {
+            return Create(GetMethodName());
+        }
 
         public ISprite CreateLeftGreenFloor()
         {

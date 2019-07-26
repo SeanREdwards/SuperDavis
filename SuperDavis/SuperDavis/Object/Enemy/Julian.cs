@@ -101,7 +101,7 @@ namespace SuperDavis.Object.Enemy
                     else
                     {
                         Location += new Vector2(1f, 0);
-                    }  
+                    }
                 }
 
 
@@ -148,7 +148,7 @@ namespace SuperDavis.Object.Enemy
                 Sounds.Instance.PlayExplodeSound1();
                 Location += new Vector2(0, -487f);
                 if (FacingDirection == FacingDirection.Left)
-                    Sprite = EnemySpriteFactory.Instance.CreateJulianMegaAttackLeft();    
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianMegaAttackLeft();
                 else
                     Sprite = EnemySpriteFactory.Instance.CreateJulianMegaAttackRight();
                 JulianStateMachine = new JulianMetaAttackState(Sprite, this);

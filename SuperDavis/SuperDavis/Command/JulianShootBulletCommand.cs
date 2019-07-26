@@ -1,9 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using SuperDavis.Interfaces;
+﻿using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
-using SuperDavis.Object.Item;
-using SuperDavis.Sound;
-using System;
 
 namespace Superjulian.Command
 {

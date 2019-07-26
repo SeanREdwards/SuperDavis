@@ -13,7 +13,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-            if(!(davis.PhysicsState is FlyingKneeState))
+            if (!(davis.PhysicsState is FlyingKneeState))
                 davis.DavisSpecialAttack();
         }
     }

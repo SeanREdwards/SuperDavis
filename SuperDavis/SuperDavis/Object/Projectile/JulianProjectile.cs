@@ -61,7 +61,7 @@ namespace SuperDavis.Object.Item
         {
             PhysicsState = new NullPhysicsState();
             if (FacingDirection == FacingDirection.Right)
-                projectileSprite = EnemySpriteFactory.Instance.CreateJulianExplodeRight(); 
+                projectileSprite = EnemySpriteFactory.Instance.CreateJulianExplodeRight();
             else
                 projectileSprite = EnemySpriteFactory.Instance.CreateJulianExplodeLeft();
             BatProjectileStateMachine = new ProjectileExplodeStateMachine(projectileSprite, this);

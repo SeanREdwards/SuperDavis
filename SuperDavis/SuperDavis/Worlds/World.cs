@@ -5,9 +5,7 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
-using SuperDavis.Object.SpawnPoint;
 using SuperDavis.Physics;
-using SuperDavis.Sound;
 using SuperDavis.State.EnemyState;
 using System;
 using System.Collections.Generic;
@@ -73,47 +71,47 @@ namespace SuperDavis.Worlds
 
         public void Update(GameTime gameTime)
         {
-   
-                foreach (IBackground background in Backgrounds)
-                    background.Update(gameTime);
-                Characters.Update(gameTime);
-                CheckCharacterDeath();
-                foreach (IItem item in Items)
-                    item.Update(gameTime);
-                foreach (IBlock block in Blocks)
-                    block.Update(gameTime);
-                foreach (IProjectile projectile in Projectiles)
-                {
-                    projectile.Update(gameTime);
-                    if (projectile.IsExploded)
-                    {
-                        var davis = Characters;
-                        if (davis.DavisProjectile.Count < 3)
-                            switch (davis.DavisStatus)
-                            {
-                                case (DavisStatus.Davis):
-                                    davis.DavisProjectile.Add(new DavisProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
-                                    break;
-                                case (DavisStatus.Woody):
-                                    davis.DavisProjectile.Add(new WoodyProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
-                                    break;
-                                case (DavisStatus.Bat):
-                                    davis.DavisProjectile.Add(new BatProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
-                                    break;
-                                default:
-                                    break;
-                            }
-                        ObjectToRemove.Add(projectile);
-                    }
-                }
-                foreach (IEnemy enemy in Enemies)
-                {
-                    enemy.Update(gameTime);
-                    EnemyAI(enemy);
-                }
 
-                if (ObjectToRemove.Count > 0)
-                    RemoveObject();
+            foreach (IBackground background in Backgrounds)
+                background.Update(gameTime);
+            Characters.Update(gameTime);
+            CheckCharacterDeath();
+            foreach (IItem item in Items)
+                item.Update(gameTime);
+            foreach (IBlock block in Blocks)
+                block.Update(gameTime);
+            foreach (IProjectile projectile in Projectiles)
+            {
+                projectile.Update(gameTime);
+                if (projectile.IsExploded)
+                {
+                    var davis = Characters;
+                    if (davis.DavisProjectile.Count < 3)
+                        switch (davis.DavisStatus)
+                        {
+                            case (DavisStatus.Davis):
+                                davis.DavisProjectile.Add(new DavisProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            case (DavisStatus.Woody):
+                                davis.DavisProjectile.Add(new WoodyProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            case (DavisStatus.Bat):
+                                davis.DavisProjectile.Add(new BatProjectile(Characters.Location - new Vector2(0, 30f), Characters.FacingDirection));
+                                break;
+                            default:
+                                break;
+                        }
+                    ObjectToRemove.Add(projectile);
+                }
+            }
+            foreach (IEnemy enemy in Enemies)
+            {
+                enemy.Update(gameTime);
+                EnemyAI(enemy);
+            }
+
+            if (ObjectToRemove.Count > 0)
+                RemoveObject();
 
             if (ObjectToAdd.Count > 0)
             {
@@ -122,24 +120,24 @@ namespace SuperDavis.Worlds
                 ObjectToAdd.Clear();
             }
 
-                               
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
 
-                foreach (IBackground background in Backgrounds)
-                    background.Draw(spriteBatch);
-                foreach (IItem item in Items)
-                    item.Draw(spriteBatch);
-                foreach (IBlock block in Blocks)
-                    block.Draw(spriteBatch);
-                foreach (IProjectile projectile in Projectiles)
-                    projectile.Draw(spriteBatch);
-                foreach (IEnemy enemy in Enemies)
-                    enemy.Draw(spriteBatch);
-                if (Characters != null)
-                    Characters.Draw(spriteBatch);
+            foreach (IBackground background in Backgrounds)
+                background.Draw(spriteBatch);
+            foreach (IItem item in Items)
+                item.Draw(spriteBatch);
+            foreach (IBlock block in Blocks)
+                block.Draw(spriteBatch);
+            foreach (IProjectile projectile in Projectiles)
+                projectile.Draw(spriteBatch);
+            foreach (IEnemy enemy in Enemies)
+                enemy.Draw(spriteBatch);
+            if (Characters != null)
+                Characters.Draw(spriteBatch);
 
         }
 
@@ -337,6 +335,6 @@ namespace SuperDavis.Worlds
 
         }
 
-        
+
     }
 }

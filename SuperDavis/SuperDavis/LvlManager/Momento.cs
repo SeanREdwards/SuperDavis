@@ -1,11 +1,6 @@
 ﻿using SuperDavis.Interfaces;
 using SuperDavis.Sound;
 using SuperDavis.Worlds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDavis.LvlManager
 {
@@ -63,7 +58,7 @@ namespace SuperDavis.LvlManager
 
         public IWorld ResetToCheckPoint()
         {
-            if(CheckPoint.Equals("demo-level.xml"))
+            if (CheckPoint.Equals("demo-level.xml"))
                 world = worldCreator.CreateWorld(CheckPoint, Variables.Variable.level11Width, Variables.Variable.level11Height, game1, game1.HUD);
             else
                 world = worldCreator.CreateWorld("boss-level.xml", Variables.Variable.bosslevelWidth, Variables.Variable.bosslevelWidth, game1, game1.HUD);
@@ -72,8 +67,8 @@ namespace SuperDavis.LvlManager
                 world.Characters.DavisToWoody();
             else if (game1.HUD.CharacterSelect == 3)
                 world.Characters.DavisToBat();
-                world.HUD.time = Variables.Variable.time;
-                return world;
+            world.HUD.time = Variables.Variable.time;
+            return world;
         }
     }
 }

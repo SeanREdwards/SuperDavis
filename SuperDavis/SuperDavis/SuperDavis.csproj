@@ -460,7 +460,6 @@
     <Compile Include="Cameras\Camera.cs" />
     <Compile Include="Collision\ProjectileEnemyCollisionHandler.cs" />
     <Compile Include="Collision\ProjectileBlockCollisionHandler.cs" />
-    <Compile Include="Collision\ItemBlockCollisionHandler.cs" />
     <Compile Include="Collision\EnemyBlockCollisionHandler.cs" />
     <Compile Include="Collision\DavisEnemyCollisionHandler.cs" />
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />

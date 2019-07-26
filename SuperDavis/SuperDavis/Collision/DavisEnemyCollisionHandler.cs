@@ -1,6 +1,5 @@
 ﻿using SuperDavis.Interfaces;
 using SuperDavis.Physics;
-using SuperDavis.Variables;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -21,7 +20,7 @@ namespace SuperDavis.Collision
                     }
                 }
 
-                    //if collision is not on bottom
+                //if collision is not on bottom
                 if (side == CollisionSide.Top)
                 {
                     if (!enemy.Dead && !davis.DeadFlag && !(enemy.PhysicsState is JulianKnockBackState))
@@ -32,7 +31,7 @@ namespace SuperDavis.Collision
                 }
                 else
                 {
-                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) &&!(davis.PhysicsState is ShoryukenState && !(davis.PhysicsState is ShunpoState)) )
+                    if (!enemy.Dead && davis.DavisStatus != DavisStatus.Invincible && !davis.DeadFlag && !(davis.PhysicsState is FlyingKneeState) && !(davis.PhysicsState is ShoryukenState && !(davis.PhysicsState is ShunpoState)))
                     {
                         davis.DavisDeath();
                         world.HUD.lives--;

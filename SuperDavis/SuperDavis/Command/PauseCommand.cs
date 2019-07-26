@@ -1,5 +1,4 @@
 ﻿using SuperDavis.Interfaces;
-using SuperDavis.Variables;
 
 namespace SuperDavis.Command
 {
@@ -13,7 +12,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
-           game.PauseFlag = !game.PauseFlag;
+            game.PauseFlag = !game.PauseFlag;
         }
     }
 }

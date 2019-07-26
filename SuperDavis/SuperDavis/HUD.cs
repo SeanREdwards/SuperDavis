@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using SuperDavis.Variables;
-using SuperDavis.Object.Character;
-using SuperDavis.Factory;
-using SuperDavis.Interfaces;
-using SuperDavis.Sound;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using SuperDavis.Factory;
 using SuperDavis.LvlManager;
+using SuperDavis.Sound;
+using SuperDavis.Variables;
 
 namespace SuperDavis
 {
@@ -47,7 +45,7 @@ namespace SuperDavis
             spriteBatch.DrawString(fontMenu, "Coins", new Vector2(300, 30), Color.White);
             spriteBatch.DrawString(font, "" + coins, new Vector2(300, 60), Color.White);
             spriteBatch.DrawString(fontMenu, "World", new Vector2(550, 30), Color.White);
-            spriteBatch.DrawString(font, momento.CheckPoint.Substring(0,momento.CheckPoint.IndexOf(".")), new Vector2(550, 60), Color.White);
+            spriteBatch.DrawString(font, momento.CheckPoint.Substring(0, momento.CheckPoint.IndexOf(".")), new Vector2(550, 60), Color.White);
             spriteBatch.DrawString(fontMenu, "Time", new Vector2(800, 30), Color.White);
             spriteBatch.DrawString(font, "" + (int)time, new Vector2(800, 60), Color.White);
             spriteBatch.DrawString(fontMenu, "Lives", new Vector2(1000, 30), Color.White);
@@ -140,9 +138,9 @@ namespace SuperDavis
             else
                 DavisSpriteFactory.Instance.CreateBatWalkRightSprite().Draw(spriteBatch, new Vector2(850, 450));
 
-            spriteBatch.DrawString(fontMenu, "Team SHORYUKEN", new Vector2(50 , 50), Color.Gray);
+            spriteBatch.DrawString(fontMenu, "Team SHORYUKEN", new Vector2(50, 50), Color.Gray);
 
-            spriteBatch.DrawString(fontMenu, "SUPER DUPER DAVIS", new Vector2((float)3.6 * scrollingFactor, 150 + (float) 1 * (scrollingFactor % 100)), Color.Yellow);
+            spriteBatch.DrawString(fontMenu, "SUPER DUPER DAVIS", new Vector2((float)3.6 * scrollingFactor, 150 + (float)1 * (scrollingFactor % 100)), Color.Yellow);
             DavisSpriteFactory.Instance.CreateDavisPortrait().Draw(spriteBatch, new Vector2(300, 300));
             DavisSpriteFactory.Instance.CreateWoodyPortrait().Draw(spriteBatch, new Vector2(550, 300));
             DavisSpriteFactory.Instance.CreateBatPortrait().Draw(spriteBatch, new Vector2(800, 300));

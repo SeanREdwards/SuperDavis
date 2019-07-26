@@ -5,7 +5,6 @@ using SuperDavis.Object.Item;
 using SuperDavis.Physics;
 using SuperDavis.Sound;
 using SuperDavis.State.DavisState;
-using SuperDavis.State.OtherState;
 using System;
 using System.Collections.Generic;
 
@@ -37,7 +36,7 @@ namespace SuperDavis.Object.Character
         public Rectangle HitBox { get; set; }
 
         public ISprite Sprite { get; set; }
-        public bool DeadFlag { get; set;}
+        public bool DeadFlag { get; set; }
         public bool KeyFlag { get; set; }
         public Davis(Vector2 location)
         {
@@ -205,7 +204,7 @@ namespace SuperDavis.Object.Character
                         PhysicsState = new ShunpoState(this);
                         Sounds.Instance.PlayTeleportSound();
                     }
-                    
+
                 }
             }
         }

@@ -4,7 +4,6 @@ using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Physics;
-using SuperDavis.Sound;
 
 namespace SuperDavis.State.EnemyState
 {
@@ -44,7 +43,7 @@ namespace SuperDavis.State.EnemyState
                 }
                 julian.JulianStateMachine = new JulianStateMachine(julian.Sprite);
             }
-                
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

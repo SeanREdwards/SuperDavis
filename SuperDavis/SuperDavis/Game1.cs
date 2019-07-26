@@ -78,14 +78,14 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-                controllerList[0].Update();
-                if (!Momento.IsEmpty && !PauseFlag)
-                {
-                    CollisionDetection.CheckCollisions();
-                    World.Update(gameTime);
-                    CheckGameReset();
-                }
-                base.Update(gameTime);
+            controllerList[0].Update();
+            if (!Momento.IsEmpty && !PauseFlag)
+            {
+                CollisionDetection.CheckCollisions();
+                World.Update(gameTime);
+                CheckGameReset();
+            }
+            base.Update(gameTime);
 
         }
 
@@ -121,7 +121,7 @@ namespace SuperDavis
             //creates castle floor
             //System.Console.WriteLine("//////////////////");
             //for (int i = 0; i <= 1200; i += 24)
-           //{
+            //{
             //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='696' />");
             //    System.Console.WriteLine("<Block Type='Brick' X='" + i + "' Y='672' />");
             //}
@@ -258,7 +258,7 @@ namespace SuperDavis
             }
             else
             {
-                if (World.Characters.Location.X < - World.Characters.HitBox.Width || World.Characters.Location.X > World.Width + World.Characters.HitBox.Width || World.Characters.Location.Y > World.Height)
+                if (World.Characters.Location.X < -World.Characters.HitBox.Width || World.Characters.Location.X > World.Width + World.Characters.HitBox.Width || World.Characters.Location.Y > World.Height)
                     resetFlag = true;
                 if (Momento.CheckPoint.Equals(Variables.Variable.FirstLevel) && World.Characters.Location.X > Variables.Variable.level11Width - Variables.Variable.UnitPixelSize)
                     Momento.Load(Variables.Variable.BossLevel);

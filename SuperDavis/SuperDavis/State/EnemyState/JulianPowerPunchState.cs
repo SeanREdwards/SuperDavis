@@ -54,7 +54,7 @@ namespace SuperDavis.State.EnemyState
                 }
                 julian.JulianStateMachine = new JulianStateMachine(julian.Sprite);
             }
-                
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

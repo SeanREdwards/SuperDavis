@@ -33,7 +33,7 @@ namespace SuperDavis.Physics
             Velocity *= Acceleration;
             if (Math.Abs(Velocity.X) - MaxVelocity.X > 1)
             {
-                if(Velocity.X > 0)
+                if (Velocity.X > 0)
                     Velocity = new Vector2(MaxVelocity.X, 0);
                 else
                     Velocity = new Vector2(-MaxVelocity.X, 0);
