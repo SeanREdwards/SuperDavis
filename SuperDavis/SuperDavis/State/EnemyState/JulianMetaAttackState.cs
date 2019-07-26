@@ -3,24 +3,23 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Enemy;
-using SuperDavis.Object.Item;
 using SuperDavis.Physics;
 using SuperDavis.Sound;
-using System;
 
 namespace SuperDavis.State.EnemyState
 {
-    class JulianPowerPunchState : IGameObjectState
+    class JulianMetaAttackState : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        private int timer = Variables.Variable.JulianPowerPunchTimer;
+        private int timer;
 
         private readonly Julian julian;
-        public JulianPowerPunchState(ISprite sprite, Julian julian)
+        public JulianMetaAttackState(ISprite sprite, Julian julian)
         {
+            timer = Variables.Variable.JulianMetaAttackTimer;
             this.Sprite = sprite;
             this.julian = julian;
             Width = Sprite.Width;
@@ -31,18 +30,9 @@ namespace SuperDavis.State.EnemyState
         {
             Sprite.Update(gameTime);
             timer--;
-
-            if (timer % 24 == 0)
+            if (timer <= 0)
             {
-                Sounds.Instance.PlayJulianShootBullet();
-                Random random = new Random();
-                julian.JulianProjectile.Clear();
-                julian.JulianProjectile.Add(new JulianProjectile(julian.Location + new Vector2(0, 30f + random.Next(10)), julian.FacingDirection));
-                julian.World.AddObject(julian.JulianProjectile[0]);
-                julian.JulianProjectile.RemoveAt(0);
-            }
-            if (timer == 0)
-            {
+                julian.Location += new Vector2(0, 487f);
                 julian.PhysicsState = new StandingState(julian);
                 if (julian.FacingDirection == FacingDirection.Left)
                 {

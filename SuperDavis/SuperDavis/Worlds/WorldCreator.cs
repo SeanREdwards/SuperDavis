@@ -56,6 +56,7 @@ namespace SuperDavis.Worlds
             {
                 { nameof(HiddenBlock), (x, y) => world.AddObject(new HiddenBlock(new Vector2(x, y))) },
                 { nameof(Door), (x, y) => world.AddObject(new Door(new Vector2(x, y))) },
+                { nameof(CastleDoor), (x, y) => world.AddObject(new CastleDoor(new Vector2(x, y))) },
                 { nameof(MushroomBlock), (x, y) => world.AddObject(new MushroomBlock(new Vector2(x, y))) },
                 { nameof(CoinBlock), (x, y) => world.AddObject(new CoinBlock(new Vector2(x, y))) },
                 { nameof(StarBlock), (x, y) => world.AddObject(new StarBlock(new Vector2(x, y))) },
@@ -87,7 +88,7 @@ namespace SuperDavis.Worlds
             {
                 { nameof(Goomba), (x, y) => world.AddObject(new Goomba(new Vector2(x, y), FacingDirection.Left))},
                 { nameof(Koopa), (x, y) => world.AddObject(new Koopa(new Vector2(x, y))) },
-                { nameof(Julian), (x, y) => world.AddObject(new Julian(new Vector2(x, y))) }
+                { nameof(Julian), (x, y) => world.AddObject(new Julian(new Vector2(x, y), world)) }
             };
         }
 

@@ -455,5 +455,5 @@
   <Block Type='CastleBlock' X='2376' Y='528' />
   <Block Type='LeftCastleCeiling' X='2352' Y='552' />
   <Block Type='RightCastleCeiling' X='2376' Y='552' />
-    <Block Type='Door' X='2348' Y='576' />
+    <Block Type='CastleDoor' X='2348' Y='576' />
 </Object>

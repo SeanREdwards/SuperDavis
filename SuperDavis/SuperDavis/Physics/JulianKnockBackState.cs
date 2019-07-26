@@ -23,7 +23,7 @@ namespace SuperDavis.Physics
                 velocityX = -1f;
 
             Velocity = new Vector2(velocityX, -3f);
-            Acceleration = new Vector2(1f, 0.9f);
+            Acceleration = new Vector2(1f, 0.85f);
             MaxVelocity = new Vector2(0, -0.5f);
         }
 

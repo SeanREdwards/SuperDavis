@@ -8,6 +8,7 @@ using SuperDavis.Object.Item;
 using SuperDavis.Object.SpawnPoint;
 using SuperDavis.Physics;
 using SuperDavis.Sound;
+using SuperDavis.State.EnemyState;
 using System;
 using System.Collections.Generic;
 
@@ -33,9 +34,10 @@ namespace SuperDavis.Worlds
         public int WorldGridWidth, WorldGridHeight;
         private int characterDeathTimer = Variables.Variable.DavisDeathTimer;
 
-        private readonly Game1 game;
+        public Game1 Game { get; set; }
         private HashSet<IGameObject> ObjectToAdd { get; set; }
         private int enemyCounter = 0;
+        private int julianAITimer = Variables.Variable.JulianAITimer;
 
         public HUD HUD { get; set; }
 
@@ -43,7 +45,7 @@ namespace SuperDavis.Worlds
         {
             Width = width;
             Height = height;
-            this.game = game;
+            this.Game = game;
             this.HUD = HUD;
             /* Initialize WorldGrid - 2 Dimensional Array */
             WorldGridWidth = (int)(Width / UNIT_SIZE);
@@ -214,7 +216,11 @@ namespace SuperDavis.Worlds
                     }
                 }
                 else
+                {
+                    if (@object is Julian)
+                        Game.WinGameFlag = true;
                     WorldGrid[oldLocationX][oldLocationY].Remove(@object);
+                }
 
         }
 
@@ -243,10 +249,25 @@ namespace SuperDavis.Worlds
                     if (WorldGrid[i][j].Count > 0)
                         WorldGrid[i][j].Clear();
 
-            game.World = game.Momento.ResetToCheckPoint();
-            game.CollisionDetection = new CollisionDetection(game.World);
-            game.InitializeController();
+            Game.World = Game.Momento.ResetToCheckPoint();
+            Game.CollisionDetection = new CollisionDetection(Game.World);
+            Game.InitializeController();
             enemyCounter = 0;
+        }
+
+        public void Clear()
+        {
+            Characters = null;
+            Blocks.Clear();
+            Enemies.Clear();
+            Items.Clear();
+            Projectiles.Clear();
+            Backgrounds.Clear();
+            ObjectToRemove.Clear();
+            for (int i = 0; i < WorldGridWidth; i++)
+                for (int j = 0; j < WorldGridHeight; j++)
+                    if (WorldGrid[i][j].Count > 0)
+                        WorldGrid[i][j].Clear();
         }
 
         public bool IsIndexOutOfBounds(int x, int y)
@@ -279,14 +300,24 @@ namespace SuperDavis.Worlds
             // Julian AI
             if (enemy is Julian julian && !julian.Dead)
             {
-                if (Math.Abs(Characters.Location.X - enemy.Location.X) < 200)
-                    julian.MetaAttack();
-                else if (Math.Abs(Characters.Location.X - enemy.Location.X) >= 600 && Math.Abs(Characters.Location.Y - enemy.Location.Y) < 50)
-                    julian.PowerPunch();
+                if (Characters.FacingDirection == julian.FacingDirection && julian.FacingDirection == FacingDirection.Left && julian.Location.X < Characters.Location.X)
+                    julian.ChangeDirection();
+                if (Characters.FacingDirection == julian.FacingDirection && julian.FacingDirection == FacingDirection.Right && julian.Location.X > Characters.Location.X)
+                    julian.ChangeDirection();
+
+                if (julianAITimer == 0)
+                {
+                    if (Math.Abs(Characters.Location.X - enemy.Location.X) < 200 && !(julian.JulianStateMachine is JulianMetaAttackState))
+                        julian.MetaAttack();
+                    if (Math.Abs(Characters.Location.X - enemy.Location.X) >= 250 && Math.Abs(Characters.Location.Y - enemy.Location.Y) < 50 && !(julian.JulianStateMachine is JulianPowerPunchState))
+                        julian.PowerPunch();
+                    julianAITimer = Variables.Variable.JulianAITimer;
+                }
+                julianAITimer--;
 
                 if (julian.HealthCounter < 16 && julian.HealthCounter >= 6)
                 {
-                    if (enemyCounter < 10)
+                    if (enemyCounter < 5)
                     {
                         ObjectToAdd.Add(new Goomba(new Vector2(0 + random.Next(300), 0), FacingDirection.Right));
                         enemyCounter++;
@@ -294,7 +325,7 @@ namespace SuperDavis.Worlds
                 }
                 else if (julian.HealthCounter < 6)
                 {
-                    if (enemyCounter > 6)
+                    if (enemyCounter > 3)
                     {
                         ObjectToAdd.Add(new Koopa(new Vector2(300 + random.Next(300), 0)));
                         enemyCounter--;

@@ -38,9 +38,9 @@ namespace SuperDavis.Object.Item
             PhysicsState = new BatProjectilePhysicsState(this);
             Location = location;
             if (FacingDirection == FacingDirection.Right)
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatProjectileLeft();
+                projectileSprite = EnemySpriteFactory.Instance.CreateJulianProjectileRight();
             else
-                projectileSprite = DavisSpriteFactory.Instance.CreateBatProjectileLeft();
+                projectileSprite = EnemySpriteFactory.Instance.CreateJulianProjectileLeft();
             BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite, this);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectileSprite.Width, (int)projectileSprite.Height);
         }
@@ -60,7 +60,10 @@ namespace SuperDavis.Object.Item
         public void Explode()
         {
             PhysicsState = new NullPhysicsState();
-            projectileSprite = DavisSpriteFactory.Instance.BatExplodeRight();
+            if (FacingDirection == FacingDirection.Right)
+                projectileSprite = EnemySpriteFactory.Instance.CreateJulianExplodeRight(); 
+            else
+                projectileSprite = EnemySpriteFactory.Instance.CreateJulianExplodeLeft();
             BatProjectileStateMachine = new ProjectileExplodeStateMachine(projectileSprite, this);
         }
     }

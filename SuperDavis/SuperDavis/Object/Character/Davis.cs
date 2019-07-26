@@ -38,10 +38,11 @@ namespace SuperDavis.Object.Character
 
         public ISprite Sprite { get; set; }
         public bool DeadFlag { get; set;}
-
+        public bool KeyFlag { get; set; }
         public Davis(Vector2 location)
         {
             DeadFlag = false;
+            KeyFlag = false;
             PhysicsState = new FallState(this);
             //Instantiate character dictionary
             charDict = new CharacterDictionary();

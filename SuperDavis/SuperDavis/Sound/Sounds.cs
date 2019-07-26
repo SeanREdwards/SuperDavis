@@ -73,7 +73,7 @@ namespace SuperDavis.Sound
             /*Sounds from Little Fighter 2 (same game where we got the sprites)*/
             DavisShootSound = content.Load<SoundEffect>("SoundFX/DavisShootSound");
             WoodyShootSound = content.Load<SoundEffect>("SoundFX/WoodyShootSound");
-            BatShootSound = content.Load<SoundEffect>("SoundFX/WoodyShootSound");
+            BatShootSound = content.Load<SoundEffect>("SoundFX/BatShootSound");
             JulianShootSound = content.Load<SoundEffect>("SoundFX/JulianShootSound");
 
             DrinkMilkSound = content.Load<SoundEffect>("SoundFX/DrinkMilkSound");
@@ -140,5 +140,64 @@ namespace SuperDavis.Sound
             KiyahOneSound.Play();
         }
 
+        public void PlayDoorOpen()
+        {
+            DoorOpenSound.Play();
+        }
+
+        public void PlayDavisShootBullet()
+        {
+            DavisShootSound.Play();
+        }
+
+        public void PlayWoodyShootBullet()
+        {
+            WoodyShootSound.Play();
+        }
+
+        public void PlayBatShootBullet()
+        {
+            BatShootSound.Play();
+        }
+
+        public void PlayJulianShootBullet()
+        {
+            JulianShootSound.Play();
+        }
+
+        public void PlayCharacterSelection()
+        {
+            CharacterSelectSound.Play();
+        }
+
+        public void PlayExplodeSound1()
+        {
+            Explode1Sound.Play();
+        }
+
+        public void PlayGameOverMusic()
+        {
+            GameOverSound.Play();
+        }
+
+        public void PlayWinMusic()
+        {
+            WinSound.Play();
+        }
+
+        public void PlayKeyPickUp()
+        {
+            KeyPickupSound.Play();
+        }
+
+        public void PlayDrinkMilk()
+        {
+            DrinkMilkSound.Play();
+        }
+
+        public void PlayHealSound()
+        {
+            HealSound.Play();
+        }
     }
 }

@@ -36,6 +36,8 @@ namespace SuperDavis.LvlManager
             }
             else
             {
+                Sounds.Instance.MusicInstance.IsLooped = false;
+                Sounds.Instance.MusicInstance.Pause();
                 world = worldCreator.CreateWorld(levelName, Variables.Variable.bosslevelWidth, Variables.Variable.bosslevelHeight, game1, game1.HUD);
                 Sounds.Instance.BossMusicInstance.Play();
             }

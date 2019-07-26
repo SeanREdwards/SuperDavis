@@ -524,7 +524,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.34
   },
 
   "CreateJulianShootRight": {
@@ -550,7 +550,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.34
   },
 
   "CreateJulianLeftJump": {
@@ -588,13 +588,13 @@
         "X": 487,
         "Y": 408,
         "Width": 67,
-        "Height": 91
+        "Height": 99
       },
       {
         "X": 407,
         "Y": 401,
         "Width": 68,
-        "Height": 98
+        "Height": 99
       },
       {
         "X": 327,
@@ -606,23 +606,23 @@
         "X": 247,
         "Y": 410,
         "Width": 64,
-        "Height": 89
+        "Height": 99
       },
       {
         "X": 167,
         "Y": 412,
         "Width": 67,
-        "Height": 87
+        "Height": 99
       },
       {
         "X": 87,
         "Y": 410,
         "Width": 65,
-        "Height": 89
+        "Height": 99
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.15
   },
 
   "CreateJulianPowerUpRight": {
@@ -666,7 +666,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.15
   },
 
   "CreateJulianPowerPunchsOneLeft": {
@@ -676,25 +676,25 @@
         "X": 729,
         "Y": 210,
         "Width": 55,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 641,
         "Y": 210,
         "Width": 69,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 562,
         "Y": 211,
         "Width": 73,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 495,
         "Y": 211,
         "Width": 64,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 401,
@@ -706,7 +706,7 @@
         "X": 322,
         "Y": 211,
         "Width": 70,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 255,
@@ -718,23 +718,23 @@
         "X": 166,
         "Y": 208,
         "Width": 60,
-        "Height": 91
+        "Height": 90
       },
       {
         "X": 81,
         "Y": 210,
         "Width": 76,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 3,
         "Y": 210,
         "Width": 74,
-        "Height": 89
+        "Height": 90
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 1.28
   },
 
   "CreateJulianPowerPunchsOneRight": {
@@ -744,25 +744,25 @@
         "X": 16,
         "Y": 210,
         "Width": 55,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 90,
         "Y": 210,
         "Width": 69,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 165,
         "Y": 211,
         "Width": 73,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 241,
         "Y": 211,
         "Width": 64,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 334,
@@ -774,7 +774,7 @@
         "X": 408,
         "Y": 211,
         "Width": 70,
-        "Height": 88
+        "Height": 90
       },
       {
         "X": 485,
@@ -786,23 +786,23 @@
         "X": 574,
         "Y": 208,
         "Width": 60,
-        "Height": 91
+        "Height": 90
       },
       {
         "X": 643,
         "Y": 210,
         "Width": 76,
-        "Height": 89
+        "Height": 90
       },
       {
         "X": 723,
         "Y": 210,
         "Width": 74,
-        "Height": 89
+        "Height": 90
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 1.28
   },
 
   "CreateJulianRightJump": {
@@ -822,12 +822,6 @@
   "CreateJulianMegaAttackLeft": {
     "TextureName": "EnemySprites/JulianEnergyColumnLeft",
     "SourceFrames": [
-      {
-        "X": 614,
-        "Y": 186,
-        "Width": 176,
-        "Height": 213
-      },
       {
         "X": 421,
         "Y": 0,
@@ -854,12 +848,7 @@
   "CreateJulianMegaAttackRight": {
     "TextureName": "EnemySprites/JulianEnergyColumnRight",
     "SourceFrames": [
-      {
-        "X": 10,
-        "Y": 186,
-        "Width": 176,
-        "Height": 213
-      },
+
       {
         "X": 224,
         "Y": 0,
@@ -940,7 +929,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.25
   },
 
   "CreateJulianProjectileRight": {
@@ -972,7 +961,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.25
   },
 
   "CreateJulianExplodeLeft": {
@@ -998,7 +987,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.25
   },
 
   "CreateJulianExplodeRight": {
@@ -1024,6 +1013,6 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.25
   }
 }

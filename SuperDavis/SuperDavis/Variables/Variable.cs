@@ -88,6 +88,8 @@
         public const int GroundLeveGoomba = 610;
 
         public const int JulianPowerPunchTimer = 50;
+        public const int JulianMetaAttackTimer = 50;
+        public const int JulianAITimer = 200;
 
         //Items
         public const int CoinTimer = 20;
@@ -130,6 +132,8 @@
         public static string worldText = "1-1";
         public static double time = 400;
 
+        public static int doorOpenScore = 3000;
+
         //Variables.Variable.
 
         //SpecialAttackTimer
@@ -141,5 +145,8 @@
         public static int DavisShootBulletTimer = 25;
         public static int WoodyShootBulletTimer = 33;
         public static int BatShootBulletTimer = 20;
+
+        public static string BossLevel = "boss-level.xml";
+        public static string FirstLevel = "demo-level.xml";
     }
 }

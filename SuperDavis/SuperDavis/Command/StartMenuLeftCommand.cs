@@ -1,5 +1,6 @@
 ﻿using SuperDavis.Collision;
 using SuperDavis.Interfaces;
+using SuperDavis.Sound;
 
 namespace SuperDavis.Command
 {
@@ -14,9 +15,8 @@ namespace SuperDavis.Command
         public void Execute()
         {
             if (game.HUD.CharacterSelect > 1)
-            {
                 game.HUD.CharacterSelect--;
-            }
+            Sounds.Instance.PlayCharacterSelection();
         }
     }
 }

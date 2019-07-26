@@ -27,6 +27,7 @@ namespace SuperDavis
         public IWorld World { get; set; }
         public bool IsMouseControllerOn { get; set; }
         public bool PauseFlag { get; set; }
+        public bool WinGameFlag { get; set; }
         public Camera Camera { get; set; }
 
         public CollisionDetection CollisionDetection;
@@ -56,6 +57,7 @@ namespace SuperDavis
         {
             resetFlag = false;
             PauseFlag = false;
+            WinGameFlag = false;
             IsMouseControllerOn = false;
             InitializeFactory();
             InitializeSounds();
@@ -76,19 +78,20 @@ namespace SuperDavis
 
         protected override void Update(GameTime gameTime)
         {
-            controllerList[0].Update();
-            if (!Momento.IsEmpty && !PauseFlag)
-            {
-                CollisionDetection.CheckCollisions();
-                World.Update(gameTime);
-                CheckGameReset();
-            }
-            base.Update(gameTime);
+                controllerList[0].Update();
+                if (!Momento.IsEmpty && !PauseFlag)
+                {
+                    CollisionDetection.CheckCollisions();
+                    World.Update(gameTime);
+                    CheckGameReset();
+                }
+                base.Update(gameTime);
+
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            if (!Momento.IsEmpty && !PauseFlag)
+            if (!Momento.IsEmpty && !PauseFlag && !WinGameFlag)
             {
                 Camera = new Camera(World, Variables.Variable.WindowsEdgeWidth, Variables.Variable.WindowsEdgeHeight);
                 spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, Camera.Draw());
@@ -99,8 +102,12 @@ namespace SuperDavis
             }
             else if (PauseFlag)
                 HUD.DrawPauseMenu(spriteBatch);
+            else if (WinGameFlag)
+                HUD.DrawWinMenu(spriteBatch);
             else
                 HUD.DrawStartMenu(spriteBatch);
+
+
 
             //KEEP THIS CODE, IT HELPS GENERATE WALLS AND FLOOR
             //creates  green middle block floor
@@ -251,9 +258,10 @@ namespace SuperDavis
             }
             else
             {
-                var character = World.Characters;
-                if (character.Location.X < -character.HitBox.Width || character.Location.X > World.Width + character.HitBox.Width || character.Location.Y > World.Height)
+                if (World.Characters.Location.X < - World.Characters.HitBox.Width || World.Characters.Location.X > World.Width + World.Characters.HitBox.Width || World.Characters.Location.Y > World.Height)
                     resetFlag = true;
+                if (Momento.CheckPoint.Equals(Variables.Variable.FirstLevel) && World.Characters.Location.X > Variables.Variable.level11Width - Variables.Variable.UnitPixelSize)
+                    Momento.Load(Variables.Variable.BossLevel);
             }
 
             if (resetFlag)

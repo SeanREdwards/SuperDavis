@@ -6,6 +6,7 @@ namespace SuperDavis.Interfaces
 {
     interface IWorld
     {
+        Game1 Game { get; set; }
         float Width { get; }
         float Height { get; }
         HUD HUD { get; set; }
@@ -27,5 +28,6 @@ namespace SuperDavis.Interfaces
         void DecoratorReplacement(IGameObject prevObject, IGameObject newObject);
 
         void ResetGame();
+        void Clear();
     }
 }

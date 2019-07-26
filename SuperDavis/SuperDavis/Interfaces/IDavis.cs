@@ -7,6 +7,7 @@ namespace SuperDavis.Interfaces
     interface IDavis : IGameObject
     {
         bool DeadFlag { get; set; }
+        bool KeyFlag { get; set; }
         ISprite Sprite { get; set; }
         IDavisState DavisState { get; set; }
         DavisStatus DavisStatus { get; set; }

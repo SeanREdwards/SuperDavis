@@ -2,6 +2,7 @@
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Physics;
+using SuperDavis.State.EnemyState;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -26,7 +27,7 @@ namespace SuperDavis.Collision
                         }
                         break;
                     case CollisionSide.Top:
-                        if (!(block is EmptyBlock) && !(block.PhysicsState is JulianKnockBackState))
+                        if (!(block is EmptyBlock) && !(block.PhysicsState is JulianKnockBackState) && !(enemy.PhysicsState is JulianPowerPunchState) && !(enemy.PhysicsState is JulianMetaAttackState))
                         {
                             enemy.Location = new Vector2(enemy.Location.X, block.Location.Y - enemy.HitBox.Height);
                             enemy.PhysicsState = new StandingState(enemy);

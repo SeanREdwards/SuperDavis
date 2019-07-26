@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using SuperDavis.Interfaces;
 using SuperDavis.Object.Item;
+using SuperDavis.Sound;
 using System;
 
 namespace SuperDavis.Command
@@ -17,6 +18,7 @@ namespace SuperDavis.Command
 
         public void Execute()
         {
+            if(!davis.DeadFlag)
             if (davis.DavisProjectile.Count > 0)
             {
                 var count = davis.DavisProjectile.Count;
@@ -40,6 +42,12 @@ namespace SuperDavis.Command
                 world.AddObject(davis.DavisProjectile[davis.DavisProjectile.Count - 1]);
                 davis.DavisProjectile.RemoveAt(davis.DavisProjectile.Count - 1);
                 davis.DavisState.ShootBullet();
+                if (davis.DavisStatus == DavisStatus.Davis)
+                    Sounds.Instance.PlayDavisShootBullet();
+                else if (davis.DavisStatus == DavisStatus.Woody)
+                    Sounds.Instance.PlayWoodyShootBullet();
+                else
+                    Sounds.Instance.PlayBatShootBullet();
             }
         }
     }

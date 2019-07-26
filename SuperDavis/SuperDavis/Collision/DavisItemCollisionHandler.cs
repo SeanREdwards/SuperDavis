@@ -16,19 +16,19 @@ namespace SuperDavis.Collision
             {
                 if (item is Flower)
                 {
-                    world.HUD.score += 1000;
+                    Sounds.Instance.PlayDrinkMilk();
+                    world.HUD.score += 1500;
                     davis.DavisState.Static();
-
                 }
                 else if (item is Mushroom)
                 {
+                    Sounds.Instance.PlayHealSound();
                     world.HUD.lives += 1;
                     davis.DavisState.Static();
                 }
                 else if (item is Star)
                 {
                     world.Characters = new InvincibleDavis(world.Characters, world);
-                    //world.DecoratorReplacement(davis, world.Characters);
                 }
                 else if (item is Coin)
                 {
@@ -39,7 +39,8 @@ namespace SuperDavis.Collision
                 else if (item is Key)
                 {
                     world.HUD.score += 150;
-                    Sounds.Instance.PlayItemPickUp();
+                    Sounds.Instance.PlayKeyPickUp();
+                    davis.KeyFlag = true;
                 }
                 world.ObjectToRemove.Add(item);
             }

@@ -2,10 +2,13 @@
 using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
+using SuperDavis.Object.Item;
 using SuperDavis.Physics;
+using SuperDavis.Sound;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
 using System;
+using System.Collections.Generic;
 
 namespace SuperDavis.Object.Enemy
 {
@@ -25,34 +28,40 @@ namespace SuperDavis.Object.Enemy
 
         public FacingDirection FacingDirection { get; set; }
         public bool Dead { get; set; }
-
+        public IList<IProjectile> JulianProjectile { get; set; }
         public IGameObjectState JulianStateMachine { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
 
         public int HealthCounter { get; set; }
         public Rectangle HitBox { get; set; }
-        private ISprite sprite;
+        public ISprite Sprite { get; set; }
+        public IWorld World;
 
 
-        public Julian(Vector2 location)
+        public Julian(Vector2 location, IWorld world)
         {
+            this.World = world;
             // initial state
             HealthCounter = 20;
             Dead = false;
             FacingDirection = FacingDirection.Left;
             Location = location;
-            sprite = EnemySpriteFactory.Instance.CreateJulianLeftStatic();
-            JulianStateMachine = new JulianStateMachine(sprite);
+            Sprite = EnemySpriteFactory.Instance.CreateJulianLeftStatic();
+            JulianStateMachine = new JulianStateMachine(Sprite);
             PhysicsState = new FallState(this);
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
+            JulianProjectile = new List<IProjectile>()
+            {
+                (new JulianProjectile(location,FacingDirection))
+            };
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
         }
 
         public void Update(GameTime gameTime)
         {
+            Walk();
             JulianStateMachine.Update(gameTime);
             PhysicsState.Update(gameTime);
-            Walk();
-            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
+            HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)Sprite.Width, (int)Sprite.Height);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -70,10 +79,10 @@ namespace SuperDavis.Object.Enemy
             else
             {
                 if (FacingDirection == FacingDirection.Left)
-                    sprite = EnemySpriteFactory.Instance.CreateJulianDeadLeft();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianDeadLeft();
                 else
-                    sprite = EnemySpriteFactory.Instance.CreateJulianDeadRight();
-                JulianStateMachine = new JulianStateMachine(sprite);
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianDeadRight();
+                JulianStateMachine = new JulianStateMachine(Sprite);
                 PhysicsState = new EnemyDeadState(this);
                 JulianStateMachine = new RemoveState(this, JulianStateMachine.Sprite, 200);
             }
@@ -81,13 +90,21 @@ namespace SuperDavis.Object.Enemy
 
         public void Walk()
         {
-            if (!(PhysicsState is EnemyDeadState) && !(PhysicsState is JulianKnockBackState))
+            if (!(PhysicsState is EnemyDeadState) && !(PhysicsState is JulianKnockBackState) && !(JulianStateMachine is JulianPowerPunchState) && !(JulianStateMachine is JulianMetaAttackState))
             {
                 if (!Dead)
+                {
                     if (FacingDirection == FacingDirection.Left)
-                        Location += new Vector2(-1.5f, 0);
+                    {
+                        Location += new Vector2(-1f, 0);
+                    }
                     else
-                        Location += new Vector2(1.5f, 0);
+                    {
+                        Location += new Vector2(1f, 0);
+                    }  
+                }
+
+
             }
         }
 
@@ -97,41 +114,46 @@ namespace SuperDavis.Object.Enemy
             {
                 if (FacingDirection == FacingDirection.Left)
                 {
-                    sprite = EnemySpriteFactory.Instance.CreateJulianWalkRight();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianWalkRight();
                     FacingDirection = FacingDirection.Right;
                 }
                 else
                 {
-                    sprite = EnemySpriteFactory.Instance.CreateJulianWalkLeft();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianWalkLeft();
                     FacingDirection = FacingDirection.Left;
                 }
             }
-            JulianStateMachine = new JulianStateMachine(sprite);
+            JulianStateMachine = new JulianStateMachine(Sprite);
         }
 
         public void PowerPunch()
         {
-            if (!Dead)
+            if (!Dead && !(JulianStateMachine is JulianPowerPunchState))
             {
                 if (FacingDirection == FacingDirection.Left)
-                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneLeft();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneLeft();
                 else
-                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneRight();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneRight();
+
+                JulianStateMachine = new JulianPowerPunchState(Sprite, this);
             }
-            JulianStateMachine = new JulianPowerPunchState(sprite, this);
+
         }
 
         public void MetaAttack()
         {
-            if (!Dead)
+            if (!Dead && !(JulianStateMachine is JulianMetaAttackState))
             {
+                PhysicsState = new NullPhysicsState();
+                Sounds.Instance.PlayExplodeSound1();
+                Location += new Vector2(0, -487f);
                 if (FacingDirection == FacingDirection.Left)
-                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneLeft();
-    
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianMegaAttackLeft();    
                 else
-                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneRight();
+                    Sprite = EnemySpriteFactory.Instance.CreateJulianMegaAttackRight();
+                JulianStateMachine = new JulianMetaAttackState(Sprite, this);
             }
-            JulianStateMachine = new JulianPowerPunchState(sprite, this);
+
         }
 
         public void Jump()

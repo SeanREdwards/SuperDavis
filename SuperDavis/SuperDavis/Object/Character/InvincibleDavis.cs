@@ -30,6 +30,7 @@ namespace SuperDavis.Object.Character
         public IGameObjectPhysics PhysicsState { get; set; }
         public IList<IProjectile> DavisProjectile { get; set; }
         public bool DeadFlag { get; set; }
+        public bool KeyFlag { get; set; }
         public DavisStatus DavisStatus { get; set; }
         public DavisStatus PrevDavisStatus { get; set; }
         public Rectangle HitBox { get; set; }

@@ -21,11 +21,11 @@ namespace SuperDavis.Sprite
 
         public GenerateSprite(SpriteRegistrar spriteInfo)
         {
-            this.texture = spriteInfo.Texture;
+            texture = spriteInfo.Texture;
             spriteList = spriteInfo.SourceFrames;
-            this.blinkColorList = spriteInfo.ColorList;
-            this.scale = spriteInfo.Scale;
-            this.flipDirection = SpriteEffects.None;
+            blinkColorList = spriteInfo.ColorList;
+            scale = spriteInfo.Scale;
+            flipDirection = SpriteEffects.None;
             totalFrames = spriteList.Length;
             currentFrame = 0;
             // Initialize the first frame of hitbox width and height

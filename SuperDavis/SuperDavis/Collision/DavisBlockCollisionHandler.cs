@@ -3,6 +3,7 @@ using SuperDavis.Interfaces;
 using SuperDavis.Object.Block;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
+using SuperDavis.Sound;
 using static SuperDavis.Collision.CollisionDetection;
 
 namespace SuperDavis.Collision
@@ -93,14 +94,16 @@ namespace SuperDavis.Collision
                 case CollisionSide.Left:
                     if (!(block.IsHidden))
                     {
-                        if(!(block is Door && world.HUD.score > 5000))
-                            davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
+                        if (!((block is CastleDoor) && davis.KeyFlag))
+                            if (!(block is Door && world.HUD.score > Variables.Variable.doorOpenScore))
+                                davis.Location = new Vector2(block.Location.X - davis.HitBox.Width, davis.Location.Y);
+
                     }
                     break;
                 case CollisionSide.Right:
                     if (!(block.IsHidden))
                     {
-                        if (!(block is Door && world.HUD.score > 5000))
+                        if (!(block is Door && world.HUD.score > Variables.Variable.doorOpenScore))
                             davis.Location = new Vector2(block.Location.X + block.HitBox.Width, davis.Location.Y);
                     }
                     break;

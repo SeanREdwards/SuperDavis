@@ -26,6 +26,9 @@ namespace SuperDavis
         private readonly SpriteFont fontMenu;
         private readonly Momento momento;
 
+        private bool DoorOpenFlag = false;
+        private bool MusicFlag = false;
+
         public HUD(ContentManager Content, Momento momento)
         {
             CharacterSelect = 1;
@@ -50,6 +53,14 @@ namespace SuperDavis
             spriteBatch.DrawString(fontMenu, "Lives", new Vector2(1000, 30), Color.White);
             spriteBatch.End();
 
+            if (momento.CheckPoint.Equals("demo-level.xml") && score > Variables.Variable.doorOpenScore)
+            {
+                if (!DoorOpenFlag)
+                {
+                    Sounds.Instance.PlayDoorOpen();
+                    DoorOpenFlag = true;
+                }
+            }
             if (lives <= 0)
                 DrawGameOverMenu(spriteBatch);
             else
@@ -78,7 +89,17 @@ namespace SuperDavis
         public void DrawWinMenu(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(fontBig, "HUH, PURE LUCK MORTAL", new Vector2(500, 360), Color.White);
+            spriteBatch.GraphicsDevice.Clear(Color.Beige);
+            spriteBatch.DrawString(fontBig, "Grats on your pure luck XD", new Vector2(250, 330), Color.Orange);
+            if (!MusicFlag)
+            {
+                Sounds.Instance.BossMusicInstance.IsLooped = false;
+                Sounds.Instance.BossMusicInstance.Pause();
+                Sounds.Instance.PlayWinMusic();
+                Sounds.Instance.Death.Dispose();
+                MusicFlag = true;
+            }
+
             spriteBatch.End();
         }
 
@@ -86,6 +107,16 @@ namespace SuperDavis
         {
             spriteBatch.Begin();
             GameOverMenu(spriteBatch);
+            if (!MusicFlag)
+            {
+                Sounds.Instance.BossMusicInstance.IsLooped = false;
+                Sounds.Instance.BossMusicInstance.Pause();
+                Sounds.Instance.MusicInstance.IsLooped = false;
+                Sounds.Instance.MusicInstance.Pause();
+                Sounds.Instance.PlayGameOverMusic();
+                Sounds.Instance.Death.Dispose();
+                MusicFlag = true;
+            }
             spriteBatch.End();
         }
 
