@@ -182,6 +182,12 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
+        public ISprite CreateBossHealthSkull()
+        {
+            return Create(GetMethodName());
+        }
+
+
         /*Pipes*/
         public ISprite CreateGreenPipe()
         {
