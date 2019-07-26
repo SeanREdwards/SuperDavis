@@ -48,7 +48,7 @@ namespace SuperDavis.Sound
         public SoundEffect KiyahTwoSound;
         //public SoundEffect KiyahThreeSound;
 
-        //public SoundEffect PhysicalAttackCollisionSoundOne;
+        public SoundEffect PhysicalAttackCollisionSoundOne;
 
         public SoundEffect TeleportSound;
 
@@ -89,7 +89,7 @@ namespace SuperDavis.Sound
             KiyahTwoSound = content.Load<SoundEffect>("SoundFX/KiyahTwoSound");
             //KiyahThreeSound = content.Load<SoundEffect>("SoundFX/KiyahThreeSound");
 
-            //PhysicalAttackCollisionSoundOne = content.Load<SoundEffect>("SoundFX/PhysicalAttackCollisionSoundOne");
+            PhysicalAttackCollisionSoundOne = content.Load<SoundEffect>("SoundFX/PhysicalAttackCollisionSoundOne");
 
             TeleportSound = content.Load<SoundEffect>("SoundFX/TeleportSound");
 
@@ -198,6 +198,11 @@ namespace SuperDavis.Sound
         public void PlayHealSound()
         {
             HealSound.Play();
+        }
+
+        public void PlayPhysicsCollision()
+        {
+            PhysicalAttackCollisionSoundOne.Play();
         }
     }
 }

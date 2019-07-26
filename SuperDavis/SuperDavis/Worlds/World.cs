@@ -6,6 +6,7 @@ using SuperDavis.Object.Character;
 using SuperDavis.Object.Enemy;
 using SuperDavis.Object.Item;
 using SuperDavis.Physics;
+using SuperDavis.State.DavisState;
 using SuperDavis.State.EnemyState;
 using System;
 using System.Collections.Generic;
@@ -328,6 +329,12 @@ namespace SuperDavis.Worlds
                         ObjectToAdd.Add(new Koopa(new Vector2(300 + random.Next(300), 0)));
                         enemyCounter--;
                     }
+                }
+
+                if (!Characters.DeadFlag && julian.JulianStateMachine is JulianMetaAttackState && !!(Characters.DavisState is DavisDeathLeftState) && !!(Characters.DavisState is DavisDeathRightState) && ((Characters.Location.X - julian.Location.X) < -100 || (Characters.Location.X - julian.Location.X) > 250))
+                {
+                    HUD.lives--;
+                    Characters.DavisDeath();
                 }
 
             }

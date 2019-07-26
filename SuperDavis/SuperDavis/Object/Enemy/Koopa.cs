@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using SuperDavis.Factory;
 using SuperDavis.Interfaces;
 using SuperDavis.Physics;
+using SuperDavis.Sound;
 using SuperDavis.State.EnemyState;
 using SuperDavis.State.OtherState;
 using System;
@@ -77,6 +78,7 @@ namespace SuperDavis.Object.Enemy
             koopaStateMachine = new KoopaStateMachine(sprite);
             if (!Dead)
             {
+                Sounds.Instance.PlayPhysicsCollision();
                 Dead = true;
                 PhysicsState = new FallState(this);
             }
