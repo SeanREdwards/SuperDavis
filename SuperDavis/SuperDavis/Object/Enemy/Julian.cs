@@ -31,16 +31,18 @@ namespace SuperDavis.Object.Enemy
         private IGameObjectState JulianStateMachine;
         public IGameObjectPhysics PhysicsState { get; set; }
 
+        public int HealthCounter { get; set; }
+
         public Julian(Vector2 location)
         {
             // initial state
+            HealthCounter = 20;
             Dead = false;
             FacingDirection = FacingDirection.Left;
             Location = location;
             sprite = EnemySpriteFactory.Instance.CreateJulianLeftStatic();
             JulianStateMachine = new KoopaStateMachine(sprite);
             PhysicsState = new FallState(this);
-            sprite = JulianStateMachine.Sprite;
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
         }
 
@@ -49,18 +51,13 @@ namespace SuperDavis.Object.Enemy
             JulianStateMachine.Update(gameTime);
             PhysicsState.Update(gameTime);
 
-            if (!(PhysicsState is EnemyDeadState))
+            if (!(PhysicsState is EnemyDeadState) && !(PhysicsState is JulianKnockBackState))
             {
                 if (!Dead)
                     if (FacingDirection == FacingDirection.Left)
-                        Location += new Vector2(-1f, 0);
+                        Location += new Vector2(-1.5f, 0);
                     else
-                        Location += new Vector2(1f, 0);
-                else
-                    if (FacingDirection == FacingDirection.Left)
-                    Location += new Vector2(-6f, 0);
-                else
-                    Location += new Vector2(6f, 0);
+                        Location += new Vector2(1.5f, 0);
             }
 
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)sprite.Width, (int)sprite.Height);
@@ -73,15 +70,18 @@ namespace SuperDavis.Object.Enemy
 
         public void TakeDamage()
         {
-            sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneLeft();
-            JulianStateMachine = new KoopaStateMachine(sprite);
-            if (!Dead)
+            if (HealthCounter > 0)
             {
-                Dead = true;
-                PhysicsState = new FallState(this);
+                HealthCounter--;
+                PhysicsState = new JulianKnockBackState(this);
             }
             else
             {
+                if (FacingDirection == FacingDirection.Left)
+                    sprite = EnemySpriteFactory.Instance.CreateJulianDeadLeft();
+                else
+                    sprite = EnemySpriteFactory.Instance.CreateJulianDeadRight();
+                JulianStateMachine = new KoopaStateMachine(sprite);
                 PhysicsState = new EnemyDeadState(this);
                 JulianStateMachine = new RemoveState(this, JulianStateMachine.Sprite, 200);
             }
@@ -102,22 +102,26 @@ namespace SuperDavis.Object.Enemy
                     FacingDirection = FacingDirection.Left;
                 }
             }
-            else
+            JulianStateMachine = new KoopaStateMachine(sprite);
+        }
+
+        public void PowerPunch()
+        {
+            if (!Dead)
             {
                 if (FacingDirection == FacingDirection.Left)
                 {
-                    sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedRight();
+                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneLeft();
                     FacingDirection = FacingDirection.Right;
                 }
                 else
                 {
-                    sprite = EnemySpriteFactory.Instance.CreateKoopaGreenShellAnimatedLeft();
+                    sprite = EnemySpriteFactory.Instance.CreateJulianPowerPunchsOneRight();
                     FacingDirection = FacingDirection.Left;
                 }
             }
-            JulianStateMachine = new GoombaStateMachine(sprite);
+            JulianStateMachine = new KoopaStateMachine(sprite);
         }
-
         public void Jump()
         {
             if (!(PhysicsState is JumpState) || !(PhysicsState is FallState))

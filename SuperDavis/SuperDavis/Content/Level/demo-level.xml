@@ -62,7 +62,6 @@
     <Block Type='FlowerBlock' X='874' Y='550' />
 
     //Section 2-----------------------------------------------------------------------
-    <Enemy Type="Koopa" X="1450" Y="600" />
     <Block Type='CastleBlock' X='1500' Y='250' />
     <Block Type='CastleBlock' X='1400' Y='250' />
     <Block Type='CastleBlock' X='1300' Y='250' />
@@ -85,10 +84,10 @@
     <Item Type="Coin" X="2052" Y="624" />
 
 
-    <Enemy Type="Koopa" X="1600" Y="624" />
-    <Enemy Type="Koopa" X="2000" Y="624" />
+    <Enemy Type="Koopa" X="1600" Y="0" />
+    <Enemy Type="Koopa" X="1700" Y="0" />
     <Block Type="Pipe" X="2100" Y="624" />
-    <Enemy Type="Koopa" X="2150" Y="624" />
+    <Enemy Type="Koopa" X="1800" Y="0" />
     
     <Block Type='CastleBlock' X='1600' Y='500' />
     <Block Type='CastleBlock' X='1624' Y='500' />
@@ -100,15 +99,15 @@
 
 
 
-    <Block Type="FlowerBlock" X="1832" Y="200" />
-    <Block Type='CastleBlock' X='1772' Y='300' />
-    <Block Type='CastleBlock' X='1796' Y='300' />
-    <Block Type='CastleBlock' X='1820' Y='300' />
-    <Block Type='CastleBlock' X='1844' Y='300' />
-    <Block Type='CastleBlock' X='1868' Y='300' />
-    <Block Type='CastleBlock' X='1892' Y='300' />
+    <Block Type="FlowerBlock" X="1832" Y="240" />
+    <Block Type='CastleBlock' X='1772' Y='360' />
+    <Block Type='CastleBlock' X='1796' Y='360' />
+    <Block Type='CastleBlock' X='1820' Y='360' />
+    <Block Type='CastleBlock' X='1844' Y='360' />
+    <Block Type='CastleBlock' X='1868' Y='360' />
+    <Block Type='CastleBlock' X='1892' Y='360' />
 
-    <Block Type='CastleBlock' X='2036' Y='250' />
+    <Block Type='CastleBlock' X='2000' Y='250' />
        
     <Item Type="Coin" X="2160" Y="202" />
     <Item Type="Coin" X="2196" Y="202" />
@@ -455,5 +454,6 @@
   <Block Type='CastleBlock' X='2352' Y='528' />
   <Block Type='CastleBlock' X='2376' Y='528' />
   <Block Type='LeftCastleCeiling' X='2352' Y='552' />
-  <Block Type='RightCastleCeiling' X='2376' Y='552' />    
+  <Block Type='RightCastleCeiling' X='2376' Y='552' />
+    <Block Type='Door' X='2348' Y='576' />
 </Object>
