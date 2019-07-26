@@ -7,7 +7,7 @@
                       (Keys.R, Reset),
                       (Keys.A, TurnLeft),
                       (Keys.D, TurnRight),
-                      (Keys.W, Jump(Go up)),
+                      (Keys.w, PauseGame),
                       (Keys.S, Crouch(Go down)),
                       (Keys.Y, Character change to Davis),
                       (Keys.U, Character chagne to Woody),

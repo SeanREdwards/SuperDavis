@@ -121,7 +121,7 @@ namespace SuperDavis
         {
             spriteBatch.GraphicsDevice.Clear(Color.Black);
             spriteBatch.DrawString(fontBig, "Death Recap:", new Vector2(420, 250), Color.Gray);
-            spriteBatch.DrawString(fontBig, "STUPUDITY!!!", new Vector2(420, 350), Color.Red);
+            spriteBatch.DrawString(fontBig, "STUPIDITY!!!", new Vector2(420, 350), Color.Red);
             Sounds.Instance.MusicInstance.IsLooped = false;
             Sounds.Instance.MusicInstance.Pause();
 
