@@ -377,7 +377,7 @@
   },
 
   "CreateDavisSpecialAttackOneLeft": {
-    "TextureName": "DavisSprites/DavisRight_2",
+    "TextureName": "DavisSprites/DavisLeft_2",
     "SourceFrames": [
       {
         "X": 738,

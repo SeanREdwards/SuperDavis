@@ -35,7 +35,7 @@ namespace SuperDavis.State.DavisState
 
         public void Down()
         {
-            davis.DavisState = new DavisStaticRightState(davis);
+            
         }
 
         public void Land()

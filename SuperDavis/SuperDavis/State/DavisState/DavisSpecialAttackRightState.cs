@@ -10,11 +10,17 @@ namespace SuperDavis.State.DavisState
         public float Height { get; set; }
         private readonly IDavis davis;
         public ISprite Sprite { get; set; }
-        private int specialAttackTimer = 25;
+        private int specialAttackTimer;
 
         public DavisSpecialAttackRightState(IDavis davis)
         {
             this.davis = davis;
+            if (davis.DavisStatus == DavisStatus.Davis)
+                specialAttackTimer = Variables.Variable.DavisSpecialAttackTimer;
+            else if (davis.DavisStatus == DavisStatus.Woody)
+                specialAttackTimer = Variables.Variable.WoodySpecialAttackTimer;
+            else if (davis.DavisStatus == DavisStatus.Bat)
+                specialAttackTimer = Variables.Variable.BatSpecialAttackTimer;
         }
 
         public void Static()
@@ -62,7 +68,7 @@ namespace SuperDavis.State.DavisState
         {
             davis.Sprite.Update(gameTime);
             if (specialAttackTimer == 0)
-                davis.DavisState = new DavisStaticRightState(davis);
+                davis.DavisState.Static();
             specialAttackTimer--;
         }
 
