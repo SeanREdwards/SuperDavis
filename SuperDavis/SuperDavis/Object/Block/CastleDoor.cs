@@ -28,7 +28,7 @@ namespace SuperDavis.Object.Block
             IsOpen = false;
             IsHidden = false;
             Location = location;
-            block = ItemSpriteFactory.Instance.CreateCastleDoorClosed();
+            block = ItemSpriteFactory.Instance.CreateCastleDoorOpened();
             doorStateMachine = new DoorStateMachine(block);
 
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)block.Width, (int)block.Height);
