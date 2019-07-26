@@ -167,5 +167,26 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+
+        public ISprite CreateJulianProjectileLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianProjectileRight()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianExplodeLeft()
+        {
+            return Create(GetMethodName());
+        }
+
+        public ISprite CreateJulianExplodeRight()
+        {
+            return Create(GetMethodName());
+        }
+
     }
 }
