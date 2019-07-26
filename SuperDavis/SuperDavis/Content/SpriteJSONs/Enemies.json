@@ -734,7 +734,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianPowerPunchsOneRight": {
@@ -802,7 +802,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianRightJump": {
@@ -848,7 +848,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianMegaAttackRight": {
@@ -880,7 +880,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianDeadLeft": {
@@ -894,7 +894,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianDeadRight": {
@@ -908,7 +908,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1
+    "Scale": 1.5
   },
 
   "CreateJulianProjectileLeft": {
