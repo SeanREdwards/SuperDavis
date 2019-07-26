@@ -10,7 +10,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateGoombaWalkLeft": {
@@ -54,7 +54,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateGoombaWalkRight": {
@@ -98,7 +98,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateGoombaFlatAnimated": {
@@ -142,7 +142,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKoopaGreenStaticLeft": {
@@ -156,7 +156,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKoopaGreenStaticRight": {
@@ -170,7 +170,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKoopaGreenWalkLeft": {
@@ -250,7 +250,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKoopaGreenWalkRight": {
@@ -330,7 +330,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateKoopaGreenShellAnimatedLeft": {
@@ -408,7 +408,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianRightStatic": {
@@ -422,7 +422,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianWalkLeft": {
@@ -460,7 +460,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianWalkRight": {
@@ -498,7 +498,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianShootLeft": {
@@ -524,7 +524,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianShootRight": {
@@ -550,7 +550,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianLeftJump": {
@@ -564,7 +564,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianRightJump": {
@@ -578,7 +578,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianPowerUpLeft": {
@@ -622,7 +622,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianPowerUpRight": {
@@ -666,7 +666,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianPowerPunchsOneLeft": {
@@ -816,7 +816,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 1.5
+    "Scale": 2
   },
 
   "CreateJulianMegaAttackLeft": {
@@ -909,5 +909,121 @@
     ],
     "FrameDelay": 0.08,
     "Scale": 1.5
+  },
+
+  "CreateJulianProjectileLeft": {
+    "TextureName": "EnemySprites/JulianProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 226,
+        "Y": 26,
+        "Width": 58,
+        "Height": 34
+      },
+      {
+        "X": 181,
+        "Y": 27,
+        "Width": 57,
+        "Height": 34
+      },
+      {
+        "X": 92,
+        "Y": 25,
+        "Width": 58,
+        "Height": 37
+      },
+      {
+        "X": 15,
+        "Y": 23,
+        "Width": 56,
+        "Height": 41
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+
+  "CreateJulianProjectileRight": {
+    "TextureName": "EnemySprites/JulianProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 14,
+        "Y": 26,
+        "Width": 58,
+        "Height": 34
+      },
+      {
+        "X": 90,
+        "Y": 27,
+        "Width": 57,
+        "Height": 34
+      },
+      {
+        "X": 178,
+        "Y": 25,
+        "Width": 58,
+        "Height": 37
+      },
+      {
+        "X": 257,
+        "Y": 23,
+        "Width": 56,
+        "Height": 41
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+
+  "CreateJulianExplodeLeft": {
+    "TextureName": "EnemySprites/JulianProjectileLeft",
+    "SourceFrames": [
+      {
+        "X": 261,
+        "Y": 103,
+        "Width": 40,
+        "Height": 39
+      },
+      {
+        "X": 185,
+        "Y": 104,
+        "Width": 43,
+        "Height": 39
+      },
+      {
+        "X": 105,
+        "Y": 104,
+        "Width": 30,
+        "Height": 39
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
+  },
+
+  "CreateJulianExplodeRight": {
+    "TextureName": "EnemySprites/JulianProjectileRight",
+    "SourceFrames": [
+      {
+        "X": 27,
+        "Y": 103,
+        "Width": 40,
+        "Height": 39
+      },
+      {
+        "X": 100,
+        "Y": 104,
+        "Width": 43,
+        "Height": 39
+      },
+      {
+        "X": 193,
+        "Y": 104,
+        "Width": 30,
+        "Height": 39
+      }
+    ],
+    "FrameDelay": 0.08,
+    "Scale": 2
   }
 }
