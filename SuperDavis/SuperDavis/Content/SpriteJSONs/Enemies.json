@@ -10,7 +10,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateGoombaWalkLeft": {
@@ -54,7 +54,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateGoombaWalkRight": {
@@ -98,7 +98,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateGoombaFlatAnimated": {
@@ -142,7 +142,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateKoopaGreenStaticLeft": {
@@ -156,7 +156,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateKoopaGreenStaticRight": {
@@ -170,7 +170,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateKoopaGreenWalkLeft": {
@@ -250,7 +250,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateKoopaGreenWalkRight": {
@@ -330,7 +330,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateKoopaGreenShellAnimatedLeft": {
@@ -408,7 +408,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianRightStatic": {
@@ -422,7 +422,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianWalkLeft": {
@@ -460,7 +460,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianWalkRight": {
@@ -498,7 +498,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianShootLeft": {
@@ -524,7 +524,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianShootRight": {
@@ -550,7 +550,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianLeftJump": {
@@ -564,7 +564,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianRightJump": {
@@ -578,7 +578,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianPowerUpLeft": {
@@ -622,7 +622,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianPowerUpRight": {
@@ -666,7 +666,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianPowerPunchsOneLeft": {
@@ -734,7 +734,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianPowerPunchsOneRight": {
@@ -802,7 +802,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianRightJump": {
@@ -816,7 +816,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianMegaAttackLeft": {
@@ -848,7 +848,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianMegaAttackRight": {
@@ -880,7 +880,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianDeadLeft": {
@@ -894,7 +894,7 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   },
 
   "CreateJulianDeadRight": {
@@ -908,6 +908,6 @@
       }
     ],
     "FrameDelay": 0.08,
-    "Scale": 2
+    "Scale": 1.5
   }
 }

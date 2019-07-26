@@ -507,6 +507,7 @@
     <Compile Include="Object\Scenery\Background.cs" />
     <Compile Include="Object\Scenery\GhostHouseAniated.cs" />
     <Compile Include="Object\Scenery\Wall.cs" />
+    <Compile Include="Physics\JulianKnockBackState.cs" />
     <Compile Include="Physics\ShunpoState.cs" />
     <Compile Include="Physics\WoodyProjectilePhysicsState .cs" />
     <Compile Include="Physics\DavisProjectilePhysicsState.cs" />
