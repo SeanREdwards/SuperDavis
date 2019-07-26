@@ -7,6 +7,5 @@
 
         void SpecialState();
 
-        //void Bumped();
     }
 }

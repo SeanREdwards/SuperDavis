@@ -47,7 +47,7 @@ namespace SuperDavis.Object.Block
 
         public void Bumped()
         {
-            BrickStateMachine = new CoinBrickBumpStateMachine(false, this);
+            //BrickStateMachine = new CoinBrickBumpStateMachine(false, this);
         }
 
     }

@@ -41,7 +41,7 @@ namespace SuperDavis.Object.Item
                 projectileSprite = EnemySpriteFactory.Instance.CreateJulianProjectileRight();
             else
                 projectileSprite = EnemySpriteFactory.Instance.CreateJulianProjectileLeft();
-            BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite, this);
+            BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectileSprite.Width, (int)projectileSprite.Height);
         }
 

@@ -6,7 +6,7 @@ using System;
 
 namespace SuperDavis.Object.Item
 {
-    class Star : IItem
+    /*class Star : IItem
     {
         public float Mass { get; set; }
         public bool IsAnimated { get; set; }
@@ -59,5 +59,5 @@ namespace SuperDavis.Object.Item
         }
 
 
-    }
+    }*/
 }

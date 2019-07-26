@@ -13,7 +13,6 @@ namespace SuperDavis
         public int score = Variable.score;
         public int coins = Variable.coins;
         public int lives = Variable.lives;
-        public string worldText;
         public double time = Variable.time;
 
         private int scrollingFactor = 0;

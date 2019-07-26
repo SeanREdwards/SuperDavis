@@ -44,8 +44,8 @@ namespace SuperDavis.Worlds
                 { nameof(Flower), (x, y) => world.AddObject(new Flower(new Vector2(x, y))) },
                 { nameof(Coin), (x, y) => world.AddObject(new Coin(new Vector2(x, y))) },
                 { nameof(Mushroom), (x, y) => world.AddObject(new Mushroom(new Vector2(x, y))) },
-                { nameof(YoshiEgg), (x, y) => world.AddObject(new YoshiEgg(new Vector2(x, y))) },
-                { nameof(Star), (x, y) => world.AddObject(new Star(new Vector2(x, y))) },
+                //{ nameof(YoshiEgg), (x, y) => world.AddObject(new YoshiEgg(new Vector2(x, y))) },
+                //{ nameof(Star), (x, y) => world.AddObject(new Star(new Vector2(x, y))) },
                 { nameof(Key), (x, y) => world.AddObject(new Key(new Vector2(x, y))) }
             };
         }

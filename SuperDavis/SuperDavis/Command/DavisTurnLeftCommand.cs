@@ -7,10 +7,8 @@ namespace SuperDavis.Command
     class DavisTurnLeftCommand : ICommand
     {
         private readonly IDavis davis;
-        private readonly IWorld world;
-        public DavisTurnLeftCommand(IDavis davis, IWorld world)
+        public DavisTurnLeftCommand(IDavis davis)
         {
-            this.world = world;
             this.davis = davis;
         }
 

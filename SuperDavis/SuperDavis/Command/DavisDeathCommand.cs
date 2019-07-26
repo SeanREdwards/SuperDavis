@@ -2,7 +2,7 @@
 
 namespace SuperDavis.Command
 {
-    class DavisDeathCommand : ICommand
+    /*class DavisDeathCommand : ICommand
     {
         private readonly IDavis davis;
         public DavisDeathCommand(IDavis davis)
@@ -13,5 +13,5 @@ namespace SuperDavis.Command
         {
             davis.DavisDeath();
         }
-    }
+    }*/
 }

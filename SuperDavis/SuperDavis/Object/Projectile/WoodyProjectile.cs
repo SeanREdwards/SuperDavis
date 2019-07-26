@@ -41,7 +41,7 @@ namespace SuperDavis.Object.Item
                 projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileRight();
             else
                 projectileSprite = DavisSpriteFactory.Instance.CreateWoodyProjectileLeft();
-            BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite, this);
+            BatProjectileStateMachine = new ProjectileStateMachine(projectileSprite);
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, (int)projectileSprite.Width, (int)projectileSprite.Height);
         }
 

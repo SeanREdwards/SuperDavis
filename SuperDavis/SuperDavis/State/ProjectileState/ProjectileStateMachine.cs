@@ -10,7 +10,7 @@ namespace SuperDavis.State.ItemStateMachine
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
 
-        public ProjectileStateMachine(ISprite sprite, IProjectile projectile)
+        public ProjectileStateMachine(ISprite sprite)
         {
             Sprite = sprite;
             Width = Sprite.Width;

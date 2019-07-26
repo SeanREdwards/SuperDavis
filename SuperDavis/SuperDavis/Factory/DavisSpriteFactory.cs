@@ -70,10 +70,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateDavisWalkLeftSprite()
+        /*public ISprite CreateDavisWalkLeftSprite()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateDavisWalkRightSprite()
         {
@@ -255,10 +255,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateBatWalkLeftSprite()
+        /*public ISprite CreateBatWalkLeftSprite()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateBatWalkRightSprite()
         {

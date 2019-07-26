@@ -465,7 +465,6 @@
     <Compile Include="Collision\DavisItemCollisionHandler.cs" />
     <Compile Include="Collision\DavisBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionDetection.cs" />
-    <Compile Include="Command\JulianShootBulletCommand.cs" />
     <Compile Include="Command\DavisShootBulletCommand.cs" />
     <Compile Include="Command\PauseCommand.cs" />
     <Compile Include="Command\StartMenuRightCommand.cs" />
@@ -541,7 +540,6 @@
     <Compile Include="State\ItemBlockState\StarBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\MushroomBlockStateMachine.cs" />
     <Compile Include="State\ItemBlockState\CoinBlockStateMachine.cs" />
-    <Compile Include="State\OtherState\DavisRemoveState.cs" />
     <Compile Include="State\OtherState\RemoveState.cs" />
     <Compile Include="State\ProjectileState\ProjectileExplodeStateMachine.cs" />
     <Compile Include="State\ProjectileState\ProjectileStateMachine.cs" />

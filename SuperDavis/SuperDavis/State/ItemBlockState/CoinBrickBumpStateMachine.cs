@@ -6,13 +6,13 @@ using SuperDavis.Object.Block;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class CoinBrickBumpStateMachine : IGameObjectState
+    /*class CoinBrickBumpStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }
         public ISprite Sprite { get; set; }
         private int bumpTimer = Variables.Variable.BumpTime;
-        private CoinBrick brick;
+        private readonly CoinBrick brick;
         public CoinBrickBumpStateMachine(bool isBroken, CoinBrick brick)
         {
             if (!isBroken)
@@ -47,5 +47,5 @@ namespace SuperDavis.State.ItemStateMachine
             }
             bumpTimer--;
         }
-    }
+    }*/
 }

@@ -29,14 +29,14 @@ namespace SuperDavis.Sound
         public SoundEffect CharacterSelectSound;
 
         public SoundEffect DoorOpenSound;
-        public SoundEffect DoorCloseSound;
+        //public SoundEffect DoorCloseSound;
 
         public SoundEffect DrinkMilkSound;
 
         public SoundEffect Explode1Sound;
-        public SoundEffect Explode2Sound;
-        public SoundEffect Explode3Sound;
-        public SoundEffect Explode4Sound;
+        //public SoundEffect Explode2Sound;
+        //public SoundEffect Explode3Sound;
+        //public SoundEffect Explode4Sound;
 
         public SoundEffect GameOverSound;
 
@@ -46,9 +46,9 @@ namespace SuperDavis.Sound
 
         public SoundEffect KiyahOneSound;
         public SoundEffect KiyahTwoSound;
-        public SoundEffect KiyahThreeSound;
+        //public SoundEffect KiyahThreeSound;
 
-        public SoundEffect PhysicalAttackCollisionSoundOne;
+        //public SoundEffect PhysicalAttackCollisionSoundOne;
 
         public SoundEffect TeleportSound;
 
@@ -87,9 +87,9 @@ namespace SuperDavis.Sound
 
             KiyahOneSound = content.Load<SoundEffect>("SoundFX/KiyahOneSound");
             KiyahTwoSound = content.Load<SoundEffect>("SoundFX/KiyahTwoSound");
-            KiyahThreeSound = content.Load<SoundEffect>("SoundFX/KiyahThreeSound");
+            //KiyahThreeSound = content.Load<SoundEffect>("SoundFX/KiyahThreeSound");
 
-            PhysicalAttackCollisionSoundOne = content.Load<SoundEffect>("SoundFX/PhysicalAttackCollisionSoundOne");
+            //PhysicalAttackCollisionSoundOne = content.Load<SoundEffect>("SoundFX/PhysicalAttackCollisionSoundOne");
 
             TeleportSound = content.Load<SoundEffect>("SoundFX/TeleportSound");
 
@@ -97,12 +97,12 @@ namespace SuperDavis.Sound
 
             /*Sounds taken from Mojang's Minecraft*/
             DoorOpenSound = content.Load<SoundEffect>("SoundFX/DoorOpenSound");
-            DoorCloseSound = content.Load<SoundEffect>("SoundFX/DoorCloseSound");
+            //DoorCloseSound = content.Load<SoundEffect>("SoundFX/DoorCloseSound");
 
             Explode1Sound = content.Load<SoundEffect>("SoundFX/Explode1Sound");
-            Explode2Sound = content.Load<SoundEffect>("SoundFX/Explode2Sound");
-            Explode3Sound = content.Load<SoundEffect>("SoundFX/Explode3Sound");
-            Explode4Sound = content.Load<SoundEffect>("SoundFX/Explode4Sound");
+            //Explode2Sound = content.Load<SoundEffect>("SoundFX/Explode2Sound");
+            //Explode3Sound = content.Load<SoundEffect>("SoundFX/Explode3Sound");
+            //Explode4Sound = content.Load<SoundEffect>("SoundFX/Explode4Sound");
 
         }
 

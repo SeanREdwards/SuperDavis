@@ -51,11 +51,6 @@ namespace SuperDavis.LvlManager
             return null;
         }
 
-        public void ChangeCheckPoint(string levelName)
-        {
-            this.CheckPoint = levelName;
-        }
-
         public IWorld ResetToCheckPoint()
         {
             if (CheckPoint.Equals("demo-level.xml"))

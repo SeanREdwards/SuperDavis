@@ -12,7 +12,7 @@ using System;
 
 namespace SuperDavis.Object.Block
 {
-    class Wall
+    /*class Wall
     {
         public int Height { get; }
         public int Width { get; }
@@ -21,13 +21,13 @@ namespace SuperDavis.Object.Block
         private ISprite wallSprite;
         public Vector2 Location { get; set; }
         public BrickStateMachine BrickStateMachine;
-        private readonly ISprite block;
+
         public Rectangle HitBox { get; set; }
         public IGameObjectPhysics PhysicsState { get; set; }
-        private int bumpTimer = Variables.Variable.BumpTime;
+
         public event EventHandler<Tuple<Vector2, Vector2>> OnPositionChanged;
 
-        /*Maybe add ISprite as a param for variable to make it so any type of block could be used as a wall.*/
+
         public Wall(Vector2 location, int blocksHigh, int blocksWide)
         {
             // initial state
@@ -41,7 +41,7 @@ namespace SuperDavis.Object.Block
             HitBox = new Rectangle((int)Location.X, (int)Location.Y, this.Width, this.Height);
         }
 
-        public void Update(GameTime gameTime)
+        /*public void Update(GameTime gameTime)
         {
 
         }
@@ -56,5 +56,5 @@ namespace SuperDavis.Object.Block
                 }
             }
         }
-    }
+    }*/
 }

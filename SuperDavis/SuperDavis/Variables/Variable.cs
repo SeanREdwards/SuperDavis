@@ -126,27 +126,27 @@
         public const string Scenery = "Scenery";
 
         //HUD varables
-        public static int score = 0;
-        public static int coins = 0;
-        public static int lives = 3;
-        public static string worldText = "1-1";
-        public static double time = 400;
+        public const int score = 0;
+        public const int coins = 0;
+        public const int lives = 3;
+        public const string worldText = "1-1";
+        public const double time = 400;
 
-        public static int doorOpenScore = 3000;
+        public const int doorOpenScore = 3000;
 
         //Variables.Variable.
 
         //SpecialAttackTimer
-        public static int DavisSpecialAttackTimer = 25;
-        public static int WoodySpecialAttackTimer = 20;
-        public static int BatSpecialAttackTimer = 16;
+        public const int DavisSpecialAttackTimer = 25;
+        public const int WoodySpecialAttackTimer = 20;
+        public const int BatSpecialAttackTimer = 16;
         //ShootBulletTimer
 
-        public static int DavisShootBulletTimer = 25;
-        public static int WoodyShootBulletTimer = 33;
-        public static int BatShootBulletTimer = 20;
+        public const int DavisShootBulletTimer = 25;
+        public const int WoodyShootBulletTimer = 33;
+        public const int BatShootBulletTimer = 20;
 
-        public static string BossLevel = "boss-level.xml";
-        public static string FirstLevel = "demo-level.xml";
+        public const string BossLevel = "boss-level.xml";
+        public const string FirstLevel = "demo-level.xml";
     }
 }

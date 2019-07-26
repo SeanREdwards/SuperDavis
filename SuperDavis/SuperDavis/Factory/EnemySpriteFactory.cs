@@ -47,10 +47,10 @@ namespace SuperDavis.Factory
         }
 
 
-        public ISprite CreateGoombaMovingLeft()
+        /*public ISprite CreateGoombaMovingLeft()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateGoombaWalkLeft()
         {
@@ -68,7 +68,7 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateKoopaGreenStaticLeft()
+        /*public ISprite CreateKoopaGreenStaticLeft()
         {
             return Create(GetMethodName());
         }
@@ -76,7 +76,7 @@ namespace SuperDavis.Factory
         public ISprite CreateKoopaGreenStaticRight()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateKoopaGreenWalkLeft()
         {
@@ -103,10 +103,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateJulianRightStatic()
+        /*public ISprite CreateJulianRightStatic()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateJulianWalkLeft()
         {
@@ -118,7 +118,7 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateJulianShootLeft()
+        /*public ISprite CreateJulianShootLeft()
         {
             return Create(GetMethodName());
         }
@@ -127,7 +127,7 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
-
+        
         public ISprite CreateJulianLeftJump()
         {
             return Create(GetMethodName());
@@ -136,7 +136,7 @@ namespace SuperDavis.Factory
         public ISprite CreateJulianRightJump()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateJulianPowerPunchsOneLeft()
         {

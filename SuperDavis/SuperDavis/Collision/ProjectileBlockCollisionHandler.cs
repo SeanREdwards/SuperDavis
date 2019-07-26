@@ -7,9 +7,8 @@ namespace SuperDavis.Collision
     class ProjectileBlockCollisionHandler
     {
         private ProjectileBlockCollisionHandler() { }
-        public static void HandleCollision(IProjectile projectile, IBlock block, CollisionSide side, IWorld world)
+        public static void HandleCollision(IProjectile projectile, CollisionSide side)
         {
-
             switch (side)
             {
                 case CollisionSide.Top:

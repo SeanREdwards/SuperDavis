@@ -57,7 +57,7 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateFireFlower()
+        /*public ISprite CreateFireFlower()
         {
             return Create(GetMethodName());
         }
@@ -66,6 +66,7 @@ namespace SuperDavis.Factory
         {
             return Create(GetMethodName());
         }
+        */
 
         /*Block Sprites*/
         public ISprite CreateQuestionMarkBlockAnimated()
@@ -93,10 +94,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateCastleDoorClosed()
+        /*public ISprite CreateCastleDoorClosed()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateCastleDoorOpened()
         {
@@ -108,7 +109,7 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateSpinBlockStatic()
+        /*public ISprite CreateSpinBlockStatic()
         {
             return Create(GetMethodName());
         }
@@ -116,7 +117,7 @@ namespace SuperDavis.Factory
         public ISprite CreateSpinBlockAnimated()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateLeftGreenFloor()
         {
@@ -172,10 +173,10 @@ namespace SuperDavis.Factory
             return Create(GetMethodName());
         }
 
-        public ISprite CreateMiddleGreenFloor()
+        /*public ISprite CreateMiddleGreenFloor()
         {
             return Create(GetMethodName());
-        }
+        }*/
 
         public ISprite CreateRightGreenFloor()
         {

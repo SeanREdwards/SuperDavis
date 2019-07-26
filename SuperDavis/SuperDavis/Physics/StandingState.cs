@@ -5,10 +5,8 @@ namespace SuperDavis.Physics
 {
     class StandingState : IGameObjectPhysics
     {
-        // Idea, by passing different igameobject, implement different 
-        // param for Falling, using lists
-        private IGameObject gameObject;
-        private readonly IDavis davis;
+
+        private readonly IGameObject gameObject;
         public Vector2 Velocity { get; set; }
         public Vector2 MaxVelocity { get; set; }
         public Vector2 Acceleration { get; set; }

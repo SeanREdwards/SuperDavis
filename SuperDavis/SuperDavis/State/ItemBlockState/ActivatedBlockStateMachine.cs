@@ -5,7 +5,7 @@ using SuperDavis.Interfaces;
 
 namespace SuperDavis.State.ItemStateMachine
 {
-    class ActivatedBlockStateMachine : IGameObjectState
+    /*class ActivatedBlockStateMachine : IGameObjectState
     {
         public float Width { get; set; }
         public float Height { get; set; }
@@ -27,5 +27,5 @@ namespace SuperDavis.State.ItemStateMachine
         {
             Sprite.Update(gameTime);
         }
-    }
+    }*/
 }

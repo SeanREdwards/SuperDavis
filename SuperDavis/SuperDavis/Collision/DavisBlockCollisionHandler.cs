@@ -56,15 +56,6 @@ namespace SuperDavis.Collision
                             block.IsBumped = true;
                         }
                     }
-                    else if (block is StarBlock)
-                    {
-                        if (!block.IsBumped)
-                        {
-                            world.AddObject(new Star(new Vector2(block.Location.X, block.Location.Y - 25)));
-                            block.SpecialState();
-                            block.IsBumped = true;
-                        }
-                    }
                     else if (block is FlowerBlock)
                     {
                         if (!block.IsBumped)

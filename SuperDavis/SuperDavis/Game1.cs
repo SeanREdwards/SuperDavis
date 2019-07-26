@@ -187,7 +187,7 @@ namespace SuperDavis
                       (Keys.Y, new DavisToDavisCommand(davis),new NullCommand(), true),
                       (Keys.U, new DavisToWoodyCommand(davis),new NullCommand(), true),
                       (Keys.I, new DavisToBatCommand(davis),new NullCommand(), true),
-                      (Keys.Left, new DavisTurnLeftCommand(davis, World), new DavisStaticCommand(davis), true),
+                      (Keys.Left, new DavisTurnLeftCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Right, new DavisTurnRightCommand(davis), new DavisStaticCommand(davis), true),
                       (Keys.Up, new DavisJumpCommand(davis),new DavisStaticCommand(davis), true),
                       (Keys.Down, new DavisCrouchCommand(davis), new DavisStaticCommand(davis), true),
@@ -232,7 +232,7 @@ namespace SuperDavis
             };
         }
 
-        public void ControllerUpdate()
+        /*public void ControllerUpdate()
         {
             if (!Momento.IsEmpty)
             {
@@ -249,7 +249,8 @@ namespace SuperDavis
             }
             else
                 controllerList[0].Update();
-        }
+        }*/
+
         public void CheckGameReset()
         {
             if (World.Characters == null)

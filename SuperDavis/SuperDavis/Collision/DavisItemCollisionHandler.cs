@@ -26,10 +26,6 @@ namespace SuperDavis.Collision
                     world.HUD.lives += 1;
                     davis.DavisState.Static();
                 }
-                else if (item is Star)
-                {
-                    world.Characters = new InvincibleDavis(world.Characters, world);
-                }
                 else if (item is Coin)
                 {
                     world.HUD.coins++;

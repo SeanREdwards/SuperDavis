@@ -16,7 +16,6 @@ namespace SuperDavis.Command
             world.HUD.score = Variable.score;
             world.HUD.coins = Variable.coins;
             world.HUD.lives = Variable.lives;
-            world.HUD.worldText = Variable.worldText;
             world.HUD.time = Variable.time;
             world.ResetGame();
         }
